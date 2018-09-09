@@ -19,7 +19,9 @@ Modern math basis
 
 ## Calculus
 
-## [Complex Analysis](Mathematics\Complex Analysis)
+## Complex Analysis
+
+[Complex Analysis](Mathematics\Complex Analysis)
 
 
 
@@ -31,54 +33,112 @@ Modern math basis
 
 
 
-## Functional and operator theory
+## Functional Analysis and operator theory
 
 
 
 # Geometry
 
-## [Differential Geometry](Mathematics/Differential Geometry.md)
+* [Differential Geometry](Mathematics/Differential Geometry.md)
+* [Riemann Geometry]()
+* [Differential Manifold](./Mathematics/Differential Manifold.md)
+* [Differential Topology](./Mathematics/Differential Manifold.md)
+* [Fiber Bundle](./Mathematics/Fiber Bundle.md)
+* [Topology](./Mathematics/Topology.md)
+* [Algebraic Geometry]
 
-## Non-Euclidean geometry
 
-## [Topology](./Mathematics/Topology.md)
+
+* [Algebraic Topology]
+
+* [Homology Theory](./Mathematics/Homology.md)
+* [Homotopy Theory]
+
+- [Characteristic Class]
+
+
+
+* [Complex Geometry]
+* [Symplectic Geometry]
+
+
+
+
+
+## Differential Geometry
+
+
+## Riemann geometry
+
+## Differential Manifold
+
+
+
+## Topology
+
+
+
+
+## Fiber Bundle
 
 
 
 # Algebra
 
-## Matrix theory 
+## Linear Algebra
 
 Theory of Linear Space and Linear Transform
 
 
 
-## Abstract algebra
-theory of group ring field
-Group theory
+## Matrix theory
 
+
+
+## Abstract algebra
+
+theory of group, ring, field
+
+* [Group theory](./Mathematics/Group Theory.md)
+
+## Lie Group 
+
+[Lie Group](./Mathematics/Lie Group.md)
 
 # Advanced Synthesis
-##[[Dynamic System]]
 
-## Lie Group
+- [Dynamic System Analysis]()
+
+## Dynamic System
 
 
 
-## [[Fiber Bundle]]
+# Probability and Statistics
 
-Applied math
+
+
+## Pobability Theory
+
+
+
+## Random Process
+
+[Random Process](./Mathematics/Stochastic Process.md)
+
+## Stochastic Differential Equation (SDE)
+
+
+
+## Statistics
+
+
+
+## Statistical Learning
+
+
+
+Applied and Computational math
 ===========
-
-## Probability and Statistics
-
-### [Random Process](Mathematics\Stochastic Process)
-
-### Stochastic Differential Equation (SDE)
-
-
-
-
 
 ## Multiscale Analysis
 
@@ -104,10 +164,14 @@ Optimization Algorithms
 
 
 
-## [[Information Theory]](Mathematics/Information Theory.md)
+## Information Theory
+
+[[Information Theory]](Mathematics/Information Theory.md)
 
 
 
 ## [[Graph theory]]
+
+
 
 ## [[Complex Network]]

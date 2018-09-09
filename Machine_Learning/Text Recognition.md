@@ -26,6 +26,16 @@ Problem； 与OCR比较
 * 好处，文字形状相对确定，有很好的先验Prior
 * 一般不会太拥挤，并排排列
 
+
+
+分为局部方法 和 全局方法 局部出整个框框柱整个文本, 局部 单个字符再算link
+
+单个字符model 可以不必是直线! 
+
+CRNN?! RNN方便去做切分. 可以不知道字典. 五线谱 基因序列均可. 
+
+RARE形变文字model
+
 # Traditional Method
 
 **MSER (Maximum Stable Extremal Region) 2010**
@@ -107,3 +117,18 @@ MLT multilingual dataset
 有先验 特定种类的图片 99.9可对
 
 没有先验大概要70-80
+
+
+
+## Future
+
+* Irregular
+* Multilingual
+* NLP+OCR一起进行
+* Text image synthesis
+* Semi supervised   Weakly supervised
+
+2018.1 Xiang Bai
+
+
+

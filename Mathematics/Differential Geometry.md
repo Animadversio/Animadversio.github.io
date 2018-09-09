@@ -17,7 +17,7 @@ Define as a mapping from Interval to Euclidean space $r: I->\mathbb{R}^3$. Indee
 
 * The regular criterion for parametrization. 
 
-* Proper transform of parameter
+    * Proper transform of parameter
 
 * What Quantity is invariant to parameter transform (Analytical Description ) and intrinsic to geometry object? (**Geometric Invariants**) 
     - Arc lenth $ds$
@@ -62,6 +62,8 @@ Define as a mapping from Interval to Euclidean space $r: I->\mathbb{R}^3$. Indee
 * Maximal/minimal value problem
     - Variational method
     - Euler Lagrange Equation
+
+* Dynamics of a curve: Geometric flow e.g. [Curvature flow](#Curvature flow)
 
 
 ## Methods
@@ -114,6 +116,14 @@ Write the Dynamic Equation of Coordinate on local coordinate, then Geometric Inv
 * 螺线Spiral
     * 等角螺线
 
+
+
+## Variational method and Shortest Line
+
+$\kappa$ as arc length's response to curve perturbation. 
+
+Specificly, if we define length functional of curve $\mathcal L(\gamma)$ then the curvature vector is the gradient of functional $grad \mathcal L= -\kappa N$ . And this relationship gives the curve shortening flow.   
+
 ### Curvature flow
 
 $$dr/dt=-\kappa r$$
@@ -130,17 +140,16 @@ $$\Delta r(s)=\frac14[r(s+ds)-2r(s)+r(s-ds)]\approx \frac12\frac{d^2r(s)}{ds^2}d
 
 
 
-## Variational method and Shortest Line
-
-$\kappa$ as arc length's response to curve perturbation. 
-
-
-
 # Surface
 
 ## Major Questions
 
-* Des
+* Characterize the surface's local curving ?
+* Parametrize the Surface, better and optimally ? 
+* Reconstruct a Surface given the local derivative data? 
+* What constraint a curve / closed curve on surface 
+
+
 
 ## Local Description of Surface
 
@@ -183,7 +192,7 @@ $\kappa$ as arc length's response to curve perturbation.
   *  曲率线网的存在性
 
 
-* ​
+* 
 
 
 ### First Foundamental Form $I$
@@ -206,7 +215,7 @@ $$II=n\cdot d^2r=-dn\cdot dr=Ldu^2+2Mdudv+Ndv^2$$
 
 ### Invariant quantity of two differential form 
 
-Question: Given 2 differential form what quantity is invariant to parameter change? and have geometric meaning?
+**Question**: Given 2 differential form what quantity is invariant to parameter change? and have geometric meaning?
 
 $II-\lambda I$ two forms has eigen value and eigen vectors which are invaviant to parameter change. Solve the equation $det(II-\lambda I)$ gives the eigens. 
 
@@ -214,7 +223,7 @@ $II-\lambda I$ two forms has eigen value and eigen vectors which are invaviant t
 * Eigenvalues are real, vectors perpendicular to each other .
 * Principal direction of maximum/minimum normal curvature
 * Invariant scalar : $K=det(I^{-1}II)=\lambda_1\lambda_2 $ , $H=tr(I^{-1}II)=\lambda_1+\lambda_2 $
-* ​
+* 
 
 
 
@@ -409,7 +418,9 @@ Solution to the area variation problem.
 
 ### Constant Gauss Curvature Surface
 
-
+* 球面
+* 平面
+* 双曲面
 
 # Intrinsic Geometry
 
@@ -431,9 +442,11 @@ $$
 * 局部等距映射
   * 对每点存在一个邻域, 其上有一个映射是等距变换
 * 全局等距映射
-  * ​
+  * 
 
-对于曲面Isometry变换下不变的性质, 即给定了曲面一形式后不变的性质, 即Intrinsic Geometry, 也就是黎曼曲面的内容. 
+对于曲面Isometry变换下不变的性质, 即给定了曲面$I$形式后不变的性质, 即Intrinsic Geometry, 也就是黎曼曲面的内容. 
+
+
 
 ### Conformal map
 
@@ -453,6 +466,12 @@ $$
 
 
 
+## Geodesic
+
+
+
+### Geodesic Charts
+
 
 
 ## Gauss-Bonnet Theorem
@@ -461,26 +480,24 @@ $$
 
 
 
-### Global G-B 
+### Global G-B
+
+Global G-B Theorem 由于法映射$n$, 诱导从曲面$S\to S^2$ 的映射, 而$K$代表该映射的像与原像的面积比. 因此积分得到的是$n(S)$ 在球面上覆盖的面积
+
+$$\int\int KdA=2\pi \chi$$
 
 
 
+# Riemann Manifold
 
+Abstract Surface. Try to generalize the intrinsic geometry of surface to high-dim geometric objects~
 
-# Manifold
+带有度规结构的几何学 [Riemann Geometry](Riemann Geometry.md)
 
-Abstract Surface. Try to 
-
-
-
-
-
+不带度规结构, 但有微分结构的流形几何, 是微分同胚下不变的几何 [Differential Manifold](Differential Manifold.md)
 
 
 
-
-
-
-[[Topology]](Topology.md)
+拓扑同胚下不变的东西[[Topology]](Topology.md)
 
 

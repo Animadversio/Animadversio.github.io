@@ -70,18 +70,99 @@ Q：
 
 到底什么能够不朽？
 
+[Reading 不朽](.\Reading\不朽.md)
+
+
+
+
+
+## Man's Search for Meaning
+
+
+
 
 
 ## 百年孤独
 
 
 
+# Theme: 死亡
+
+
+
+## 死亡的社会学思考
+
+
+
+# Theme: 自我修炼 自我探索
+
+如何与自己相处, 理解自己, 认识自己
+
+## Mindfulness
+
+[Notes](.\Reading\Mindfulness)
+
+通过对自己身上不同的部分的留心, 进入更好的状态. 
+
+正念的佛教渊源. 
+
+
+
+## Payoff: The Hidden Logic That Shapes Our Motivations
+
+
+
+[Read Notes](.\Reading\Payoff Dan Ariely.md)
+
+我们如何理解自己身上的motivation, 什么促进着motivation, 什么摧毁着motivation. 
+
+Meaningful与Meaningless对于motivation是多么的重要, 以及这些与suffering pain是怎样的关系
+
+与是怎样的关系
+
+
+
+# Theme 中国社会 中国传统
+
+
+
+## 中国文化要义
+
+探索中国的文化中有怎样独特的feature构成了现代中国这样多的特色与问题.
+
+
+
+## 人心与人生
+
+梁簌溟先生关心的两大问题
+
+
+
+## 乡土中国
+
+中国的传统乡村社会是怎样构建的。
+
+
+
+## 江村经济
+
+
+
+
+
+## 庄子
+
+
+
 # Theme：历史上的王者 领袖
+
 * 一个人需要什么样的特质会成为王者？
 * 他是怎么带领人群 煽动人群 ／面对人群 对抗人群的
 * 人改变历史的力量是什么样的？
 
 ## 拿破仑传
+
+
 
 ## 反叛的鲁鲁修
 一个人背负着王的一切责任 以及罪孽 最后去死。
@@ -198,15 +279,9 @@ How and Why ？
 
 ## 中世纪史
 
-# Theme 中国社会 中国传统
-
-## 乡土中国
-中国的传统乡村社会是怎样构建的。
-
-## 江村经济
 
 
-# Theme 科学史 
+# Theme 科学史
 
 ## [[Physics]](Physics.md)
 

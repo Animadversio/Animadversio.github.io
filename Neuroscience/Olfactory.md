@@ -95,6 +95,12 @@ Q：信息如何向下游传递
 
 嗅觉刺激可以类似于一个向量, Ligand 的 浓度向量
 
+最优的嗅觉
+
+Affinity Matrix 的统计特性?!
+
+
+
 
 
 自然气味 vs Pheromone

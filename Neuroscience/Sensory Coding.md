@@ -86,6 +86,18 @@ von der Malsburg 1985
   * A1: 
   * V1: Synchronization arise with certain images (How to measure [Neural Synchronization]()?)
 
+## Place Code
+
+**Auditory system**
+
+Frequency is coded in position of neuron in cochlea and auditory cortex. 
+
+In the Jeffress model, Interaural Temporal Difference Detection can be coded in the position. As different ITD signal will coincide on different neuron in the field. Thus the ITD can cause a bump of neuron to fire on the transport axis. 
+
+![image-20180608104818521](../Wiki Img/image-20180608104818521.png)
+
+
+
 
 
 ## Optimal Coding and Sparsity

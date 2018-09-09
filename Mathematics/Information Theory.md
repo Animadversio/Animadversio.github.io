@@ -67,7 +67,21 @@ $$
 **Comparison**
 
 * **Fisher Information**: 描述的是一个样本 对一个分布参数提供的信息!! 
+  * 注意Fisher information是一个局部量, 与$\theta$ 取值有关! 
+  * 二阶近似下 二阶偏微分决定Likelihood Function在Peak/Critical Point 附近有多么的sharp! 
 * **Mutual Information**: 描述的是两个随机变量之间的Dependent 关系 
+* 两者可以有关联!!
+
+对于一个多维参数, 则生成一个矩阵
+
+$$
+I_F(\theta)=\mathbb E[(\partial_\theta log(f(X;\theta)))^2]=\int \frac{(\partial_\theta f(x;\theta))^2}{f(x;\theta)}dx=-\mathbb E[{\frac {\partial ^{2}}{\partial \theta ^{2}}}\log f(X;\theta )|\theta]\\
+$$
+Brunel 2009
+
+
+
+Locally Optimal Linear Estimator
 
 
 
@@ -78,6 +92,10 @@ $$
 ### Cramer Rao Bound
 
 Inverse of Fisher information is the lower bound of variance of any **unbiased estimator**. 
+
+
+
+
 
 
 

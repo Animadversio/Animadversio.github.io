@@ -6,8 +6,6 @@ https://github.com/onlytailei/pytorch-rl
 
 https://github.com/yenchenlin/DeepLearningFlappyBird
 
-
-
 https://www.technologyreview.com/s/603501/10-breakthrough-technologies-2017-reinforcement-learning/
 
 
