@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
+  {% if page.use_math %}
+      {% include mathjax_support %}
+  {% endif %}
   <body>
     {% include navbar.html %}
     <div class="content">
@@ -9,6 +12,3 @@
     {% include footer.html %}
   </body>
 </html>
-{% if page.use_math %}
-      {% include mathjax_support %}
-{% endif %}
