@@ -1,13 +1,227 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-09T19:24:27-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The mind palace of Binxu</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/09/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-09-09T18:05:05-05:00</published><updated>2018-09-09T18:05:05-05:00</updated><id>http://localhost:4000/jekyll/update/2018/09/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/09/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>The mind palace of Binxu</title>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <link>http://localhost:4000/</link>
+        <description></description>
+        <pubDate>Sun, 09 Sep 2018 20:38:40 -0500</pubDate>
+        
+        <item>
+            <title>Derivative Free Optimization Method (Based Feature Visulization) Notes 1</title>
+            <link>/2018/09/09/Derivative-Free-Optimization-Method-note.html</link>
+            <guid isPermaLink="true">/2018/09/09/Derivative-Free-Optimization-Method-note.html</guid>
+            <description>&lt;h2 id=&quot;task-discription&quot;&gt;Task discription&lt;/h2&gt;
+&lt;p&gt;To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. 
+But the optimization task on hand has several &lt;strong&gt;unique features&lt;/strong&gt; that are essential to the choice of optimization algorithms, for example,&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Black box setting
+    &lt;ul&gt;
+      &lt;li&gt;No explicit/analytical form of the function. So the method must not rely on the analytical form of gradient (1st order information).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Stochasticity:
+    &lt;ul&gt;
+      &lt;li&gt;Neuronal response (spike count or other) is stochastic with noise of some sort (&lt;em&gt;specific noise class / noise level is to be characterized from data&lt;/em&gt;). Thus the “energy landscape” is vibrating/fluctuating. Because of this, the derivative is dominated by high frequency fluctuation, thus we cannot estimate the derivatve from finite difference method, or the finite difference method must make use of larger scale structure to get rid of noise.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Very high-dimensional input space, esp. the &lt;strong&gt;image space&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Dimension reduction of the input space is crucial. The current method of GAN compressed code images (from millions dimension to 4096) has greatly reduced the dimension of space.&lt;/li&gt;
+      &lt;li&gt;This requirement is the same with CNN black box attack setting. So many of their &lt;strong&gt;dimension reduction techniques&lt;/strong&gt; of the input space should be useful in our setting&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-linear / Non-convex / Multipeak of target function:
+    &lt;ul&gt;
+      &lt;li&gt;Most preferably, we would like to get all the preferred stimuli (roughly correspond to the local maxima) for a neuron and get the respective score for those peaks.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Purpose&lt;/strong&gt; of the optimization:
+    &lt;ul&gt;
+      &lt;li&gt;Our purpose of doing “optimization” is different from that in many other practical applications.&lt;/li&gt;
+      &lt;li&gt;The “accuracy” of solution is not pursuited in our project, (there is no point spending 80% of time updating a small fraction of pixels’ value). Nor do we aim at minor improvement in the response score, knowing one single most favorable stimuli to a neuron is not very informative, but knowing a bunch of relatively strongly responded stimuli is educational.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h2 id=&quot;algorithm-in-current-experimental-code&quot;&gt;Algorithm in current Experimental Code&lt;/h2&gt;
+&lt;p&gt;It is a classical genetic algorithm.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;So the question is whether genetic algorithm is suitable for our problem. According to &lt;a href=&quot;https://en.wikipedia.org/wiki/Genetic_algorithm#The_building_block_hypothesis&quot;&gt;&lt;strong&gt;building block hypothesis (BBH)&lt;/strong&gt;&lt;/a&gt; Genetic algorithm is useful for cases where each coordinate (gene)/ small bunch of coordinates determine the fitness separately, and those coordinates work as building blocks for the whole system.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;I’m not sure of whether that is the case for the compressed image code space generated by Generative Adversarial Method. It may need further work to get the answer.&lt;/p&gt;
+
+&lt;h2 id=&quot;cma-es-covariance-matrix-adaptation-evolution-strategy&quot;&gt;CMA-ES Covariance Matrix Adaptation Evolution Strategy&lt;/h2&gt;
+
+&lt;p&gt;Comparing to genetic algorithm, CMA ES is an Evolution Algorithm with more rigorous mathematical formalism permitting a more geometrical understanding.&lt;/p&gt;
+
+&lt;p&gt;It models each generation/population of code (“genetic pool”) as a parametrized statistical distribution $P(X,\phi)$. Each step, it generates a sample from the distribution ${X_i}$, i.e. the generation of samples, and then evaluate function value (“fitness”) at these sample points. And then use these sampled values to update the parameters of the distribution $\phi$. And it iterates this process until convergence.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/d/d8/Concept_of_directional_optimization_in_CMA-ES_algorithm.png&quot; alt=&quot;CMA-ES Demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Specificly, it uses a Multivariate Normal Distribution $\bf{m}+\sigma^{(g)}\mathcal N(0,C)$ as the model disctribution class. And sampling from it 
+&lt;script type=&quot;math/tex&quot;&gt;X_k^{(g+1)} \sim \bf{m}^{(g)}+\sigma^{(g)}\mathcal N(0,C^{(g)})&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The mean of the distribution $\bf{m}$ is the estimate of optimal value.&lt;/li&gt;
+  &lt;li&gt;The normal distribution add random noise to the center simulating the mutation process.&lt;/li&gt;
+  &lt;li&gt;$\sigma^{(g)}$ controls the explorative step length. $C^{(g)}$ controls the shape of the equi-density ellipsoid in high-dim space, which controls the direction of exploration in the space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The method evaluates the target function at the sampled points ${X_k^{(g+1)}}$, and uses these values  $f(X_k^{(g+1)})$ to update the mean, step size and covariance matrix parameter $\bf{m}^{(g+1)}, \sigma^{(g+1)}, C^{(g+1)}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mean update&lt;/strong&gt; weighted average the top $\lambda$ fittest sample in the generation.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bf{m}^{(g+1)}=\sum^\mu_{i=1} w_iX_{i:\lambda}&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Covariant Matrix Adaptation&lt;/strong&gt; As the name of the algorithm indicates, this is the most sophisticated and developped step. The tutorial paper introduced 3 different strategies to do Cov Mat update, and presents a blended strategy of the 3 in the demo code. And the target of all these sophistication is to ameliorate the sampling of next generation, i.e. sampling more informative good points while keeping informative.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Naive Cov Matrix Estimation&lt;/em&gt;: i.e. estimate the new covariant matrix from the selected best $\mu$ samples.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_{CMNA}=\frac1\mu \sum_{i=1}^\mu (X_{i:\lambda}^{(g+1)}-m^{(g+1)})(X_{i:\lambda}^{(g+1)}-m^{(g+1)})^T\\
+m^{(g+1)}=\frac1\mu \sum_{i=1}^\mu X_{i:\lambda}^{(g+1)}&lt;/script&gt;
+
+&lt;p&gt;The drawback of which is, it requires relatively large $\mu$ to get a faithful estimate of covariant matrix.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Rank $\mu$ update&lt;/em&gt;: which is similar to the strategy 1, but add a “momentum” / memory term from the last generation. Thus by taking the samples from last generation into account, they can use a smaller number of $\mu$ to estimate $C$.  The covariant information from current generation is denoted by $C_\mu^{(g+1)}$, and the updating rate is governed by $c_\mu$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note that, they especially use $m^{(g)}$ centered and $\sigma^{(g)}$ normalized deviation $Y_{i:\lambda}^{(g+1)} = \frac{X_{i:\lambda}^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$. The purpose of this is to  get rid of the effect of overall stepsize, and make the deviation comparable between generation.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C^{(g+1)}=(1-c_\mu)C^{(g)}+ c_\mu C_\mu^{(g+1)}\\
+C_\mu^{(g+1)}= \frac 1{(\sigma^{(g)})^2}\sum_{i=1}^\mu (X_{i:\lambda}^{(g+1)}-m^{(g)})(X_{i:\lambda}^{(g+1)}-m^{(g)})^T = \sum_{i=1}^\mu Y_{i:\lambda}^{(g+1)} {Y_{i:\lambda}^{(g+1)}}^T&lt;/script&gt;
+
+&lt;p&gt;Note, we can also add $w_i$ weight to do weighted estimation of covariant matrix.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Rank 1 update&lt;/em&gt;: it is to directly add a rank one component $c_1pp^T$ to $C$, which is to increase the spread on the direction of vector $p$, i.e. targeting the ellipsoid into $p$ direction. &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; Like the second strategy, they also utilize a momentum coefficient $c_1$ to control the update rate of covariant matrix.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So which direction should $p$ be target at? In the paper, they cumulate the normalized steps $\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$ in the last few generations to form the $p_c$ vector, and the momentum coefficient is $c_c$. The rationale behind it is that if the steps are always in one direction, then they should try in this direction even harder.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C^{(g+1)}=(1-c_1)C^{(g)} + c_1 p_c^{(g+1)}{p_c^{(g+1)}}^T\\
+p_c^{(g+1)} = (1-c_c) p_c^{(g)} + \sqrt{c_c(2-c_c) \mu_{eff} } 
+\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}&lt;/script&gt;
+
+&lt;p&gt;So mix the 3 strategy together, we get the final form of Covariant Matrix Adaptation.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C^{(g+1)}=(1-c_\mu-c_1) C^{(g)}+ c_\mu \sum_{i=1}^\mu w_i Y_{i:\lambda}^{(g+1)} {Y_{i:\lambda}^{(g+1)}}^T + c_1 p_c^{(g+1)}{p_c^{(g+1)}}^T&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Cumulative Step Size Adaptation&lt;/strong&gt; They separate the update of the overall spread scale $\sigma$ and the spread scale in different directions $C$.&lt;/p&gt;
+
+&lt;p&gt;So this step is to control the overall step length. According to the authors, the strategy is that, if the evolution steps of center is targeting in similar direction, then the step size should be increase to accelerate the walk. If the evolution steps are not correlated and cancel each other, then the step size should be decreased to facilitate more local search.&lt;/p&gt;
+
+&lt;p&gt;$p_s$ is the cumulated evolution path length. $c_s$ control the update rate. And the most important thing to note is that they insert a scaling matrix ${C^{(g)}}^{-1/2}$. The idea is that if the selection of next generation is random, then the ${C^{(g)}}^{-1/2} \frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$ should be a standard normal random vector subject to $\mathcal N(0,I)$. Thus&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p_s^{(g+1)} = (1-c_s) p_s^{(g)} + \sqrt{c_s(2-c_s) \mu_{eff} } {C^{(g)}}^{-1/2}
+\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}&lt;/script&gt;
+
+&lt;p&gt;More specificly, they update $\sigma^{(g)}$ according to whether the evolution path length $p_s^{(g+1)}$ is longer or shorter than its expectation in random selection condition.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\ln \sigma^{(g+1)} = \ln \sigma^{(g)} + \frac{c_s}{d_s} (\frac{\| p_s \|_2}{E\|\mathcal N(0,I)\|_2}-1)\\
+\approx \ln \sigma^{(g)} + \frac{c_s}{d_s} (\frac{\| p_s \|_2 }{\sqrt{n}}-1)&lt;/script&gt;
+
+&lt;p&gt;In another word&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sigma^{(g+1)}= \sigma^{(g)} \exp {\frac{c_s}{d_s} (\frac{\| p_s \|_2 }{\sqrt{n}}-1) }&lt;/script&gt;
+
+&lt;p&gt;To sum up, the parameters controling this algorithm are&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Population size $\lambda$&lt;/li&gt;
+  &lt;li&gt;${w_i}$ weight, and selecting number $\mu$
+    &lt;ul&gt;
+      &lt;li&gt;$\mu_{eff}=(\sum^\mu_{i=1} w_i^2 )^{-1}$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$c_1$, $c_\mu$ controls the fraction of rank 1 and rank $\mu$ update in CMA step&lt;/li&gt;
+  &lt;li&gt;$c_c$, $c_s$ controls the evolution path updating rate of $p_c$ in CMA step and of $p_s$ in $\sigma$ adaptation step respectively.&lt;/li&gt;
+  &lt;li&gt;$d_s$ controls the updating rate of $\sigma^{(g)}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Matlab Code&lt;/strong&gt; And from wiki, I copied the core code implemented in matlab.&lt;/p&gt;
+
+&lt;div class=&quot;language-matlab highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;% Sort by fitness and compute weighted mean into xmean&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arfitness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arindex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arfitness&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;% minimization&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xmean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;xmean&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arindex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;% recombination, new mean value&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% sliced mat * vect = mean col of feature &lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Cumulation: Update evolution paths&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;c&quot;&gt; &lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mueff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invsqrtC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xmean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;hsig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;norm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counteval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chiN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;pc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pc&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hsig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mueff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xmean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Adapt covariance matrix C&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;artmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arindex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repmat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;                  % regard old matrix  &lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;                 % plus rank one update&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hsig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;c&quot;&gt; % minor correction if hsig==0&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;artmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;diag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;artmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;% plus rank mu update&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Adapt step size sigma&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;damps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;norm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chiN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remarks&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Some says CMA-ES can be understood as to fit a quadratic function on the landscape / get second order (Hessian) information and choose the best direction to go!&lt;/li&gt;
+  &lt;li&gt;Wiki says this method works quite well in 10s ~ 100s dimension space! Not sure our 4096 dim space will work.&lt;/li&gt;
+  &lt;li&gt;By definition, the algorithm exhibits invariance to order preserving transforming of function $f$, scaling of $X$, rotation of domain space $R^n$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;amoeba-algorithm&quot;&gt;Amoeba Algorithm&lt;/h2&gt;
+&lt;p&gt;Amoeba Algorithm (a.k.a Down hill simplex algorithm / Nelder Mead Algorithm) &lt;a href=&quot;https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method&quot;&gt;wiki&lt;/a&gt;, randomly set a simplex in high dimensional space, and move the simplex step by step according to the function value at the vertices.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/d/de/Nelder-Mead_Himmelblau.gif&quot; alt=&quot;Amoeba Algorithm Demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In some sense, it is a 1st-order method (comparing to CMA-ES which estimates 2nd order info), as it estimates the “gradient” information from a simplex.&lt;/li&gt;
+  &lt;li&gt;In a $n$ dimensional space, the initiation needs to evaluate $n+1$ function values. And then 1 evaluation is needed each step.&lt;/li&gt;
+  &lt;li&gt;The initialization is tricky and maybe hard to control where the algorithm converge to.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(DETAILS TO BE ADDED.)&lt;/p&gt;
+
+&lt;h2 id=&quot;algorithm-in-the-zoo-black-box-attack-paper&quot;&gt;Algorithm in the ZOO-Black Box Attack paper&lt;/h2&gt;
+
+&lt;p&gt;Combine stochastic coordinate descent and dimension reduction of the input space dimension.&lt;/p&gt;
+
+&lt;p&gt;(DETAILS TO BE ADDED.)&lt;/p&gt;
+
+&lt;h2 id=&quot;targets-next-step&quot;&gt;Targets Next Step&lt;/h2&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Adapt a demo for CMA-ES algorithm in low dimensional problems and get intuition for the rather compicated update rules.&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Try it in normal CNN setting&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Try it in noisy CNN setting (shallower/low-dim ones and deeper ones)
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Get the right noise scheme for CNN. (Cf. Carlos, Poisson Noise mean+-2s.d. covers the full dynamic range of the unit.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Compare with genetic algorithm&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Try in monkey experimental setting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Note that, for a covariant matrix $C$ of a vector of random variables $X$. $v^TCv$ is the variance of the recombined variable $y=v^TX$, i.e. the variance of the whole distribution projected to the line spanned by $v$. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Sun, 09 Sep 2018 00:00:00 -0500</pubDate>
+        </item>
+        
+    </channel>
+</rss>
