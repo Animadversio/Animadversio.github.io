@@ -104,6 +104,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:name
+  tech_note:
+    output: true
+    permalink: /:collection/:name
 
 
 # BUILD SETTINGS

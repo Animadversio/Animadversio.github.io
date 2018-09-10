@@ -1,0 +1,12 @@
+---
+layout: post
+title: Visualizing Wormhole Distortion of Spacetime
+img: "assets/img/portfolio/WormHoleVisualize2.png"
+feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
+author: Binxu Wang
+use_math: true
+comments: true
+date: June 10th, 2018
+tags: [Visualization, Matlab, General Relativity, Astrophysics]
+---
+
