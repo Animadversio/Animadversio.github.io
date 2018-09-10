@@ -5,13 +5,22 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://localhost:4000/</link>
         <description></description>
-        <pubDate>Sun, 09 Sep 2018 21:44:23 -0500</pubDate>
+        <pubDate>Mon, 10 Sep 2018 01:38:57 -0500</pubDate>
         
         <item>
             <title>Derivative Free Optimization Method (Based Feature Visulization) Notes 1</title>
             <link>/2018/09/09/Derivative-Free-Optimization-Method-note.html</link>
             <guid isPermaLink="true">/2018/09/09/Derivative-Free-Optimization-Method-note.html</guid>
-            <description>&lt;h2 id=&quot;task-discription&quot;&gt;Task discription&lt;/h2&gt;
+            <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#task-discription&quot; id=&quot;markdown-toc-task-discription&quot;&gt;Task discription&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#algorithm-in-current-experimental-code&quot; id=&quot;markdown-toc-algorithm-in-current-experimental-code&quot;&gt;Algorithm in current Experimental Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#cma-es-covariance-matrix-adaptation-evolution-strategy&quot; id=&quot;markdown-toc-cma-es-covariance-matrix-adaptation-evolution-strategy&quot;&gt;CMA-ES Covariance Matrix Adaptation Evolution Strategy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#amoeba-algorithm&quot; id=&quot;markdown-toc-amoeba-algorithm&quot;&gt;Amoeba Algorithm&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#algorithm-in-the-zoo-black-box-attack-paper&quot; id=&quot;markdown-toc-algorithm-in-the-zoo-black-box-attack-paper&quot;&gt;Algorithm in the ZOO-Black Box Attack paper&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#targets-next-step&quot; id=&quot;markdown-toc-targets-next-step&quot;&gt;Targets Next Step&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;task-discription&quot;&gt;Task discription&lt;/h2&gt;
 &lt;p&gt;To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. 
 But the optimization task on hand has several &lt;strong&gt;unique features&lt;/strong&gt; that are essential to the choice of optimization algorithms, for example,&lt;/p&gt;
 

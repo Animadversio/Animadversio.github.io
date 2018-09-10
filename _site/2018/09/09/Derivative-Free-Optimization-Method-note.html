@@ -57,6 +57,24 @@
 
     <!-- Google Analytics -->
     
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-125498144-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -65,21 +83,21 @@
 <meta property="og:title" content="Derivative Free Optimization Method (Based Feature Visulization) Notes 1" />
 <meta name="author" content="Binxu Wang" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Task discription To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. But the optimization task on hand has several unique features that are essential to the choice of optimization algorithms, for example," />
-<meta property="og:description" content="Task discription To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. But the optimization task on hand has several unique features that are essential to the choice of optimization algorithms, for example," />
+<meta name="description" content="A website with blog posts and pages" />
+<meta property="og:description" content="A website with blog posts and pages" />
 <link rel="canonical" href="http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html" />
 <meta property="og:url" content="http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html" />
 <meta property="og:site_name" content="The mind palace of Binxu" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-09-09T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Task discription To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. But the optimization task on hand has several unique features that are essential to the choice of optimization algorithms, for example,","author":{"@type":"Person","name":"Binxu Wang"},"@type":"BlogPosting","url":"http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html","headline":"Derivative Free Optimization Method (Based Feature Visulization) Notes 1","dateModified":"2018-09-09T00:00:00-05:00","datePublished":"2018-09-09T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html"},"@context":"http://schema.org"}</script>
+{"description":"A website with blog posts and pages","author":{"@type":"Person","name":"Binxu Wang"},"@type":"BlogPosting","url":"http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html","headline":"Derivative Free Optimization Method (Based Feature Visulization) Notes 1","dateModified":"2018-09-09T00:00:00-05:00","datePublished":"2018-09-09T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/09/09/Derivative-Free-Optimization-Method-note.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
     <title>Derivative Free Optimization Method (Based Feature Visulization) Notes 1 | The mind palace of Binxu</title>
-    <meta name="description" content="Task discriptionTo find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. But the...">
+    <meta name="description" content="">
     -->
 </head>
 
@@ -211,7 +229,16 @@
   </header>
   <section class="post-content">
   
-    <h2 id="task-discription">Task discription</h2>
+    <ul id="markdown-toc">
+  <li><a href="#task-discription" id="markdown-toc-task-discription">Task discription</a></li>
+  <li><a href="#algorithm-in-current-experimental-code" id="markdown-toc-algorithm-in-current-experimental-code">Algorithm in current Experimental Code</a></li>
+  <li><a href="#cma-es-covariance-matrix-adaptation-evolution-strategy" id="markdown-toc-cma-es-covariance-matrix-adaptation-evolution-strategy">CMA-ES Covariance Matrix Adaptation Evolution Strategy</a></li>
+  <li><a href="#amoeba-algorithm" id="markdown-toc-amoeba-algorithm">Amoeba Algorithm</a></li>
+  <li><a href="#algorithm-in-the-zoo-black-box-attack-paper" id="markdown-toc-algorithm-in-the-zoo-black-box-attack-paper">Algorithm in the ZOO-Black Box Attack paper</a></li>
+  <li><a href="#targets-next-step" id="markdown-toc-targets-next-step">Targets Next Step</a></li>
+</ul>
+
+<h2 id="task-discription">Task discription</h2>
 <p>To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. 
 But the optimization task on hand has several <strong>unique features</strong> that are essential to the choice of optimization algorithms, for example,</p>
 
@@ -497,6 +524,45 @@ p_c^{(g+1)} = (1-c_c) p_c^{(g)} + \sqrt{c_c(2-c_c) \mu_{eff} }
 </article>
 
 <!-- Disqus -->
+
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'mind-palace-of-binxu';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mind-palace-of-binxu.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+</div>
+
 
 
 <!-- Post navigation -->

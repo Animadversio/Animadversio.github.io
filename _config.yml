@@ -59,8 +59,8 @@ theme_settings:
     email: true
 
   # Scripts / Features 
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
+  google_analytics: UA-125498144-1 # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname: mind-palace-of-binxu
   katex: false # Enable if using math markup
   
   special_page:
