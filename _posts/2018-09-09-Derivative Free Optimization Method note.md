@@ -3,12 +3,8 @@ layout: post
 title: Derivative Free Optimization Method (Based Feature Visulization) Notes 1
 author: Binxu Wang
 use_math: true
-comments: true
-tags: [Optimization, Algorithm, Machine Learning]
 ---
 
-* TOC
-{:toc}
 
 ## Task discription
 To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. 
