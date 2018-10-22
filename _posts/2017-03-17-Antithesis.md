@@ -42,7 +42,7 @@ Antithesis [^1]
 > 他认为翻译是自己在世间的使命，很干脆地说这一生会翻译到死，但又觉得学术和翻译都只是学问层面的东西，相对于他在灵性层面上对生命与生存终极问题的求解，它们只不过是种手段
 
 ## Antithesis
-在这个世界的行为层面上, 大概任何准则最后，所谓伟大的真理的反面是另一个伟大的真理——我想大约指的就是这些行为层面的heuristic道理。这些两两互相Check(将军)的对偶句, 可以帮助平稳心态。
+在这个世界的行为层面上, 大概任何准则最后都存在与其对偶的另一个真理，所谓伟大的真理的反面是另一个伟大的真理——我想大约指的就是这些行为层面的heuristic道理。这些两两互相Check(将军)的对偶句, 可以帮助达到equanimity。
 
 We should not forget life／world have dark side and bright side  and  neither can annihilate the other. 
 (Maybe that's why the contrast and war between light and dark ／ good and evil prevail so much in the classic texts, religious stories and pop culture. )
