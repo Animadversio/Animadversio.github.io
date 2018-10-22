@@ -5,7 +5,69 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <link>http://localhost:4000/</link>
         <description></description>
-        <pubDate>Mon, 08 Oct 2018 01:30:50 -0500</pubDate>
+        <pubDate>Mon, 22 Oct 2018 02:42:50 -0500</pubDate>
+        
+        <item>
+            <title>This Week's Learning about Brain 2 Frequency Tuning of Hair Cell</title>
+            <link>/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html</link>
+            <guid isPermaLink="true">/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html</guid>
+            <description>&lt;h2 id=&quot;引言-感觉系统&quot;&gt;引言: 感觉系统&lt;/h2&gt;
+&lt;p&gt;一直以来我都被这个简单的事实深深震撼: 我们的心智(mind)其实一直都生活在一个密不透风, 不见天日的黑匣子里(Skull), 但因为我们无比强大的感觉系统(Sensory System), 我们才能在神经信息处理的过程中渲染出这样清晰美妙的主观现实, 并无缝的与这个世界交互. 感觉系统就是这个探测外在物理环境转换成主观现实的存在呀. 
+&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;在科学还属于哲学的时代, 人们就知道人的感觉至少是有5种主要模态(modality)的, 视觉, 听觉, 嗅觉, 味觉, 触觉.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 对于任何一种感觉模态, 神经系统核心的问题都是, 如何快速(fast), 有效(efficient)的表征(represent), 分析(analyze)物理世界的刺激, 得到有用的信息. 类似于对电路的分析, 神经环路的分析(neural circuit analysis), 就在追问神经元内的分子机制, 及其连在一起组成的环路是如何解决上述信号处理中的”工程计算”问题的.&lt;/p&gt;
+
+&lt;p&gt;而这篇post要科普的就是不同生物的听觉感受细胞是如何解决频率选择问题的.&lt;/p&gt;
+
+&lt;h2 id=&quot;频率选择frequency-tuning&quot;&gt;频率选择(Frequency Tuning)&lt;/h2&gt;
+
+&lt;p&gt;这一图像十分经典, 此处不再赘述.&lt;/p&gt;
+
+&lt;h2 id=&quot;听觉感受细胞-hair-cell&quot;&gt;听觉感受细胞: Hair Cell&lt;/h2&gt;
+
+&lt;p&gt;然而对于那些并没有那么长的耳蜗基底膜(Cochlear Basal Membrane)的生物, 怎样才能解决这个问题呢?&lt;/p&gt;
+
+&lt;h2 id=&quot;elegant-solution-of-lower-vertebrate&quot;&gt;Elegant Solution of Lower Vertebrate&lt;/h2&gt;
+&lt;p&gt;在知道谜底时, 我对进化的足智多谋(resourceful)佩服得五体投地—-用不了机械工程(Mechanical Engineering)的办法, 我们就用生化反应与电生理的办法. 让我们一点点揭开答案, 首先看这张图&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Bull_Frog_Electric_Tuning.png&quot; alt=&quot;Exp_data_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;衰减, 震荡, 频率选择特性, 这几个关键词放在一起, 是否让你想起了什么悠远的记忆呢? (比如大一学过的大学物理/电磁学? ) 对的, RC电路.&lt;/p&gt;
+
+&lt;p&gt;在感知觉系统中, 不同生物都面临着相似的”工程”问题的挑战, 而就像其他工程问题一样, 问题总有许多的解决方案, 但最终选择哪一种, 依赖于许多物质条件的限制, 而不只是最优性.&lt;/p&gt;
+
+&lt;p&gt;因而在一些更低等动物简单的狭小的神经系统中, 我们更会被那些有限资源下令人惊艳的”设计”所震撼, 比如这个故事中的”设计”—-采用两个相互耦合的离子通道(电压依赖Ca2+通道与Ca+
+依赖的K+通道) 组成震荡的动力系统已然让人惊叹; 而用细胞内在的震荡频率(intrinsic frequency)作为对输入频率的选频器更是让人击节称叹; 在这个设计下, 不同细胞里不同的通道的表达量(expression level), 即可调节通道密度(channel density)这个参数来调节动力系统的内在震荡频率, 从而组成空间分频阵列, 也即Frequency Place Code. 只能说, 如果让我解决这个工程问题, 我有限的知识与智力一定想不出这么简洁优美的办法, 在生物系统中实现(Implement).&lt;/p&gt;
+
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+&lt;p&gt;这个故事是在Cell Neurobiology课上听到, 当时就被惊艳到, 并决定写个post督促自己学习下. 查了文章才发现, 这一系列的实验、模型工作是30年前的, 大致在1980-1990左右完成. (事实上, 那几年有大量关于听毛细胞的基本电生理属性的经典工作被完成. )完全可以想见那时人们第一次看到细胞膜上能记录到如电路般漂亮的震荡电压时的震撼与惊喜. 从这里得到了这样几个教训(lesson):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;基于很好的单细胞电生理数据, 能做出很漂亮的单细胞动力学模型，进一步推断出通道的机制也就不奇怪了.  能遇到这样漂亮数据的生物物理学家真的三生有幸. (看到那样干净的电震荡数据, 哪怕是物理系的本科生, 脑子里大概也能立即蹦出几个电路模型来)&lt;/li&gt;
+  &lt;li&gt;而要实际验证这些模型的推断则需要精细的patch clamp实验, 确定每个电生理参数. &lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 模型是一个开始, 而不是终结.&lt;/li&gt;
+  &lt;li&gt;不同寻常的模型生物身上, 也许有着很不同的问题解决策略, (这个发现是在乌龟, 小鸡和牛蛙等生物身上得到的). 需要注意, 低等动物的问题解决策略不一定就简单, 反而可能更令人称叹! 高等动物的解决方案也不一定就复杂. (Cf. Sebastian Seoug, 一些Cortex也许比C Elegans和Retina更容易理解)&lt;/li&gt;
+  &lt;li&gt;硬币的另一面, 这个故事虽然极其美丽, 但可推广性也许比较有限, 应用价值也不一定就很大. (也许可以开发基因疗法帮助你家的乌龟治疗听力损伤?) 不过, 这也是在post里选择讲这个故事的原因: 我想去展现一些美丽而无用的东西, 而这是科学与自然(Science and Nature)本来的样子.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;这篇post是一系列试图以容易的方式解释Neuroscience的一部分, 大概也是我对自己写作能力的训练了. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;心理系教材上还会提到自身知觉, 以及平衡觉等. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Fettiplace, Robert. “Electrical tuning of hair cells in the inner ear.” Trends in Neurosciences 10.10 (1987): 421-425. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;Hudspeth, A. J., and R. S. Lewis. “Kinetic analysis of voltage‐and ion‐dependent conductances in saccular hair cells of the bull‐frog, Rana catesbeiana.” The Journal of Physiology 400.1 (1988): 237-274. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Wed, 17 Oct 2018 00:00:00 -0500</pubDate>
+        </item>
         
         <item>
             <title>Derivative Free Optimization Method (Based Feature Visulization) Notes 1</title>
@@ -297,6 +359,194 @@ p_c^{(g+1)} = (1-c_c) p_c^{(g)} + \sqrt{c_c(2-c_c) \mu_{eff} }
 &lt;/div&gt;
 </description>
             <pubDate>Sat, 01 Sep 2018 00:00:00 -0500</pubDate>
+        </item>
+        
+        <item>
+            <title>Some principles to establish a lifestyle</title>
+            <link>/2018/05/30/Some-principles-of-establishing-a-lifestyle.html</link>
+            <guid isPermaLink="true">/2018/05/30/Some-principles-of-establishing-a-lifestyle.html</guid>
+            <description>&lt;h2 id=&quot;一些建立生活体系的基本原则&quot;&gt;一些建立生活体系的基本原则&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得&lt;/p&gt;
+
+  &lt;p&gt;止者，所当止之地，即至善之所在也。知之，则志有定向。静，谓心不妄动。安，谓所处而安。虑，谓处事精详。得，谓得其所止。&lt;/p&gt;
+
+  &lt;p&gt;四书章句集注 · 大学&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;回归&lt;strong&gt;简单&lt;/strong&gt;的东西. 一本书 一张纸 一杯茶 一个程序. 一个时刻一心干一件事, 书桌桌面 电脑桌面东西不宜太多. 将复杂化为简单。(Cf. Physics from symmetry)&lt;/li&gt;
+  &lt;li&gt;从&lt;strong&gt;感知&lt;/strong&gt;(~&lt;strong&gt;mindfulness&lt;/strong&gt; 正念 正觉)开始做起, (感知即仁, cf. 程子)
+    &lt;ul&gt;
+      &lt;li&gt;Brain是进行任何思考活动的基础，在使用这一工具前，检查其状态，调谐(Tuning)其状态是必须的。感知与Meditation类似这种调谐身心的方法。（类似的使用自己的感知觉前 也应试图检查 反思其工具是否有问题，e.g. 是否眼镜片脏了）&lt;/li&gt;
+      &lt;li&gt;从感知自己的状态，心情开始: 感知的目的是知识 了解, 进而是去改变, 调整, 不让不好的思维 习惯 状态控制自己的心智太久
+        &lt;ul&gt;
+          &lt;li&gt;一种改变自己状态的经典有效方法就是与自己写信/日记(which 自己曾经实践过很久)：通过文字经过屏幕的feedback，与自己交流理清思想。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;自己常见的&lt;strong&gt;不适状态&lt;/strong&gt;:
+        &lt;ul&gt;
+          &lt;li&gt;不知如何选择; 焦虑未来 焦虑已经做出的选择;&lt;/li&gt;
+          &lt;li&gt;为(可能)惹别人不开心而焦虑;&lt;/li&gt;
+          &lt;li&gt;为自己的self image受损而焦虑;&lt;/li&gt;
+          &lt;li&gt;回避状态，因为一件事很困难而一直做别的, 不去处理这一件事，拖延 【face what your fear&lt;/li&gt;
+          &lt;li&gt;性欲(Sexual Arousal)的annoying;&lt;/li&gt;
+          &lt;li&gt;注意力不集中于一件事, 经常switch到手机 其他窗口中etc;&lt;/li&gt;
+          &lt;li&gt;一段时间内拒绝思考未来, 不做计划; 拒绝回顾过去, 不去反思.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;感知与反思过程所要弄清的一些问题: 目前的(心理)状态, motivation目标，外在压力来源(如ddl 事件), 扰动来源，环境状况&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;感知的基础是正常的Brain &lt;strong&gt;cognitive function&lt;/strong&gt;. 作为生物体，保证足够的睡眠休息, 咖啡是必须的. (cf. 生生之道, 以促进生的方式对待生. )。
+    &lt;ul&gt;
+      &lt;li&gt;相反，不足够的睡眠之后就要去小心 risk of a malfunctioning brain ，比如如下方面：
+        &lt;ul&gt;
+          &lt;li&gt;Memory 短时记忆力很差, 容易忘记事情 容易丢东西落东西;&lt;/li&gt;
+          &lt;li&gt;Attention 注意力很难集中;&lt;/li&gt;
+          &lt;li&gt;Self Perception 感知自己的状态、思想已经很困难，更难关注到，帮助到别人的状态；&lt;/li&gt;
+          &lt;li&gt;Planning 难以规划未来。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;将理解 从自己推已及人 :
+    &lt;ul&gt;
+      &lt;li&gt;对自己有了充分的感知之后, 了解了自己的状态和情绪, 从而能更自信的交接事物, &lt;strong&gt;理解他人&lt;/strong&gt;，而不容易因为自己的情绪状态影响他人。&lt;/li&gt;
+      &lt;li&gt;i.e. 关心自己是关心别人的发端和基础，知识基础以及习惯基础&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;人是有时间维度的. 完全生活在当下（一个没有过去也没有未来的点状人）也会带来负面结果.&lt;/li&gt;
+  &lt;li&gt;在时间维度的一边是将来，我们需要 Expect and Plan，进行规划预期.
+    &lt;ul&gt;
+      &lt;li&gt;规划未来与感知当下 看似矛盾, 实际统一：没有规划的人会陷入永远的焦虑，因而难以感知当下；没有对当下自己状态、需要、目标的感知，也无从规划. (Duality of present and future)&lt;/li&gt;
+      &lt;li&gt;为了做到一些事情(比如早睡)，就需要预先去规划/修改规划一番。&lt;/li&gt;
+      &lt;li&gt;清楚的规划使人与别人的合作可以更方便一些，不会因为自己计划的不确定 而不断干扰他人计划。&lt;/li&gt;
+      &lt;li&gt;【过于活在当下，不想即将发生的事儿，也许是自己不断迟到的一个原因&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;时间维度的另一端是过去，是memory，是experience，是dataset。
+    &lt;ul&gt;
+      &lt;li&gt;挖掘这一dataset，做pattern recognition, clustering (unsupervised learning), 是了解自己当下、了解自己状态的基础。&lt;/li&gt;
+      &lt;li&gt;对于自己做的事引发的好或者不好的结果(these teaching signal enables supervised learning)，对于他人的exemplar，这些teaching dataset是Reinforcement Learning，改变自己的行为的基础。反思可以加强teaching signal，放大reward 与punishment，从而让人学的更快。(Cf. Skinner的鸽子)&lt;/li&gt;
+      &lt;li&gt;不时整理数据集，写Note。(Cf. 曾子, 吾日三省吾身)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;于了解自己发端，之后进行思想领域、知识领域、实践领域的探索&lt;/li&gt;
+  &lt;li&gt;思想领域
+    &lt;ul&gt;
+      &lt;li&gt;不时检查思想领域的统一性 一贯性。思想/价值观本身像manifold 是由局部平凡的小块拼接起来的。每个局部上有统一的坐标，结构，整体上则非。&lt;/li&gt;
+      &lt;li&gt;逻辑性并非人思维自带的模块，所以需要不时加入这一模块检查自身思想、价值体系&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;知识领域
+    &lt;ul&gt;
+      &lt;li&gt;整个的知识图景，与局部的细节。(Knowledge tree/network的重要性)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;实践领域
+    &lt;ul&gt;
+      &lt;li&gt;Reinforcement Learning的重要性。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;知行合一&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Written in the last semester of undergrad. When I was intensively taking Math, Chinese Philosophy and History of Buddhism course. Trying to connect between Philosophical theory and the Psychological theory and Data Science to build a possible routine for life. Practise the idealism of breaking the barrier and let the different languages in different fields talk to each other. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Wed, 30 May 2018 00:00:00 -0500</pubDate>
+        </item>
+        
+        <item>
+            <title>Antithesis</title>
+            <link>/2017/03/17/Antithesis.html</link>
+            <guid isPermaLink="true">/2017/03/17/Antithesis.html</guid>
+            <description>&lt;h1 id=&quot;antithesis-&quot;&gt;Antithesis &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Search out necessary in everything for the sake of divine; and the divine we should search for the sake of a life of such happiness as our nature permits.&lt;/p&gt;
+
+  &lt;p&gt;——Plato Timaeus 69A&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;inspiration&quot;&gt;Inspiration&lt;/h2&gt;
+
+&lt;p&gt;记得那些最能inspire自己 在心中激起漩涡的词语：
+​    Neuro、死亡、爱(亲密关系)、语言、物理／数学的世界图景&lt;/p&gt;
+
+&lt;p&gt;很多时候找不到了方向，一些词句会像咒语一样可以点亮人的精神。&lt;/p&gt;
+
+&lt;p&gt;或许开始时忘记了他们曾经戳中你的地方，然而将这些种子摆在心头，有一些idea就会复苏出来。&lt;/p&gt;
+
+&lt;p&gt;大概只有自己找到那种能enlighten自己的理念的光芒，才可能有inspire别人的力量吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;idealism&quot;&gt;Idealism&lt;/h2&gt;
+
+&lt;p&gt;理念当然要与世界理念相和，才能实体化。&lt;/p&gt;
+
+&lt;p&gt;当你自己都不怎么相信你的理念时，去修正它把它变成你能相信的版本。&lt;/p&gt;
+
+&lt;h2 id=&quot;truth-and-comprehension&quot;&gt;Truth and Comprehension&lt;/h2&gt;
+&lt;p&gt;人的时间是不足够的。生命、学习、工作、与恋人相处 任何一件事的时间都不足够。换言之，人对知的欲望 与 对爱的欲望总能超出他任何时刻所拥有的知识与爱，在自然的状态下足够就成了不可能的事情。&lt;/p&gt;
+
+&lt;p&gt;因此也 &lt;strong&gt;不可能&lt;/strong&gt; 通过学会关于这个世界的一切细节来理解世界。你从个人经验中知道大部分知识都有保质期，有熟练度(或者说直观intuit能力) 随时间的降低。不管你之前学的有多么的好，理解的多么深入，直观能力就是会不由人做主的衰退，以至于思考愈发费劲。（没有将相关的知识 技能导入内存 cache 总会降低运行速度）。所以有一套用得娴熟的个人toolkit是可行的。有一个成体系的知识框架也总是可行的，所谓知道什么样的知识可以在哪一个框架里学习求得。而时刻保持着所有的知识储备大约是不可行的。&lt;/p&gt;
+
+&lt;p&gt;一些基本的知识框架(Math Philosophy History Physics Compuation…)， 越需要时间才能理解的东西 就越需要及早学会越好呀。&lt;/p&gt;
+
+&lt;p&gt;有关知识学术与个体生命的关联, &lt;a href=&quot;http://mp.weixin.qq.com/s/LDk1YGg29Eq0TC7eGw4X8Q&quot;&gt;张卜天的理念&lt;/a&gt; 很戳人.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;高僧印光把“死”字挂墙头，睁眼即见，“每译完一本书我离死亡也近了一步，我没有那么多时间了。”
+他认为翻译是自己在世间的使命，很干脆地说这一生会翻译到死，但又觉得学术和翻译都只是学问层面的东西，相对于他在灵性层面上对生命与生存终极问题的求解，它们只不过是种手段&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;antithesis&quot;&gt;Antithesis&lt;/h2&gt;
+&lt;p&gt;在这个世界的行为层面上, 大概任何准则最后，所谓伟大的真理的反面是另一个伟大的真理——我想大约指的就是这些行为层面的heuristic道理。这些两两互相Check(将军)的对偶句, 可以帮助平稳心态。&lt;/p&gt;
+
+&lt;p&gt;We should not forget life／world have dark side and bright side  and  neither can annihilate the other. 
+(Maybe that’s why the contrast and war between light and dark ／ good and evil prevail so much in the classic texts, religious stories and pop culture. )&lt;/p&gt;
+
+&lt;p&gt;不因为看到了黑暗而否定美好的存在，也不因沉浸于美好而遗忘许多领域的黑暗。&lt;/p&gt;
+
+&lt;p&gt;不因注视着黑暗而绝望无力；也不因被神圣召唤而自大不已。&lt;/p&gt;
+
+&lt;p&gt;不因理智的伟大而妄想用理智在黑板上把握世界；也不因在神／自然面前理智的渺小低微而不敢前行。&lt;/p&gt;
+
+&lt;p&gt;不因大部分方程都没有解析解就放弃这种理论的把握方式转求Mathematica；也不因我们能从极少的几种解方程手段 极少的几个解中得到的直觉推广到大量普遍行为 而抛弃数值计算。&lt;/p&gt;
+
+&lt;p&gt;不因追求不犯错误（sine culpa）而在无法获得完美知识的世界里, 无法做出决断与尝试；也不因为了做出尝试, 而忘记去追求更完美的知识。&lt;/p&gt;
+
+&lt;p&gt;不因某种根本上的虚无而放弃神圣与美；也不因神圣与美而忘记身边虚无的潜伏。&lt;/p&gt;
+
+&lt;p&gt;不因崇高而忘记在某种意义上（在神的眼中以及失去了合适context）它的可笑；也不因为它的可笑而忘记它也有崇高的地方。&lt;/p&gt;
+
+&lt;p&gt;不因被嘲笑, 而忘记你所坚持的理念；不因无视嘲笑, 而忘记你的理念还未能通达很多人。&lt;/p&gt;
+
+&lt;p&gt;不因人的愚蠢而摒弃同类, 遗世独立；也不因为与人的关系, 而包容 忽视人类身上的脆弱 鲁莽与愚蠢。&lt;/p&gt;
+
+&lt;p&gt;不因追求神 而忘记对身边人们的爱；也不因沉浸于与人们的关系 而忘记了神殿的存在。&lt;/p&gt;
+
+&lt;p&gt;信任人的理智，而去不滥用智慧。&lt;/p&gt;
+
+&lt;p&gt;相信曾有过的伟大的人格与德性，也不忘记这种德性在人身上的稀有以及困难。&lt;/p&gt;
+
+&lt;p&gt;对这个世界矛盾性、两面性的认识，以及内在心态的平衡equanimity，直到现在依旧是值得追求的东西。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Antithesis意为对偶句，或者正反题。Written as diary on 2017.3.27，Revised on 2018.2.15, 2018.10.21. 迷茫时的自我探索，读来依旧心动不已。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Fri, 17 Mar 2017 00:00:00 -0500</pubDate>
         </item>
         
     </channel>

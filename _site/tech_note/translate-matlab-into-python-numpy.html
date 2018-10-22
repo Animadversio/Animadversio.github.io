@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 
+      <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 <html>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
@@ -35,7 +56,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/tech_note/math-intensive-github-blog-construction">
+    <link rel="canonical" href="http://localhost:4000/tech_note/translate-matlab-into-python-numpy">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="http://localhost:4000///feed.xml"/>
@@ -77,26 +98,26 @@
     
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Math Intensive Github Blog Construction | The mind palace of Binxu</title>
+<title>How to translate matlab code into python (numpy) | The mind palace of Binxu</title>
 <meta name="generator" content="Jekyll v3.8.3" />
-<meta property="og:title" content="Math Intensive Github Blog Construction" />
+<meta property="og:title" content="How to translate matlab code into python (numpy)" />
 <meta name="author" content="Binxu Wang" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Overview Objective:" />
-<meta property="og:description" content="Overview Objective:" />
-<link rel="canonical" href="http://localhost:4000/tech_note/math-intensive-github-blog-construction" />
-<meta property="og:url" content="http://localhost:4000/tech_note/math-intensive-github-blog-construction" />
+<meta name="description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration." />
+<meta property="og:description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration." />
+<link rel="canonical" href="http://localhost:4000/tech_note/translate-matlab-into-python-numpy" />
+<meta property="og:url" content="http://localhost:4000/tech_note/translate-matlab-into-python-numpy" />
 <meta property="og:site_name" content="The mind palace of Binxu" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-09-10T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Overview Objective:","author":{"@type":"Person","name":"Binxu Wang"},"@type":"BlogPosting","url":"http://localhost:4000/tech_note/math-intensive-github-blog-construction","headline":"Math Intensive Github Blog Construction","dateModified":"2018-09-10T00:00:00-05:00","datePublished":"2018-09-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/tech_note/math-intensive-github-blog-construction"},"@context":"http://schema.org"}</script>
+{"description":"Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration.","author":{"@type":"Person","name":"Binxu Wang"},"@type":"BlogPosting","url":"http://localhost:4000/tech_note/translate-matlab-into-python-numpy","headline":"How to translate matlab code into python (numpy)","dateModified":"2018-09-10T00:00:00-05:00","datePublished":"2018-09-10T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/tech_note/translate-matlab-into-python-numpy"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>Math Intensive Github Blog Construction | The mind palace of Binxu</title>
-    <meta name="description" content="OverviewObjective:">
+    <title>How to translate matlab code into python (numpy) | The mind palace of Binxu</title>
+    <meta name="description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; ...">
     -->
 </head>
 
@@ -232,7 +253,7 @@
     <div class="content">
       <article >
   <header id="main" style="background-image: url('/')">
-    <h1 id="Math+Intensive+Github+Blog+Construction" class="title">Math Intensive Github Blog Construction</h1>
+    <h1 id="How+to+translate+matlab+code+into+python+%28numpy%29" class="title">How to translate matlab code into python (numpy)</h1>
     <p class="meta">
     September 10, 2018
      - Binxu Wang
@@ -240,70 +261,70 @@
   </header>
   <section class="post-content">
   
-    <h1 id="overview">Overview</h1>
-<p><strong>Objective</strong>:</p>
+    <p>Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration.</p>
+
+<p>But if we just want to translate an algorithm from one language to another, we can do so.</p>
+
+<p><strong>Objective</strong> : If we have a script in matlab, how can we translate that into python. (<code class="highlighter-rouge">numpy</code> and <code class="highlighter-rouge">matplotlib</code>)</p>
 
 <ul>
-  <li>Build a online blog. Most preferably</li>
-  <li>Posts can be written in Markdown, which is the format of most of my notes.
+  <li>General
     <ul>
-      <li>Math formula (in Latex syntax) and equation rendering are</li>
+      <li>Replace all the comment mark <code class="highlighter-rouge">%</code> with <code class="highlighter-rouge">#</code>. use <code class="highlighter-rouge">''''''</code> for multiline.</li>
+      <li>Discard all <code class="highlighter-rouge">end</code> and corret the indentation by tab</li>
+      <li>Line break <code class="highlighter-rouge">...</code> in mat , <code class="highlighter-rouge">\</code> in python</li>
+      <li><code class="highlighter-rouge">lambda</code> is protected in python, use another var name</li>
+    </ul>
+  </li>
+  <li>Operators
+    <ul>
+      <li><code class="highlighter-rouge">^</code> in matlab = <code class="highlighter-rouge">**</code> in python</li>
+      <li><code class="highlighter-rouge">.*</code> <code class="highlighter-rouge">./</code> <code class="highlighter-rouge">.^</code> in matlab = default operator in <code class="highlighter-rouge">numpy</code></li>
+      <li>Matrix transpose <code class="highlighter-rouge">'</code> into <code class="highlighter-rouge">.T</code></li>
+      <li>Matrix multiplication <code class="highlighter-rouge">*</code> in matlab, <code class="highlighter-rouge">.</code> in Mathematica, but not easy in python. Seems for 2 <code class="highlighter-rouge">ndarray</code>, <code class="highlighter-rouge">A@B</code> do the job in numpy!</li>
+    </ul>
+  </li>
+  <li>Indexing
+    <ul>
+      <li>Matlab indexing using <code class="highlighter-rouge">( , )</code>, python using <code class="highlighter-rouge">[ , ]</code>. Mathematica using <code class="highlighter-rouge">[[, ]]</code></li>
+      <li>Matlab start from <code class="highlighter-rouge">1</code> end in <code class="highlighter-rouge">end</code>, numpy from <code class="highlighter-rouge">0</code> to ``(nothing)</li>
+    </ul>
+  </li>
+  <li>Number Array
+    <ul>
+      <li>Matlab use <code class="highlighter-rouge">strt:step:end</code> numpy use <code class="highlighter-rouge">range(strt,end,step)</code></li>
+      <li>And use <code class="highlighter-rouge">np.arange</code> for actual array.</li>
+      <li><code class="highlighter-rouge">size</code> in matlab, <code class="highlighter-rouge">len()</code> in python</li>
+      <li><code class="highlighter-rouge">[;]</code> can represent break the row in matlab, but cannot do so in python.</li>
+    </ul>
+  </li>
+  <li>Flow Control
+    <ul>
+      <li><code class="highlighter-rouge">for i=1:2:10</code> to <code class="highlighter-rouge">for i in range(1,10,2): </code></li>
+      <li>Note add <code class="highlighter-rouge">:</code> to any control command.</li>
+    </ul>
+  </li>
+  <li>subfunction define
+    <ul>
+      <li>in matlab
+        <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">function</span> <span class="n">out</span><span class="o">=</span><span class="n">Y</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> 
+              <span class="k">...</span><span class="c">. </span>
+  <span class="k">end</span> 
+</code></pre></div>        </div>
+      </li>
+      <li>in python
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Y</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">out</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Complicated control of <code class="highlighter-rouge">ndarray</code> and <code class="highlighter-rouge">matrix</code> in numpy
+    <ul>
+      <li>Reduce into 1D: <code class="highlighter-rouge">M.flat</code> return iterator, <code class="highlighter-rouge">M.flatten()</code> return a 1_D array</li>
     </ul>
   </li>
 </ul>
-
-<p><strong>Solution</strong></p>
-
-<p>After researching for some time (like 10 hours, I start from afternoon and get posts online at midnight), I found this combination of tools can perfectly suits my need!</p>
-
-<p><strong>Tools</strong>: Github.page + jekyll + MathJax + Disqus + Google Analytics</p>
-
-<ul>
-  <li><code class="highlighter-rouge">Github.page</code>: provide the space / server that the pages lives on. But the basic <code class="highlighter-rouge">Github.page</code> does not support math rendering. So that trigger this whole research.
-    <ul>
-      <li>As we base the system on <code class="highlighter-rouge">Github.page</code>, it’s pretty easy to upload. Just use <code class="highlighter-rouge">git push</code> to deploy the website.</li>
-    </ul>
-  </li>
-  <li><code class="highlighter-rouge">Jekyll</code>: A “blog-aware, static site generator in Ruby”, which means it compiles the Markdown and whatever you write into <code class="highlighter-rouge">html</code> webpages and link them together. And it allows local server to preview the website.</li>
-  <li><code class="highlighter-rouge">MathJax</code>: Math formula rendering engine, which is supported in <code class="highlighter-rouge">Jekyll</code>.</li>
-  <li><code class="highlighter-rouge">Disqus</code>: Tool for discussion under post.</li>
-  <li><code class="highlighter-rouge">Google Analytics</code>: Tool to inspect the most visited page and article.</li>
-</ul>
-
-<p>Basing on these tool, I can achieve likewise result as Wordpress blog site, and the style and site structure are far more versatile. Besides, the whole solution is free.</p>
-
-<h1 id="tutorials">Tutorials</h1>
-<p>Some Good tutorial I found:</p>
-
-<p>I start from this post, aiming at exactly the same thing as I do: 
-https://bbabenko.github.io/moving-to-github/</p>
-
-<p>Official Step by Step tutorial
-https://jekyllrb.com/docs/step-by-step/08-blogging/</p>
-
-<p>Simple Jekyll tutorial with Github Pages
-https://briancaffey.github.io/2016/03/17/jekyll-tutorial.html</p>
-
-<p>How to use MathJax in Jekyll generated Github pages
-http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/
-This tutorial is perfect except a few minor changes we have to make:</p>
-<ul>
-  <li>We do not need to change the markdowen processor now. <code class="highlighter-rouge">kramdown</code> is OK!</li>
-  <li>And we need a newer MathJax engine to do render. Cf. the news https://www.mathjax.org/cdn-shutting-down/
-    <ul>
-      <li>Use <code class="highlighter-rouge">src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;"&gt;</code> instead of <code class="highlighter-rouge">src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;</code></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="how-to-upload-a-post">How to upload a post?</h1>
-<p>(This part is mainly for my own reference)</p>
-
-<ol>
-  <li>Editing the local repertoire (directory denoted as <code class="highlighter-rouge">.io/</code>), with any editor you like. (Sublime, Typora, MacDown)</li>
-  <li>Run <code class="highlighter-rouge">jekyll serve</code> in the console from the directory of <code class="highlighter-rouge">.io/</code>, preview the changes you’ve just make. (If you do something to <code class="highlighter-rouge">_config.yml</code> you’d better restart the <code class="highlighter-rouge">jekyll serve</code> to see the change.)</li>
-  <li>After you feel everything is good, use <code class="highlighter-rouge">git</code> in console, or github desktop to <code class="highlighter-rouge">commit</code> and <code class="highlighter-rouge">push</code></li>
-</ol>
 
 
   
@@ -315,35 +336,35 @@ This tutorial is perfect except a few minor changes we have to make:</p>
         <div class="meta">Share</div>
         
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/tech_note/math-intensive-github-blog-construction" target="_blank" title="Share on Facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/tech_note/translate-matlab-into-python-numpy" target="_blank" title="Share on Facebook">
 			<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Share on Facebook</span>
 		</a>
         </li>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?source=http://localhost:4000/tech_note/math-intensive-github-blog-construction&text=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu:%20http://localhost:4000/tech_note/math-intensive-github-blog-construction" target="_blank" title="Tweet">
+            <a href="https://twitter.com/intent/tweet?source=http://localhost:4000/tech_note/translate-matlab-into-python-numpy&text=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu:%20http://localhost:4000/tech_note/translate-matlab-into-python-numpy" target="_blank" title="Tweet">
 			<i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Tweet</span>
 		</a>
         </li>
          
         <li>
-            <a href="https://plus.google.com/share?url=http://localhost:4000/tech_note/math-intensive-github-blog-construction" target="_blank" title="Share on Google+">
+            <a href="https://plus.google.com/share?url=http://localhost:4000/tech_note/translate-matlab-into-python-numpy" target="_blank" title="Share on Google+">
 			<i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Share on Google+</span>
 		</a>
         </li>
             
         <li>
-            <a href="http://www.reddit.com/submit?url=http://localhost:4000/tech_note/math-intensive-github-blog-construction&title=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu" target="_blank" title="Share on Reddit">
+            <a href="http://www.reddit.com/submit?url=http://localhost:4000/tech_note/translate-matlab-into-python-numpy&title=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu" target="_blank" title="Share on Reddit">
 			<i class="fa fa-reddit-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Share on Reddit</span>
 		</a>
         </li>
            
         <li>
-            <a href="mailto:?subject=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu&body=:%20http://localhost:4000/tech_note/math-intensive-github-blog-construction" target="_blank" title="Email">
+            <a href="mailto:?subject=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu&body=:%20http://localhost:4000/tech_note/translate-matlab-into-python-numpy" target="_blank" title="Email">
 			<i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
 			<span class="sr-only">Email</span>
 		</a>
@@ -364,16 +385,16 @@ This tutorial is perfect except a few minor changes we have to make:</p>
     
 
     
-    <a class="button" href="/tags#blog+construction">
-      <p><i class="fa fa-tag fa-fw"></i> blog construction</p>
+    <a class="button" href="/tags#coding">
+      <p><i class="fa fa-tag fa-fw"></i> coding</p>
     </a>
     
-    <a class="button" href="/tags#jekyll">
-      <p><i class="fa fa-tag fa-fw"></i> jekyll</p>
+    <a class="button" href="/tags#matlab">
+      <p><i class="fa fa-tag fa-fw"></i> matlab</p>
     </a>
     
-    <a class="button" href="/tags#tech+note">
-      <p><i class="fa fa-tag fa-fw"></i> tech note</p>
+    <a class="button" href="/tags#python">
+      <p><i class="fa fa-tag fa-fw"></i> python</p>
     </a>
     
   </div>
@@ -430,13 +451,13 @@ s.setAttribute('data-timestamp', +new Date());
 
   <div id="post-nav">
   
-  
-  <div id="next-post" class="post-nav-post">
-      <p>Next post</p>
-      <a href="/tech_note/translate-matlab-into-python-numpy">
-        How to translate matlab code into python (numpy)
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/tech_note/math-intensive-github-blog-construction">
+        Math Intensive Github Blog Construction
       </a>
   </div>
+  
   
 </div>
 
