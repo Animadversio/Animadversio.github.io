@@ -6,7 +6,7 @@ permalink: /about/
 tags: [About]
 ---
 
-I'm Binxu Wang. Now I'm in PhD program of Neuroscience in Washington University in St Louis. I get my B.S. in Physics, from Yuanpei College, in Peking University, China, (with additional coursework in Philosophy, Math and CS). So now I'm trying to utilize the quantitative and computational thinking to understand our brain and mind. 
+I'm Binxu Wang. Now I'm in PhD program of Neuroscience in Washington University in St Louis. I get my B.S. in Physics, from Yuanpei College, in Peking University, China, (with additional coursework in Philosophy, Math and CS). During undergrad, I've worked with computational neuroscientist Louis Tao. Now I'm trying to utilize the quantitative and computational thinking to understand our brain and mind better. 
 
 Personally, I love many intellectually inspiring things!  
 * I love the beauty of math, the exploration in the platonic world, the highest  intellectual product of human mind. 
