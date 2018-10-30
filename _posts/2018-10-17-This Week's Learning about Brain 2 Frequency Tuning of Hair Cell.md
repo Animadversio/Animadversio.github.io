@@ -6,6 +6,7 @@ use_math: true
 comments: true
 feature-img: "assets/img/posts/hair_cell/frogears.jpg"
 img: "assets/img/posts/hair_cell/frogears.jpg"
+date: Oct. 29th, 2018
 tags: [This Week's Learning, Auditory Neuroscience, Sensory System, Neural Circuit, Biophysics]
 ---
 
