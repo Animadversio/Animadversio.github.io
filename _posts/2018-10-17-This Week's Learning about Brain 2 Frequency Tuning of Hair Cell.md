@@ -47,7 +47,7 @@ tags: [This Week's Learning, Auditory Neuroscience, Sensory System, Neural Circu
 [^2]: Narayan, S. S., Temchin, A. N., Recio, A., & Ruggero, M. A. (1998). [Frequency tuning of basilar membrane and auditory nerve fibers in the same cochleae](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3578392/). Science (New York, N.Y.), 282(5395), 1882-4. 
 
 
-[^9]: 事实上正式因为耳蜗处的位置编码理论, 现代的人工耳蜗植入物便是讲输入声音分解成不同频段的成分输送给耳蜗不同位置的听纤维的. 换言之, 是使用电子电路替耳蜗完成了频率分选的任务. 
+[^9]: 事实上正是因为耳蜗的位置编码理论, 现代的人工耳蜗植入物(Cochlea Implant)便是将输入声音分解成不同频段成分输送给耳蜗不同位置的听纤维的. 换言之, 是使用电子电路代替耳蜗完成了频率分选的任务. 
 
 然而问题来了, 对于许多并没有很长的耳蜗基底膜(Cochlear Basal Membrane)的生物, (如乌龟, 小鸡, 青蛙), 他们的耳蜗机械力学属性并不独特, 无法帮助他们完成频率选择, 那怎样才能解决这个问题呢? (如下图的牛蛙, 便是下文中诸多研究的对象, 箭头指向其耳朵)
 
