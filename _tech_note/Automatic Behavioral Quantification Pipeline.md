@@ -2,7 +2,7 @@
 layout: post
 title: Automatic Behavioral Quantification Pipeline 
 author: Binxu Wang
-date: Nov 18th, 2018
+date: Nov 17th, 2018
 comments: true
 tags: [tech note, Image Analysis, Machine Learning, Behavior]
 ---
@@ -84,8 +84,6 @@ self.oldDF = pd.read_hdf(os.path.join(self.dir,'CollectedData_'+self.scorer+'.h5
 self.dataFrame.to_csv(os.path.join(self.dir,"CollectedData_" + self.scorer + ".csv"))
 self.dataFrame.to_hdf(os.path.join(self.dir,"CollectedData_" + self.scorer + '.h5'),'df_with_missing',format='table', mode='w')
 ```
-
-
 
 Reference for Pandas data table construction
 
