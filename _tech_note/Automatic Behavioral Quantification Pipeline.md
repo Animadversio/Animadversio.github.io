@@ -7,14 +7,20 @@ comments: true
 tags: [tech note, Image Analysis, Machine Learning, Behavior]
 ---
 
-# How to automatically analyze behavior video? 
+## How to automatically analyze behavior video? 
+
+[`DeepLabCut`](https://github.com/AlexEMG/DeepLabCut) is a powerful tool to rapidly[^0] train a neural network (based on ResNet) to track keypoints on movement videos, esp. those of moving human or animals. Thus this is a game changing tool for all kind of behavior quantification for neuroscience and psychology researchers (can be applied to nearly any behavioral science topic, e.g. motor learning, motor control, facial expression, social interaction...). The workflow is relatively simple and it scarcely takes time after the network have been trained, and the video analysis can be done automatically. Because of this it's really favorable to the reserchers doing long term ecological video recording. 
+
+However, several persisitant GUI bug in this module drives me to find a workaround of that, which result in the pipeline in this technical post. 
+
+[^0]: It is REALLY FAST! The first time I trained a network to track facial keypoints, it was all within half an afternoon. 
 
 ## Problem: Highly unstable GUI of `DeepLabCut` 
-I've installed `DeepLabCut` 2.0 on Windows 10 (with GPU) and Ubuntu environment. In both setting I faced quite serious GUI crash problem, which means there are thousands of ways that you can click the wrong button / in the wrong order / drag the slide bar too fast / in the retrograde direction, which can cause the GUI breakdown, and in many cases the python kernel crash togetherwith. However, if there is no GUI involved, the `DeepLabCut` works really well! Building up and training deepnetwork (using GPU), analyzing, annotating and exporting video work smoothly and coherently. [^0] This bug is driving me mad, as it could crash and destroy the unsaved dataset (the most labor costing part of this pipeline) you are making when doing annotation. This is unacceptable for a smooth workflow. 
+I've installed `DeepLabCut` 2.0 on Windows 10 (with GPU) and Ubuntu environment. In both setting I faced quite serious GUI crash problem, which means there are thousands of ways that you can click the wrong button / in the wrong order / drag the slide bar too fast / in the retrograde direction, which can cause the GUI breakdown, and in many cases the python kernel crash togetherwith. However, if there is no GUI involved, the `DeepLabCut` works really well! Building up and training deepnetwork (using GPU), analyzing, annotating and exporting video work smoothly and coherently. [^1] This bug is driving me mad, as it could crash and destroy the unsaved dataset (the most labor costing part of this pipeline) you are making when doing annotation. This is unacceptable for a smooth workflow. 
 
 Certainly, the GUI is inevitable in the frame selection and keypoint annotation processes. But I notice that the `DeepLabCut` module only requires input from the bunch of frames/images and data table files, `CollectedData_xxx.csv` and `CollectedData_xxx.h5`. Thus I get the idea that I can use some more robust and common software with GUI to annotate and save the keypoints' coordinates, and covert that into the formats (`.csv`,`.h5`) that `DeepLabCut` requires to construct its training dataset. This is the motivation of this project. 
 
-[^0]: I've looked for solutions for this problem. The cause of the bug may  root in the complex interaction of GUI, C++ system and the python modules. I cannot find a solution to that online, maybe this is a unique problem of my computer setting. Or maybe it's just an unsolved bug of the module, as it's fairly new. 
+[^1]: I've looked for solutions for this problem. The cause of the bug may  root in the complex interaction of GUI, C++ system and the python modules. I cannot find a solution to that online, maybe this is a unique problem of my computer setting. Or maybe it's just an unsolved bug of the module, as it's fairly new. 
 
 ## Tools
 
@@ -24,8 +30,8 @@ As I usually do, I try to combine several pre-established tools with respective 
 
 * [`DeepLabCut`](https://github.com/AlexEMG/DeepLabCut): the recent game changing breakthrough, which is the major player of this pipeline. 
 * [`ImageJ`](https://imagej.nih.gov/ij/download.html): traditional image analysis software for scientific image analysis. It has pretty robust and easy to use GUI and lots of plugins. It can transform the `.avi` movie into frame sequences in many formats, and can also take screenshots and save as image files. Thus, it's suitable for **Frame Extraction**
-    * [`Point Picker`](http://bigwww.epfl.ch/thevenaz/pointpicker/):  An ImageJ plugin developped by EPFL scientists which can pick up to 1024 points [^1] in an image, and can deal with image sequence well. Thus it's suitable to **Label Frames** 
-* Interface (data format transforming) script: (The only part I write) Transform the output file of `Point Picker` to the required formats of `deeplabcut.create_training_dataset(.)`. 
+    * [`Point Picker`](http://bigwww.epfl.ch/thevenaz/pointpicker/):  An ImageJ plugin developped by EPFL scientists which can pick up to 1024 points [^2] in an image, and can deal with image sequence well. Thus it's suitable to **Label Frames** 
+* [Interface (data format transforming) script](https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/PointPickerDataTransform.ipynb): (The only part I write) Transform the output file of `Point Picker` to the required formats of `deeplabcut.create_training_dataset(.)`. 
     * [`Pandas`](https://pandas.pydata.org/pandas-docs/stable/): `DataFrame` in `Pandas` is the intermediate data structure I used to do the transformation. 
 
 ![ImageJ Output]({{ site.baseurl }}/assets/img/posts/ImageJ_DeepLabCut/ImageJ PointPicker Output.png)
@@ -64,8 +70,7 @@ deeplabcut.create_labeled_video(config_path ['/analysis/project/videos/reachingv
 deeplabcut.plot_trajectories(config_path,['/analysis/project/videos/reachingvideo1.avi'])
 ```
 
-And Voila! Here is the tracking result: 
-![Tracking result](https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/TrackedFaceClip.gif)
+And Voila! Here is the tracking result: [Tracking result](https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/TrackedFaceClip.gif)
 
 
 ## Drawback
