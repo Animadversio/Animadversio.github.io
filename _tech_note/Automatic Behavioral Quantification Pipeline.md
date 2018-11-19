@@ -22,7 +22,7 @@ As I usually do, I try to combine several pre-established tools with respective 
 
 **Tools**
 
-* `DeepLabCut`: the recent game changing breakthrough, which is the major player of this pipeline. 
+* [`DeepLabCut`](https://github.com/AlexEMG/DeepLabCut): the recent game changing breakthrough, which is the major player of this pipeline. 
 * [`ImageJ`](https://imagej.nih.gov/ij/download.html): traditional image analysis software for scientific image analysis. It has pretty robust and easy to use GUI and lots of plugins. It can transform the `.avi` movie into frame sequences in many formats, and can also take screenshots and save as image files. Thus, it's suitable for **Frame Extraction**
     * [`Point Picker`](http://bigwww.epfl.ch/thevenaz/pointpicker/):  An ImageJ plugin developped by EPFL scientists which can pick up to 1024 points [^1] in an image, and can deal with image sequence well. Thus it's suitable to **Label Frames** 
 * Interface (data format transforming) script: (The only part I write) Transform the output file of `Point Picker` to the required formats of `deeplabcut.create_training_dataset(.)`. 
@@ -64,6 +64,9 @@ deeplabcut.create_labeled_video(config_path ['/analysis/project/videos/reachingv
 deeplabcut.plot_trajectories(config_path,['/analysis/project/videos/reachingvideo1.avi'])
 ```
 
+And Voila! Here is the tracking result: 
+![Tracking result](https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/TrackedFaceClip.gif)
+
 
 ## Drawback
 Smooth as it may seem, there is an drawback of this annotation workflow. The annotation function is not exactly equivalent to the native `DeepLabCut` one. Note, in original `DeepLabCut` module, it's allowed to miss some label in a frame, as **occlusion** happens sometime. But it's harder to do so in `ImageJ` setting. 
@@ -74,7 +77,6 @@ This is a major direction that I'd like to improve if I'd heavily lean on this p
 ## Appendix: Solution Process and Reference
 (This part is a collection of references that I checked in this process. )
 
-
 Major dataframe I/O lines in [`DeepLabCut` module](https://github.com/AlexEMG/DeepLabCut/blob/master/deeplabcut/generate_training_dataset/labeling_toolbox.py) 
 ```python
 self.oldDF = pd.read_hdf(os.path.join(self.dir,'CollectedData_'+self.scorer+'.h5'),'df_with_missing')
@@ -83,17 +85,17 @@ self.dataFrame.to_csv(os.path.join(self.dir,"CollectedData_" + self.scorer + ".c
 self.dataFrame.to_hdf(os.path.join(self.dir,"CollectedData_" + self.scorer + '.h5'),'df_with_missing',format='table', mode='w')
 ```
 
-[Pandas Reference for Data I/O](https://pandas.pydata.org/pandas-docs/stable/io.html#csv-text-files)
 
-Pandas datatable construction
+
+Reference for Pandas data table construction
 
 * [MultiIndexing Format](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.MultiIndex.html)
-* 
+* [Indexing](https://pandas.pydata.org/pandas-docs/stable/indexing.html)
+* [Data I/O](https://pandas.pydata.org/pandas-docs/stable/io.html#csv-text-files)
 
 [YAML Parser in Python](https://stackoverflow.com/questions/1773805/how-can-i-parse-a-yaml-file-in-python)
 
-### Construction
-
+Details at my github repertoire [KeyPointDataPreprocess4DeepLabCut](https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut). 
 
 
 
