@@ -31,11 +31,18 @@ But if we just want to translate an algorithm from one language to another, we c
 + Number Array
     * Matlab use `strt:step:end` numpy use `range(strt,end,step)`
     * And use `np.arange` for actual array. 
-    * `size` in matlab, `len()` in python
+    * `np.array` has a little bit complex control of dimension: all 1-d array (even vertical ones) are neither 1*n nor n*1 thus has to be reshaped to do matrix multiply! 
+    * `size()`, `length()` in matlab, `len()` in python
     * `[;]` can represent break the row in matlab, but cannot do so in python. 
+    * Append with `+` or `[].append()` in Python; `list = [list, new_itm]` in Matlab
++ Dictionary and Struct
+    * In matlab, no `dict` to use! `struct` is similar. 
 + Flow Control 
     * `for i=1:2:10` to `for i in range(1,10,2): `
-    * Note add `:` to any control command. 
+    * Note Python add `:` to any control command; Matlab don't
++ Common command
+    * Print out words: In Python, `print("%.f, %.d".%( x, arg2))`; In matlab `fprintf("x: %.1f, arg1: %d", x, arg2)`. Or using `disp(var)`
+    * Formatted string control: In python, `"%.f, %.d".%( x, arg2)`, in matlab `str = sprintf("x: %.1f, arg1: %d", x, arg2)`
 + subfunction define
     + in matlab 
 ```matlab
