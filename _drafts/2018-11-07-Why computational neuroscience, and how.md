@@ -9,9 +9,7 @@ tags: [Personal Writing]
 
 # Why computational Neuroscience and how?
 
-
-
-**为何是计算的视角** 就像现在所谓人工智能的顶会名字NIPS(Neural Information Processing Systems)提示的那样神经系统的一些部分如感知觉系统是很好的信息处理系统. 
+**为何是计算的视角** 就像现在所谓人工智能的顶会名字NeurIPS(Neural Information Processing Systems)提示的那样神经系统的一些部分如感知觉系统是很好的信息处理系统. 
 当然不同于人设计的系统, 生物的神经系统其最主要的功能是去帮助生物的生存(否则为什么要开发维持这么耗能的一个系统运转....), 而非去最佳的实现general的计算功能. 
 
 特别的神经系统的不同部分的功能也有很大的不同, 一些部分就是被设计成简单的条件反射回路. 
@@ -28,11 +26,11 @@ neural coding / neural circuit
 
 我们都知道一些
 
-如果一个实验真的在计算机模拟(*in silico*)中就能实现, 那利用算法实验去做初步筛选, 那便能节省下大量的经费和计算. 在物理领域, 太多已经well-establish的领域的
+如果一个实验真的在计算机模拟(*in silico*)中就能实现, 那利用算法实验去做初步筛选, 那便能节省下大量的经费和计算. 在物理领域, 以及太多已经well-establish的领域的经验, 数值模拟可以很大程度上取代实际的实验. 
 
 记得一个生物学家在演讲时特别像宣战一般提出"Don't think, first observe, then think." 大概展现出人在自然进化的设计面前心智的渺小. 
 
-比如结构生物学家感兴趣的蛋白质相互作用实验, 很大程度上就能在计算机内利用计算物理/化学的方法去解决. (SfN上听的一个talk 关于计算机内大规模并行筛选能作用于特定channel的小分子药物. )
+比如结构生物学家感兴趣的蛋白质相互作用实验, 很大程度上就能在计算机内利用计算物理/化学的方法去解决. (SfN上听的一个talk 关于计算机内大规模并行筛选能作用于特定channel的小分子药物, 可以用两三个人在半年内开发完系统, 然后利用超级计算机在两天内计算出上万个药物分子的结合特性). 
 
 
 **理论与计算** 理论像是告诉我们神经系统可以怎么工作, 但实际是如何工作的需要实验与数据的验证. 
@@ -45,8 +43,7 @@ neural coding / neural circuit
 
 问什么样的问题, 可以理论与实验结合 彼此推进向前走. 
 
-**理论的没落?** 其实本科时就一直有这样的感觉, 但最近去了SfN又看了些数据, 才感到这种感觉是有数据支持的. 一个可以参考的数据是几个经典的计算/理论神经科学的期刊的影响因子变化, 比如考察[Neural Computation Impact Factor](https://www.researchgate.net/journal/0899-7667_Neural_Computation), [Journal of Computational Neuroscience Impact Factor](https://www.researchgate.net/journal/0929-5313_Journal_of_Computational_Neuroscience)中的IF影响因子曲线, 近年的影响因子相比于10年前, 20年前甚至一半还不到. 
-如何解释这个数据可以讨论, 但基本上说明现在的计算神经文章越来越没有人读了, 或者计算神经的好文章也越来越少发到这些期刊上了. (我也感觉到现在neural computation上的文章越来越没有创新性, 或者是承接以前的工作, 或者是一些很trivial的)
+**理论的没落?** 其实本科时就一直有这样的感觉, 但最近去了SfN又看了些数据, 才感到这种感觉是有数据支持的. 一个可以参考的数据是几个经典的计算/理论神经科学的期刊的影响因子变化, 比如考察[Neural Computation Impact Factor](https://www.researchgate.net/journal/0899-7667_Neural_Computation), [Journal of Computational Neuroscience Impact Factor](https://www.researchgate.net/journal/0929-5313_Journal_of_Computational_Neuroscience)中的IF影响因子曲线, 近年的影响因子相比于10年前, 20年前甚至一半还不到. 如何解释这个数据很可以讨论, 但基本上说明现在的计算神经文章越来越没有人读了, 或者计算神经的好文章也越来越少发到这些期刊上了. (我也感觉到现在Neural Computation上的文章越来越没有创新性, 或者是承接以前的工作, 或者是一些很trivial的模型拓展. )
 
 为何会如此呢? 一门承载了人们理想的
 
