@@ -56,8 +56,6 @@ neural coding / neural circuit
 考察一门学科
 
 ## 未来何在
-
-
 在Salk Institute非常有幸听到了Terry Sejnowski的即兴酒后演讲. 他从历史角度提出的一点很有启发性. 现代的人工智能系统(Artificial Neural Network)结构很大程度上来源于50年前或者更早时期的对神经系统的理解与抽象化, 神经网络的一些基本结构: summation and output, nonlinear unit, weight learning, multi-layer / hierachical architecture, 对应于. 
 
 而对生物皮层结构更深的理解是否能导向搭建更好, 更节约, 更有效的智能系统, 这一点其实我们并不清楚. 但的确有人在朝着这个方向努力(), 让我们拭目以待. 
@@ -65,7 +63,7 @@ neural coding / neural circuit
 ## Acknowledgement
 本文系SfN2018会后有感而发, 与一些Allen, Blue Brain, UWashington, UCSD, Salk, NYU同做计算神经研究的同学的聊天, 以及在UCSD与王海霄, 王彬同学的探讨都对本文提供了许多的灵感. 
 
-虽然自己的经验肯定极其有限, 但对这个领域的思考和求索也是在本科的最后两年在Prof. Louis Tao处工作时一直在进行的, 因此也不是一日之功.  
+虽然自己的经验肯定极其有限, 但对这个领域的思考和求索也是本科最后两年在Prof. Louis Tao处工作时一直在进行的, 因此也不是一日之功.  
 
 
 
