@@ -20,7 +20,6 @@ This work is motivated by Christopher Nolan's [*Interstellar*](https://movie.dou
 # Results
 
 
-
 # Acknoledgement 
 Many thanks to Wenhan Guo who has implemented the system in his freshman year, which gives me courage to do the work as a term project. 
 
