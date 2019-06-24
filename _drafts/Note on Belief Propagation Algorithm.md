@@ -55,11 +55,16 @@ To
 
 ## Derivation 推导
 
-## Convergence / Exactness 收敛性、精确性
-收敛性以及精确性决定于
 
 
 ## Intuition 算法的直观理解
+
+
+
+## Convergence / Exactness 收敛性、精确性
+收敛性以及精确性决定于图的结构。
+
+当整个图的结构是树时，整个算法是
 
 
 
