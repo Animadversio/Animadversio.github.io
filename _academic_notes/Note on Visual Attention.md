@@ -18,6 +18,9 @@ From Christofer Koch 2013 Lecture Visual Attention and Consciousness
 ## Selective Attention
 
 * Bottom Up Attention “Catch your eye ball”
+  * Sometimes called Saliency! 
+  * There is good [algorithm](http://www.saliencytoolbox.net/publications.html) to calculate / simulate saliency
+  * Even commercialized! Really important for Advertisement and Printing industry.  
 * Top Down Attention : Flexible and task dependent
   * Spatial based attention;
   * Feature based attention: Very interesting phenomenon
