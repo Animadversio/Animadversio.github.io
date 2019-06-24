@@ -55,9 +55,20 @@ This tutorial is perfect except a few minor changes we have to make:
 2. Run `jekyll serve` in the console from the directory of `.io/`, preview the changes you've just make. (If you do something to `_config.yml` you'd better restart the `jekyll serve` to see the change.)
 3. After you feel everything is good, use `git` in console, or github desktop to `commit` and `push`
 
-*Note*: under current Windows environment, it seems we have to use `bundle exec jekyll serve` to serve it locally. 
+# Issue in Windows 
+*Note*: 
 
-And if encounter error like `Error:  Permission denied - bind(2) for 127.0.0.1:4000` , [thanks to this post](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/) Just kill the `FxService` in the Service part. 
+If encounter error like `C:/Ruby25-x64/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in `require': cannot load such file -- bundler (LoadError)`
+Refers to this [issue](https://github.com/jekyll/jekyll/issues/5165). 
+```
+$ gem install bundler
+$ bundle install
+$ bundle exec jekyll serve
+```
+under current Windows environment, it seems we have to use `bundle exec jekyll serve` to serve it locally. 
+
+If encounter error like `Error:  Permission denied - bind(2) for 127.0.0.1:4000` , [thanks to this post](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/) Just kill the `FxService` in the Service part. 
+
 
 # How to add a top bar section
 
