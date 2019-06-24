@@ -107,6 +107,9 @@ collections:
   tech_note:
     output: true
     permalink: /:collection/:name
+  academic_notes:
+    output: true
+    permalink: /:collection/:name
 
 
 # BUILD SETTINGS

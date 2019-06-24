@@ -1,0 +1,16 @@
+---
+layout: page
+title: Notes
+permalink: /academic_notes/
+feature-img: assets/img/pexels/eyesight_Iris.jpg
+---
+
+<h1>Latest Notes</h1>
+
+<ul>
+  {% for post in site.academic_notes %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a> </h2> {{ post.date | date_to_string }} - {{ post.author }} 
+    </li>
+  {% endfor %}
+</ul>

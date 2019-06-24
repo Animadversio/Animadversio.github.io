@@ -55,5 +55,28 @@ This tutorial is perfect except a few minor changes we have to make:
 2. Run `jekyll serve` in the console from the directory of `.io/`, preview the changes you've just make. (If you do something to `_config.yml` you'd better restart the `jekyll serve` to see the change.)
 3. After you feel everything is good, use `git` in console, or github desktop to `commit` and `push`
 
+*Note*: under current Windows environment, it seems we have to use `bundle exec jekyll serve` to serve it locally. 
 
+And if encounter error like `Error:  Permission denied - bind(2) for 127.0.0.1:4000` , [thanks to this post](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/) Just kill the `FxService` in the Service part. 
+
+# How to add a top bar section
+
+1. add a html at base folder `academic note.html`, like this just a normal html page file. 
+2. initialize a folder to contain your posts `.\_academic_notes`
+3. change the `_config.yml` file in the `Collections` section 
+
+```yaml
+# PORTFOLIO
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:name
+  tech_note:
+    output: true
+    permalink: /:collection/:name
+  academic_notes:
+    output: true
+    permalink: /:collection/:name
+
+```
 
