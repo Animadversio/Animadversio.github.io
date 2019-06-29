@@ -1,22 +1,16 @@
-## Constrained CMA-ES Algorithm
+Constrained CMA-ES Algorithm
+=======
 
 
-
-## Target 
+# Target 
 
 CMA-ES is used in constrained optimization in some case, and we have to handle it in some way. So how could it handle this geometric boundary? 
 
-
-
-## Objective 
-
+# Objective 
 
 
 
-
-## Existing CMA-ES algorithm 
-
-
+# Existing CMA-ES algorithm 
 
 
 
@@ -52,9 +46,15 @@ Then name $z=A^{-1}x$, the $z$ will resides in a sphere with radius $\sqrt{const
 
 As $A=VD^{1/2}$ and normally $D$ is arranged by the value of eigenvalue of $\Sigma$, the first vertical vector $A_1=\sqrt \lambda_1 v_1$ is the direction corresponding to the largest eigen value, i.e. the longest axis of the ellipsoid, i.e. the direction that sphere gets most extension. And lower vectors corresponds to shorter axis.  
 
-Thus the point of CMA-ES is to morph this gaussian ellipsoid in a sensible way to sense the gradient of the landscape and migrate to the minimum / maximum. 
+Back to the main subject, the point of CMA-ES is to morph this gaussian ellipsoid in a sensible way to sense the gradient of the landscape and migrate to the minimum / maximum. So how is this achieved computationally? 
 
 ## Ellipsoid Morphing in Covariant Matrix Adaptation
 
+Note that, for non-eigen vector direction $y$, $y^T\Sigma y=\|A^Ty\|=Var(y^Tx)$ describe the distribution / expansion on the $y$ axis. Thus the simple way to expand or contract the distribution in some direction is to add rank-1 matrix to the covariate matrix $\Sigma+ cyy^T$ would expand the distribution in y direction if $c>0$. 
 
+
+
+So for CMA-ES, we want the distribution to expand in the direction that is most probable to yield lower objective functions. 
+
+# Boundary Handling Method 
 
