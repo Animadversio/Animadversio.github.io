@@ -52,9 +52,21 @@ Back to the main subject, the point of CMA-ES is to morph this gaussian ellipsoi
 
 Note that, for non-eigen vector direction $y$, $y^T\Sigma y=\|A^Ty\|=Var(y^Tx)$ describe the distribution / expansion on the $y$ axis. Thus the simple way to expand or contract the distribution in some direction is to add rank-1 matrix to the covariate matrix $\Sigma+ cyy^T$ would expand the distribution in y direction if $c>0$. 
 
-
-
 So for CMA-ES, we want the distribution to expand in the direction that is most probable to yield lower objective functions. 
 
 # Boundary Handling Method 
+
+The constraint is usually defined by a function on the optimization space $g(x)$. $g(x)\leq0$ define the feasible zone. 
+
+## Resampling 
+
+In the sample generation phase, it's easy to evaluate the feasibility function and only select the feasible offsprings. 
+
+## Covariance Matrix Adaptation
+
+
+
+
+
+
 

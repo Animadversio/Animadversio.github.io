@@ -2,7 +2,7 @@
 layout: post
 title: Note on Algorithm for Non-Negative Matrix Factorization
 author: Binxu Wang
-date: May 18th, 2019
+date: June 25th, 2019
 comments: true
 use_math: true
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, Numerical Method]
@@ -13,17 +13,38 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Mat
 
 # Problem Setting 
 
+The original problem of non-negative matrix factorization is simple, if the dissimarity $D(A||HW)$between original matrix and reconstructed one is L2 distance than, 
+$$
+argmin_{H,W} \|A-HW\|_F^2, \\
+s.t.\ W\succeq0, H\succeq0
+$$
+The non-negative constraint applies element-wise. 
+
+If the dissimilarity is quantified by cross-entropy, then it could be written as 
+$$
+argmin_{H,W} D_{KL}(A||HW), \\
+s.t.\ W\succeq0, H\succeq0
+$$
+
+## Regularization to promote sparsity and other property
+
+Note to promote sparsity and other desirable property, we can add other regularization terms to objective. 
 
 
 
+Note NMF and soft label K-means clustering is mathematically equivalent! 
 
-# Algorithm 
+# Algorithm
 
 For this problem, the basic idea is that when we focus on part of variables `H` or `W` the problem becomes a linearly constraint convex sub-problem, (even with some regularization term it's still a convex problem,) thus could be solved unanimously with matured method. But the alternating between `H` and `W` makes the problem non-convex. 
 
 Because of this many algorithms has `Alternative` in its name. 
 
-One algorithm that really interests us is `hals`, i.e. Hierarchical Alternative Least Square Algorithm. 
+## Alternative Least Square
+
+
+
+One algorithm that really interests us is Hierarchical Alternative Least Square Algorithm (`hals`). 
 
 ## Hierarchical Alternative Least Square Algorithm
 
