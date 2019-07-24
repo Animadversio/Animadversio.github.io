@@ -1,6 +1,6 @@
 ---
 layout: post
-title: This Week's Learning about Brain 4 To see or not to see, that's a question
+title: This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)
 author: Binxu Wang
 use_math: true
 comments: true
@@ -9,7 +9,8 @@ typora-root-url: ..\assets\img\posts\Visual_consciousness
 typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 ---
 
-# 看得见还是看不见, 这是一个问题! ——视觉意识的神经相关物
+# 看得见还是看不见, 这是一个问题! 
+
 如果问你, 你现在看到了什么, 你可以不假思索地说, 就是眼前的屏幕嘛. 如果稍微受过一点生理学或者神经科学训练的人也许会说, 我们看到的是这个充满电磁波的世界里, 光学波段辐射被眼球的光学元件折射之后, 落在我们视网膜上的影像. 
 
 然而我们不总是能看见落到我们视网膜上的东西. 稍加反思, 我们都会想到自己夏日午后**看着**窗外出神的时候, 其实并没有**看见**窗外有什么景色；对着讲台发呆的时候也没有**看到**黑板上的字是什么；对着击球手飞速击出的棒球同样略过了视网膜, 但是否产生了知觉只有他知道. 简而言之, 就像英语中see（看到）与look（看的动作）不同, 我们看到的东西绝不是落在我们视网膜上的光子所携带的所有信息[^1]——你看不见不可见光也看不到偏振. 那么是什么决定了我们能看到什么以及看到的世界是什么样子呢?
