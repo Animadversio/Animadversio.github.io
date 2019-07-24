@@ -35,7 +35,7 @@ typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 
 * **瞬态知觉与视觉掩蔽(Masking)**: 掩蔽(Masking)翻译得接地气一点就是遮盖, 说白了就是通过一个刺激来影响另一个刺激引起的知觉. 通常是呈现一个极短时间(20-100ms)的暂态(transient)图片, 然后紧接着呈现一个噪声图片或是干扰刺激. 如果不加掩蔽刺激, 我们便能看清图片, 然而由于干扰刺激, 我们没办法识别前一个刺激中的精细信息. 所以这些信息也输入了我们眼中, 然而还没被加工进入意识就被后一个刺激打乱了. 
 
-![demo_noise_mask]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/demo_noise_mask.gif)
+![demo_noise_mask]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/demo_character.gif)
 
 必须要承认视觉系统在加工图像时改变了视觉输入的许多方面, 使得我们感受到的世界与这个真实的世界有所不同. 如果我们意识到的不是我们视网膜上的图像, 那我们能意识到我们脑中神经活动**渲染的世界**嘛? 这个问题换一种说法讲就是, 我们意识到的视觉世界与哪里的神经活动相关呢, 如果不是视网膜, 那么是大脑中的什么皮层呢? (视网膜听起来还很低级, 而大脑以及皮层则是各种高级功能甚至意识的所在地. 不过皮层看起来很平等, 但一些皮层比另一些更平等. )
 
