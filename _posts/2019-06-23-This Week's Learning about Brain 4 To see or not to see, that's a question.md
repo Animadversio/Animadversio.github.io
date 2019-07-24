@@ -26,15 +26,15 @@ typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 
 *  **边缘错觉(Contour Illusion)**: 有时通过巧妙的几何设计我们会"看到"刺激中并不存在的部分. 例如经典的Kanizsa三角形, 我们会“看到”不存在的三角形边界, 即所谓错觉边界(illusory boundary). 
 
-![kanizsa_triangle](/kanizsa_triangle.gif)
+![kanizsa_triangle]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/kanizsa_triangle.gif)
 
 * **运动错觉(Motion Illusion)**: 有时我们感受到的世界并不是他本来的样子. 如下图(Flash Lag Effect)中如果我们将注意力放在移动的红点上, 则会感受到两点共同出现时红点更靠右. 而事实上两者仅出现在在视频一帧上相同x坐标的位置上, 是纵向对齐的. 因而不对齐的效果是视觉加工的结果. (更有趣的一点是, 如果我们的注意力放在绿点上并一直期待绿点的出现, 那上述不对齐(misalignment)现象就会削弱许多. 因此一些研究者将这一现象归因于我们对视觉场景的期待. )
 
-![Flag_lag](/Flash_lag.gif)
+![Flag_lag]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/Flash_lag.gif)
 
 * **瞬态知觉与视觉掩蔽(Masking)**: 掩蔽(Masking)翻译得接地气一点就是遮盖, 说白了就是通过一个刺激来影响另一个刺激引起的知觉. 通常是呈现一个极短时间(20-100ms)的暂态(transient)图片, 然后紧接着呈现一个噪声图片或是干扰刺激. 如果不加掩蔽刺激, 我们便能看清图片, 然而由于干扰刺激, 我们没办法识别前一个刺激中的精细信息. 所以这些信息也输入了我们眼中, 然而还没被加工进入意识就被后一个刺激打乱了. 
 
-![demo_noise_mask](/demo_noise_mask.gif)
+![demo_noise_mask]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/demo_noise_mask.gif)
 
 必须要承认视觉系统在加工图像时改变了视觉输入的许多方面, 使得我们感受到的这个世界与这个真实的世界有所不同. 如果我们意识到的不是我们视网膜上的图像, 那我们能意识到我们脑中神经活动**渲染的世界**嘛? 这个问题换一种说法讲就是, 我们意识到的视觉世界与哪里的神经活动相关呢, 如果不是视网膜, 那么是大脑中的什么皮层呢? 视网膜听起来还很低级, 而大脑以及皮层则是各种高级功能甚至意识的所在地. 但即使皮层看起来很平等, 一些皮层比另一些更平等. 
 
@@ -46,7 +46,7 @@ typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 
 [^4]: 如果读者看过17年的电影[敦刻尔克](https://movie.douban.com/subject/26607693/)的话, 一定记得其中有个情节是被拯救的盟军飞行员阻止船长把船开回去救人, 争吵中把船长的儿子撞下了舷梯磕伤了后脑勺, 然后他说自己什么也看不到了. 让我猜的话很可能是后脑勺对应的枕叶(Occipital lobe)的初级视皮层被破坏导致什么也看不见, 即使他前端的视网膜与视神经看起来完好无损. 
 
-![Dunkirk](https://img3.doubanio.com/view/photo/l/public/p2520234495.jpg)
+![Dunkirk]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/p2520234495.jpg)
 
 寻找视觉意识相关物的一大困难在于, 视皮层的神经元既被外界刺激激活又被内在的心理过程影响. 大多数日常情形下我们意识到的世界与外界刺激本身强烈相关, 于是我们就很难将记录到的神经反应相关于视觉意识本身[^5], 因为它可能只是低级刺激加工的结果, 并没有被意识到——就像视网膜上神经元的反应. 所以寻找视觉意识的神经相关物的实验关键就是要将视觉刺激与意识分离(dissociate)开来, 让两者不再相关. 比如双眼竞争(Binocular rivalry), 比如模棱两可(Ambiguity)造成的视觉双稳态(Perceptual bi-stability)都是经典的实验范式. 这些范式中外界刺激没有改变, 而内在的知觉变了, 我们能清楚地将神经活动相关到视觉意识上. 而另一些时候, 使用相同的临界刺激(Threshold stimuli), 我们感觉到或是没感觉到同样可以比较出视觉意识带来的不同. 
 
@@ -64,15 +64,15 @@ typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 
 在2005年的实验中[^6], 实验者向被试左眼输入红色条纹, 右眼输入蓝色垂直方向条纹, 让被试随时报告主观感知到的图像, 实验者就可以通过这些报告来标记时间轴, 并训练分类器来解码被试看到的图像. 更进一步直接记录被试正常情况下观看红色条纹与蓝色条纹的响应, 也可以训练分类器来识别被试到底看到了哪种图像.  
 
-![image-20190723220342257](/image-20190723220342257.png)
+![image-20190723220342257]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/image-20190723220342257.png)
 
 下图显示了根据不同脑区的活动模式训练的分类器的成绩, 以及随着体素(Voxel)数量[^7]增加而成绩的提高. 下图中用V1-V3的活动模式训练分类器都可以取得不错的成绩, 也就是说即使在fMRI的测量精度下依然可以从V1-V3早期视觉皮层读出不同眼睛的输入信息, 也就是当时的视觉表象. 
 
-![image-20190723212027183](/image-20190723212027183.png)
+![image-20190723212027183]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/image-20190723212027183.png)
 
 上述实验的刺激可能过于初级, 我们同样可以使用复杂图像刺激输入双眼, (如房子和人脸)[^61] . 如同我们预期的, 在编码复杂刺激的脑区(如FFA对人脸, PPA对地点, 环境有选择性)同样可以观察到随着视觉表象的交替, FFA与PPA的激活也随之交替. 
 
-![image-20190723220044214](/image-20190723220044214.png)
+![image-20190723220044214]({{ site.baseurl }}/assets/img/posts/Visual_consciousness/image-20190723220044214.png)
 
 不过这两个实验不太令人满意, 总感觉这一范式有些初级. 在人身上, 双眼信息在V1才第一次汇聚到同一个神经元上. 所以可以想象由于某种局部的神经计算(比如相互抑制(mutual inhibition), 适应(adaptation)以及与LGN之间的反馈动力学(feedback dynamics)), 两眼输入交替主导着初级视皮层的活动. 于是下游的神经活动也被两种刺激交替主导. 但我们并不能肯定V1的活动模式是否在更精细的意义上与我们的视觉表象对应. 因此在人类的双眼竞争的现象中, 初级视皮层编码了哪只眼睛的图像成为我们的视觉表象, 但我们依然不知道**初级视皮层否足以产生我们的视觉意识**. 
 
