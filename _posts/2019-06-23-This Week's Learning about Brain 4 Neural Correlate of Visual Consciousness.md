@@ -9,7 +9,7 @@ typora-root-url: ..\assets\img\posts\Visual_consciousness
 typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 ---
 
-# 看得见还是看不见, 这是一个问题! 
+## 看得见还是看不见, 这是一个问题! 
 
 如果问你, 你现在看到了什么, 你可以不假思索地说, 就是眼前的屏幕嘛. 如果稍微受过一点生理学或者神经科学训练的人也许会说, 我们看到的是这个充满电磁波的世界里, 光学波段辐射被眼球的光学元件折射之后, 落在我们视网膜上的影像. 
 
