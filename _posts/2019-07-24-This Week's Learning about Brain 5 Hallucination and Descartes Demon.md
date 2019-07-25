@@ -9,7 +9,7 @@ typora-root-url: ..\assets\img\posts\Visual_consciousness
 typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 ---
 
-[上一篇post]({{ page.previous }})介绍了
+[上一篇post]({{page.previous.url}})介绍到了与视觉意识相关的一些神经活动
 
 ## 做梦, 幻觉与意识(Dream, Hallucination and Consciousness)
 
