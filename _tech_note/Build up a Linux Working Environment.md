@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: Linux Working Station Build Up (Updating)
+title: Linux Working Environment Build Up (Updating)
 author: Binxu Wang
 date: July 25th, 2019
 comments: true
