@@ -93,6 +93,11 @@ collections:
 # How to add inner link within site. 
 See [Controlling url and links in Jekyll](https://www.digitalocean.com/community/tutorials/controlling-urls-and-links-in-jekyll#understanding-how-urls-are-controlled)
 
-Can use variables like `{{ page.previous.url}}`. 
-Can use variables to parse the name of post and form url. `{% post_url 2010-09-08-welcome-to-jekyll %}`
-Or absolute url like `{{ site.baseurl }}`
+Check [Liquid](https://jekyllrb.com/docs/liquid/), [Liquid pkg](https://shopify.github.io/liquid/tags/raw/) and [Link syntax](https://jekyllrb.com/docs/liquid/tags/#links)
+
+{% raw %} 
+* Can use variables like `{{ page.previous.url }}`. 
+* Can use variables to parse the name of post and form url. `{ % post_url 2010-09-08-welcome-to-jekyll % }`
+* Or absolute url like `{{ site.baseurl }}` 
+* Note These variables should be placed in `{{` and  `}}` 
+{% endraw %}

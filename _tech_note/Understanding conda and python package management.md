@@ -112,7 +112,9 @@ python get-pip.py
 ## What does Conda do
 Conda provides well isolated environments, and has a real dependency solver [solving SAT problems](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) so we usually use it for complex version configuring. To understand the inner mechanism to the conda solver, see [understanding-and-improving-condas-performance](https://www.anaconda.com/understanding-and-improving-condas-performance/)
 
-Although the default channel does not provides as many packages as `PyPI`, it has [conda-forge](https://conda.anaconda.org/conda-forge) as a custom built wheels. 
+
+
+**Repository** Although the default channel does not provides as many packages as `PyPI`, it has [conda-forge](https://conda.anaconda.org/conda-forge) as a custom built wheels. 
 
 The `conda search numpy --info` and `conda info numpy` are nearly equivalent to `pip show numpy`
 
