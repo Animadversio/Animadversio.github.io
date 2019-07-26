@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Understanding conda and python package management
+title: Understanding conda and python package management (Updating)
 author: Binxu Wang
 date: July 25th, 2019
 comments: true
@@ -84,11 +84,11 @@ Moreover, packages are developped and upgraded asynchronously and distributedly,
 ## What does pip do?
 `pip` is the default package management system, it's basic and robust, ([User guide](https://pip.pypa.io/en/latest/user_guide/))but does not come with a virtual-enviroment system with it! 
 
-Besides, till now it **does not** have a [real dependency solving system](https://github.com/pypa/pip/issues/988)! It just make use of `requirement.txt` in the package folder, you can do `pip install -r requirements.txt` to install the required packages line by line (seems equivalent to run `pip install` for it line by line). And it can induce conflicts. However it's fast and work in most cases[^4]. 
+**Dependency Solving** Till now it **does not** have a [real dependency solving system](https://github.com/pypa/pip/issues/988)! It just make use of `requirement.txt` in the package folder, you can do `pip install -r requirements.txt` to install the required packages line by line (seems equivalent to run `pip install` for it line by line). And it can induce conflicts. However it's fast and work in most cases[^4]. 
 
 [^4]: For most small projects on github, having a `requirement.txt` is enough and usually work~
 
-As for package coverage, there are far more packages on the default repository of `pip` - [python package index](https://pypi.org/). So if you cannot find the package in `conda install xxx` you can try `pip install xxx`. 
+**Repository** As for package coverage, there are far more packages on the default repository of `pip` - [python package index](https://pypi.org/). So if you cannot find the package in `conda install xxx` you can try `pip install xxx`. 
 
 **Install pip** Normally it is installed in the system. But if there are multiple version of python (esp. you have system python and anaconda python), the `pip` must be the right one corresponding to the right python version. Use `pip -V` to see where the pip file is and which python it correspond to. 
 ```bash
@@ -110,13 +110,13 @@ python get-pip.py
 `pip show numpy` To see where you've installed the package, and what are the dependency and dependant of the package, which is highly useful! 
 
 ## What does Conda do
-Conda provides well isolated environments, and has a real dependency solver [solving SAT problems](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) so we usually use it for complex version configuring. To understand the inner mechanism to the conda solver, see [understanding-and-improving-condas-performance](https://www.anaconda.com/understanding-and-improving-condas-performance/)
+Conda provides well isolated environments, and has a real dependency solver [solving SAT problems](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) so we usually use it for complex version configuring. 
 
+**Dependency Solving** To understand the inner mechanism to the conda solver, see [understanding-and-improving-condas-performance](https://www.anaconda.com/understanding-and-improving-condas-performance/)
 
+**Repository** There are multiple channel / repository of packages for `conda`.Although the default channel does not provides as many packages as `PyPI`, it has [conda-forge](https://conda.anaconda.org/conda-forge) as a custom built wheels. 
 
-**Repository** Although the default channel does not provides as many packages as `PyPI`, it has [conda-forge](https://conda.anaconda.org/conda-forge) as a custom built wheels. 
-
-The `conda search numpy --info` and `conda info numpy` are nearly equivalent to `pip show numpy`
+**Check Info** The `conda search numpy --info` and `conda info numpy` are nearly equivalent to `pip show numpy`
 
 **Structure** Some important structure in anaconda folder, you can explore the structure and the format of the files with `file` command. See `conda info` for more specs. 
 
@@ -128,7 +128,6 @@ The `conda search numpy --info` and `conda info numpy` are nearly equivalent to 
 ```bash
 bin     conda-meta  include     lib     share       ssl
 ```
-
 
 
 # Reference 
