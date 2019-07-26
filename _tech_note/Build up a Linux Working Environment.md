@@ -70,13 +70,12 @@ Used to query the state and driver and compatibility of programs and other specs
 NVRM version: NVIDIA UNIX x86_64 Kernel Module  410.48  Thu Sep  6 06:36:33 CDT 2018
 GCC version:  gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
 ```
-https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#running-binaries
+Check [cuda-installation-guide-linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#running-binaries)
 
 After installation, the [samples](https://docs.nvidia.com/cuda/cuda-samples/index.html) src file will be put in `/usr/local/cuda/samples` binary file is not accompanied in the folder, so you should compile it to somewhere. (if you don't have `root` authority, then somewhere in your home folder is fine~)
 Use `cuda-install-samples-10.1.sh <target_path>` to install
 
-Some useful testing binaries like
-`./deviceQuery` 
+Some useful testing binaries like `./deviceQuery` 
 ```bash
 (base) wangbx@tao-cbi315:~/NVIDIA_CUDA-10.0_Samples/bin/x86_64/linux/release$ ./deviceQuery
 ./deviceQuery Starting...
@@ -125,7 +124,7 @@ deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 10.0, CUDA Runtime Vers
 Result = PASS
 ```
 
-[`CUDA_VISIBLE_DEVICES` EV](https://www.jianshu.com/p/0816c3a5fa5c) used to tell programs which GPU to use. 
+[`CUDA_VISIBLE_DEVICES` EV](https://www.jianshu.com/p/0816c3a5fa5c) is used to tell programs like tensorflow which GPU to use (and which not to use). 
 
 # Status Checking Commands
 ## Check Library
