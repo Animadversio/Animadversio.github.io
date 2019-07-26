@@ -5,7 +5,7 @@ title: Linux Working Environment Build Up (Updating)
 author: Binxu Wang
 date: July 25th, 2019
 comments: true
-tags: [tech note, programming, Linux, Computation]
+tags: [tech note, coding, Linux, environment, Computation, Machine Learning]
 ---
 * TOC
 {:toc}

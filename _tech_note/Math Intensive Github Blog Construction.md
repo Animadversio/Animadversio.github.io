@@ -48,13 +48,6 @@ This tutorial is perfect except a few minor changes we have to make:
 * And we need a newer MathJax engine to do render. Cf. the news https://www.mathjax.org/cdn-shutting-down/
 	* Use `src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">">` instead of `src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">`
 
-# How to upload a post? 
-(This part is mainly for my own reference)
-
-1. Editing the local repertoire (directory denoted as `.io/`), with any editor you like. (Sublime, Typora, MacDown)
-2. Run `jekyll serve` in the console from the directory of `.io/`, preview the changes you've just make. (If you do something to `_config.yml` you'd better restart the `jekyll serve` to see the change.)
-3. After you feel everything is good, use `git` in console, or github desktop to `commit` and `push`
-
 # Issue in Windows 
 *Note*: 
 
@@ -69,6 +62,12 @@ under current Windows environment, it seems we have to use `bundle exec jekyll s
 
 If encounter error like `Error:  Permission denied - bind(2) for 127.0.0.1:4000` , [thanks to this post](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/) Just kill the `FxService` in the Service part. 
 
+# How to upload a post? 
+(This part is mainly for my own reference)
+
+1. Editing the local repertoire (directory denoted as `.io/`), with any editor you like. (Sublime, Typora, MacDown)
+2. Run `jekyll serve` in the console from the directory of `.io/`, preview the changes you've just make. (If you do something to `_config.yml` you'd better restart the `jekyll serve` to see the change.)
+3. After you feel everything is good, use `git` in console, or github desktop to `commit` and `push`
 
 # How to add a top bar section
 
@@ -91,3 +90,9 @@ collections:
 
 ```
 
+# How to add inner link within site. 
+See [Controlling url and links in Jekyll](https://www.digitalocean.com/community/tutorials/controlling-urls-and-links-in-jekyll#understanding-how-urls-are-controlled)
+
+Can use variables like `{{ page.previous.url}}`. 
+Can use variables to parse the name of post and form url. `{% post_url 2010-09-08-welcome-to-jekyll %}`
+Or absolute url like `{{ site.baseurl }}`
