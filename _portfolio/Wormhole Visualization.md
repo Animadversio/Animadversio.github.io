@@ -15,7 +15,11 @@ This work is motivated by Christopher Nolan's [*Interstellar*](https://movie.dou
 ![Interstellar](https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA0NS80MTIvb3JpZ2luYWwvaW50ZXJzdGVsbGFyLXdvcm1ob2xlLXBvc3Rlci1lZGl0LmpwZw==)
 
 # Principle / Math Formulism
+The principle of this project is simple, based on the idea of [Ray Tracing]()
 
+1. What we see are photons travels in the space and hit our retina. For star and space, this is infinite object length imaging, so what matters is the incoming angle of the light ray. 
+2. This process could be reversed, we could simulate the imaging process by 
+3. As the Einstein General Relativity theory tells us, photon travels the geodesic in the gravitation field. 
 
 # Results
 

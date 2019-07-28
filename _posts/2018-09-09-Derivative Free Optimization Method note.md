@@ -188,14 +188,14 @@ Combine stochastic coordinate descent and dimension reduction of the input space
 
 (DETAILS TO BE ADDED.) 
 
-## Targets Next Step
+## Targets Next Step (Updated 2019.7)
 
 * [x] Adapt a demo for CMA-ES algorithm in low dimensional problems and get intuition for the rather compicated update rules. 
-* [ ] Try it in normal CNN setting
-* [ ] Try it in noisy CNN setting (shallower/low-dim ones and deeper ones)
-    * [ ] Get the right noise scheme for CNN. (Cf. Carlos, Poisson Noise mean+-2s.d. covers the full dynamic range of the unit.)
-* [ ] Compare with genetic algorithm 
-* [ ] Try in monkey experimental setting 
+* [x] Try it in normal CNN setting
+* [x] Try it in noisy CNN setting (shallower/low-dim ones and deeper ones)
+    * [x] Get the right noise scheme for CNN. (Cf. Carlos, Poisson Noise mean+-2s.d. covers the full dynamic range of the unit.)
+* [x] Compare with genetic algorithm 
+* [x] Try in monkey experimental setting 
 
 
 

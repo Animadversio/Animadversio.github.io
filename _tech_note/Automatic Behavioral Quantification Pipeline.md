@@ -4,6 +4,7 @@ title: Automatic Behavioral Quantification Pipeline
 author: Binxu Wang
 date: Nov 17th, 2018
 comments: true
+categories: [neuroscience, machine learning]
 tags: [tech note, Image Analysis, Machine Learning, Behavior]
 ---
 
