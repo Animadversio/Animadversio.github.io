@@ -5,6 +5,7 @@ author: Binxu Wang
 date: Dec 9th, 2018
 comments: true
 use_math: true
+categories: [neuroscience, machine learning]
 tags: [tech note, Image Analysis, Machine Learning, Connectomics]
 ---
 # Note on Automatic 3D Instance Segmentation Pipeline 

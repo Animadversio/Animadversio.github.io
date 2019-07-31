@@ -5,6 +5,7 @@ author: Binxu Wang
 date: July 1st, 2019
 use_math: true
 comments: true
+categories: [neuroscience, machine learning]
 tags: [tech note, Data Analysis, Machine Learning, Behavior, Neuroscience]
 ---
 

@@ -111,6 +111,7 @@ collections:
     output: true
     permalink: /:collection/:name
 
+category-list: [neuroscience, machine learning, algorithm, computer science]
 
 # BUILD SETTINGS
 markdown: kramdown

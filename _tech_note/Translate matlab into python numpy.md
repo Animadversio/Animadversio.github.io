@@ -7,6 +7,7 @@ author: Binxu Wang
 use_math: true
 comments: true
 date: Sept. 10th, 2018
+categories: [coding]
 tags: [matlab, python, coding]
 ---
 Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration. 
