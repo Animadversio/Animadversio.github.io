@@ -5,22 +5,26 @@ author: Binxu Wang
 date: June 25th, 2019
 comments: true
 use_math: true
+categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, Numerical Method]
 
 ---
 
-[TOC]
-
+* TOC
+{:toc}
 # Problem Setting 
 
-The original problem of non-negative matrix factorization is simple, if the dissimarity $D(A||HW)$between original matrix and reconstructed one is L2 distance than, 
+The original problem of non-negative matrix factorization is simple, if the dissimarity  $D(A\|HW)$ between original matrix and reconstructed one is L2 distance than, 
+
 $$
 argmin_{H,W} \|A-HW\|_F^2, \\
 s.t.\ W\succeq0, H\succeq0
 $$
+
 The non-negative constraint applies element-wise. 
 
 If the dissimilarity is quantified by cross-entropy, then it could be written as 
+
 $$
 argmin_{H,W} D_{KL}(A||HW), \\
 s.t.\ W\succeq0, H\succeq0
