@@ -14,8 +14,10 @@ Note on Network Commnunication
 
 * TOC
 {:toc}
+# General Introduction
 
 Network connects devices to transfer data / information. 
+
 ## LAN and WAN
 * LAN: Localized network, connected machines in the same area.
 * WAN: Wide area, Internet is the largest WAN! 
@@ -27,6 +29,14 @@ The 2 types are less distinct now, they are blurred because of cellular tech and
 * Ring, 
 * Star, 
 * Mixed 
+
+**Internet**: The largest WAN. 
+
+Reference
+
+* http://www.informit.com/articles/article.aspx?p=131034
+
+* More introductory https://blog.hubspot.com/marketing/how-the-internet-works
 
 ## Protocol
 **Protocol** defines the format of data transmitted and received. 
@@ -188,17 +198,19 @@ Remotely, you will use If the IP address is remote, the **router** will handle t
 
 Note, some individual trying to fetch the packet may reroute it, and this may be done by changing the **routing table** of the router. 
 
-## Internet
+# Specific Application Notes
 
-The largest WAN. 
+Note in actual application, one device has a IP address, and different application use different ports. 
 
-Reference
+## Virtual Private Network (VPN)
 
-http://www.informit.com/articles/article.aspx?p=131034
+**Motivation** This is invented to make users in a distant place (different offices sites) to share the same private network. Communicating directly on the network is not safe, encripting it can make it safer! 
+
+## Secure Sockets Layer (SSL)
 
 
 
-More introductory https://blog.hubspot.com/marketing/how-the-internet-works
+
 
 ## WiFi
 
