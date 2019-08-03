@@ -200,7 +200,17 @@ Note, some individual trying to fetch the packet may reroute it, and this may be
 
 # Specific Application Notes
 
-Note in actual application, one device has a IP address, and different application use different ports. 
+## Ports
+Note in actual application, one device has a IP address, and different application use different ports to communicate! 
+
+* [Check Ports on Linux/MacOS](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)
+* [Check Ports on Windows](https://www.howtogeek.com/howto/28609/how-can-i-tell-what-is-listening-on-a-tcpip-port-in-windows/)
+
+```bash
+netstat -tulpn | grep LISTEN # Linux
+netstat -anp tcp | grep LISTEN # MacOS
+netstat -ab # Windows 
+```
 
 ## Virtual Private Network (VPN)
 
