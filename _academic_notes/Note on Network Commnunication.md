@@ -199,8 +199,9 @@ Remotely, you will use If the IP address is remote, the **router** will handle t
 Note, some individual trying to fetch the packet may reroute it, and this may be done by changing the **routing table** of the router. 
 
 # Specific Application Notes
+Using these basic picture and concepts, we can understand many common web service and applications in their core. 
 
-## Ports
+## Note: Ports
 Note in actual application, one device has a IP address, and different application use different ports to communicate! 
 
 * [Check Ports on Linux/MacOS](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)
@@ -219,22 +220,24 @@ netstat -ab # Windows
 ## Secure Sockets Layer (SSL)
 
 
-
+## Secure Shell (SSH) 
 
 
 ## WiFi
 
 
+## WiFi Direct Connect (WiDi)
 
-## Hardware
 
-### Hub and Switch(交换机)
+# Hardware
+
+## Hub and Switch(交换机)
 
 Switch is a metaphor from railway, incoming data can be filtered / sorted and dispatch to different devices connected to the switch! 
 
 Hub is dumber, the received packet are sent to any machines connected with it. And the device perform the filtering itself. 
 
-### Modem(调制解调器) and Router(路由器)
+## Modem(调制解调器) and Router(路由器)
 
 Modem is changing network signal into physical signal in corresponding devices —— wires fiber, telephone wires, satellite signal, radio … 
 
