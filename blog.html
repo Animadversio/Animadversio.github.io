@@ -4,13 +4,35 @@ title: Blog
 feature-img: assets/img/pexels/eyesight_Iris.jpg
 ---
 
-<h1>Latest Posts</h1>
+<h2>Latest Posts</h2>
 
 <ul>
   {% for post in site.posts %}
+  {% unless post.categories contains 'personal writing' %}
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a> </h2> {{ post.date | date_to_string }} - {{ post.author }} 
       <p>{{ post.excerpt }}</p>
     </li>
+  {% endunless %}
   {% endfor %}
 </ul>
+
+<h2>Personal Writings</h2>
+<ul>
+  {% for post in site.posts %}
+  	{% if post.categories contains 'personal writing' %}
+        <li>
+	      <h2><a href="{{ post.url }}">{{ post.title }}</a> </h2> {{ post.date | date_to_string }} - {{ post.author }} 
+	      <p>{{ post.excerpt }}</p>
+	    </li>
+    {% endif %}   <!-- cat-match-p -->
+  {% endfor %}
+</ul>
+
+<style>
+.coll2 {
+    float: left;
+    width: 49.9%;
+    padding-bottom: 50px;
+}
+</style>

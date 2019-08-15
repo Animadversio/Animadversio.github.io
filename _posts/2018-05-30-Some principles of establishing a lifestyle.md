@@ -3,6 +3,7 @@ layout: post
 title: Some principles to establish a lifestyle
 author: Binxu Wang
 comments: true
+categories: [personal writing]
 tags: [essay,personal writing, life]
 ---
 

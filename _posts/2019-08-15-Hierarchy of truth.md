@@ -5,6 +5,7 @@ author: Binxu Wang
 published: false
 use_math: false
 comments: true
+categories: [personal writing]
 tags: [essay, personal writing, Science, Physics, Neuroscience, Computation, Philosophy]
 
 ---

@@ -5,6 +5,7 @@ author: Binxu Wang
 published: true
 use_math: false
 comments: true
+categories: [personal writing]
 tags: [essay, personal writing, Movie, Animation, Philosophy]
 ---
 

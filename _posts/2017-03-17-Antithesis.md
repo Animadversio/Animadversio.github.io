@@ -3,6 +3,7 @@ layout: post
 title: Antithesis
 author: Binxu Wang
 comments: true
+categories: [personal writing]
 tags: [essay,personal writing, life]
 ---
 
