@@ -55,24 +55,43 @@ We encounter high dimensional data from time to time. Whenever the dimension > 3
 
 **Algorithm**
 
-* Linear
-  * PCA
-  * Fissher LDA (supervised)
-  * TCA
-  * MDS
-  * NMF
+* Linear: Project points onto some directions. Global linear transform. 
+  * PCA: Project to the orthogonal directions preserving the largest variance. (maximimum variance directions)
+  * Fisher LDA:  (supervised method) Project to dimensions maximizing separation between population. 
+  * ICA: Kurtosis / non-gaussianality maximization. 
+* Matrix factorization based method: 
+  * SVD: 
+  * NMF: Approximating original matrix with a low rank matrix subject to some constraint. 
+  * TCA: Spatial temporal factorization, 2+ D tensor factorization 
 * Manifold Learning 
-  * LLE
-  * IsoMap
-
-###What INFO is preserved in DR? 
-
-
-
-### Can we back project the low dimensional data back to high dimension
+  * LLE: Recover local linear representation method. 
+  * IsoMap: Use geodesic distance on a graph in original space as metric and do embedding 
+  * MDS: Preserve metric between points 
+      - classic
+      - ordinal 
 
 
+### What algorithm to use to process data? 
+* Try PCA / linear method first. 
+* For non-linear method esp. manifold learning, consider the complexity seriously. 
 
+
+### How many dimension should I preserve? 
+
+* Rod breaking test for PCA eigen value. 
+
+### What INFO is preserved in DR? 
+Global distance 
+Local distance metric 
+
+### Can we back project the low dimensional data back to high dimension (inverse map/embedding map)
+Target is to find coordinate system to discribe the manifold. 
+
+If we only want local parametrization, then a feasible method is to use piece-wise linear functions to approximate the original manifold. 
+
+https://www.nature.com/articles/s41467-017-00156-9
+
+The intrinsic attractor manifold and population dynamics of a canonical cognitive circuit across waking and sleep
 
 
 ## Correlation / Cross-correlation Analysis
@@ -83,12 +102,14 @@ We encounter high dimensional data from time to time. Whenever the dimension > 3
 
 
 
-## Graph Based Analysis
+## Graph/Network Based Analysis
 
 **Data**
 
 * Whole brain connectome (functional connectivity / anatomical connectivity)
-* MicroCircuit connectome, cell type specific network
+* MicroCircuit connectome
+* Functional connectivity among 
+* Cell type specific network
 * Gene regulation network
 
 **Analysis**
@@ -107,8 +128,6 @@ We encounter high dimensional data from time to time. Whenever the dimension > 3
 
 
 # Supervised 
-
-
 
 ## Classification 
 
@@ -134,7 +153,11 @@ The unique thing about sensory and motor system is that we have a concrete knowl
 
 * Visual cortex / motor cortex recording 
 
+**Modelling method**
 
+* Spike triggered average (STA), linear filter that fit the sensory input-output function . 
+* Spike-triggered NMF: extract subunit from recording. 
+* Deep neural network training / fitting 
 
 ## Network / Circuit Modelling
 
@@ -144,8 +167,9 @@ Majorly recurrent network or dynamic system modelling.
 
 * Whole brain dynamics (Optical Imaging / fMRI)
 * Local circuit 
+* Gene regulation network 
 
-
+-------
 
 # Analysis about Specific Data Format
 

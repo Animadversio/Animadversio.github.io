@@ -56,7 +56,12 @@ Here I'll state the structure of HALS algorithm.
 
 The core idea is to solve each component to the residue separately, so each subproblem is much simpler, and also local to the component. 
 
+## Remark 
+There are multiple interperatations of NMF, they are mathematically equivalent 
 
+* K-means
+* Sparse coding
+* Generative model 
 
 # Reference
 
