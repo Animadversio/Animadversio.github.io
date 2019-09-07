@@ -14,7 +14,9 @@ How to Parse Latin/Greek Anatomical/Physiological Terms
 * TOC
 {:toc}
 
-大部分现代医学 解剖术语似乎是文艺复兴之后生理学家创造的，但为了显得高端，使用当时的国际学术语言Latin书写。因为当时Latin在当时早已不是日常语言，所以大多是科学家们非常规整的用Classic Latin/Greek 的词根Root 词缀Pre-/Suffix 变位法Conjugation，人工构词产生的，算New Latin。所以知道了词根之后拼写起来单词就会像写中文组词一样，记忆起来也容易。
+大部分现代医学 解剖术语似乎是文艺复兴之后生理学家创造的，但为了显得高端，使用当时的国际学术语言Latin书写。因为当时Latin在当时早已不是日常语言，所以大多是科学家们非常规整的用Classic Latin/Greek 的词根Root 词缀Pre-/Suffix 变位法Conjugation，人工构词产生的，算New Latin。所以知道了词根之后拼写起来单词就会像写中文组词一样，记忆起来也容易[^0]，也更容易根据词形记忆解剖结构的位置。
+
+[^0]: Chunking Effect! 
 
 ## 词根
 单个词大多是由词根词缀组合而成
@@ -24,7 +26,8 @@ How to Parse Latin/Greek Anatomical/Physiological Terms
 * 腹股沟groin= Ilium Ilio(变位形式)
 * 合在一起成了Iliocostalis 髂肋肌
 
-Wikipedia [List of medical roots, suffixes and prefixes](https://en.wikipedia.org/wiki/List_of_medical_roots,_suffixes_and_prefixes)
+* Wikipedia [List of medical roots, suffixes and prefixes](https://en.wikipedia.org/wiki/List_of_medical_roots,_suffixes_and_prefixes)
+* [Word Root PDF](http://manoa.hawaii.edu/undergrad/learning/wp-content/uploads/2014/03/Word-Roots.pdf)
 
 ![](https://c8.alamy.com/comp/ADTYM6/deep-muscles-of-the-back-ADTYM6.jpg)
 
