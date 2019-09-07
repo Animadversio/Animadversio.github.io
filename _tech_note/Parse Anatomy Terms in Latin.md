@@ -11,6 +11,9 @@ tags: [tech note, language, Anatomy, Latin]
 How to Parse Latin/Greek Anatomical/Physiological Terms 
 ===========
 
+* TOC
+{:toc}
+
 大部分现代医学 解剖术语似乎是文艺复兴之后生理学家创造的，但为了显得高端，使用当时的国际学术语言Latin书写。因为当时Latin在当时早已不是日常语言，所以大多是科学家们非常规整的用Classic Latin/Greek 的词根Root 词缀Pre-/Suffix 变位法Conjugation，人工构词产生的，算New Latin。所以知道了词根之后拼写起来单词就会像写中文组词一样，记忆起来也容易。
 
 ## 词根
@@ -71,3 +74,15 @@ Wikipedia [List of medical roots, suffixes and prefixes](https://en.wikipedia.or
 形容词在形容单数与复数时也有词尾变化
 * 长的 Longus 复数 longi, e.g. Levatores costarum longi
 * 短的 Brevis 复数 breves , e.g. Levatores costarum breves
+
+
+## Useful Resources
+
+* 发现超级长的解剖词，Google搜索 [anatomical term] etymology 就能找到每个词的词根分解 Wiki里经常也会附带词根分解的解释
+* [Google Translator](https://translate.google.com/) 可以翻译 Latin to English
+* [Latin Declension Table](https://en.wikipedia.org/wiki/Latin_declension)
+* [Latin Noun and Adjective endings](http://rharriso.sites.truman.edu/summary-of-latin-noun-and-adjective-endings/)
+* 有关的小册子
+	* [Medical Latin Tutorial PDF](https://umed.pl/pliki/2015/12/Medical-Latin-Course-second-version.pdf)
+	* [Anatomical Latin Tutorial PDF](https://sites.google.com/site/mededlinks/anat-latin-3.pdf)
+	* [Latin Grammer Primer](https://www.amazon.com/Kennedys-Revised-Primer-Benjamin-Kennedy/dp/0582362407) 里面有非常详细的变位表
