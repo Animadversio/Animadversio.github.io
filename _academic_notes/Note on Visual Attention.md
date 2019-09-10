@@ -10,17 +10,36 @@ tags: [academic note, Visual Neuroscience,Consciousness]
 
 Note on Selective Attention
 ======
-From Christofer Koch 2013 Lecture Visual Attention and Consciousness
+From 
+
+1. Christofer Koch 2013 Lecture Visual Attention and Consciousness
+2. GoldStein, Chapter Attention
 
 
 
-In nature language Attention refers to a few 
+In nature language Attention refers to a family of abilities
 
-
+* Vigilance / overall attention
+* Selective attention
+* Distributed attention
+  * Automaticity (action / perception task that does not take capacity)
 
 **Selective attention** is different from general attention ---- arousal. 
 
 * Has capacity, comes with a cost. It's selective! 
+
+
+
+### Resources allocation model
+
+- Several Components
+  - Arousal ~ Attention Capacity 
+  - Allocation Policy 
+  - Possible Choices 
+
+
+
+**Note**: Tracking eye / pupil size can help judge the attention level. 
 
 ## Selective Attention
 
@@ -32,6 +51,12 @@ In nature language Attention refers to a few
   * Spatial based attention;
   * Feature based attention: Very interesting phenomenon
   * Object form based attention
+
+
+
+
+
+
 
 **Related Brain Regions** (in *primates*): Seems attention and eye movement is closely related! 
 
