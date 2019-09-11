@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Network Commnunication
+title: Note on Computer Vision
 author: Binxu Wang
 date: July 30th, 2019
 comments: true

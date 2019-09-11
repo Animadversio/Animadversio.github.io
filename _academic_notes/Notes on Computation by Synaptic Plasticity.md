@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Selective Attention
+title: Note on Computation by Synaptic Plasticity
 author: Binxu Wang
 date: June 24th, 2019
 comments: true
@@ -8,7 +8,7 @@ categories: [neuroscience]
 tags: [academic note, Neuroscience, Computation]
 ---
 
-# 
+# Note on Computation by Biological Plausible Learning
 from lecture of Cengiz Penleven 2019
 
 
