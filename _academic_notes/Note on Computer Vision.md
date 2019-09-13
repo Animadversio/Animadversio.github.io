@@ -232,23 +232,27 @@ Sometimes we need similar features detection at different scale!
 
 
 
-## Image Restoration
+# Lec6 7 Image Restoration
 
 **Problem Setting** : an parameter / model estimation problem (statistics)
 
-* In original statistical setting **Maximum Likelihood Estimation** i.e. $arg\max_xp(y|x)=\mathcal L(y)$
-* In Bayesian setting, **Maximum *a posteriori* Estimation** (MAP) $arg\max_x p(x|y)\propto p(y|x)p(x)$ (**In Bayes, Prior Knowledge Matters! **)
+* In original statistical setting **Maximum Likelihood Estimation** i.e. $arg\max_xp(y|x)=\mathcal L(y)$ 
+  * 
+* In Bayesian setting, **Maximum *a posteriori* Estimation** (MAP) $arg\max_x p(x|y)\propto p(y|x)p(x)$ 
+  * (**In Bayes, Prior Knowledge Matters! **)
   * *Remark*: Weight the evidence by prior! Bias the observation towards prior! 
 * Add loss distance function, and minimze Loss Expectation given the original image
   * $arg\min_x \int L(y)p(x|y)\propto p(y|x)p(x)$ 
 
 ## Different Priors 
 
+*Note*: Image compression is about prior, which is the same as image distribution modelling. 
+
 **Independent Pixel Prior**
 
 * Prior distribution for each pixel is the same and independent! (i.id. )
-* Then *a posteriori* estimation of each pixel! 
-* For example if the prior is Gaussian $N(0.5,\sigma_p^2)$ 
+* Then *a posteriori* estimation of each pixel can be done separately! 
+* For example if the prior is Gaussian $X[n]\sim N(0.5,\sigma_p^2)$ , then the estimation is just a interpolation
 
 $$
 \hat X[n]=\frac {\sigma_p^2Y[n]+0.5\sigma^2} {\sigma_p^2+\sigma^2}
@@ -258,7 +262,7 @@ $$
 
 **Multivariate Gaussian Prior**
 
-* Allow dependency among pixels 
+* Allow dependency among variables! 
 
 
 
@@ -266,8 +270,10 @@ $$
 
 **Wavelet transform and restoration**
 
-* Define the i.id. Gaussian prior in Wavelet transformed space 
-* Use the Wavelet transform to rotate it into pixel space! 
+* Define the i.id. Gaussian (multi-var) prior in Wavelet transformed space 
+* Use the inverse Wavelet transform to rotate it into pixel space! 
+* *Remark*: A complex distribution can be constructed by some regular simple distribution if mapped to the correct representational space
+  * GAN and VAE is another demonstration of this idea
 
 
 
