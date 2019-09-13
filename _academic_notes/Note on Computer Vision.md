@@ -150,6 +150,8 @@ $$
 ## Fourier Transform
 
 **Discrete Fourier Transform** (DFT): The inner product of the image with waves with different wavelength (wave number marked by $(u,v)$) and directions $S_{uv}[nx, ny]$.   
+
+Intuition of the average amplitude and position of a variation in certain spatial frequency. 
 $$
 \mathcal F[X]=F(u,v)=\frac 1{WH} \sum_{nx,ny}X[nx,ny]​\exp(-j2\pi (unx/W+vny/H))
 $$
@@ -180,8 +182,8 @@ $$
 **Content in the Phase**: The phase is more important to define the spatial configuration of an image
 
 * Phase defines where the interference peak and sharp edge resides
-* Pure amplitude $|F|^2$ is agnostic to space! Uniform! 
-* **Corollary**: If swap phase $\theta$ between image A and B and keep $|F|^2$, then the content largely swap with phase! 
+* Pure amplitude $\|F\|^2$ is agnostic to space! Uniform! 
+* **Corollary**: If swap phase $\theta$ between image A and B and keep $ \|F\|^2$, then the content largely swap with phase! 
 
 [Demonstration](https://www.cse.wustl.edu/~ayan/courses/cse559a/lec5.html#/fourier-transform-20) 
 
@@ -189,15 +191,83 @@ $$
 
 
 
+## Efficient Computation of Convolution
+
+**Frequency Space Convolution**
+
+* Desirable for 
+
+**Seperable Kernels**
+
+* H, W seperable kernel like *Gaussian Kernel, Derivative Gaussian*
+* 
+* *Note* : 
+  * Approximate seperability by SVD! 
+
+**Recursive Computation**
+
+* Images can be represent by convolution pattern with some sparse point as well! -> Enhance sparsity
+
+Some good implementation
+
+* `import scipy.signal.convolve2d as conv2`  
+
+## Multiscale Representation (mpi)
+
+Sometimes we need similar features detection at different scale!  
+
+* **Gaussian Pyramid** 
+  * For image $I$ apply Gaussian filter, downsample!  
+    * $I, [I*G]_-, [[I*G]_-*G]_-, ...$
+* **Laplacian Pyramid** 
+  * For image $I$ apply Gaussian filter, subtract! downsample!  
+    - $I, [I*(\delta-G)]_-, [[I*(\delta-G)]_-*(\delta-G)]_-$
+    - Get you local contrast of different scale! 
+* *Note*: it's hard to get back to original image from the "representation" 
+* **Wavelet Pyramid**
+  * Local (like 2*2 blocks) coordinate transform 
+  * Apply recursively
+  * Is easily revertible!! 
+  * **Application**: compression! Image modeling! 
+
+
+
+## Image Restoration
+
+**Problem Setting** : an parameter / model estimation problem (statistics)
+
+* In original statistical setting **Maximum Likelihood Estimation** i.e. $arg\max_xp(y|x)=\mathcal L(y)$
+* In Bayesian setting, **Maximum *a posteriori* Estimation** (MAP) $arg\max_x p(x|y)\propto p(y|x)p(x)$ (**In Bayes, Prior Knowledge Matters! **)
+  * *Remark*: Weight the evidence by prior! Bias the observation towards prior! 
+* Add loss distance function, and minimze Loss Expectation given the original image
+  * $arg\min_x \int L(y)p(x|y)\propto p(y|x)p(x)$ 
+
+## Different Priors 
+
+**Independent Pixel Prior**
+
+* Prior distribution for each pixel is the same and independent! (i.id. )
+* Then *a posteriori* estimation of each pixel! 
+* For example if the prior is Gaussian $N(0.5,\sigma_p^2)$ 
+
+$$
+\hat X[n]=\frac {\sigma_p^2Y[n]+0.5\sigma^2} {\sigma_p^2+\sigma^2}
+$$
+
+
+
+**Multivariate Gaussian Prior**
+
+* Allow dependency among pixels 
 
 
 
 
 
+**Wavelet transform and restoration**
 
-
-
-
+* Define the i.id. Gaussian prior in Wavelet transformed space 
+* Use the Wavelet transform to rotate it into pixel space! 
 
 
 
