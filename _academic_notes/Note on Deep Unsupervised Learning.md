@@ -51,6 +51,7 @@ Lecture notes from Berkeley-cs294  https://sites.google.com/view/berkeley-cs294-
 
 **Lesson from failure of Histogram**
 
+* In high dimension, histogram model means **model = input dataset**
 * **Curse of dimensionality** 
   * If each density function $p(x)$ is a independent variable at each point, then parameter dim is too high! 
   * If each data point only contributes to the estimation of one parameter, we will never have enough data points! 
