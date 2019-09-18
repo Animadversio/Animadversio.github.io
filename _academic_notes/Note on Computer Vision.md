@@ -28,7 +28,7 @@ In principle, **digital images** are formed by measuring energy (*counting photo
 
 
 
-# Lec2: Basic Operation Over an Image
+# Lec2: Basic Operation on Image
 
 
 
@@ -257,9 +257,11 @@ Sometimes we need similar features detection at different scale!
 
 
 
-# Lec6 7 Image Restoration
+# Lec6 7 Image Restoration Problem
 
 **Problem Setting** : an parameter / model estimation problem (statistics)
+
+## Bayesian Scheme
 
 * In original statistical setting **Maximum Likelihood Estimation** i.e. $arg\max_xp(y|x)=\mathcal L(y)$ 
   * 
@@ -269,7 +271,7 @@ Sometimes we need similar features detection at different scale!
 * Add loss distance function, and minimze Loss Expectation given the original image
   * $arg\min_x \int L(y)p(x|y)\propto p(y|x)p(x)$ 
 
-## Different Priors 
+### Different Priors
 
 *Note*: Image compression is about prior, which is the same as image distribution modelling. 
 
@@ -295,12 +297,41 @@ $$
 
 **Wavelet transform and restoration**
 
-* Define the i.id. Gaussian (multi-var) prior in Wavelet transformed space 
+* Define the i.id. Gaussian (multi-var) prior in Wavelet transformed space ! 
 * Use the inverse Wavelet transform to rotate it into pixel space! 
 * *Remark*: A complex distribution can be constructed by some regular simple distribution if mapped to the correct representational space
-  * GAN and VAE is another demonstration of this idea
+  * GAN and VAE is a deeper demonstration of this idea! 
 
 
+
+## Regularization
+
+Another way of forming image restoration problem is do optimization under regularization, e.g. 
+$$
+\hat X=\arg\min_X D(Y:X)+\lambda R(X)\\
+\hat X=\arg\min_X \|Y-X\|^2+\lambda (\|G_x*X\|+\|G_y*X\|)\\
+$$
+
+### Classical Solvable Reg. Optim.
+
+* If the Regularizer has Convolution, then it can be diagonalize in Fourier Domain! 
+* 
+
+
+
+### Numerical Notes: Solve $X=Q^{-1}Y$ Efficiently
+
+**Remarks**
+
+* Think in the matrix $A_K$ but never really compute in it! 
+
+*  Never inverse a huge matrix and matrix multiply! Not stable 
+* **Cholesky Decomposition** can be helpful in solving linear system. 
+
+
+
+* **Conjugate Gradient Method** (iterative method)
+  * If you can multiply $Q$ but cannot form it! 
 
 
 
