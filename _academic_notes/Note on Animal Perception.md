@@ -133,3 +133,13 @@ Habituation is a good way to test animal can tell the difference
 
 * Camouflage & Aposematism
 
+
+
+# Recognition Learning
+
+
+
+
+
+
+

@@ -47,7 +47,7 @@ More in context of psychology:
 
 
 
-Can be combined in a clever way! To be really 
+Can be combined in a clever way! To be really complex
 
 
 

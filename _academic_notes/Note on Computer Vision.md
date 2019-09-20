@@ -304,7 +304,7 @@ $$
 
 
 
-## Regularization
+## Optimization with Regularization
 
 Another way of forming image restoration problem is do optimization under regularization, e.g. 
 $$
@@ -332,6 +332,96 @@ $$
 
 * **Conjugate Gradient Method** (iterative method)
   * If you can multiply $Q$ but cannot form it! 
+
+
+
+# Lec 8 Color
+
+There is a spectrum $L[n,\lambda]$ every point in the space. We get our RGB values from an array of filters, i.e. 3 dimension projection of an infinite dimension spectrum
+$$
+X[n]=\int_\lambda L[n,\lambda]\Pi_X[n\lambda]
+$$
+**Metamer**: Different spectrum with the same RGB values! 
+
+**HyperSpectral camera**: to get $>>3$ filters and get more channel image! 
+
+## Light Color and Object Color
+
+Color is not a 
+
+
+
+* **Remark**: Same object can look like different color in different light condition
+
+**Natural Illumination** Normally well modelled by the black body radiators. 
+
+
+
+
+
+### Transform Image across different Illumination
+
+* **Theory** Metamer in one light condition may not be metamer in another! Thus in single illumination case some information is lost, so you cannot recover the image 
+
+
+
+* Linear transform
+* Diagonal transform (maybe in some color space)
+* Von-Kries model 
+
+
+
+**Color Constancy Problem**: Learn to separate illumination and color in the representation! 
+
+
+
+
+
+**Color prior**: 
+
+* **** : 
+* **White patch Retinex**: Assuming the brightest patch in the color space is neutral (white). -> map the brightest pixels to white!  
+
+Still an **active research area**, in computer vision and neuroscience
+
+* CV people use object recognition ability and the prior on object color to estimate illumination
+* 
+
+
+
+## Color Space (Representation)
+
+Best color space depends on which task you like!
+
+* **Linear transform**:
+  * **XYZ** usually the standard way that camera takes the image, linearly translated into RGB. 
+  * **YUV** a "**Decorrelated**" version of color space, Y~Luminance, U,V ~ color information. 
+    * Useful for input into deep learning networks! Decrease interactions among 
+* **Non-linear transform** : 
+  * Light + rg chromacity: $L=R+G+B$, $r=R/L$, $g=G/L$. 
+  * **Hue, Sactuation**: Columnar coordinates, Hue as angle, Sacturation as polar distance. 
+  * **CIE-LAB space**: nonlinear transform, the distance in this space is perceptually relevant! By doing psychophysics! 
+
+Eye and imaging 
+
+## Shading
+
+
+
+* Shading is a strong cue for shape! 
+  * Sculpture and 3d illusion image used it!! 
+* Multi-light source imaging can be used to generate high-res 3d model! By changing the illumination, shading change you can estimate the shape!.
+* Color, material, light sources, .... 
+
+### Normal Vectors
+
+
+
+Normal vector field $\hat n (x,y)$  
+
+Gradient field $\nabla Z(x,y)$ 
+
+
 
 
 
