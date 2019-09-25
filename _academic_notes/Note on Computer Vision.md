@@ -45,6 +45,16 @@ $$
 * **Histogram Equalization**: Find monotonous function $h(x)$ that transform a variable X with empirical distribution $hist(X[n])$ to be as uniform as possible
 * **Look Up Table(LUT)**: map each value (R,G,B) or intensity to a different value.
 
+
+
+## General Efficiency Note
+
+- Start implementation with for loop! 
+- Avoid for-loop, if have to put it in inner most part! 
+- Substitute for loop with elementwise operation & convolution! 
+
+
+
 ## Convolution
 
 > Linear operation over a small spatial neighborhood, simplest spatial relationship finder
@@ -60,6 +70,7 @@ $$
 * Valid: $W_Y=W_X-W_K+1$ whenever all pixels are covered by Kernel
 * Full: $W_Y=W_X+W_K-1$  whenever any pixels are covered by Kernel
 * Same: $W_Y=W_X$ 
+  * *Note*: Think about the convolution matrix $A_k$ in 1d case, its shape will be like $[W_Y, W_X]$ . So for Same convolution, it will be an linear operator! 
 
 **Padding Scheme**
 
@@ -77,19 +88,18 @@ $$
 
 **Example**: 
 
-* Translation  can be performed by single value convolution kernel!! 
+* Translation can be performed by convolving single value convolution kernel!! 
+  * Think about the input response function. 
 
-**Blurring**
+**Blurring** : $G*I$ 
 
 **Image sharpening** : substract the Blurred image $(1+\alpha)I-\alpha G*I$ . 
 
-
-
-
+ 
 
 **Edge Detection**: Derived from partial differential operator
 
-* Derivative over space is a linear operation! 2 derivative $I_x$ and $I_y$ are 
+* Derivative over space is a linear operation! 2 derivative $I_x$ and $I_y$ are sufficient to compute derivative of any direction $I_\theta=I_x+I_y$ 
 
 ## Hough Transform: Global Feature Detection
 
@@ -145,23 +155,25 @@ $$
 
 
 
+**Property**: 
+
 
 
 ## Fourier Transform
 
-**Discrete Fourier Transform** (DFT): The inner product of the image with waves with different wavelength (wave number marked by $(u,v)$) and directions $S_{uv}[nx, ny]$.   
+**Discrete Fourier Transform** (DFT): The inner product of the image with Complex waves (cos in Real, sin in Imaginary) with different wavelength (wave number marked by $(u,v)$) and directions $S_{uv}[nx, ny]$.   
 
 Intuition of the average amplitude and position of a variation in certain spatial frequency. 
 $$
 \mathcal F[X]=F(u,v)=\frac 1{WH} \sum_{nx,ny}X[nx,ny]​\exp(-j2\pi (unx/W+vny/H))
 $$
-**Basic Property:**
+**Basic Property:** 
 
 * Can be view as a global coordinate transform of the image space $\R^{H\times W}$ 
   * If Image is vectorized, then the DFT is a complex orthonormal (Unitary) matrix $S^*$ over the space $\R^{H\times W}$ 
-    * $F=\frac 1 {\sqrt {WH}}S^* X$, $X={\sqrt {WH}}S F$ 
+    * $F=\frac 1 {\sqrt {WH}}S^* X$, $X={\sqrt {WH}}S F$  
     * It's inverse is the conjugate transpose of the matrix
-  * $S_{uv}[nx, ny]=\frac 1{\sqrt{WH}} \exp(-j2\pi (unx/W+vny/H))$ Defines the orthonormal basis-> a group of waves. 
+  * $S_{uv}[nx, ny]=\frac 1{\sqrt{WH}} \exp(-j2\pi (unx/W+vny/H))$ Defines the orthonormal basis -> a group of waves of different directions $(u,v)$ and phase $\sin.\cos$.  
     * The real and imagine part of $S_{uv}[nx, ny]$ defines 2 different phase of wave, 
 
 
@@ -236,6 +248,10 @@ For math facts about circulant matrix check [MIT notes](http://web.mit.edu/18.06
 Some good implementation
 
 * `import scipy.signal.convolve2d as conv2`  
+
+
+
+
 
 ## Multiscale Representation (mpi)
 
@@ -327,6 +343,7 @@ $$
 
 *  Never inverse a huge matrix and matrix multiply! Not stable 
 * **Cholesky Decomposition** can be helpful in solving linear system. 
+  * `np.linalg.solve` will do the job efficiently
 
 
 
@@ -404,14 +421,16 @@ Best color space depends on which task you like!
 
 Eye and imaging 
 
-## Shading
-
-
+# Lec8 9 Shading
 
 * Shading is a strong cue for shape! 
   * Sculpture and 3d illusion image used it!! 
 * Multi-light source imaging can be used to generate high-res 3d model! By changing the illumination, shading change you can estimate the shape!.
 * Color, material, light sources, .... 
+
+## Imaging Geometry Note
+
+
 
 ### Normal Vectors
 
@@ -420,6 +439,86 @@ Eye and imaging
 Normal vector field $\hat n (x,y)$  
 
 Gradient field $\nabla Z(x,y)$ 
+
+## BRDF
+
+Material property, 
+
+How much energy output from the certain angle, if you input that energy from a certain angle $L(\theta_i,\rho_i, \theta_o,\rho_o, \lambda)$  
+
+**Property**
+
+* Positivity
+* Energy Balance : Total energy arriving $\geq$ total energy leaving 
+* Helmohotz reciprocivity : $L(\theta_i,\theta_o)=L(\theta_o,\theta_i)$ 
+  * Symmetry of light source & Camera when inverting all the light rays 
+
+
+
+## Light Source
+
+* Point Light 
+  * Parallel Light Approximation: if Light Source is infinitely away
+
+$$
+I=max(0,\rho<\hat n, \hat l >)
+$$
+
+**Note**, turning away from light source will give you shadow! 
+
+* **Shadow**  
+
+## Photometric Stereo
+
+Compute the 
+
+
+
+**Remark**: Majorly works for lambertian surfaces, if it does not work, we can use other type of specialized light source to make it more lambertian! 
+
+
+
+## Normal to Depth
+
+If we ignore perspective projection, then problem happens on the same circle. 
+
+$n_x=$
+$$
+Z=argmin_Z \|g_x[n]-f_x*Z\|+\|g_y[n]-f_y*Z\|+\lambda R(Z)
+$$
+And $f_x,f_y$ are small derivative kernels in $x$ and $y$  direction. 
+
+However, the problem can be formed as *De-convolution* problem. 
+
+### Fourier Domain Deconvolution
+
+**Solve it in the Fourier Domain Deconvolution**, (*Frankor Chellappa algorithm* )
+
+
+
+
+
+**Note** : You don't know your absolute offset of your object! 
+
+### Conjugate Gradient
+
+If we add mask to the loss function, then the deconvolution is not easy in Fourier domain. (pixelwise operation is not diagonalized in Fourier Domain)
+$$
+Z=argmin_Z \sum_n w[n](g_x[n]-f_x*Z)^2+w[n](g_y[n]-f_y*Z)^2+\lambda R(Z)
+$$
+We try to formulate it as a standard quadratic function , 
+
+
+
+Using conjugate gradient, we don't really need to inverse a matrix, but only need to mat-vec product, which could be done efficiently for convolution & pixelwise operations! 
+
+
+
+
+
+
+
+
 
 
 

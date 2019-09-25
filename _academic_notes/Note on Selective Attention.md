@@ -20,13 +20,21 @@ From
 In nature language Attention refers to a family of abilities
 
 * Vigilance / overall attention
-* Selective attention
+* Selective attention: processing sth in the cost of others
 * Distributed attention
   * Automaticity (action / perception task that does not take capacity)
 
 **Selective attention** is different from general attention ---- arousal. 
 
 * Has capacity, comes with a cost. It's selective! 
+
+
+
+
+
+**Note**: Tracking eye / pupil size can help judge the attention level! 
+
+- Very large effect! Can be used to judge attention base on few trials. 
 
 ## Phenomenal Models
 
@@ -40,22 +48,14 @@ In nature language Attention refers to a family of abilities
 
 
 
-**Note**: Tracking eye / pupil size can help judge the attention level! 
-
-* Very large effect! Can be used to judge attention. 
-
 ### Filter Model: Early Filter/Attenuator/ Late Filter
 
 **Experiment**: Dual channel sentence input -> attend to one of them 
 
-
-
-
-
 * Un-attended message / signal is attenuated / filter out at early stage! 
 * But stimulus saliency / system's default gain also matters
   *  "Your own name" and some alert message is very salient!!
-* However, some information can get through, masking channel can 
+* However, some information can get through, masking channel can get attended to if it's salient enough
 
 
 
@@ -63,10 +63,20 @@ In nature language Attention refers to a family of abilities
 
 ### Feature Integration Theory
 
+**Model** 
+
 * Visual system analyze the images into features (Pre-attentive stage)
 * Then featues get integrated binded into objects. 
+* Binding depends on 
+  * Saliency, Guidance, Attention! 
 
-**Visual Search model**:
+**Visual Search Task**: 
+
+* Single feature search: search time invariant to object number
+* Multi feature conjunction search: Scale linearly to object number
+* But saliency, subtelity of difference affects the speed! 
+
+
 
 ## Selective Attention
 
@@ -84,9 +94,10 @@ In nature language Attention refers to a family of abilities
 
 
 
-**Experiment**: Posner's task / Visual Cueing
+**Experiment**: Posner's task 
 
-* 
+* **Visual Cueing**: Cue is used to manipulate attention! 
+
 * Exognenous Cue
   * Fast (SOA for effect)
   * Coming from saliency of the object 
@@ -101,17 +112,25 @@ In nature language Attention refers to a family of abilities
 
 ### Brain Substrate
 
-Related Brain Regions** (in *primates*): Seems attention and eye movement is closely related! 
+**Related Brain Regions** (in *primates*): Seems attention and eye movement is closely related! 
 
 * FEF (Frontal Eye Field), LIP (Lateral Infero Parietal), V4, SC (Superior Colliculus), Pulvinar
+
+**Remark**: 
+
 * Eye movement vs Selective attention ~ Overt attention vs Covert attention
 
 
 
 **Neural effects of Attention**
 
-* In V1, increase the Gain and/or Baseline firing rate in a retinotopy measure
+* In V1, attention increases the Gain and/or Baseline firing rate in a retinotopy measure
   * Effect in Bias towards detection.
+  * (2009). I know where you are secretly attending! The topography of human visual attention revealed with fMRI. Vision Research
+
+
+
+
 
 
 
