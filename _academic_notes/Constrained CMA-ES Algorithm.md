@@ -33,12 +33,16 @@ CMA-ES is used in constrained optimization in some case, and we have to handle i
 Although any uni-modal distribution could serve as the distribution for offspring distribution in CMA-ES. Most of the implementation of CMA-ES is based on Gaussian distribution, we'd better review some properties of Gaussian at first. The distribution, geometry of the space and algebra is closely related to each other. 
 
 The density of general multivariate gaussian is written as 
+
+
 $$
 p( x; \mu, \Sigma) = \frac{1}{\sqrt{(2\pi)^k|\Sigma|}}\exp(-\frac12(x-\mu)^T\Sigma^{-1}(x-\mu))
 $$
 If we assume 0 mean for the distribution, the only parameter is the Covariate Matrix $\Sigma$ . It connects to the geometric structure of the distribution in the following way. 
 
 For a positive definite and symmetric matrix $\Sigma\in S^k_+$, it could be decomposed in Cholesky decomposition or eigen decomposition. 
+
+
 $$
 \Sigma = VDV^T=AA^T, \\
 VV^T=I,\\
@@ -46,12 +50,15 @@ A=VD^{1/2}, \\
 A^{-1}=D^{-1/2}V^{-1}\\
 $$
 Similarly, we also have this equation
+
+
 $$
 \Sigma^{-1} = VD^{-1}V^T=A^{-T}A^{-1}\\
 $$
 
-
 Consider the equi-density contour of the distribution, which is a $k-1$ dimension ellipsoid in the $k$ dimensional space. It subjects to the equation 
+
+
 $$
 x^T\Sigma^{-1}x = const = \|A^{-1}x\|^2
 $$
