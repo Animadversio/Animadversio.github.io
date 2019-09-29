@@ -60,5 +60,17 @@ Derry
 
 
 
+
+
+## Remark 
+
+Middle level feature or patches are behaviorally well founded, form as a mechanism for object recognition in different scenarios and it's highly interpretable.
+
+However, discover features are 
+
+
+
+Just as the feature patches carry information about the categories, the informative patches depend on the category they want to discriminate. 
+
 ## Neural Correlate 
 
