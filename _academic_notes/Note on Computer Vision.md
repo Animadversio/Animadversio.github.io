@@ -522,5 +522,27 @@ Using conjugate gradient, we don't really need to inverse a matrix, but only nee
 
 
 
+# Lec 10 11 Camera Projection 
+
+
+
+## Projection Geometry
+
+
+
+## Image Transformations
+
+
+
+## Fit the Image Transform
+
+
+
+
+
+## Application: Panorama and Blending
+
+
+
 
 
