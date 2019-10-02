@@ -78,7 +78,65 @@ $$
 
 With this geodesic, we can calculate the parallel transport of tangent space from $T_x\to T_y$ . Note from the Absil book[^1] Section 8.1 we learn that calculating parallel transport from the classic differential geometry machinery (coordinate charts, metric, christopher symbol, Riemann connection and parallel transport equation etc.) can be sophisticated. So here we derive the parallel transport from $S^{n-1}$ from the trivial parallel transport on $\R^n$, as the former is a **submanifold** of the latter. 
 
-From Section 5.3[^1], the 
+From Section 5.3[^1], the proposition 5.3.2 tells us 
+
+
+$$
+\nabla_u\eta=P_x\bar \nabla_u\eta\\
+u\in T_xM,\ M\subset N
+$$
+
+
+With $\nabla,\bar\nabla$ as the connection in submanifold and parent manifold, $\eta$ is a vector field on $M$. It means, the differential operator on submanifold is just a projection of the result from connection in the major manifold (in Euclidean case, it's just standard direction derivative). 
+
+In the case of $S^{n-1}$, as it's submanifold of $\R^n$ the Riemann connection on sphere reads 
+
+
+$$
+\nabla_v\eta=(I-xx^T)D_u(\eta)
+$$
+
+
+$D_v(\eta)$ is the directional derivative in the Euclidean space. For the parallel transport for a vector field $\eta$ along a curve $\gamma:t\mapsto M$, the equation reads
+
+
+$$
+\nabla_{\dot\gamma} \eta(\gamma(t))=0
+$$
+
+In the case of  sphere, it means that the direction derivative of the vector field $D_v(\eta(\gamma(t)))$ is parallel to the vector to the point $\gamma(t)$ for every $t$. 
+
+
+$$
+(I-xx^T)D_u(\eta)=0\\
+\rightarrow D_u(\eta)//x
+$$
+
+
+Here consider a common case, that $\gamma$ is a geodesic on sphere. From classical dynamics, it's easy to intuit that parallel transport is doing rotation to the tangent space $T_{\gamma(t)}$ in the plane spanned by $x,u$, in which the geodesic $\gamma $ resides. this rotation maps the normal vector $x\mapsto \gamma(t)$, the tangent vector $u\mapsto \dot\gamma(t)$. And as the parallel transport has no effect on the linear space orthogonal to $x,u$, that part doesn't change. 
+
+Thus, the vector field $\eta$ reads
+$$
+\eta(t)=\eta(\gamma(t))=-x\sin(\|\dot\gamma\|t)u^T\eta(0)+u\cos(\|\dot\gamma\|t)u^T\eta(0)+(I-uu^T)\eta(0)\\
+\gamma(0)=x,\gamma(1)=y,\eta(0)\in T_xS^{n-1}
+$$
+And there is a much simpler result for $\eta(1)$ (the transported vector at $y$)
+
+
+$$
+\eta(1) = \eta(0)-2\frac{(x+y)^T\eta(0)}{\|x+y\|^2}(x+y)
+$$
+
+Which is reflection of the vector component  parallel to the bisector line of $x,\ y$ . As we know the transport from $T_xS^{n-1}\to T_yS^{n-1}$, and the normal space $N_x\to N_y$ the transformation of the tangent space of the euclidean space $T_x\R^n$ is easy to write, which is just a rotation in $x,u$ or $x,y$ plane. Denote the transformation $A_{x\to y}:T_x\R^n\to T_y\R^n$ , $V\in T_x\R^n$ and denote $v=\eta(1), u=\eta(0)$  the starting and ending point of transport. 
+
+
+$$
+A_{x\to y}V=(I-xx^T-uu^T+yx^T+vu^T)V\\
+A_{y\to x}V=(I-xx^T-uu^T+xy^T+uv^T)V
+$$
+
+
+Easy to see, $A_{y\to x}$ is the inverse transform of this map. 
 
 
 
