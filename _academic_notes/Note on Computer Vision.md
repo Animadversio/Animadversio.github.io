@@ -175,10 +175,10 @@ $$
     * It's inverse is the conjugate transpose of the matrix
   * $S_{uv}[nx, ny]=\frac 1{\sqrt{WH}} \exp(-j2\pi (unx/W+vny/H))$ Defines the orthonormal basis -> a group of waves of different directions $(u,v)$ and phase $\sin.\cos$.  
     * The real and imagine part of $S_{uv}[nx, ny]$ defines 2 different phase of wave, 
-
-
-
-* $F(u,v) $ is a complex image, 
+* $F(0,0)$ is the average intensity of image $X$ ! 
+  * Can be super large if not not normalized
+  * Usually 0 for kernels 
+* $F(u,v) $ is a complex image, by symmetry, just $WH$ independent variables. 
 
 
 
@@ -315,7 +315,7 @@ $$
 
 * Define the i.id. Gaussian (multi-var) prior in Wavelet transformed space ! 
 * Use the inverse Wavelet transform to rotate it into pixel space! 
-* *Remark*: A complex distribution can be constructed by some regular simple distribution if mapped to the correct representational space
+* *Remark*: A complex distribution can be constructed by some regular distribution if mapped to the correct representational space
   * GAN and VAE is a deeper demonstration of this idea! 
 
 
@@ -423,9 +423,12 @@ Eye and imaging
 
 # Lec8 9 Shading
 
+**Motivation**
+
 * Shading is a strong cue for shape! 
   * Sculpture and 3d illusion image used it!! 
-* Multi-light source imaging can be used to generate high-res 3d model! By changing the illumination, shading change you can estimate the shape!.
+* Multi-light source imaging can be used to generate high-resolution 3d model! 
+  * By changing the illumination, shading change you can estimate the shape!.
 * Color, material, light sources, .... 
 
 ## Imaging Geometry Note
@@ -440,17 +443,21 @@ Normal vector field $\hat n (x,y)$
 
 Gradient field $\nabla Z(x,y)$ 
 
-## BRDF
 
-Material property, 
 
-How much energy output from the certain angle, if you input that energy from a certain angle $L(\theta_i,\rho_i, \theta_o,\rho_o, \lambda)$  
+*Note*: In convention, **Z** direction points to camera ! Z increase with depth decrease
+
+## BRDF (Bi-directional Reflectance Distribution Function)
+
+* Material property
+
+* How much energy output from the output angle, if you input unit energy from a input angle $L(\theta_i,\rho_i, \theta_o,\rho_o, \lambda)$  
 
 **Property**
 
-* Positivity
+* Positivity 
 * Energy Balance : Total energy arriving $\geq$ total energy leaving 
-* Helmohotz reciprocivity : $L(\theta_i,\theta_o)=L(\theta_o,\theta_i)$ 
+* Helmhotz reciprocivity : $L(\theta_i,\theta_o)=L(\theta_o,\theta_i)$ 
   * Symmetry of light source & Camera when inverting all the light rays 
 
 
@@ -458,67 +465,104 @@ How much energy output from the certain angle, if you input that energy from a c
 ## Light Source
 
 * Point Light 
-  * Parallel Light Approximation: if Light Source is infinitely away
+  * Parallel Light Approximation: if Light Source is infinitely away. If the light source is far enough > size of scene
 
+If so and assume the object is *Lambertian*, the intensity of emitting light is majorly a function of the direction of the facet on object. 
 $$
 I=max(0,\rho<\hat n, \hat l >)
 $$
 
-**Note**, turning away from light source will give you shadow! 
+**Note**, turning away from light source will give you shadow, which is also a cue for shape. 
 
 * **Shadow**  
+  * Cast shadow : shadow cast by object in front of another 
+  * Attached shadow : because facet point away from the light $dot(n,l)<0$ 
+
+
 
 ## Photometric Stereo
 
-Compute the 
+The light value is linear to the light direction $\hat l $ and surface normal $\hat n$. 
+
+Compute the normal vector (and shape) from light value under different light condition! Then we have the linear equation system 
+
+
+$$
+\hat n=\arg\min_n\|Ln-I\|^2
+$$
+
+
+$\hat n $ could be normalized and the norm is the reflectance from BRDF
+
+Can solve the normal vector for each pixel ~independently! 
 
 
 
-**Remark**: Majorly works for lambertian surfaces, if it does not work, we can use other type of specialized light source to make it more lambertian! 
+**Remark**: 
 
-
+* Majorly works for Lambertian surfaces, if it does not work, we can use other type of specialized light source (Polarized light) to make it more Lambertian! 
+* 3 light source may not be enough, more for stability
+* Can use sphere to calibrate the system
+* *Note*: some pixel does not have well defined normal! Don't solve for it
 
 ## Normal to Depth
 
-If we ignore perspective projection, then problem happens on the same circle. 
+If we ignore perspective projection, then problem happens on the same plain. 
 
-$n_x=$
+From imaging and surface geometry, the normal field and depth field are connected by these PDEs, analytically we could integrate on the field of $g_x,g_y$ and get the $Z$ field back! 
 $$
-Z=argmin_Z \|g_x[n]-f_x*Z\|+\|g_y[n]-f_y*Z\|+\lambda R(Z)
+\partial Z/\partial x=-\frac{n_x}{n_z}, \partial Z/\partial y=-\frac{n_y}{n_z}\\
+g_x[n]=-\frac{n_x[n]}{n_z[n]}, g_y[n]=-\frac{n_y[n]}{n_z[n]}
 $$
-And $f_x,f_y$ are small derivative kernels in $x$ and $y$  direction. 
+But we need a more robust algorithm for this! 
 
-However, the problem can be formed as *De-convolution* problem. 
+Think of $g_x,g_y$ as numerical derivative of $Z$ by convolving the  $f_x,f_y$ are derivative kernels in $x$ and $y$  direction. Thus, the problem can be formed as *Deconvolution* problem! (with some smoothing regularization! )
+
+$$
+Z=argmin_Z \|g_x[n]-f_x*Z\|+\|g_y[n]-f_y*Z\|+\lambda R(Z)\\
+R(Z)=\sum_n (Z*f_r)[n]^2
+$$
+
+
+
 
 ### Fourier Domain Deconvolution
 
-**Solve it in the Fourier Domain Deconvolution**, (*Frankor Chellappa algorithm* )
+Solve it by Fourier Domain Deconvolution, (i.e. *Frankor Chellappa algorithm* )
 
+**Note** : 
 
+* You don't know your absolute offset of your object! So that the 0 frequency of $Z$ is degenerate, cannot be solved! 
+* As the problem is an integral problem, Z can be specified up to an overall constant! 
 
+### Direct CGD: Conjugate Gradient
 
-
-**Note** : You don't know your absolute offset of your object! 
-
-### Conjugate Gradient
-
-If we add mask to the loss function, then the deconvolution is not easy in Fourier domain. (pixelwise operation is not diagonalized in Fourier Domain)
+If we add mask $w[n]$ to the loss function, as the loss should not be defined on all visual field. Then the deconvolution is not easy in Fourier domain. (pixelwise operation is not diagonalized in Fourier Domain!! )
 $$
 Z=argmin_Z \sum_n w[n](g_x[n]-f_x*Z)^2+w[n](g_y[n]-f_y*Z)^2+\lambda R(Z)
 $$
-We try to formulate it as a standard quadratic function , 
+*Note*
+
+* Use $w[n]=\hat n_z^2[n]$ for the valid  pixels with a normal vector! Others $w[n]=0$ 
+
+We try to formulate it as a standard quadratic function
+
+
+$$
+\arg\min_ZZ^TQZ-2Z^Tb+c
+$$
+**Notes for Implementation**: 
+
+* Note as $Z$ will be vectorization of an image so it will be huge! Forming $Q$ is not possible practically! Can only do $QZ$ mat-vec product in other ways. 
+* Using conjugate gradient, we don't really need to inverse a matrix, but only need to mat-vec product, which could be done efficiently for convolution & pixelwise operations! 
 
 
 
-Using conjugate gradient, we don't really need to inverse a matrix, but only need to mat-vec product, which could be done efficiently for convolution & pixelwise operations! 
+https://en.wikipedia.org/wiki/Derivation_of_the_conjugate_gradient_method
 
 
 
-
-
-
-
-
+## Advanced Stereo Method
 
 
 
@@ -528,11 +572,38 @@ Using conjugate gradient, we don't really need to inverse a matrix, but only nee
 
 ## Projection Geometry
 
+### Homogeneous Coordinate
 
 
-## Image Transformations
+
+- Parametrize points with a fictative $z$ . $(x,y)\mapsto(\alpha x,\alpha y,\alpha)$ 
+
+* For simple camera, the imaging geometry is like $(x,y,z)\mapsto(-f\frac xz, -f\frac yz)$ Thus only angle could be read out of the pixel location! 
+
+* Mathematically, it's parametrization of $\mathbb P^2$ Projective plane
+
+### Basic Geometry
+
+* 2d lines can be defined as $l^Tp=0$, $p=[x,y,\alpha]^T$ 
+  * $l$ is specified up to scaling
+  * line passing $p_1,p_2$, $l=\beta p_1\times p_2$ 
 
 
+
+### Image Transformations
+
+* Translation: 2 dof
+  * $\begin{pmatrix}I & t\\ 0 & 1\end{pmatrix}$, $t\in\R^2$ 
+* Rotation: 1 dof (if around center)
+  * $\begin{pmatrix}R(\theta) & 0\\ 0 & 1\end{pmatrix}$, $R(\theta)\in SO(2)$ 
+* Euclidean: 3 dof
+  * $\begin{pmatrix}R(\theta) & t \\ 0 & 1\end{pmatrix}$, $t\in\R^2,\ R(\theta)\in SO(2)$ 
+* Similarity: scaling in $x,y$ 
+  * $\begin{pmatrix}sI & 0\\ 0 & 1\end{pmatrix}$  
+* Affine: 6 dof 
+  * $\begin{pmatrix}A & t\\ 0 & 1\end{pmatrix}$, $A\in GL(2),\ t\in\R^2$  
+* Homography: 8 dof 
+  * $H\in GL(3)$ , up to scaling, so $SL(3)$ 
 
 ## Fit the Image Transform
 
@@ -541,6 +612,8 @@ Using conjugate gradient, we don't really need to inverse a matrix, but only nee
 
 
 ## Application: Panorama and Blending
+
+A distinctive use of fitting perspective transformation is Panorama blending!
 
 
 
