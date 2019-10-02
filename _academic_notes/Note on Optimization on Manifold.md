@@ -140,6 +140,10 @@ Easy to see, $A_{y\to x}$ is the inverse transform of this map.
 
 
 
+With these results, it's easy to write out CMA-ES algorithm on sphere. 
+
+
+
 
 
 
