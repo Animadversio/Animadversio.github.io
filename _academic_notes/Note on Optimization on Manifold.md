@@ -2,7 +2,7 @@
 layout: post
 title: Note on Optimization on Manifold
 author: Binxu Wang
-date: June 20th, 2019
+date: Sept. 29th, 2019
 comments: true
 use_math: true
 categories: [algorithm]

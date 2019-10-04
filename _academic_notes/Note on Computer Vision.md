@@ -579,8 +579,15 @@ https://en.wikipedia.org/wiki/Derivation_of_the_conjugate_gradient_method
 - Parametrize points with a fictative $z$ . $(x,y)\mapsto(\alpha x,\alpha y,\alpha)$ 
 
 * For simple camera, the imaging geometry is like $(x,y,z)\mapsto(-f\frac xz, -f\frac yz)$ Thus only angle could be read out of the pixel location! 
-
 * Mathematically, it's parametrization of $\mathbb P^2$ Projective plane
+
+
+
+Similarly, 3D homogeneous coordinates $(x,y,z)\mapsto(\alpha x, \alpha y, \alpha z, \alpha)$ 
+
+* Homogeneous plane equation, $l^Tp=0$ 
+* Homogeneous plane equation $L^Tp=0,\ L=[l_1,l_2]$ 
+  * 
 
 ### Basic Geometry
 
@@ -593,11 +600,14 @@ https://en.wikipedia.org/wiki/Derivation_of_the_conjugate_gradient_method
 ### Image Transformations
 
 * Translation: 2 dof
-  * $\begin{pmatrix}I & t\\ 0 & 1\end{pmatrix}$, $t\in\R^2$ 
+  * $\begin{pmatrix}I & t\\ 0 & 1\end{pmatrix}$, $t\in\R^2$  
+  * $t\in\R^3$ 
 * Rotation: 1 dof (if around center)
   * $\begin{pmatrix}R(\theta) & 0\\ 0 & 1\end{pmatrix}$, $R(\theta)\in SO(2)$ 
+  * $R(\theta)\in SO(3)$ 
 * Euclidean: 3 dof
   * $\begin{pmatrix}R(\theta) & t \\ 0 & 1\end{pmatrix}$, $t\in\R^2,\ R(\theta)\in SO(2)$ 
+  * $R(\theta)\in SO(3), t\in\R^3$ 
 * Similarity: scaling in $x,y$ 
   * $\begin{pmatrix}sI & 0\\ 0 & 1\end{pmatrix}$  
 * Affine: 6 dof 
@@ -605,17 +615,101 @@ https://en.wikipedia.org/wiki/Derivation_of_the_conjugate_gradient_method
 * Homography: 8 dof 
   * $H\in GL(3)$ , up to scaling, so $SL(3)$ 
 
+Similar results apply to 3d homogeneous coordinate transformation. 
+
+* Note for 3D, in imaging, we majorly consider transform up to Euclidean transform! No more general. 
+
 ## Fit the Image Transform
 
-
+4 points algorithm 
 
 
 
 ## Application: Panorama and Blending
 
-A distinctive use of fitting perspective transformation is Panorama blending!
+A distinctive use of fitting perspective transformation is Panorama blending! Fit the 
+
+So the problem is finding correspondence, solve the transformation equation and then do transform to connect the 2 images. 
+
+
+
+## Robust Fitting Algorithm
+
+Iterative algorithm to exclude too large error point pairs and select the others
+
+Use a error upper bound, ignore the outliers. 
+
+
+
+### RANSAC (Random Sampling and Consensus)
+
+
+
+```tex
+For i=1:n
+S1. Random sample correspondence
+S2. Compute homography $h$
+S3. Use a metric to measure goodness of the fit
+End
+S4. Use the best point pairs in the steps above to initiate iterative algorithm 
+```
+
+
+
+## Camera Projection
+
+Physical world to image plane transformation
+
+
+$$
+p=\begin{pmatrix}f_x & s & c_x & 0\\ 0 & f_y & c_y & 0\\0 & 0 & 1 & 0\end{pmatrix}p'
+$$
+
+
+$p=Pp'$ , $P=[K,0]$ $K$ as the intrinsic camera matrix. 
+
+* $f_x=f_y=f$ normally, 
+* $c_x,c_y$ is just a translation, offsetting the pixel index, normally $W/2, H/2$. 
+* $s$ is pixel skew, normally $0$ 
+
+The image is affected by the camera position and orientation, we can use a euclidean transform to note that! 
+$$
+p=K[R,t]p'
+$$
+
+* $K$ is about intrinsic properties of camera: focal length, skew
+* $[R,t]$ is about the orieantation and position.
+
+
+
+Use similar algorithm to image transformation fitting! 
 
 
 
 
 
+### Vanishing Point
+
+In projective geometry, all parallel lines intersects at the infinity (vanishing point)! And the 2d coordinates of vanishing point is connected to the physical direction of lines by extrinsic projection matrix. 
+
+For lines $r(\lambda)=r_0+\lambda d$, 
+
+* 
+
+
+
+
+
+## Multi view Camera Geometry
+
+Assuming that the 
+
+
+
+
+
+Normally, for cameras with rotation but not translation, then the 2 views will be connected by a homography! 
+$$
+\bar p_1=K[R,0]p,\ \bar p_2=K[R',0]p\\
+\bar p_1 = KRR'^{-1}K^{-1}\bar p_2
+$$
