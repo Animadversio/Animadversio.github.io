@@ -86,11 +86,8 @@ for iter=1:numIterations
 end
 ```
 
+## Systematic Work on Feature Visualization
 
+https://distill.pub/2018/building-blocks/
 
-
-
-Search in image space is interesting
-
-
-
+https://distill.pub/2017/feature-visualization/

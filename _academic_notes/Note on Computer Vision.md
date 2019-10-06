@@ -172,9 +172,10 @@ $$
 * Can be view as a global coordinate transform of the image space $\R^{H\times W}$ 
   * If Image is vectorized, then the DFT is a complex orthonormal (Unitary) matrix $S^*$ over the space $\R^{H\times W}$ 
     * $F=\frac 1 {\sqrt {WH}}S^* X$, $X={\sqrt {WH}}S F$  
-    * It's inverse is the conjugate transpose of the matrix
+    * It's inverse $S^{-1}=\bar S^T$ is the conjugate transpose of the matrix
   * $S_{uv}[nx, ny]=\frac 1{\sqrt{WH}} \exp(-j2\pi (unx/W+vny/H))$ Defines the orthonormal basis -> a group of waves of different directions $(u,v)$ and phase $\sin.\cos$.  
     * The real and imagine part of $S_{uv}[nx, ny]$ defines 2 different phase of wave, 
+    * $S$ is a unitary matrix if we linearize index into vector. 
 * $F(0,0)$ is the average intensity of image $X$ ! 
   * Can be super large if not not normalized
   * Usually 0 for kernels 
@@ -199,7 +200,7 @@ $$
 
 [Demonstration](https://www.cse.wustl.edu/~ayan/courses/cse559a/lec5.html#/fourier-transform-20) 
 
-### Convolution in Fourier space
+### Convolution Theorem
 
 Here we use convolution on 1d signal as illustration. 
 
@@ -220,7 +221,15 @@ And the convolution operator becomes a diagonal matrix $FAF^*=diag(\Lambda)$. Be
 $$
 FY=FAF^*FX=diag(\Lambda)FX=Fc\circ FX
 $$
-Thus we have the **Convolution Theorem**
+Thus we have the **Convolution Theorem** 
+
+Besides, the Fourier Transform for the de-convolution operator is the complex conjugate of the convolution one. 
+
+
+$$
+\mathcal{F}(A^T)=FA^TF^*=(\bar FAF^T)^T=diag(\bar \Lambda)
+$$
+
 
 For math facts about circulant matrix check [MIT notes](http://web.mit.edu/18.06/www/Spring17/Circulant-Matrices.pdf)
 
@@ -345,10 +354,8 @@ $$
 * **Cholesky Decomposition** can be helpful in solving linear system. 
   * `np.linalg.solve` will do the job efficiently
 
-
-
 * **Conjugate Gradient Method** (iterative method)
-  * If you can multiply $Q$ but cannot form it! 
+  * When you can vec multiply $Q$ but cannot form it! 
 
 
 
@@ -388,11 +395,9 @@ Color is not a
 
 
 
-**Color Constancy Problem**: Learn to separate illumination and color in the representation! 
+### Color Constancy Problem
 
-
-
-
+Learn to separate illumination and color in the representation! 
 
 **Color prior**: 
 
@@ -402,7 +407,6 @@ Color is not a
 Still an **active research area**, in computer vision and neuroscience
 
 * CV people use object recognition ability and the prior on object color to estimate illumination
-* 
 
 
 
