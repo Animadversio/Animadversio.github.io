@@ -1,4 +1,16 @@
+---
+layout: post
+title: Note on CNN Interpretability
+author: Binxu Wang
+date: Oct 4th, 2019
+comments: true
+use_math: true
+categories: [algorithm]
+tags: [academic note, computer vision, machine learning, interpretability]
+typora-copy-images-to: ../assets/img/notes/cv/
+---
 
+# Note on CNN Interpretability
 
 2 major way of interpreting CNN
 
