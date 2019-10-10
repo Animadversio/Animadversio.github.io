@@ -8,7 +8,6 @@ use_math: true
 categories: [algorithm]
 tags: [academic note, computer vision, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv/
-
 ---
 
 # Note on Feature Visualization 

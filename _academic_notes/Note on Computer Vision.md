@@ -371,44 +371,45 @@ $$
 
 ## Light Color and Object Color
 
-Color is not a 
-
-
+Color is not a property of object, it depends on illumination and env.
 
 * **Remark**: Same object can look like different color in different light condition
 
+Object apperant color can be think of as a linear process. The illumination spectrum $R[:]$ get linear transformed by material matrix $D[]$. 
+$$
+I[c]=D[c,:]R[:]
+$$
 **Natural Illumination** Normally well modelled by the black body radiators. 
-
-
-
-
 
 ### Transform Image across different Illumination
 
-* **Theory** Metamer in one light condition may not be metamer in another! Thus in single illumination case some information is lost, so you cannot recover the image 
+* **Theory** 
+  * Metamer in one light condition may not be metamer in another! Thus in single illumination case some information is lost,  you cannot recover the image in principle.
 
-
-
-* Linear transform
-* Diagonal transform (maybe in some color space)
-* Von-Kries model 
+* **Practice**: 
+  * Linear transform of $[R,G,B]$
+  * Diagonal transform (maybe in some color space!)
+  * Von-Kries model 
 
 
 
 ### Color Constancy Problem
 
-Learn to separate illumination and color in the representation! 
+Learn to separate illumination and object color from the image! 
 
 **Color prior**: 
 
-* **** : 
+*  **Gray world**: Assuming the average pixel `mean(I[:,:,:],axis=(1,2))` is white ! 
+  * But not true in some environment with dominant hue! 
 * **White patch Retinex**: Assuming the brightest patch in the color space is neutral (white). -> map the brightest pixels to white!  
 
 Still an **active research area**, in computer vision and neuroscience
 
 * CV people use object recognition ability and the prior on object color to estimate illumination
 
+**Application**:
 
+* Color correction for photos, create photos from different illumination. 
 
 ## Color Space (Representation)
 
@@ -471,20 +472,21 @@ Gradient field $\nabla Z(x,y)$
 * Point Light 
   * Parallel Light Approximation: if Light Source is infinitely away. If the light source is far enough > size of scene
 
+*Note*: this approximation make the integration of BRDF just a linear mapping! Simplified 
+
+## Photometric Stereo
+
 If so and assume the object is *Lambertian*, the intensity of emitting light is majorly a function of the direction of the facet on object. 
 $$
 I=max(0,\rho<\hat n, \hat l >)
 $$
-
 **Note**, turning away from light source will give you shadow, which is also a cue for shape. 
 
-* **Shadow**  
-  * Cast shadow : shadow cast by object in front of another 
-  * Attached shadow : because facet point away from the light $dot(n,l)<0$ 
+- **Shadow**  
+  - Cast shadow : shadow cast by object in front of another 
+  - Attached shadow : because facet point away from the light $dot(n,l)<0$ 
 
-
-
-## Photometric Stereo
+For a single light source, the $n$ can only be determined up to $\theta$, $\phi$ can change without changing the lightness. Thus multi-images are needed  for calculation. 
 
 The light value is linear to the light direction $\hat l $ and surface normal $\hat n$. 
 
@@ -506,7 +508,7 @@ Can solve the normal vector for each pixel ~independently!
 
 * Majorly works for Lambertian surfaces, if it does not work, we can use other type of specialized light source (Polarized light) to make it more Lambertian! 
 * 3 light source may not be enough, more for stability
-* Can use sphere to calibrate the system
+* Can use sphere (ground truth norm->luminance map) to calibrate the system
 * *Note*: some pixel does not have well defined normal! Don't solve for it
 
 ## Normal to Depth
@@ -704,16 +706,106 @@ For lines $r(\lambda)=r_0+\lambda d$,
 
 
 
-## Multi view Camera Geometry
+## Multi (Two) view Camera Geometry
 
 Assuming that the 
 
 
 
+Normally, for cameras with rotation but not translation, then the 2 views will be connected by a **homography**! Projective transformation!
 
-
-Normally, for cameras with rotation but not translation, then the 2 views will be connected by a homography! 
+Thus you don't really need to figure out depth of the world. 
 $$
 \bar p_1=K[R,0]p,\ \bar p_2=K[R',0]p\\
 \bar p_1 = KRR'^{-1}K^{-1}\bar p_2
 $$
+
+
+
+### Epipolar Geometry
+
+How the images of 2 camera relates to each other? 
+
+* 
+  * 8-point algorithm: 
+* If the two cameras are caliberated, 5 dof = 3 rotation + 2 translation
+  * 5-point algorithm: 
+
+**Remark**
+
+* If not caliberated, you cannot get absolute depth, but only relative depth. 
+  * Because distance in camera and distance in pixel space are degenerate
+
+
+
+### Rectification
+
+If 2 cameras orients to the same direction?
+
+* Epipole is in infinity 
+* Epipolar line is x-axis 
+  * Thus 
+
+
+
+
+
+## Rectified Binocular Stereo
+
+In the case of rectification, corresponding points can only move in one direction, thus difference of 2 images could be coded in disparity of each point. Figure out  **Depth map** from **Disparity map**. 
+$$
+R[x-d(x,y),y]\sim L[x,y]\\
+\Delta z^{-1}\propto d(x,y)^{-1}
+$$
+
+### How to find correspondance?
+
+
+
+* Smooth region is problematic! (too many answer)
+* Non-Lambertian / reflective material is problematic! (No apparent answer! )
+* Occlusion can be problematic. 
+
+
+
+**Algorithm Sketch**
+
+```tex
+S1: For each keypoint, generate candidate match points on the other image. (Way to select key points)
+S2: Select the closest keypoint match on the other image. (Define the representation and distance.)
+S3: Find best match and the disparity among it. 
+```
+
+**Local keypoint matching options** 
+
+* Pixel value + Euclidean distance (bad...)
+* Clipped gradient + Euclidean distance 
+* Census transformation + Hamming distance: similar to clipped gradient
+  * Defined as a code for local gradient with spatial information in it! 
+  * Note, it's different from histogram of gradient, as the spatial information is still coded and affect the distance matric! Thus it's not Rotation / Mirror invariant. 
+
+
+
+**Cost Volume data structure**
+
+* Maximum disparity (knowledge of how close an object can be in front of cameras )
+  * There is limited posibility of disparities! Can be stored in a tensor.
+* $C[x,y,d]$ = distance / matchness between $I[x,y]\sim I'[x+d,y]$  
+
+Estimate / optimize the disparity map from **cost volume**. 
+
+* Deal with noise in cost / image similarity 
+  * Smooth the cost?
+  * Smooth the disparity?
+  * Bilateral filtering + disparity 
+
+
+
+Optimize the disparity map in smooth constraint
+
+
+
+
+
+
+
