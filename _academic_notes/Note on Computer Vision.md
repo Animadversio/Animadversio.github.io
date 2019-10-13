@@ -786,7 +786,7 @@ S3: Find best match and the disparity among it.
 
 
 
-**Cost Volume data structure**
+**Cost Volume ** data structure
 
 * Maximum disparity (knowledge of how close an object can be in front of cameras )
   * There is limited posibility of disparities! Can be stored in a tensor.
@@ -794,6 +794,7 @@ S3: Find best match and the disparity among it.
 
 Estimate / optimize the disparity map from **cost volume**. 
 
+* Naive method: $d[x,y]=\arg\min_dC[x,y,d]$ 
 * Deal with noise in cost / image similarity 
   * Smooth the cost?
   * Smooth the disparity?
@@ -803,7 +804,7 @@ Estimate / optimize the disparity map from **cost volume**.
 
 Optimize the disparity map in smooth constraint
 
-
+**Global Optimization**: 
 
 
 
