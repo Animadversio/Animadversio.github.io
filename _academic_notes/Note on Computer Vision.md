@@ -660,7 +660,7 @@ End
 S4. Use the best point pairs in the steps above to initiate iterative algorithm 
 ```
 
-
+# Lec 12 13 Stereo
 
 ## Camera Projection
 
@@ -742,9 +742,9 @@ How the images of 2 camera relates to each other?
 
 If 2 cameras orients to the same direction?
 
-* Epipole is in infinity 
-* Epipolar line is x-axis 
-  * Thus 
+* Epipole is in infinity, Epipolar line is x-axis 
+  * Life is much easier!
+* Try to transfer the view in one camera to the other one. 
 
 
 
@@ -781,8 +781,8 @@ S3: Find best match and the disparity among it.
 * Pixel value + Euclidean distance (bad...)
 * Clipped gradient + Euclidean distance 
 * Census transformation + Hamming distance: similar to clipped gradient
-  * Defined as a code for local gradient with spatial information in it! 
-  * Note, it's different from histogram of gradient, as the spatial information is still coded and affect the distance matric! Thus it's not Rotation / Mirror invariant. 
+  * Defined as a binary code for local gradient with spatial information in it! 
+  * Note, it's *different from histogram of gradient*, as the spatial information is still coded and affect the distance matric! Thus it's not Rotation / Mirror invariant. 
 
 
 
@@ -805,6 +805,116 @@ Estimate / optimize the disparity map from **cost volume**.
 Optimize the disparity map in smooth constraint
 
 **Global Optimization**: 
+
+As the loss majorly consists of 2 kinds of terms unary term (match loss of a $d$), and binary term (consistency of neighbor unit), the loss function could be think of as a grid network. 
+
+If we put the loss $L$ on top of a exponential $\exp(-L)$, this could be formulate as a Markov Random Field. 
+
+And the Global Optimization could be solved by belief propagation in chains or loopy BP in the grid. 
+
+
+
+**Issues**
+
+* Matching uniqueness 
+  * 2 points in $A$ match to the same point in $B$ . 
+  * Add order constraint along epipolar line? 
+    * However, not always true! 
+* Occlusion 
+  * Some point in $A$ don't have a match in $B$ 
+
+**Tricks**
+
+* Use left as reference or use right as reference, solve both case! 
+
+
+
+It's an extension of the stereo case. 
+
+- Object movement in the world VS Camera movement
+
+
+
+## Laser Scanning Stereo
+
+Solving correspondence is hard! 
+
+* Use epipolar geometry to constraint the search, maybe not enough! 
+* Actively illuminate the object with a line and match it 
+* Line scanning could be **multiplexed**, using structured light / multi-line to scan. 
+* **Note**
+  * There will always be occlusion problem. so multiview of the object may always be required. 
+  * Background light may affect the result (the laser should be unique enough! )
+
+
+
+## Multi-view Stereo
+
+* More constraint! may be easier to solve! 
+* Use images by different people from the world
+
+
+
+# Lec 14 Optic Flow
+
+
+
+* Defined as a flow field in pixel space
+  * $I_2[x,y]=I_1[x+u[x,y],y+v[x,y]]$ 
+* **Application**: a basic geometry processing step 
+  * Useful for analyzing motion and shape
+  * Object tracking 
+  * **Image morphing**: interpolating between images by flow the field by half the time! 
+    * Turn the head by 2 head direction images!  
+
+So intrinsically, it's a correpondance search, without epipolar geometry (2d)! Tricks: 
+
+* Make life easier by restrict $u,v$ to be small deviations. 
+* Intensity consistency
+
+
+
+## Lucas Kanade Method
+
+The equation could be write approximately as a flow field $PDE$
+$$
+I[x,y,t+1]=I[x+u[x,y],y+v[x,y],t+1]\\
+I[x+u,y+v,t]=I[x,y,t]+u\partial_xI[x,y,t+1]+v\partial_yI[x,y,t+1]\\
+\partial_t I=u\partial_xI+v\partial_yI
+$$
+However, obviously, we get only one equation at one pixel! 
+
+* We only know the motion along the image gradient! motion orthogonal to gradient (along the equi-intensity line) is not noticeable
+
+* **Aperture Problem**
+  * **Locally** (see through a aperture) the motion perception is degenerate, moving along the line will not be noticed. 
+  * https://en.wikipedia.org/wiki/Barberpole_illusion
+
+**Solution**: decrease the resolution of $u,v$ field, since constancy of movement in a small region. Thus multiple equation (hope it's not degenerate) for a single pair of $[u,v]$ 
+
+* Note locally 2 lines with different orientation will give you unique estimation of moving direction. But 2 lines with same orientation (*grating*) will be degenerate. 
+* Note too small gradient will also give you bad answer! (hard to see motion in a smooth surface. )
+* Generate texture give you good result! 
+* Add positive value to diagonal to make it stable (ridge regression...)
+
+$$
+\begin{smatrix}\end
+$$
+
+**Note** : This algorithm could be applied in a hierachical way, along pyramid of multi-scale images. 
+
+* Could help estimate large flow vectors. 
+
+## Lucas Schunck Method
+
+
+
+* Add Laplacian (2nd derivative) regularization on the flow field! Set up a global optimization problem 
+  * Thus it could 
+
+$$
+(I_x[x,y]u+I_y[x,y]v+I_t[x,y])^2+\alpha(\Delta u[x,y]^2+\Delta )
+$$
 
 
 
