@@ -583,9 +583,10 @@ https://en.wikipedia.org/wiki/Derivation_of_the_conjugate_gradient_method
 
 
 - Parametrize points with a fictative $z$ . $(x,y)\mapsto(\alpha x,\alpha y,\alpha)$ 
+  - Mathematically, it's parametrization of $\mathbb P^2$ Projective plane
 
 * For simple camera, the imaging geometry is like $(x,y,z)\mapsto(-f\frac xz, -f\frac yz)$ Thus only angle could be read out of the pixel location! 
-* Mathematically, it's parametrization of $\mathbb P^2$ Projective plane
+* Use homogeneous coordinates to make it linear $(x,y,z)\mapsto(-fx, -fy,z)$ 
 
 
 
@@ -599,9 +600,12 @@ Similarly, 3D homogeneous coordinates $(x,y,z)\mapsto(\alpha x, \alpha y, \alpha
 
 * 2d lines can be defined as $l^Tp=0$, $p=[x,y,\alpha]^T$ 
   * $l$ is specified up to scaling
-  * line passing $p_1,p_2$, $l=\beta p_1\times p_2$ 
 
-
+* Points and lines are dual to each other 
+  * line passing $p_1,p_2$, $l=p_1\times p_2$ 
+  * intersection of 2 lines $p=l_1\times l_2$ 
+  * 3 lines passing same point $l_0\cdot l_1\times l_2=det(l_1,l_2,l_3)=0$ 
+  * 3 points on a same line $p_0\cdot p_1\times p_2=det(p_1,p_2,p_3)=0$  
 
 ### Image Transformations
 
@@ -662,10 +666,22 @@ S4. Use the best point pairs in the steps above to initiate iterative algorithm
 
 # Lec 12 13 Stereo
 
+## Basic of Projective Geometry
+
+
+
+**Why we need homogeneous coordinate?**
+
+* Note perspective projection from $\R^3\to\R^2$ though simple is not a linear operation. Because there is division operation $x=fX/Z$ 
+* However, homogeneous coordinates has scaling factor. Thus a division problem become a multiplicative (linear) problem! $x=fX,\ \alpha=Z$. 
+
+
+
 ## Camera Projection
 
-Physical world to image plane transformation
+In the **camera coordinate**, Z point outward along optic axis, X,Y go along width and height of the frame. 
 
+Physical world to image plane transformation
 
 $$
 p=\begin{pmatrix}f_x & s & c_x & 0\\ 0 & f_y & c_y & 0\\0 & 0 & 1 & 0\end{pmatrix}p'
@@ -678,53 +694,89 @@ $p=Pp'$ , $P=[K,0]$ $K$ as the intrinsic camera matrix.
 * $c_x,c_y$ is just a translation, offsetting the pixel index, normally $W/2, H/2$. 
 * $s$ is pixel skew, normally $0$ 
 
-The image is affected by the camera position and orientation, we can use a euclidean transform to note that! 
+If we use the **world coordinate** of object, the camera position and orientation must be taken into account, we can use a euclidean transform to transfer the world coordinate into camera one.  
 $$
 p=K[R,t]p'
 $$
 
 * $K$ is about intrinsic properties of camera: focal length, skew
-* $[R,t]$ is about the orieantation and position.
+* $[R,t]$ is about the orieantation and position of camera (5 dof)
 
+## Camera Caliberation
 
+> How to know the camera's pose $R,t$ and parameter $K$ just looking at image? ( Similar to the problem of self localization from vision in animal. )
 
-Use similar algorithm to image transformation fitting! 
+Can use similar algorithm to image transformation fitting
 
-
-
-
+* Use a bunch of 3d-2d correspondance to fit the equation $p=K[R,t]p'$ 
+* Need 6 pairs of independent points. 
+* And factorize the $(3,4)$ linear transform to $K,R$. 
 
 ### Vanishing Point
 
-In projective geometry, all parallel lines intersects at the infinity (vanishing point)! And the 2d coordinates of vanishing point is connected to the physical direction of lines by extrinsic projection matrix. 
+In projective geometry, all parallel lines intersects at the infinity (vanishing point)! And the 2d coordinates of vanishing point is connected to the physical direction of lines $d$ by extrinsic projection matrix. 
 
 For lines $r(\lambda)=r_0+\lambda d$, 
 
-* 
+- Assume in camera coordinate, the projection is $Kr_0+\lambda Kd$, 
+- The coordinate of vanishing point is $\bar p = Kd$ . 
+- Parallel line in physical world can give you $\bar p$. 
 
 
+
+**Vanishing point method** 
+
+* If we get 2 sets of parallel lines orthogonal to each other, we can get 2 vanishing points $\bar p_1,\bar p_2$
+
+Then, we have equations
+$$
+Kd_1=\bar p_1 \\
+Kd_2=\bar p_2 \\
+d_1^Td_2=0
+$$
+As there is majorly one unknown in $K$, focal length $f$, 3 equation can sovle that.  
 
 
 
 ## Multi (Two) view Camera Geometry
 
-Assuming that the 
+> How points in 2 FoV in 2 cameras corresponds to each other? 
 
 
 
-Normally, for cameras with rotation but not translation, then the 2 views will be connected by a **homography**! Projective transformation!
-
-Thus you don't really need to figure out depth of the world. 
+For cameras differed in rotation but not translation, then the 2 views will be connected by a **homography** (linear transform)! Thus you don't need to figure out depth of the world. 
 $$
 \bar p_1=K[R,0]p,\ \bar p_2=K[R',0]p\\
 \bar p_1 = KRR'^{-1}K^{-1}\bar p_2
 $$
 
-
+But, in the other sense, 2 rotated view from the single point is not useful to figure out depth. 
 
 ### Epipolar Geometry
 
-How the images of 2 camera relates to each other? 
+In general position, How the images of 2 camera relates to each other? 
+
+Picture: Epipolar triangle 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Epipolar_geometry.svg/330px-Epipolar_geometry.svg.png)
+
+
+
+**Keypoint**: 
+
+* Geometric constraint makes the correspondance point of $p$ in view 1 lies on a line in view 2. 
+* Each correspondance pairs lies on a plane going through baseline. There is a one parameter familiy of epipolar planes. 
+* If camera geometry is known, this constraint makes correspondance search 1d instead of 2d. Easier for search! 
+  * [Camera self motion](#optic flow), and [binocular stereo](#Rectified Binocular Stereo) are special cases for this 
+  * In Camera motion case, epipolar line is in the direction of camera motion (pointing forward)
+  * In Binocular stereo, the epipolar line is x axis! 
+  * Normally epipole is outside FoV, so epipolar lines go like parallel! 
+
+### Algorithm to Fit Camera Transform
+
+Given the geometric intuition above, what is the transform connecting the coordinates in 2 views. 
+
+
 
 * 
   * 8-point algorithm: 
@@ -742,9 +794,9 @@ How the images of 2 camera relates to each other?
 
 If 2 cameras orients to the same direction?
 
-* Epipole is in infinity, Epipolar line is x-axis 
+* Epipole is in infinity $(1,0,0)$, if rotated properly, epipolar line is x-axis 
   * Life is much easier!
-* Try to transfer the view in one camera to the other one. 
+* Try to transfer the view in one camera to the other one, is the same as coming up with disparity map $d$ a long $x$ axis. 
 
 
 
@@ -760,7 +812,7 @@ $$
 
 ### How to find correspondance?
 
-
+**Issue:**
 
 * Smooth region is problematic! (too many answer)
 * Non-Lambertian / reflective material is problematic! (No apparent answer! )
@@ -857,7 +909,7 @@ Solving correspondence is hard!
 
 # Lec 14 Optic Flow
 
-
+## Optic Flow
 
 * Defined as a flow field in pixel space
   * $I_2[x,y]=I_1[x+u[x,y],y+v[x,y]]$ 
@@ -913,8 +965,89 @@ $$
   * Thus it could 
 
 $$
-(I_x[x,y]u+I_y[x,y]v+I_t[x,y])^2+\alpha(\Delta u[x,y]^2+\Delta )
+(I_x[x,y]u+I_y[x,y]v+I_t[x,y])^2+\alpha(\Delta u[x,y]^2+\Delta v[x,y]^2)
 $$
+
+
+
+# Lec 15 16 Segmentation
+
+> Group pixels togethers 
+
+* Dual problem to the (object) boundary detection problem
+  * Flood Fill algorithm! 
+
+**What is our label?** 
+
+* **Geometry**: same plane, same surface
+* **Material**: same material
+* **Object**: esp. the object that moves rigidly together or doesn't move 
+
+
+
+# Lec 17 Machine Learning in CV
+
+## Logic of ML
+
+In CV, we needs to solve the inverse problem of object to image transform. Usually needs to solve it under some *regularization*, which are mannual made statistical assumptions
+
+* Depth is smooth
+* Color distribution should be like....
+
+But these artificial prior are not perfect, we need to learn the prior, i.e. the relationships between some variables $(X,Y)$, and we want to estimate $P(X,Y)$. $P_{XY}$ can be used to calculate prior knowledge $P(Y|x)$ , thus we can have better "guess" of answer. 
+
+To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution $f(x,y|\theta)$ to it with MLE. But it doesn't work!! 
+
+
+
+### Supervised Learning
+
+Instead of solving the fitting joint distribution problem. Define a map $f:x\mapsto y$ so that the loss is minimized according to the distribution
+$$
+\min \int L(y,f(x))p(x,y)dxdy\approx \sum_i L(y_i,f(x_i))
+$$
+**Note**: The sample pairs are an approximation for the underlying joint distribution! We only learns the relationship in this distribution domain! So the sample pairs that doesn't appear in real life may not be learnt in the mapping. 
+
+### Overfitting
+
+Too many parameters, too complicated model, than the fitting can be very bad if data is not enough
+
+* Fit the noise! (better fit, less generalizability) 
+* Needs more data to constraint the parameters. 
+  * But enough data + complex hypothesis space will still give you back the right answer. 
+
+Prefer simple model. Find a measure of model complexity and penalize to that. 
+
+* Regularizer on the weights ...... 
+* But rarely useful in real world case. 
+
+**Note** : Hard to define what is simple universally. The regularizer introduces our bias of simplicity. 
+
+### Bias-Variance Tradeoff
+
+* Simple function class: higher approximation error, lower estimation error (easier to estimate)
+* Complex function class: lower approximation error, higher estimation error (harder to constraint with data)
+
+
+
+### Basic Components 
+
+* Training set
+* Loss function 
+* Hypothesis space (model architecture / expressiveness)
+  * Regularization strength, functional class 
+
+
+
+Good for "ill" posed problems, add prior to regularize the problem. 
+
+### Standard Practise   
+
+* Training set, validation set, test set. 
+
+
+
+
 
 
 
