@@ -1035,7 +1035,7 @@ Prefer simple model. Find a measure of model complexity and penalize to that.
 * Training set
 * Loss function 
 * Hypothesis space (model architecture / expressiveness)
-  * Regularization strength, functional class 
+  * Regularization strength, functional class.... 
 
 
 
@@ -1044,6 +1044,57 @@ Good for "ill" posed problems, add prior to regularize the problem.
 ### Standard Practise   
 
 * Training set, validation set, test set. 
+  * Don't look at test set before final stage! 
+  * Every effort to avoid overfitting! 
+
+
+
+## Example: Binary Classification
+
+Output $y\in \{0,1\}$
+
+**Normal Regression**
+
+* Loss function: L2 loss! Just treat it as fitting
+* Binarize the output! 
+
+### Logistic Regression
+
+* Use a connection function $P(L=1)=f(w,x)=\sigma(w^T\bar x)$
+* Logit function $\sigma(x)=\exp(x)/(1+\exp(x))$ 
+* $\bar x$ is an augmented "feature vector", e.g.
+  * $[x,1]$
+  * $[x,x^2,x^3,1]$ 
+  * $[g(x),x,1]$ 
+* Loss function is $-y_i*\log(f(x_i))-(1-y_i)*\log(1-f(x_i))$ 
+  * Cross entropy: between the real probability distribution and the inferred distribution of classes. $\sum_i\sum_c-P(y_i=c)\log P(\hat y_i=c)$ 
+
+Decision boundary will be a hyperplane in the feature space! 
+
+As the loss function is convex, we can optimize and get unique solution! 
+
+
+
+### Gradient Descent 
+
+* Calculate the gradient $g(w)=\nabla_w C(y,x;w)$. 
+*  $w^{t+1}\leftarrow w^t-\alpha g(w^t)$  
+* Step size control
+  * Normally, direct line search
+  * 2nd order Newton method 
+  * In machine learning, use a fixed $\alpha$ or schedule the $\alpha$ by the steps
+    * **Cost caluculation is not feasible**! 2nd order info is not available. 
+    * Theory of when it can succeed is not available now! 
+
+If you can try to work out gradient. 
+
+### Stochastic Gradient Descent
+
+
+
+* Random Sampling, without replacement
+* Shuffle 
+* Batch 
 
 
 
