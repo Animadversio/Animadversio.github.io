@@ -6,30 +6,33 @@ Official note on installation https://caffe.berkeleyvision.org/installation.html
 
 * Install [Miniconda]()
 
-* Install caffe using conda
-
-`conda install -c intel caffe`
+* Install caffe using conda`conda install -c intel caffe`
 
 
 
 > lsb_release -d
 > Description:    CentOS release 6.10 (Final)
 
+### Building GPU version on CHPC
+
+(Not succeeded yet.... aborted)
+
+1. Check `gcc` version to be 4.8.5 `module load gcc-4.8.5`
+2. Check cmake version to newer than 3 `module load cmake-3.14.5`
+
+**Reference** 
+
  http://www.andrewjanowczyk.com/installing-caffe-on-the-ohio-super-computing-osc-ruby-cluster/ 
 
 http://homepage.cs.uiowa.edu/~zli79/notes/Installation_Caffe_on_Argon_Cluster.pdf
-
-### Building GPU version on CHPC
-
-1. 
-2. Check `gcc` version to be 4.8.5 `module load gcc-4.8.5`
-3. Check cmake version to newer than 3 `module load cmake-3.14.5`
 
 
 
 ### Installing GPU version on CHPC
 
 https://anaconda.org/anaconda/caffe-gpu
+
+Just use miniconda, and `conda install -c anaconda caffe-gpu`
 
 ## Testing Installation
 
