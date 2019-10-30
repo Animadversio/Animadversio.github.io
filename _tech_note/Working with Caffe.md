@@ -1,3 +1,13 @@
+---
+layout: post
+title: Working with Caffe
+author: Binxu Wang
+date: Oct 27th, 2019
+comments: true
+categories: [machine learning]
+tags: [tech note, Machine Learning, Computer Vision]
+---
+
 ## Installation
 
 Official note on installation https://caffe.berkeleyvision.org/installation.html
