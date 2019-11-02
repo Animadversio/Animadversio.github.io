@@ -26,21 +26,23 @@ The relative configuration of a single elements
 * Configural property 
   * Relative 
 
-
-
-z0IMzrHQ
-
-z0lMzrHQ
-
 Invariance to many change in Stimuli 
 
 * Shading, light condition, hair style ...... 
 
 
 
-
-
-
-
 Prey capture behaviors 
+
+## What is Concept
+
+
+
+* Pointer to knowledge 
+  * *Explain* behavior and sensory stimuli, makes them less suprising 
+  * Help *predict* the behavior of novel object 
+
+## How Concepts are Represented in the Brain
+
+
 

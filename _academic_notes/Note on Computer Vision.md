@@ -13,9 +13,11 @@ typora-copy-images-to: ../assets/img/notes/cv/
 Note on Computer Vision 
 ========
 
+Lecture Notes from CS559. 
+
 * TOC
 {:toc}
-[Lec 1-2 Image Formation]
+
 
 # Lec01: Image Formation
 In principle, **digital images** are formed by measuring energy (*counting photons*) over an array. But several pre-processing steps makes it interesting and relevant to processing. 
