@@ -57,7 +57,9 @@ geodesic icosphere
 
 **Note**: that circularity happens in the parameter space (intrinsic corrdinate of the manifold), but not in the embedded space! So many work could be done easier by resorting to the extrinsic coordinates. 
 
+Check this repo for different method to generate points on a sphere and compare. 
 
+ https://github.com/gradywright/spherepts 
 
 ## Fit a Distribution of Sphere
 
@@ -88,9 +90,27 @@ For example, the function defining Kent distribution is
 $$
 f(\mathbf {x} )={\frac {A}{{\textrm {c}}(\kappa ,\beta )}}\exp\{\kappa {\boldsymbol {\gamma }}_{1}^{T}\cdot \mathbf {x} +\beta [({\boldsymbol {\gamma }}_{2}^{T}\cdot \mathbf {x} )^{2}-({\boldsymbol {\gamma }}_{3}^{T}\cdot \mathbf {x} )^{2}]\}
 $$
-The parameters are an amplitude parameter $A$, and 2 parameters characterizing the shape and peakness of the function $\kappa,\beta$. And 3 unit-vectors $\gamma_1,\gamma_2,\gamma_3$ forming a set of orthonormal basis ($[\gamma_1,\gamma_2,\gamma_3]\in SO(3)$ which is a 3 parameter matrix group), thus there are 6 parameters for this function. 
+The parameters are an amplitude parameter $A$, and 2 parameters characterizing the shape and peakness of the function $\kappa,\beta$. And 3 unit-vectors $\gamma_1,\gamma_2,\gamma_3$ forming a set of orthonormal basis ($[\gamma_1,\gamma_2,\gamma_3]\in SO(3)$ which is a 3 parameter matrix group), thus there are 6 parameters for this function. And we can fit this function just as  normal with matlab fitting routines. 
+
+```matlab
+ft = fittype( @(theta, phi, psi, kappa, beta, A, x, y) KentFunc(theta, phi, psi, kappa, beta, A, x, y), ...
+        'independent', {'x', 'y'},'dependent',{'z'});
+Parameter = fit([theta_data(:), phi_data(:)], score_data, ft, ...
+                'StartPoint', [0, 0, pi/2, 0.1, 0.1, 0.1], ...
+                'Lower', [-pi, -pi/2,  0, -Inf,   0,   0], ...
+                'Upper', [ pi,  pi/2,  pi,  Inf, Inf, Inf],...)%, ...
+                    'Robust', 'LAR' );
+V = coeffvalues(Parameter);
+CI = confint(Parameter);
+```
+
+
 
 
 
 ## Visualize Function on Sphere
+
+Refer to this note for plotting in `matlab` 
+
+https://math.boisestate.edu/~wright/montestigliano/PlottingOnTheSphere.pdf 
 

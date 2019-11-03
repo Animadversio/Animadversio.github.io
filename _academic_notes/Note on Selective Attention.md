@@ -13,7 +13,7 @@ Note on Selective Attention
 From 
 
 1. Christofer Koch 2013 Lecture Visual Attention and Consciousness
-2. GoldStein, Chapter Attention
+2. Goldstein, Chapter Attention
 
 
 
