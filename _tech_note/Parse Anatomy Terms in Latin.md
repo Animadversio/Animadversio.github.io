@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Sept 7th, 2019
 comments: true
 categories: [neuroscience]
-tags: [tech note, language, Anatomy, Latin]
+tags: [tech note, language, Anatomy, Latin, neuroscience]
 ---
 
 How to Parse Latin/Greek Anatomical/Physiological Terms 
