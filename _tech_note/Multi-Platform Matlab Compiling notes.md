@@ -40,6 +40,7 @@ To choose a different language, select one from the following:
 * On macOS you cannot. The gcc it use is usually the `Clang` compiler coming with `Xcode`. Thus it's different from `gcc` and some options are not supported by `Clang` like `gcc -fopenmp`. 
 	* If you want to use authentic `gcc` instead, you have to install it yourself. Like `homebrew install gcc` or `homebrew update gcc`  
 	* And then change the `mex`  command like `mex CC="/usr/local/bin/gcc-9 -fopenmp" LD="/usr/local/bin/gcc-9 -fopenmp" xxx.c`. Using the path to real `gcc` to substitute! (Note MacOS automatically alias `gcc` with the Clang compiler, so we have to use `gcc-9` for the real one.) 
+* For official reference see [Change Default Compiler](https://www.mathworks.com/help/releases/R2019a/matlab/matlab_external/changing-default-compiler.html?lang=en) 
 
 ## Debugging Notes for multi-platform compiling
 
