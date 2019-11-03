@@ -36,17 +36,33 @@ Official note on installation https://caffe.berkeleyvision.org/installation.html
 
 http://homepage.cs.uiowa.edu/~zli79/notes/Installation_Caffe_on_Argon_Cluster.pdf
 
-
-
 ### Installing GPU version on CHPC
 
 https://anaconda.org/anaconda/caffe-gpu
 
 Just use miniconda, and `conda install -c anaconda caffe-gpu`
 
+### Installing GPU version on Windows machine
+
+The easiest way is using the the conda export file to copy the same environment. 
+
+```bash
+conda create --name caffe36 --file caffe36_spec-file.txt
+```
+
+Then it will download and install all the packages with the required source and version
+
+```bash
+conda activate caffe36
+```
+
+Check onenote for more debugging note. 
+
+If some dlls are missing `MSVCP140D.DLL, VCRUNTIME140D.DLL`, download them from net and put it in  `C:\Windows\System32`. 
+
 ## Testing Installation
 
-Starting by submitting a gpu job `qsub -I -l nodes=1:ppn=1:gpus=1,walltime=01:00:00 `
+If on CHPC, start by submitting a gpu job `qsub -I -l nodes=1:ppn=1:gpus=1,walltime=01:00:00 `
 
 After downloading some weights for models by using 
 
