@@ -14,7 +14,7 @@ typora-copy-images-to: ../assets/img/notes/cv/
 Note on Patch Based Shape Interpretation
 ========
 
-These are 2 related paper both employ a patch based approach to tackle shape from shading problem. 
+These are 2 related paper both employ a **patch based approach** to tackle **shape from shading** problem. 
 
 Typically patches have simpler appearance, thus they are easier to collect the statistics on or fit a model on. The spirit is to find a local explanation for patches in an image, however, as there will be ambiguity in local patches, the algorithm should not over-commiting to any one of the explanation and keep the distribution of possible shapes. And then take these local shape proposals and see which can stitch together and make sense globally.  
 
@@ -47,8 +47,6 @@ Apparent image is not that useful for comarison, the iternal representation used
 * Depth field
 * Contour
 * Ownership mask (object mask)
-
-
 
 ### Local Inference Method
 
@@ -85,17 +83,34 @@ Here the patches are not selected from cropping an images database of  pre-exist
 
 ### Theory: Uniqueness of Quadratic Shape
 
+Graph of a quadratic function is 
+$$
+z(x,y;a)=a_1x^2+a_2y^2+a_3xy+a_4x+a_5y
+$$
+ 
+
+The un-normalized normal vector is 
+$$
+n(x,y;a)=[-2a_1x-a_3y-a_4,\ -a_3x-2a_2y-a_5,\ 1]^T=A\bar x
+$$
+Which is linear to the augmented coordinate $\bar x=[x,y,1]^T$ , transformation matrix is $A$. 
+
+If we assume diffuse light imaging with light vector $l$, $\|l\|$ represent the product of albedo and light intensity. The rendering equation goes 
+$$
+I(x,y)=\frac{l^Tn(x,y)}{\|n(x,y)\|}\\
+I(x,y)^2=\frac{\bar x^TA^Tll^TA\bar x}{\bar x^TA^TA\bar x}
+$$
+
+
 
 
 ### Patch Representation
 
 Represented as a 5 entry parameter vector $a$. 
 
-But as the theory suggest, if the light source is known, the plausible surface normal lies on a cone. 
+But as the theory suggests, if the light source is known, the plausible surface normal lies on a cone, thus could be parametrized $a(\theta)$ by one parameter $\theta$. When doing local inference the patch proposal, $\theta$ is discrietized to $J$ distinct labels for the ease of globalization. 
 
 ### Local Inference Method
-
-
 
 As the local inference is quite simple, the patch can be sampled densely. 
 
