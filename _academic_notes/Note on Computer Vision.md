@@ -52,7 +52,7 @@ $$
 ## General Efficiency Note
 
 - Start implementation with for loop! 
-- Avoid for-loop, if have to put it in inner most part! 
+- Avoid for-loop. If you have to put it in inner most part! 
 - Substitute for loop with elementwise operation & convolution! 
 
 
@@ -88,20 +88,20 @@ $$
 
 
 
-**Example**: 
+### Application of Convolution 
 
-* Translation can be performed by convolving single value convolution kernel!! 
-  * Think about the input response function. 
+**Translation**: can be performed by convolving single value convolution kernel!! 
+
+* Think about the input response function. 
 
 **Blurring** : $G*I$ 
 
-**Image sharpening** : substract the Blurred image $(1+\alpha)I-\alpha G*I$ . 
-
- 
+**Image sharpening** : substract the Blurred image, $(1+\alpha)I-\alpha G*I$ . 
 
 **Edge Detection**: Derived from partial differential operator
 
-* Derivative over space is a linear operation! 2 derivative $I_x$ and $I_y$ are sufficient to compute derivative of any direction $I_\theta=I_x+I_y$ 
+* Derivative over space is a linear operation! 
+* 2 derivative $I_x$ and $I_y$ are sufficient to compute derivative of any direction $I_\theta=\cos\theta I_x+\sin \theta I_y$ 
 
 ## Hough Transform: Global Feature Detection
 
@@ -666,7 +666,7 @@ End
 S4. Use the best point pairs in the steps above to initiate iterative algorithm 
 ```
 
-# Lec 12 13 Stereo
+# Lec 12 13 14 Stereo
 
 ## Basic of Projective Geometry
 
@@ -972,9 +972,9 @@ $$
 
 
 
-# Lec 15 16 Segmentation
+# Lec 15 Segmentation
 
-> Group pixels togethers 
+> Group pixels togethers! 
 
 * Dual problem to the (object) boundary detection problem
   * Flood Fill algorithm! 
@@ -984,6 +984,72 @@ $$
 * **Geometry**: same plane, same surface
 * **Material**: same material
 * **Object**: esp. the object that moves rigidly together or doesn't move 
+* **Foreground, background**
+
+**Objective**
+
+* Similar and related pixels goes to the same label. 
+
+Thus, it's a clustering, in the feature space and the image pixel space. 
+
+## Superpixel Formation
+
+Pre-processing step. Group the similar looking and close by pixels into a label. 
+
+### Simple Linear Iterative Clustering
+
+**Formulation**: In short, make pixel coordinates part of the feature vector, and cluster the pixels with K-means in the augmented feature space. 
+
+
+
+* Augment the image into the augmented pixel array $I'[n]=[L,a,b,\alpha n_x,\alpha n_y]$. (Usually use `Lab` space to reproduce the perceptual similarity.) 
+* K-means cluster $I'[n]$. Objective find the label array $L[n]$. 
+
+$$
+L=\arg\min_L\min\sum_k\sum_{n,L[n]=k} \|I'[n]-\mu_k\|
+$$
+
+* **Initialization**: 
+  * Initialize the K cluster by generating a regular grid $\{n_k\}$. 
+  * To avoid boundary, choose minima of gradient amplitude as seeds! 
+  * Choose the feature value of the grid point as mean $\mu_k=I'[n_k]$ . 
+* Iteratively, 
+  * Nearest Neighbor assignment: $L[n]=\arg\min_k \|I'[n]-\mu_k\|$ 
+  * Re-estimate mean: $\mu_k=mean(I'[n]|L[n]=k)$ 
+
+**Note**: Seeding is a common problem for segmentation problems. 
+
+* How to choose seeds and avoid putting initial seed on some boundary! 
+* **Efficiency Trick**, don't need to consider all pixel for all labels. Only consider a window for a pixel! Each pixel only needs to remember the distance to nearest cluster mean! 
+
+**Drawback**: 
+
+* Hard to predetermine the cluster number $K$ and control the size of superpixel. 
+
+### Usage of Superpixels
+
+Remember the bilateral filtering, superpixel provides a boundary that your operation should stop! 
+
+* **Object**: Grouping superpixels together into objects. 
+* **Denoising** image within superpixel patch 
+* **Filter** the cost, disparity map, optical flow within superpixel! 
+* Fit a simple model (linear) to the value within a superpixel, for denoising. 
+
+And other information (disparity, flow) can also go into augmented pixel feature vector, and help the superpixel aggregation. 
+
+## Graph based Segmentation
+
+For example, for foreground, background segmentation. 
+
+**Formulation**: 
+$$
+\arg\min_{L} \sum_n C(n,L[n])+\sum_{(n,n')\in E}w_{n,n'} 
+$$
+Think of the image as network, neighboring edges are connected, strength determined by the similarity of pixels. 
+
+
+
+### Multi-label graph based segmentation 
 
 
 
