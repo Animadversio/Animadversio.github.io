@@ -20,7 +20,19 @@ Note on ShapeCollage and Patch Based Shape Interpretation
 
 
 
-## Local Shape based interpretation
+## Quadratic Shape from Shading: Local Shape based interpretation
+
+
 
 ### Spirit
+
+Understand shape by local patches, but here the patches are not selected from cropping an images database of  pre-existing shape-image pair. 
+
+
+
+### Realm of Question 
+
+Doesn't consider occluding contour, texture and gloss light. 
+
+
 
