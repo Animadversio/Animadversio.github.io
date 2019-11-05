@@ -39,6 +39,10 @@ Forrester Cole, Phillip Isola, William T. Freeman, Fredo Durand, Edward H. Adels
 
 This work doesn't follow a parametrized model of local shape, like [quadratic model](#Theory: Uniqueness of Quadratic Shape), however it follows a empirical way, try to learn from the natural distributions of patches
 
+### Patch Selection
+
+As we know some points are more informative of shape than otheres. 
+
 ### Patch Representation
 
 Apparent image is directly useful for comarison, the internal representation used for local shape is a multi-channel one, 

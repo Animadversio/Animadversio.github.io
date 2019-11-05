@@ -1053,18 +1053,20 @@ Think of the image as network, neighboring edges are connected, strength determi
 
 
 
-# Lec 17 Machine Learning in CV
+# Lec 17 18 19 20 Machine Learning in CV
 
 ## Logic of ML
 
-In CV, we needs to solve the inverse problem of object to image transform. Usually needs to solve it under some *regularization*, which are mannual made statistical assumptions
+In CV, we needs to solve the inverse problem of object to image transform. But the problems are quite ill-posed. Usually we need to solve it under some *regularization*, which are mannual made statistical assumptions
 
 * Depth is smooth
 * Color distribution should be like....
 
-But these artificial prior are not perfect, we need to learn the prior, i.e. the relationships between some variables $(X,Y)$, and we want to estimate $P(X,Y)$. $P_{XY}$ can be used to calculate prior knowledge $P(Y|x)$ , thus we can have better "guess" of answer. 
+But these artificial prior are not perfect, we need to **learn** the prior, i.e. the relationships between some variables $(X,Y)$, and we want to estimate $P(X,Y)$. $P_{XY}$ can be used to calculate prior knowledge $P(Y|x)$ , thus we can have better "guess" of answer. 
 
-To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution $f(x,y|\theta)$ to it with MLE. But it doesn't work!! 
+To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution (i.e. mixture of Gaussian) $f(x,y|\theta)$ to it with MLE. But it doesn't work!! 
+
+This hard problem will finally go to [deep unsupervised learning](Note on Deep Unsupervised Learning.md).  
 
 
 
@@ -1166,9 +1168,85 @@ If you can try to work out gradient.
 
 
 
+### BackProp and AutoGrad 
+
+A Deep Learning Framework has these components
+
+* Computational Graph:  encoding the symbolic relationship between data. 
+* Node
+  * Computation it carries out
+  * Some stores input **value**, some stores inter-mediate value (**activation**), some has **parameters** in it 
+  * Note some 
+* Forward computation: send data forward 
+* Backward computation: send gradient back 
+
+#### Build our own framework.
+
+* Build a global list that book keeping the relationships of nodes: `ops`, and the data  `Value`, `Param` 
+  * Note the nodes are objects in operation class, they will store **reference** to operands in `Value` and `Param` class. Note, it's not copying the global object! 
+* Forward pass is just calling the `Forward` method in each operation, one by one! 
+  * Though graph is not linear, it can be represented in a sequence just as programming language do. 
+* Backward pass is the inverse, calling the `Backward` method in a inverse order! 
+  * At the time backward is called it should have **gathered** all it's gradient! 
+  * The grad of `loss` itself is all one, this is an input to the backward function. 
+  * Each module will calculate 2 terms, one is $\partial out/\partial in$, one is $\partial out/\partial param$. 
+  * Note, the intermediate value and parameters are **Global** variables, they will accumulate the gradient, as more than 1 nodes may send gradient to it! 
+
+### Sigmoid and ReLU
+
+> History of Nonlinearity
+
+Let's see how the behavior of gradient when passing through the non-linearity. 
+
+**Sigmoid function** : $1/(\exp(-x)+1)$
+
+* Activation is limited, doesn't need to normalize. s
+* Can saturated in positive or negative way! 
+  * The gradient will vanish in both way!
+  * Initialization and normalization should be careful. 
+
+**ReLU**: $ReLU=\max(x,0)$
+
+* Doesn't change gradient when positive. 
+
+As we can see, gradient descent can be very fragile! The gradient behavior ~ Normalization, must be observed clearly 
+
+### Initialization
+
+Naive way is to set parameters to random values. 
 
 
 
+### Operations Over Space
+
+In this category, treat the image as vector is not efficient! Data is usually represented as $(B,H,W,C)$ tensor. 
+
+`conv2`, 
+
+* Forward is just convolution
+* But we know, convolution is linear, so gradient will be linear function of `Param` and `Value`, thus backward pass is upconvolution or deconvolution. 
+
+`downsample`: 
+
+* Just send 
+* Note 
+
+`maxpool`, `max` : and any 
+
+* Send forward the maximum value, **store** the `argmax` index
+* Send backward the gradient to the index in input! (*Gradient Routing*! )
+
+`flatten`: 
+
+* Just reshape the input or gradient 
+
+### Conditional and Eager Execution
+
+Routing gradient according to condition is simple! But when there is loop, this can be tricky! 
 
 
+
+## Spirit and Lessons
+
+> Neural network in computational perspective is **Differentiable Programming**. Come up with building blocks of operation, make sure each of them is *differentiable* 
 
