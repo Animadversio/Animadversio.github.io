@@ -1062,9 +1062,9 @@ In CV, we needs to solve the inverse problem of object to image transform. But t
 * Depth is smooth
 * Color distribution should be like....
 
-But these artificial prior are not perfect, we need to **learn** the prior, i.e. the relationships between some variables $(X,Y)$, and we want to estimate $P(X,Y)$. $P_{XY}$ can be used to calculate prior knowledge $P(Y|x)$ , thus we can have better "guess" of answer. 
+But these artificial prior are not perfect, we need to **learn** the prior, i.e. the relationships between some variables $(X,Y)$, and we want to estimate $P(X,Y)$. $P_{XY}$ can be used to calculate prior knowledge $P(Y\mid x)$ , thus we can have better "guess" of answer. 
 
-To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution (i.e. mixture of Gaussian) $f(x,y|\theta)$ to it with MLE. But it doesn't work!! 
+To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution (i.e. mixture of Gaussian) $f(x,y\mid \theta)$ to it with MLE. But it doesn't work!! 
 
 This hard problem will finally go to [deep unsupervised learning](Note on Deep Unsupervised Learning.md).  
 
