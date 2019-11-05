@@ -5,9 +5,26 @@ permalink: /academic_notes/
 feature-img: assets/img/pexels/eyesight_Iris.jpg
 ---
 
-{% for cat in site.category-list %}
+{% for cat in site.category-list1 %}
 {% unless cat == 'personal writing' %}
-<div class=coll4>
+<div class=coll2>
+<h3> {{ cat }} </h3>
+<ul>
+  {% for page in site.academic_notes %}
+      {% for pc in page.categories %}
+        {% if pc == cat %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li> {{ post.date | date_to_string }}
+        {% endif %}   <!-- cat-match-p -->
+      {% endfor %}  <!-- page-category -->
+  {% endfor %}  <!-- page -->
+</ul>
+</div>
+{% endunless %}
+{% endfor %}  <!-- cat -->
+
+{% for cat in site.category-list2 %}
+{% unless cat == 'personal writing' %}
+<div class=coll2>
 <h3> {{ cat }} </h3>
 <ul>
   {% for page in site.academic_notes %}
