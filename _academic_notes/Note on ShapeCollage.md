@@ -41,7 +41,7 @@ This work doesn't follow a parametrized model of local shape, like [quadratic mo
 
 ### Patch Representation
 
-Apparent image is not that useful for comarison, the iternal representation used for local shape is a multi-channel one, 
+Apparent image is directly useful for comarison, the internal representation used for local shape is a multi-channel one, 
 
 * Normal vector field
 * Depth field
