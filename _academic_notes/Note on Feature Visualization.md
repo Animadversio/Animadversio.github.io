@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Semptember 17th, 2019
 comments: true
 use_math: true
-categories: [algorithm]
+categories: [machine learning]
 tags: [academic note, computer vision, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv/
 ---

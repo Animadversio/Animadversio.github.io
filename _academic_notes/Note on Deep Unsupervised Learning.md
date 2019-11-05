@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Semptember 13th, 2019
 comments: true
 use_math: true
-categories: [computer science]
+categories: [machine learning]
 tags: [academic note, computer vision, computer science, machine learning]
 typora-copy-images-to: ../assets/img/notes/DUL/
 
