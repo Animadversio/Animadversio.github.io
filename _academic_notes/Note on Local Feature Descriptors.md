@@ -27,23 +27,39 @@ S_0[p]=\begin{pmatrix}I_x[p]^2 & I_x[p]I_y[p]\\
 						I_x[p]I_y[p] & I_y[p]^2\end{pmatrix}\\
 S_w[p]=w*S_0
 $$
+Thus the Structure Tensor discribe the local intensity landscape in a differential geometry manner! 
 
 * Trace of Structure tensor gives you the strength of gradient locally. 
 * The difference of 2 eigen vector gives you the anisotropy of the local area. 
 * If one eigenvalue is 0 (degenerate), then the local image will be stripe like.
 
+[wiki](https://en.wikipedia.org/wiki/Structure_tensor)
+
+## Harris Corner Detector 
+
+Using the Structure Matrix, it finds spot where both of the eigen values are large. Some approximate computation method includes
+
+* $\min(\lambda_1,\lambda_2)$ 
+* $M=\lambda_1\lambda_2-\kappa(\lambda_1+\lambda_2)^2 =\det(S)-\kappa tr(S)$ 
 
 
-## HOG (Histogram of Gradient)
+
+[Harris Detector]([https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi%E2%80%93Tomasi_corner_detection_algorithms](https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi–Tomasi_corner_detection_algorithms)) 
+
+## HOG (Histogram of Oriented Gradient)
 
 
 
-
+[Histogram of Oriented Gradient](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients)
 
 ## SIFT (Scale Invariant Feature Transform)
 
-https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html
+[Doc from OpenCV2](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html)
 
-https://blog.csdn.net/zddblog/article/details/7521424
+[Elementary Chinese Blog](https://blog.csdn.net/zddblog/article/details/7521424) 
+
+[SIFT theory and practice](http://aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) 
+
+[SIFT on Towards DataScience](https://towardsdatascience.com/sift-scale-invariant-feature-transform-c7233dc60f37)
 
 SIFT is the pipeline of a bunch of operations. 
