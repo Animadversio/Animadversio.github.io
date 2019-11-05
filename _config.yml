@@ -112,7 +112,7 @@ collections:
     permalink: /:collection/:name
 
 category-list1: [mathematics, neuroscience]
-category-list2: [algorithm, computer science]
+category-list2: [machine learning, algorithm, computer science]
 
 # BUILD SETTINGS
 markdown: kramdown
