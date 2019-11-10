@@ -1053,7 +1053,7 @@ Think of the image as network, neighboring edges are connected, strength determi
 
 
 
-# Lec 17 18 19 20 Machine Learning in CV
+# Lec 17 18 19 20 Machine Learning
 
 ## Logic of ML
 
@@ -1143,7 +1143,7 @@ Decision boundary will be a hyperplane in the feature space!
 
 As the loss function is convex, we can optimize and get unique solution! 
 
-
+## Deeper Model
 
 ### Gradient Descent 
 
@@ -1180,7 +1180,7 @@ A Deep Learning Framework has these components
 * Forward computation: send data forward 
 * Backward computation: send gradient back 
 
-#### Build our own framework.
+### Build our own framework.
 
 * Build a global list that book keeping the relationships of nodes: `ops`, and the data  `Value`, `Param` 
   * Note the nodes are objects in operation class, they will store **reference** to operands in `Value` and `Param` class. Note, it's not copying the global object! 
@@ -1250,3 +1250,75 @@ Routing gradient according to condition is simple! But when there is loop, this 
 
 > Neural network in computational perspective is **Differentiable Programming**. Come up with building blocks of operation, make sure each of them is *differentiable* 
 
+* Choose the hypothesis space 
+* Make the gradient flow healthy! Not cut or vanished ! 
+  * For very deep network, 
+
+# Lec 21 Semantics Tasks in Vision
+
+## Task Taxonomy
+
+Classic semantic CV tasks: 
+
+* **Image classification**: 
+  * Image is not an object! So the label may not represent the whole thing. Can classify based on scene or dominating object. 
+* **Object detection**: Check if certain object in the scene, if so drawa box around it. 
+  * Propose a box squaring the target object
+* **Semantic segmentation**:  Precisely label the identity for each pixel, classification on pixel level. 
+* What's more? 
+  * **Instance segmentation**: distinguishing between different instances of the same type, different person. 
+  * **Human pose-skeleton estimation**: 
+  * **Face Recognition**: 
+  * **Expression recognition**: 
+  * **Let language and vision interact with each other**: *Just talk about the image!*, *answer some question about the image!* 
+
+### History and Progress
+
+Seems there is no equations that could solve these problems for free! 
+
+* Note **evaluation** is a non-trivial challenge! 
+  * Ancient times, we only have limited objects and limited images, hard to compare between lab! 
+* Building an image dataset
+  * People collect large amount of images (camera gets much cheaper! ) Using MTurk, to crowd source the labels for an image
+  * Use word-net, a word hierachy as labels. 
+  * Larger dataset push the ML to accomodate large data. (NN doesn't work well on small datasets, but perform much better than SVM on larger dataset. )
+  * The miracle of `ILSVRC 2012` 
+
+* What big data has changed?
+  * Traditional algorithm designed to use small training data. 
+    * Complex optimization method, 2nd order! 
+    * Simple classifier, SVM (partly limited by optimization methods, if you want convex, convergence guanrantee! Elif you cannot compute the Hessian)
+  * Current workflow is to first **collect large dataset**, and then find algorithm!! 
+    * Using 1st order, gradient descent! 
+    * Now we can use much more complicated classification algorithm! 
+    * History tells us, Developping sophisticated algorithm on simple dataset is more like an intellectual exercise...... First collect data and train is the way. 
+
+*Note*: CNN can learn random labels for the images, (just like pigeons) ...... arbitrary category learning can be done in CNN. 
+
+
+
+## Architecture
+
+General setting for image classification
+
+* Fix the input image to certain size $S\times S$
+* Output a $C$ dimen vector for C classes.
+  * Use cross-entropy to train
+  * Use argmax or top K to inference
+
+
+
+**VGG-16**
+
+* Convolution 
+* Maxpooling
+* Fully connected
+* Soft max
+
+**Note**: the conv net arithmatics. 
+
+
+
+* Using smaller simpler kernel but more layers is better than large kernel 
+
+5-2 /2 

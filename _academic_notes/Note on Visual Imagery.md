@@ -16,10 +16,13 @@ typora-root-url: ../assets/img/notes/Behav_Sci
 * Usage in daily cognition
   * Closely related to memory. 
   * We solve some cognitive task by recreating the visual scene in mind and examine the mind picture! 
+  * Some tasks are memory about spatial some are feature memory! 
 * Usage in creative work
   * Provides another way of thinking, other than verbal and logical induction. Intuition 
 
 ## Characteristics of Imagery
+
+> Is the representation spatial or propositional?
 
 
 
@@ -33,7 +36,7 @@ Single neuron
 
 
 
-Neural Imaging
+**Neural Imaging**
 
 * Shared activation area 
 
@@ -41,4 +44,14 @@ Neural Imaging
 
 
 
-Lesion and Neurological
+**TMS perturbation**  
+
+
+
+**Lesion and Neurological Disorder**  
+
+
+
+
+
+## Connection to Motor
