@@ -89,3 +89,57 @@ net.forward(end='fc6')
 Test GPU installation, just use `caffe.set_mode_gpu()`
 
 [Berkeley Model zoo](http://caffe.berkeleyvision.org/model_zoo.html )
+
+
+
+## Converting Caffe Model to PyTorch
+
+As some operations are much easier in some newer frameworks like `PyTorch`, there is a need to convert existing model in `Caffe` to `PyTorch`. 
+
+
+
+```python
+
+```
+
+
+
+From the documentation of `caffe.io.Transformer` we can see that 
+
+> Format input for Caffe:
+> - convert to single
+> - resize to input dimensions (preserving number of channels)
+> - transpose dimensions to K x H x W
+> - reorder channels (for instance color to BGR)
+> - scale raw input (e.g. from [0, 1] to [0, 255] for ImageNet models)
+> - subtract mean
+> - scale feature
+> 
+> Parameters
+> in_ : name of input blob to preprocess for
+> data : (H' x W' x K) ndarray
+>
+> Returns
+> caffe_in : (K x H x W) ndarray for input to a Net
+>
+
+The input convention for Caffe is 4 dimension array in the order of [B, C, H, W]. And for color image, the color channel is in the order of BGR. 
+
+So the output from a network built in Caffe have to be transformed by a function to visualize. However, if that output is directly sent into the other network, then the 2 networks will. 
+
+### Local Response Normalization
+
+This is an ancient module exists in AlexNet and CaffeNet, but largely abandoned in more recent network architectures. At first, it's inspired by lateral inhibition just like those happened in biological visual networks. However, it's not very stable, and help only in certain cases but not others. 
+
+Thus, it's not officially supported in PyTorch for a long time, but currently it is supported. 
+
+[Caffe LRN Doc]( https://caffe.berkeleyvision.org/tutorial/layers/lrn.html )
+
+[PyTorch LRN Doc]( https://pytorch.org/docs/stable/nn.html#localresponsenorm ) 
+
+
+
+
+
+
+
