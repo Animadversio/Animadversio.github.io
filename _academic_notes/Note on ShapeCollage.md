@@ -59,12 +59,12 @@ Apparent image is directly useful for comparison, the internal representation us
 First, generate interest point graph, by the method above.
 
 1. They match the SIFT descriptor of all the extracted patches and the stored patches. Using criterion for Euclidean distance in feature space to find the most similar patches.
-2. Do PCA to dimen-reduce the patches and find the most dominant directions (20-30)
+2. Do PCA to dimension-reduce the patches and find the most dominant directions (20-30)
 3. Find the most diverse $D$ patches as candidates.
 
 ### Globalization
 
-Use standard Max-Mean Loopy belief propagtion on a Markov Random Field Network.
+Use standard Max-Mean Loopy belief propagation on a Markov Random Field Network.
 
 
 
@@ -72,11 +72,11 @@ Use standard Max-Mean Loopy belief propagtion on a Markov Random Field Network.
 
 * [Thin Plate Spline](https://en.wikipedia.org/wiki/Thin_plate_spline)
 * [Loopy Belief Propagation]() of Markov Random Field
-* Random shape generation.
+* Random 3d shape generation.
 
 ### Limitation
 
-
+* The framework is trained on a set of artificially generated blobs. (by finding the isosurface in the filtered white noise.) Thus it learn more about the gradual change of shading than the corner and angles. So it may not be directly applicable to artificial objects which has more sharp corners. 
 
 ## Quadratic Shape from Shading: Local Shape based interpretation
 
