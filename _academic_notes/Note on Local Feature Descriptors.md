@@ -63,3 +63,4 @@ Using the Structure Matrix, it finds spot where both of the eigen values are lar
 [SIFT on Towards DataScience](https://towardsdatascience.com/sift-scale-invariant-feature-transform-c7233dc60f37)
 
 SIFT is the pipeline of a bunch of operations. 
+

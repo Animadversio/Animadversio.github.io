@@ -1295,9 +1295,9 @@ Seems there is no equations that could solve these problems for free!
 
 *Note*: CNN can learn random labels for the images, (just like pigeons) ...... arbitrary category learning can be done in CNN. 
 
+## Classification
 
-
-## Architecture
+### Architecture
 
 General setting for image classification
 
@@ -1321,4 +1321,68 @@ General setting for image classification
 
 * Using smaller simpler kernel but more layers is better than large kernel 
 
-5-2 /2 
+5-2 
+
+
+
+## Object Detection
+
+**R-CNN**
+
+* Input images.
+* Propose boxes! 
+* Compute CNN features
+  * Note we only run through CNN once, and cropping out the features in middle layers each time. 
+* Classify based on CNN features. 
+
+
+
+### Transfer Learning
+
+Train on task A (easier to collect data on), and use smaller set of data on task B. 
+
+* Task is complex. Don't have enough data, so use the learnt network on a much larger bulk of data and apply! 
+* For example, the network learns a surprisingly useful set of features during the training! And can be applied to different tasks. 
+
+## Segmentation
+
+Essentially, it's a classification problem on single pixel, take in patch centered around it and output the label for it. 
+
+Can be done more efficiently by sharing feature and tune the `stride` and `dilation`! Because running CNN on overlapping patches will compute the features for first few layers redundantly. 
+
+**Fully convolutional network**
+
+* We change our understanding convolution layer, IT IS FULLY CONNECTED to the patch it governs. 
+  * For the last convolution layer, we use $C$ different kernels corresponding to labels, each output the probability of one class. 
+* However, Down sampling (i.e. `strides`), and Maxpooling make the feature tensor smaller, then we cannot get a label image with same size! 
+  * Just go ahead then you will get a label map of lower resolution! Nearby labels are largely similar !!! 
+  * Use `dilate` convolution! `stride` is downsampling the output automatically, but `dilate` accounts for the strides in input! 
+  * `dilate` allows you to apply a sparse network (because of down sampling) 
+
+For example, a network architecture of `c3,c3s2,c3,c3s2,c3`
+
+translates into `c3,c3,c3d2,c3d2,c3d4`
+
+
+
+**Note** 
+
+* We can add a MRF algorithm to the output labels from Fully connected CNN, in order to make it smoother. (Cf. disparity labelling)
+
+
+
+## Deep Architecture
+
+**General Consideration**
+
+* Deep vs Wide
+  * Deep and wide are both valid ways to make a network express complex function. 
+  * But with the same bulk of data, deeper network will cause less overfitting problem. 
+* However, gradients are harder to get to the parameters for first few layers. **Gradient vanish!**
+
+**Solution to Gradient Vanishment**
+
+* Gradually bake up the network! Or sequentially train each layer from lower 
+  * Remember the ancient training layer by layer practice! (Stacked Restricted Boltzmann Machine. )
+* **ResNet**, add jump connection to send gradient back. 
+* **DenseNet**, concatenates feature dimension, share the features with each other. 

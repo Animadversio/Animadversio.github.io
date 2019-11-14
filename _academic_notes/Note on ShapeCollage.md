@@ -14,11 +14,11 @@ typora-copy-images-to: ../assets/img/notes/cv/
 Note on Patch Based Shape Interpretation
 ========
 
-These are 2 related paper both employ a **patch based approach** to tackle **shape from shading** problem. 
+These are 2 related papers both employ a **patch based approach** to tackle **shape from shading** problem. 
 
-Typically patches have simpler appearance, thus they are easier to collect the statistics on or fit a model on. The spirit is to find a local explanation for patches in an image, however, as there will be ambiguity in local patches, the algorithm should not over-commiting to any one of the explanation and keep the distribution of possible shapes. And then take these local shape proposals and see which can stitch together and make sense globally.  
+Typically patches have simpler appearance, thus they are easier to collect the statistics on or fit a model on. The spirit is to find a local explanation for patches in an image. However, as there will be ambiguity in local patches, the algorithm should not **over-commiting** to any one of the explanation and keep the distribution of possible shapes. And then take these local shape proposals and see which can stitch together and make sense globally.  
 
-Following this spirit, both of the algorithm has largely similar plan. The final optimization goal both comprise of an unary term $D$ and a binary term $\delta$, i.e. the goodness of a local shape interpretation and how compatible are 2 close-by shape interpretation. It's similar to many labeling problem in Computer Vision. 
+Following this spirit, both of the algorithm has similar general plan. The final optimization goal both comprise of an unary term $D$ and a binary term $\delta$, i.e. the goodness of a local shape interpretation and how compatible are 2 close-by shape interpretation. It's similar to many labeling problem in Computer Vision. 
 $$
 C=\lambda \sum_p D(L_p)+\sum_{(p_i,p_j)\in E}\delta(L_{p_i},L_{p_j})
 $$
@@ -37,15 +37,15 @@ While sharing the same spirit, in the following aspects, 2 algorithms make very 
 
 Forrester Cole, Phillip Isola, William T. Freeman, Fredo Durand, Edward H. Adelson **Shapecollage: Occlusion-aware, example-based shape interpretation.** *European Conference on Computer Vision (ECCV)*, 2012. [[Paper](http://people.csail.mit.edu/fcole/shapecollage/shapecollage.pdf)] 
 
-This work doesn't follow a parametrized model of local shape, like [quadratic model](#Theory: Uniqueness of Quadratic Shape), however it follows a empirical way, try to learn from the natural distributions of patches
+This work doesn't follow a parametrized model of local shape, like [quadratic model](#Theory: Uniqueness of Quadratic Shape), however it follows the empirical rule, try to learn the statistics from the natural distributions of patches. 
 
 ### Patch Selection
 
-As we know some points are more informative of shape than otheres. 
+As we know some points are more informative of shape than otheres. Here they generate a heatmap indicating the importance of each point, and the value is based on the local structure tensor. 
 
 ### Patch Representation
 
-Apparent image is directly useful for comarison, the internal representation used for local shape is a multi-channel one, 
+Apparent image is directly useful for comparison, the internal representation used for local shape is a multi-channel one, 
 
 * Normal vector field
 * Depth field
@@ -54,7 +54,11 @@ Apparent image is directly useful for comarison, the internal representation use
 
 ### Local Inference Method
 
+First, generate interest point graph, by the method above. 
 
+1. They match the SIFT descriptor of all the extracted patches and the stored patches. Using criterion for Euclidean distance in feature space to find the most similar patches. 
+2. Do PCA to dimen-reduce the patches and find the most dominant directions (20-30)
+3. Find the most diverse $D$ patches as candidates. 
 
 ### Globalization
 
@@ -66,6 +70,7 @@ Use standard Max-Mean Loopy belief propagtion on a Markov Random Field Network.
 
 * [Thin Plate Spline](https://en.wikipedia.org/wiki/Thin_plate_spline)
 * [Loopy Belief Propagation]() of Markov Random Field
+* Random shape generation. 
 
 ### Limitation
 
