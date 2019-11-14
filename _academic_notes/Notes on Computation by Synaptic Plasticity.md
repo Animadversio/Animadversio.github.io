@@ -4,6 +4,7 @@ title: Note on Computation by Synaptic Plasticity
 author: Binxu Wang
 date: June 24th, 2019
 comments: true
+use_math: true
 categories: [neuroscience]
 tags: [academic note, Neuroscience, Computation]
 ---
