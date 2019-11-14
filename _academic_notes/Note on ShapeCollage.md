@@ -41,11 +41,13 @@ This work doesn't follow a parametrized model of local shape, like [quadratic mo
 
 ### Patch Selection
 
-As we know some points are more informative of shape than otheres. 
+As we know some points are more informative of shape than others, so choose which patch to learn from is an important decision. In this paper, they use a key-point and network based method to select the patches to learn and the patches to do inference. 
+
+
 
 ### Patch Representation
 
-Apparent image is directly useful for comarison, the internal representation used for local shape is a multi-channel one, 
+Apparent image is directly useful for comparison, the internal representation used for local shape is a multi-channel one, 
 
 * Normal vector field
 * Depth field
@@ -91,7 +93,7 @@ Graph of a quadratic function is
 $$
 z(x,y;a)=a_1x^2+a_2y^2+a_3xy+a_4x+a_5y
 $$
- 
+
 
 The un-normalized normal vector is 
 $$

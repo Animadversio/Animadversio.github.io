@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Oct 13th, 2019
 Use_math: true
 comments: true
-categories: [Math]
+categories: [mathematics]
 tags: [tech note, Statistics, Math, Geometry]
 
 ---

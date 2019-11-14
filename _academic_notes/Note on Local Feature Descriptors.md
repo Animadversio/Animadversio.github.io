@@ -54,15 +54,20 @@ Using the Structure Matrix, it finds spot where both of the eigen values are lar
 
 ## SIFT (Scale Invariant Feature Transform)
 
-[Doc from OpenCV2](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html)
 
-[Elementary Chinese Blog](https://blog.csdn.net/zddblog/article/details/7521424) 
-
-[SIFT theory and practice](http://aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) 
-
-[SIFT on Towards DataScience](https://towardsdatascience.com/sift-scale-invariant-feature-transform-c7233dc60f37)
-
-[VL_feat library]( http://www.vlfeat.org/api/sift.html )
 
 SIFT is the pipeline of a bunch of operations. 
 
+
+
+**Reference** 
+
+* [Doc from OpenCV2](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html)
+
+  [Elementary Chinese Blog](https://blog.csdn.net/zddblog/article/details/7521424) 
+
+  [SIFT theory and practice](http://aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) 
+
+  [SIFT on Towards DataScience](https://towardsdatascience.com/sift-scale-invariant-feature-transform-c7233dc60f37)
+
+  [VL_feat library]( http://www.vlfeat.org/api/sift.html )
