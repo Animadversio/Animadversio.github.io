@@ -1386,3 +1386,72 @@ translates into `c3,c3,c3d2,c3d2,c3d4`
   * Remember the ancient training layer by layer practice! (Stacked Restricted Boltzmann Machine. )
 * **ResNet**, add jump connection to send gradient back. 
 * **DenseNet**, concatenates feature dimension, share the features with each other. 
+
+
+
+## Training Practise
+
+Parametrization of the function matters, not only the functional family! 
+
+$x$, 
+
+**Keypoint**: GD first order method, you have few control over the step size. 
+
+* Step size scheduler is useful! 
+
+### Initialization
+
+* ReLU will cause negative part to 0 thus you make sure input to ReLU have half the probability > 0. 
+
+
+
+Thus **normalization** is crucial! 
+
+* Use the dataset mean and std, centralize the input!
+* Note, try to ensure, `var` of output from each layer is 1, just like input `var` is 1.
+  * For $y=wx$,  $var(y)\approx var(w)var(x)$. 
+  * We should set the variance of $w$ according to the input window size $\sigma^2(w)=1/N=1/(K^2C_1)$.
+    * Don't set `var` of weight to be 1, then there will be much higher 
+
+
+
+### Normalization Layers 
+
+**Batch Normalization Layer**: 
+$$
+y=BN(x)\\
+y=\frac{x-Mean(x,axis=[B,H,W])}{\sqrt(Var(x,axis=[B,H,W])+\epsilon)}
+$$
+Do mean and variance for each channel across a **batch**. 
+
+* Appears to be super useful and speed up training! 
+* Unlike other layers, it changes different samples together! 
+* Using the batch mean and var in forward and backward during training. But use the whole training `mean` and `var` during inference. 
+  * Pre-Compute that `mean` and `var` once by going through the ImageNet once. 
+* Note you should backprop through the BN layer! Not ignoring it. 
+
+**Caveat**
+
+* Using the running mean in forward pass is great! but it's complicated for back propagation! Because part of your activation depends on the last batch which depends on your weight again! 
+
+
+
+**Usage**
+
+* As BN is targeted to remove mean and centralize, don't put bias before it. and do ReLU after it! 
+* `ReLu(a*BN(con2(x))+b)` is a common practise. 
+
+* Usually BN is used in first few layers, NOT FC layers, that will hurt you, as the sample size will be much smaller
+
+
+
+### Regularization
+
+Prevent overfit is still important! 
+
+* **Best solution: Get more data!** 
+* **Second best solution**: Get more fake data, augment to increase tolerence! 
+* Other tricks : Explicit regularization
+  * **Weight decay**: L1 or L2 loss to all $w$, but not $b$. Add it explicitly to loss with $\lambda $. 
+
+Not always work! 
