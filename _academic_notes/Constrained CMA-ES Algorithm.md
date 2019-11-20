@@ -18,7 +18,7 @@ Constrained CMA-ES Algorithm
 
 # Target 
 
-CMA-ES is used in constrained optimization in some case, and we have to handle it in some way. So how could it handle this geometric boundary? 
+CMA-ES is originally used in unconstrained optimization. To adapt it into constrained optimization and we have to handle the boundary in some way. So how could it handle this geometric boundary? 
 
 # Objective 
 
@@ -75,7 +75,7 @@ Back to the main subject, the point of CMA-ES is to morph this gaussian ellipsoi
 
 ## Ellipsoid Morphing in Covariant Matrix Adaptation
 
-Note that, for non-eigen vector direction $y$, $y^T\Sigma y=\|A^Ty\|=Var(y^Tx)$ describe the distribution / expansion on the $y$ axis. Thus the simple way to expand or contract the distribution in some direction is to add rank-1 matrix to the covariate matrix $\Sigma+ cyy^T$ would expand the distribution in y direction if $c>0$. 
+Note that, for a unit vector $y$, $y^T\Sigma y=\|A^Ty\|^2=Var(y^Tx)$ describe the distribution / expansion on the $y$ axis. Thus the simple way to expand or contract the distribution in some direction is to add rank-1 matrix to the covariate matrix $\Sigma+ cyy^T$ would expand the distribution in y direction if $c>0$. Note that as $y$ may not be an eigen-vector, this change of $\Sigma$ may change multiple value in the spectra. 
 
 So for CMA-ES, we want the distribution to expand in the direction that is most probable to yield lower objective functions. 
 
@@ -85,7 +85,11 @@ The constraint is usually defined by a function on the optimization space $g(x)$
 
 ## Resampling 
 
-In the sample generation phase, it's easy to evaluate the feasibility function and only select the feasible offsprings. 
+In the sample generation phase, it's easy to evaluate the feasibility function and only select the feasible offsprings. Thus when the 
+
+
+
+However, in high dimensional scenario and multiple boundary case, 
 
 ## Covariance Matrix Adaptation
 

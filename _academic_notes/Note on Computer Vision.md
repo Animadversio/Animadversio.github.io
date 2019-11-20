@@ -1389,7 +1389,7 @@ translates into `c3,c3,c3d2,c3d2,c3d4`
 
 
 
-## Training Practise
+# Lec 22 23 Training Practicality
 
 Parametrization of the function matters, not only the functional family! 
 
@@ -1399,7 +1399,7 @@ $x$,
 
 * Step size scheduler is useful! 
 
-### Initialization
+## Initialization
 
 * ReLU will cause negative part to 0 thus you make sure input to ReLU have half the probability > 0. 
 
@@ -1415,7 +1415,7 @@ Thus **normalization** is crucial!
 
 
 
-### Normalization Layers 
+## Normalization Layers 
 
 **Batch Normalization Layer**: 
 $$
@@ -1445,7 +1445,7 @@ Do mean and variance for each channel across a **batch**.
 
 
 
-### Regularization
+## Regularization
 
 Prevent overfit is still important! 
 
@@ -1455,3 +1455,162 @@ Prevent overfit is still important!
   * **Weight decay**: L1 or L2 loss to all $w$, but not $b$. Add it explicitly to loss with $\lambda $. 
 
 Not always work! 
+
+
+
+
+
+### Drop out method
+
+In training time, set each element $f$ as 0 with probability $ p$ independently, and set it as $(1-p)^{-1}f$ with probability $1-p$
+
+In essense, it's a Bernouli random mask $M$ over activation tensor $F$, element-wise operation. 
+$$
+g=f\circ M,\ \nabla_f=M\circ \nabla_g\\
+M\sim(1-p)^{-1}Bern(1-p)
+$$
+It's like randomly drop out activation and gradient at each sample. 
+
+### Early stop 
+
+> It's a kind of regularization because epoch number limits the network state it can reach! 
+
+But when to stop? The absolute training loss is not indicative, normally it will become slower and slower. 
+
+### Learning rate dropping
+
+Drop learning rate by 10 each several epochs. 
+
+Learning 
+
+## Optimization Method
+
+### Momentum in SGD
+
+$$
+g_i\gets\gamma g_i+\nabla_{w_i}\\
+x_i\gets g_i
+$$
+
+**Adagrad**
+$$
+g_i^2\gets g_i^2+(\nabla_{w_i})^2\\
+w_i\gets w_i-\lambda \nabla_{w_i}/\sqrt{g_i^2+\epsilon}
+$$
+**RMSprop**
+$$
+g_i^2\gets \gamma g_i^2+(1-\gamma)(\nabla_{w_i})^2\\w_i\gets w_i-\lambda \nabla_{w_i}/\sqrt{g_i^2+\epsilon}
+$$
+**Adam** = RMSprop + Momentum 
+
+Adam normally works well! 
+
+
+
+Note 
+
+* These 2 algrithms applies different rate to different part of parameter. 
+* Besides, they can be thought of as approximation to 2nd order algorithms. Assuming the Hessian to be some diagonal matrix! 
+
+## Distributed Training 
+
+> How can we break down computation onto multiple GPUs? 
+
+Note processing of different batches are independent! 
+
+### Model parallelism
+
+If your architecture has 2 different path parallel to each other, then deploy them on 2 different GPU and combine as they join is OK. 
+
+cf. AlexNet 2012
+
+*Not popular now! May not help many network.*
+
+### Data parallelism
+
+In the ideal case, 
+
+* Each device load a different part of data and compute their own activation and gradient. 
+* 
+
+
+
+**Communication overhead**: Gathering gradient and distributing weights can be really slow, PCI-e bus is not fast enough
+
+* Normally gradient computation takes longer than averaging gradient, so distribute 
+* **Better communication hardware**: 
+* **Compress the transmitted gradient by quantization**: gradient is noisy, why not make it simple....
+* **Approximate distributed GD**: Update weight on each machine alone, after a certain steps averaging weight across machine and sync. 
+
+
+
+# Lec 23 Deep Prior
+
+For high level vision, we have no model to invert, so we have to learn!
+
+But for low to middle level vision, we have a **physical model** to invert, however, it's ill-posed, so we still need prior, and DL help us on that. 
+
+## Denoising
+
+Deep Learning method on denoising: 
+
+* Take many images $x$
+* Add any noise at certain level $y=x+\epsilon$ 
+  * Gaussian or Poisson
+* Use DCNN to learn the relationship $(x,y)$, and predict $x\gets f(y)$ 
+
+
+
+Note, 
+
+* Neural network based algorithm gives you **much faster inference** speed than optimization based algorithm. (ventral stream works like that as well)
+
+**IRCNN**: CVPR 2018 
+
+* One thing they find is that, using NN to predict noise $\epsilon$ from noisy image is much easier than predicting the original image, 
+* Because you don't need to maintain the representation of the whole image! 
+* Best part is the network is agnostic to task! Can transfer 
+
+
+
+> Actually, any assumption we make to solve equations mathematically simple, may be substitue to be a Neural Network that learning these priors from data. 
+
+* 
+
+
+
+### Plug and Play prior
+
+Classical problem setup: 
+$$
+y=Ax+\epsilon\\
+\hat x=\arg\min_x\|y-Ax\|_2^2 - \log p(x)
+$$
+And the prior $p(x)$ is the hand waivy assumption about how a natural image should look like. So we want to learn this by a network! 
+
+
+
+Relax this equation by adding an intermediate variable $z$
+$$
+\hat x=\arg\min_{x,z}\|y-Ax\|_2^2+\beta(x-z)^2 - \log p(z)
+$$
+
+* $\beta$  control the strength of constraint by $z$ i.e. coupling of $x$ and prior. 
+  * So we can increase $\beta$ with training, baking it up. 
+* $x,z$ can be optimized alternatively 
+  * $\arg\min_x\|y-Ax\|_2^2+\beta(x-z)^2$ is a least square problem on $x$ solve analytically. 
+  * $\arg\min_z \beta(x-z)^2-\log p(z)$  is essentially the same equation as denoising. We can use the network learn to do denoising for this part!  
+
+**Note**
+
+* The spirit is when doing denoising, the IRCNN has learn about the statistics of local patches and how a natural image should look like~
+* GAN, VAE can be used to do similar things, but from a different perspective. 
+
+
+
+Thus a same framework could be used for multiple tasks.
+
+* Deblurring 
+* Superresolution
+* In painting, filling the gap
+
