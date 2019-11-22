@@ -96,13 +96,13 @@ Test GPU installation, just use `caffe.set_mode_gpu()`
 
 As some operations are much easier in some newer frameworks like `PyTorch`, there is a need to convert existing model in `Caffe` to `PyTorch`. 
 
-
+There is some existing packages target at interpret `proto` of caffe and build network according to that in PyTorch, e.g. [pytorch-caffe]( https://github.com/marvis/pytorch-caffe ). However, to support some layer specific to Caffe, we need to add some modification to the package! See [LRN](#Local Response Normalization)
 
 ```python
 
 ```
 
-
+### Data loading and transformation
 
 From the documentation of `caffe.io.Transformer` we can see that 
 
@@ -125,7 +125,31 @@ From the documentation of `caffe.io.Transformer` we can see that
 
 The input convention for Caffe is 4 dimension array in the order of [B, C, H, W]. And for color image, the color channel is in the order of BGR. 
 
-So the output from a network built in Caffe have to be transformed by a function to visualize. However, if that output is directly sent into the other network, then the 2 networks will. 
+So the output from a network built in Caffe have to be transformed by a function to visualize. 
+
+### Pipelining Caffe networks in PyTorch
+
+However, if that output is directly sent into the other network, then the 2 networks can pipe into each other except for one thing. 
+
+Standard `preprocess`
+
+* `resize`
+* `transpose` the axis to C,H,W
+* `swap` the channel to BGR
+* `scale` by * 255
+* centralize by `-meanBGR_value`
+
+Standard `deprocess`
+
+* de-centralize by `+ meanBGR_value`
+* `scale` by `/ 255`
+* `swap` the channel to RGB
+* `transpose` the axis to H,W,C
+* `clip` the tensor to be within `(0,1)` 
+
+So the 2 process are inverse to each other except for `clip` part. 
+
+
 
 ### Local Response Normalization
 
@@ -135,7 +159,7 @@ Thus, it's not officially supported in PyTorch for a long time, but currently it
 
 [Caffe LRN Doc]( https://caffe.berkeleyvision.org/tutorial/layers/lrn.html )
 
-[PyTorch LRN Doc]( https://pytorch.org/docs/stable/nn.html#localresponsenorm ) 
+[PyTorch LRN Doc](https://pytorch.org/docs/stable/nn.html#localresponsenorm) 
 
 
 
