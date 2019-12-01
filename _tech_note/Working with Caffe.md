@@ -157,7 +157,7 @@ This is an ancient module exists in AlexNet and CaffeNet, but largely abandoned 
 
 Thus, it's not officially supported in PyTorch for a long time, but currently it is supported. 
 
-[Caffe LRN Doc]( https://caffe.berkeleyvision.org/tutorial/layers/lrn.html )
+[Caffe LRN Doc](https://caffe.berkeleyvision.org/tutorial/layers/lrn.html )
 
 [PyTorch LRN Doc](https://pytorch.org/docs/stable/nn.html#localresponsenorm) 
 
