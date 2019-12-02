@@ -1240,11 +1240,15 @@ In this category, treat the image as vector is not efficient! Data is usually re
 
 * Just reshape the input or gradient 
 
+### Example: Backprop in Convolution
+
+> If you don't have a large memory GPU, do for loop over the kernels, instead of for loop over pixels! Move the image in parallel, and add pixel to it. 
+
+
+
 ### Conditional and Eager Execution
 
 Routing gradient according to condition is simple! But when there is loop, this can be tricky! 
-
-
 
 ## Spirit and Lessons
 
@@ -1614,3 +1618,136 @@ Thus a same framework could be used for multiple tasks.
 * Superresolution
 * In painting, filling the gap
 
+
+
+## DL in Stereo
+
+> Look into the classic pipeline, see where is the hacky part, replace with a trained NN. 
+
+
+
+### Siamese Network
+
+Use NN to come up with a distance function $f$, such that we can run globalization on the disparity volume. 
+
+* Use a network to encode patch into a feature vector $\bar p = g(p;\theta)$, 
+* Use the cos distance between $\bar p,\bar p'$, $d(p,p')=-\cos (\bar p,\bar p')$  
+  * If this is not good enough, you can use the $fc$ layers to learn a nonlinear distance function. 
+
+**Training**
+
+* Note it does not need a high level 
+
+**Triplet loss**
+
+* Choose a random patch $p$ in one image, correct match patch $p'$ in another and a random wrong image $q$.  If the correct match patch has smaller ditance than the wrong image, the loss is 0, else it's 1.
+*  
+
+
+
+### Modern Stereo
+
+* Run globalization by running a 3D convolution on the cost volume! 
+
+* Do subsampling to make it into 2d
+* Thus the model can be trained end to end! 
+
+The hardest part is backprop through the cost volume tensor, as it's formed by a complex reshaping of input data. 
+
+
+
+**Training**
+
+* The training data is quite massive, have to get 2 image and a simultaneous depth map.
+  * Data collecting: Driving a depth sensing car around! Much harder than the previous method. 
+  * Depth data is hard to collect! 
+
+**Pre-Training**
+
+* Use the classic geometric constraints to help self supervision! 
+  * If it's not on the epipolar line,  
+
+
+
+
+
+
+
+## Monocular Depth Estimation 
+
+In human vision, monocular depth perception (one eye viewing, photos) is not that good! So low baseline in the first place. 
+
+**Training**
+
+* RGB image and a depth image. 
+* Mapping RGB image to 
+  * depth image 
+  * derivative of image 
+  * distribution of depth 
+
+
+
+### How can human help supervise! 
+
+* **Problem**: human cannot annotate depth on pixel level! 
+* What's the thing that is easy for human to annotate, but also good for computers to learn. (just like geometric constraint) Use a derived quantity as the source of loss
+  * Relative depth  
+  * Orientation of some surface in the image. 
+  * Can let human work on segmented images! 
+
+## Surface Normal Estimation 
+
+If you want normal more than depth, compute directly
+
+Surface normal will not suffer from accumulated error, can work with large depth planes. 
+
+
+
+**PlaneNet**: Find the orientation of the plane in the image! 
+
+
+
+## Intinsic Image Decomposition
+
+
+
+## Color Constancy
+
+Predict illuminant color from image, thus separate object color from illumination color. 
+
+**Training**: 
+
+* Form the problem as a classification
+
+
+
+
+
+## Image Colorization 
+
+Output a discretized distribution in color space for each point. 
+
+
+
+## Illumination Estimation 
+
+**Outdoor illuminance** : 
+
+* The parameters to learn is simple, 
+* 
+
+**Learn to predict indoor illumination**
+
+
+
+## Style Transfer
+
+
+
+
+
+The core understanding is the covariance of layers represents style. 
+
+
+
+## Point-Cloud Processing
