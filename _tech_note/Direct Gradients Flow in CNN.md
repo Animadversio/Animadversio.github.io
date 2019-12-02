@@ -25,5 +25,5 @@ https://stackoverflow.com/questions/31324739/finding-gradient-of-a-caffe-conv-fi
 
 # PyTorch
 
-
+Pytorch support autograd now but before it's using the computational graph, for which each `module` has its own `forward` and `backward` function, and these will be called in sequence to compute the total gradient. 
 

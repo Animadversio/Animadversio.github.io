@@ -1,4 +1,12 @@
-
+---
+layout: post
+title: Dynamic Visualization in Python
+author: Binxu Wang
+date: Nov 17th, 2019
+comments: true
+categories: [coding]
+tags: [tech note, coding, Visualization, Python]
+---
 
 ## Motivation
 
