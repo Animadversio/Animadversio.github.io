@@ -149,6 +149,8 @@ The belief $b_q(f_q)$ is what node $q$ believes its state will be, given all the
 
 对于Loopy Belief Propagation, 一般实现所需要的时间复杂度是$O(Ek^2T)$, $n$ 是节点数量, $E$ 是边的数量, $k$ 是可能状态的数量，$T$是message passing的迭代次数。若网络不是非常稠密(如图片网格)，$E\sim O(n)$ 边的数量线性正比于节点数目。则复杂度是$O(nk^2T)$. 不过在许多实现中存在加速的办法不必显示计算$k^2$ 
 
+注意到Message propagation的速度是每个iteration只走一步，因此对于grid网络，需要足够长的时间$\sim n^{1/2}$才能使一个信息传遍整个网络，使得收敛速度可能很慢。 增加长距离连接以及multi-scale的网络可以帮助解决这一问题。
+
 ## Belief Propagation in HMM: Forward Backward Algorithm 
 
 Note that Markov Chain and HMM are basic and common graph models. And as the graph topology is a tree, belief propagation is exact on HMM and Markov Chain. Sequential belief propagation in Markov Chain is usually called *Forward-Backward* or *Viterbi* algorithm. 
