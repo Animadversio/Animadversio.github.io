@@ -89,9 +89,12 @@ $$
 m^t_{pq}(f_q)=\min_{f_p} (V(f_p,f_q)+D(f_p)+\sum_{s\in\mathcal N(p)/q} m^{t-1}_{sp}(f_p))\\
 b^t_q(f_q)=D_q(f_q)+\sum_{p\in\mathcal N(q)}m^t_{pq}(f_q)
 $$
-**Max-Product Algorithm** for solving the most probable state (mode state) problem. 
+**Max-Product Algorithm** for solving the most probable state (mode state) problem. If we have a model like 
 $$
 p(\{x_i\})\propto\prod_i\exp(\phi_i(x_i))\prod_{(i,j)\in\mathcal E}\exp(\psi_{ij}(x_i,x_j))\\
+$$
+Then the algorithm reads. 
+$$
 m^t_{ij}(x_j)\propto\max_{x_i}\exp(\phi_i(x_i))\exp(\psi_{ij}(x_i,x_j))\prod_{k\in \mathcal N(i)/j}m^{t-1}_{ki}(x_i)\\
 \sum_{x_j} m^t_{ij}(x_j)=1\\
 b^t_i(x_i)\propto \exp(\phi_i(x_i))\prod_{k\in \mathcal N(i)}m^{t}_{ki}(x_i)\\
