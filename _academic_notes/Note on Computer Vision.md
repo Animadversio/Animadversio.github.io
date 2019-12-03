@@ -1548,7 +1548,7 @@ In the ideal case,
 
 
 
-# Lec 23 Deep Prior
+# Lec 23 Deep Prior for Physical Tasks
 
 For high level vision, we have no model to invert, so we have to learn!
 
@@ -1751,3 +1751,90 @@ The core understanding is the covariance of layers represents style.
 
 
 ## Point-Cloud Processing
+
+
+
+
+
+
+
+# Lec 25 Generative Adversarial Network
+
+## Why Generative???????????????
+
+* Usually the network output a single best guess, $\hat y $. 
+* $p(y|x)$ Is not deterministic
+*  
+
+
+
+Note: 
+
+* Classification task can give us a distribution of labels. 
+
+
+
+> GAN, morph a random distribution to one that match the output. 
+
+## Task settings 
+
+* Given samples from $p_x(x)$, generate samples from this distribtution. 
+* Using a noise vector $z$ from a known distribution, produce output $x$ from $p(x)$. Make $G(z\mid\theta),z\sim p_z(z)$
+* **Method**: Use a discriminator to discriminate between real sample and fake sample. 
+
+**Loss function**: 
+$$
+L(\theta,\phi)=-\mathbb E\log(1-D(G(z;\theta);\phi))-\mathbb E\log D(x;\phi)
+$$
+
+* Generator want to maximize it, make it 
+* Discriminator want to minimize it, make better discrimination. 
+
+$$
+G=\arg\max_G\min_D L(\theta,\phi)
+$$
+
+## Theoretical Consideration
+
+* Why min-max training work? 
+* The loss function is essenstially a divergence between 2 distributions. 
+
+
+
+
+
+## Training Practicality 
+
+* You can compute gradient w.r.t. loss, but make one part descent, one part ascent. 
+
+* Choose a bunch of $z$ samples, and a bunch of real images $x$ , pass gradient through Discriminator towards generator. 
+
+* 
+
+* But adversarial training is super unstable
+
+  * Discriminator is much easier than Generator 
+
+**Trick**:
+
+* Train generator more epoches, train discriminator less, make 
+* Note if you use Batch Normalization, Discriminator may use the batch statistics to discriminate. 
+
+
+
+## Conditional GAN
+
+Add a conditioning input, 
+
+Using drop out as a source of noise! 
+
+Don't use mean of output but use the of output. 
+
+
+
+Pixel to pixel translation. 
+
+
+
+
+
