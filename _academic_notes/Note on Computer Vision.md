@@ -1838,3 +1838,84 @@ Pixel to pixel translation.
 
 
 
+
+
+## Cycle GAN
+
+Domain Translation! With unpaired image to image translation. 
+
+* There are cases, exactly matched pair of images. 
+* 
+
+The spirit of training is to get a transformation $F:\mathcal X\to\mathcal Y,G:\mathcal Y\to\mathcal X$, presumably a forward map and inverse map. Besides with a descriminator $D_x$ and $D_y$ to determine $x\in\mathcal X,y\in\mathcal Y$ within manifold condition 
+
+Cycle consistency Loss
+
+* $d(G\circ F(x)-x)$ inverse map match the original sample
+* $D_y(F(x))$ consistency with data manifold 
+
+
+
+**Caveat** 
+
+* 
+* Add some sample pairs may constraint the transform. 
+
+
+
+## Variational Autoencoder
+
+
+
+The pipeline is $E:X\mapsto (\mu,\Sigma)$ , $z\sim\mathcal N(\mu,\Sigma)$ , $D:Z\mapsto \hat X$ . 
+
+Even if we cannot back propagate from $z\to \mu,\Sigma$  we can use the reparametrization trick. Given 
+
+Note the image is 
+
+
+
+Conditional VAE
+
+## U-Net and Probabilistic U-Net
+
+ 
+
+# Lec 27 Un-Supervised Learning 
+
+> What to do if it's hard to collect enough training data. 
+
+**Several strategy**
+
+* Use a easier task / lesson that is easier to train, and ample in data!  
+  * Artificially produce training data and answer to train network
+* Train something on a format that is easier for human to provide data! 
+  * Surface normal is easier than transformation 
+* Use Computer Graphics engine to render synthetic images, which you have complete knowledge of it. 
+  * Note there is a tradeoff between render quality (photorealism) and speed! 
+  * Render is not always cheap
+
+
+
+## Pre-train Tasks
+
+
+
+* Find image, make it B&W, train network to do colorization. 
+
+
+
+* Let networks solve Jigsaw Puzzles
+  * Put the segmented image patches together! 
+
+
+
+* **Visually Indicative Sound** : 
+  * Let a kid walk around and hit what they see! The sound is indicative of material etc. and much easier to get. 
+
+
+
+## Domain Adaptation 
+
+
+
