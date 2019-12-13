@@ -29,6 +29,7 @@ But if we just want to translate an algorithm from one language to another, we c
 + Indexing
     + Matlab indexing using `( , )`, python using `[ , ]`. Mathematica using `[[, ]]`
     * Matlab start from `1` end in `end`, numpy from `0` to ``(nothing)
+    
 + Number Array
     * Matlab use `strt:step:end` numpy use `range(strt,end,step)`
     * And use `np.arange` for actual array. 
@@ -36,15 +37,32 @@ But if we just want to translate an algorithm from one language to another, we c
     * `size()`, `length()` in matlab, `len()` in python
     * `[;]` can represent break the row in matlab, but cannot do so in python. 
     * Append with `+` or `[].append()` in Python; `list = [list, new_itm]` in Matlab
-+ Dictionary and Struct
-    * In matlab, no `dict` to use! `struct` is similar. 
+    
++ Dictionary and Struct and Cell
+    
+    * In matlab, no `dict` to use! `struct` is similar, you can add fields to a `struct` object
+    * `struct` is also good for structured array data! 
+      * `repmat(struct('image',[],'eig',[]),1,10)`  can create an array of structure which is easy to 
+    * Matlab `cell` is like the python `list` which is a universal container for any heterogenous things. 
+    
++ String and Printing
+
+    + Python string is so easy to use `"%s-%d" % (str,int)` syntax can perform string formatting anywhere; Matlab has more cumbersome syntax, with several choices
+        *  `sprintf(%s-%d", (str,int))` 
+        *  `compose(%s-%d", (str,int))` 
+    * Python print function `print` is so flexible. Matlab counterpart is `disp` but more for display array and structure instead of string
+    * Python `print(str)` will implicitly add `\n` to the end to change line. For Matlab, `fprintf` will not add `\n` you have to add yourself. But `disp` will change line automatically 
+
 + Flow Control 
     * `for i=1:2:10` to `for i in range(1,10,2): `
     * Note Python add `:` to any control command; Matlab don't
+    
 + Common command
     * Print out words: In Python, `print("%.f, %.d".%( x, arg2))`; In matlab `fprintf("x: %.1f, arg1: %d", x, arg2)`. Or using `disp(var)`
     * Formatted string control: In python, `"%.f, %.d".%( x, arg2)`, in matlab `str = sprintf("x: %.1f, arg1: %d", x, arg2)`
+    
 + subfunction define
+    
     + in matlab 
 ```matlab
     function out=Y(in) 
