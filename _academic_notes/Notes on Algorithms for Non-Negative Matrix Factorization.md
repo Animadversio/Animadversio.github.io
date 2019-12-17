@@ -40,21 +40,23 @@ Note NMF and soft label K-means clustering is mathematically equivalent!
 
 # Algorithm
 
-For this problem, the basic idea is that when we focus on part of variables `H` or `W` the problem becomes a linearly constraint convex sub-problem, (even with some regularization term it's still a convex problem,) thus could be solved unanimously with matured method. But the alternating between `H` and `W` makes the problem non-convex. 
+For this problem, the basic idea is that when we focus on part of variables `H` or `W` the problem becomes a linearly constraint convex sub-problem, (even with some regularization term it's still a convex problem,) thus could be solved unanimously with linear algebraic method. But the alternating between `H` and `W` makes the problem non-convex. 
 
 Because of this many algorithms has `Alternative` in its name. 
 
 ## Alternative Least Square
 
-
-
-One algorithm that really interests us is Hierarchical Alternative Least Square Algorithm (`hals`). 
+One algorithm that really interests us is Hierarchical Alternative Least Square Algorithm (`hals`), which is kind of the state of the art algorithm of the problem. 
 
 ## Hierarchical Alternative Least Square Algorithm
 
 Here I'll state the structure of HALS algorithm. 
 
 The core idea is to solve each component to the residue separately, so each subproblem is much simpler, and also local to the component. 
+
+
+
+
 
 ## Remark 
 There are multiple interperatations of NMF, they are mathematically equivalent 

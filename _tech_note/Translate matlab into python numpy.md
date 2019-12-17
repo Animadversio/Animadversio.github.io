@@ -30,6 +30,12 @@ But if we just want to translate an algorithm from one language to another, we c
     + Matlab indexing using `( , )`, python using `[ , ]`. Mathematica using `[[, ]]`
     * Matlab start from `1` end in `end`, numpy from `0` to ``(nothing)
     
+    * Note one of the super useful thing in matlab is `find` i.e. find all the none zero entries' index. **Python doesn't have function with exactly the same functionality**.  
+    
+      * `np.non_zero`, `np.where` may be a choice for numpy arrays, but the indices it returns are more complex, you need to extract it from tuple.  `ii = np.where(values == searchval)[0]`
+    
+      * `[i for i, x in enumerate(my_list) if x == "whatever"]` may be a quick way to do so for lists. 
+    
 + Number Array
     * Matlab use `strt:step:end` numpy use `range(strt,end,step)`
     * And use `np.arange` for actual array. 
@@ -39,7 +45,7 @@ But if we just want to translate an algorithm from one language to another, we c
     * Append with `+` or `[].append()` in Python; `list = [list, new_itm]` in Matlab
     
 + Dictionary and Struct and Cell
-    
+  
     * In matlab, no `dict` to use! `struct` is similar, you can add fields to a `struct` object
     * `struct` is also good for structured array data! 
       * `repmat(struct('image',[],'eig',[]),1,10)`  can create an array of structure which is easy to 
@@ -62,7 +68,7 @@ But if we just want to translate an algorithm from one language to another, we c
     * Formatted string control: In python, `"%.f, %.d".%( x, arg2)`, in matlab `str = sprintf("x: %.1f, arg1: %d", x, arg2)`
     
 + subfunction define
-    
+  
     + in matlab 
 ```matlab
     function out=Y(in) 
@@ -77,5 +83,16 @@ def Y(param):
 * Complicated control of `ndarray` and `matrix` in numpy
     - Reduce into 1D: `M.flat` return iterator, `M.flatten()` return a 1_D array
 
+## Let Matlab and Python Talk to Each Other
 
+* For common non-binary file types, they usually have good readers like 
+  * `csv` , python `import csv`
+  * `json` 
+  * Which are good for exchange of configurations and string information
+* `.mat` format could be read in python, with some drawbacks
+  * Old simple `.mat` files could be read by `scipy.io.loadmat`
+  * new `.mat` files (v7.3+) could be read by `h5py.File`
+    * The matrix and tensor will be read directly as datasets
+    * But the objects will be formed in a reference array, and you feed the reference back to the file to get the object into python. See [Refs in h5py](http://docs.h5py.org/en/latest/refs.html). 
+* `.npy` format could be read in matlab 
 
