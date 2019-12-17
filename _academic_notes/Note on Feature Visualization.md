@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Note on Feature Visualization 
+title: Note on Feature Visualization (Updating)
 author: Binxu Wang
 date: Semptember 17th, 2019
 comments: true
 use_math: true
 categories: [machine learning]
-tags: [academic note, computer vision, machine learning]
+tags: [academic note, computer vision, machine learning, optimization]
 typora-copy-images-to: ../assets/img/notes/cv/
 ---
 
@@ -20,15 +20,28 @@ typora-copy-images-to: ../assets/img/notes/cv/
 
 
 
-https://github.com/tensorflow/examples/blob/master/community/en/r1/deepdream.ipynb
+## Resources
 
-https://github.com/google/deepdream/blob/master/dream.ipynb
+* [DeepDream.ipynb](https://github.com/tensorflow/examples/blob/master/community/en/r1/deepdream.ipynb) Tensorflow
+
+* [Another DeepDream.ipynb](https://github.com/google/deepdream/blob/master/dream.ipynb) Tensorflow. 
+* [Post of fast Feature Visualization](https://towardsdatascience.com/how-to-visualize-convolutional-features-in-40-lines-of-code-70b7d87b0030)  PyTorch. 
+  * Explicit blurring to counteract high frequency. Optimize and resize to make multi-scale feature visualization. Very similar to DeepDream
+* [Another Synthesis post](https://dudeperf3ct.github.io/visualize/cnn/catsvsdogs/2018/12/02/Power-of-Visualizing-Convolution-Neural-Networks/)
+* [Zoo of feature visualization notebook](https://github.com/utkuozbulak/pytorch-cnn-visualizations) PyTorch 
+* [Distill pub's systemic treatment of FV](https://distill.pub/2017/feature-visualization/) 
+  * [Effect of Regularization on Feature Visualization](https://colab.research.google.com/github/tensorflow/lucid/blob/master/notebooks/feature-visualization/regularization.ipynb) 
+  * From their treatment, it seems the `lucid` package attached to tensorflow `lucid.optvis.render` can generate the most useful and good looking visualizations. The major techniques utilized are Spatial Decorrelation and Feature Decorrelation. And use some transform to improve the robustness of visualization
+  * Should consider having it in pytorch in the future. 
+* [Integrating FV modules into toolkit](https://distill.pub/2018/building-blocks/)
 
 
 
-## Algorithms
+## Overview of Algorithms
 
+The basic idea of feature visualization is to optimize for the images that highly activate a hidden unit, so that its activity could be understood as coding for that feature. 
 
+The big enemy of FV is the high frequency artifact, which will arise if you directly back-propagate activity back to pixel space! Kind of visual illusion for CNN, and note these kinds of artifacts can be used as attacks to manipulate the classification result of CNN. And below we will talk about the ways to defeat these artifacts and make pretty looking images. 
 
 **Remark** : Activation maximization using back-prop has a really close relationship with Generative model and GAN. 
 
@@ -36,7 +49,20 @@ https://github.com/google/deepdream/blob/master/dream.ipynb
 * Mechanistically, the `upconv` operation in GAN is just `TransposeCOnv`, which is exactly the same operation happened when the gradient vector propagate backward from deeper layers to shallower layers.
   * Thus they are all using activation in the higher layers to generate filter patterns repetitively! 
 
-Common Algorithms https://github.com/utkuozbulak/pytorch-cnn-visualizations
+Common Algorithms Zoo https://github.com/utkuozbulak/pytorch-cnn-visualizations
+
+## Regularization
+
+There are 3 major groups of regularization. 
+
+* Directly eliminate high frequency components
+  * By adding Variation energy during optimization 
+  * Or by blurring the image! 
+* Reparamtrize the image and add weights to different directions
+  * Use FFT parametrization, 
+  * Or use GAN parametrization etc. 
+* Robustness to perturbation
+  * Add jitter and noise and see if the activation is stable across these perturbations. 
 
 ### Deep Dream
 
@@ -85,8 +111,3 @@ for iter=1:numIterations
 end
 ```
 
-## Systematic Work on Feature Visualization
-
-https://distill.pub/2018/building-blocks/
-
-https://distill.pub/2017/feature-visualization/
