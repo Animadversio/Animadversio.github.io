@@ -5,7 +5,7 @@ permalink: /tech_note/
 feature-img: assets/img/pexels/eyesight_Iris.jpg
 ---
 
-<h1>Latest Notes</h1>
+<!-- <h1>Latest Notes</h1>
 <ul>
   {% for post in site.tech_note %}
     <li>
@@ -13,3 +13,49 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
     </li>
   {% endfor %}
 </ul>
+ -->
+{% for cat in site.category-list %}
+{% unless cat == 'personal writing' %}
+<div class=coll2>
+<h3> {{ cat }} </h3>
+<ul>
+  {% for page in site.tech_note %}
+      {% for pc in page.categories %}
+        {% if pc == cat %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li> {{ post.date | date_to_string }}
+        {% endif %}   <!-- cat-match-p -->
+      {% endfor %}  <!-- page-category -->
+  {% endfor %}  <!-- page -->
+</ul>
+</div>
+{% endunless %}
+{% endfor %}  <!-- cat -->
+
+<style>
+.coll {
+    float: left;
+    width: 33.33%;
+    padding-bottom: 50px;
+}
+.coll2 {
+    float: left;
+    width: 49.9%;
+    padding-bottom: 50px;
+}
+.coll4 {
+    float: left;
+    width: 24.9%;
+    padding-bottom: 50px;
+}
+.coll5 {
+    float: left;
+    width: 19.99%;
+    padding-bottom: 50px;
+}
+/* Clear floats after the columns */
+.roww:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
