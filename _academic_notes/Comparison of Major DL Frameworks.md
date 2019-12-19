@@ -1,33 +1,78 @@
 ---
 layout: post
-title: Comparison of Deep Learning Frameworks (Updating)
+title: Comparison of Major Deep Learning Frameworks (Updating)
 author: Binxu Wang
 date: Dec 18th, 2019
 comments: true
 categories: [machine learning]
-tags: [tech note, Machine Learning, Deep Learning]
+tags: [tech note, Machine Learning, Deep Learning, Computation]
 ---
 
 # Objective
 
 Here I want to compare several common deep learning frameworks and make sense of their workflow. 
 
-
-
 # Core Logic
 
 ## Tensorflow
 
-Generally TF is more like a library, in which many operations are low level and programs are long. 
+**General Comments**:  TF is more like a **library**, in which many low-level operations are defined and programs are long. In contrast, `Keras` which can use `tensorflow` as backend has the similar level of abstraction as `PyTorch`, which is a higher level deep learning package. `TFLearn` may also be a higher level wrapper. 
 
-TF is designed for static graph. Design the computational graph first, and then put in data, and operate really. 
+Besides, the design logic is quite different. TF is designed for static graph. Construct the computational graph first, and then put in data, and operate really in Session.  It normally follows *lazy execution* instead of *eager execution*. 
 
-Actually `Keras` which uses `tensorflow`  backend has the similar level of abstraction as `PyTorch` which is easier to use. 
+So it's more like a compile and run language like C++ or Julia, than script language like Python. 
 
+* General Programming Model: Graph and Execution
+  * Use tensorflow `operations` to create a computational Graph
+  * Evaluate / Run the graph in `session` . 
+    * Input can be feed into a graph, and results could be fetched in `sess.run(fetches,feeds)` . 
+    * Example: `sess.run([output, intermediate], feed_dict={input1:[7.], input2:[2.]})` 
+    *  `Session` is interacting with the C++ runtime evaluating the graph. 
+* [Basic TF usage](https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/r0.10/tensorflow/g3doc/get_started/basic_usage.md) 
 * Data Structure
+  * Tensor. the basic datatype in computational graph. 
+    * `tensor.eval()` will evaluate the tensor by evaluating all the operations along the graph. 
+    * `tf.convert_to_tensor` is the way to convert other things into `tensor`
+    * `tf.constant` is just a type of tensor. not really special. 
+  * Variable, like old `PyTorch` it's a wrapper over tensor. It can keep states over several `run` call. 
+    * [Tensor vs Variable](https://stackoverflow.com/questions/44167134/whats-the-difference-between-tensor-and-variable-in-tensorflow/44167844) 
+    * Varibales have to be `initialize` to use. You can do that by executing `tf.global_variables_initializer()`. 
+  * Placeholder, is a way to let user inject data into computational graph. You have to specify this when run a computational graph
+    *  `placeholder(dtype, shape=None, name=None)`
+* Gradient Computation
+  * `tf.gradients` can explicit compute gradient like `torch.autograd.grad`. see [official note](https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/gradients). 
+    * `z = tf.subtract(tf.sin(x), tf.pow(y,3));
+      grad = tf.gradients(z, [x, y])` 
+  * Loss variables can be sent into `optimizer` so that gradient could be computed towards target variables. Useful functionalities like 
+    * `optimizer.compute_gradients(L,var_list=[v1,v2])`  returns the variable and gradient pairs for each variable in `var_list`! Good to see the gradients if you want to manipulate it. 
+    * `optimizer.apply_gradients(grads_and_vars,)` will apply gradients to update variables.
+    * `optimizer.minimize(L)` combines the 2 steps and update the variables. 
+
+```python
+vstr = tf.Variable([1,2,3.0],dtype=tf.float32) 
+vstr2 = tf.Variable([3.0,2,1.0],dtype=tf.float32)
+L = tf.tensordot(vstr, vstr2, axes=1) 
+optimizer = tf.train.AdamOptimizer(beta1=0.9,beta2=0.8)
+cG = optimizer.compute_gradients(L,var_list=[vstr2,vstr])
+Min = optimizer.apply_gradients(cG)
+with tf.Session() as sess:
+	sess.run(tf.global_variables_initializer())
+	print(sess.run(L))
+	print(sess.run(cG))
+	print(sess.run([vstr,vstr2,L,Min]))
+	print(sess.run([vstr,vstr2]))
+	print(sess.run(L))
+
+```
+
+
+
+* Neural Networks
   * 
 
+[Tensorflow Notes](https://tensorflow-notes.readthedocs.io/zh_CN/latest/index.html)
 
+[Tensorflow tutorial](https://www.toptal.com/machine-learning/tensorflow-machine-learning-tutorial)
 
 ## PyTorch 
 
@@ -99,6 +144,7 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 ##  Tensorflow
 
 * `Tensorboard`  awesome visualization for the training phase! 
+  * It can also visualize the computational graph as well! 
 * `Lucid`  awesome infrastruture to visualize and interpret deep neural networks. 
 
 ## PyTorch
