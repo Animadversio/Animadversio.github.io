@@ -11,7 +11,8 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
   {% unless post.categories contains 'personal writing' %}
     <li>
       <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> {{ post.date | date_to_string }} - {{ post.author }} 
-      <p>{{ post.excerpt }}</p>
+      <p>{{ post.content | strip_html | truncatewords:75 }}</p>
+      <!-- <p>{{ post.excerpt }}</p> -->
     </li>
   {% endunless %}
   {% endfor %}
@@ -25,7 +26,8 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
   	{% if post.categories contains 'personal writing' %}
         <li>
 	      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> {{ post.date | date_to_string }} - {{ post.author }} 
-	      <p>{{ post.excerpt }}</p>
+        <p>{{ post.content | strip_html | truncatewords:75 }}</p>
+	      <!-- <p>{{ post.excerpt }}</p> -->
 	    </li>
     {% endif %}   <!-- cat-match-p -->
   {% endfor %}
