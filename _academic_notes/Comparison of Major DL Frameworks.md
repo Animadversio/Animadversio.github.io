@@ -146,6 +146,8 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 * `Tensorboard`  awesome visualization for the training phase! 
   * It can also visualize the computational graph as well! 
 * `Lucid`  awesome infrastruture to visualize and interpret deep neural networks. 
+* Input pipeline of Tensorflow: 
+  * [Build tensorflow pipeline](https://www.tensorflow.org/guide/data) 
 
 ## PyTorch
 
