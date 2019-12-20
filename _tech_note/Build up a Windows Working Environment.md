@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Linux Working Environment Build Up (Updating)
+title: Windows Working Environment Build Up (Updating)
 author: Binxu Wang
-date: July 25th, 2019
+date: Dec 19th, 2019
 comments: true
 categories: [machine learning]
-tags: [tech note, coding, Linux, environment, Computation, Machine Learning]
+tags: [tech note, coding, Windows, environment, Computation, Machine Learning]
 ---
 * TOC
 {:toc}
