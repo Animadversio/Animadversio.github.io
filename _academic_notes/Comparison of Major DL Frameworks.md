@@ -148,6 +148,7 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 * `Lucid`  awesome infrastruture to visualize and interpret deep neural networks. 
 * Input pipeline of Tensorflow: 
   * [Build tensorflow pipeline](https://www.tensorflow.org/guide/data) 
+* Tensorflow's GPU memory management is a PAIN. It can cause many crash down! 
 
 ## PyTorch
 
