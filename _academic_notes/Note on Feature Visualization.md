@@ -39,13 +39,13 @@ typora-copy-images-to: ../assets/img/notes/cv/
 
 ## Overview of Algorithms
 
-The basic idea of feature visualization is to optimize for the images that highly activate a hidden unit, so that its activity could be understood as coding for that feature. 
+The basic idea of feature visualization is to optimize for the images that highly activate a hidden unit (or a weighted sum of them), so that its activity could be understood as coding for that feature. 
 
 The big enemy of FV is the high frequency artifact, which will arise if you directly back-propagate activity back to pixel space! Kind of visual illusion for CNN, and note these kinds of artifacts can be used as attacks to manipulate the classification result of CNN. And below we will talk about the ways to defeat these artifacts and make pretty looking images. 
 
 **Remark** : Activation maximization using back-prop has a really close relationship with Generative model and GAN. 
 
-* Functionally, they are all taking in an activation pattern and output an image
+* Functionally, they are all taking in an activation pattern (hidden vector) and output an image
 * Mechanistically, the `upconv` operation in GAN is just `TransposeCOnv`, which is exactly the same operation happened when the gradient vector propagate backward from deeper layers to shallower layers.
   * Thus they are all using activation in the higher layers to generate filter patterns repetitively! 
 
@@ -58,13 +58,27 @@ There are 3 major groups of regularization.
 * Directly eliminate high frequency components
   * By adding Variation energy during optimization 
   * Or by blurring the image! 
-* Reparamtrize the image and add weights to different directions
+* Reparamtrize the image and add weights to different directions in that parameter space. 
   * Use FFT parametrization, 
   * Or use GAN parametrization etc. 
 * Robustness to perturbation
   * Add jitter and noise and see if the activation is stable across these perturbations. 
 
-### Deep Dream
+## Optimization
+
+Aside from regularization, another major component of feature visualization algorithms is the optimizer, which optmizer they use and the initialization they use may affect the success of optimization and speed of convergence. Here are some classes of algorithms
+
+* 0-order methods 
+  * Genetic algorithm
+  * CMA-ES
+* 1-order methods
+  * SGD
+  * Momentum
+  * Adam, AdaGrad, AdaDelta, RMS-prop etc.
+* Pseudo 2-order methods
+  * LFBGS
+
+### Example: Deep Dream
 
 It's a gradient Ascent Step but the point is to generate good looking images, thus some regularization techniques are used! 
 
