@@ -17,10 +17,13 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Optimizatio
 
 L-BFGS algorithm
 =======
+## Motivation
+L-BFGS is one of the not so simple optimization algorithm that we may encounter in large scale optimization problems. Not so simple means it’s not simply a first order algorithm, and the deviation from that is well motivated by theoretical arguments. So this note target to understand this algorithm 
 
 
 
-Firstly, it is an quasi-Newtonian method. For Newtonian methods, the idea is to approximate the local function landscape with a quadratic function, defined by the local gradient and Hessian. 
+## Quasi Newtonian Methods.
+First of all, it is an quasi-Newtonian method. For Newtonian methods, the idea is to approximate the local function landscape with a quadratic function, defined by the local gradient and Hessian. 
 $$
 f(x_n+\Delta x)\sim h_n(\Delta x)=f(x_n)+\Delta x^Tg(x_n)+{1\over2}\Delta x^T H(x_n)\Delta x
 $$
