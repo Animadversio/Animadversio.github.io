@@ -87,7 +87,7 @@ $$
 s.t.\ H^{-1} \mbox{ is symmetric}\\
 H^{-1}y_n=s_n
 $$
-
+There is closed form solution to this convex optimization problem. 
 
 
 
