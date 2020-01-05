@@ -7,7 +7,6 @@ use_math: true
 comments: true
 categories: [mathematics]
 tags: [tech note, Statistics, Math, Geometry]
-
 ---
 
 # Some Computation on Sphere (Compact Riemann Manifold)
