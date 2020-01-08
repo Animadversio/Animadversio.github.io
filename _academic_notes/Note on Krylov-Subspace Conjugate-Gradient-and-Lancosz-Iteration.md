@@ -15,13 +15,9 @@ tags: [tech note, Linear Algebra, Math, Numerical Algebra, Algorithm, Optimizati
 
 ## Motivation
 
-In practise, many numerical algorithms include iteratively multiply a matrix, like QR algorithm. 
+In practise, many numerical algorithms include iteratively multiply a matrix, like power method and QR algorithm. 
 
-
-
-
-
-All these algorithms have their core connected to a single construct, Krylov subspace and a operation Lancosz Iteration. So this note motivates to understand this core. 
+All these algorithms have their core connected to a single construct, Krylov subspace and a operation, Lancosz Iteration. So this note motivates to understand this core. 
 
 
 
