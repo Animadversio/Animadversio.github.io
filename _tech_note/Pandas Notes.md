@@ -1,8 +1,8 @@
 ## Motivation
 
-`pandas` is a great tool for representing structured data in python, similar to Table in `matlab` and `dataframe` in `R` . 
+`pandas` is a great tool for representing structured data in python, similar to `Table` in `matlab` and `dataframe` in `R` . 
 
-Using it to interact with table data (like experimental notes) on hard drive and process it in python is also great! 
+Using it to interact with table data (like experimental records) on hard drive and process it in python is also great! 
 
 ## Create Dataframe
 
@@ -16,7 +16,6 @@ Source:
 
 * `pandas` `array` 
   * Can be transformed into `numpy` by `.to_numpy()` . Or to normal `list` by `.to_list()` 
-* 
 
 ## Interaction
 

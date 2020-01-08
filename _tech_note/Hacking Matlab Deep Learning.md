@@ -1,3 +1,5 @@
+* TOC
+{:toc}
 # Hacking the Matlab DeepLearning system
 
 [Why should I choose matlab deeplearning toobox](https://www.mathworks.com/matlabcentral/answers/421259-why-should-i-choose-matlab-deep-learning-toolbox-over-other-opensource-frameworks-like-caffe-onnx)
@@ -89,7 +91,7 @@ https://www.mathworks.com/help/deeplearning/ug/list-of-functions-with-dlarray-su
 
 ## Build GAN
 
-Note reshape is not supported officially so we have to add it for ourselves. 
+**Note** reshape is not supported officially so we have to add it for ourselves. 
 
 [Official Way to work GAN](https://www.mathworks.com/help/deeplearning/examples/train-generative-adversarial-network.html) 
 

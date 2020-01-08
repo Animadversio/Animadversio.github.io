@@ -9,10 +9,6 @@ tags: [tech note, coding, Windows, environment, Computation, Machine Learning]
 ---
 * TOC
 {:toc}
-
-
-
-
 # Deep Learning Environment
 
 Currently we find that multiple version of CUDA could be installed on windows. And different frameworks could use different CUDA version nicely together. 
@@ -30,3 +26,12 @@ Currently, we can have
 
 ## PyTorch Caffe Co-environment
 
+
+
+
+
+# GFW evading
+
+If you are in China and you need to use a GFW censorship evading tool, see this, 
+
+https://blog.hiaoxui.com/blog/post/hiaoxui/ssr-manual-zh

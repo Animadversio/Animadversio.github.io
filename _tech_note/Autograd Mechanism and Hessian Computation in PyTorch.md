@@ -1,4 +1,13 @@
-
+---
+layout: post
+title: Autograd Mechanism and Hessian Computation in PyTorch
+author: Binxu Wang
+date: Dec 9th, 2019
+comments: true
+use_math: true
+categories: [machine learning, algorithm]
+tags: [tech note, Machine Learning, Algorithm, Linear Algebra]
+---
 
 ## Motivation
 
@@ -35,7 +44,7 @@ And there are some flags that we can add to control what to keep.
 
 ## Higher Order Gradient Computation
 
-For a function $y=f(x)$, we can easily compute $\partial_x y=gx$. If we would like to use auto-grad to compute higher order gradient, we need a computational graph from $x$ to $gx$.  
+For a function $y=f(x)$, we can easily compute $\partial_x y=g_x$. If we would like to use auto-grad to compute higher order gradient, we need a computational graph from $x$ to $g_x$.  This is a key idea! The gradient is also a function of input $x$ and weights $w$. 
 
 ```python
 torch.autograd.backward(tensors, grad_tensors=None, retain_graph=None, create_graph=False, grad_variables=None)
@@ -44,7 +53,7 @@ torch.autograd.grad(outputs, inputs, grad_outputs=None, retain_graph=None, creat
 
 In current `pytorch` release version, create graph to gradient is explicitly supported! So what we need is to `create_graph` when creating the first order gradient, and send each element in the gradient vector back to `torch.autograd.grad`, but set `create_graph=False` since we don't need 3rd order gradient anymore. 
 
-Sample code from this repository (package [hessian]())
+Sample code from this repository (See package [hessian]())
 
 
 
@@ -56,4 +65,4 @@ So if we are limited in memory, we can recompute some of the internal states bec
 
 And by selecting which nodes to recompute and which node to keep, we can achieve a large memory saving and lose a little in speed. This is exactly what [gradient checkpointing](https://github.com/cybertronai/gradient-checkpointing) is doing! 
 
- https://hub.packtpub.com/openais-gradient-checkpointing-package-makes-huge-neural-nets-fit-memory/ 
+https://hub.packtpub.com/openais-gradient-checkpointing-package-makes-huge-neural-nets-fit-memory/ 
