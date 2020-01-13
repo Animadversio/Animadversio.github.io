@@ -22,11 +22,35 @@ This computational problem sounds bezarre, but there are quite a few interesting
 
 I'll try to articulate the algorithm according to this recent article[^0]. 
 
+## Problem Reformulate
 
+The original question is to compute 
+
+
+
+
+
+### Lanczos Iteration
+
+
+
+## Caveats
+
+One of the reason that this algorithm is not as popular as Householder transform is that it has long suffered from issues of numerical stability. 
+
+
+
+
+
+## Reference Implementation
+
+One python package that implement Stochastic Lanczos Quadrature is [eMaTe](https://github.com/stdogpkg/emate) from StDoG, which use Tensorflow computational machinery. See their [documentation](https://emate.readthedocs.io/en/latest/examples.html#sthocastic-lanczos-quadrature)  . 
 
 
 
 [^0]: [FAST ESTIMATION OF tr(f(A)) VIA STOCHASTIC LANCZOS QUADRATURE](https://epubs.siam.org/doi/10.1137/16M1104974)
+
+[^1]: Matrix Computations 4th Ed. Chapter 10. 
 
 
 
