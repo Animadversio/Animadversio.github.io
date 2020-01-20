@@ -1,4 +1,13 @@
-
+---
+layout: post
+title: Note on Matlab and Python (matplotlib) Plotting system 
+author: Binxu Wang
+use_math: true
+comments: true
+date: Jan. 20th, 2020
+categories: [coding]
+tags: [matlab, python, coding, Visualization]
+---
 
 ## Motivation
 
@@ -17,4 +26,22 @@ Both `matlab` and `matplotlib` have 2 layer of structure for plot, `figure` and 
 
 
 **Properties for axes**
+
+
+
+## Export and Editting
+
+Note that publication usually requires post plotting editting. And usually people do it in Adobe Illustrator. 
+
+Export the figures into pdf and read properly in Illustrator requires some tweaks in the plotting system 
+
+**Python**
+
+```
+
+```
+
+Ref to http://jonathansoma.com/lede/data-studio/matplotlib/exporting-from-matplotlib-to-open-in-adobe-illustrator/
+
+
 
