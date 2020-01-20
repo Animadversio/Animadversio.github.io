@@ -1,3 +1,14 @@
+---
+layout: post
+title: Note on Pandas
+author: Binxu Wang
+use_math: true
+comments: true
+date: Dec. 10th, 2019
+categories: [coding]
+tags: [python, coding]
+---
+
 ## Motivation
 
 `pandas` is a great tool for representing structured data in python, similar to `Table` in `matlab` and `dataframe` in `R` . 

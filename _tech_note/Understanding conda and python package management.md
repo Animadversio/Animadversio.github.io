@@ -4,7 +4,7 @@ title: Understanding conda and python package management (Updating)
 author: Binxu Wang
 date: July 25th, 2019
 comments: true
-categories: [computation]
+categories: [coding]
 tags: [tech note, coding, Linux, python, environment]
 ---
 * TOC
