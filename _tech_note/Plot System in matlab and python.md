@@ -29,19 +29,35 @@ Both `matlab` and `matplotlib` have 2 layer of structure for plot, `figure` and 
 
 
 
-## Export and Editting
+## Export and Editing in Illustrator
 
 Note that publication usually requires post plotting editting. And usually people do it in Adobe Illustrator. 
 
 Export the figures into pdf and read properly in Illustrator requires some tweaks in the plotting system 
 
-**Python**
+### **Python**
 
+```python
+import matplotlib
+import matplotlib.pylab as plt
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+'''Ploting ploting ploting'''
+
+plt.savefig("image.pdf", transparent=True)
 ```
 
-```
+You need to change the default setting to save the pdf correctly ! 
 
 Ref to http://jonathansoma.com/lede/data-studio/matplotlib/exporting-from-matplotlib-to-open-in-adobe-illustrator/
+
+More options and file formats see, 
+
+https://futurestud.io/tutorials/matplotlib-save-plots-as-file
+
+### **Matlab**
+
+Same as python the default behavior of export fig is not good, pdf can have bizzare layout and size! 
 
 
 
