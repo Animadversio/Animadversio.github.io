@@ -279,6 +279,10 @@ Introduce the label variable $Z\in\{1,2,...k\}$ with distribution
 $p(Z=i)=\pi_i$
 
 The posterior distribution of $X$ is Gaussian. 
+$$
+p(X\mid Z=i)=\mathcal N(X\mid \mu_i,\Sigma_i)
+$$
+
 
 The variable $X$ marginalizes as 
 $$

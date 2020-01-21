@@ -32,7 +32,9 @@ $$
 
 For normal optimizations, we have gradients
 
-For an example of quasi-newton method, please see [Note on LBFGS]({{ site.baseurl }}{% link _academic_notes/Note on LBFGS.md %})  , <!--[Note on LBFGS](Note on LBFGS.md) .--> 
+For an example of quasi-newton method, please see , [Note on LBFGS](Note on LBFGS.md) . 
+
+ <!--[Note on LBFGS]({{ site.baseurl }}{% link _academic_notes/Note on LBFGS.md %})--> 
 
 
 
