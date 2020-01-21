@@ -6,7 +6,7 @@ date: Jan. 21th, 2020
 comments: true
 use_math: true
 categories: [algorithm]
-tags: [tech note, Algorithm, Optimization, Adversarial Example, ]
+tags: [tech note, Algorithm, Optimization, Adversarial Example]
 ---
 
 Motivation
