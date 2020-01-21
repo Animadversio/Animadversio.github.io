@@ -67,9 +67,11 @@ angle1_slider.observe(update_angle1, names = 'value')
 
 
 
-
-
 ### Plotly
+
+`Plotly` is designed for web based visualization, so it strongly emphasize on interaction 
+
+
 
 
 

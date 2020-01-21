@@ -31,6 +31,10 @@ Both `matlab` and `matplotlib` have 2 layer of structure for plot, `figure` and 
 
 ## Export and Editing in Illustrator
 
+
+
+[Graphing General Tutorial](https://www.blakeporterneuro.com/wp-content/uploads/2019/04/Graphing-and-Inkscape_webSafe.pdf)
+
 Note that publication usually requires post plotting editting. And usually people do it in Adobe Illustrator. 
 
 Export the figures into pdf and read properly in Illustrator requires some tweaks in the plotting system 
@@ -55,9 +59,20 @@ More options and file formats see,
 
 https://futurestud.io/tutorials/matplotlib-save-plots-as-file
 
+
+
 ### **Matlab**
 
 Same as python the default behavior of export fig is not good, pdf can have bizzare layout and size! 
 
+### Plotly
 
+For the modern `plotly` package, see 
 
+https://plot.ly/python/static-image-export/
+
+Please install the dependent packages 
+
+`conda install -c plotly plotly-orca psutil requests`
+
+And 
