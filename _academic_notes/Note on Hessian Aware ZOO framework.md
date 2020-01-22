@@ -39,8 +39,61 @@ The classical Newtonian step is
 $$
 x_{t+1}=x_t-\eta H(x)^{-1}g(x)
 $$
-As Hessian computation is expensive even in the differentiable case, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian. So here comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS method](Note-on-LBFGS.md). And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods as well. 
+As Hessian computation is expensive even in the differentiable case, and inverting a large matrix is expensive, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian, for the ease of computation and inversion. So comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS method](Note-on-LBFGS.md). 
+
+And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods with a highly structured Hessian matrix (diagonal) assumption. 
+
+Before diving into their method, the geometric intuition behind Newtonian step is that, the inverse of Hessian is doing the following thing, using the eigen decomposition of $H(x)=U\Lambda U^T$ 
+
+## Gradient Estimator
+
+It's intuitive that we can guess the gradient from sampling the function, but what is a good guess (estimator)? 
 
 
-Obviously, Hessian is not a construct that is directly available from 0th order information, so we have to estimate it in some way. 
+
+## Hessian Estimator
+
+Moreover, Hessian is not a construct that is directly available from 0th order information, so we have to estimate it in some way. 
+
+### Diagonal approximation
+
+ADAM, ADAGRAD, ADADELTA can be viewed from this perspective, i.e. they assume the hessian matrix is diagonal. That is to say the major axis are aligned to the coordinate axis. This guess will make the variable drop from $n^2$ to $n$ . 
+
+Then they can use the memory of gradient vectors to estimate the diagonal values of Hessian. As the Newtonian Equation shows
+
+### Low-rank plus Identity
+
+
+
+### Full estimator
+
+
+
+### Inverting Hessian
+
+We have mentioned that inverting an unstructured hessian matrix is $O(n^3)$, we need to do it faster based on the structure. 
+
+For **Diagonal matrix**, it's trivial. 
+
+For **Low rank plus Identity**, $C\in \R^{n\times b},H\in\R^{n\times n}$
+$$
+H=CC^T+\lambda I
+$$
+Doing SVD decomposition of $C$ gives us $C=U_C\Lambda_CV_C^T$, $U_C\in\R^{n\times b}, \Lambda_C\in\R^{b\times b}, V_C\in\R^{b\times b}$. Thus we have 
+$$
+H=U_C\Lambda^2_CU_C^T+\lambda I
+$$
+It's easy to see square root of $H$ is 
+$$
+H^{1/2}=U_C(\Lambda^2_C+\lambda I)^{1/2}U_C^T+\lambda^{1/2} (I-U_CU_C^T)\\
+H^{1/2}=U_C[(\Lambda^2_C+\lambda I)^{1/2}-\lambda^{1/2}]U_C^T+\lambda^{1/2} I\\
+$$
+Actually, without the complicated [Woodbury matrix inversion identity](https://en.wikipedia.org/wiki/Woodbury_matrix_identity) we can still figure out the inverse of the square root by geometric intuition
+$$
+H^{-1/2}=U_C(\Lambda^2_C+\lambda I)^{-1/2}U_C^T+\lambda^{-1/2} (I-U_CU_C^T)\\
+H^{-1/2}=U_C((\Lambda^2_C+\lambda I)^{-1/2}-\lambda^{-1/2})U_C^T+\lambda^{-1/2} I\\
+$$
+Thus we only have to do SVD for each population sample vectors to compute the inverse. 
+
+### What does it mean to be a good Hessian estimate?
 
