@@ -1,3 +1,15 @@
+---
+layout: post
+title: Note on Image Prior: Spatial Relationship Modeling
+author: Binxu Wang
+date: Jan 14th, 2020
+comments: true
+use_math: true
+categories: [computer science]
+tags: [academic note, computer vision, computer science, machine learning]
+typora-copy-images-to: ../assets/img/notes/cv2/
+---
+
 # Image Prior: Modeling Spatial Relaionship
 
 Class: CSE 659
@@ -7,6 +19,8 @@ Materials: https://www.cse.wustl.edu/~ayan/courses/cse659a/lec1.html#/
 Reviewed: No
 Type: Section
 
+* TOC
+{:toc}
 This is the basis for most further applications
 
 We need Regularizer for a spatial configuration 
@@ -28,7 +42,7 @@ $$R(X)=\sum_n\sum_fR(\nabla_f*X[n])$$
 1. What kind of gradient to penalize
 2. How do you penalize (L1, L2, Lp?) (L1 penalty is better often)
 
-## **How to analyze a prior?**
+## How to analyze a prior?
 
 - Find the distribution corresponding to that regularizer
 
@@ -45,7 +59,7 @@ $$\min_v(v-v_0)^2+R(v)$$
     - So it's said to be sparse prior!
 - Natural image gradients appears to be heavy tail
 
-![Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled.png](Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled.png)
+![Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled.png](../assets/img/notes/cv2/Untitled.png)
 
 ### Shrinkage function
 
@@ -59,11 +73,13 @@ $$s(v_0)=\arg\min_v\alpha(v-v_0)^2+R(v)$$
 
 Thus, Heavy tail regularizer will leave small values to be 0, and penalize not as hard towards the larger values. 
 
-![Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled%201.png](Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled%201.png)
+![Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled%201.png](../assets/img/notes/cv2/Untitled 1.png)
 
 ## Solvable Case
 
-If you use wavelet transform (unitary matrix)
+If you use wavelet transform (unitary matrix), then 
+
+
 
 ## Optimization
 
@@ -76,13 +92,15 @@ If you use wavelet transform (unitary matrix)
 
 ## Algorithms
 
-## Problem setting
+### Problem setting
 
 $$\hat X=\arg\min_X\|AX-Y\|^2+\lambda\sum_n |\nabla_x*X[n]|^p + |\nabla_y*X[n]|^p$$
 
 ### Fourier Domain Least Square
 
 If it's 
+
+
 
 ### **Conjugate Gradient**
 
@@ -95,8 +113,9 @@ Note, if you have per pixel weight, you have to use CG, because it's not convolu
 **Rationale**: We know how to solve least square, so just map the problem to least square
 
 - Use weight to transform problem as p=2
-- solve the p=2 Least square
+- Solve the p=2 Least square
 - Update the weights
+- Iterate! 
 
 **Note**: 
 
@@ -113,20 +132,22 @@ It's the simplest case of **Proximal method** in optimization.
 
 Relax the problem of 
 
-$$\arg\min_XF(X)+G(X)$$
-
+$$
+\arg\min_XF(X)+G(X)
+$$
 Into 
 
-$$\arg\min_X\min_WF(X)+G(W)+{\beta\over2}\|X-W\|^2$$
-
+$$
+\arg\min_X\min_WF(X)+G(W)+{\beta\over2}\|X-W\|^2
+$$
 When $\beta$ is large enough, this goes back to original problem
 
 Then you can optimize the 2 variables alternatively and iteratively, if these problems are simple enough! 
 
-$$\hat X_t=\arg\min_X F(X)+{\beta\over2}\|X-W\|^2$$
-
-$$\hat W_t=\arg\min_WG(W)+{\beta\over2}\|X-W\|^2$$
-
+$$
+\hat X_t=\arg\min_X F(X)+{\beta\over2}\|X-W\|^2\\
+\hat W_t=\arg\min_WG(W)+{\beta\over2}\|X-W\|^2
+$$
 And then you increase $\beta$ from time to time, tighten it up! make it converge back to original problem. 
 
 Note ADMM is more principled version of this. 
@@ -148,60 +169,75 @@ This could be applied to deblurring!
 
 ## Gradient Penalty Regularizer
 
-Maybe the function should not be applied **pixel wise** to gradient, it can be applied to all the 
+Maybe the function should not be applied **pixel wise** to gradient, it can be applied to the gradient space as a whole. 
 
 $$R(X)=R(\nabla*X)[n]$$
 
 $R(.)$ can be a function on the whole space! 
 
-- Using pixelwise regularizer is assuming independence between pixel.
+- Using pixelwise regularizer is assuming independence between pixels / channels. May not be true. 
+- Also the operation is independent on different pixel / elements! May not be desirable. 
 
-### **Radial function regularizer**
+### Radial function regularizer
 
-The result is interesting, 
+$$
+R(v_1,v_2...)=(\sqrt{v_1^2+v_2^2+...})^p=(\|v\|)^p
+$$
 
-**Shrinkage function** 
+Regularizer applies to vector norm instead of individual component. 
 
-$$[v_1,v_2]=\arg\min_{v_1,v_2}\|v-v_0\|^2+\|v\|^p$$
+**n dimension Shrinkage function** 
+$$
+[v_1,v_2]=\arg\min_{v_1,v_2}\|v-v_0\|^2+\|v\|^p
+$$
 
-It's just the original shrinkage function applied to radial direction (vector norm direction)
 
-This could be applied to RGB image, the 3 channels are not independent 
+The result is interesting, It's just the original shrinkage function applied to radial direction (the vector norm direction). 
+
+This could be applied to RGB image, the 3 channels are not independent. 
+
+* The pixel is shrink to 0 only if all 3 channels are small to some extant!
+* Shrink 3 channel independently can cause color shifting. 
 
 # Learning Image Prior
 
-ALmost universal truth
+Almost universal truth
 
 - Better prior are more complicated, harder to optimize
 - Better priors are more data driven, better than hand crafted
-    - If you have data, do it.
+    - But if you have data, use data driven prior. 
 
-$$R(X)=-\log p(X)$$
+$$
+R(X)=-\log p(X)
+$$
 
-**Caveat**: Image itself is too high dimensional, you'd better work with patch! 
+**Caveat**: Image itself is too high dimensional, you'd better start working with patch! 
 
 ## How to learn a distribution?
 
-Choose a parametric form of distribution, which you could evaluate likelihood! 
+Choose a parametric form of distribution $$p(X|\theta) $$, which you could evaluate likelihood! 
 
-$$p(X|\theta) $$
+Given the Samples $[X_1,X_2...]$, Do maximum likelihood inference for the $\theta$ 
 
-Given the Samples 
+## Gaussian Prior
 
-$$[X_1,X_2...]$$
+Training a Gaussian prior is analytically exact! Just compute the mean and covariance matrix of all your data (image patch) samples. 
+$$
+\mu=\frac 1T\sum_tX_t,\; \Sigma=\frac 1T\sum_t(X_t-\mu)(X_t-\mu)^T
+$$
 
-Do maximum likelihood inference for the $\theta$ 
-
-### Gaussian Prior
-
-Training a Gaussian prior is analytically exact! Just compute the mean and covariance matrix of all your data samples 
+### Prior Characteristics
 
 - Normally your mean vector at small scale is equal luminance !
-- If you do Eigen decomposition of covariance matrix (do PCA), then you will find interesting result
+- If you do Eigen decomposition of covariance matrix (do PCA), $\Sigma=VDV^T$ then you will find interesting result
     - PC1 pattern is the overall luminance
     - PC2-.... looks really like Fourier Basis !!!!
-- Note if your samples are translational invariant, the Fourier Basis is expected !
-    - Note if your images are well aligned, then it's no longer translational invariant, then you will see interesting patterns!
+- Note if your samples are translational invariant, the Fourier Basis is expected!
+    - Note if your images are aligned by sth., then it's no longer translational invariant, then you will see interesting patterns around the alignment point!
+
+![](../assets/img/notes/cv2/image-20200122002016744.png)
+
+### Applying Prior
 
 Actually Gaussian prior regularizer is equivalent to regularizing a filtered image. 
 
@@ -227,7 +263,7 @@ Two kinds of Bayesian estimator
 * MAP, maximum / **mode** of the posterior $\arg\max_X p(X|Y)$
 * Mean Estimator $\mathbb E_{p(X|Y)}(X)$ 
 
-Note for Gaussian, mean and mode 
+Note for Gaussian, mean and mode are the same! 
 
 
 
@@ -238,7 +274,7 @@ p(x)=\sum_i\pi_ip(x;\mu_i,\Sigma_i)\\
 \sum_i \pi_i=1
 $$
 
-This is a pretty good  distribution. 
+One step further, GMM is still a pretty good  distribution. 
 
 * Mean $\mu=\sum_i\pi_i\mu_i$ 
 * Covariance: Consists of within gaussian term and across gaussian term (variance between the mean). 
@@ -288,7 +324,70 @@ The variable $X$ marginalizes as
 $$
 p(X)=\mathbb E_Z p(X\mid Z)=\sum_ip(Z=i)p(X\mid Z=i) 
 $$
+**Key Observation**: If you know the value of $Z_i$ for each 
 
 
 
+**Properties**
+
+* Similar to K Means, just with soft assignment
+* No guanrantee of anything ..... 
+
+**Tricks to make it work**
+
+* One component can die! $\pi_i$ can go to 0 and it will not resurrect
+  * You need to add smallest value to constraint, or reinitialize the component manually. 
+
+* **Initialization Tricks**
+  * Do random initialization
+  * Try different number of K 
+
+* **Heat up EM**
+  * You can do K Means first and then do EM. 
+* **Constrain EM**
+  * You can add constraints among $\mu_i$ or $\Sigma_i$ relationship, so that you have less variable.
+
+
+
+### Mixture Gaussian Patch Prior
+
+Each **component allows a certain kind of variation**. It's kind of classifying the local patches, and then doing PCA of each kind of patch. 
+
+Zoran and Weiss 2011
+
+
+
+
+
+### GMM Regularizer
+
+$$
+\|Y-X\|^2-\log p(X)=\|Y-X\|^2-\log\sum_i\pi_if(X;\mu_i,\Sigma_i)
+$$
+
+Conceptually, note that this could be think of as posterior $p(X\mid Y)$ 
+
+The posterior is also in GMM family! with the new parameters $\Theta'=\{\pi'_i,\mu'_i,\Sigma'_i\}$ 
+
+
+
+So it's kind of adaptive Gaussian denoising. Given a patch in a image, 
+
+
+
+### From Patch Prior to Image Prior
+
+Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent **Oversmoothing**. 
+
+More principle way is to crop out patches by operator $P_i$ and inference them as prior
+$$
+\arg\min_X\|AX-Y\|^2-\sum_i\log p(P_iX)
+$$
+Thus it could be inferenced by the Half Quadratic Splitting Trick! 
+
+Weiss & Zoran 2011 EPLL 
+
+
+
+GMM can 
 
