@@ -6,7 +6,7 @@ date: Jan. 21th, 2020
 comments: true
 use_math: true
 categories: [algorithm]
-tags: [tech note, Algorithm, Optimization, Adversarial Example, ]
+tags: [tech note, Algorithm, Optimization, Adversarial Example]
 ---
 
 Motivation
@@ -39,13 +39,8 @@ The classical Newtonian step is
 $$
 x_{t+1}=x_t-\eta H(x)^{-1}g(x)
 $$
-As Hessian computation is expensive even in the differentiable case, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian. So here comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS]({{ site.baseurl }}{% link _academic_notes/Note on LBFGS.md %})  , [Note on LBFGS](Note on LBFGS.md) . And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods as well. 
-
+As Hessian computation is expensive even in the differentiable case, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian. So here comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS method](Note-on-LBFGS.md). And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods as well. 
 
 
 Obviously, Hessian is not a construct that is directly available from 0th order information, so we have to estimate it in some way. 
-
-
-
-
 
