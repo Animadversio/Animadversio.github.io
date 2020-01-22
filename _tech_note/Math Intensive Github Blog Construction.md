@@ -103,8 +103,20 @@ Check [Liquid](https://jekyllrb.com/docs/liquid/), [Liquid pkg](https://shopify.
 * Note These variables should be placed in `{{` and  `}}` 
 {% endraw %}
 
+# Jekyll Relative Link
+
 As a official [post](https://github.blog/2016-12-05-relative-links-for-github-pages/) suggests, the `jekyll-relative-links`  seems to support the links between markdown files and just translate them to links between webpages. This gem could be installed from https://rubygems.org/gems/jekyll-relative-links to local build system. However, the github support for this relative link practise seems problematic. 
 
 https://github.com/benbalter/jekyll-relative-links
 
 https://github.com/github/pages-gem/issues/69
+
+
+
+Current modification to make this work include 
+
+* Add `gem 'jekyll-relative-links'
+  gem 'wdm', '~> 0.1.0' if Gem.win_platform?` to the `Gemfile`
+* Add `jekyll-relative-links (0.6.1)
+        jekyll (>= 3.3, < 5.0)` to `Gemfile.lock` 
+* Then note that you should not add space in the link `[name](xxx xxx.md)` instead, use ``[name](xxx-xxx.md)` and it will be translated properly! 
