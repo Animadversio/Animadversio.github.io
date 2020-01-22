@@ -103,7 +103,7 @@ Check [Liquid](https://jekyllrb.com/docs/liquid/), [Liquid pkg](https://shopify.
 * Note These variables should be placed in `{{` and  `}}` 
 {% endraw %}
 
-Note the `jekyll-relative-links`  seems to support the links between markdown files and just translate them to links between webpages. This gem could be installed from https://rubygems.org/gems/jekyll-relative-links to local build system. However, the github support for this relative link practise seems problematic. 
+As a official [post](https://github.blog/2016-12-05-relative-links-for-github-pages/) suggests, the `jekyll-relative-links`  seems to support the links between markdown files and just translate them to links between webpages. This gem could be installed from https://rubygems.org/gems/jekyll-relative-links to local build system. However, the github support for this relative link practise seems problematic. 
 
 https://github.com/benbalter/jekyll-relative-links
 
