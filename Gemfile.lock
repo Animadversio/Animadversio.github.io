@@ -38,6 +38,8 @@ GEM
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
     jekyll-paginate (1.1.0)
+    jekyll-relative-links (0.6.1)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.5.0)
@@ -77,6 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.12)
+  jekyll-relative-links
   rake (~> 10.0)
   type-on-strap!
   tzinfo-data
