@@ -1,6 +1,10 @@
 ## Vector Image
 
-Vector formats are
+The key thing is, the image is not represented by an array of pixel values, it's an file recording the points and lines. Thus you can visualize the image at different resolution and different scale. 
+
+
+
+Vector formats are like
 
 * PDF
 * SVG
