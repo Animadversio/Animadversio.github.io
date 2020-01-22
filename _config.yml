@@ -120,10 +120,10 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: #[jekyll-paginate, jekyll-seo-tag, jekyll-relative-links]
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-relative-links
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-relative-links]
+  # - jekyll-paginate
+  # - jekyll-seo-tag
+  # - jekyll-relative-links
 relative_links:
   enabled:     true
   collections: true
