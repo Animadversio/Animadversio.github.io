@@ -43,7 +43,13 @@ As Hessian computation is expensive even in the differentiable case, and inverti
 
 And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods with a highly structured Hessian matrix (diagonal) assumption. 
 
-Before diving into their method, the geometric intuition behind Newtonian step is that, the inverse of Hessian is doing the following thing, using the eigen decomposition of $H(x)=U\Lambda U^T$ 
+Before diving into their method, the geometric intuition behind Newtonian step is that: 
+$$
+H^{-1}g=U\Lambda^{-1}U^Tg
+$$
+Using the eigen decomposition of $H(x)=U\Lambda U^T$ , we project the gradient into the eigen coordinates of the Hessian matrix, and then scale the components according to the inverse of the eigenvalue.  and then rotate the vector back to normal coordinates system. 
+
+So the directions with larger eigen value (steeper direction) get shrunk, so the optimizer proceeds slower ; and the directions (flat subspace) with smaller eigen values get amplified, so the optimizer march faster in this subspace.    
 
 ## Gradient Estimator
 
@@ -60,6 +66,10 @@ Moreover, Hessian is not a construct that is directly available from 0th order i
 ADAM, ADAGRAD, ADADELTA can be viewed from this perspective, i.e. they assume the hessian matrix is diagonal. That is to say the major axis are aligned to the coordinate axis. This guess will make the variable drop from $n^2$ to $n$ . 
 
 Then they can use the memory of gradient vectors to estimate the diagonal values of Hessian. As the Newtonian Equation shows
+
+
+
+
 
 ### Low-rank plus Identity
 
