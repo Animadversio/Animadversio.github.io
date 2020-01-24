@@ -391,3 +391,157 @@ Weiss & Zoran 2011 EPLL
 
 GMM can 
 
+
+
+## Sparse Dictionary Regularizer
+
+Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires the recombination weights are sparse, a few 
+
+
+
+
+
+### Algorithm 
+
+Dictionary learning 
+
+* $\alpha$ learning is combinatoric hard. 
+* Learning the templates is also quite hard
+  * SOTA algorithm K-SVD Aharon et.al.
+
+
+
+### Dictionary Result
+
+Note the learned dictionary looks much like the templates. 
+
+
+
+**Comparison to GMM**
+
+* GMM: select one 
+* Sparse Dictionary: 
+
+
+
+CSE 585T  Sparse representation. 
+
+
+
+## CNN-Denoiser Based Prior
+
+Observe that in half quadratic splitting, the prior only affects denoising! 
+$$
+Z=\arg\min{\beta\over2}\|X-Z\|^2-\log p(Z)
+$$
+So no matter your application, you can use the
+
+
+
+Learning Deep Denoising Prior. 
+
+
+
+# Markov Random Field
+
+**Basic idea**: Use undirected graph to represent joint distribution of random variables. 
+
+* Nodes are variables
+* Edges depict direct dependency
+  * No edge, means conditional independency! 
+
+**Benefit**:
+
+* As long as you map the problem to MRF structure, then you have a bunch of inference algorithms available. 
+* Mjorly dealling with discrete variable
+* Can be combined with CNN, and formulate as RNN (unroled belief propagation. ) 
+
+## MRF Basic 
+
+**Markov Blanket**: the minimal set of variables $\{y_i\}$, that you need to observe, so that the other variables will be independent to the node $x$. 
+
+* For MRF, it's the **neighbor** set of $x$. $M(x)=\mathcal N(x)$
+
+**Clique**: Fully connected subgraph 
+
+**Maximal Clique**: Adding any other nodes will disrupt the cliqueness.
+
+**Property**: Joint distribution could be factorized into functions over each Clique
+$$
+P(V)=\frac 1Z \prod_i\Psi_i(C_i)
+$$
+
+* $\Psi_i$ are potential functions, not necessarily normalized
+* $Z$ is the partition function, a constant depending on the potential function forms. 
+  * Note $Z$ is very expensive to compute, extremely hard. 
+  * But you don't need it for inference if you MAP
+  * But you do need it when you are doing training! When you are learning $\Psi_i$ from data, because the $Z$ is a function over your parameter! 
+
+$$
+P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i 
+$$
+
+For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance. 
+
+
+
+## Example: Fields of Experts Image
+
+CVPR 2005 Roth Black
+
+Single patch prior: student t distribution prior over different filters 
+$$
+\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
+$$
+Before, when we learn the filters and regularizers for patch prior, we assume them as independent! However, when applying them, they become entangled. 
+$$
+p(X)={1\over Z(\{J_i,\alpha_i\})}\prod_p(\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}))
+$$
+Can we learn the parameters from whole images? 
+
+**Training**
+
+* 
+
+Because of this, you cannot maximum likelihood estimate directly! Gradient descent / 
+
+
+
+Note that, if you have an unnormalized distribution, you can still draw samples from it! (MCMC). So you have $p'(X)$, you can draw samples from it, $X_p\propto p'(X)$ 
+$$
+\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX\\
+\to\; \frac 1T\sum_1^T\log p'(X_t)-\frac 1P\sum_1^P \log p'(X_p)
+$$
+$X_p$ are drawn from the potential funcion $p'(X_p)$
+
+
+
+Sometimes, it's called Bayesian quadrature, i.e. using sampling to estimate the complicated integral. 
+
+
+
+> Partition function / normalization is what make MRF hard! 
+
+See Structred-SVM, CRF! 
+
+### Pairwise MRF
+
+$$
+P(V)=\frac 1Z\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
+$$
+
+> Note any distribution could be write in pairwise fashion, using nodes representing clique. 
+
+Unitary term could be added. 
+$$
+P(V)=\frac 1Z\prod_{i\in V}\phi_{i}(x_i)\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
+$$
+Usually, we assume each variable can choose from $L$ discrete labels
+
+### Inference problems
+
+Normally 2 kinds
+
+* 
+
+[Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
