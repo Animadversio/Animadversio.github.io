@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Nov 11th, 2019
 comments: true
 use_math: true
-published: false
+published: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Optimization]
 

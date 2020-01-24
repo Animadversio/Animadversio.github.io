@@ -112,7 +112,7 @@ collections:
     permalink: /:collection/:name
 
 category-list: [mathematics, neuroscience, machine learning, algorithm, computer science]
-
+tech-cat-list: [neuroscience, machine learning, coding, misc]
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -120,7 +120,13 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-plugins: [jekyll-paginate, jekyll-seo-tag]
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-relative-links]
+  # - jekyll-paginate
+  # - jekyll-seo-tag
+  # - jekyll-relative-links
+relative_links:
+  enabled:     true
+  collections: true
 #theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
 exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
 timezone: America/Chicago
