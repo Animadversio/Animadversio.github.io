@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Image Prior: Spatial Relationship Modeling
+title: Note on Image Prior-Spatial Relationship Modeling
 author: Binxu Wang
 date: Jan 14th, 2020
 comments: true
