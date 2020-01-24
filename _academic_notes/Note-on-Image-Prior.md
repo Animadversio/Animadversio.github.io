@@ -338,7 +338,7 @@ $$
   * Try different number of K 
 
 * **Heat up EM**
-  * You can do K Means first and then do EM. 
+  * You can do hard K Means first and then do EM. 
 * **Constrain EM**
   * You can add constraints among $\mu_i$ or $\Sigma_i$ relationship, so that you have less variable.
 
@@ -346,11 +346,9 @@ $$
 
 ### Mixture Gaussian Patch Prior
 
-Each **component allows a certain kind of variation**. It's kind of classifying the local patches, and then doing PCA of each kind of patch. 
+Each **component allows a certain kind of variation**. It behaves like classifying the local patches first, and then regularize one kind of patch with the Gaussian estimated from PCA of training sample. 
 
 Zoran and Weiss 2011
-
-
 
 
 
@@ -372,7 +370,7 @@ So it's kind of adaptive Gaussian denoising. Given a patch in a image,
 
 ### From Patch Prior to Image Prior
 
-Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent **Oversmoothing**. 
+Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent **Oversmoothing**! 
 
 More principle way is to crop out patches by operator $P_i$ and inference them as prior
 $$
@@ -381,10 +379,6 @@ $$
 Thus it could be inferenced by the Half Quadratic Splitting Trick! 
 
 Weiss & Zoran 2011 EPLL 
-
-
-
-GMM can 
 
 
 
