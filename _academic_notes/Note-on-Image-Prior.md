@@ -12,12 +12,8 @@ typora-copy-images-to: ../assets/img/notes/cv2/
 
 # Image Prior: Modeling Spatial Relaionship
 
-Class: CSE 659
-Completed: No
-Created: Jan 15, 2020 1:48 AM
+
 Materials: https://www.cse.wustl.edu/~ayan/courses/cse659a/lec1.html#/
-Reviewed: No
-Type: Section
 
 * TOC
 {:toc}
@@ -190,8 +186,6 @@ Regularizer applies to vector norm instead of individual component.
 $$
 [v_1,v_2]=\arg\min_{v_1,v_2}\|v-v_0\|^2+\|v\|^p
 $$
-
-
 The result is interesting, It's just the original shrinkage function applied to radial direction (the vector norm direction). 
 
 This could be applied to RGB image, the 3 channels are not independent. 
@@ -256,9 +250,7 @@ Actually Gaussian prior regularizer is equivalent to regularizing a filtered ima
 
 The posterior of 2 Gaussian multiplied is still a Gaussian! Good ! 
 
-
-
-Two kinds of Bayesian estimator
+Two kinds of **Bayesian estimator**
 
 * MAP, maximum / **mode** of the posterior $\arg\max_X p(X|Y)$
 * Mean Estimator $\mathbb E_{p(X|Y)}(X)$ 
@@ -395,27 +387,27 @@ GMM can
 
 ## Sparse Dictionary Regularizer
 
-Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires the recombination weights are sparse, a few 
-
-
-
+Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires that the recombination weights are sparse, only a few non-zero entries. 
+$$
+\arg\min\|X-\sum_i\alpha_iD_i\|^2
+$$
 
 
 ### Algorithm 
 
 Dictionary learning 
 
-* $\alpha$ learning is combinatoric hard. 
-* Learning the templates is also quite hard
+* Direct $\alpha$ learning is combinatoric hard! There are combinatorical way of active $\alpha$ 
+* Learning the templates is also hard
   * SOTA algorithm K-SVD Aharon et.al.
+  * [K-SVD talk](https://www.caam.rice.edu/~optimization/L1/optseminar/K-SVD_talk_lijun.pdf)
+  * [K-SVD paper](https://sites.fas.harvard.edu/~cs278/papers/ksvd.pdf)
 
 
 
 ### Dictionary Result
 
-Note the learned dictionary looks much like the templates. 
-
-
+Note the learned dictionary looks much like the templates, more than Fourier Basis. Thus more informative. 
 
 **Comparison to GMM**
 
@@ -424,13 +416,13 @@ Note the learned dictionary looks much like the templates.
 
 
 
-CSE 585T  Sparse representation. 
+Refer to the advanced course. 
 
-
+[CSE 585T Sparse Modeling for Imaging and Vision](https://cigroup.wustl.edu/teaching/cse585t-2018/) 
 
 ## CNN-Denoiser Based Prior
 
-Observe that in half quadratic splitting, the prior only affects denoising! 
+Observe that in half quadratic splitting, the prior only affects denoising, i.e. the following problem  
 $$
 Z=\arg\min{\beta\over2}\|X-Z\|^2-\log p(Z)
 $$
@@ -478,18 +470,16 @@ $$
   * But you do need it when you are doing training! When you are learning $\Psi_i$ from data, because the $Z$ is a function over your parameter! 
 
 $$
-P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i 
+P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i\Psi_i(\{x\in C_i\};\theta_i)
 $$
 
 For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance. 
 
-
-
 ## Example: Fields of Experts Image
 
-CVPR 2005 Roth Black
+[CVPR 2005 Roth Black](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.186.1293&rep=rep1&type=pdf)
 
-Single patch prior: student t distribution prior over different filters 
+**Single patch prior**: student t distribution prior over different filters 
 $$
 \prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
 $$
@@ -501,30 +491,30 @@ Can we learn the parameters from whole images?
 
 **Training**
 
-* 
+* You cannot evaluate likelihood as you don't have $Z(\Theta)$
 
-Because of this, you cannot maximum likelihood estimate directly! Gradient descent / 
+* Because of this, you cannot maximum likelihood estimate directly! Gradient descent / ascent is not working! 
 
-
-
+The authors reformulated the problem. Set $p(X)=p'(X)/Z(\Theta)$, then they can maximize the log-unnormalized likelihood. However to prevent the potential $p'$ goes up uniformly, 
+$$
+\mathcal L=\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX
+$$
 Note that, if you have an unnormalized distribution, you can still draw samples from it! (MCMC). So you have $p'(X)$, you can draw samples from it, $X_p\propto p'(X)$ 
 $$
-\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX\\
+\mathcal L=\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX\\
 \to\; \frac 1T\sum_1^T\log p'(X_t)-\frac 1P\sum_1^P \log p'(X_p)
 $$
-$X_p$ are drawn from the potential funcion $p'(X_p)$
-
-
-
-Sometimes, it's called Bayesian quadrature, i.e. using sampling to estimate the complicated integral. 
-
-
+$X_p$ are drawn from the potential funcion $p'(X_p)$ .i.e. using 
+$$
+\frac 1P\sum_1^P \log p'(X_p)\approx\int p(X)\log p'(X)dX
+$$
+Sometimes, it's called **Bayesian quadrature**, i.e. using current unnormalized distribution for sampling to estimate some integral under such distribution! 
 
 > Partition function / normalization is what make MRF hard! 
 
-See Structred-SVM, CRF! 
+For SOTA see [Structred-SVM](https://en.wikipedia.org/wiki/Structured_support_vector_machine), CRF! 
 
-### Pairwise MRF
+## Pairwise MRF
 
 $$
 P(V)=\frac 1Z\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
@@ -538,10 +528,11 @@ P(V)=\frac 1Z\prod_{i\in V}\phi_{i}(x_i)\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
 $$
 Usually, we assume each variable can choose from $L$ discrete labels
 
-### Inference problems
+## Inference problems
 
 Normally 2 kinds
 
-* 
+* MAP problem: $\arg\max_{x_i} P(V)$ 
+* Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$
 
 [Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
