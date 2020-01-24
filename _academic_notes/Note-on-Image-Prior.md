@@ -209,7 +209,7 @@ $$
 
 ## How to learn a distribution?
 
-Choose a parametric form of distribution $$p(X|\theta) $$, which you could evaluate likelihood! 
+Choose a parametric form of distribution $$p(X\mid\theta) $$, which you could evaluate likelihood! 
 
 Given the Samples $[X_1,X_2...]$, Do maximum likelihood inference for the $\theta$ 
 
@@ -252,8 +252,8 @@ The posterior of 2 Gaussian multiplied is still a Gaussian! Good !
 
 Two kinds of **Bayesian estimator**
 
-* MAP, maximum / **mode** of the posterior $\arg\max_X p(X|Y)$
-* Mean Estimator $\mathbb E_{p(X|Y)}(X)$ 
+* MAP, maximum / **mode** of the posterior $\arg\max_X p(X\mid Y)$
+* Mean Estimator $\mathbb E_{p(X\mid Y)}(X)$ 
 
 Note for Gaussian, mean and mode are the same! 
 
@@ -266,7 +266,7 @@ p(x)=\sum_i\pi_ip(x;\mu_i,\Sigma_i)\\
 \sum_i \pi_i=1
 $$
 
-One step further, GMM is still a pretty good  distribution. 
+One step further, GMM is still a pretty good distribution. 
 
 * Mean $\mu=\sum_i\pi_i\mu_i$ 
 * Covariance: Consists of within gaussian term and across gaussian term (variance between the mean). 
@@ -310,19 +310,22 @@ The posterior distribution of $X$ is Gaussian.
 $$
 p(X\mid Z=i)=\mathcal N(X\mid \mu_i,\Sigma_i)
 $$
-
-
-The variable $X$ marginalizes as 
+The variable $X$ marginalizes as the GMM
 $$
 p(X)=\mathbb E_Z p(X\mid Z)=\sum_ip(Z=i)p(X\mid Z=i) 
 $$
-**Key Observation**: If you know the value of $Z_i$ for each 
+**Key Observation**: If you know the value of $Z_i$ for each sample (cluster belonging), then estimate the Gaussian parameters are easy. 
+
+**EM Algorithm**: 
+
+* Estimate $Z_i$ based on $\{\mu_i,\Sigma_i\}$ 
+* Fix $Z_i$ and estimate $\{\mu_i,\Sigma_i\}$. 
 
 
 
 **Properties**
 
-* Similar to K Means, just with soft assignment
+* Similar to K Means, just with soft assignment! 
 * No guanrantee of anything ..... 
 
 **Tricks to make it work**
