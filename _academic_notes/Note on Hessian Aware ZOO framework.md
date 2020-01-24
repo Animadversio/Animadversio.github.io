@@ -65,15 +65,25 @@ Moreover, Hessian is not a construct that is directly available from 0th order i
 
 ADAM, ADAGRAD, ADADELTA can be viewed from this perspective, i.e. they assume the hessian matrix is diagonal. That is to say the major axis are aligned to the coordinate axis. This guess will make the variable drop from $n^2$ to $n$ . 
 
-Then they can use the memory of gradient vectors to estimate the diagonal values of Hessian. As the Newtonian Equation shows
+Then they can use the memory of gradient vectors to estimate the diagonal values of Hessian. As the Newtonian Equation shows this is equivalent to adjust the learning rate for different variable / axis separately. Those variables with larger gradient will have a smaller learning rate, and the variables with smaller gradient will have a larger learning rate. 
 
-
-
-
+Geometrically you kind of scale the space you are optimized in along each axis to make it more isotropic! 
 
 ### Low-rank plus Identity
 
+Another Hessian estimator is the Gaussian sampling estimator. 
+$$
+\tilde H=\frac1b\sum_{i=1}^b\frac{f(x+\mu u_i)+f(x-\mu u_i)-2f(x)}{2\mu^2}u_iu_i^T+\lambda I_d
+$$
+in which $u_i\sim N(0,I_d)$ are samples from isotropic Gaussian.
 
+Actually, they prove that this estimator $ \tilde H$ has such desirable property. 
+$$
+\nabla^2f_\mu(x)\preceq\mathbb E_u[\tilde H]=\nabla^2f_\mu(x)+(\lambda-{f(x)-f_\mu(x)\over\mu^2})\cdot I_d
+$$
+The prove has to be in another post. But as long as the expectation converge fast enough with the batch size $b$ then it's possible to estimate the Hessian. 
+
+For how to invert the hessian, see [below](#Inverting-Hessian). 
 
 ### Full estimator
 
@@ -103,7 +113,7 @@ $$
 H^{-1/2}=U_C(\Lambda^2_C+\lambda I)^{-1/2}U_C^T+\lambda^{-1/2} (I-U_CU_C^T)\\
 H^{-1/2}=U_C((\Lambda^2_C+\lambda I)^{-1/2}-\lambda^{-1/2})U_C^T+\lambda^{-1/2} I\\
 $$
-Thus we only have to do SVD for each population sample vectors to compute the inverse. 
+Thus we only have to do SVD for each population sample vectors to compute the inverse. And the best thing is as long as we have the $C$ matrix factorized, the eigen decomposition of Hessian is done as well. 
 
 ### What does it mean to be a good Hessian estimate?
 
