@@ -469,38 +469,44 @@ P(V)=\frac 1Z \prod_i\Psi_i(C_i)
 $$
 
 * $\Psi_i$ are potential functions, not necessarily normalized
-* $Z$ is the partition function, a constant depending on the potential function forms. 
-  * Note $Z$ is very expensive to compute, extremely hard. 
-  * But you don't need it for inference if you MAP
+* $Z$ is the partition function, a *constant* depending on the potential function forms. 
+  * Note $Z$ is **very expensive to compute, extremely hard**. 
+  * But you don't need it for **inference** if you MAP
   * But you do need it when you are doing training! When you are learning $\Psi_i$ from data, because the $Z$ is a function over your parameter! 
 
 $$
 P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i\Psi_i(\{x\in C_i\};\theta_i)
 $$
 
-For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance. 
+For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance! The insight here is without normalizing factor, the **potential function could grow uniformly over the space**, which is undesirable. 
+$$
+\Psi(x)=\exp(-(x-\mu)^T\Sigma^{-1}(x-\mu))\\
+Z(\mu,\Sigma)=\sqrt{(2\pi)^k\det\Sigma}\\
+\arg\min_\Sigma-\log\Psi(x)=(x-\mu)^T\Sigma^{-1}(x-\mu)\mapsto \inf
+$$
+This hardship for normalization seems universal and fundamental. See [notes on deep unsupervised learning](Note-on-Deep-Unsupervised-Learning.md). 
 
 ## Example: Fields of Experts Image
 
 [CVPR 2005 Roth Black](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.186.1293&rep=rep1&type=pdf)
 
-**Single patch prior**: student t distribution prior over different filters 
+**Single patch prior**: student t distribution prior over different filters $J_i$. 
 $$
-\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
+p(x)\propto\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
 $$
-Before, when we learn the filters and regularizers for patch prior, we assume them as independent! However, when applying them, they become entangled. 
+Before, when we learn the filters and regularizers for patches, we assume them as independent! However, when applying them, they become entangled, i.e. patches overlap, thus not independent. The total image prior is like, 
 $$
 p(X)={1\over Z(\{J_i,\alpha_i\})}\prod_p(\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}))
 $$
-Can we learn the parameters from whole images? 
+Can we learn the patch parameters from whole images? 
 
-**Training**
+**Training Issue**
 
 * You cannot evaluate likelihood as you don't have $Z(\Theta)$
 
-* Because of this, you cannot maximum likelihood estimate directly! Gradient descent / ascent is not working! 
+* Because of this, you cannot maximum likelihood estimate directly! Gradient descent / ascent is not working!! 
 
-The authors reformulated the problem. Set $p(X)=p'(X)/Z(\Theta)$, then they can maximize the log-unnormalized likelihood. However to prevent the potential $p'$ goes up uniformly, 
+The authors reformulated the problem. Set $p(X)=p'(X)/Z(\Theta)$, then they can maximize the log-unnormalized likelihood. However to prevent the potential $p'$ from going up uniformly, 
 $$
 \mathcal L=\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX
 $$
