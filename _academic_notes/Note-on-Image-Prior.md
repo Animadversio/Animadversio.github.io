@@ -449,8 +449,8 @@ So we note that we have to train a different CNN to solve the problem with a dif
 
 **Benefit**:
 
-* As long as you map the problem to MRF structure, then you have a bunch of inference algorithms available. 
-* Mjorly dealling with discrete variable
+* As long as you map the problem to MRF structure, then you have a bunch of **inference algorithms available**! You don't need to think about optimization algorithm. 
+* Majorly dealling with discrete variable, continuous variables can be discretized. 
 * Can be combined with CNN, and formulate as RNN (unroled belief propagation. ) 
 
 ## MRF Basic 
@@ -527,11 +527,12 @@ For SOTA see [Structred-SVM](https://en.wikipedia.org/wiki/Structured_support_ve
 
 ## Pairwise MRF
 
+A special case of MRF. 
 $$
 P(V)=\frac 1Z\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
 $$
 
-> Note any distribution could be write in pairwise fashion, using nodes representing clique. 
+> Note any distribution could be write in pairwise fashion, using nodes representing clique, and the nodes within clique connected to it. 
 
 Unitary term could be added. 
 $$
@@ -541,9 +542,126 @@ Usually, we assume each variable can choose from $L$ discrete labels
 
 ## Inference problems
 
-Normally 2 kinds
+Normally 2 kinds of inference
 
 * MAP problem: $\arg\max_{x_i} P(V)$ 
-* Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$
+* Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$, $\hat x_i=\arg\max_{x_i}p(x_i)$
 
 [Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
+
+
+
+**Note** for different Loss function, either MAP or Max Marginal can be better! So depending on your objective, you should choose different Inference problem. 
+
+* If the loss for different variables are independent, MM can be better
+* If loss of variables are entangled, MAP can be better. 
+
+**Note**: Energy formulation 
+$$
+E_i=-\log\phi_i(x_i)\\
+E_{i,j}=-\log\psi_{i,j}(x_i,x_j)
+$$
+Then you will have a sum version energy minimization problem. 
+$$
+\arg\min\mathcal L(V)=\sum_iE_i(x_i)+\sum_{(i,j)\in\mathcal E} E_{i,j}(x_i,x_j)
+$$
+
+### Belief Propagation Max Marginal
+
+Marginalization is just summation over a bunch of variables, and you can commute the summation with product. 
+
+[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md) 
+
+**Max-Product Equation** 
+$$
+m_{i\to j}(x_j)=\sum_{x_i}\phi(x_i)\psi(x_i,x_j)\prod_{k\in N(i)}m_{k\to i}(x_i)
+$$
+
+**Remark**
+
+* Note this is a **recursive definition**, so if there is loops, the definition doesn't work. 
+* But for **chain**, you can go from left to right and back you will get all the messages. 
+* For **tree**, it's still easy, you can schedule the propagation s.t. the 
+  * Pick root, propagate from all the leaves to root. 
+  * Then root back to leaves.
+
+**Tree Belief Propagation**
+
+1. Pick a root, maintain a queue of edges. 
+2. Select all the leaves, 
+   1. Compute messages on the edges connected to these leaves, record these messages. 
+   2. Ignore these leaves and edges, select the new leaves, iterate! 
+3. Go reverse order through the list of messages. 
+
+### Loopy Belief Propagation
+
+1. Initialize message as all 1. 
+2. Each time update a set of messages. 
+3. Iterate multiple times, travel through all the edge 2 times is one epoch, do multiple epochs. 
+
+
+$$
+m^T_{i\to j}(x_j)=\sum_{x_i}\phi(x_i)\psi(x_i,x_j)\prod_{k\in N(i)/j}m^{T-1}_{k\to i}(x_i)\\
+P(x_i)=\prod_{j\in N(i)} m^T_{j\to i}(x_i)
+$$
+
+**Remark**
+
+* It will converge to correct answer with in a tree! 
+* For Cyclic graphs it's not guaranteed.
+* Renormalize message for each edge will not affect you! 
+
+**Schedule is Important**
+
+* When updating multiple messages, it's better each message is not directly dependent on each other. 
+
+Probability of Pairwise MRF is a table
+
+### Belief Propagation MAP
+
+**Maximum and product** commute, so you can reorder the maximum equation. 
+
+**Max-Product Equation**
+$$
+m_{i\to j}(x_j)=\max_{x_i}\phi_i(x_i)\psi_{i,j}(x_i,x_j)\prod_{k\in N(i)/j}m_{k\to i}(x_i)\\
+x_j=\arg\max_{x_j}\phi(x_j)\prod_{i\in N(j)} m_{i\to j}(x_j)
+$$
+
+
+Note, **Log and Max** commute, you can compose log function to get the same result
+
+**Max-Sum Equation**
+$$
+m_{i\to j}(x_j)=\max_{x_i}\log\phi_i(x_i)+\log\psi_{i,j}(x_i,x_j)+\sum_{k\in N(i)/j}m_{k\to i}(x_i)\\
+x_j=\arg\max_{x_j}\log\phi(x_j)+\sum_{i\in N(j)} m_{i\to j}(x_j)
+$$
+
+
+### Belief Propagation for Factor Graph
+
+For non-pairwise MRF, for each clique, set a Factor
+
+Factor graph is bipartite network, one part is nodes, one part is factor
+
+* Unary term 
+
+
+
+## Related methods
+
+
+
+**Gaussian Belief Propagation**
+
+* For continuous variable distribution, all summation becomes integration. 
+* For GBP, record message by just record mean and cov. 
+  * Assume Unary and Binary terms are Gaussian.
+  * Then everything will stay Gaussian.
+
+
+
+**Sampling Based Belief Propagation**
+
+* Use a sample set to represent each message not distribution. 
+* Not integrating out $x_i$ but sample from it's current marginal estiamte. And draw samples from $x_{i,S}$ 
+
