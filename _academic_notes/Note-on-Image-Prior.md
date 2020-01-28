@@ -7,7 +7,7 @@ comments: true
 use_math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning]
-typora-copy-images-to: ../assets/img/notes/cv2/
+typora-copy-images-to: ../assets/img/notes/cv2
 ---
 
 # Image Prior: Modeling Spatial Relaionship
@@ -220,7 +220,7 @@ $$
 \mu=\frac 1T\sum_tX_t,\; \Sigma=\frac 1T\sum_t(X_t-\mu)(X_t-\mu)^T
 $$
 
-### Prior Characteristics
+### Gaussian Prior Characteristics
 
 - Normally your mean vector at small scale is equal luminance !
 - If you do Eigen decomposition of covariance matrix (do PCA), $\Sigma=VDV^T$ then you will find interesting result
@@ -350,6 +350,8 @@ Each **component allows a certain kind of variation**. It behaves like classifyi
 
 Zoran and Weiss 2011
 
+![](../assets/img/notes/cv2/image-20200128015643749.png )
+
 
 
 ### GMM Regularizer
@@ -408,10 +410,10 @@ Note the learned dictionary looks much like the templates, more than Fourier Bas
 
 **Comparison to GMM**
 
-* GMM: select one 
-* Sparse Dictionary: 
+* **GMM**: select one branch and allow a certain type of variation. 
+* **Sparse Dictionary**: Store different atoms of the image. 
 
-
+![image-20200128020002353](../assets/img/notes/cv2/image-20200128020002353.png)
 
 Refer to the advanced course. 
 
@@ -421,15 +423,21 @@ Refer to the advanced course.
 
 Observe that in half quadratic splitting, the prior only affects denoising, i.e. the following problem  
 $$
-Z=\arg\min{\beta\over2}\|X-Z\|^2-\log p(Z)
+Z=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)
 $$
-So no matter your application, you can use the
+So no matter your application, i.e.
+$$
+X=\arg\min_X\|AX-Y\|_2^2+{\beta\over 2}\|X-Z\|^2-\log p(Z)
+$$
+you can use the denoising prior! 
 
+### Learning Deep Denoising Prior
 
-
-Learning Deep Denoising Prior. 
-
-
+Given the denoising problem, It's easy to generate some image sample pairs $(X,Z)$ and use them to train a CNN to fit this function 
+$$
+Z=f(X;\beta)=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)
+$$
+So we note that we have to train a different CNN to solve the problem with a different strength of prior. 
 
 # Markov Random Field
 
@@ -532,4 +540,4 @@ Normally 2 kinds
 * MAP problem: $\arg\max_{x_i} P(V)$ 
 * Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$
 
-[Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
+[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
