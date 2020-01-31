@@ -636,6 +636,15 @@ m_{i\to j}(x_j)=\max_{x_i}\log\phi_i(x_i)+\log\psi_{i,j}(x_i,x_j)+\sum_{k\in N(i
 x_j=\arg\max_{x_j}\log\phi(x_j)+\sum_{i\in N(j)} m_{i\to j}(x_j)
 $$
 
+* 
+
+
+
+## Related methods
+
+### How to handle non-binary relationship
+
+
 
 ### Belief Propagation for Factor Graph
 
@@ -645,11 +654,7 @@ Factor graph is bipartite network, one part is nodes, one part is factor
 
 * Unary term 
 
-
-
-## Related methods
-
-
+### How to handle continuous distribution?
 
 **Gaussian Belief Propagation**
 
@@ -658,10 +663,168 @@ Factor graph is bipartite network, one part is nodes, one part is factor
   * Assume Unary and Binary terms are Gaussian.
   * Then everything will stay Gaussian.
 
-
-
 **Sampling Based Belief Propagation**
 
 * Use a sample set to represent each message not distribution. 
 * Not integrating out $x_i$ but sample from it's current marginal estiamte. And draw samples from $x_{i,S}$ 
 
+
+
+## Design of Pairwise Term 
+
+Pairwise term 
+$$
+E_{ij}(x_i,x_j)=\mu_{ij}V(x_i,x_j)
+$$
+Factorize into a edge specific weight and node value specific term. 
+
+* Value specific form can be like $\delta(x_i,x_j)$ for labels. (Depending on Topology and Geometry of the label space.)
+
+
+
+* The weight term can be a function of spatial distance, or feature space similarity (bilateral filter)
+
+$$
+\mu_{ij}=\exp(-\|p_i-p_j\|^2/\sigma^2)\\
+\mu_{ij}=\exp(-\|p_i-p_j\|^2/\sigma^2-\|I_i-I_j\|^2/\sigma_I^2)\\
+$$
+
+* Weight function is more important for large neighborhood! Not all your neighbors are equal. (Fully connected graph esp.)
+* Fully connected MRF is used! 
+
+**Comparing Sparsely connected MRF and Fully connected MRF**: 
+
+* Fully connected MRF express long range relationships more directly! Better result. 
+
+
+
+## MRF: Mean Field Algorithm
+
+> Esp. useful for Dense MRF! Much faster than BP. 
+
+**Motivation**: Use a factorized functional form on each variable to approximate joint distribution $P(\{x_i\in V\})=\prod_iQ(x_i)$ And optimize those $Q$ separately. 
+
+* $Q(x_i)$ is not marginal, it's more like an expected conditional, over the expected conditional of other variables. 
+
+
+
+**Remark**: 
+
+* This is used, similar to Belief propagation, it's a kind of message passing!
+* Can approximate some NN. 
+
+
+$$
+Q_i'^0(x_i)=\phi_i(x_i)\\
+Q_i'^{t+1}(x_i)=\phi_i(x_i)\prod_{j\in N(i)} \exp(\sum_{x_j\in L_j}Q_j^t(x_j)\log\psi_{ij}(x_i,x_j) )
+$$
+Note, do normalization for $Q^t_i(x)$ for each iteration. 
+
+Understand the summation as approxiate expectation. 
+$$
+\sum_{x_j\in L_j}Q_j^t(x_j)\log\psi_{ij}(x_i,x_j)\approx \mathbb E_{x_j\sim Q_j^t} \log\psi_{ij}(x_i,x_j)
+$$
+In Log energy formulation: 
+$$
+\log Q'^{t+1}_i(x_i)=-E_{ii}(x_i)-\sum_{j\in N(i)}\sum_{x_j\in L_j}Q_j^t(x_j)E_{ij}(x_i,x_j)
+$$
+**Comparison with BP**
+
+* The message passing around is the 
+
+
+
+### Efficient Computation of Mean Field
+
+Note this is super simple if the $\mu_{ij}$ is a translational invariant spatial kernel. 
+$$
+\log Q'^{t+1}_i(x_i)=-E_{ii}(x_i)-\sum_{j\in N(i)}\sum_{l\in L_j}Q_j^t(l)V(x_i,l)\mu_{ij}
+$$
+Note that the last part $\sum_{j\in N(i)}\sum_{l\in L_j}Q_j^t(l)V(x_i,l)\mu_{ij}$ it can be computed by a channel wise matmul with $V$ and a convolution with $\mu$. (Both are linear and commutes. )
+
+Super efficient, just a convolution +  Channel wise matrix mul + normalization. Message update is simultaneous. 
+$$
+Q^{t+1}[n]=\exp(-U[n]-(Q^t*k)[n]\times V^T)
+$$
+Bilateral filtering based $\mu_{ij}$ can also be efficient using some advanced data structure. 
+
+
+
+Krahenbuhl Koltun 2011 Efficient CRF inference 
+
+Note, this is the MRF used in Deep Lab segmentation algorithm. (Feed CNN result into MRF). 
+
+
+
+### CNN + MRF
+
+Train a CNN to output `U[H,W,C]` per class probability at each pixel. This tensor can be used as an input to MRF
+
+**Algorithm**
+
+```python
+U = CNN(I)
+Q = U / U.sum(axis=2) # Normalize over labels
+for i in range(T):
+  # 
+  Q = Depthwise_Conv(Q, k)
+  Q = Conv(Q, mu)
+  # 
+```
+
+
+
+
+
+
+
+**Training**
+
+* Separate Training (DeepLab type)
+  * Train CNN to output the `U[H,W,C]` with maximal cross entropy with True labels. `CrossEntropy(U,L)` 
+  * Note the MRF part has parameters $\mu,k$ i.e. the label distance matrix and spatial kernel. 
+  * You have to hand crafted (manual optimize the MRF parameters. )
+
+* End to end training (CNN-RNN type)
+  * Regard the MRF part as an RNN, which can unroll into a T-layer **shared weight CNN**. 
+  * Thus you can backpropagation through pipeline! 
+    * pro: Joint learning, co-design, Auto-optimize, do more in inference than 
+  * **Remark on weight sharing**: 
+    * Training needs backprop, need to store intermediate result! So unroll can be GPU memory taxing! You cannot train large $T$ ($T\sim5$)
+    * But if it's an RNN, you can do more iterations during inference! Using small $T$ in training 
+
+**ICCV 2015 Conditional Random Field as RNN**
+
+
+
+
+
+**Remark: Why MRF do better than some CNN**
+
+* CNN expressive power needs learning. 
+* Iterative computation lends you more than just single shot learning. 
+
+
+
+> A general idea is that you can take a traditional CV algorithm, map the computation to sth. like RNN, and autograd to learn the parameters automatically. 
+
+
+
+## MRF: Graph Cuts Algorithm
+
+Map the loss into a graph cut loss. 
+
+**Binary label case**: Embed the MRF graph into 
+
+* Add 2 extra nodes $\alpha,\beta$ corresponding to 2 labels
+* Add 2 edge to each nodes $(i,\alpha),(i,\beta)$ 
+
+Then you can assign a scaler loss to each edge on the new graph! 
+
+
+
+Min-Cut can be solved in polynomial time. 
+
+
+
+**Multi Label Case**
