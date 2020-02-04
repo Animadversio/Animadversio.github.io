@@ -1,23 +1,19 @@
 ---
 layout: post
-title: Note on Image Prior: Spatial Relationship Modeling
+title: Note on Image Prior-Spatial Relationship Modeling
 author: Binxu Wang
 date: Jan 14th, 2020
 comments: true
 use_math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning]
-typora-copy-images-to: ../assets/img/notes/cv2/
+typora-copy-images-to: ../assets/img/notes/cv2
 ---
 
 # Image Prior: Modeling Spatial Relaionship
 
-Class: CSE 659
-Completed: No
-Created: Jan 15, 2020 1:48 AM
+
 Materials: https://www.cse.wustl.edu/~ayan/courses/cse659a/lec1.html#/
-Reviewed: No
-Type: Section
 
 * TOC
 {:toc}
@@ -190,8 +186,6 @@ Regularizer applies to vector norm instead of individual component.
 $$
 [v_1,v_2]=\arg\min_{v_1,v_2}\|v-v_0\|^2+\|v\|^p
 $$
-
-
 The result is interesting, It's just the original shrinkage function applied to radial direction (the vector norm direction). 
 
 This could be applied to RGB image, the 3 channels are not independent. 
@@ -215,7 +209,7 @@ $$
 
 ## How to learn a distribution?
 
-Choose a parametric form of distribution $$p(X|\theta) $$, which you could evaluate likelihood! 
+Choose a parametric form of distribution $$p(X\mid\theta) $$, which you could evaluate likelihood! 
 
 Given the Samples $[X_1,X_2...]$, Do maximum likelihood inference for the $\theta$ 
 
@@ -226,7 +220,7 @@ $$
 \mu=\frac 1T\sum_tX_t,\; \Sigma=\frac 1T\sum_t(X_t-\mu)(X_t-\mu)^T
 $$
 
-### Prior Characteristics
+### Gaussian Prior Characteristics
 
 - Normally your mean vector at small scale is equal luminance !
 - If you do Eigen decomposition of covariance matrix (do PCA), $\Sigma=VDV^T$ then you will find interesting result
@@ -256,12 +250,10 @@ Actually Gaussian prior regularizer is equivalent to regularizing a filtered ima
 
 The posterior of 2 Gaussian multiplied is still a Gaussian! Good ! 
 
+Two kinds of **Bayesian estimator**
 
-
-Two kinds of Bayesian estimator
-
-* MAP, maximum / **mode** of the posterior $\arg\max_X p(X|Y)$
-* Mean Estimator $\mathbb E_{p(X|Y)}(X)$ 
+* MAP, maximum / **mode** of the posterior $\arg\max_X p(X\mid Y)$
+* Mean Estimator $\mathbb E_{p(X\mid Y)}(X)$ 
 
 Note for Gaussian, mean and mode are the same! 
 
@@ -274,7 +266,7 @@ p(x)=\sum_i\pi_ip(x;\mu_i,\Sigma_i)\\
 \sum_i \pi_i=1
 $$
 
-One step further, GMM is still a pretty good  distribution. 
+One step further, GMM is still a pretty good distribution. 
 
 * Mean $\mu=\sum_i\pi_i\mu_i$ 
 * Covariance: Consists of within gaussian term and across gaussian term (variance between the mean). 
@@ -318,19 +310,22 @@ The posterior distribution of $X$ is Gaussian.
 $$
 p(X\mid Z=i)=\mathcal N(X\mid \mu_i,\Sigma_i)
 $$
-
-
-The variable $X$ marginalizes as 
+The variable $X$ marginalizes as the GMM
 $$
 p(X)=\mathbb E_Z p(X\mid Z)=\sum_ip(Z=i)p(X\mid Z=i) 
 $$
-**Key Observation**: If you know the value of $Z_i$ for each 
+**Key Observation**: If you know the value of $Z_i$ for each sample (cluster belonging), then estimate the Gaussian parameters are easy. 
+
+**EM Algorithm**: 
+
+* Estimate $Z_i$ based on $\{\mu_i,\Sigma_i\}$ 
+* Fix $Z_i$ and estimate $\{\mu_i,\Sigma_i\}$. 
 
 
 
 **Properties**
 
-* Similar to K Means, just with soft assignment
+* Similar to K Means, just with soft assignment! 
 * No guanrantee of anything ..... 
 
 **Tricks to make it work**
@@ -343,7 +338,7 @@ $$
   * Try different number of K 
 
 * **Heat up EM**
-  * You can do K Means first and then do EM. 
+  * You can do hard K Means first and then do EM. 
 * **Constrain EM**
   * You can add constraints among $\mu_i$ or $\Sigma_i$ relationship, so that you have less variable.
 
@@ -351,11 +346,11 @@ $$
 
 ### Mixture Gaussian Patch Prior
 
-Each **component allows a certain kind of variation**. It's kind of classifying the local patches, and then doing PCA of each kind of patch. 
+Each **component allows a certain kind of variation**. It behaves like classifying the local patches first, and then regularize one kind of patch with the Gaussian estimated from PCA of training sample. 
 
 Zoran and Weiss 2011
 
-
+![](../assets/img/notes/cv2/image-20200128015643749.png )
 
 
 
@@ -377,7 +372,7 @@ So it's kind of adaptive Gaussian denoising. Given a patch in a image,
 
 ### From Patch Prior to Image Prior
 
-Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent **Oversmoothing**. 
+Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent **Oversmoothing**! 
 
 More principle way is to crop out patches by operator $P_i$ and inference them as prior
 $$
@@ -389,58 +384,60 @@ Weiss & Zoran 2011 EPLL
 
 
 
-GMM can 
-
-
-
 ## Sparse Dictionary Regularizer
 
-Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires the recombination weights are sparse, a few 
-
-
-
+Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires that the recombination weights are sparse, only a few non-zero entries. 
+$$
+\arg\min\|X-\sum_i\alpha_iD_i\|^2
+$$
 
 
 ### Algorithm 
 
 Dictionary learning 
 
-* $\alpha$ learning is combinatoric hard. 
-* Learning the templates is also quite hard
+* Direct $\alpha$ learning is combinatoric hard! There are combinatorical way of active $\alpha$ 
+* Learning the templates is also hard
   * SOTA algorithm K-SVD Aharon et.al.
+  * [K-SVD talk](https://www.caam.rice.edu/~optimization/L1/optseminar/K-SVD_talk_lijun.pdf)
+  * [K-SVD paper](https://sites.fas.harvard.edu/~cs278/papers/ksvd.pdf)
 
 
 
 ### Dictionary Result
 
-Note the learned dictionary looks much like the templates. 
-
-
+Note the learned dictionary looks much like the templates, more than Fourier Basis. Thus more informative. 
 
 **Comparison to GMM**
 
-* GMM: select one 
-* Sparse Dictionary: 
+* **GMM**: select one branch and allow a certain type of variation. 
+* **Sparse Dictionary**: Store different atoms of the image. 
 
+![image-20200128020002353](../assets/img/notes/cv2/image-20200128020002353.png)
 
+Refer to the advanced course. 
 
-CSE 585T  Sparse representation. 
-
-
+[CSE 585T Sparse Modeling for Imaging and Vision](https://cigroup.wustl.edu/teaching/cse585t-2018/) 
 
 ## CNN-Denoiser Based Prior
 
-Observe that in half quadratic splitting, the prior only affects denoising! 
+Observe that in half quadratic splitting, the prior only affects denoising, i.e. the following problem  
 $$
-Z=\arg\min{\beta\over2}\|X-Z\|^2-\log p(Z)
+Z=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)
 $$
-So no matter your application, you can use the
+So no matter your application, i.e.
+$$
+X=\arg\min_X\|AX-Y\|_2^2+{\beta\over 2}\|X-Z\|^2-\log p(Z)
+$$
+you can use the denoising prior! 
 
+### Learning Deep Denoising Prior
 
-
-Learning Deep Denoising Prior. 
-
-
+Given the denoising problem, It's easy to generate some image sample pairs $(X,Z)$ and use them to train a CNN to fit this function 
+$$
+Z=f(X;\beta)=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)
+$$
+So we note that we have to train a different CNN to solve the problem with a different strength of prior. 
 
 # Markov Random Field
 
@@ -452,8 +449,8 @@ Learning Deep Denoising Prior.
 
 **Benefit**:
 
-* As long as you map the problem to MRF structure, then you have a bunch of inference algorithms available. 
-* Mjorly dealling with discrete variable
+* As long as you map the problem to MRF structure, then you have a bunch of **inference algorithms available**! You don't need to think about optimization algorithm. 
+* Majorly dealling with discrete variable, continuous variables can be discretized. 
 * Can be combined with CNN, and formulate as RNN (unroled belief propagation. ) 
 
 ## MRF Basic 
@@ -472,65 +469,70 @@ P(V)=\frac 1Z \prod_i\Psi_i(C_i)
 $$
 
 * $\Psi_i$ are potential functions, not necessarily normalized
-* $Z$ is the partition function, a constant depending on the potential function forms. 
-  * Note $Z$ is very expensive to compute, extremely hard. 
-  * But you don't need it for inference if you MAP
+* $Z$ is the partition function, a *constant* depending on the potential function forms. 
+  * Note $Z$ is **very expensive to compute, extremely hard**. 
+  * But you don't need it for **inference** if you MAP
   * But you do need it when you are doing training! When you are learning $\Psi_i$ from data, because the $Z$ is a function over your parameter! 
 
 $$
-P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i 
+P(\{x_i\in V\})=\frac 1{Z(\Theta)}\prod_i\Psi_i(\{x\in C_i\};\theta_i)
 $$
 
-For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance. 
-
-
+For example, doing MLE for a gaussian model without adding the $Z$ i.e. normalizing factor, you will get infinite covariance! The insight here is without normalizing factor, the **potential function could grow uniformly over the space**, which is undesirable. 
+$$
+\Psi(x)=\exp(-(x-\mu)^T\Sigma^{-1}(x-\mu))\\
+Z(\mu,\Sigma)=\sqrt{(2\pi)^k\det\Sigma}\\
+\arg\min_\Sigma-\log\Psi(x)=(x-\mu)^T\Sigma^{-1}(x-\mu)\mapsto \inf
+$$
+This hardship for normalization seems universal and fundamental. See [notes on deep unsupervised learning](Note-on-Deep-Unsupervised-Learning.md). 
 
 ## Example: Fields of Experts Image
 
-CVPR 2005 Roth Black
+[CVPR 2005 Roth Black](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.186.1293&rep=rep1&type=pdf)
 
-Single patch prior: student t distribution prior over different filters 
+**Single patch prior**: student t distribution prior over different filters $J_i$. 
 $$
-\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
+p(x)\propto\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}
 $$
-Before, when we learn the filters and regularizers for patch prior, we assume them as independent! However, when applying them, they become entangled. 
+Before, when we learn the filters and regularizers for patches, we assume them as independent! However, when applying them, they become entangled, i.e. patches overlap, thus not independent. The total image prior is like, 
 $$
 p(X)={1\over Z(\{J_i,\alpha_i\})}\prod_p(\prod_i(1+\frac12(J_ix_p)^2)^{-\alpha_i}))
 $$
-Can we learn the parameters from whole images? 
+Can we learn the patch parameters from whole images? 
 
-**Training**
+**Training Issue**
 
-* 
+* You cannot evaluate likelihood as you don't have $Z(\Theta)$
 
-Because of this, you cannot maximum likelihood estimate directly! Gradient descent / 
+* Because of this, you cannot maximum likelihood estimate directly! Gradient descent / ascent is not working!! 
 
-
-
+The authors reformulated the problem. Set $p(X)=p'(X)/Z(\Theta)$, then they can maximize the log-unnormalized likelihood. However to prevent the potential $p'$ from going up uniformly, 
+$$
+\mathcal L=\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX
+$$
 Note that, if you have an unnormalized distribution, you can still draw samples from it! (MCMC). So you have $p'(X)$, you can draw samples from it, $X_p\propto p'(X)$ 
 $$
-\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX\\
+\mathcal L=\frac 1T\sum_1^T\log p'(X_t)-\int p(X)\log p'(X)dX\\
 \to\; \frac 1T\sum_1^T\log p'(X_t)-\frac 1P\sum_1^P \log p'(X_p)
 $$
-$X_p$ are drawn from the potential funcion $p'(X_p)$
-
-
-
-Sometimes, it's called Bayesian quadrature, i.e. using sampling to estimate the complicated integral. 
-
-
+$X_p$ are drawn from the potential funcion $p'(X_p)$ .i.e. using 
+$$
+\frac 1P\sum_1^P \log p'(X_p)\approx\int p(X)\log p'(X)dX
+$$
+Sometimes, it's called **Bayesian quadrature**, i.e. using current unnormalized distribution for sampling to estimate some integral under such distribution! 
 
 > Partition function / normalization is what make MRF hard! 
 
-See Structred-SVM, CRF! 
+For SOTA see [Structred-SVM](https://en.wikipedia.org/wiki/Structured_support_vector_machine), CRF! 
 
-### Pairwise MRF
+## Pairwise MRF
 
+A special case of MRF. 
 $$
 P(V)=\frac 1Z\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
 $$
 
-> Note any distribution could be write in pairwise fashion, using nodes representing clique. 
+> Note any distribution could be write in pairwise fashion, using nodes representing clique, and the nodes within clique connected to it. 
 
 Unitary term could be added. 
 $$
@@ -538,10 +540,291 @@ P(V)=\frac 1Z\prod_{i\in V}\phi_{i}(x_i)\prod_{(i,j)\in E}\psi_{i,j}(x_i,x_j)
 $$
 Usually, we assume each variable can choose from $L$ discrete labels
 
-### Inference problems
+## Inference problems
 
-Normally 2 kinds
+Normally 2 kinds of inference
+
+* MAP problem: $\arg\max_{x_i} P(V)$ 
+* Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$, $\hat x_i=\arg\max_{x_i}p(x_i)$
+
+[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
+
+
+
+**Note** for different Loss function, either MAP or Max Marginal can be better! So depending on your objective, you should choose different Inference problem. 
+
+* If the loss for different variables are independent, MM can be better
+* If loss of variables are entangled, MAP can be better. 
+
+**Note**: Energy formulation 
+$$
+E_i=-\log\phi_i(x_i)\\
+E_{i,j}=-\log\psi_{i,j}(x_i,x_j)
+$$
+Then you will have a sum version energy minimization problem. 
+$$
+\arg\min\mathcal L(V)=\sum_iE_i(x_i)+\sum_{(i,j)\in\mathcal E} E_{i,j}(x_i,x_j)
+$$
+
+### Belief Propagation Max Marginal
+
+Marginalization is just summation over a bunch of variables, and you can commute the summation with product. 
+
+[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md) 
+
+**Max-Product Equation** 
+$$
+m_{i\to j}(x_j)=\sum_{x_i}\phi(x_i)\psi(x_i,x_j)\prod_{k\in N(i)}m_{k\to i}(x_i)
+$$
+
+**Remark**
+
+* Note this is a **recursive definition**, so if there is loops, the definition doesn't work. 
+* But for **chain**, you can go from left to right and back you will get all the messages. 
+* For **tree**, it's still easy, you can schedule the propagation s.t. the 
+  * Pick root, propagate from all the leaves to root. 
+  * Then root back to leaves.
+
+**Tree Belief Propagation**
+
+1. Pick a root, maintain a queue of edges. 
+2. Select all the leaves, 
+   1. Compute messages on the edges connected to these leaves, record these messages. 
+   2. Ignore these leaves and edges, select the new leaves, iterate! 
+3. Go reverse order through the list of messages. 
+
+### Loopy Belief Propagation
+
+1. Initialize message as all 1. 
+2. Each time update a set of messages. 
+3. Iterate multiple times, travel through all the edge 2 times is one epoch, do multiple epochs. 
+
+
+$$
+m^T_{i\to j}(x_j)=\sum_{x_i}\phi(x_i)\psi(x_i,x_j)\prod_{k\in N(i)/j}m^{T-1}_{k\to i}(x_i)\\
+P(x_i)=\prod_{j\in N(i)} m^T_{j\to i}(x_i)
+$$
+
+**Remark**
+
+* It will converge to correct answer with in a tree! 
+* For Cyclic graphs it's not guaranteed.
+* Renormalize message for each edge will not affect you! 
+
+**Schedule is Important**
+
+* When updating multiple messages, it's better each message is not directly dependent on each other. 
+
+Probability of Pairwise MRF is a table
+
+### Belief Propagation MAP
+
+**Maximum and product** commute, so you can reorder the maximum equation. 
+
+**Max-Product Equation**
+$$
+m_{i\to j}(x_j)=\max_{x_i}\phi_i(x_i)\psi_{i,j}(x_i,x_j)\prod_{k\in N(i)/j}m_{k\to i}(x_i)\\
+x_j=\arg\max_{x_j}\phi(x_j)\prod_{i\in N(j)} m_{i\to j}(x_j)
+$$
+
+
+Note, **Log and Max** commute, you can compose log function to get the same result
+
+**Max-Sum Equation**
+$$
+m_{i\to j}(x_j)=\max_{x_i}\log\phi_i(x_i)+\log\psi_{i,j}(x_i,x_j)+\sum_{k\in N(i)/j}m_{k\to i}(x_i)\\
+x_j=\arg\max_{x_j}\log\phi(x_j)+\sum_{i\in N(j)} m_{i\to j}(x_j)
+$$
 
 * 
 
-[Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
+
+
+## Related methods
+
+### How to handle non-binary relationship
+
+
+
+### Belief Propagation for Factor Graph
+
+For non-pairwise MRF, for each clique, set a Factor
+
+Factor graph is bipartite network, one part is nodes, one part is factor
+
+* Unary term 
+
+### How to handle continuous distribution?
+
+**Gaussian Belief Propagation**
+
+* For continuous variable distribution, all summation becomes integration. 
+* For GBP, record message by just record mean and cov. 
+  * Assume Unary and Binary terms are Gaussian.
+  * Then everything will stay Gaussian.
+
+**Sampling Based Belief Propagation**
+
+* Use a sample set to represent each message not distribution. 
+* Not integrating out $x_i$ but sample from it's current marginal estiamte. And draw samples from $x_{i,S}$ 
+
+
+
+## Design of Pairwise Term 
+
+Pairwise term 
+$$
+E_{ij}(x_i,x_j)=\mu_{ij}V(x_i,x_j)
+$$
+Factorize into a edge specific weight and node value specific term. 
+
+* Value specific form can be like $\delta(x_i,x_j)$ for labels. (Depending on Topology and Geometry of the label space.)
+
+
+
+* The weight term can be a function of spatial distance, or feature space similarity (bilateral filter)
+
+$$
+\mu_{ij}=\exp(-\|p_i-p_j\|^2/\sigma^2)\\
+\mu_{ij}=\exp(-\|p_i-p_j\|^2/\sigma^2-\|I_i-I_j\|^2/\sigma_I^2)\\
+$$
+
+* Weight function is more important for large neighborhood! Not all your neighbors are equal. (Fully connected graph esp.)
+* Fully connected MRF is used! 
+
+**Comparing Sparsely connected MRF and Fully connected MRF**: 
+
+* Fully connected MRF express long range relationships more directly! Better result. 
+
+
+
+## MRF: Mean Field Algorithm
+
+> Esp. useful for Dense MRF! Much faster than BP. 
+
+**Motivation**: Use a factorized functional form on each variable to approximate joint distribution $P(\{x_i\in V\})=\prod_iQ(x_i)$ And optimize those $Q$ separately. 
+
+* $Q(x_i)$ is not marginal, it's more like an expected conditional, over the expected conditional of other variables. 
+
+
+
+**Remark**: 
+
+* This is used, similar to Belief propagation, it's a kind of message passing!
+* Can approximate some NN. 
+
+
+$$
+Q_i'^0(x_i)=\phi_i(x_i)\\
+Q_i'^{t+1}(x_i)=\phi_i(x_i)\prod_{j\in N(i)} \exp(\sum_{x_j\in L_j}Q_j^t(x_j)\log\psi_{ij}(x_i,x_j) )
+$$
+Note, do normalization for $Q^t_i(x)$ for each iteration. 
+
+Understand the summation as approxiate expectation. 
+$$
+\sum_{x_j\in L_j}Q_j^t(x_j)\log\psi_{ij}(x_i,x_j)\approx \mathbb E_{x_j\sim Q_j^t} \log\psi_{ij}(x_i,x_j)
+$$
+In Log energy formulation: 
+$$
+\log Q'^{t+1}_i(x_i)=-E_{ii}(x_i)-\sum_{j\in N(i)}\sum_{x_j\in L_j}Q_j^t(x_j)E_{ij}(x_i,x_j)
+$$
+**Comparison with BP**
+
+* The message passing around is the 
+
+
+
+### Efficient Computation of Mean Field
+
+Note this is super simple if the $\mu_{ij}$ is a translational invariant spatial kernel. 
+$$
+\log Q'^{t+1}_i(x_i)=-E_{ii}(x_i)-\sum_{j\in N(i)}\sum_{l\in L_j}Q_j^t(l)V(x_i,l)\mu_{ij}
+$$
+Note that the last part $\sum_{j\in N(i)}\sum_{l\in L_j}Q_j^t(l)V(x_i,l)\mu_{ij}$ it can be computed by a channel wise matmul with $V$ and a convolution with $\mu$. (Both are linear and commutes. )
+
+Super efficient, just a convolution +  Channel wise matrix mul + normalization. Message update is simultaneous. 
+$$
+Q^{t+1}[n]=\exp(-U[n]-(Q^t*k)[n]\times V^T)
+$$
+Bilateral filtering based $\mu_{ij}$ can also be efficient using some advanced data structure. 
+
+
+
+Krahenbuhl Koltun 2011 Efficient CRF inference 
+
+Note, this is the MRF used in Deep Lab segmentation algorithm. (Feed CNN result into MRF). 
+
+
+
+### CNN + MRF
+
+Train a CNN to output `U[H,W,C]` per class probability at each pixel. This tensor can be used as an input to MRF
+
+**Algorithm**
+
+```python
+U = CNN(I)
+Q = U / U.sum(axis=2) # Normalize over labels
+for i in range(T):
+  # 
+  Q = Depthwise_Conv(Q, k)
+  Q = Conv(Q, mu)
+  # 
+```
+
+
+
+
+
+
+
+**Training**
+
+* Separate Training (DeepLab type)
+  * Train CNN to output the `U[H,W,C]` with maximal cross entropy with True labels. `CrossEntropy(U,L)` 
+  * Note the MRF part has parameters $\mu,k$ i.e. the label distance matrix and spatial kernel. 
+  * You have to hand crafted (manual optimize the MRF parameters. )
+
+* End to end training (CNN-RNN type)
+  * Regard the MRF part as an RNN, which can unroll into a T-layer **shared weight CNN**. 
+  * Thus you can backpropagation through pipeline! 
+    * pro: Joint learning, co-design, Auto-optimize, do more in inference than 
+  * **Remark on weight sharing**: 
+    * Training needs backprop, need to store intermediate result! So unroll can be GPU memory taxing! You cannot train large $T$ ($T\sim5$)
+    * But if it's an RNN, you can do more iterations during inference! Using small $T$ in training 
+
+**ICCV 2015 Conditional Random Field as RNN**
+
+
+
+
+
+**Remark: Why MRF do better than some CNN**
+
+* CNN expressive power needs learning. 
+* Iterative computation lends you more than just single shot learning. 
+
+
+
+> A general idea is that you can take a traditional CV algorithm, map the computation to sth. like RNN, and autograd to learn the parameters automatically. 
+
+
+
+## MRF: Graph Cuts Algorithm
+
+Map the loss into a graph cut loss. 
+
+**Binary label case**: Embed the MRF graph into 
+
+* Add 2 extra nodes $\alpha,\beta$ corresponding to 2 labels
+* Add 2 edge to each nodes $(i,\alpha),(i,\beta)$ 
+
+Then you can assign a scaler loss to each edge on the new graph! 
+
+
+
+Min-Cut can be solved in polynomial time. 
+
+
+
+**Multi Label Case**
