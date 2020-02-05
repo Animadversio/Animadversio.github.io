@@ -774,10 +774,6 @@ for i in range(T):
 
 
 
-
-
-
-
 **Training**
 
 * Separate Training (DeepLab type)
@@ -812,19 +808,83 @@ for i in range(T):
 
 ## MRF: Graph Cuts Algorithm
 
-Map the loss into a graph cut loss. 
+Map the loss of MRF into a Weighted Graph Cut problem, and solve it with standard Min-Cut algorithms! 
 
-**Binary label case**: Embed the MRF graph into 
+For [graph cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we are partitioning the nodes into 2 groups, and the edge across the 2 groups adds to your loss. In MRF language, each edge essentially has a 2 by 2 symmetric matrix stating the 
+
+
+
+### Binary Label
+
+**Binary label case**: Embed the MRF graph into a weighted graph
 
 * Add 2 extra nodes $\alpha,\beta$ corresponding to 2 labels
 * Add 2 edge to each nodes $(i,\alpha),(i,\beta)$ 
 
 Then you can assign a scaler loss to each edge on the new graph! 
 
-
-
 Min-Cut can be solved in polynomial time. 
 
 
 
-**Multi Label Case**
+### Multi-label: alpha beta swap 
+
+**Multi Label Case** it's NP hard. there is only some approximate solutions. 
+
+**Goal**: Make the improvement in Graph Cut correspond to the cost improvement in the original MRF. Solve part of the problem one at a time. 
+
+$\alpha, \beta$  swap 
+
+
+
+$\alpha$ expansion : 
+
+* Those already assigned to $\alpha$ cannot be assigned to others 
+* Only flip $\bar \alpha$ to $\alpha$. 
+* Assign weight to edge and edge to state. 
+
+
+
+>  Sometimes, expand base on one label at a time, will not reach 
+
+
+
+> For semantic segmentation, graph cut can work better than belief propagation. 
+
+
+
+## MRF: Getting Diverse Solutions 
+
+
+
+
+
+* Single most likely solution may not be best
+* We want multiple solution 
+  * Interactive Segmentation: Give multiple options, let the user to choose
+
+
+
+### Diverse Solution Formalism
+
+2012 ECCV " Diverse M best solution for MRF! " 
+
+Design a difference metric, find the optimal solution for $X$ for $\Delta(X_0,X)>C$. 
+$$
+X_1=\arg\min_X \sum_iE_i(x_i)+\sum_{ij}E_{ij}(x_i,x_j)\\
+s.t. \Delta(X,X_0)=\sum_i\delta(x_i,x_{0i})>C
+$$
+Assume $\Delta$ to be a pixelwise difference metric.
+
+Traditional constraint optimization is formulated in Langragian Multipliers. 
+
+
+
+**Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance!
+
+* Essentially you are imposing a cost 
+
+
+
+A distribution of solution may give you an interesting array of solutions, some of them may be super good! 
+
