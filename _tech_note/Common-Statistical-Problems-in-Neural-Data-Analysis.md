@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Common Statistical Problems in Neural Data Analysis
+title: Common Statistical Problems in Neural Data Analysis (Updating)
 author: Binxu Wang
 date: July 1st, 2019
 use_math: true
@@ -41,7 +41,8 @@ We encounter high dimensional data from time to time. Whenever the dimension > 3
 
 * K-means clustering 
 * Hierachical Clustering / Similarity Sorting / Linkage based clustering (Ward linkage)
-* `Holy Method`: Statistical criterion driven clustering 
+* `Tim Holy's Method`: Statistical criterion driven clustering
+  * The thought behind it is to grow a ball around each data point and flow it towrds the mean of points within the ball. (mean-shift algorithm), which will effectively perform gradient ascent along the density function. 
 
 ### How good is my cluster?
 
@@ -50,8 +51,6 @@ We encounter high dimensional data from time to time. Whenever the dimension > 3
 * Silhouette value test
 
 ## Dimension Reduction
-
-
 
 **Algorithm**
 
@@ -130,6 +129,13 @@ The intrinsic attractor manifold and population dynamics of a canonical cognitiv
 # Supervised 
 
 ## Classification 
+
+**Questions**
+
+* Classify 2 kinds of known behavioral states? 
+* Classify n kinds of known 
+
+*Note*: Clustering and Classification are similar in application, although one one of them requires labels one of them don't. Both could work hand in hand together with manual labelling to form a pipeline. 
 
 **Algorithm**
 
@@ -249,3 +255,4 @@ Face map
 **Package**
 
 * `DeepLabCut`
+* `Jaba` 

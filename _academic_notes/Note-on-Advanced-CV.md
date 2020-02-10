@@ -21,3 +21,5 @@ Link to syllabus.
 [Basic Computer Vision](Note-on-Computer-Vision.md)
 
 [Image Prior and Generative Model](Note-on-Image-Prior.md)
+
+[Stereo Problem](Stereo-Algorithms.md) 

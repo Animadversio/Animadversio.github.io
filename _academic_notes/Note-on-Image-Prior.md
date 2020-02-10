@@ -774,24 +774,21 @@ for i in range(T):
 
 
 
-
-
-
-
 **Training**
 
 * Separate Training (DeepLab type)
-  * Train CNN to output the `U[H,W,C]` with maximal cross entropy with True labels. `CrossEntropy(U,L)` 
-  * Note the MRF part has parameters $\mu,k$ i.e. the label distance matrix and spatial kernel. 
-  * You have to hand crafted (manual optimize the MRF parameters. )
+  * Train CNN to output the `U[H,W,C]` with  cross entropy loss with True labels. `CrossEntropy(U,L)` And then use MRF to fine-tune this result. 
+  * Note the MRF part has parameters $\mu,k$ i.e. the label distance matrix and spatial kernel. You have to hand crafted (manual optimize the MRF parameters. )
+  * *Doesn't give MRF enough work to do, CNN worked too heavy*
 
-* End to end training (CNN-RNN type)
-  * Regard the MRF part as an RNN, which can unroll into a T-layer **shared weight CNN**. 
+* End to end training (CNN-RNN type) 
+  * Regard the MRF part as an RNN, which can unroll into a T-layer **shared-weight CNN**. 
   * Thus you can backpropagation through pipeline! 
-    * pro: Joint learning, co-design, Auto-optimize, do more in inference than 
-  * **Remark on weight sharing**: 
-    * Training needs backprop, need to store intermediate result! So unroll can be GPU memory taxing! You cannot train large $T$ ($T\sim5$)
-    * But if it's an RNN, you can do more iterations during inference! Using small $T$ in training 
+    * **Benefit**: Joint learning, co-design, Auto-optimize, can do more in inference than training
+* **Remark on weight sharing**: 
+  * Training needs backprop, need to store intermediate tensor! So unroll can be memory taxing! You cannot train large $T$ ($T\sim5$)
+  * But if it's an RNN (sharing weights), you can do more iterations during inference! Using small $T$ in training, large $T$ when deployment 
+  * You cannot do this if different layer has different weights. 
 
 **ICCV 2015 Conditional Random Field as RNN**
 
@@ -801,30 +798,98 @@ for i in range(T):
 
 **Remark: Why MRF do better than some CNN**
 
-* CNN expressive power needs learning. 
-* Iterative computation lends you more than just single shot learning. 
+* CNN expressive power needs learning, not enough data / training cannot support a deep network. 
+* For RNN or MRF, shared weights with iterative computation gives you more than just single pass mapping!  
 
 
 
-> A general idea is that you can take a traditional CV algorithm, map the computation to sth. like RNN, and autograd to learn the parameters automatically. 
+> A general idea is that you can take a traditional CV algorithm, map the computation to sth. like RNN, and autograd to learn the parameters automatically! Differentiable computing 
 
 
 
 ## MRF: Graph Cuts Algorithm
 
-Map the loss into a graph cut loss. 
+Map the loss of MRF into a Weighted Graph Cut problem, and solve it with standard Min-Cut algorithms! 
 
-**Binary label case**: Embed the MRF graph into 
+For [graph cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we are partitioning the nodes into 2 groups, and the edge across the 2 groups adds to your loss. In MRF language, each edge essentially has a 2 by 2 symmetric matrix (0 on diagonal), denoting the cost of 2 side with different labels. 
+
+
+
+### Binary Label
+
+**Binary label case**: Embed the MRF graph into a weighted graph
 
 * Add 2 extra nodes $\alpha,\beta$ corresponding to 2 labels
 * Add 2 edge to each nodes $(i,\alpha),(i,\beta)$ 
 
 Then you can assign a scaler loss to each edge on the new graph! 
 
-
-
 Min-Cut can be solved in polynomial time. 
 
 
 
-**Multi Label Case**
+### Multi-label: alpha beta swap 
+
+**Multi Label Case** it's NP hard. there is only some approximate solutions. 
+
+**Goal**: Make the improvement in Graph Cut correspond to the cost improvement in the original MRF. Solve part of the problem one at a time. 
+
+$\alpha, \beta$  swap 
+
+
+
+$\alpha$ expansion : 
+
+* Those already assigned to $\alpha$ cannot be assigned to others 
+* Only flip $\bar \alpha$ to $\alpha$. 
+* Assign weight to edge and edge to state. 
+
+
+
+>  Sometimes, expand base on one label at a time, will not reach 
+
+
+
+> For semantic segmentation, graph cut can work better than belief propagation. 
+
+
+
+## MRF: Getting Diverse Solutions 
+
+
+
+
+
+* Single most likely solution may not be best
+* We want multiple solution 
+  * Interactive Segmentation: Give multiple options, let the user to choose
+
+
+
+### Diverse Solution Formalism
+
+2012 ECCV " Diverse M best solution for MRF! " [Lecture](http://videolectures.net/eccv2012_batra_markov/) 
+
+Design a difference metric, find the optimal solution for $X$ for $\Delta(X_0,X)>C$. 
+$$
+X_1=\arg\min_X \sum_iE_i(x_i)+\sum_{ij}E_{ij}(x_i,x_j)\\
+s.t. \Delta(X,X_0)=\sum_i\delta(x_i,x_{0i})>C
+$$
+Assume $\Delta$ to be a pixelwise difference metric.
+
+Traditional constraint optimization can be formulated in Langragian Multipliers, the dualized form is 
+$$
+X_1=\arg\min_X \sum_iE_i(x_i)+\sum_{ij}E_{ij}(x_i,x_j)-\lambda \sum_i\delta(x_i,x_{0i})\\
+Find\ \lambda,s.t. \sum_i\delta(x_i,x_{0i})>C
+$$
+This langrangian multiplier can be absorbed into $E_i(x_i)$ , i.e. encourage $x_i$ to take other value than $x_{0i}$. 
+
+**Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance!
+
+* Essentially you are imposing a cost for being similar to a solution before, and this cost is imposed through unitary term. 
+  * Cost based on multiple pixels will be harder to translate. 
+
+
+
+A distribution of solution may give you an interesting array of solutions, some of them may be super good! 
+
