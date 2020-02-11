@@ -17,7 +17,7 @@ Basic Stereo algorithm can be formulated as Markov Random Field.
 
 
 
-Thus Methods in MRF inference could all be used. [Prior](Note-on-Image-Prior.md) 
+Thus Methods in MRF inference could all be used. [Prior](Note-on-MRF-Image-Prior.md) 
 
 
 

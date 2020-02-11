@@ -20,6 +20,8 @@ Link to syllabus.
 
 [Basic Computer Vision](Note-on-Computer-Vision.md)
 
-[Image Prior and Generative Model](Note-on-Image-Prior.md)
+[Image Prior and Generative Model](Note-on-Image-Prior.md) 
+
+[MRF Image Prior](Note-on-MRF-Image-Prior.md) 
 
 [Stereo Problem](Stereo-Algorithms.md) 
