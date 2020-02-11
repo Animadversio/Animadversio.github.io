@@ -1,10 +1,19 @@
+---
+layout: post
+title: Note on Stereo Problem
+author: Binxu Wang
+date: Feb 4th, 2020
+comments: true
+use_math: true
+categories: [computer science]
+tags: [academic note, computer vision, computer science, machine learning]
+typora-copy-images-to: ../assets/img/notes/cv2
 
+---
 
+# Stereo
 
-
-
-
-Basic Stereo algorithm can be formulated as 
+Basic Stereo algorithm can be formulated as Markov Random Field. 
 
 
 
@@ -39,23 +48,21 @@ For each cluster it has parameters $\mu^i_k,\mu^s_k,\alpha_k,\beta_k,\gamma_k$  
 
 
 
-
-
-What's the right superpixel size? Can't be too small or too large. 
-
-Maybe run MRF on the superpixels! And merge then iteratively. 
+> What's the right superpixel size? Can't be too small or too large. 
 
 ### Superpixel MRF
 
+Maybe run MRF on the superpixels! And merge then iteratively. 
+
 [Continuous Markov Random Fields for Robust Stereo Estimation](https://arxiv.org/abs/1204.1393)
 
-BMX
+**Graph Construction**
 
-* Each superpixel has a node. Each node has 3 parameters, $y_k=[\alpha_k,\beta_k,\gamma_k]$ .
+* Each superpixel is a node. Each node has 3 parameters, $y_k=[\alpha_k,\beta_k,\gamma_k]$ .
 
-* Unary cost, is the residue of the single pixel. $\|d^0[n]-\alpha_kn_x-\beta_kn_y-\gamma_k\|$ 
+* Unary cost, is the residue of the planar fit to the depth at this pixel. $\|d^0[n]-\alpha_kn_x-\beta_kn_y-\gamma_k\|$ 
 
-* Construct a graph with all neighboring superpixels getting an edge, with an additional label $o_{ij}$ describing the geometric relationship of the 2 planes. 
+* Construct a graph with all neighboring superpixels sharing an edge, with an additional label $o_{ij}$ describing the geometric relationship of the 2 planes. 
   * The label is a discrete label define the states, and the costs come in $\phi(o_{ij},y_i,y_j)$ 
   * Note this could be extend naturally to 3-way junction and 4-way clique and enforce geometric constraint on it. 
 
@@ -74,22 +81,22 @@ BMX
 
 Thus you get 
 
-**Inference** 
+**Tricks for Inference** 
 
-* Particle belief propagation for continuous variables
+* [Particle belief propagation]() for continuous variables: Use samples to represent
 * Use factor graph to tackle 3 way relationship. 
 * Use library of MRF solver it will work ! (SOTA! 2012)
 
 > Note, if you can define your MRF, then solving MRF has established libraries, which is powerful. 
 
-## 
+## Hierarchical MRF
 
-Why do we need superpixels? 
+**Comments**: Why do we need superpixels? 
 
 * MRF cannot be too large! 
 * SLIC is dirty but fast! 
 
-Lower level vision by consensus in a spatial hierachy of regions 
+[Lower level vision by consensus in a spatial hierachy of regions]()
 
 Use a hierarchy of multi-scale overlapping patches, $S=\{4,8,16,32\}$, $stride=1$ . 
 

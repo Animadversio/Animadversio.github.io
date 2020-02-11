@@ -809,11 +809,17 @@ for i in range(T):
 
 ## MRF: Graph Cuts Algorithm
 
-Map the loss of MRF into a Weighted Graph Cut problem, and solve it with standard Min-Cut algorithms! 
+This a general technique for MRF inference. 
 
-For [graph cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we are partitioning the nodes into 2 groups, and the edge across the 2 groups adds to your loss. In MRF language, each edge essentially has a 2 by 2 symmetric matrix (0 on diagonal), denoting the cost of 2 side with different labels. 
+> Map the loss of MRF into a Weighted Graph Cut problem, and solve it with standard Min-Cut algorithms! 
 
+**Cuts**: a set of edges, deleting which the nodes will be separated into 2 populations. 
 
+For [Min cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we are partitioning the nodes into 2 groups, and the edge across the 2 groups adds to your loss. In MRF language, each edge essentially has a 2 by 2 symmetric matrix (0 on diagonal), denoting the cost of 2 side with different labels. 
+
+* Easy to see the correspondence to image segmentation. (Binary)
+
+Min-Cut can be solved in polynomial time, and exact global optimum is guanranteed in polynomial time. [Note on graph cut](Note-on-Graph-Cut.md) 
 
 ### Binary Label
 
@@ -822,47 +828,69 @@ For [graph cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we ar
 * Add 2 extra nodes $\alpha,\beta$ corresponding to 2 labels
 * Add 2 edge to each nodes $(i,\alpha),(i,\beta)$ 
 
-Then you can assign a scaler loss to each edge on the new graph! 
+Then you can assign a scaler loss to each edge on the new graph, so that the loss the cutting edge correspond to the energy of MRF. 
+$$
+\arg\min \sum_i E_{ii}(x_i)+\sum_{i,j}E_{ij}(x_i,x_j)
+$$
 
-Min-Cut can be solved in polynomial time. 
+* 
+
+[Note on graph cut](Note-on-Graph-Cut.md)
 
 
 
-### Multi-label: alpha beta swap 
+### Multi-label
 
 **Multi Label Case** it's NP hard. there is only some approximate solutions. 
+
+* It's majorly doing binary graph cut iteratively. 
+* Using 2 kinds of steps: alpha-beta swap, alpha expansion. 
 
 **Goal**: Make the improvement in Graph Cut correspond to the cost improvement in the original MRF. Solve part of the problem one at a time. 
 
 $\alpha, \beta$  swap 
 
-
+alpha beta swap 
 
 $\alpha$ expansion : 
 
-* Those already assigned to $\alpha$ cannot be assigned to others 
-* Only flip $\bar \alpha$ to $\alpha$. 
-* Assign weight to edge and edge to state. 
+* Those already assigned to $\alpha$ cannot be assigned to others. Only flip $\bar \alpha$ to $\alpha$. 
+* Assign weight to edge and edge to label. 
+  * 
+
+*Note*: Why alpha can only expand? 
+
+* if alpha shrink, $\bar\alpha$ is not a specific label, so cannot write it's loss function, but $\alpha$ expansion has a definite loss.
+
+>  Sometimes, expand base on one label at a time, will not reach global optimum. There can be oscillating solutions, A,B,C expanding into each other iteratively. 
+
+**Overall Algorithm**
+
+* Initialization
+* For $\alpha$ in all the labels
+  * Do a alpha expansion graph cut / a Binary label optimizaiton
+  * If there decay in energy, accept
+  * Or stay put
+* Stop if no label changes any more. 
 
 
 
->  Sometimes, expand base on one label at a time, will not reach 
+**Comments**: For semantic segmentation, graph cut can work better than belief propagation. 
 
+Tools:
 
-
-> For semantic segmentation, graph cut can work better than belief propagation. 
+* http://cmp.felk.cvut.cz/~smidm/python-packages-for-graph-cuts-on-images.html
 
 
 
 ## MRF: Getting Diverse Solutions 
 
-
-
-
+**Motivation**
 
 * Single most likely solution may not be best
-* We want multiple solution 
-  * Interactive Segmentation: Give multiple options, let the user to choose
+* We want multiple solution, usage
+  * **Interactive Segmentation**: Give multiple options, let the user to choose!
+  * As a distribution to next stage of processing
 
 
 
@@ -870,26 +898,30 @@ $\alpha$ expansion :
 
 2012 ECCV " Diverse M best solution for MRF! " [Lecture](http://videolectures.net/eccv2012_batra_markov/) 
 
-Design a difference metric, find the optimal solution for $X$ for $\Delta(X_0,X)>C$. 
+Diverse solution can be formulate simply: Design a **difference metric**, find the optimal solution for $X$ for $\Delta(X_0,X)>C$. 
 $$
 X_1=\arg\min_X \sum_iE_i(x_i)+\sum_{ij}E_{ij}(x_i,x_j)\\
 s.t. \Delta(X,X_0)=\sum_i\delta(x_i,x_{0i})>C
 $$
 Assume $\Delta$ to be a pixelwise difference metric.
 
-Traditional constraint optimization can be formulated in Langragian Multipliers, the dualized form is 
+Traditional constraint optimization can be formulated in Lagrangian Multipliers, the dualized form is 
 $$
 X_1=\arg\min_X \sum_iE_i(x_i)+\sum_{ij}E_{ij}(x_i,x_j)-\lambda \sum_i\delta(x_i,x_{0i})\\
 Find\ \lambda,s.t. \sum_i\delta(x_i,x_{0i})>C
 $$
-This langrangian multiplier can be absorbed into $E_i(x_i)$ , i.e. encourage $x_i$ to take other value than $x_{0i}$. 
+This Lagrangian multiplier can be absorbed into unary term $E_i(x_i)$ , i.e. encourage $x_i$ to take other value than $x_{0i}$,. 
 
-**Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance!
+**Comment**: How to determine $\lambda$
+
+* Do a line search on $\lambda$ and find the value that suits the $C$ inequality. 
+
+**Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance equivalently! 
 
 * Essentially you are imposing a cost for being similar to a solution before, and this cost is imposed through unitary term. 
   * Cost based on multiple pixels will be harder to translate. 
 
 
 
-A distribution of solution may give you an interesting array of solutions, some of them may be super good! 
+A distribution of solution may give you an interesting array of solutions, some of them may be super good! (M best diverse solution is better than a single one.)
 
