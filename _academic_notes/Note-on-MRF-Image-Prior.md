@@ -219,13 +219,11 @@ $$
 
 ### How to handle non-binary relationship
 
+**Belief Propagation for Factor Graph**
 
+For non-pairwise MRF, for each clique, set a Factor, connecting to all the nodes within clique, thus remove the non-binary dependency! (4-way relationship)
 
-### Belief Propagation for Factor Graph
-
-For non-pairwise MRF, for each clique, set a Factor
-
-Factor graph is bipartite network, one part is nodes, one part is factor
+**Factor graph** is bipartite network, one part is nodes, one part is factor
 
 * Unary term 
 
@@ -236,12 +234,13 @@ Factor graph is bipartite network, one part is nodes, one part is factor
 * For continuous variable distribution, all summation becomes integration. 
 * For GBP, record message by just record mean and cov. 
   * Assume Unary and Binary terms are Gaussian.
-  * Then everything will stay Gaussian.
+  * Then everything will stay Gaussian! 
 
 **Sampling Based Belief Propagation**
 
 * Use a sample set to represent each message not distribution. 
 * Not integrating out $x_i$ but sample from it's current marginal estiamte. And draw samples from $x_{i,S}$ 
+* Particle Belief Propagation
 
 
 
@@ -294,7 +293,7 @@ Q_i'^0(x_i)=\phi_i(x_i)\\
 Q_i'^{t+1}(x_i)=\phi_i(x_i)\prod_{j\in N(i)} \exp(\sum_{x_j\in L_j}Q_j^t(x_j)\log\psi_{ij}(x_i,x_j) )
 $$
 
-Note, do normalization for $Q^t_i(x)$ for each iteration. 
+*Note*, do normalization for $Q^t_i(x)$ for each iteration. 
 
 Understand the summation as approxiate expectation. 
 $$
@@ -306,7 +305,7 @@ $$
 $$
 **Comparison with BP**
 
-* The message passing around is the 
+* The message passing around is not the ......
 
 
 
@@ -413,6 +412,8 @@ $$
 
 [Note on graph cut](Note-on-Graph-Cut.md)
 
+> GraphCut algorithms really yield promising result of image segmentation, and enables interactive segmentation. 
+
 
 
 ### Multi-label
@@ -425,8 +426,6 @@ $$
 **Goal**: Make the improvement in Graph Cut correspond to the cost improvement in the original MRF. Solve part of the problem one at a time. 
 
 $\alpha, \beta$  swap 
-
-alpha beta swap 
 
 $\alpha$ expansion : 
 
@@ -465,10 +464,10 @@ Tools:
 
 * Single most likely solution may not be best
 * We want multiple solution, usage
-  * **Interactive Segmentation**: Give multiple options, let the user to choose!
+  * **Interactive Processing**: Give multiple options, let the user to choose!
   * As a distribution to next stage of processing
 
-
+> This is also a general technique that could be applied to segmentation, tracking etc. As long as there is MRF. 
 
 ### Diverse Solution Formalism
 
@@ -492,12 +491,12 @@ This Lagrangian multiplier can be absorbed into unary term $E_i(x_i)$ , i.e. enc
 
 * Do a line search on $\lambda$ and find the value that suits the $C$ inequality. 
 
-**Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance equivalently! 
+* **Note**: Actually you don't really care $C$, so you can just tune the $\lambda$ Parameter for best appearance equivalently! 
 
 * Essentially you are imposing a cost for being similar to a solution before, and this cost is imposed through unitary term. 
   * Cost based on multiple pixels will be harder to translate. 
 
 
 
-A distribution of solution may give you an interesting array of solutions, some of them may be super good! (M best diverse solution is better than a single one.)
+A distribution of solution may give you an interesting array of solutions, some of them may be super good! (M best **diverse** solution is much much better than a single one, using the same base model!)
 

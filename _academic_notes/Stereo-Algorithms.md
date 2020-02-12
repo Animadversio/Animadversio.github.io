@@ -15,8 +15,6 @@ typora-copy-images-to: ../assets/img/notes/cv2
 
 Basic Stereo algorithm can be formulated as Markov Random Field. 
 
-
-
 Thus Methods in MRF inference could all be used. [Prior](Note-on-MRF-Image-Prior.md) 
 
 
@@ -116,5 +114,142 @@ Still too computational intense! Regular square patch can help us, all these com
 * 
 * Besides, using $log_2$ scale will help us aggregate information across scale. 
 
-## 
+## Plane Sweep Stereo 
+
+More than 2 image, How 
+
+**Rectification Trick**: If you have 2 cameras, rotate one of them to make the sight center align. But doesnt work 
+
+[Rectification](Note-on-Computer-Vision.md#Rectification) 
+
+
+
+* If we know the poses of the multiple cameras, we could build a grid model of the world, $(x,y,z)$ 
+  * Descritize $z$ by uniform interval in $1/z$ space. 
+* Each point in the world, correspond to a point $(x_i^A,y_i^A)$ in each camera view. 
+* You can compute consistency between the point pairs. 
+
+
+
+* 3 cameras or more cameras may give you more pairs, (point is occluded in B but not in AC so AC can still fit a match )
+
+
+
+## Monocular Flow
+
+> Multiple images or 2 images from a moving camera is kind of equivalent! 
+
+
+
+Simplest case, fixed physical world, only camera is moving! 
+
+*Note*: Optical flow doesn't provide the depth *per se*. 
+
+* If you don't know your camera's speed or movement, moving camera at 2 speed ~ objects are 2 times far away. 
+* So if you only know direction of movement, then you know depte **Up to a scaling factor** 
+
+Planar model trick $1/z=\alpha x+\beta y+\gamma\propto d[x,y]$  
+
+
+
+If only one moving object, IT's EQUIVALENT to epipolar system. 
+
+* Moving is relative, no matter the object or camera. 
+
+
+
+If multiple moving object. 
+
+* Chop the frame into more than one patch, so that one object in one patch, and each object is its own epipolar system. 
+* Finally you can estimate
+
+Finally, you get all the components into a giant MRF. 
+
+## Scene Flow 
+
+
+
+????? Piecewise rigid motion
+
+Cycle consistency. 
+
+IJCV 2015 [3D scene flow estimation with a pievewise rigid scene model]()
+
+> Still pre-CNN method, but CNN doesn't do much better than this. 
+
+## Optical Flow 
+
+First problem is finding correspondence! 
+
+Theoretically, you want to build a 4d cost volume $C[x,y,dx,dy]$ 
+
+
+
+### PatchMatch 
+
+Core is a randomized search algorithm. Use neighbor and random sample as a heuristic guess. 
+
+* Initialize the flow value $f(x,y)=[u(x,y),v(x,y)]$, randomly, or 
+* Iteratively, check the answers of neighbors $f(x-1,y),f(x,y-1),(x+1,y),f(x,y+1)$  and a random value within a distance 
+* Check if any displacement reduce the cost. If do, adopt the answer. 
+
+> Work super well in practise....
+
+**Comment**: 
+
+* Here, smooth is not an constraint, but as a start of good guess, by giving preference to answers of neighbors. 
+
+
+
+### Hierachical Optical Flow
+
+CVPR 2016 [Efficient Coarse to fine PatchMatch for Large Displacement Optical Flow]( )
+
+Building image pyramid, apply patch match from a coarse to fine level, use the answer at coarse level, resize to initialize the fine level PatchMatch 
+
+* 
+
+
+
+### EpicFlow
+
+CVPR 2015 
+
+Sparse to dense estimation, estimate the flow value for each object. 
+
+> Was State of the art at 2015~ 
+
+In the heart, it's like a **flow denoising / flow inpainting** problem. 
+
+* Require the flow value match the sparse estimation. 
+* Require smoothness
+* Loosen the smooth constraint when edge is detected in the image. (~ The content aware image prior) 
+
+
+
+* Add a post processing step, minimize Lucas-Kandae energy by perturbing the input flow map. 
+
+
+
+## NN based method 
+
+Inspired by traditional methods, replace some components by NN. 
+
+
+
+### CNN Matching Cost 
+
+> Replacing the matching cost by CNN, can already boost a huge improvement! ($f$ )
+
+> CNN can be a better model of the low level image statistics and image metric. 
+
+[Stereo Matching by Training a CNN to compare image patch]() 
+
+**How to train such network?** 
+
+* Learn a similarity score of patch, by constructing a triplet loss. 
+
+
+
+**Siamese Network** 
 
