@@ -3,3 +3,4 @@ _site
 .sass-cache
 .jekyll-metadata
 assets/img/posts/olfactory_circuit/.DS_Store
+**/.DS_Store
