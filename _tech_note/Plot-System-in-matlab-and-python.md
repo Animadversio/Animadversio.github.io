@@ -29,6 +29,44 @@ Both `matlab` and `matplotlib` have 2 layer of structure for plot, `figure` and 
 
 
 
+## Silent Plotting
+
+
+
+### Python
+
+```python
+from matplotlib import use as use_backend
+use_backend("Agg")
+import matplotlib.pylab as plt
+plt.ioff()
+
+...
+plt.show(block=False)
+time.sleep(5)
+plt.close('all')
+```
+
+Seems like a solution. Refer to [issue](https://github.com/matplotlib/matplotlib/issues/8560)
+
+### matlab
+
+Try to plot silently in matlab is much harder. It requires exotic reference manipulation of figure and axes objects using `set`. 
+
+Instead of just `figure(1)` and `subplot(121)` The following will plot silently without popping up figure. 
+
+```matlab
+h2 = figure('Visible','off');clf; 
+h2.Position = [  19         235        1779         743];
+axs = {}; axs{1} = subplot(1,2,1); axs{2} = subplot(1,2,2);
+set(0,'CurrentFigure',h2); %clf; %
+set(gcf, "CurrentAxes", axs{i}); cla(axs{i},'reset'); 
+% ploting, ploting
+saveas(h2, fullfile(savepath, compose("score_traj_cmp_chan%d.png", channel_j)))
+```
+
+
+
 ## Export and Editing in Illustrator
 
 
