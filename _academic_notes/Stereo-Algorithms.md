@@ -187,6 +187,7 @@ First problem is finding correspondence! Theoretically, you want to build a 4d c
 
 Core of *PatchMatch* is a randomized search algorithm. Use neighbor and random sample as a heuristic guess. 
 
+
 * Initialize the flow value $f(x,y)=[u(x,y),v(x,y)]$, randomly, or 
 * Iteratively, check the answers of neighbors $f(x-1,y),f(x,y-1),(x+1,y),f(x,y+1)$  and a random value within a distance 
 * Check if any displacement reduce the cost. If do, adopt the answer. 
@@ -195,11 +196,11 @@ Core of *PatchMatch* is a randomized search algorithm. Use neighbor and random s
 
 **Comment**: 
 
-* Here, smooth is not an constraint, but as a start of good guess, by giving preference to answers of neighbors. 
+* Here, smooth is not an constraint, but as a heuristic of good answer, by giving search preference to answers of neighbors. 
 
 
 
-### Hierachical Optical Flow
+### Hierarchical Optical Flow
 
 CVPR 2016 [Efficient Coarse to fine PatchMatch for Large Displacement Optical Flow]( )
 
