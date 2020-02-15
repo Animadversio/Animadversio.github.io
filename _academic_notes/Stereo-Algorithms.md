@@ -135,7 +135,7 @@ More than 2 image, How
 
 
 
-## Monocular Flow
+# Monocular Flow
 
 > Multiple images or 2 images from a moving camera is kind of equivalent! 
 
@@ -175,19 +175,17 @@ Cycle consistency.
 
 IJCV 2015 [3D scene flow estimation with a pievewise rigid scene model]()
 
-> Still pre-CNN method, but CNN doesn't do much better than this. 
+> Still pre-CNN method, but CNN doesn't do much better than this for long. 
 
 ## Optical Flow 
 
-First problem is finding correspondence! 
-
-Theoretically, you want to build a 4d cost volume $C[x,y,dx,dy]$ 
+First problem is finding correspondence! Theoretically, you want to build a 4d cost volume $C[x,y,dx,dy]$ , if there exist large movement, this volume will be infeasible to process. 
 
 
 
 ### PatchMatch 
 
-Core is a randomized search algorithm. Use neighbor and random sample as a heuristic guess. 
+Core of *PatchMatch* is a randomized search algorithm. Use neighbor and random sample as a heuristic guess. 
 
 * Initialize the flow value $f(x,y)=[u(x,y),v(x,y)]$, randomly, or 
 * Iteratively, check the answers of neighbors $f(x-1,y),f(x,y-1),(x+1,y),f(x,y+1)$  and a random value within a distance 
@@ -294,21 +292,20 @@ Build cost volume and do 3D Convolution to process cost volume.
 
 * You can add supervision to intermediate layers. 
 
-## NN Optical Flow
+## CNN Optical Flow
 
 > The biggest issue is the potential choices (match) is too large, esp. when large displacement. 
 
-The 
-
 [PWC-Net: CNN for Optical FLow Using Pyramid, Warping and Cost Volume]()
 
-Hierachical processing and pyramid is a way to deal with large number of match. Ref to [Hierachical Optical Flow](#Hierachical Optical Flow) 
+Hierachical processing and pyramid is a classical way to deal with large number of match. Ref to [Hierachical Optical Flow](#Hierachical Optical Flow) 
 
-* You go from coarse to fine, and upsample your low resolution result. 
-* Note you need some warping operation, i.e. look up the value around the "flowed" index. 
+* You go from coarse to fine, and upsample your low resolution result (as initial guess)
+* Note you need some warping operation, i.e. look up the value around the "flowed" index, and fetch those value back around you to continue the search. 
   * $F^{t+1}_w[x,y,f]=F^{t+1}[x+u[x,y],y+v[x,y],f]$ 
-* BackProp through **Warping** layers is tricky and needs some care. 
-  * We need to treat $u[x,y]$ as a real value. 
+* *Note*: BackProp through **Warping** layers is tricky and needs some care. 
+  * Without backprop to $u,v$ flow value, you can never train a network to perform optical flow. 
+  * We need to treat $u[x,y]$ as a real value, and use bilinear interpolation to find dependency of output on $u$
 
 2015 NIPS [Spatical Transformation Network]()
 
@@ -344,7 +341,7 @@ Some lessons from human perception
 *  Texture
 * Familiar object 
 
-> Note, you need a large RF to get and process information in global scale to make sense. (human cannot learn )
+> Note, you need a large RF to get and process information in global scale to make sense. (human cannot know shape / depth from very local fragments.  )
 
 
 
@@ -366,32 +363,3 @@ Collecting ground truth is hard which is also challenging.
 
 
 
-# Semantics
-
-Note semantics and geometric reasoning is conceptually similar to each other
-
-* Stereo and Optical flow is about finding correspondance / matches. 
-* Object recognition in some sense is finding correspondance w.r.t. a template, and make the template match the observation. 
-
-
-
-So ancient semantic detector works like this 
-
-* Finding interesting key points
-  * You want to make it sparse, make the matching problem easier. 
-  * Need to have non-smooth area, 
-* Region detectors, make it invariant to physical changes as possible. 
-
-
-
-## Keypoint Detector
-
-What is a good Keypoint Detector?  
-
-* Superpixel is not 
-  * Shape, boundary, change too much 
-* 
-
-
-
-###  SIFT
