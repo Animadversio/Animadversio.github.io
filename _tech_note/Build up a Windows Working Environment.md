@@ -23,6 +23,14 @@ Currently, we can have
   * CUDA 10.0 and CUDA 10.1 both installed. 
   * NVIDIA Driver Version: 432.00. 
   * `numpy` version 1.16.4
+* `cudnn` version
+  *  `<unknown>::cudnn-7.6.4-cuda10.0_0 --> anaconda::cudnn-7.6.5-cuda10.1_0`
+
+## Keras Tensorflow co-environment
+
+If we want `keras` as well, refer to [this post](https://github.com/antoniosehk/keras-tensorflow-windows-installation) for installation guide on keras-gpu installation on windows.
+
+**Note**, never open 2 tf instances at once on a computer, if so, try to kill the new tf by using `nvidia-smi` and `kill`
 
 ## PyTorch Caffe Co-environment
 
