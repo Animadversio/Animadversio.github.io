@@ -211,6 +211,10 @@ Building image pyramid, apply patch match from a coarse to fine level, use the a
 
 
 
+* Up sampling, initialize your finer level search, and restrict your search around the initialization! 
+
+
+
 ### EpicFlow
 
 CVPR 2015 
@@ -233,7 +237,7 @@ In the heart, it's like a **flow denoising / flow inpainting** problem.
 
 ## NN based method 
 
-Inspired by traditional methods, replace some components by NN. 
+> Overall theme, inspired by traditional methods, replace some components by NN. 
 
 
 
@@ -248,8 +252,146 @@ Inspired by traditional methods, replace some components by NN.
 **How to train such network?** 
 
 * Learn a similarity score of patch, by constructing a triplet loss. 
+  * Reference patch, true matched patch, and a wrong one along the same epipolar line. 
+* Use a Hinge Loss function $L = \max(0, m+d(I_r,I_c) -d(I_r,I_w))$ 
+
+Network structure: **Siamese Network** 
 
 
 
-**Siamese Network** 
+### Pyramid NN stereo 
 
+Feature vector for each pixel for left and right image, 
+
+2018 CVPR [Pyramid Stereo Matching Network]()
+
+
+
+Use a weight sharing CNN to encode feature, 
+
+Build cost volume and do 3D Convolution to process cost volume. 
+
+
+
+**Loss**
+
+* Note, **soft-max** gives a probability distribution.
+  * Note, it's usually better to produce a distribution of value (like belief), instead of a single best one. 
+
+* However you want a regression type loss! 
+
+* Do the loss on the expectation of the distribution formed by soft-max. 
+
+  * $\sum_0^{D-1}SoftMax(s[x,y,d])*d$ 
+
+> Maybe use distribution, and compute distribution Expectation and do loss is a trick. 
+
+* Huber loss: Use quadratic loss for small difference, L1 loss for large difference, make it more robust. 
+  * $L=0.5x^2\ if\ |x|<1;L=|x|-0.5\ if\ |x|>1$ 
+  * a mixture of L1 and L2. 
+
+**Supervision**
+
+* You can add supervision to intermediate layers. 
+
+## NN Optical Flow
+
+> The biggest issue is the potential choices (match) is too large, esp. when large displacement. 
+
+The 
+
+[PWC-Net: CNN for Optical FLow Using Pyramid, Warping and Cost Volume]()
+
+Hierachical processing and pyramid is a way to deal with large number of match. Ref to [Hierachical Optical Flow](#Hierachical Optical Flow) 
+
+* You go from coarse to fine, and upsample your low resolution result. 
+* Note you need some warping operation, i.e. look up the value around the "flowed" index. 
+  * $F^{t+1}_w[x,y,f]=F^{t+1}[x+u[x,y],y+v[x,y],f]$ 
+* BackProp through **Warping** layers is tricky and needs some care. 
+  * We need to treat $u[x,y]$ as a real value. 
+
+2015 NIPS [Spatical Transformation Network]()
+
+In essense we do a bilinear interpolation, then we can differentiate. 
+
+* In bilinear interpolation, $h(x,y)=h(i,j)+h(i, )$
+
+And Bilinear interpolation could be down through convolution! 
+
+* Create a mask $k(x,y)=\max(0,1-|x|)\max(0,1-|y|)$ 
+* Then $h=\sum_{x',y'}k(x'-c_x,y'-c_y)g[x',y']$ 
+* 
+
+
+
+> Spatial transformer network is super useful tool 
+
+> Note backprop through the warping layer to flow, is like doing a local search for better match! Which may not be efficient. 
+> Doing bilinear interpolation at a larger 
+
+
+
+
+
+# Monocular depth estimation 
+
+> Highly ill-posed, but human can do it.........
+
+Some lessons from human perception 
+
+* Shading, 
+* Contour
+*  Texture
+* Familiar object 
+
+> Note, you need a large RF to get and process information in global scale to make sense. (human cannot learn )
+
+
+
+Single image depth map and semantic segmentation. 
+
+* Reasoning about depth and semantics boudnary seems to help each other. 
+
+
+
+## Depth Dataset
+
+Collecting ground truth is hard which is also challenging. 
+
+* All data type is kind of biased towards some scenario 
+  * Kinect works for indoor 
+  * LADAR works for ourdoor, where car can drive. 
+* Human cannot label precise depth! So MTurk doesn't annotate everything. 
+  * but human can estimate relative depth and surface normal. 
+
+
+
+# Semantics
+
+Note semantics and geometric reasoning is conceptually similar to each other
+
+* Stereo and Optical flow is about finding correspondance / matches. 
+* Object recognition in some sense is finding correspondance w.r.t. a template, and make the template match the observation. 
+
+
+
+So ancient semantic detector works like this 
+
+* Finding interesting key points
+  * You want to make it sparse, make the matching problem easier. 
+  * Need to have non-smooth area, 
+* Region detectors, make it invariant to physical changes as possible. 
+
+
+
+## Keypoint Detector
+
+What is a good Keypoint Detector?  
+
+* Superpixel is not 
+  * Shape, boundary, change too much 
+* 
+
+
+
+###  SIFT
