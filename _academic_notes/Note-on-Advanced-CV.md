@@ -26,6 +26,6 @@ Link to syllabus.
 
 [Stereo Problem](Stereo-Algorithms.md) 
 
-[Semantic Vision](Semantics-Vision-Task.md) 
+[Semantic Vision Problem](Semantics-Vision-Task.md) 
 
 [Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md)
