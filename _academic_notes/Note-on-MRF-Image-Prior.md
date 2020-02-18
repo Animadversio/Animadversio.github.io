@@ -14,6 +14,8 @@ typora-copy-images-to: ../assets/img/notes/cv2
 {:toc}
 Continuing [Image Prior and Generative Model](Note-on-Image-Prior.md) .
 
+**Probabilistic Graphic Model** comes into scene, when we want to model and deal with some **complex distribution over many variables**. When we start to add structure into the model, not everything depend on everything, then the dependency relationship among variables emerges as a graph structure. 
+
 # Markov Random Field
 
 **Basic idea**: Use undirected graph to represent joint distribution of random variables. 

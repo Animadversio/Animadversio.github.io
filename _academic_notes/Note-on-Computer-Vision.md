@@ -672,10 +672,10 @@ S4. Use the best point pairs in the steps above to initiate iterative algorithm
 
 
 
-**Why we need homogeneous coordinate?**
+**Comments**: Why we need homogeneous coordinate?
 
 * Note perspective projection from $\R^3\to\R^2$ though simple is not a linear operation. Because there is division operation $x=fX/Z$ 
-* However, homogeneous coordinates has scaling factor. Thus a division problem become a multiplicative (linear) problem! $x=fX,\ \alpha=Z$. 
+* However, homogeneous coordinates has scaling factor. Thus a division problem become a multiplicative  problem! Thus, become linear. $x=fX,\ \alpha=Z$. 
 
 
 
@@ -780,8 +780,7 @@ Given the geometric intuition above, what is the transform connecting the coordi
 
 
 
-* 
-  * 8-point algorithm: 
+* 8-point algorithm: 
 * If the two cameras are caliberated, 5 dof = 3 rotation + 2 translation
   * 5-point algorithm: 
 

@@ -25,3 +25,5 @@ Link to syllabus.
 [MRF Image Prior](Note-on-MRF-Image-Prior.md) 
 
 [Stereo Problem](Stereo-Algorithms.md) 
+
+[Semantic Vision](Semantics-Vision-Task.md) 

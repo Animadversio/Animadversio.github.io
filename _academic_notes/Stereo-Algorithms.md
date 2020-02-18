@@ -17,8 +17,6 @@ Basic Stereo algorithm can be formulated as Markov Random Field.
 
 Thus Methods in MRF inference could all be used. [Prior](Note-on-MRF-Image-Prior.md) 
 
-
-
 ## Planar Prior 
 
 Natural scene is usually piece-wise! How to impose this idea to depth map? 
@@ -73,10 +71,6 @@ Maybe run MRF on the superpixels! And merge then iteratively.
 * Occlusion: left occlusion, right occlusion. If there is pixel on the boundary that the front patch gives a larger depth value than the back patch. 
   * $$
 
-
-
-
-
 Thus you get 
 
 **Tricks for Inference** 
@@ -100,8 +94,6 @@ Use a hierarchy of multi-scale overlapping patches, $S=\{4,8,16,32\}$, $stride=1
 
 Use a parameter $I_i$ to describe if it's planar or not! And a parameter $\theta_i$ describing the planar parameters
 
-
-
 Alternatively updating $\{I_i,\theta_i\}$ and $d_i$
 
 * Updating $\{I_i,\theta_i\}$ , 
@@ -111,7 +103,6 @@ Alternatively updating $\{I_i,\theta_i\}$ and $d_i$
 
 Still too computational intense! Regular square patch can help us, all these computation could be done in convolution. 
 
-* 
 * Besides, using $log_2$ scale will help us aggregate information across scale. 
 
 ## Plane Sweep Stereo 
@@ -175,7 +166,7 @@ Cycle consistency.
 
 IJCV 2015 [3D scene flow estimation with a pievewise rigid scene model]()
 
-> Still pre-CNN method, but CNN doesn't do much better than this for long. 
+> Still pre-CNN method, but CNN doesn't do much better than this for a long time. 
 
 ## Optical Flow 
 
