@@ -40,7 +40,7 @@ This is the so called center surround receptive field.
 
 *Note*: 
 
-* Only the right size of gaussian $\sigma$ can detect the blob, or you will only detect the blob if the scale matches. 
+* Only the right size of gaussian $[Math Processing Error]\sigma$ can detect the blob, or you will only detect the blob if the scale matches. 
   * If the scale doesn't match, the laplacian can fire as well! 
 * So you need to search in scale space. 
 
@@ -258,7 +258,7 @@ Constraint Parametric Min Cuts for Automatic Object Segmentation
 
 * Predict property of the box 
   * 4 coordinates and confidence "objectness" 
-* Product of objectness $\times$ bounding box label $=$ Final object label. 
+* Product of objectness $[Math Processing Error]\times$ bounding box label $[Math Processing Error]=$ Final object label. 
 * Classifier and Box proposal can run in parallel! 
 * 
 
@@ -294,6 +294,107 @@ Combine the
 
 
 Neural network version of border distance transform 
+
+### Distance Transform
+
+* Distance transform find the distance to the closest boundary 
+* Erode the boudary and find connected components, then you will get different instances 
+  * Assumption is that a instance should be contiguous! 
+
+
+
+
+
+Train a network to produce the distance / watershed transform. 
+
+> **Lesson**: Key inspiration is that for some task you don't have a unique label or output (instance label is interchangeable). But you can find a unique proxy output as supervision!
+
+
+
+# Image Captioning 
+
+> Many tasks are assuming the image belongs to certain classes! And classify images to them. 
+
+Natural language desciption is one step forward. 
+
+> Amusingly finding images and the natural language caption on Internet is not hard! 
+
+## NLP 101 
+
+But how do you generate these "semi-strucutured " output?
+
+* Seems not a traditional classification task: (space of sentences is too large! Generative power)
+* Sequence of words -> Sequence of vectors (can be one-hot encoding. ) 
+* This sequence can be seen as a joint distribution, NN can predict the distribution of next word based on the first few words and 
+
+$$
+f(S)
+$$
+
+Intermediate output: 
+
+* Use RNN to solve this, hope it learns a good intermediate representation, without direct supervision. 
+
+
+
+Solving the arbitrary length problem: 
+
+* Pass a latent representation through (RNN): $p_i,m_i=f(S_{i-1},m_{i-1})$ 
+  * $p_i$ is a distribution over words, but $S_{i-1}$ is a specific sequence of words. So you need to choose one! 
+* Add the word `start` `stop` as marker to start a sentence and stop a statement. 
+
+What we need is to prime our sentence generation machine by a image. 
+
+> Sorry but CNN representation is not written in English...So need to translate your visual features to the linguistic representation. 
+
+So we need a translation dictionary $(F,D)$ matrix linearly mapping visual representation to a distribution over words. 
+
+**Training**
+
+* Use the last word (correct initial sentence) to predict the current word 
+* Build as deep a network as your output sentence. 
+  * Note you need a **different computational graph** for different sentences! which requires a eager execution autograd framework. 
+  * Thus, `torch` was much more preferred than `tf` since `tf` rebuilding graph takes so much time! 
+* Mini-Batch: Different length output 
+  * You can batch together sentences output of same length! 
+  * Or you can run several sentences, average the gradient and apply it. 
+
+### LSTM
+
+* Vanishing / Exploding Gradient is classic problem in RNN
+* LSTM designed to address this! 
+
+**Gating Variable**:
+
+* $i_i,f_i,o_i$ 
+
+
+
+**Gated Recurrent Unit (GRU)** seems work as well! (Inherit the gating idea and work. )
+
+
+
+**Inference** is 
+
+* Note this probabilitic language model can generate many different sentences! How do we score that?
+  * *Greedy approach* : Over commiting to one choice at first is not a good idea......(Severely suboptimal...)
+  * *Exhaustive Search* : The sample number grows too fast.
+* **Beam Search**: Each time keep the top-k sentences forward one step through RNN generate D samples. Pick the top k in all the children generation. Iterate
+  * You can have different length 
+
+* It's kind of a tree search algorithm! Each node can have $D$ children. 
+
+**Evaluation** 
+
+* Evaluating caption can be done using MTurk, or semantic distance to a real caption! 
+
+
+
+2015 Neural Image Captioning 
+
+
+
+
 
 
 
