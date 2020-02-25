@@ -199,8 +199,6 @@ Building image pyramid, apply patch match from a coarse to fine level, use the a
 
 * 
 
-
-
 * Up sampling, initialize your finer level search, and restrict your search around the initialization! 
 
 
@@ -219,9 +217,7 @@ In the heart, it's like a **flow denoising / flow inpainting** problem.
 * Require smoothness
 * Loosen the smooth constraint when edge is detected in the image. (~ The content aware image prior) 
 
-
-
-* Add a post processing step, minimize Lucas-Kandae energy by perturbing the input flow map. 
+* Add a post processing step, minimize Lucas-Kandae energy by perturbing (Taylor Expansion) around the input flow map. 
 
 
 
@@ -247,7 +243,7 @@ In the heart, it's like a **flow denoising / flow inpainting** problem.
 
 Network structure: **Siamese Network** 
 
-
+![image-20200225015904981](../assets/img/notes/cv2/image-20200225015904981.png)
 
 ### Pyramid NN stereo 
 
