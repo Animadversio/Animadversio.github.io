@@ -17,7 +17,7 @@ Note semantics and geometric reasoning is conceptually similar to each other
 * Stereo and Optical flow is about finding correspondence / matches. 
 * Object recognition in some sense is finding correspondence w.r.t. a template, and make the template match the observation. 
 
-
+# Semantic Vision before CNN
 
 So ancient semantic detector works like this 
 
@@ -30,11 +30,10 @@ So ancient semantic detector works like this
 
 ## Keypoint Detector
 
-What is a good Keypoint Detector?  
+To do matching and recognition, what is a good Keypoint Detector?  
 
 * Superpixel is not a good candidate
   * Shape, boundary, change too much, not invariant across scene. 
-* 
 
 
 
@@ -82,13 +81,13 @@ K_{DoG} = G(x,y,k\sigma)-G(x,y,\sigma)
 $$
 
 
-![]()
-
 
 
 #### Suppress Edge
 
-Compute Hessian of image local patch (Structural Tensor) at the scale of image. And set a criterion that the 2 eigen value of the structural tensor is not very large! Can use `tr` and `det` to compute efficiently. 
+DoG filter will fire at edge as well, have to suppress that. 
+
+Compute Hessian of image local patch (Structural Tensor) at the scale of image (Filtered with corresponding $\sigma$ ). And set a criterion that the 2 eigen value of the structural tensor is not very large! Can use `tr` and `det` to detect this efficiently. 
 
 * 
 
@@ -98,35 +97,46 @@ Compute Hessian of image local patch (Structural Tensor) at the scale of image. 
 
 Link to [Local Feature Descriptor](Note-on-Local-Feature-Descriptors.md) 
 
-This are done *post hoc*, describe the keypoints by a vector to match in this feature spcve . Note, ref, Census transform and Hamming distance is the most basic feature descriptor. 
+This are done *post hoc*, describe the keypoints by a vector to match in this feature space . 
+
+*Note*, ref, Census transform and Hamming distance is the most basic feature descriptor. 
 
 **Desiderata**
 
-* Hope to be lighting, scale, rotation. 
+* Hope the descriptor to be lighting, scale, rotation invariance 
+
+**Scale invariance**
+
+* Resize the patch to a certain size! 
 
 **Rotation invariance**
 
-* Do angular histogram for the gradient, center gradient 
+* Do angular histogram for the gradient, find the mode as dominant direction. Then rotate the angle descriptor. 
+* Pixel is weighted by gradient strength and distance from center to make weighted histogram. 
 
 **Full SIFT descriptor**
 
-* Subdivide
-* Finally do the 
+* Subdivide region into small non-overlapping regions and concatenate the histogram
+
+![image-20200225214816241](..\assets\img\notes\cv2\image-20200225214816241.png)
 
 **Affine Invariance**
 
-* Find the dominant direction by defining the matrix. 
+* Apply affine transformation to the region (not just rotation + scaling) then compute gradient and feature. 
 
 
 
-> Anciently, there is a huge effort to make the better, and evaluate what features should be invairant across view. Things could still be learnt about how features statistics change across view / light
+> Anciently, there is a huge effort to make the better, and evaluate what features should be invariant across view. Things could still be learnt about how features statistics change across view / light
 >
-> 2005 Gradient descent of a bunch of researchers
+> 2005 Gradient descent by a bunch of researchers
+>
+> Mikolajczyk et al., "A Comparison of Affine Region Detectors," IJCV 2005.  
 
 ### Usage of SIFT
 
-* Even for geometric matching, when you cannot afford to do the dense matching / disparity map
-* SIFT could be used to make a coarse match 
+* Even for geometric matching, when you cannot afford to do the dense matching / disparity map, you can do SIFT detection and matching among them.
+  * Image registration
+* SIFT could be used to make a coarse and sparse match! 
 
 
 
