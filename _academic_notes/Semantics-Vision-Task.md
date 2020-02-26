@@ -254,11 +254,15 @@ CNN based Object Detection
 
 ## Taxonomy of Tasks
 
-
+* Object recognition (classification)
+* Segmentation
+  * Classify pixel based on surrounding patch
+  * Fully convolutional architecture, diluted convolution, encoder Decoder architecture
+*  Object detection
 
 ## Object Detection
 
-The challenge is to propose arbitrary number bounding box and 
+> The challenge is to propose arbitrary number bounding box with arbitrary shape! 
 
 ### R-CNN
 
@@ -322,13 +326,15 @@ Constraint Parametric Min Cuts for Automatic Object Segmentation
 **Segmentation vs Detection**
 
 * Detection is able to detect different instances (*dog1 bb, dog2 bb, not dogs*)
-* Segmentation usually just has the class label (this pixel belongs to a "dog" according to background). 
+* Segmentation usually just has the class label (this pixel belongs to a "dog" according to surrounding patch). 
 
 ### Image Instance Segmentation 
 
 > Not just say this pixel is a car, but also label different car instances as different label.
 
-Combine the 
+Simplest thought: Combine the Detection and Segmentation, 
+
+* Detect the boxes, and do foreground background segmentation within box. 
 
 
 
