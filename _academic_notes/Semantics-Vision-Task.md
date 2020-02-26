@@ -148,24 +148,25 @@ Given a query image, find all other images that are "similar". Thus you need a w
 
 2003 ICCV Video Google: Sivic Zisserman 
 
-> Note at 2003 NLP is more successful than CV.... so people map semantic vision task to NLP problem to solve. 
+> Historical Note: at 2003 NLP is more successful than CV.... so people map semantic vision task to NLP problem for inspiration! 
 
-* Step 1: Map SIFT descriptors as words, reduce continuous output to discrete
-  * Do clustering on all SIFTS into discrete labels. 
+* Step 1: Map SIFT descriptors as "words"
+  * Do clustering on all SIFTS into discrete labels. Reduce continuous output to discrete
   * Note normalized the continuous space by the overall covariance matrix of Descriptor
   * *Post hoc* drop those words that are too frequent or too rare! (Cluster size is too large or too small.) 
-* Step 2: Document images as bag of words, and match image based on occurence of words. 
+    * *Note*: this is the same philosophy with the `image atom` study. Too common or too rare words doesn't help recognition.
+* Step 2: Document images as bag of words, and match image based on occurrence of words. 
   * Record labels 
 
 
 
 Building a vocabulary of all possible photographs is hard! (Image Atoms for Object Recognition)
 
-
-
-> General idea, the keypoint detector and descriptor could be used to solve object recognition problem. 
+> 
 
 ##  HoG Human Detection
+
+> General idea, the keypoint detector and descriptor could be used to solve object recognition problem. 
 
 CVPR 2005 Dalal Triggs
 
@@ -173,30 +174,31 @@ CVPR 2005 Dalal Triggs
 
 **Basic Thoughts**
 
-* Moving a fixed box across image, 
+* Moving a fixed box across image, compute the HoG descriptors
 * Use a binary detector to say if it's a human
   * In their case, do HoG on non-overlapping patches in the box, 
   * Use SVM / perceptron like linear classifier to say if it's human. 
 
 **Practise**
 
-* 
-
-* Note the binary detector could be applied by convolution the feature tensor for all overlapping patch. (Here its HoG vector.)
+* *Note* the binary detector could be applied by convolution the feature tensor for all overlapping patch. (Here its HoG vector.)
+* They add local contrastive normalization, normalize a feature by its surround
 
 **Comments**
 
-* It's in its essense 1 layer convolutional NN, huge kernel and hand crafted HoG feature descriptor. 
+* It's in its essence 1 layer convolutional NN, huge kernel and hand crafted HoG feature descriptor! 
+* Only classifier is learned, feature extraction is fixed.
+  * Thus it's data efficient actually! 
 * Current CNN is using the Conv Layers to do feature extraction. 
 
 **Limitation**
 
-* This is a single template for an object, doesn't tolerate deformmed spatial structure. 
-  * Note this works for pedestrain and face, as pedestrain and face usually has fixed spatial structure. 
+* This is a single template for an object, doesn't tolerate deformed spatial structure. 
+  * Note this works for pedestrian and face, as pedestrian and face usually has fixed spatial structure. 
 
 ## Deformable Parts Model
 
-> SOTA for a while, inspired modern CNN 
+> SOTA for a while, inspired modern CNN pooling layer. 
 
 2010 PAMI Felzenszwalb, Object detection with Discriminatively Trained Part Based Model 
 
@@ -204,13 +206,14 @@ Here we have a graphical model $G=(V,E)$ MRF.
 
 * Vertex is different part of object.  
   * Cost can be the single part (linear) detector's prediction. 
-  * Use HoG feature map and linear detector for each object. 
+  * Can use HoG feature map and linear detector for each object. 
 * Edge is the connection between parts. 
   * Can use a **spring cost**. Difference between distance and expected distance $\|p_i-p_j-(p_{i0}-p_{j0})\|$ 
   * You can add a window and upper bound for this spring cost. 
 
 $$
-\mathcal L=\sum_im_i(p_i)-d_{ij}(p_i,p_j)
+\mathcal L=\sum_im_i(p_i)-d_{ij}(p_i,p_j)\\
+S(p_0)=m_0(p_0)+\sum_i \max_{p_i} m_i(p_i)-d_{i0}(p_i,p_0)
 $$
 
 *Efficiency Note*: 
@@ -225,11 +228,13 @@ $$
 \mathcal L(p_0,...p_n)=\sum_0^n 
 $$
 
-
-
+To find the best object location root node $p_0$ can be found be maximizing
+$$
+S(p_0)=m_0(p_0)+\sum_i \max_{p_i} m_i(p_i)-d_{i0}(p_i,p_0)
+$$
 *Note* : 
 
-* The maximization can be very inefficient if 
+* The maximization can be very inefficient if $d$ is not structured
 * Finally, it's just convolution (local part detector), moving a window, and maxpooling
 * Maxpooling kind of relax the geometric distance constraint of 1 single filter! ("Parts can move now! ")  
 
