@@ -1,9 +1,21 @@
+---
+layout: post
+title: Note on Semantic Vision Task
+author: Binxu Wang
+date: Feb 4th, 2020
+comments: true
+use_math: true
+categories: [computer science]
+tags: [academic note, computer vision, computer science, machine learning]
+typora-copy-images-to: ../assets/img/notes/cv2
+---
+
 # Semantics Vision Task
 
 Note semantics and geometric reasoning is conceptually similar to each other
 
-* Stereo and Optical flow is about finding correspondance / matches. 
-* Object recognition in some sense is finding correspondance w.r.t. a template, and make the template match the observation. 
+* Stereo and Optical flow is about finding correspondence / matches. 
+* Object recognition in some sense is finding correspondence w.r.t. a template, and make the template match the observation. 
 
 
 
@@ -28,35 +40,47 @@ What is a good Keypoint Detector?
 
 ###  SIFT
 
+Link to [Local Feature Descriptor](Note-on-Local-Feature-Descriptors.md)
+
 Set a few heuristic rules to detect blobs. 
 
 #### Blob Detector
 
-Basically, blob detector could be designed by convolve with some filter and select local maximum (non-maximum suppression). Could use a Laplacian of Guassian as kernel, 
+Basically, blob detector could be designed by convolving image with some filters and select local maximum (non-maximum suppression). Could use a Laplacian of Guassian as kernel, 
 $$
 K=\nabla^2G(0,\sigma^2)
 $$
-This is the so called center surround receptive field. 
+![image-20200225212211378](..\assets\img\notes\cv2\image-20200225212211378.png)
+
+This is the so-called center surround receptive field. (found in many sensory system)
 
 *Note*: 
 
-* Only the right size of gaussian $[Math Processing Error]\sigma$ can detect the blob, or you will only detect the blob if the scale matches. 
-  * If the scale doesn't match, the laplacian can fire as well! 
-* So you need to search in scale space. 
+* Only the right size of gaussian $\sigma$ can detect the blob, i.e. you will only detect the blob if the scale matches. 
+  * If the scale doesn't match, the Laplacian can fire as well! But not give you a single minimum
+* So you need to search in scale space! 
 
 #### Scale Space
 
-Do the filtering in multiple scales, and detect local maximum in 3d neighborhood. but the higher the $\sigma^2$ the smaller the filter output
+The observation above gives us the motivation to do the filtering in multiple scales, and detect local maximum in 3d neighborhood. 
 
+![image-20200225212844370](..\assets\img\notes\cv2\image-20200225212844370.png)
 
-
-
+But the higher the $\sigma^2$ the smaller the filter output. Empirically, multiplying $\sigma^2$ factor can renormalize. 
+$$
+K = \sigma^2 \nabla^2 G_\sigma
+$$
+![image-20200225213002933](..\assets\img\notes\cv2\image-20200225213002933.png)
 
 
 
 #### Efficiency consideration
 
-Use the Difference of Gaussian (DoG) instead of Laplacian of Gaussian for faster computation (at 2004...), because you can filter image with a pyramid of Gaussians and just take difference between 2 neighbors. 
+Use the Difference of Gaussian (DoG) instead of Laplacian of Gaussian for faster computation (at 2004...), because you can filter image with a pyramid of Gaussians and just take difference between 2 neighbors, to get DoG filtered image. 
+$$
+K_{DoG} = G(x,y,k\sigma)-G(x,y,\sigma)
+$$
+
 
 ![]()
 
@@ -64,13 +88,15 @@ Use the Difference of Gaussian (DoG) instead of Laplacian of Gaussian for faster
 
 #### Suppress Edge
 
-Compute Hessian of image local patch (Structural Tensor) at the scale of image. And set a criterion that the 2 eigen value of the 
+Compute Hessian of image local patch (Structural Tensor) at the scale of image. And set a criterion that the 2 eigen value of the structural tensor is not very large! Can use `tr` and `det` to compute efficiently. 
 
 * 
 
 
 
 ### SIFT Descriptor
+
+Link to [Local Feature Descriptor](Note-on-Local-Feature-Descriptors.md) 
 
 This are done *post hoc*, describe the keypoints by a vector to match in this feature spcve . Note, ref, Census transform and Hamming distance is the most basic feature descriptor. 
 

@@ -46,9 +46,9 @@ Using the Structure Matrix, it finds spot where both of the eigen values are lar
 
 [Harris Detector]([https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi%E2%80%93Tomasi_corner_detection_algorithms](https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi–Tomasi_corner_detection_algorithms)) 
 
-## HOG (Histogram of Oriented Gradient)
+## HoG (Histogram of Oriented Gradient)
 
-
+HoG is actually a simplified version of SIFT descriptor. 
 
 [Histogram of Oriented Gradient](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients)
 
@@ -56,9 +56,9 @@ Using the Structure Matrix, it finds spot where both of the eigen values are lar
 
 
 
-SIFT is the pipeline of a bunch of operations. 
+SIFT is the pipeline of a bunch of operations, which finds keypoints in an image and build scale+orientation invariant descriptors for them. 
 
-
+Widely used in correspondence matching. 
 
 **Reference** 
 
