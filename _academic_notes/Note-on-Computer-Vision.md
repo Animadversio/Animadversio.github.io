@@ -894,7 +894,7 @@ Solving correspondence is hard!
 
 * Use epipolar geometry to constraint the search, maybe not enough! 
 * Actively illuminate the object with a line and match it 
-* Line scanning could be **multiplexed**, using structured light / multi-line to scan. 
+* Line scanning could be **multiplexed**, using structured light / multi-line to scan in parallel!  
 * **Note**
   * There will always be occlusion problem. so multiview of the object may always be required. 
   * Background light may affect the result (the laser should be unique enough! )

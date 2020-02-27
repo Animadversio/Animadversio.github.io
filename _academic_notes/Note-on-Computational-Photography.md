@@ -144,17 +144,15 @@ Taking a sample texture patch.
 
 
 
-
-
 ## Texture Transfer
 
-Paster the texture patches on the new image of the object. 
+Paster the texture patches on the new image of the object, by finding the closest mathcing patch from the original texutre template. 
 
 
 
 # Neural Style Transfer 
 
-Match the covariance matrix (Gram Matrix) of the channel-wise 
+Match the covariance matrix (Gram Matrix) of the channel-wise feature vector! in 2 feature tensor produced by 2 CNNs. 
 
 
 
@@ -167,15 +165,16 @@ Match the covariance matrix (Gram Matrix) of the channel-wise
 **Mathematical Observation** 
 
 * Gradiant image  $\nabla I$ plus a reference absolute value, can give back your image by path integration. 
-* Replacing gradient is easier than replacing 
+* Replacing gradient is easier than replacing pixel values. 
 
 **Poisson Solver** : 
 
-* Solve a least square problem 
+* Solve a linear least square problem defined by finite difference! 
+* Or solve it in the Fourier Domain. 
 
-Same as the process of going from normal vector to depth! 
+Same as the process of going from normal vector to depth in classic stereo! 
 
-
+> The more general lesson is in some domain / representation manipulation is more **intuitive** and easier than other domains, thus easier for us to do editting! Seems 
 
 **General Process**
 
@@ -185,12 +184,13 @@ Same as the process of going from normal vector to depth!
 
 **Application**
 
-* "Texture Flattening"
-  * Set a region's gradient to zero. 
+* Texture Flattening
+  * Set a region's gradient to zero make the texure in one region flat! 
 * Object insertion: 
   * Copy gradient instead of copy pixel value *per se* 
+  * The object can blend much better to the environment! Water color and lighting can be transferred from neighboring pixels. 
 * Translucent image copying 
-  * Alpha blend or max blend the gradient of source and target. 
+  * Alpha blend or Max blend the gradient of source and target, instead of just copy. 
 
 
 
