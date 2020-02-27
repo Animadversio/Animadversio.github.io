@@ -28,4 +28,7 @@ Link to syllabus.
 
 [Semantic Vision Problem](Semantics-Vision-Task.md) 
 
-[Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md)
+[Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md) 
+
+[Note on Computational Photography](Note-on-Computational-Photography.md) 
+
