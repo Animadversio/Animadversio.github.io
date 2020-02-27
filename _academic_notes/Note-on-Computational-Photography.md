@@ -12,7 +12,9 @@ typora-copy-images-to: ../assets/img/notes/cv2
 
 # Computational Photography
 
-Enhance image! 
+* TOC
+{:toc}
+> Basically, enhance image by computation! 
 
 
 
@@ -110,7 +112,7 @@ How should you remove X row and Y col? In essence a path programming on square g
 
 
 
-### SEAM Insertion
+## SEAM Insertion
 
 Find all the SEAM curves passing through the image 
 
@@ -152,3 +154,44 @@ Paster the texture patches on the new image of the object.
 
 # Neural Style Transfer 
 
+Match the covariance matrix (Gram Matrix) of the channel-wise 
+
+
+
+# Poisson Image Editting 
+
+> Another Classic algorithm that works super well with simple ideas. 
+
+> How do you transfer gradient from one image to the other. 
+
+**Mathematical Observation** 
+
+* Gradiant image  $\nabla I$ plus a reference absolute value, can give back your image by path integration. 
+* Replacing gradient is easier than replacing 
+
+**Poisson Solver** : 
+
+* Solve a least square problem 
+
+Same as the process of going from normal vector to depth! 
+
+
+
+**General Process**
+
+* Get a gradient image by filtering 
+* Manipulate an image by inserting or deleting gradient in a domain. 
+* Re-run the poisson solver to integrate the image back. 
+
+**Application**
+
+* "Texture Flattening"
+  * Set a region's gradient to zero. 
+* Object insertion: 
+  * Copy gradient instead of copy pixel value *per se* 
+* Translucent image copying 
+  * Alpha blend or max blend the gradient of source and target. 
+
+
+
+CG2REAL actually uses this technique to match the gradient histogram in 2 regions. (match the histogram of gradient; reintegrate to get the image. )

@@ -999,8 +999,6 @@ Pre-processing step. Group the similar looking and close by pixels into a label.
 
 **Formulation**: In short, make pixel coordinates part of the feature vector, and cluster the pixels with K-means in the augmented feature space. 
 
-
-
 * Augment the image into the augmented pixel array $I'[n]=[L,a,b,\alpha n_x,\alpha n_y]$. (Usually use `Lab` space to reproduce the perceptual similarity.) 
 * K-means cluster $I'[n]$. Objective find the label array $L[n]$. 
 
@@ -1051,6 +1049,10 @@ Think of the image as network, neighboring edges are connected, strength determi
 ### Multi-label graph based segmentation 
 
 
+
+
+
+Alpha beta swap, alpha expansion. 
 
 # Lec 17 18 19 20 Machine Learning
 
