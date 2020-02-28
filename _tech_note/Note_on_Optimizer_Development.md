@@ -18,7 +18,40 @@ Here, I state a few technical constraints on Optimizer Development, and our way 
 
 ## Methodology
 
-Many of the existing work on online neural activity optimization are using Genetic Algorithm, which is a classic evolutionary algorithm. We are trying to develop better methods 
+Many of the existing work on online neural activity optimization are using Genetic Algorithm, which is a classic evolutionary algorithm. As all evolution algorithm has these components 
 
-Just as the name suggests, evolution strategy type algorithm relies on two principles 
+* **Mutation**: Generate new samples that differs from each other and to ancestors to send into fitness function. 
+* **Selection**: Use the fitness score to offspring, 
+
+We are trying to develop some better optimization methods that better suits our specific application, 
+
+
+
+To carry on the metaphor, evolution strategy type algorithm relies on two principles 
+
+* **Diversity**: The diversity within each offspring generation should be large enough (in the sense of the **scoring function**), such that a meaningful selection could happen and guide the change of population. 
+* **Heredity**: The children's generation should bear resemblance to their ancestor (in the sense of the **scoring function**), such that the beneficial features could retain and accumulate throughout evolution. 
+
+These requirements seem trivial, but in fact, they can enforce a strong constraints on the way we do sampling. When combining with other factors in our application, the stimuli space and it's geometry. 
+
+
+
+## CMA-ES
+
+
+
+
+
+
+
+Observing the success and improvement of CMA-ES, we want to distill down some of its principles and modify the algorithm to improve it. 
+
+**Step Computation Strategy** : Rank based computation vs Raw score based computation. 
+
+
+
+On the other hand, there are some mechanisms in CMA-ES that break down in high dimension. 
+
+* Covariance matrix update mechanism: 
+* Step size $\sigma$ tuning mechanism: 
 
