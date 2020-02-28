@@ -48,10 +48,14 @@ Observing the success and improvement of CMA-ES, we want to distill down some of
 
 **Step Computation Strategy** : Rank based computation vs Raw score based computation. 
 
+**Exploration Strategy** : 
+
+
+
 
 
 On the other hand, there are some mechanisms in CMA-ES that break down in high dimension. 
 
 * Covariance matrix update mechanism: 
-* Step size $\sigma$ tuning mechanism: 
+* Step size $\sigma$ tuning mechanism: in the original paper, 
 
