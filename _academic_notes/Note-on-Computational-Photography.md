@@ -164,17 +164,20 @@ Match the covariance matrix (Gram Matrix) of the channel-wise feature vector! in
 
 **Mathematical Observation** 
 
-* Gradiant image  $\nabla I$ plus a reference absolute value, can give back your image by path integration. 
-* Replacing gradient is easier than replacing pixel values. 
+* Gradiant image  $\nabla I$ plus a reference absolute value, can give back your image by path integration! (Poisson PDE problem)
+  * But you don't really care the integratability ! 
+* Editting gradient is easier than editting  pixel values. 
+
+
 
 **Poisson Solver** : 
 
-* Solve a linear least square problem defined by finite difference! 
+* Solve a linear least square problem defined by finite difference ! 
 * Or solve it in the Fourier Domain. 
 
 Same as the process of going from normal vector to depth in classic stereo! 
 
-> The more general lesson is in some domain / representation manipulation is more **intuitive** and easier than other domains, thus easier for us to do editting! Seems 
+> The more general lesson is in **some domain / representation** manipulation is more **intuitive** and easier than other domains, thus easier for us to do editting! Seems gradient is more natural than direct pixel. 
 
 **General Process**
 
