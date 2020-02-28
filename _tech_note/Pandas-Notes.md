@@ -58,3 +58,5 @@ Source:
   * `df.comments.fillna(value="", inplace=True)` 
   * **Note**: just like numpy, df function usually returns a new view or object instead of write inplace! Unless you specify that!
 
+* Concatenate 2 tables together 
+  * `pd.concat([df_old,df_new], axis=0, ignore_index=True)` 

@@ -8,7 +8,8 @@
 
 Here, I state a few technical constraints on Optimizer Development, and our way to tackle it. 
 
-* **Neural variability**: 
+* **Zeroth Order** (Derivative Free): 
+* **Neural variability**: For sensory cortices, same stimuli can elicit different response in different presentation. 
 * **Limited evaluation number**: 
 * **High dimensionality of stimuli space**: For visual world and auditory world, the dimensionality for natural inputs are high. 
 * **Geometry and topology of the stimuli space**: 
@@ -17,7 +18,9 @@ Here, I state a few technical constraints on Optimizer Development, and our way 
 
 ## Methodology
 
-Many of the existing work on 
+Many of the existing work on online neural activity optimization are using 
 
 
+
+Just as the name suggests, evolution strategy type algorithm relies on two principles 
 
