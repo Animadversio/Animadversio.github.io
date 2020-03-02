@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Handling and Printing Parameters in matlab
-# img: "assets/img/portfolio/WormHoleVisualize2.png"
-# feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
 author: Binxu Wang
 use_math: true
 comments: true
