@@ -44,6 +44,15 @@ But if we just want to translate an algorithm from one language to another, we c
     * `[;]` can represent break the row in matlab, but cannot do so in python. 
     * Append with `+` or `[].append()` in Python; `list = [list, new_itm]` in Matlab
     
++ Numpy functions 
+
+    * `min` in matlab works element wise, the corresponding function in `numpy` is `minimum` not `min`
+    * `numpy` is more sensitive to data type, sometimes you don't need to change data type to `int` to run in matlab. But you have to cast to `int` to run in python. Esp. when doing indexing! 
+    + Argument format is quite different for quite a few common functions 
+        * `np.zeros` only takes list or tuple of size. if only input one value `np.zeros(3)` it outputs a 1d array
+        * `zeros` takes both list and individual values, if only input one value `zeros(3)` it outputs a square mat
+    * `norm` in matlab doesn't work for vector norm along 1 axis. `np.linalg.norm` can do this. 
+
 + Dictionary and Struct and Cell
   
     * In matlab, no `dict` to use! `struct` is similar, you can add fields to a `struct` object
