@@ -198,3 +198,160 @@ Same as the process of going from normal vector to depth in classic stereo!
 
 
 CG2REAL actually uses this technique to match the gradient histogram in 2 regions. (match the histogram of gradient; reintegrate to get the image. )
+
+# Generative Adversarial Network
+
+**What are the priors**
+
+* Given a image evaluate the likelihood: Local probability model 
+* Given a image, find the most similar natural looking image: Denoising prior. 
+
+**Idea of GAN**
+
+* 
+
+
+
+So power of GAN is to morph the input distribution to the output one, not to output a single image. 
+
+> Note, the general way of sample from an arbitrary distribution is to find the inverse CDF that map a normal distribution to that one. GAN is the inverse CDF here. 
+
+
+
+**Comments**
+
+* GAN doesn't strive to make one to one mapping between training sample and generated sample. VAE does. 
+* Thus GAN is doing a match on the distribution level instead of individual level. The distribution level match is done by a CNN Discriminator.
+
+
+
+Simultaneously training $D, G$ 
+
+**Theoretical Analysis** 
+
+What if we have the real probability density function $p_X$ and $p_G$, 
+
+Then $p_G$ should match $p_X$ to get optimal score. 
+
+
+
+In some assumptions. 
+
+## Conditional GAN
+
+>  Learning Conditional Distribution 
+
+Model $p(y|x)$ instead of $p(y)$ i.e. natural image in certain class. 
+
+LAPGANs, Deep Generative image Models using a Laplacian Pyramid of Adversarial Network. 
+
+**Motivation**: High Resolution Image Generation is unstable
+
+
+
+Laplacian Pyramid is actually $X\to [L_0,L_1,L_2,L_3,L_4,G_4]$ , you can decompose or recombine the pyramid. 
+
+ $G_0=X,\ G_i=G_{i-1}\downarrow_2$ 
+
+Thus you can factorize your distribution 
+
+ 
+
+Thus you learn a superresolution operator, learn the conditional distribution of residue based on the lower resolution image. 
+
+
+
+
+
+##  DC-GAN
+
+2016 ICLR DC-GAN
+
+Use transposed convolution to do upsampling 
+
+> GAN stability has become far more stable than before. 2016 people haven't figure out how to generate high-res images. 
+
+
+
+## Progressive Growing GAN 
+
+Train a lower-resolution G and D. 
+
+![](../assets/img/notes/cv2/1*yxd2UrZAuyWMphTaB5iaKQ.png)
+
+
+
+
+
+Can generate up to 1024 images of faces
+
+https://towardsdatascience.com/progressively-growing-gans-9cb795caebee
+
+## GAN application 
+
+
+
+### Image Impainting 
+
+Discriminator's ability of generating samples 
+
+You can do impainting with the Discriminator
+
+2016 CVPR Context Encoders. 
+
+Use the Adversarial Loss 
+
+> Note, sometimes you don't want an average output, but just one plausible output. L2 will give you an average, but Adversarial Loss is better for single sample plausibility. 
+
+> Note the discriminator is somehow G specific, it's trained to tell if it's a fake image from this G. So change to another 
+
+
+
+### Image to Image Tranlation
+
+This is more useful than random image generator! 
+
+> 
+
+### Image Editting with GAN
+
+> Note this is related to the [Poisson Edit](#Poisson Image Editting) 
+>
+> Now your GAN is your Poisson solver! And you need much less edge information. 
+
+Reconstruct image from sparse edge feature map! 
+
+2018 CVPR Sparse Smart Contours to Represent and Edit Images. 
+
+Same as Poisson Editting, the edge map editting is much more easier than editting image itself. 
+
+
+
+> Combining the traditional controlability idea and the current GAN as renderer. 
+
+> Doing this is crazy for CGer, Invert a image and rerendering will be bad. 
+>
+> We doesn't have a generic GAN, so it's crucial to train domain specific GAN, like face or cat or dog. 
+
+
+
+
+
+## Image Generation from Caption
+
+2016 ICML, Generative Adversarial Text to Image Synthesis 
+
+The inverse of Image Captioning
+
+
+
+# Motion Magnification 
+
+Exaggerate smaller movement! Extrapolate the magnitude of motion, instead of 
+
+> This can have medical applications, magnifying the motion for the ease of diagnosis. (Heart beat! )
+
+
+
+
+
