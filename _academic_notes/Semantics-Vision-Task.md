@@ -335,6 +335,7 @@ Constraint Parametric Min Cuts for Automatic Object Segmentation
 Simplest thought: Combine the Detection and Segmentation, 
 
 * Detect the boxes, and do foreground background segmentation within box. 
+  * Graph cut type algorithm could be used. 
 
 
 
@@ -345,16 +346,22 @@ Neural network version of border distance transform
 ### Distance Transform
 
 * Distance transform find the distance to the closest boundary 
-* Erode the boudary and find connected components, then you will get different instances 
+* Erode the boundary and find connected components, then you will get different instances 
   * Assumption is that a instance should be contiguous! 
-
-
-
-
 
 Train a network to produce the distance / watershed transform. 
 
-> **Lesson**: Key inspiration is that for some task you don't have a unique label or output (instance label is interchangeable). But you can find a unique proxy output as supervision!
+![image-20200307143345861](..\assets\img\notes\cv2\image-20200307143345861.png)
+
+
+
+![image-20200307143415110](..\assets\img\notes\cv2\image-20200307143415110.png)
+
+
+
+> Lesson**: Key inspiration is that for some task you don't have a unique label or output (e.g. instance label is interchangeable, cannot train on that). But you can find a unique proxy output (object boundary and distance to boundary) as supervision! 
+
+
 
 
 
@@ -362,78 +369,104 @@ Train a network to produce the distance / watershed transform.
 
 > Many tasks are assuming the image belongs to certain classes! And classify images to them. 
 
-Natural language desciption is one step forward. 
+Natural language description is one step forward. 
 
-> Amusingly finding images and the natural language caption on Internet is not hard! 
+> Amusingly finding images and the natural language caption on Internet is not hard! (Semantic data is more abundant than physical or optical data)
 
-## NLP 101 
+## NLP 101 : Sequence Generation
 
-But how do you generate these "semi-strucutured " output?
+> *Seems not a traditional classification task*: (space of sentences is exponentially large! Generative power of language)
 
-* Seems not a traditional classification task: (space of sentences is too large! Generative power)
+But how do you generate these "semi-structured " output?
+
 * Sequence of words -> Sequence of vectors (can be one-hot encoding. ) 
-* This sequence can be seen as a joint distribution, NN can predict the distribution of next word based on the first few words and 
+* This sequence can be seen as a joint distribution on list of vectors $p([S_1,S_2,S_3...S_n,stop])$, NN can predict the distribution of next word based on the first few words and then recursively generate new words. $p(S_n\mid[S_{1:n-1}])=f([S_{1:n-1}])$ 
+  * But the problem of this idea is, you still have different size input for the *Next word predictor*, which is not map. 
+* So come the idea of recursive computation and intermediate input, assuming this map is homogeneous (thus recursive). 
 
 $$
-f(S)
+[p(S_n\mid[S_{1:n-1}]), m_n]=f(S_{n-1},m_{n-1})
 $$
 
-Intermediate output: 
+**Intermediate output**
 
 * Use RNN to solve this, hope it learns a good intermediate representation, without direct supervision. 
-
-
-
-Solving the arbitrary length problem: 
-
+  * Hope $m_{n-1}$ will be a representation of $S_{1:n-1}$ which is useful for next word prediction
+  * Since some info in $S_{1:n-1}$ is useful for prediction, some words are not, so **Gating** is important in these thing. 
 * Pass a latent representation through (RNN): $p_i,m_i=f(S_{i-1},m_{i-1})$ 
-  * $p_i$ is a distribution over words, but $S_{i-1}$ is a specific sequence of words. So you need to choose one! 
+  * $p_i$ is a distribution over words, but $S_{i-1}$ is a specific last word. So you need to choose one! 
+
+**Practicality**: Solving the arbitrary length problem
+
 * Add the word `start` `stop` as marker to start a sentence and stop a statement. 
 
 What we need is to prime our sentence generation machine by a image. 
 
-> Sorry but CNN representation is not written in English...So need to translate your visual features to the linguistic representation. 
+> Sorry, but CNN representation is not written in English...So need to translate your visual features to the linguistic representation. (A dictionary or embedding links the two.)
 
-So we need a translation dictionary $(F,D)$ matrix linearly mapping visual representation to a distribution over words. 
+* So we need a translation dictionary $(F,D)$ matrix $W$ linearly mapping $D$ dim distribution over words to $F$ dim visual representation. 
+* The $S_i$ words could be represented in $F$ dim visual feature space. $x_i=WS_i$ 
 
-**Training**
+![image-20200307141612769](..\assets\img\notes\cv2\image-20200307141612769.png) 
 
-* Use the last word (correct initial sentence) to predict the current word 
+## Sequence Model Training 
+
+* Use the last word $S_{n-1}$ (correct initial sentence) to predict the current word 
+  * $[p(S_n), m_n]=f(S_{n-1},m_{n-1}(S_{1:n-2};\theta);\theta)$ 
+  * $p(S_n)$ can be used to compute loss and gradient. 
 * Build as deep a network as your output sentence. 
-  * Note you need a **different computational graph** for different sentences! which requires a eager execution autograd framework. 
+  * Note you need a **different computational graph** for different sentences! which requires a eager execution `autograd` framework. 
   * Thus, `torch` was much more preferred than `tf` since `tf` rebuilding graph takes so much time! 
 * Mini-Batch: Different length output 
   * You can batch together sentences output of same length! 
   * Or you can run several sentences, average the gradient and apply it. 
 
-### LSTM
+## Model Architecture: LSTM
+
+**Motivation**
 
 * Vanishing / Exploding Gradient is classic problem in RNN
 * LSTM designed to address this! 
 
-**Gating Variable**:
+**Gating Variable**: more refined manipulation of memory vector than linear map. 
 
-* $i_i,f_i,o_i$ 
+* $i_i,f_i,o_i$ : input weighting, memory decaying and output weighting variable.
+
+$$
+c_t=f_t\odot c_{t-1}+i_t\odot h(W_{cx}x_t+W_{cm}m_{t-1})\\
+m_t=o_t\odot c_t\\
+p_{t}=Softmax(m_t)
+$$
+
+**Gated Recurrent Unit (GRU)** inherit the **gating** idea and work as well
+$$
+z_{t}=\sigma _{g}(W_{z}x_{t}+U_{z}h_{t-1}+b_{z})\\
+r_{t}=\sigma _{g}(W_{r}x_{t}+U_{r}h_{t-1}+b_{r})\\
+h_{t}=z_{t}\odot h_{t-1}+(1-z_{t})\odot \phi _{h}(W_{h}x_{t}+U_{h}(r_{t}\odot h_{t-1})+b_{h})
+$$
+
+* Still one forget gate $z_t$ and one $r_t$ masking last hidden vector
 
 
 
-**Gated Recurrent Unit (GRU)** seems work as well! (Inherit the gating idea and work. )
+## Sequence Model Inference
 
+**Inference** is trickier than training
 
-
-**Inference** is 
-
-* Note this probabilitic language model can generate many different sentences! How do we score that?
-  * *Greedy approach* : Over commiting to one choice at first is not a good idea......(Severely suboptimal...)
-  * *Exhaustive Search* : The sample number grows too fast.
+* Note this probabilistic language model can generate many different sentences! How do we sample from that?
+  * *Greedy approach* : Over committing to one choice at first is not a good idea......(Choose the optimal first word is not optimal at all. Severely suboptimal...) 
+  * *Exhaustive Search* : The sample number grows too fast. Not practical. 
 * **Beam Search**: Each time keep the top-k sentences forward one step through RNN generate D samples. Pick the top k in all the children generation. Iterate
   * You can have different length 
+* It's kind of a *tree search* algorithm! Each node can have $D$ children, each time you keep the top $k$ leaves and keep growing from them until termination! 
+* *Note*: These sequence model are **generative** in nature when inference
 
-* It's kind of a tree search algorithm! Each node can have $D$ children. 
+> This kind of problem is common to probabilistic sequence generation! The inference inefficiency of sound generating WaveNet is the same problem! 
 
 **Evaluation** 
 
-* Evaluating caption can be done using MTurk, or semantic distance to a real caption! 
+* Evaluating caption can be done humanly using MTurk, or **semantic distance** to a real caption! 
+* 
 
 
 

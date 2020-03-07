@@ -22,13 +22,13 @@ Link to syllabus.
 
 [Image Prior and Generative Model](Note-on-Image-Prior.md) 
 
-[MRF Image Prior](Note-on-MRF-Image-Prior.md) 
+[MRF based Image Prior](Note-on-MRF-Image-Prior.md) 
 
 [Stereo Problem](Stereo-Algorithms.md) 
 
-[Semantic Vision Problem](Semantics-Vision-Task.md) 
+* [Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md) 
 
-[Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md) 
+[Semantic Vision Problem](Semantics-Vision-Task.md) 
 
 [Note on Computational Photography](Note-on-Computational-Photography.md) 
 
