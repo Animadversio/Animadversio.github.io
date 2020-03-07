@@ -277,7 +277,8 @@ Use transposed convolution to do upsampling
 
 Train a lower-resolution G and D. 
 
-![](../assets/img/notes/cv2/1*yxd2UrZAuyWMphTaB5iaKQ.png)
+
+![](../assets/img/notes/cv2/prog_grow_GAN.png)
 
 
 
