@@ -36,13 +36,11 @@ $$
 $$
 For each cluster it has parameters $\mu^i_k,\mu^s_k,\alpha_k,\beta_k,\gamma_k$  mean pixel value, mean spatial location and the plane going through it. 
 
-**SLIC** essenstially is a K-means clustering, so it's iteratively doing 
+**SLIC** essentially is a K-means clustering, so it's iteratively doing 
 
 * Assign pixel to cluster 
 * Fit the parameters for the cluster. 
   * Here we will find the mean pixel value, plane parameters. 
-
-
 
 > What's the right superpixel size? Can't be too small or too large. 
 
@@ -184,7 +182,7 @@ Core of *PatchMatch* is a randomized search algorithm. Use neighbor and random s
 * Iteratively, check the answers of neighbors $f(x-1,y),f(x,y-1),(x+1,y),f(x,y+1)$  and a random value within a distance 
 * Check if any displacement reduce the cost. If do, adopt the answer. 
 
-> Work super well in practise....
+> Work super well in practice....
 
 **Comment**: 
 
@@ -222,13 +220,13 @@ In the heart, it's like a **flow denoising / flow inpainting** problem.
 
 
 
-## NN based method 
+# CNN based method 
 
 > Overall theme, inspired by traditional methods, replace some components by NN. 
 
 
 
-### CNN Matching Cost 
+## CNN Matching Cost Stereo
 
 > Replacing the matching cost by CNN, can already boost a huge improvement! ($f$ )
 
@@ -244,9 +242,13 @@ In the heart, it's like a **flow denoising / flow inpainting** problem.
 
 Network structure: **Siamese Network** 
 
+> Siamese means twins conjoined at one point. 
+
 ![image-20200225015904981](../assets/img/notes/cv2/image-20200225015904981.png)
 
-### Pyramid NN stereo 
+## Pyramid Stereo Matching NN stereo 
+
+>
 
 Feature vector for each pixel for left and right image, 
 
@@ -265,7 +267,7 @@ Build cost volume and do 3D Convolution to process cost volume.
 * Note, **soft-max** gives a probability distribution.
   * Note, it's usually better to produce a distribution of value (like belief), instead of a single best one. 
 
-* However you want a regression type loss! 
+* However you want a regression type loss! Not just classification
 
 * Do the loss on the expectation of the distribution formed by soft-max. 
 
@@ -273,27 +275,32 @@ Build cost volume and do 3D Convolution to process cost volume.
 
 > Maybe use distribution, and compute distribution Expectation and do loss is a trick. 
 
-* Huber loss: Use quadratic loss for small difference, L1 loss for large difference, make it more robust. 
+* **Huber loss**: Use quadratic loss for small difference, L1 loss for large difference, make it more robust. 
   * $L=0.5x^2\ if\ |x|<1;L=|x|-0.5\ if\ |x|>1$ 
-  * a mixture of L1 and L2. 
+  * a mixture of L1 and L2 loss. 
 
 **Supervision**
 
 * You can add supervision to intermediate layers. 
 
-## PWC-Net Optical Flow
+## PWC-Net: NN Optical Flow
 
-> The biggest issue is the potential choices (match) is too large, esp. when large displacement. 
+> The biggest issue in *large displacement optical flow* is the potential choices (match) is too large. cmp. to stereo when displacement is usually small. 
 
 [PWC-Net: CNN for Optical FLow Using Pyramid, Warping and Cost Volume]()
 
-Hierachical processing and pyramid is a classical way to deal with large number of match. Ref to [Hierachical Optical Flow](#Hierachical Optical Flow) 
+Hierarchical processing and pyramid is a classical way to deal with large number of match. Ref to [Hierachical Optical Flow](#Hierachical Optical Flow) 
 
-* You go from coarse to fine, and upsample your low resolution result (as initial guess)
+* Convolution (with stride) automatically provides you a **feature pyramid** of different resolutions! 
+* Then you can do matching at different level of this pyramid
+  * You go from coarse to fine, and up sample your low resolution result (as initial guess)
+
+
+
 * Note you need some warping operation, i.e. look up the value around the "flowed" index, and fetch those value back around you to continue the search. 
   * $F^{t+1}_w[x,y,f]=F^{t+1}[x+u[x,y],y+v[x,y],f]$ 
 * *Note*: BackProp through **Warping** layers is tricky and needs some care. 
-  * Without backprop to $u,v$ flow value, you can never train a network to perform optical flow. 
+  * Without backprop to $u,v$ flow vector field, you can never train a network to perform optical flow. 
   * We need to treat $u[x,y]$ as a real value, and use bilinear interpolation to find dependency of output on $u$
 
 2015 NIPS [Spatical Transformation Network]()
@@ -302,7 +309,7 @@ In essense we do a bilinear interpolation, then we can differentiate.
 
 * In bilinear interpolation, $h(x,y)=h(i,j)+h(i, )$
 
-And Bilinear interpolation could be down through convolution! 
+And Bilinear interpolation could be done through convolution! 
 
 * Create a mask $k(x,y)=\max(0,1-|x|)\max(0,1-|y|)$ 
 * Then $h=\sum_{x',y'}k(x'-c_x,y'-c_y)g[x',y']$ 
@@ -332,21 +339,30 @@ Some lessons from human perception, cues for monocular depth
 
 > Note, you need a large RF to get and process information in global scale to make sense. (human cannot know shape / depth from very local fragments.  )
 
-
-
-Single image depth map and semantic segmentation. 
-
-* Reasoning about depth and semantics boundary seems to help each other. 
+Eigen et al., "Depth map prediction from a single image using a multi-scale deep network." NIPS 2014.  
 
 
 
-## Depth Dataset
+Wang et al., "Towards unified depth and semantic prediction from a single image." CVPR 2015  
+
+* Reasoning about depth and semantics boundary seems to help each other. (esp. in single image)
+
+
+
+Chakrabarti et al., "Depth from a Single Image by Harmonizing Overcomplete Local Network Predictions." NIPS 2016  
+
+
+
+## Collect Depth Dataset
 
 Collecting ground truth is hard which is also challenging. 
 
 * All data type is kind of **biased towards some scenario** 
   * Kinect works for indoor 
   * LADAR works for outdoor, where car can drive. 
+
+
+
 * Human cannot label precise depth! So MTurk doesn't annotate everything. 
   * but human can estimate **relative depth and surface normal**. 
   * These feedback easily generated by human can be used to train a model. 

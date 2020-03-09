@@ -351,6 +351,11 @@ Neural network version of border distance transform
 
 Train a network to produce the distance / watershed transform. 
 
+* Distance is not a local entity, hard to know just from local info
+* Edge or boundary is local information, thus orientation vector towards boundary is local information. 
+  * You could compute boundary, perform traditional watershed transform $d(I)$, compute gradient $\nabla d(I)$ 
+  * These proxy could be used as intermediate supervision. 
+
 ![image-20200307143345861](..\assets\img\notes\cv2\image-20200307143345861.png)
 
 
@@ -359,7 +364,7 @@ Train a network to produce the distance / watershed transform.
 
 
 
-> Lesson**: Key inspiration is that for some task you don't have a unique label or output (e.g. instance label is interchangeable, cannot train on that). But you can find a unique proxy output (object boundary and distance to boundary) as supervision! 
+> **Lesson**: Key inspiration is that for some task you don't have a unique label or output (e.g. instance label is interchangeable, cannot train on that). But you can find a unique proxy output (object boundary and distance to boundary) as supervision! 
 
 
 
@@ -367,9 +372,9 @@ Train a network to produce the distance / watershed transform.
 
 # Image Captioning 
 
-> Many tasks are assuming the image belongs to certain classes! And classify images to them. 
+> Many tasks are assuming the image belongs to certain classes! And classify images to them. Natural language description is one step forward, seeking richer description! 
 
-Natural language description is one step forward. 
+
 
 > Amusingly finding images and the natural language caption on Internet is not hard! (Semantic data is more abundant than physical or optical data)
 
