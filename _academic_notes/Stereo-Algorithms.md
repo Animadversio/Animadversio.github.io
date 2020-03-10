@@ -69,40 +69,40 @@ Maybe run MRF on the superpixels! And merge then iteratively.
 * Occlusion: left occlusion, right occlusion. If there is pixel on the boundary that the front patch gives a larger depth value than the back patch. 
   * $$
 
-Thus you get 
+Thus you get a huge hybrid MRF! 
 
 **Tricks for Inference** 
 
 * [Particle belief propagation]() for continuous variables: 
-  * Use discrete samples to represent the distribution. Resample after each round of BP. 
-* Use factor graph to tackle 3 way relationship. 
+  * Use discrete samples to represent the distribution. Resample after each round of BP. Decrease the std of Gaussian sampling each time. 
+* Use factor graph to turn 3 way relationship back to binary graph. 
 * Use library of MRF solver it will work ! (SOTA! 2012)
 
 > Note, if you can define your MRF, then solving MRF has established libraries, which is powerful. 
 
 ## Hierarchical MRF
 
-**Comments**: Why do we need superpixels? 
+**Thoughts**: Why do we need superpixels? 
 
 * MRF cannot be too large! 
 * SLIC is dirty but fast! 
+
+May be we can make this multi-scale
 
 [Lower level vision by consensus in a spatial hierachy of regions]()
 
 Use a hierarchy of multi-scale overlapping patches, $S=\{4,8,16,32\}$, $stride=1$ . 
 
-Use a parameter $I_i$ to describe if it's planar or not! And a parameter $\theta_i$ describing the planar parameters
+Use a parameter $I_i$ to describe if it's planar or not! And a parameter $\theta_i$ describing the planar parameters. 
 
 Alternatively updating $\{I_i,\theta_i\}$ and $d_i$
 
 * Updating $\{I_i,\theta_i\}$ , 
 * Updating $d_i$ pixelwise independent, i.e. find mean of the depth estimation across all patches covering this pixel AND is planar. 
 
+Still too computational intense! Regular **square patch** can help us, all these computation could be done in convolution! 
 
-
-Still too computational intense! Regular square patch can help us, all these computation could be done in convolution. 
-
-* Besides, using $log_2$ scale will help us aggregate information across scale. 
+* Besides, using $log_2$ scale will help us aggregate information across scale. As downsampling will help you do multi-scale
 
 ## Plane Sweep Stereo 
 
@@ -111,8 +111,6 @@ More than 2 image, How
 **Rectification Trick**: If you have 2 cameras, rotate one of them to make the sight center align. But doesnt work 
 
 [Rectification](Note-on-Computer-Vision.md#Rectification) 
-
-
 
 * If we know the poses of the multiple cameras, we could build a grid model of the world, $(x,y,z)$ 
   * Descritize $z$ by uniform interval in $1/z$ space. 
