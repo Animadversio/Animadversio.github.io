@@ -117,6 +117,8 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 
   * Axis convention `B,C,H,W` same as caffe, but the channel is in `RGB` order. 
 
+[Starting Tutorial to Learn Pytorch](https://github.com/jcjohnson/pytorch-examples/blob/master/README.md)
+
 
 ## Caffe
 

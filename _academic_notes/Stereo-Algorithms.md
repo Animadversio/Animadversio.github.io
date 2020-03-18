@@ -293,7 +293,7 @@ Hierarchical processing and pyramid is a classical way to deal with large number
 * Then you can do matching at different level of this pyramid
   * You go from coarse to fine, and up sample your low resolution result (as initial guess)
 
-
+![image-20200310160849228](../assets/img/notes/cv2/image-20200310160849228.png) 
 
 * Note you need some warping operation, i.e. look up the value around the "flowed" index, and fetch those value back around you to continue the search. 
   * $F^{t+1}_w[x,y,f]=F^{t+1}[x+u[x,y],y+v[x,y],f]$ 
