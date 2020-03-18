@@ -1,5 +1,16 @@
-# Note on GAN
-
+---
+layout: post
+title: Note on Generative Adversarial Network
+author: Binxu Wang
+date: Mar 7th, 2020
+comments: true
+use_math: true
+categories: [machine learning]
+tags: [academic note, generative model, computer vision, computer graphics, machine learning, deep learning]
+typora-copy-images-to: ../assets/img/notes/cv2/
+---
+Note on GAN
+====
 Note with reference to the Youtube lecture series Hongyi Li. 
 
 # Conditional GAN 
@@ -10,9 +21,15 @@ Text is processed and combined with noise vector.
 
 ## Image Conditioning
 
-Image could be sent directly as spatial input! 
+Image could be sent directly as spatial input! Thus you have conditional GAN. 
+
+**Comments**: Conditional GAN is similar to supervised learning, but doesn't map one input to one single output, you can get a distribution of possible output based on one input. Instead of getting a mean output! 
 
 
+
+
+
+Conditioning vector should be sent into Discriminator to inform him what to discriminate. 
 
 # Unsupervised Conditional GAN
 
