@@ -352,7 +352,205 @@ Exaggerate smaller movement! Extrapolate the magnitude of motion, instead of
 
 > This can have medical applications, magnifying the motion for the ease of diagnosis. (Heart beat! )
 
+<img src="../assets/img/notes/cv2/image-20200324131114885.png" alt="image-20200324131114885" style="zoom:80%;" />
+
+>  Original method 2005, fairly old, many parts to be tuned, very fragile, if any parts fail it fail. 
+
+Basic formulation based on optical flow
+$$
+I[x,y]\to I[x+\Delta x,y+\Delta y]
+$$
+In Fourier analysis, Translation is a change in phase
+$$
+I[x]=\exp(-j\omega x)\to I[x]\exp(-j\omega \Delta x)
+$$
+
+
+2013, Phase based video motion editting. 
+
+Build a representation by Local frequency decomposition ---- Complex steerable pyramid
+
+![image-20200324132246665](../assets/img/notes/cv2/image-20200324132246665.png)
+
+* Spatial filtering 
+* Gets phase, and temporal filtering the phase
+* Use the temporal difference to amplify phase 
+  * You can choose which frequency band to magnify
+  * You can suppress large motions. 
+* Spatially smooth that 
+* And transform it back. 
+
+
+
+> Motion magnification could be used to enhance detection of small changes to our eye! Interesting for science, monitoring
+
+## Blind Deblurring
+
+$$
+x,k =\arg\min_{x,k}\sum_n\|y[n]-k*x[n]\| +R(x)+R(k)
+$$
+
+Note the $k$ can be $x$ dependent, like motion blur can be depth dependent, 
+
+Note motion blur usually looks like motion trajectory! So we have some prior over it. 
+
+**Image Prior**
+
+A trivial answer can be $k=\delta[n]$ 
+
+Note for normal image prior, you prefer smaller gradient, which is what blurry image provides
+
+We need stronger prior, not just smooth! It needs some degree of clean image edges. But it's hard to have a model for all images (patch). 
+
+2014 ECCV Blind Deblurring Patch Recurring 
+
+**Internal Consistency Prior**
+
+* Note within a image, the statistics should be consistent, Pattern can be recurring! 
+* Maybe some patches recurring at different scale (across pyramid). 
+
+
+
+Note an insight is, normal images have self similarity across scales. But blur image . (Only works for certain image degradation...But most degradation in netural world is not exactly gaussian,) 
+
+![image-20200324134805305](../assets/img/notes/cv2/image-20200324134805305.png)
+
+**How to apply this prior** 
+$$
+\rho
+$$
+
+* Learning patch distribution from the image itself! 
+
+* Model the 
+
+> It's like matching all matches in the downsampled image and the original image. Quite a large matrix! 
+
+Use the radial basis function to estimate empirical distribution of patch. 
+
+
+
+![image-20200324135605955](../assets/img/notes/cv2/image-20200324135605955.png)
+
+Note, you need to do iterative optimization 
+
+* Keep $k$ the same, deconvolve $x$
+* Keep $x$ and estimate $k$ 
+
+Need to solve at different levels, from coarse to find level 
+
+* Initialize the next level after convergence at last level. 
+
+You can get a kernel from this and send into classical deblurring pipeline and image prior
+
+> The lesson is our classical prior leeads to an incorrect 
+
+
+
+## Dehazing
+
+> In essence you want to inverse the effect of scattering
+
+![image-20200324141025886](../assets/img/notes/cv2/image-20200324141025886.png)
+
+Two effects:
+
+* Attenuation and Adding light (contrast decrease and blur)
+* Light direct from light source directly scattered to camera! (Image become more bright overall)
+
+SImple model of this, is each observed pixel is a convex combination of the original pixel and the air light. Combination coefficient depends on the distance of the pixel. 
+$$
+Y[n]=t[n]X[n]+(1-t[n])A\\
+t[n] = exp(-\beta Z[n])
+$$
+$A$ is like the air light! 
+
+**Internal Patch recurrence 2016 ICCV**
+
+
+
+Estimate $t[n]$ , assume $t[n]$ affects uniformly on a patch, assume you have 
+
+![image-20200324142108078](../assets/img/notes/cv2/image-20200324142108078.png)
+
+
+
+THe core idea is the contrast is affected by the haze! So you can get depth information from standard deviation of pixels within a patch. 
+$$
+P_1[n] = \\
+P_2[n] = \\
+t_1/t_2 \approx std(P_1[n])/std(P_2[n])
+$$
+So the next question is to find the matched patches within an image. 
+
+Note, assuming $A$ only shifts the mean, distance depended $t$ only shifts the std, then you can z-score the patch! 
+$$
+zP[n] = (P[n]-Mean(P[n]))/std(P[n])
+$$
+
+* Then compute L2 distance for all $zP[n]$ patches can give matching. 
+
+* For a matched patch pair, you can infer a relationship between the $t1$ and $t2$ , thus you have a edge constraint over the $t$ map. 
+
+
+
+> The foundamental assumption for solving this problem is patch recurs in natural images. Patch size have to be chosen by cross validation. 
+
+##  Amplifying Irregularity
+
+>  How can you exagerate the deviation of similar patches from the mean appearance of decrese that deviation?
+
+![image-20200326133057695](../assets/img/notes/cv2/image-20200326133057695.png)
+
+SIGGRAPH Asia 2015. 
+
+**Basic idea** 
+
+* Find the nearest neighbor for a patch in the image
+* Find the differnce to that neighbor
+* Fit the transform to the neighbor, depending on what you want to morph. 
+  * Like a flow field to exaggerate shape deviation
+  * Or a color transform to exaggerate color deviation! (useful for imaging! )
+* Amplyfy the transform or attenuate the transform 
+
+
+
+Note patch size could be explored in a image resolution pyramid. 
 
 
 
 
+
+Transformming images taken in the day to that in night. 
+
+![image-20200326133556778](../assets/img/notes/cv2/image-20200326133556778.png)
+
+Actually you may not need a network to do this! Don't need training. 
+
+* You collect a database of time lapsed image. Assume they are aligned well! 
+* Find the linear color transformation, and warp field 
+
+
+
+Overlap handling 
+
+* You can apply the transform to the center part only
+* Or to the whole patch, but boundary should be handled properly, like 
+  * averaging transform results of the 2 covering patch
+  * doing the averaging on the transform. 
+* Note the key is you only get enough data to fit a transform over a patch, but how to apply that transform is your freedom. 
+  * e.g. NN segmentation only apply to center of the FoV
+
+
+
+
+
+> It has a similar idea to supervised image transform in NN. 
+>
+> But it doesn't do overall training, but learn the relavent transform on a iamge by image / patch by patch basis. 
+
+
+
+
+
+> Overall, there is a lot you can do without NN. 
