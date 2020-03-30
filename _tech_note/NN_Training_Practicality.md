@@ -61,6 +61,12 @@ Tensorboard support figures, so making pretty visualization of inner structure o
 
 
 
+## Learning Rate Scheduling 
+
+Learning rate schedule is important for training! 
+
+
+
 ## Gradient and Weight Inspection
 
 Inspecting and analyzing gradient in pytorch is super easy, each variable in the computational graph store its gradient in `t.grad`. And this value will not be erased until you perform `optimizer.zero_grad()`. So you could inspect the statistics of gradient during validation phase. 
