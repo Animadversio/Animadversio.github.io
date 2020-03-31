@@ -6,7 +6,7 @@
 
 Dataset Class 
 
-
+2 general kinds of Dataset, one that models list (that support `__len__`) the other models iterator (that support `__next__`) 
 
 Data spliting 
 
@@ -32,7 +32,9 @@ train_loader = torch.utils.data.DataLoader(datasets.CIFAR10(root=data_root, trai
 
 ```
 
+## Loss Function Design
 
+Softmax is suitable for single output class prediction, if you have multi-output 
 
 
 
@@ -107,6 +109,21 @@ weight_grad_stats(pwc)
 
 https://github.com/Animadversio/pytorch-summary
 
+A personal simple version of model summary is 
+
+```python
+def model_size_summary(model):
+    param_num = 0
+    for param in model.parameters():
+        param_num += np.prod(list(param.shape))
+        print(param.shape, "num %d" % np.prod(list(param.shape)))
+    print(param_num, " in total, %.2fmb"%(param_num * 4 / 1024**2))
+
+model_size_summary(mt)
+```
+
+
+
 ## Initialization
 
 Weight initialization and reinitialization can be important. 
@@ -117,3 +134,6 @@ https://pytorch.org/docs/stable/nn.init.html
 
 
 
+## Experimental Note 
+
+Just like experiments in any kinds of science, it's advisable to keep track of hyperparameters and record all of them in a table. 

@@ -1,7 +1,9 @@
 ## Classic Music Collection
 
 ```python
-b = corpus.parse('bwv66.6')
+b = corpus.parse('bwv66.6') # read from corpus collection
+
+s = converter.parse('bach.mid') # direct read from midi
 ```
 
 
