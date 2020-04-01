@@ -133,22 +133,26 @@ $$
 
 
 So the algorithm is super simple. 
-$$
 
-$$
+```
+Compute gradient for image
+Classify gradient based on amplitude, copy large gradient to $R$, small gradient to $S$
+```
+
+
 
 
 > This method is very simple, but the **philosophy** is that naturally graident in $R$ and $S$ are different, So you can classify an observed gradient into one or the other based on the statistics of the gradient!  
 
-
+## SIRPS 
 
 > Note intrinsic image decomposition appears to be irrelavent to shape, but shading is generated from shape. So a prior on shading per se is ill posed, but prior on shape + lighting seems less ill posed. 
-
-## SIRPS 
+>
+> So in later work, they decompose Shape + lighting as well, instead of pure shading. 
 
 PAMI 2015 
 
->Most powerful non nn way of decompose image. 
+>Most powerful non nn way of decompose image, SOTA for a long time. 
 
 ![image-20200331135848342](../assets/img/posts/Taiwan/image-20200331135848342.png)
 $$
@@ -156,9 +160,15 @@ I = R+S(Z,L)\\
 Z,L = \arg\min g(I-S(Z,L))+f(Z)+h(L)\\
 R= I-S(Z,L)
 $$
-Their major contribution is their design of prior. 
+Their light is not encoded by a 3 vector, but as some parameters of spherical harmonics, simulating multiple light source and scene light. And the image from shading could be computed from a quadratic form.
 
-Multi-scale optimization is used to solve this method. 
+
+
+Their major contribution is 
+
+* their design of prior. 
+
+* Multi-scale optimization is used to solve this hard problem. 
 
 
 
@@ -171,15 +181,17 @@ Multi-scale optimization is used to solve this method.
 
 Shape
 
-* Prior on Hessian instead of pure $Z$ value or $n$ value. 
+* Prior on **Hessian** instead of pure $Z$ value or $n$ value. 
 
 * Smoothness
 
 
 
-## Image Reconstruction in Scene
+## Single Image Reconstruction in Scene
 
 **Note:** The result of SIRFS is good only when there is a single object in the scene. With reasonable segmentation. 
 
+Just 2 changes 
 
-
+* Use nn to segment scene image into object. 
+* Learn the shape prior & Reflectance prior from this class of object specifically, instead of all images. 

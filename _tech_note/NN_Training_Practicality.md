@@ -112,7 +112,7 @@ https://github.com/Animadversio/pytorch-summary
 A personal simple version of model summary is 
 
 ```python
-def model_size_summary(model):
+	def model_size_summary(model):
     param_num = 0
     for param in model.parameters():
         param_num += np.prod(list(param.shape))
@@ -130,10 +130,48 @@ Weight initialization and reinitialization can be important.
 
 https://pytorch.org/docs/stable/nn.init.html
 
+## Multiplex forward function
 
+`forward` function of a module could be multiplexed by some flags. like `train` `eval` and so on. You can add your own and let it return some internal representation if the flag is on. 
+
+## Command Line Application
+
+Many cases, you may want to use your model on cluster or gpu server. Those headless machines need to use command line script to interact with. So many developer will build in this command line parser in their model. 
+
+```python
+def get_argument_parser(description=None):
+    parser = argparse.ArgumentParser(description)
+    parser.add_argument("-m", "--model_dir", type=str, required=True,
+            help="The directory for a trained model is saved.")
+    parser.add_argument("-c", "--conf", dest="configs", default=[], nargs="*",
+            help="A list of configuration items. "
+                 "An item is a file path or a 'key=value' formatted string. "
+                 "The type of a value is determined by applying int(), float(), and str() "
+                 "to it sequencially.")
+    return parser
+
+parser = custom.get_argument_parser()
+args = parser.parse_args()
+```
 
 
 
 ## Experimental Note 
 
 Just like experiments in any kinds of science, it's advisable to keep track of hyperparameters and record all of them in a table. 
+
+One way is just to code experimental time and setting into the folder and save tensorboard log into it. 
+
+```python
+current_time = datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
+train_log_dir = 'logs/'+config.experiment+'/'+current_time+'/train'
+eval_log_dir = 'logs/'+config.experiment+'/'+current_time+'/eval'
+
+train_summary_writer = SummaryWriter(train_log_dir)
+eval_summary_writer = SummaryWriter(eval_log_dir)
+```
+
+
+
+
+
