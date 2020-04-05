@@ -195,3 +195,118 @@ Just 2 changes
 
 * Use nn to segment scene image into object. 
 * Learn the shape prior & Reflectance prior from this class of object specifically, instead of all images. 
+
+
+
+## 
+
+Deriving intrinsic images from image sequences ICCV 2001 
+
+If the images are ut  from same reflectance but different lighting
+
+
+
+**Application** 
+
+* Edit reflectance solely, and the image pattern will blend into the image 
+
+
+
+## Retinex ++
+
+> Still classify gradients into different origin. But add a MRF to smooth it. 
+
+Assume illumination is of uniform color. 
+
+Shading is a single channel image, illumination is uniform color. 
+
+So the pipeline is 
+
+* Shading gradient 
+  * $I[n_1]\propto I[n_2]$ then the color is the same but shading changes. 
+  * This could be used as statistics to classify gradient. 
+
+* Apply classifier on a patch (as context), classify if the pixel gradient is a shading one or a reflectance one. 
+
+* As this is a binary label classification (reflectance vs shading gradient), then the MRF can clean up your contour! 
+  * Normally reflectance gradient is on the contour of image. So use MRF to let the reflectance label propagate along the contour instead of orthogonal to contour. 
+
+
+
+> One reason that SIRF is better is it applys prior on shape instead of shading itself. 
+
+# Shape From Shading
+
+
+
+## Local to Global
+
+> Estimate shape from local to global, break up your estimation into a hierachical way. 
+
+2012 Shape Collage
+
+* Collect training samples, patch of shape and appearance 
+* When you have a new image, find key points, crop the patches 
+* Go back to search the ground truth shape for the patches. 
+* Try to merge them up. 
+  * Fit the surfaces to the averaged gradient 
+
+2015 Shading to Local Shape. 
+
+* Multiple explanation for each local patch, with different cost or posterior probability or unary potential. 
+* To parametrize these guesses, use the angle $\theta$ between the major normal $a_4,a_5$ and the light direction to parametrize your solution 
+* Finally, optimize competing between the global depth map (global coherence) and the local compatibility
+  * Optimizing $Z$ directly can solve integrability automatically. 
+  * 
+
+* Note: don't know albedo is not a big deal. You can assume the brightest point in your lambertian image is $<n,l>=1$ 
+
+
+
+Note you could also iterate through your lighting direction (if it's a directional vector. ), it's 2d if it's just an vector then you can iterate. 
+
+But general lighting is hard to do so. 
+
+
+
+Silhouette contains the illumination information: 
+
+* You can get a rough estimate of shape from the silhouette.
+* And you can use that to get an rough estimate of light info. 
+
+![image-20200402135914372](../assets/img/posts/Taiwan/image-20200402135914372.png)
+
+Using your illumination map, 
+
+As you are doing 
+
+CVPR 2015 
+
+
+
+Shape reconstruction is usually not that time bounded. esp. like image to 3d shapes. 
+
+## Color in SfS
+
+Multiple color can help you! (cf. Retinex ++ )
+
+Esp. multiple light source with different color from different direction can uniquely determine normal & shape. 
+
+* Essentially you are doing multiple photometric stereo in one image. 
+
+![image-20200402141213712](../assets/img/posts/Taiwan/image-20200402141213712.png)
+
+2011 CVPR Shape estimation in Natural Illumination
+
+Natural illumination is good! Make you less ambiguous... really?
+
+
+
+Note if your surface albedo is unknown and spatially varying (has color patterns in it. )
+
+Local constant albedo will help you! 
+
+
+
+Chakrabarti 3DV 2016 
+
