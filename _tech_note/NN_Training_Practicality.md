@@ -61,11 +61,15 @@ Recording the inner state of network requires to detach them from the network an
 
 Tensorboard support figures, so making pretty visualization of inner structure of the network and record them throughout training is very useful.
 
+Note if you want to visualize every single image you generated, you want the `--samples_per_plugin` flag to be set as 1 or sth. 
+
 
 
 ## Learning Rate Scheduling 
 
-Learning rate schedule is important for training! 
+Learning rate schedule is important for training! Several ways to do it. 
+
+
 
 
 
@@ -112,7 +116,7 @@ https://github.com/Animadversio/pytorch-summary
 A personal simple version of model summary is 
 
 ```python
-	def model_size_summary(model):
+def model_size_summary(model):
     param_num = 0
     for param in model.parameters():
         param_num += np.prod(list(param.shape))

@@ -50,6 +50,19 @@ uninstall and reinstall tensorflow in conda environment could solve many problem
 
 Using 3.7 may encounter error in `pip install deeplabcut` so it may be better to open a `python=3.6` environment and install deeplabcut there. 
 
+## Torch
+
+Torch is another super popular system and install it seems much simpler than the other 2 frameworks. 
+
+```bash
+conda install -c anaconda pytorch-gpu
+conda install -c anaconda torchvision
+conda install pillow=6.1 # in case of PIL import error
+conda install matplotlib
+```
+
+
+
 # CUDA and GPU
 CUDA and GPU is a major source of trouble in building a workstation. 
 
