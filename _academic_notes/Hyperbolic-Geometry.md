@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computation on Hyperbolic Geometry (Poincare Disk)
+title: Computations on Hyperbolic Geometry
 author: Binxu Wang
 date: Apr 10th, 2020
 use_math: true

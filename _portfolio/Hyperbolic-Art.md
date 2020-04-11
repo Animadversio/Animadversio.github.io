@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Art in Hyperbolic Space
-img: "assets/img/portfolio/Code_space_opt_traj_cmp_3D_score0.png"
+img: ..\assets\img\notes\poincare\nona_tessal9-3.png
 # feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
 author: Binxu Wang
 use_math: true
@@ -10,7 +10,7 @@ date: April 11th, 2020
 tags: [Math, Geometry, Manifold, Art]
 ---
 
-Related to [Note on Hyperbolic Geometry]({{site.baseurl}}  {% post_url  Hyperbolic-Geometry.md %})
+Related to [Note on Hyperbolic Geometry](Hyperbolic-Geometry.md)
 
 ![tri_tessal3-7.png](..\assets\img\notes\poincare\tri_tessal3-7.png)
 ![tri_tessal3-8.png](..\assets\img\notes\poincare\tri_tessal3-8.png)
