@@ -310,3 +310,234 @@ Local constant albedo will help you!
 
 Chakrabarti 3DV 2016 
 
+# Learning Based Intrinsic Image Decomposition
+
+Hardship is how to provide the supervision. Several solutions below. 
+
+
+
+## Datasets for Intrinsic Image
+
+ICCV 2009 
+
+> Very painful, but it's a great breakthrough! Benchmark for intrinsic image. However, the dataset is small, and not
+
+
+
+Intrinsic Image in the Wild
+
+> Similar to surface normal idea. 
+>
+> Don't collect dense label, but sparse supervision - pairwise relationship (this part has lower reflectance than that one.) from human being 44
+
+![image-20200407131153535](../assets/img/posts/Taiwan/image-20200407131153535.png)
+
+Reflectance and image could be decomposed! 
+
+
+
+
+
+ICCV 2015 Learning Ordinal Relationship for Mid Level Vision. 
+
+> Let a neural net provide human response. And then use optimization to interpolate between them. 
+> Idea is 
+
+## Photorealistic Rendering for GroundTruth
+
+2018 ECCV CGIntrinsics Network. 
+
+You may overfit the statistics of CG instead of synthetic. So they used a mixed training schedule instead of pure CG. 
+
+* Real image, output ordinal relationship and loss. 
+* Synthetic image, output dense map, L2 loss. 
+
+> Note for these problems, collect the dataset is much more expensive then training! Making scene and rendering is most labor intensive part in the pipeline. 
+
+Similar to the depth and optical flow, they abolish the optimization instead of 
+
+
+
+> 
+
+## Self Supervision 
+
+Single Image Intrinsic Decomposition without a SIngle Intrinsic Image
+
+> Core idea is, the reflectance is constant ~ physics. Shading is caused by lighting and imaging. So using multiple lighting for the same scene will give you this idea. 
+> Practically it's simply turn off a light and on the other. 
+
+$$
+\; \|I_1-R_jS_1\|\\
+\; \|I_i-R_iS_i\|
+$$
+
+However, note that self supervision will result in cheating sometimes. $R_i=1$ will result in a trivial solution (no decomposition at all!)You need regularization to avoid trivial solution. 
+
+* Retinex loss: Shading and Reflectance will not have large gradient at the same location. 
+* Diversity loss: 
+
+![image-20200407133842876](../assets/img/posts/Taiwan/image-20200407133842876.png)
+
+
+
+> For these hard to find ground truth, Some thoughts on how to get supervision 
+>
+> * Render image as ground truth
+> * Let human to provide sparse labelling and supervision. 
+> * Use some knowledge of physics as training (constancy of certain property across scene and setting.)
+
+# Advanced Photometric Stereo
+
+> Lambertian surface is not a valid model for many situations. 
+
+**Di-electric Model**: A lambertian component and a specular light component. 
+$$
+I = \rho \hat n^Tl +\alpha(n)
+$$
+
+
+> Note, specular light will have the same color as the light source under di-electric model. If you know the light color, then you can project the color image in a clever way to throw away this component. 
+
+## Polarizer
+
+
+
+* Polarizer Physics
+  * Diffuse reflection will have uniform reflection
+  * Specular reflection will have same reflection with the source of light. 
+  * Thus the image looks like a lambertian surface under Polarizer light. 
+
+
+
+## Color 
+
+If you know your light color $L$ 
+$$
+(\rho\circ L)
+$$
+THen you can create a vector in the null space of light color 
+
+
+
+![image-20200407135228253](../assets/img/posts/Taiwan/image-20200407135228253.png)
+
+
+
+## General BRDF Photometric Stereo
+
+Dictionary Based Approach for Estimating SHape and Spatially Varying Reflectance. ICCP 2016 
+
+
+
+Still have multiple images under multiple light directions. 
+
+General BRDF is a function $\rho(\omega_i,\omega_o)$ , 
+
+But we have a bunch of possible BRDFs like a dictionary, and each pixel is a **linear convex combination** of those materials. ()
+
+They discretize the normal vector into per deg. 
+
+
+
+
+
+So now you are estimating a material definition $c^m[x,y]$ and normal definition $\hat n [x,y]$ 
+
+## Near Light source 
+
+This relax the parallel light assumption. 
+
+
+
+## Illumination Estimation
+
+### Outdoor Illumination
+
+Train a network to estimate the environment map / Illumination map from an image! 
+
+* 
+
+
+
+Note outdoor illumination is usually simple! There is sun + few sources
+
+* Estimation is 
+
+
+
+Panorama is a good source of dataset 
+
+* You usually have a location of sun! (Sun detecture is not hard)
+* You have your viewing angles, so you have the light source relative angle to your image. 
+
+
+
+> THere is only one sun, but not one light in the room. 
+
+Learning to predict indoor illumination from a single image. 
+
+
+
+Environment light encoding can be done through making a segmentation on sphere, the activation value for each angle on sphere can denote the light strength. 
+
+## Color Constancy Problem
+
+a.k.a White Balance Problem
+
+White patch, grey world priors. (doesn't work well in normal settings. )
+
+You can discretize the chromaticity $R,G,B>=0,R^2+G^2+B^2=1$ , then you could use do classification onto discretized values. 
+
+2015 predict chromaticity from luminance 
+
+* Predict true chromaticity from a grey pixel. 
+* Then divide the apparent color by true chromaticity, then you get the illumination chromaticity. 
+
+
+
+Convolutional Color Constancy. 2015 
+
+
+
+
+
+###  Spatial Varying illumination 
+
+
+
+Flash-Non Flash Pair
+
+A formulation of multi light source image
+$$
+I[n]=\rho[n]\circ (l_1\alpha[n]+l_2\beta[n])
+$$
+If you have a flash with known color 
+$$
+I[n]=\rho[n]\circ (l_1\alpha[n]+l_2\beta[n]+l_f\Delta[n])
+$$
+Then you will get the intrinsic color $\rho[n]$ and shading caused by flash. 
+
+$\rho[n]\Delta[n]$ .Note the chromaticity of this map is the same as image.
+
+> Flash is estimating intrinsic chromaticity! 
+
+
+
+Regression loss may not be best 
+
+
+
+> Note, flash is limited. 
+> The object could not be too far away, the relative intensity should be adequate, or noise will submerge the information. 
+
+
+
+Train a network to predict chromaticity
+
+
+
+You can use 
+
+ 
+
