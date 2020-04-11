@@ -14,7 +14,14 @@ typora-copy-images-to: ..\assets\img\notes\poincare
 Note on Hyperbolic Geometry
 ====
 
-https://mphitchman.com/geometry/section5-3.html
+Reference Notes
+
+* [2018 Lec Note](http://math.uchicago.edu/~may/REU2018/REUPapers/Olivares.pdf)
+
+* [2015 Lecture note](https://www.mathi.uni-heidelberg.de/~lee/Xiaoman01.pdf)
+
+* [Ch5-3 Measurement in Hyperbolic Geometry](https://mphitchman.com/geometry/section5-3.html) 
+* [Cheatsheet / Note](http://home.iiserb.ac.in/~kashyap/MTH 520/lp.pdf) 
 
 ## Motivation
 
@@ -47,12 +54,7 @@ We understand our Euclidean space well because we know the isometry of it is tra
 
 For hyperbolic space, knowing the isometry will largely simplify our problem. 
 
-* [2018 Lec Note](http://math.uchicago.edu/~may/REU2018/REUPapers/Olivares.pdf)
 
-* [2015 note](https://www.mathi.uni-heidelberg.de/~lee/Xiaoman01.pdf)
-
-* [Ch5-3 Measurement in Hyperbolic Geometry](https://mphitchman.com/geometry/section5-3.html) 
-* [Cheatsheet / Note](http://home.iiserb.ac.in/~kashyap/MTH 520/lp.pdf) 
 
 ### Mobius Transform
 
