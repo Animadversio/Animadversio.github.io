@@ -1,5 +1,4 @@
 ---
-​---
 layout: post
 title: Computation on Hyperbolic Geometry (Poincare Disk)
 author: Binxu Wang
