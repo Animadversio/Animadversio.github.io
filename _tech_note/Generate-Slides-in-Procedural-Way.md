@@ -5,8 +5,8 @@ author: Binxu Wang
 use_math: true
 comments: true
 date: Apr. 3rd, 2020
-categories: [codin,miscg]
-tags: [python, coding, presentation, js]
+categories: [codin, misc]
+tags: [python, coding, presentation, javascript]
 ---
 
 ## Motivation
@@ -29,6 +29,11 @@ Source of info
 
 Good old fashioned Latex! 
 
+Pro:
+
+* High quality pdf output. 
+* Phycists love it. 
+
 Con:
 
 * You need a latex compiler and environment, latex compiling error is a pain. 
@@ -38,7 +43,7 @@ Con:
 
 
 
-## Pandoc -> PPTX
+## Pandoc Markdown -> PPTX
 
 ```bash
 pandoc myslides.md -o myslides.pptx --reference-doc another.pptx
@@ -46,7 +51,7 @@ pandoc myslides.md -o myslides.pptx --reference-doc another.pptx
 
 A really good way to do the boring stuffs in markdown procedurally, and then go to pptx to do the more customized stuff. 
 
-Templates of slides look like 
+Templates of slides look like, the syntax is still a bit cumbersome. (comparing to the `reveal-md` below)
 
 ```markdown
 # Section Title
@@ -74,10 +79,6 @@ Left column:
 
 
 
-## Marp
-
-https://github.com/marp-team/marp
-
 ## Reveal.js
 
 https://revealjs.com
@@ -104,9 +105,11 @@ https://openbase.io/js/reveal-md
 
 Super easy to start with, esp. if you just want to go through lots of figures
 
+Also easy to export to `pdf` format. 
 
+`reveal-md temp.md --print data-slides.pdf`
 
-Technical stlides: https://lacourt.dev/2019/03/12
+Really useful for technical, figure rich slides: https://lacourt.dev/2019/03/12
 
 ### Pandoc Markdown->Reveal.js
 
@@ -126,9 +129,15 @@ If you want real time running and trial and error, and generating graphics real 
 
 
 
+## Marp
+
+https://github.com/marp-team/marp
+
+
+
 # When should we not use these tools
 
-When we need  sophisticated animation and layouts! 
+When we need sophisticated animation and layouts! Also when we need *ad hoc* annotation and layout for each figure. 
 
 PPTX is still the best and easiest for that purpose, and others are just adding pain and unnecessary effort to it. 
 
