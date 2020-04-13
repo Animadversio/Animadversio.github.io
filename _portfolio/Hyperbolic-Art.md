@@ -41,3 +41,8 @@ Related to [Note on Hyperbolic Geometry](Hyperbolic-Geometry.md)
 ![nona_tessal9-7.png](..\assets\img\notes\poincare\nona_tessal9-7.png)     
 ![nona_tessal9-8.png](..\assets\img\notes\poincare\nona_tessal9-8.png)  
 ![nona_tessal9-9.png](..\assets\img\notes\poincare\nona_tessal9-9.png) 
+
+Related work see
+
+[Hyperbolic Islamic Pattern](https://pdfs.semanticscholar.org/bf15/34b6460f2775ea03d6b07e752acc6aa1b5a6.pdf?_ga=2.194282024.462580620.1586582089-841754374.1508481008)
+
