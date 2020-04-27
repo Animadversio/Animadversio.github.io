@@ -7,7 +7,6 @@ comments: true
 date: Apr. 26rd, 2020
 categories: [coding, misc]
 tags: [latex, presentation]
-
 ---
 
 ## Motivation
