@@ -5,7 +5,7 @@ author: Binxu Wang
 use_math: true
 comments: true
 date: Apr. 3rd, 2020
-categories: [codin, misc]
+categories: [coding, misc]
 tags: [python, coding, presentation, javascript]
 ---
 

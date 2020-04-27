@@ -37,6 +37,11 @@ Spectral Graph theory is just using this 3rd view, how can we relax the hard com
 
 Given a graph $\mathcal V,\mathcal E$ , a adjacency matrix $A$ could be defined. If the graph is un-directed, then the matrix is real symmetric. Thus a $n$ node graph will have $n$ eigenvalues and $n$ eigen vectors. 
 
+Below I'll discuss Laplacian matrix majorly, but here I'll point out a few application of the adjacency matrix $A$. 
+
+* Eigen vector of $A$ is used in PageRank algorithm. As only the eigenvector of the largest eigen value will be all positive, the entries in that vector is defined as eigen centrality. (importance of a node to a network)
+* $A$ could be normalized to be the transition matrix of a random walk on graph. 
+
 ## Graph Laplacian and Physics
 
 Then the graph Laplacian could be defined as $L=D-A$ while $D=diag(d_i)=diag(\sum_jA_{ij})$ 
