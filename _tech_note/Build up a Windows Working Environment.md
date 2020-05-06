@@ -4,7 +4,7 @@ title: Windows Working Environment Build Up (Updating)
 author: Binxu Wang
 date: Dec 19th, 2019
 comments: true
-categories: [machine learning]
+categories: [machine learning, coding]
 tags: [tech note, coding, Windows, environment, Computation, Machine Learning]
 ---
 * TOC
@@ -34,7 +34,20 @@ If we want `keras` as well, refer to [this post](https://github.com/antoniosehk/
 
 ## PyTorch Caffe Co-environment
 
+See [Working with Caffe](Working-with-Caffe.md) for more info! 
 
+The easiest way is using the the conda export file to copy the same environment. See the attached [caffe-torch](..\assets\resource\caffe-torch.yml)  [tf-torch.yml](..\assets\resource\tf-torch.yml)  for more information. 
+
+```bash
+conda create --name caffe36 --file caffe36_spec-file.txt
+conda create -f caffe-torch.yml
+```
+
+Then it will download and install all the packages with the required source and version
+
+```bash
+conda activate caffe36
+```
 
 
 

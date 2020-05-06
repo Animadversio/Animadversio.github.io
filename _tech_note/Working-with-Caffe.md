@@ -44,10 +44,11 @@ Just use miniconda, and `conda install -c anaconda caffe-gpu`
 
 ### Installing GPU version on Windows machine
 
-The easiest way is using the the conda export file to copy the same environment. 
+The easiest way is using the the conda export file to copy the same environment. See the attached [caffe-torch](..\assets\resource\caffe-torch.yml)  [tf-torch.yml](..\assets\resource\tf-torch.yml)  for more information. 
 
 ```bash
 conda create --name caffe36 --file caffe36_spec-file.txt
+conda create -f caffe-torch.yml
 ```
 
 Then it will download and install all the packages with the required source and version
