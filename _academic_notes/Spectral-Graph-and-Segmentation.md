@@ -8,6 +8,7 @@ comments: true
 categories: [mathematics, algorithm]
 tags: [tech note, Math, Linear Algebra, cv, segmentation, graph theory]
 typora-copy-images-to: ..\assets\img\notes\spectgraph
+
 ---
 
 # Spectral Graph Theory and Segmentation
