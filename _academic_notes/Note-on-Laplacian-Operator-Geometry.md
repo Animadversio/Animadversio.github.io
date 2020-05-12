@@ -16,11 +16,13 @@ typora-copy-images-to: ..\assets\img\notes\spectgraph
 
 [Laplacian on graph](Spectral-Graph-and-Segmentation.md) and on discrete geometry (mesh) are very useful tools. 
 
+
+
 One core intuition, just like Laplacian in $\R^n$ space, it's related to diffusion and heat equation. Recall the diffusion equation is 
 $$
 \frac{\partial \phi}{\partial t} = \nabla\cdot D\nabla\phi
 $$
-Note in differential geometry's term, this operator is intrinsic, so it doesn't depend on embedding of manifold in external space. It only depends on the metric. 
+Note in differential geometry's term, this operator is intrinsic, so it doesn't depend on embedding of manifold in external space. It only depends on the metric of Riemann manifold. 
 
 ## Relation to Fields in Pure Math 
 
@@ -52,7 +54,28 @@ f\gets f-\epsilon \Delta f
 $$
 In geometry processing, this continuous notion will go back to a Laplacian on discrete geometry, i.e. network embedding or mesh. Just as in [Spectral Graph Theory](Spectral-Graph-and-Segmentation.md) 
 
+## Spherical Harmonics
 
+Recall from special function and Quantum Mechanics, we know that the spherical harmonics are a group of basis function on sphere. 
+
+How do we get them? Yeah, when we are trying to find the steady states of Hydrogen atom, we (kindof) solve Laplacian equations in 3d space, and then separate of variables leads us to solve the angular part on $S_2$. The equation becomes a eigen equation for Laplacian operator (Helmholtz equation) on sphere. 
+$$
+\nabla^2Y=\lambda Y\\
+\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial Y}{\partial\theta}\right)+\frac{1}{\sin^2\theta}\frac{\partial^2Y}{\partial\phi^2}=\lambda Y
+$$
+So actually, the angular wave functions for hydrogen atom, are all the eigen functions for Laplacian operator on sphere. Thus it's not surprising they form a orthonormal basis for function on sphere. 
+
+Literally, harmonic function are those that solve Laplace equation. Here we are solving the eigen equations for Laplacian equations. 
+$$
+f:S_2\to\R\; ,\nabla^2f =\lambda f
+$$
+So this idea could be generalized to more domains, graph or manifold! Solving and finding eigen functions for Laplace equations on these domain will give you a set of eigen function useful for parametrize stuffs! 
+
+
+
+https://en.wikipedia.org/wiki/Spherical_harmonics
+
+## Discrete Laplacian 
 
 
 
@@ -62,19 +85,7 @@ In geometry processing, this continuous notion will go back to a Laplacian on di
 
 
 
-## Spherical Harmonics
 
-Recall from special function and Quantum Mechanics, we know that the spherical harmonics are a group of basis function on sphere. 
-
-How do we get them? Yeah, we get it through solving Laplacian equation on sphere. (when we are trying to find the states of Hydrogen atom.) (literally, harmonic function are those that solve Laplace equation.)
-$$
-f:S_2\to\R\; ,\nabla^2f =0
-$$
-So this idea could be generalized to more domains, graph or manifold! Solving and finding eigen functions for Laplace equations on these domain will give you a set of eigen function useful for parametrize stuffs! 
-
-
-
-https://en.wikipedia.org/wiki/Spherical_harmonics
 
 
 
