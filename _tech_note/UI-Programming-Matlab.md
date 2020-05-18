@@ -83,7 +83,7 @@ set(handles.slider1,'sliderstep',slider_step,...
         'max',8,'min',5,'Value',6.5)
 ```
 
-
+http://www.ece.northwestern.edu/local-apps/matlabhelp/techdoc/creating_guis/ch_ove32.html
 
 
 
