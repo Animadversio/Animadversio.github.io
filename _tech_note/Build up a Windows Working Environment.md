@@ -51,6 +51,19 @@ conda activate caffe36
 
 
 
+To export such files there are usually 2 ways, switch to the environment you wish to export and use these commands. 
+
+```bash
+conda list --explicit > spec-file.txt
+conda env export > environment.yml
+```
+
+https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#
+
+[Post on export environment with conda.](https://medium.com/@shandou/export-and-create-conda-environment-with-yml-5de619fe5a2) 
+
+
+
 # GFW evading
 
 If you are in China and you need to use a GFW censorship evading tool, see this, 

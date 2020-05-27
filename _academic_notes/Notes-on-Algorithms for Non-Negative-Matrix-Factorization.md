@@ -2,7 +2,7 @@
 layout: post
 title: Note on Algorithm for Non-Negative Matrix Factorization
 author: Binxu Wang
-date: June 25th, 2019
+date: June 25th, 2019 (updated May 22, 2020)
 comments: true
 use_math: true
 categories: [algorithm]
@@ -40,15 +40,17 @@ Note NMF and soft label K-means clustering is mathematically equivalent!
 
 # Algorithm
 
-For this problem, the basic idea is that when we focus on part of variables `H` or `W` the problem becomes a linearly constraint convex sub-problem, (even with some regularization term it's still a convex problem,) thus could be solved unanimously with linear algebraic method. But the alternating between `H` and `W` makes the problem non-convex. 
-
-Because of this many algorithms has `Alternative` in its name. 
-
 ## Alternative Least Square
 
-One algorithm that really interests us is Hierarchical Alternative Least Square Algorithm (`hals`), which is kind of the state of the art algorithm of the problem. 
+For this problem, the basic idea is that when we focus on part of variables `H` or `W` the problem becomes a linearly constraint convex sub-problem, (even with some regularization term it's still a convex problem,) thus could be solved unanimously with linear algebraic method. But the alternating between `H` and `W` makes the problem non-convex. Because of this many algorithms has `Alternative` in its name. 
+
+Note, non-negative constraints are still linear constraints, thus you can still add these non-negativity and use constraint linear programming to solve it. [Matlab lsqlin](https://www.mathworks.com/help/optim/ug/lsqlin.html) or [scipy.optimize.lsq_linear](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.lsq_linear.html) . L2 regularizations are solvable and L1 regularization has specialized methods. 
+
+
 
 ## Hierarchical Alternative Least Square Algorithm
+
+One algorithm that really interests us is Hierarchical Alternative Least Square Algorithm (`hals`), which is kind of the state of the art algorithm of the problem. 
 
 Here I'll state the structure of HALS algorithm. 
 
@@ -59,7 +61,7 @@ The core idea is to solve each component to the residue separately, so each subp
 
 
 ## Remark 
-There are multiple interperatations of NMF, they are mathematically equivalent 
+There are multiple interpretations of NMF, they are mathematically equivalent 
 
 * K-means
 * Sparse coding

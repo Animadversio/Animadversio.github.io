@@ -54,9 +54,8 @@ But if we just want to translate an algorithm from one language to another, we c
     * `norm` in matlab doesn't work for vector norm along 1 axis. `np.linalg.norm` can do this. 
 
 + Dictionary and Struct and Cell
-  
-    * In matlab, no `dict` to use! `struct` is similar, you can add fields to a `struct` object
-    * `struct` is also good for structured array data! 
++ * In matlab, no `dict` to use! `struct` is similar, you can add fields to a `struct` object
+  * `struct` is also good for structured array data! 
       * `repmat(struct('image',[],'eig',[]),1,10)`  can create an array of structure which is easy to 
     * Matlab `cell` is like the python `list` which is a universal container for any heterogenous things. 
     
@@ -76,21 +75,65 @@ But if we just want to translate an algorithm from one language to another, we c
     * Print out words: In Python, `print("%.f, %.d".%( x, arg2))`; In matlab `fprintf("x: %.1f, arg1: %d", x, arg2)`. Or using `disp(var)`
     * Formatted string control: In python, `"%.f, %.d".%( x, arg2)`, in matlab `str = sprintf("x: %.1f, arg1: %d", x, arg2)`
     
-+ subfunction define
++ Subfunction define
   
     + in matlab 
 ```matlab
-    function out=Y(in) 
-                    .... 
-    end 
+function out=Y(in) 
+.... 
+end 
 ```
-    + in python
+in python
+
 ```python
 def Y(param):
     return out
 ```
+## Tricky points
+
 * Complicated control of `ndarray` and `matrix` in numpy
     - Reduce into 1D: `M.flat` return iterator, `M.flatten()` return a 1_D array
+    - In matlab `A(:)` will give you a 1d array, but in python `A[:]` will return the same shape.  
+    - Aside from reshape there are quite a few handy functions in matlab [See this.](https://www.mathworks.com/help/matlab/math/reshaping-and-rearranging-arrays.html) 
+* Array Storage in Memory
+    * A subtle difference is the convention of storing multidimensional array in matlab or python. As matlab use column major order, and numpy and torch use row major order. [Major order](https://en.wikipedia.org/wiki/Row-_and_column-major_order) 
+    * Note row major is the convention of C, Pascal etc. Column major is the convention of Fortran. (Matlab and Julia inherit this) So in python you can specify these 2 conventions by `C` for row major and `F` for column major. `output=output.reshape((row*col, depth), order='F')` (Really confusing....)
+    * Because of this, the 2 language can have very different result when applying `reshape` operation. If you really want to match the result from 2 languages, carefully match your input and then: 
+      * See which numbers come consecutively on the first dimension.
+      * And then permute those axis to left most and then do reshape. 
+      * For python, you should look at the right most dimension, entries will be stored in that dimension first. 
+    * See the following corresponding code in matlab vs python
+
+```python
+def pixelshuffle(inputs, upscale_factor=3):
+    batch_size, channels,  in_height, in_width = inputs.size()
+    channels //= upscale_factor ** 2  #*3 if 3D
+    #out_depth = in_depth * self.upscale_factor  if 3D
+    out_height = in_height * upscale_factor
+    out_width = in_width * upscale_factor
+    input_view = inputs.contiguous().view(
+        batch_size, channels, upscale_factor, upscale_factor, in_height, in_width)
+    #shuffle_out = input_view.permute(0, 1, 5, 2, 6, 3, 7, 4).contiguous() if 3D
+    shuffle_out = input_view.permute(0, 1, 4, 2, 5, 3).contiguous()
+    return shuffle_out.view(batch_size, channels, out_height, out_width)
+```
+
+Corresponds to matlab code
+
+```matlab
+function [out] = pixelshuffle(input, upscale)
+    if nargin == 1
+        upscale = 2;
+    end
+    H = size(input,1); W = size(input,2);
+    Ch = size(input,3) / upscale.^2;
+    B = size(input,4);
+    input_fact = reshape(input,[H,W,upscale,upscale,Ch,B]);
+    out = reshape(permute(input_fact, [4,1,3,2,5,6]), [H * upscale,W * upscale,Ch,B]);
+end
+```
+
+[Slide of Reshape function](http://www.cs.utsa.edu/~cs1173/resources/CS1173ReshapeFunction.pdf) 
 
 ## Let Matlab and Python Talk to Each Other
 
@@ -105,3 +148,4 @@ def Y(param):
     * But the objects will be formed in a reference array, and you feed the reference back to the file to get the object into python. See [Refs in h5py](http://docs.h5py.org/en/latest/refs.html). 
 * `.npy` format could be read in matlab 
 
+For more detailed exposition on this topic, see the other notes [Data Transport between Python Matlab](Data-Transport-Python-Matlab.md), [Matlab Python Hybrid Programming](Matlab-Python-Hybrid-Programming.md)
