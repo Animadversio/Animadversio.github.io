@@ -92,7 +92,6 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
     * `tsr.device` show you the device it lives in. 
     * `tsr.cpu()` and `tsr.cuda()` returns you the same object if it's already on that device. It will returns you copy if it's not! 
       * `tsr=tsr.cuda()` will transfer data to gpu, but  `tsr.cuda()` itself will not. 
-
 * Gradients computation
 
   * `requires_grad` could be set for `tensor` (and `Variable`) to enable gradient flow. 
@@ -103,7 +102,6 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
   * `tensor` s could be put into `torch.autograd` machinery or `torch.optim` optimizers to compute gradients and optimize! 
     * `optimizer = torch.optim.Adam([img_tensor], lr=0.1, weight_decay=1e-6)`
     * `torch.autograd.grad(loss,img_tsr)`
-
 * Neural Networks
 
   * Basic component of PyTorch is `module` , it normally implements a `forward` and a `backward` function. 
@@ -112,10 +110,12 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
   * Flags
     * `model.cuda()` returns you a copy of model with all parameters living on gpu
     * `model.eval()` set the flag into evaluation mode instead of training mode. 
-
+* Serialization
+* Torch save model with 2 formats, serialize whole model object with `torch.save` or save weight through `torch.save(model.state_dict())` See the [recommended method ](https://pytorch.org/docs/stable/notes/serialization.html#recommend-saving-models) 
+  * The former method mandates you have the class of the model defined or loading will fail. 
+  * The latter is more general, as long as you have the class definition for the model. 
 * Conventions 
-
-  * Axis convention `B,C,H,W` same as caffe, but the channel is in `RGB` order. 
+* Axis convention `B,C,H,W` same as caffe, but the channel is in `RGB` order. 
 
 [Starting Tutorial to Learn Pytorch](https://github.com/jcjohnson/pytorch-examples/blob/master/README.md)
 
@@ -134,11 +134,34 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 ## Matlab
 
 * Data Structure
-  * Basic data structure in matlab deep learning toolbox is `dlarray` . You have to wrap your normal matrix into `dlarray` to use as input to models. 
+  * Basic data structure in matlab deep learning toolbox is `dlarray` . You have to wrap your normal matrix into `dlarray` to use as input to models. This is like `torch.Tensor` in pytorch, this wrap is needed to compute gradient and gpu acceleration. 
+  * `extractdata` is like `torch.Tensor.numpy()` that you can get your data back from the wrap.
   * `dlarray` has a labelled version and a un-labelled version. Labels will tell the framework whats the meaning of each axis. 
-  * Some operation requires a un-labelled `dlarray` some requires a labelled `dlarray`
+    * Some operation requires a un-labelled `dlarray` some requires a labelled `dlarray` 
+  * Note the order of dimension in matlab is different from most python frameworks. Matlab uses `[H,W,C,B]` torch uses `[B,C,H,W]` . Besides, matlab is row (first dim) major array storage, python is column (last dim) major storage. So reshape can be very different in 2.
+  * As for weight of conv layer, matlab stores it as `[FilterSize(1),FilterSize(2),NumChannels,NumFilters]`
+  * Meanwhile, pytorch uses `[out_channels(NumFilters), in_channels(NumChannels), kernel_size ]`
 * Neural Networks
   * Neural Networks have `Layers` and a `graph` 
+  * `predict` and `activations` seems like the function that calculate the activation like `forward`  
+    * `calculateActivations` is the core function underlying it. 
+* Gradient Computation
+  * In 2019b, matlab autodifferentiation is done through `dlgradient` which could compute first order gradient for multiple input function using `dlarray` . However its current usage is not like `torch.autograd` see [example](https://www.mathworks.com/help/deeplearning/ug/include-automatic-differentiation.html ) . It has to be used in a function that gets passed to `dlfeval` 
+  * Currently it doesn't support higher order derivative. (like Hessian. So still needs pytorch for Hessian computation. )
+
+```matlab
+[f,g] = dlfeval(@model,net,dlX,t);
+
+function [f,g] = model(net,dlX,T)
+% Calculate objective using supported functions for dlarray
+    y = forward(net,dlX);
+    f = fcnvalue(y,T); % crossentropy or similar
+    g = dlgradient(f,net.Learnables); % Automatic gradient
+end
+```
+
+* Learning Control
+  * `WeightLearnRateFactor` can control the weight learning in each layer. like `requires_grad` in pytorch.
 
 
 # Peripheral Functionalities
@@ -154,7 +177,7 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 ## PyTorch
 
 * `torch.nn.DataParallel` is a great tool, makes parallelized training at almost no cost! 
-* 
+* In parallel `Lucent` came out in May 2020 as a pytorch version of `Lucid`. 
 
 
 

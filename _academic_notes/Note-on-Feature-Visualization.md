@@ -80,11 +80,9 @@ Aside from regularization, another major component of feature visualization algo
 
 ### Example: Deep Dream
 
-It's a gradient Ascent Step but the point is to generate good looking images, thus some regularization techniques are used! 
+It's a Gradient Ascent but the point is to generate good looking images, thus some regularization techniques are used! Like L1, L2! 
 
-Like L1, L2! 
-
-Refer to 
+Matlab has a nested bunch of functions, the major ones are these. 
 
 * `nnet.internal.cnn.visualize.VisualNetwork.createVisualNetworkForChannelAverage(iNet, layerIdx, channels)`
 * `nnet.internal.cnn.visualize.deepDreamImageLaplacianNorm`
@@ -102,9 +100,7 @@ end
 
 >An image can be compressed into a Laplacian pyramid, and then the pyramid can be merged to give back the original image. In Laplacian pyramid normalization, we normalize each image in the pyramid before merging.
 
-
-
-Core code is just! 
+Core code is just like this 
 
 ```matlab
 for iter=1:numIterations
@@ -123,5 +119,73 @@ for iter=1:numIterations
             summary.update(octave, iter, activations);
             reporter.reportIteration( summary );
 end
+```
+
+### Example: Lucent Framework
+
+Lucent is a recent pytorch implementation of Lucid visualization framework. It's core code is super clear and easy to read and modify, so lets take a look
+
+```python
+def render_vis(model, objective_f, param_f=None, optimizer=None, transforms=None,
+               thresholds=(512,), verbose=False, preprocess=True, progress=True,
+               show_image=True, save_image=False, image_name=None, show_inline=False):
+    if param_f is None:
+        param_f = lambda: param.image(128)
+    # param_f is a function that should return two things
+    # params - parameters to update, which we pass to the optimizer
+    # image_f - a function that returns an image as a tensor
+    params, image_f = param_f()
+
+    if optimizer is None:
+        optimizer = lambda params: torch.optim.Adam(params, lr=5e-2)
+    optimizer = optimizer(params)
+
+    if transforms is None:
+        transforms = transform.standard_transforms.copy()
+
+    if preprocess:
+        if model._get_name() == "InceptionV1":
+            # Original Tensorflow InceptionV1 takes input range [-117, 138]
+            transforms.append(transform.preprocess_inceptionv1())
+        else:
+            # Assume we use normalization for torchvision.models
+            # See https://pytorch.org/docs/stable/torchvision/models.html
+            transforms.append(transform.normalize())
+
+    # Upsample images smaller than 224
+    image_shape = image_f().shape
+    if image_shape[2] < 224 or image_shape[3] < 224:
+        transforms.append(torch.nn.Upsample(size=224, mode='bilinear', align_corners=True))
+
+    transform_f = transform.compose(transforms)
+
+    hook = hook_model(model, image_f)
+    objective_f = objectives.as_objective(objective_f)
+
+    if verbose:
+        model(transform_f(image_f()))
+        print("Initial loss: {:.3f}".format(objective_f(hook)))
+
+    images = []
+
+    try:
+        for i in tqdm(range(1, max(thresholds) + 1), disable=(not progress)):
+            optimizer.zero_grad()
+            model(transform_f(image_f()))
+            loss = objective_f(hook)
+            loss.backward()
+            optimizer.step()
+            if i in thresholds:
+                image = tensor_to_img_array(image_f())
+                images.append(image)
+        images.append(tensor_to_img_array(image_f()))
+
+    if save_image:
+        export(image_f(), image_name)
+    if show_inline:
+        show(tensor_to_img_array(image_f()))
+    elif show_image:
+        view(image_f())
+    return images
 ```
 
