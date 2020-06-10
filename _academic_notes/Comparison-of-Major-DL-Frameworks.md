@@ -119,6 +119,8 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 
 [Starting Tutorial to Learn Pytorch](https://github.com/jcjohnson/pytorch-examples/blob/master/README.md)
 
+[How and When to use Module, Sequential, ModuleList and ModuleDict](https://github.com/FrancescoSaverioZuppichini/Pytorch-how-and-when-to-use-Module-Sequential-ModuleList-and-ModuleDict)
+
 
 ## Caffe
 

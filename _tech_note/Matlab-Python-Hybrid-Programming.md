@@ -22,11 +22,26 @@ Matlab has official support for python and you can set your python environment w
 
 But it's handy if you would like to have some io function or some programming tricks in python but don't want to open a new python for it. 
 
+### Handling Python modules
 
+`import` in matlab means aliasing, not the same as `import` in python. Here is a matlab example. 	
+
+```matlab
+import matlab.io.hdf4.sd.readChunk
+data = readChunk(ID,[n m]);
+```
+
+For real importing you can do `py.importlib.import_module('lucent');` or just type `py.lucent` and the package will load for you. 
+
+
+
+*Note*: Currently, matlab can import pytorch 1.3.1 but not 1.5.0. It will throw an error when importing latter. But it seems everything we used are compatible with 1.3.1 . 
+
+```bash
+conda install pytorch=1.3.1 torchvision cudatoolkit=10.1 -c pytorch
+```
 
 [Supported Python Operators](https://www.mathworks.com/help/matlab/matlab_external/how-matlab-represents-python-operators.html)
-
-
 
 [强行混合编程：MATLAB 中调用 .py 脚本函数](https://zhuanlan.zhihu.com/p/42598340)
 
@@ -64,3 +79,8 @@ print(type(A), A.size, A)
 ```
 
 Plotting is supported as well! 
+
+
+
+[Official Doc for language interface](https://www.mathworks.com/help/matlab/external-language-interfaces.html?s_tid=CRUX_lftnav)
+

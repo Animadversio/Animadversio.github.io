@@ -75,7 +75,7 @@ angle1_slider.observe(update_angle1, names = 'value')
 
 
 
-## Using Ipython.display
+## Using IPython.display.clear_output
 
 ```python
 fig = plt.figure()
@@ -91,7 +91,34 @@ for i in range(21):
     plt.pause(0.5)
 ```
 
+Anothor example
 
+```python
+import matplotlib.pyplot as plt
+import matplotlib.animation
+import numpy as np
+from IPython.display import display, clear_output
+
+t = np.linspace(0,2*np.pi)
+x = np.sin(t)
+
+fig, ax = plt.subplots()
+l, = ax.plot([0,2*np.pi],[-1,1])
+
+animate = lambda i: l.set_data(t[:i], x[:i])
+
+for i in range(len(x)):
+    animate(i)
+    plt.pause(0.5)
+    clear_output(wait=True)
+    display(fig)
+    
+plt.show()
+```
+
+
+
+https://towardsdatascience.com/animations-with-matplotlib-d96375c5442c
 
 
 
@@ -101,3 +128,4 @@ https://stackoverflow.com/questions/42998009/clear-matplotlib-figure-in-jupyter-
 
  https://stackoverflow.com/questions/21360361/how-to-dynamically-update-a-plot-in-a-loop-in-ipython-notebook-within-one-cell 
 
+https://stackoverflow.com/questions/11874767/how-do-i-plot-in-real-time-in-a-while-loop-using-matplotlib

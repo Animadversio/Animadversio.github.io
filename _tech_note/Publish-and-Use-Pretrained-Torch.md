@@ -47,7 +47,7 @@ After hosting the weights
 
 ## Loading Weights
 
-To avoid downloading weight multiple times, we can make a local cache system. 
+To avoid downloading weight multiple times, we can make a local cache system like this.  
 
 ```python
 def load_statedict_from_online(name="fc6"):
@@ -61,7 +61,5 @@ def load_statedict_from_online(name="fc6"):
     return SD
 ```
 
-
-
-
+A more advanced cache system could host a dict or list in the global scope in the module. So if the model has been loaded once it can be loaded from memory directly. 
 
