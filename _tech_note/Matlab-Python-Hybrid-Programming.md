@@ -6,7 +6,7 @@ use_math: true
 comments: true
 date: May. 15th, 2020
 categories: [coding]
-tags: [python, matlab, data]
+tags: [python, matlab, data, machine learning]
 
 ---
 
@@ -32,6 +32,18 @@ data = readChunk(ID,[n m]);
 ```
 
 For real importing you can do `py.importlib.import_module('lucent');` or just type `py.lucent` and the package will load for you. 
+
+To import arbitrary package or module you need to modify path in the matlab python environment like this. 
+
+```matlab
+syspath = py.sys.path(); % add the official stylegan2 repo. 
+syspath.append("E:\DL_Projects\Vision\stylegan2-pytorch");
+py.importlib.import_module('model');
+```
+
+Direct append like `py.sys.path.append` does not work! `py.sys.path = syspath;` will create something worse!
+
+
 
 
 

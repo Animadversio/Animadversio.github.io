@@ -142,7 +142,7 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
     * Some operation requires a un-labelled `dlarray` some requires a labelled `dlarray` 
   * Note the order of dimension in matlab is different from most python frameworks. Matlab uses `[H,W,C,B]` torch uses `[B,C,H,W]` . Besides, matlab is row (first dim) major array storage, python is column (last dim) major storage. So reshape can be very different in 2.
   * As for weight of conv layer, matlab stores it as `[FilterSize(1),FilterSize(2),NumChannels,NumFilters]`
-  * Meanwhile, pytorch uses `[out_channels(NumFilters), in_channels(NumChannels), kernel_size ]`
+  * In comparison, PyTorch uses `[out_channels(NumFilters), in_channels(NumChannels), kernel_size ]`
 * Neural Networks
   * Neural Networks have `Layers` and a `graph` 
   * `predict` and `activations` seems like the function that calculate the activation like `forward`  
@@ -162,6 +162,8 @@ function [f,g] = model(net,dlX,T)
 end
 ```
 
+* Weight Initialization
+  * Matlab provides some init algorithms like `glorot` (`Xavier` in torch) `He` (`Kaiming` in torch). 
 * Learning Control
   * `WeightLearnRateFactor` can control the weight learning in each layer. like `requires_grad` in pytorch.
 
