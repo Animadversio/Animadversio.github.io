@@ -57,6 +57,14 @@ class Self_Attn(nn.Module):
         return out,attention
 ```
 
+## Style GAN
+
+
+
+
+
+## BigGAN
+
 
 
 
