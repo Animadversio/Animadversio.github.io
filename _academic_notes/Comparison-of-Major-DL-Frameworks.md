@@ -136,8 +136,8 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
 ## Matlab
 
 * Data Structure
-  * Basic data structure in matlab deep learning toolbox is `dlarray` . You have to wrap your normal matrix into `dlarray` to use as input to models. This is like `torch.Tensor` in pytorch, this wrap is needed to compute gradient and gpu acceleration. 
-  * `extractdata` is like `torch.Tensor.numpy()` that you can get your data back from the wrap.
+  * Basic data structure in matlab deep learning toolbox is `dlarray` . You have to wrap your normal matrix into `dlarray` to use as input to models. This is like `torch.Tensor` in pytorch, this wrap is needed to compute gradient and ease gpu acceleration. 
+  * `extractdata` is like `torch.Tensor.numpy()` that you can get your data back from the wrap, but this also breaks the gradient trace for your `dlarray` 
   * `dlarray` has a labelled version and a un-labelled version. Labels will tell the framework whats the meaning of each axis. 
     * Some operation requires a un-labelled `dlarray` some requires a labelled `dlarray` 
   * Note the order of dimension in matlab is different from most python frameworks. Matlab uses `[H,W,C,B]` torch uses `[B,C,H,W]` . Besides, matlab is row (first dim) major array storage, python is column (last dim) major storage. So reshape can be very different in 2.
@@ -148,8 +148,9 @@ Generally, `PyTorch` is a great tool for general purpose differentiable computin
   * `predict` and `activations` seems like the function that calculate the activation like `forward`  
     * `calculateActivations` is the core function underlying it. 
 * Gradient Computation
-  * In 2019b, matlab autodifferentiation is done through `dlgradient` which could compute first order gradient for multiple input function using `dlarray` . However its current usage is not like `torch.autograd` see [example](https://www.mathworks.com/help/deeplearning/ug/include-automatic-differentiation.html ) . It has to be used in a function that gets passed to `dlfeval` 
-  * Currently it doesn't support higher order derivative. (like Hessian. So still needs pytorch for Hessian computation. )
+  * In 2019b, matlab auto differentiation is done through `dlgradient` which could compute first order gradient for multiple input function using `dlarray` . However its current usage is not like `torch.autograd` see [example](https://www.mathworks.com/help/deeplearning/ug/include-automatic-differentiation.html ) . It has to be used in a function that gets passed to `dlfeval` . 
+  * Currently **it doesn't support higher order derivative** in the backward mode! (like Hessian. So still needs pytorch for Hessian computation. )
+    * However if you do artificial forward differentiation to approximate the Hessian! There you only first order gradients. 
 
 ```matlab
 [f,g] = dlfeval(@model,net,dlX,t);
@@ -159,6 +160,16 @@ function [f,g] = model(net,dlX,T)
     y = forward(net,dlX);
     f = fcnvalue(y,T); % crossentropy or similar
     g = dlgradient(f,net.Learnables); % Automatic gradient
+end
+```
+```matlab
+x0 = dlarray([-1,2]);
+[fval,gradval] = dlfeval(@rosenbrock,x0)
+
+function [y,dydx] = rosenbrock(x)
+% calculate the dlgradient inside the function within dlfeval
+    y = 100*(x(2) - x(1).^2).^2 + (1 - x(1)).^2;
+    dydx = dlgradient(y,x);
 end
 ```
 
@@ -181,6 +192,7 @@ end
 ## PyTorch
 
 * `torch.nn.DataParallel` is a great tool, makes parallelized training at almost no cost! 
+* PyTorch support tensorboard now! (Through tensorboardX in older versions.)
 * In parallel `Lucent` came out in May 2020 as a pytorch version of `Lucid`. 
 
 
