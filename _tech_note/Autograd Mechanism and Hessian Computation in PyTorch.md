@@ -40,6 +40,13 @@ Note from the [official documentation]( https://pytorch.org/docs/master/notes/au
 
 And there are some flags that we can add to control what to keep. 
 
+* `create_graph` 
+* `retain_graph`
+
+## Hessian Vector Product
+
+
+
 
 
 ## Higher Order Gradient Computation
@@ -66,3 +73,10 @@ So if we are limited in memory, we can recompute some of the internal states bec
 And by selecting which nodes to recompute and which node to keep, we can achieve a large memory saving and lose a little in speed. This is exactly what [gradient checkpointing](https://github.com/cybertronai/gradient-checkpointing) is doing! 
 
 https://hub.packtpub.com/openais-gradient-checkpointing-package-makes-huge-neural-nets-fit-memory/ 
+
+## Forward Autograd 
+
+Connected to the last point, forward differencing has the great benefit of saving memory since the intermediate states are irrelevant. And it's suitable for few input, numerous output case. 
+
+
+

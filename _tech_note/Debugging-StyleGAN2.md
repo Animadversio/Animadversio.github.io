@@ -77,8 +77,6 @@ def upfirdn2d_native(
 
 
 
-
-
 Finally the moment of faith! 
 
 ```bash
