@@ -66,12 +66,16 @@ Thus the actual thing being maximized is this. First term maximizing the mass on
 $$
 \mathcal L(\nu) =\mathbb E_{q(.;\nu)} \{\log p(z,x) -\log q(z;\nu)\}
 $$
-The next trick is for gradient, 
+Note without gradient trick this can still work for many classical models with conjugacy in mind. 
+
+
+
+The next trick is for gradient, (log expectation trick)
 $$
 \nabla_\nu \mathcal L(\nu)=\nabla_\nu\mathbb E_{q(.;\nu)} \{\log p(z,x) -\log q(z;\nu)\}\\
 =\mathbb E_q\nabla_\nu \log q(z;\nu)\{\log p(z,x) -\log q(z;\nu)+1\}
 $$
-Using this trick we can switch gradient inside expectation, thus we can sample $z$ and compute gradient and estimate gradient in a batch. 
+Using this trick we can switch gradient inside expectation, thus we can sample $z$ and compute gradient and estimate gradient in a batch, this allows VI to be applicable to complex modern models. 
 
 Refer to a great [Tutorial in EdwardLib](http://edwardlib.org/tutorials/klqp). 
 
@@ -83,7 +87,9 @@ Note that Variational Information Maximization has a similar method.
 
 ## Mean Field Simplification
 
-Limit the family of distribution to the case that are "conditionally" independent. $\beta$ is the global variable to be inferred, and $z_i$ are the local hidden variables. So mean field assumption is the local variables are independent to each other after conditioning on $\beta$ 
+Limit the family of distribution to the case that are "conditionally" independent.
+
+In this LDA problem,  $\beta$ is the global variable to be inferred, and $z_i$ are the local hidden variables. So mean field assumption is the local variables are independent to each other after conditioning on $\beta$ 
 $$
 p(\beta,z,x)=p(z)\prod_i p(z_i,x_i\mid\beta)
 $$
@@ -104,3 +110,4 @@ $$
 * [Tutorial on NIPS 2016](https://www.youtube.com/watch?v=ogdv_6dbvVQ&t=1674s) 
 * [InfoGAN](https://arxiv.org/abs/1606.03657): Apply Variational Information Maximization to unsupervised GAN learning 
 * [VIME](https://arxiv.org/abs/1605.09674): Apply Variational Information Maximization to exploration in RL agent learning. Cf. Curiosity driven learning
+* Edward Tutorials http://edwardlib.org/tutorials/
