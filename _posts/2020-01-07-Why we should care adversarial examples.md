@@ -1,4 +1,12 @@
-
+---
+layout: post
+title: Understanding of Adversarial Attack
+author: Binxu Wang
+published: true
+use_math: true
+comments: true
+tags: [Computer Vision, Adversarial Example, Neural Networks]
+---
 
 # Understanding of Adversarial Attack
 
