@@ -10,7 +10,7 @@ tags: [academic note, reinforcment learning, machine learning, AI, deep learning
 typora-copy-images-to: ../assets/img/notes/RL/
 ---
 
-# Note on MiniMax
+# Note on MiniMax (Updating)
 
 ## Motivation
 

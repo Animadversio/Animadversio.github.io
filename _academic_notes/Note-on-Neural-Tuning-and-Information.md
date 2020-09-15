@@ -1,8 +1,16 @@
+---
+layout: post
+title: Note on Neural Tuning and Information
+author: Binxu Wang
+date: Aug. 24th, 2020
+comments: true
+categories: [neuroscience]
+tags: [academic note, Neuroscience, Statistics, Neural Tuning, Sensory Neuroscience, Information Theory]
+---
 
+# Note on Neural Tuning and Information
 
-
-
-Given a stimuli with $D$ intrinsic dimensions, 
+Given a stimuli with $D$ intrinsic dimensions, we consider how one neuron or a population of neurons is informative about this stimulus space. 
 
 ## Specific Information (Mutual Information)
 

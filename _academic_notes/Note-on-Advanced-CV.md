@@ -32,3 +32,5 @@ Link to syllabus.
 
 [Note on Computational Photography](Note-on-Computational-Photography.md) 
 
+[Note on Hardware Based Computational Photography](Note-on-Hardware-Computational-Photography)
+

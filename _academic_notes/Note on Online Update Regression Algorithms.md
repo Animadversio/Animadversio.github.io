@@ -126,3 +126,10 @@ Actually, most modern numerical linear algebra environments have automatic metho
 * If you are tackling high dimensional regression problem, see [tutorial in matlab fitrlinear](https://www.mathworks.com/help/stats/fitrlinear.html) 
   * This is a Matlab function to fit high dimensional linear regression problem with regularization and automatic hyper-parameter tuning! Really useful
 * Python Scikit-Learn has many packages for LinearRegression, see [Linear models](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model)  but they are not as well integrated as the matlab verson. 
+
+
+
+## See also
+
+[Note on Online Computing Correlation](Brief-Note-on-Online-Computing-Correlation) 
+

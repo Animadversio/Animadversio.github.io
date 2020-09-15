@@ -1,5 +1,16 @@
-Note on Hardware Based Computational Photography
-===
+---
+layout: post
+title: Note on Hardware Based Computational Photography
+author: Binxu Wang
+date: Feb 27th, 2020
+comments: true
+use_math: true
+categories: [computer science]
+tags: [academic note, computer vision, computer science, machine learning, computer graphics]
+typora-copy-images-to: ../assets/img/notes/cv2
+---
+
+# Note on Hardware Based Computational Photography
 
 > Now we have far more computational power than before! 
 >

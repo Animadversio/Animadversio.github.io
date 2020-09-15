@@ -16,7 +16,7 @@ tags: [tech note, Algorithm, Statistics]
 
 ## Motivation
 
-
+Sometimes the matrix (samples) to be correlated is too large, then you need to compute the correlation when the data is pouring in, i.e. online computing correlation. 
 
 ## Method
 
