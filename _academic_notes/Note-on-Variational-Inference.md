@@ -17,7 +17,11 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Graph Model
 
 # Philosophy
 
-Solving Bayesian inference problem with optimization. It's not trying to use Bayes rule directly, but to fit this distribution within a class of distributions $q(z;\nu)$, by minimizing the KL-divergence between the 2 models. 
+The spirit of Variational Inference is to solve Bayesian inference problem with optimization. 
+
+In the scenario of latent factor 
+
+It's not trying to use Bayes rule directly, but to fit this distribution within a class of distributions $q(z;\nu)$, by minimizing the KL-divergence between the 2 models. 
 $$
 p(z\mid x)=\frac{p(z,x)}{\sum_z p(z,x)}\\
 \nu^*=\arg\min_\nu KL(q(z;\nu)\|p(z\mid x))\\

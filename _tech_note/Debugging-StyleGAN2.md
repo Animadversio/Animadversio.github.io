@@ -6,7 +6,6 @@ date: June 10th, 2020
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, Machine Learning, Computer Vision, debug]
-
 ---
 
 ## Environment Bug
@@ -87,3 +86,23 @@ python generate.py --ckpt model.ckpt-533504.pt --size 512
 
 
 https://libraries.io/pypi/torch-dwconv
+
+## Compiling Issue
+
+Major issue faced by this is the just in time compiler in pytorch will call C compiler in the process to compile the c code into library. On the windows platform it's using  `cl.exe` , while on unix `gcc` or `clang` may be used. 
+
+But the `cl.exe` requires several path variables to know where are the standard libraries. Usually for `cl.exe` this is set by `vcvar64.bat` . or `vcvarall.bat 64` (use other config for other architecture.) Usually the work flow is to run `vcvarall.bat 64` in a cmd console and then run the python code, through this the environment variables will be shared with `cl.exe` 
+
+A possible command to call this `bat` is like `"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64` 
+
+Thus you can load `StyleGAN2` easily in terminal. But in an IDE, it's harder to call on `vcvarall.bat` to set the environment variables.  As the environment variables will be set into a different process....
+
+
+
+**Reference**
+
+* [Note for using ninja build on windows](https://github.com/ninja-build/ninja/wiki#windows) 
+* [How to run vcvarsall.bat in the same process as python?](https://stackoverflow.com/questions/14697629/running-a-bat-file-though-python-in-current-process)
+
+> you will never get variables to persist after a process has terminated
+
