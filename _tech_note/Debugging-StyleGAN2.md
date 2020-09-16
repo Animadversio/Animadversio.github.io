@@ -2,7 +2,7 @@
 layout: post
 title: Debugging StyleGAN2 in PyTorch
 author: Binxu Wang
-date: June 10th, 2020
+date: June 10th, 2020 (Updates Sep 15th)
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, Machine Learning, Computer Vision, debug]
@@ -122,7 +122,7 @@ setup(name='op_cpp',
 
 Note you need to choose `cpp_extension.CUDAExtension` if you are compiling some `.cu` CUDA code. If it's purely `c++` you can use `cpp_extension.CppExtension`. 
 
-And then run the command `python setup.py install` in the `op` folder. 
+Note here you need to run `vcvarsall.bat` first to set up all the variables. And then run the command `python setup.py install` in the `op` folder, to compile the C++ code into a python library. 
 
 ```
 running install
@@ -223,18 +223,57 @@ STYLEGAN2-PYTORCH\OP
 │       top_level.txt
 ```
 
+And then you can modify the code in `fused_act.py` and `upfirdn2d.py` to import `fused` and ` upfirdn2d` directly instead of loading and compiling them on the fly! 
+
+Through this PyCharm can run StyleGAN2 models as smoothly! 
+
+```python
+import upfirdn2d as upfirdn2d_op
+# module_path = os.path.dirname(__file__)
+# upfirdn2d_op = load(
+#     "upfirdn2d",
+#     sources=[
+#         os.path.join(module_path, "upfirdn2d.cpp"),
+#         os.path.join(module_path, "upfirdn2d_kernel.cu"),
+#     ], verbose=True,
+#     extra_ldflags=['c10_cuda.lib'],
+# )
+```
+
+```python
+import fused
+# module_path = os.path.dirname(__file__)
+# fused = load(
+#     "fused",
+#     sources=[
+#         os.path.join(module_path, "fused_bias_act.cpp"),
+#         os.path.join(module_path, "fused_bias_act_kernel.cu"),
+#     ], verbose=True,
+#     extra_ldflags=['c10_cuda.lib'],
+# )
+```
+
+
+
+
+
+Seems like this is the first time I successfully build / compile a package! 
+
+
+
 
 
 
 
 **Reference**
 
-* [List and Table of Environment Variables that are Set by VCVARSALL.bat](https://renenyffenegger.ch/notes/Windows/development/Visual-Studio/environment-variables/index) 
-
-* [Command Line Tools to Build on Windows](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019) 
-
-* [Note for using ninja build on windows](https://github.com/ninja-build/ninja/wiki#windows) 
-* [How to run vcvarsall.bat in the same process as python?](https://stackoverflow.com/questions/14697629/running-a-bat-file-though-python-in-current-process)
+* About `vcvarsall.bat`
+  * [List and Table of Environment Variables that are Set by VCVARSALL.bat](https://renenyffenegger.ch/notes/Windows/development/Visual-Studio/environment-variables/index) 
+  * [Command Line Tools to Build on Windows](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019) 
+  * [Note for using ninja build on windows](https://github.com/ninja-build/ninja/wiki#windows) 
+  * [How to run vcvarsall.bat in the same process as python?](https://stackoverflow.com/questions/14697629/running-a-bat-file-though-python-in-current-process)
 
 > you will never get variables to persist after a process has terminated
 
+* About general build C extension for pytorch
+  * [Tutorial on CPP Extension](https://pytorch.org/tutorials/advanced/cpp_extension.html)
