@@ -117,7 +117,7 @@ I[n] = \rho[n]f(\hat n [n],L)\\
 R[n]*S[n]
 $$
 
-Kind of decomposing into reflectance times shading. 
+Kind of decomposing pixel intensity into reflectance times shading. 
 
 
 
