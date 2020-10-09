@@ -28,7 +28,7 @@ So I have to rename `tensorflow_core` in `C:\ProgramData\Anaconda3\envs\tf\Lib\s
 
 ## Operators Bug
 
-As torch cuda compilation of these pytorch operators doesn't work then I choose to find and debug the native pytorch implementations of it and just use them. 
+As torch cuda compilation of these pytorch operators doesn't work, one solution is to find and debug the **native pytorch implementations of it** and just use them. 
 
 ```python
 import torch.nn.functional as F
@@ -74,7 +74,7 @@ def upfirdn2d_native(
     return out[:, :, ::down_y, ::down_x]
 ```
 
-
+Note this native pytorch implementation will decrease forward and backward pass time by a large margin...
 
 Finally the moment of faith! 
 
@@ -87,23 +87,31 @@ python generate.py --ckpt model.ckpt-533504.pt --size 512
 
 https://libraries.io/pypi/torch-dwconv
 
-## Compiling Issue
+## Solving Compiling Issue
 
 Major issue faced by this is the just in time compiler in pytorch will call C compiler in the process to compile the c code into library. On the windows platform it's using  `cl.exe` , while on unix `gcc` or `clang` may be used. 
 
-But the `cl.exe` requires several path variables to know where are the standard libraries. Usually for `cl.exe` this is set by `vcvar64.bat` . or `vcvarall.bat 64` (use other config for other architecture.) Usually the work flow is to run `vcvarall.bat 64` in a cmd console and then run the python code, through this the environment variables will be shared with `cl.exe` 
+But the `cl.exe` requires **several path variables to know where are the standard libraries**. Usually for `cl.exe` this is set by `vcvar64.bat` . or `vcvarall.bat 64` (use other config for other architecture.) Usually the work flow is to run `vcvarall.bat 64` in a cmd console and then run the python code in the same console, through this, the environment variables will be shared with `cl.exe` 
 
-A possible command to call this `bat` is like `"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64` 
+A possible command to call this `bat` is like 
 
-Thus you can load `StyleGAN2` easily in terminal. But in an IDE, it's harder to call on `vcvarall.bat` to set the environment variables.  As the environment variables will be set into a different process....
+````cmd
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
+````
+
+Thus you can load `StyleGAN2` easily in terminal. But in an IDE, it's harder to call on `vcvarall.bat` to set the environment variables.  As the environment variables will be set into a different process and `cl.exe` know nothing about it....
+
+
 
 ## Compile Extension Permanently on Windows
 
-The major issue for the method used in the the repo is the extension needs to be compiled once in a while. So you need to setup `vcvarsall.bat` beforehand to run `cl.exe` . But that requires you to have a command line environment, and many IDE do not have the capability to run `vcvarsall.bat` and then keep all the environment variables set in it. 
+The major issue for the method used above is the extension needs to be compiled everytime you restart your process and load the model. So you need to setup `vcvarsall.bat` beforehand to run `cl.exe` . But that requires you to have a command line environment, and many IDE do not have the capability to run `vcvarsall.bat` and then keep all the environment variables set in it. 
 
-So at the end I decided to compile the extension into a package once and for all! All we need is to write up a `setup.py` file and compile the `.cpp` `.cu` codes into a library.
 
-Following the example in this [tutorial](https://pytorch.org/tutorials/advanced/cpp_extension.html)  the `setup.py` file reads this 
+
+So at the end I decided to **compile the extension into a package once and for all**! All we need is to write up a `setup.py` file and compile the `.cpp` `.cu` codes into a library. And then some linking packages will create interface in python to these library to use the compiled functions. 
+
+Following the example in this [tutorial](https://pytorch.org/tutorials/advanced/cpp_extension.html)  the `setup.py` file reads like this, pretty simple. 
 
 ```python
 from setuptools import setup, Extension
@@ -259,9 +267,67 @@ import fused
 
 Seems like this is the first time I successfully build / compile a package! 
 
+## Compiling Operator on Linux
+
+Setup the environment and related packages. 
+
+```
+module load cuda-10.1
+export CUDA_HOME=/export/cuda-10.1
+module load cuDNN-7.6.0
+module load gcc-5.5.0
+```
+
+cublas_v2.h not found error....found in cuda-10.0 folder.
+
+So 
+
+```
+module load cuda-10.1
+export CUDA_HOME=/export/cuda-10.0
+module load cuDNN-7.6.0
+module load gcc-5.5.0
+python setup.py install
+```
+
+```
+python generate.py --ckpt /scratch/binxu/torch/StyleGANckpt/ffhq-512-avg-tpurun1.pt --size 512
+
+python generate.py --ckpt /scratch/binxu/torch/StyleGANckpt/stylegan2-ffhq-config-f.pt --size 1024
+```
 
 
 
+````
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+
+
+````
+
+```
+This error is raised if some CUDA code wasn’t compiled for the compute capability of your device.
+How did you install PyTorch and which GPU are you using?
+```
+
+This is related to the `from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d` operators. They are not well compiled on gpu
+
+```
+import torch
+from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
+tmp = fused_leaky_relu(torch.randn(512,512),torch.randn(1))
+
+tmp = fused_leaky_relu(torch.randn(512,512).cuda(),torch.randn(1).cuda())
+
+
+upfirdn2d(torch.randn(1,3,10,10).cuda(),torch.randn(3,3).cuda())
+upfirdn2d(torch.randn(1,3,10,10),torch.randn(3,3))
+
+
+g_ema = Generator(
+        512, 512, 8, 2
+    ).to("cuda")
+    checkpoint = torch.load(args.ckpt)
+```
 
 
 

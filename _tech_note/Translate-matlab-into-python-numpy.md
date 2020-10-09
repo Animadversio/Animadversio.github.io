@@ -14,6 +14,8 @@ Just like written languages, different programming languages have different inna
 
 But if we just want to translate an algorithm from one language to another, we can do so. 
 
+Note: An official table of translation could be looked up here. [numpy for matlab users](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) . 
+
 **Objective** : If we have a script in matlab, how can we translate that into python. (`numpy` and `matplotlib`)
 
 * General
@@ -58,7 +60,7 @@ But if we just want to translate an algorithm from one language to another, we c
   * `struct` is also good for structured array data! 
       * `repmat(struct('image',[],'eig',[]),1,10)`  can create an array of structure which is easy to 
     * Matlab `cell` is like the python `list` which is a universal container for any heterogenous things. 
-    
+  
 + String and Printing
 
     + Python string is so easy to use `"%s-%d" % (str,int)` syntax can perform string formatting anywhere; Matlab has more cumbersome syntax, with several choices
