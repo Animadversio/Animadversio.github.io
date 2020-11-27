@@ -1578,9 +1578,10 @@ Note,
 
 
 
-> Actually, any assumption we make to solve equations mathematically simple, may be substitue to be a Neural Network that learning these priors from data. 
+> Actually, any assumption we made to solve equations mathematically simple, may be substituted by a Neural Network that learning these priors from data. 
+> (Tractable driven assumption -> Data driven assumption)
 
-* 
+
 
 
 
@@ -1624,6 +1625,7 @@ Thus a same framework could be used for multiple tasks.
 ## DL in Stereo
 
 > Look into the classic pipeline, see where is the hacky part, replace with a trained NN. 
+> (Hacky part is where human brain learns from data and experience, and inject some prior to it. NN can do that with data. )
 
 
 
@@ -1761,11 +1763,14 @@ The core understanding is the covariance of layers represents style.
 
 # Lec 25 Generative Adversarial Network
 
-## Why Generative???????????????
+## Why Generative?
 
 * Usually the network output a single best guess, $\hat y $. 
-* $p(y|x)$ Is not deterministic
-*  
+* But $p(y|x)$ Is not deterministic, sometimes you want to model a prior or posterior distribution instead of one point estimate. 
+  * Conditional GAN is modelling the posterior distribution / guesses given a input.
+  * Unconditional GAN is modelling the prior natural statistics
+
+
 
 
 
@@ -1859,7 +1864,6 @@ Cycle consistency Loss
 
 **Caveat** 
 
-* 
 * Add some sample pairs may constraint the transform. 
 
 

@@ -38,3 +38,15 @@ https://distill.pub/2019/visual-exploration-gaussian-processes/
 
 ## Kernel Design
 
+
+
+## Application
+
+
+
+### Gaussian Processes Regression
+
+
+
+
+
