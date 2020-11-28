@@ -36,7 +36,7 @@ https://github.com/danvk/localturk
 
 
 
-
+http://babieslearninglanguage.blogspot.com/2013/10/randomization-on-mechanical-turk_10.html
 
 ## psiTurk
 
