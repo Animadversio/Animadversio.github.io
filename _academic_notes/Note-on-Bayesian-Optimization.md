@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Gaussian Process
+title: Note on Bayesian Optimization
 author: Binxu Wang
 date: July 1st, 2020
 use_math: true
@@ -31,6 +31,8 @@ BO is preferred in such cases
 * Low dimension
 
 When not to use BO
+
+* High dimensional problem
 
 https://nbviewer.jupyter.org/github/SheffieldML/GPyOpt/blob/devel/manual/GPyOpt_modular_bayesian_optimization.ipynb
 

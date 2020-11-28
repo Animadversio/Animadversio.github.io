@@ -1,3 +1,17 @@
+---
+layout: post
+title: Scene Programming in MonkeyLogic2
+author: Binxu Wang
+date: Oct.13th,2020
+comments: true
+categories: [coding]
+tags: [tech note, debug, monkeylogic]
+---
+
+## Motivation
+
+Writing a ML2 task with relatively complex timing dependency.
+
 https://monkeylogic.nimh.nih.gov/docs_CreatingTask.html#RuntimeVersion2
 
 ## Adapter Chain
@@ -42,7 +56,11 @@ Note, the trackers are predefined in `timing` file **eye_**, **eye2_**, **joy_**
 
 For manual of common adapters, see [doc](https://monkeylogic.nimh.nih.gov/docs_RuntimeFunctions.html). 
 
+## Playing Movie
+
 [MovieGraphics](https://monkeylogic.nimh.nih.gov/docs_RuntimeFunctions.html#MovieGraphic)
 
+Note Original Movie object doesn't provide functionality to change the size of presentation. But we can use general purpose resizing object function to achieve that. 
 
+## Resize Object
 
