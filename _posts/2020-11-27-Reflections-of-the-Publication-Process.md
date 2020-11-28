@@ -63,12 +63,6 @@ tags: [essay, personal writing, academia, feelings, career]
   * 如果有合适的listener让你可以解释清楚你的point，这个过程会非常享受。
   * 人用口语conversational表达一个idea似乎比书面写出一个idea更容易。
 
-* 
-
-
-
-
-
 ### 有关写code
 
 许多coding的lesson在6-7年前的信科课上的确学过，但“纸上学来终觉浅”
@@ -92,9 +86,11 @@ tags: [essay, personal writing, academia, feelings, career]
   * 由于不清楚后续应用，过早封装可能会在函数里丢掉后续有用的信息引起重复计算。
   * 为了某个目的写的封装code也许assume了某种应用，后续其他应用也许就用不了，就得重写封装。
 * 一路向前(Fast Forever)与 代码重构(code refactoring): 
-  * test idea时不用太在意code的整洁，封装接口可能写的太多或者太少。但下一次应用时（一般是第二天起床）看到这些code就会头痛欲裂。感觉原因是一部分相关的working memory在睡眠时被扔掉了，再使用昨天的code就艰难了很多。
-  * 在写实验code以及初步analysis时因为目标不明确，很难重构好，这时写的乱七八糟的script即可
-  * 但在写大规模实验code时就很希望能有模块化的组件方便一次性能尝试所有的参数组合。
+  * test idea时不用太在意code的整洁，封装接口可能写的太多或者太少。但下一次应用时（一般是第二天起床）看到这些code就会头痛欲裂。( 感觉原因是一部分相关的working memory在睡眠时被扔掉了，再使用昨天的code就艰难了很多。
+  * Refactoring、Documenting的最佳时间是第二天或者过几天醒来要重新使用这一code。
+  * 在写实验code以及初步analysis时因为目标不明确，很难重构好，这时写的乱七八糟的script即可。但在写大规模实验code时就很希望能有模块化的组件方便一次性能尝试所有的参数组合，这时就很需要well wrapped code.
+
+Related Read: [From Experimental Code to Package Product](https://towardsdatascience.com/building-package-for-machine-learning-project-in-python-3fc16f541693) 
 
 ### 有关paper
 
@@ -115,7 +111,9 @@ tags: [essay, personal writing, academia, feelings, career]
   * 所以正如What to show所说，有时得到一个observation本身是很激动的事，但找到用index来quantify的方法以及这个observation与某种control的不同就比较难
 * Schematics是很重要的，特别是你的point依赖一种直观，好的schematics的能convey things that are hard to express in words. 
 
-* * 
+* 有关作图：
+  * 这回作图对Illustrator的使用纯熟了不少，虽然还不是信手拈来至少已经感觉到用AI的效率可以跟Powerpoint的效率相提并论，而且还比较flexible。
+  * 
 
 ### 有关response
 

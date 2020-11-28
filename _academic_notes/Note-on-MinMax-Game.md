@@ -2,7 +2,7 @@
 layout: post
 title: Note on MinMax Game
 author: Binxu Wang
-date: May 18th, 2020
+date: May 18th, 2020 (updated Oct.13th)
 comments: true
 use_math: true
 categories: [machine learning, algorithm, computer science]
@@ -25,7 +25,7 @@ So the setting is you have 2 parties with conflicting objective $L_A=-L_B$    . 
 
 ## MinMax
 
-In 
+
 
 
 
