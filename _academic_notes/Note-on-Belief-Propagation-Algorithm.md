@@ -37,7 +37,7 @@ There are many graphical models appearing in different names, but intrinsically 
 
 **Definitions**: 
 
-* **Bayes Network** Bayes Network这种模型模拟的是变量间的条件概率关系，即有向边$A\to B$代表一种条件概率/变量间的依赖关系$P(B|A)$。因而这一模型经常伴随着因果关系的解释(Causal Interpretation). 见[示例](https://en.wikipedia.org/wiki/Bayesian_network#Example). 因而对应的图，就是有向无环图(Directed Acyclic Graph)。
+* **Bayes Network** Bayes Network这种模型模拟的是变量间的条件概率关系，即有向边$A\to B$代表一种条件概率/变量间的依赖关系$P(B\mid A)$。因而这一模型经常伴随着因果关系的解释(Causal Interpretation). 见[示例](https://en.wikipedia.org/wiki/Bayesian_network#Example). 因而对应的图，就是有向无环图(Directed Acyclic Graph)。
 * **Markov Random Field** MRF。
 	* 使得变量间满足条件独立性的图即马尔科夫随机场。
 * **Conditional Random Field** Similar to MRF. 
