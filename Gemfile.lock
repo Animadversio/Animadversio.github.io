@@ -48,6 +48,8 @@ GEM
       listen (~> 3.0)
     kramdown (2.3.0)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.3)
     listen (3.3.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -72,6 +74,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2019.1)
       tzinfo (>= 1.0.0)
+    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -80,9 +83,11 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.12)
   jekyll-relative-links
+  kramdown-parser-gfm
   rake (~> 12.3)
   type-on-strap!
   tzinfo-data
+  wdm (~> 0.1.0)
 
 BUNDLED WITH
    1.16.4

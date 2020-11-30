@@ -3,8 +3,9 @@ layout: post
 title: Note on Word2Vec 
 author: Binxu Wang
 date: Nov 27th, 2020
-use_math: true
 comments: true
+use_math: true
+published: true
 categories: [algorithm, machine learning]
 tags: [tech note, Unsupervised Learning, Statistical Learning, ML, Representation Learning, Language, NLP]
 typora-copy-images-to: ..\assets\img\notes\nlp
