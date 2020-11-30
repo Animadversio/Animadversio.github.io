@@ -22,7 +22,7 @@ In this note, I'm going to introduce the objective and methods for Word2Vec and 
 
 The objective for the method is to find a **good** vector representation of words, which is easier to use than a one hot encoding! 
 
-However, good is a vague word. To find a proxy for this final goal, they defined this quantifiable objective: **predictability of the words in the context given a center word**[^1]. 
+However, good is a vague word. To find a proxy for this final goal, they defined this quantifiable objective: **predictability of the words in the context given a center word** . 
 
 As a sketch, their model learns two vector, input vector and output vector for each token $v_w,u_w$. Note they choose to have different representations of a word when they are in the context vs they are in the center, which could be a design choice.
 
@@ -39,16 +39,14 @@ $$
 
 
 
-Just to mention, a related method **Continuous Bag-of-Word** used the predictability of the central word given the context. As shown above, it's framework is to average the embedding of the context words in the window, and use NN to transform this "Continuous Bag of Word" vector to predict the identity of center word using classification. 
+Just to mention, a related method **Continuous Bag-of-Word** used the predictability of the central word given the context as their training objective.
 
+As shown above, its model is to average the embedding of the context words in the window, and use NN to transform this "Continuous Bag of Word" vector to predict the identity of center word using classification. 
 
 $$
 \mathcal L=\frac 1T\sum_{t\leq T}\log p_\theta(w_{t}\mid w_{t-c:t+c,\neg t})\\
 p(w_t\mid w_{t-c:t+c,\neg t})=SoftMax(NN(\frac 1{2c}\sum_{-c\leq j\leq c,j\neq 0} v_{w_{t+j}}),w_t)
 $$
-
-
-[^1]: An related method **Continuous Bag-of-Word** used the predictability of the central word given the context. 
 
 ## Training Tricks
 
@@ -64,6 +62,8 @@ Techniques to circumvent this is
 
 
 ### Hierarchical SoftMax
+
+This is a relatively hard way to implement softmax, and requires some human knowledge about how to construct the tree / hierarchy.
 
 [Intro to Hierarchical SoftMax](https://leimao.github.io/article/Hierarchical-Softmax/) 
 
@@ -87,7 +87,7 @@ $$
 
 ## Evaluation and Property
 
-What property should a good embedding have?
+What property should a **good** embedding have?
 
 In the original paper, it has these features: the similar words are clustered together with cosine similarity. While there is also a analogy structure, where $vec(Man)-vec(woman)+vec(King)\approx vec(Queen)$. Thus these become commonly used benchmark properties for a word embedding. 
 
@@ -108,4 +108,5 @@ The authors gave
 
 
 
-* Original paper [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf) 
+* Original CBOW paper [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf) 
+* Original SkipGram paper [Distributed Representations of Words and Phrases and their Compositionality](https://papers.nips.cc/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf) 
