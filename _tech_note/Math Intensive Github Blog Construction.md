@@ -120,3 +120,30 @@ Current modification to make this work include
 * Add `jekyll-relative-links (0.6.1)
         jekyll (>= 3.3, < 5.0)` to `Gemfile.lock` 
 * Then note that you should not add space in the link `[name](xxx xxx.md)` instead, use ``[name](xxx-xxx.md)` and it will be translated properly! 
+
+# What if `MathJax` is not rendering correctly
+
+`MathJax` is a JS package hosted and maintained by someone else. 
+
+So it's possible that the JS path we are using has suddenly gone down. If so change the `src` in`_include\mathjax_support` . Also additional rendering configurations could be added to config the package. Recently (2020, Nov) the `cdn` server for mathjax has been down, and we will use the MathJax served in `cdnjs` instead. 
+
+```html
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+```
+
+Note, MathJax 3 has been out now, but it does not support `\\` as the line changing symbol in latex block.....So we are sticking to MathJax2 until that is supported
+
+https://github.com/mathjax/MathJax/issues/2312
