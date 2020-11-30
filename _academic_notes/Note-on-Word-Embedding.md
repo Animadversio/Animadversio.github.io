@@ -24,10 +24,14 @@ The objective for the method is to find a **good** vector representation of word
 However, good is a vague word. To find a proxy for this final goal, they defined this quantifiable objective: **predictability of the words in the context given a center word**[^1]. 
 
 As a sketch, their model learns two vector, input vector and output vector for each token $v_w,u_w$. Note they choose to have different representations of a word when they are in the context vs they are in the center, which could be a design choice.
+
+
 $$
 \mathcal L=\frac 1T\sum_{t\leq T}\sum_{-c\leq j\leq c,j\neq0}\log p_\theta(w_{t+j}\mid w_{t})\\
 p_\theta(w_O\mid w_I) = \frac{\exp{u_{w_O}^Tv_{w_I}}}{\sum^W_{w}\exp{u^T_wv_{w_I}}}
 $$
+
+
 **Comments on Efficiency**: The model looks really simple, and it doesn't even requires a deep NN for `SkipGram` model, it only needs to store two large matrix. As there is no expansion of neural activation, the batch size can be insanely huge > 5000 center, surround batch can well fit on a modest GPU. In the original paper's C implementation, they could train on 10 Billion + words in a PC in a day. 
 
 ![Schematics for CBOW and SkipGram](https://github.com/jojonki/word2vec-pytorch/raw/master/word2vec.PNG)
@@ -35,6 +39,8 @@ $$
 
 
 Just to mention, a related method **Continuous Bag-of-Word** used the predictability of the central word given the context. As shown above, it's framework is to average the embedding of the context words in the window, and use NN to transform this "Continuous Bag of Word" vector to predict the identity of center word using classification. 
+
+
 $$
 \mathcal L=\frac 1T\sum_{t\leq T}\log p_\theta(w_{t}\mid w_{t-c:t+c,\neg t})\\
 p(w_t\mid w_{t-c:t+c,\neg t})=SoftMax(NN(\frac 1{2c}\sum_{-c\leq j\leq c,j\neq 0} v_{w_{t+j}}),w_t)
@@ -71,6 +77,8 @@ Techniques to circumvent this is
 Note that, the original probability maximization problem is a $W$ class classification problem for each of the $T$ vectors, ($W$ is the size of vocabulary) with the correct outcome being a one hot vector of the real word in this context, this is the same as cross-entropy loss.
 
 Negative Sampling reframes this multi-classification problem into a binary classification problem, i.e. combining all the classes that are not true words to be false labels. Specifically, given a center word, the context could be classified as positive examples, while some random random other words should be classified as negative samples. The equation for this is simple
+
+
 $$
 \log \sigma(u_{w_c}v_{w_I})+\sum_{w_r\sim P(w)}\log (1-\sigma(u_{w_r}v_{w_I})) 
 $$
@@ -82,11 +90,11 @@ What property should a good embedding have?
 
 In the original paper, it has these features: the similar words are clustered together with cosine similarity. While there is also a analogy structure, where $vec(Man)-vec(woman)+vec(King)\approx vec(Queen)$. Thus these become commonly used benchmark properties for a word embedding. 
 
-
-
-
-
 ## Emergence of these Properties
+
+The authors gave 
+
+
 
 
 
