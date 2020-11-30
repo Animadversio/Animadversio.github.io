@@ -8,7 +8,6 @@ comments: true
 categories: [mathematics, algorithm, machine learning]
 tags: [tech note, Math, Statistics, Statistical Learning, ML, Optimization]
 typora-copy-images-to: ..\assets\img\notes\gp
-
 ---
 
 # Note on Bayesian Optimization
