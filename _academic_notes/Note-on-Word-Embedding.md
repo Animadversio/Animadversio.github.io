@@ -81,7 +81,7 @@ Negative Sampling reframes this multi-classification problem into a binary class
 
 
 $$
-\log \sigma(u_{w_c}v_{w_I})+\sum_{w_r\sim P(w)}\log (1-\sigma(u_{w_r}v_{w_I})) 
+\log \sigma(u_{w_c}v_{w_I})+\sum_{w_r\sim P(w)}\log (1-\sigma(u_{w_r}v_{w_I}))
 $$
 
 

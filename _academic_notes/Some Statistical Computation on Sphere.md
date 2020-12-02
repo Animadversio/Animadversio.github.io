@@ -2,14 +2,14 @@
 layout: post
 title: Some Computation on Sphere 
 author: Binxu Wang
-date: Oct 13th, 2019
+date: Oct 13th, 2019 (updated Dec.1st 2020)
 use_math: true
 comments: true
 categories: [mathematics]
 tags: [tech note, Statistics, Math, Geometry]
 ---
 
-# Some Computation on Sphere (Compact Riemann Manifold)
+# Some Computation on Sphere (Updating)
 
 ## Motivation
 
@@ -26,15 +26,13 @@ But these things become a problem on the sphere, because of the intrinsic Geomet
 
 
 
-
-
 *Note*: [Simulation_and_Visualization_of_Spherical_Distributions](https://www.researchgate.net/publication/324605982_Simulation_and_Visualization_of_Spherical_Distributions) an 2018 review by some UCSB statisticians is a great guide to the topic. 
 
 ## Generate Uniform Distribution
 
+**Problem**: Generate a uniform distribution on the sphere. 
 
-
-
+Normalized Gaussian distribution will do the work, due to the intrinsic rotation symmetry. However, a uniform distribution does not guarantee to generate no clusters. 
 
 
 
@@ -50,21 +48,15 @@ geodesic icosphere
 
 ## Define the Mean of Points 
 
-**Problem**: 
+**Problem**: Given a set of points on a sphere, compute their mean. 
 
-
-
-**Note**: that circularity happens in the parameter space (intrinsic corrdinate of the manifold), but not in the embedded space! So many work could be done easier by resorting to the extrinsic coordinates. 
+**Note**: that circularity happens in the parameter space (intrinsic coordinate of the manifold), but not in the embedded space! So many work could be done easier by resorting to the extrinsic coordinates. 
 
 Check this repo for different method to generate points on a sphere and compare. 
 
  https://github.com/gradywright/spherepts 
 
 ## Fit a Distribution of Sphere
-
-
-
-
 
 **Problem**: Given a set of sample points $z_i$ on the sphere, fit a distribution defined on sphere as the model of data. 
 
@@ -103,13 +95,25 @@ V = coeffvalues(Parameter);
 CI = confint(Parameter);
 ```
 
-
-
-
-
 ## Visualize Function on Sphere
 
 Refer to this note for plotting in `matlab` 
 
 https://math.boisestate.edu/~wright/montestigliano/PlottingOnTheSphere.pdf 
+
+
+
+## Numerical Integration on Sphere
+
+**Problem**: Given a set of points and their function evaluations on a sphere $\{p_i\in S^2,f(p_i)\}$ or given a function handle, that could be evaluated at any points on a sphere. Compute the integration of the function on sphere. 
+$$
+
+$$
+
+
+## Numerical Differentiation on Sphere
+
+$$
+
+$$
 
