@@ -1,12 +1,18 @@
-
-
-
+---
+layout: post
+title: MTurk 101
+author: Binxu Wang
+date: Nov. 21st, 2020
+comments: true
+categories: [coding]
+tags: [tech note, neuroscience, psychology, behavior, network]
+---
 
 ## MTurk 
 
-MTurk is a online way to recruit subjects and perform tasks.
+MTurk is a online way to recruit subjects and perform tasks, widely used in psychology and machine learning to collect human perception and behavior data. 
 
-Some terminology
+Some terminology: 
 
 * HIT: Basically the task
 * Requester: the experimenter
@@ -19,28 +25,36 @@ A user side tutorial on [how to get Turker to assist annotate data. ](https://mo
 [Tim Brady tutorial](https://bradylab.ucsd.edu/ttt/)
 
 ### Qualification
+Quality of subjects and how attentive they are to your task has enormous effect on the quality of data you get from it, so you definitly want quality control there.
 
 There are ways to pre filter the subjects by defining qualification. ( there are some funny qualifications like have to participate in 2016 election etc.)
 
 [Qualification](https://blog.mturk.com/tutorial-understanding-requirements-and-qualifications-99a26069fba2)
 
+Besides, add catch trials to find the subjects that are not really doing the work. Requesters can refuse to pay for them based on their performance. 
+
 ### Material Needed for a Task
 
+* An online repository to store the resources e.g. images. 
+	* Usually an Amazon AWS storage service like S3 will suffice. 
+* Account for Amazon Mechanical Turk as requestor. (Maybe as worker.)
+* HTML, JS script for the task. 
+* CSV table containing the variable values for each individual trial. 
+* Money and your card. (You can prepay or just link a card.)
+* Publish the task! Recruit subjects. 
 
-
-
+### Randomization
+http://babieslearninglanguage.blogspot.com/2013/10/randomization-on-mechanical-turk_10.html
 
 ### Coding the HTML form
 
-See the note on html GUI and JavaScript. 
+See the note on [html GUI and JavaScript](HTML-JS-101.md)
 
 ### Local Deployment
 
 https://github.com/danvk/localturk
+Note this is not super up to data, so may not work with the most recent APIs. 
 
-
-
-http://babieslearninglanguage.blogspot.com/2013/10/randomization-on-mechanical-turk_10.html
 
 ## psiTurk
 
