@@ -96,14 +96,22 @@ Before diving into calculation, let's first fix the notations. In the following 
 * The percentile function $$S(PRV_i,PUB)$$ is the private cards' percentile, which could be represented by a float matrix with some NaN values. Here I adopted the convention of descending percentile. (e.g. $S(PRV_i,PUB)=0$ is the strongest private set). 
 
 Thus the win rate of your card sets estimated naively is the following, (you are the $i$ player and assuming set of players on table is $Ply$)
+
+
 $$
 \mathbb E\{\prod_{j\in Ply,j\neq i}[S(PRV_j,PUB)>S(PRV_i,PUB)]\}\\
 =\sum_{PUB}P(PUB)\prod_{j\in Ply,j\neq i}\sum_{PRV_j}(S(PRV_j,PUB)>S(PRV_i,PUB))P(PRV_j)
 $$
+
+
 Given a uniform and independent distribution[^2] to $$PRV_j$$ then the expression above could be written simply 
+
+
 $$
 \sum_{PUB}P(PUB)(1-S(PRV_i,PUB))^{\|Ply\|-1}
 $$
+
+
 $\|Ply\|$ is the number of player on table. This naive win rate can be computed efficiently from the table $$S$$ by exponentiating and averaging one row! 
 
 This result is both illuminating and limited. This expression captures the fact that generally the fewer player on table, the more probable for you to win! This fact leads players to reduce the number of player on table by raising draw. 
@@ -128,7 +136,8 @@ Fold will result in a fixed loss of money $-d_i$ .
 
 Not fold and follow will result in a distribution of outcomes but we can estimate it roughly by 
 $$
-p(win_i)*(\mathbb E[Income\mid win_i]-\bar d) -(1-P(win_i)) * \bar d
+p(win_i)*(\mathbb E[Income\mid win_i]-\bar d) -(1-P(win_i)) * \bar d\\
+=p(win_i)*\mathbb E[Income\mid win_i]-\bar d
 $$
 A key part is the Expected raw income $\mathbb E[Income\mid win_i]$ . We know a lower bound for this expected income, however it's much more involved to estimate its exact value. 
 $$
