@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI for Texas Hold'em
-# img: ..\assets\img\notes\poincare\nona_tessal9-3.png
+img: ..\assets\img\notes\poincare\nona_tessal9-3.png
 # feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
 author: Binxu Wang
 use_math: true
