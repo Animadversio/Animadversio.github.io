@@ -122,19 +122,25 @@ I modelled this decision process in two stage (2 layer decision tree). First the
 
 The general framework to treat this decision problem is that each action will give rise to a distribution of incomes (rewards). We will choose the action to maximize the mean outcome or maximize a certain percentile of outcome. (like maximize lower bound is the same as minimize loss, maximize a higher percentile is the same as risk seeking.) 
 
-Let's first use the decision of Fold or not as example. 
+Let's first use the decision of Fold or not as example. Given your current draw $d_i$ and the maximal draw $\bar d$ 
 
+Fold will result in a fixed loss of money $-d_i$ . 
 
+Not fold and follow will result in a distribution of outcomes but we can estimate it roughly by 
+$$
+p(win_i)*(\mathbb E[Income\mid win_i]-\bar d) -(1-P(win_i)) * \bar d
+$$
+A key part is the Expected raw income $\mathbb E[Income\mid win_i]$ . We know a lower bound for this expected income, however it's much more involved to estimate its exact value. 
+$$
+\mathbb E[Income\mid win_i] > MoneyOnTable + \bar d - d_i
+$$
+So in the next section I'll specifically describe how to estimate this expectation by Monte Carlo simulation. 
 
-
+Currently this decision is made by comparing the two expectation values. 
 
 ## Estimating Income
 
 Note in the game of Hold'em, you do not have a fixed reward size like in bandit. You are controlling your income size by adjusting your raising and following behavior. 
-
-
-
-
 
 
 
