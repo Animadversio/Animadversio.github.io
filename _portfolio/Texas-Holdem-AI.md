@@ -14,17 +14,9 @@ tags: [Math, Probability, Artificial Intelligence, Game]
 
 ## Motivation
 
-
+Texas Hold'em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I'd like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. ).
 
 ![Img From https://www.instructables.com/Learn-To-Play-Poker---Texas-Hold-Em-aka-Texas-Ho/](..\assets\img\portfolio\PokerRanking.png)
-
-
-
-## Conceptualize Texas Hold'em
-
-Texas Hold'em is a game of probability and calculation. 
-
-
 
 
 
@@ -32,11 +24,19 @@ Texas Hold'em is a game of probability and calculation.
 
 ## Heuristics
 
+As we played Hold'em a lot recently, some rule of thumbs could be learnt easily. 
+
 * Usually follow when your card is weak. 
 * Fold if you cannot afford to bet you can win. 
 * Raise to win money if you are strong. 
 * Raise gradually to lure people in. 
 * All in if you are sure that you will win and the other side want's to follow. 
+
+
+
+## Conceptualize Texas Hold'em
+
+
 
 
 
@@ -74,11 +74,15 @@ At the first glance, what we need to compute are 22100 square matrices of 1176 b
 
 But memory and computation-wise this is not very efficient. In my current CPU, compute one match table takes ~ 2 mins, thus all the match table will take ~ 30 CPU days. On the storage side, this can takes ~ 120 Gb to store all the tables, even though I use low precision integer number to store the ranking and collision matrix. 
 
-In the end, I leveraged the symmetry of public card sets, i.e. 4 colors are equivalent, to save computation. At the end of the day, only 1795 sets of public card (match table) needs to be computed. Then I designed a color remapping process to rename the colors to get the match table they need. 
+In the end, I leveraged the symmetry of public card sets, i.e. 4 colors are equivalent thus many public sets are the same just by remapping the cards' color[^3]. This dramatically save computation. At the end of the day, only 1795 sets of public card (match table) needs to be computed. Then I designed a color remapping process to rename the colors to get the match table they need. 
 
 This computation takes around half a day by distributing onto 10 CPU nodes on cluster. And the database is less than 10 Gb, which can be further compressed to ~ 1Gb using zip. 
 
-The way we leverage symmetry is detailed in the appendix. 
+
+
+A general lesson I take from this is actually anything that doesn't rely on game state like player's action history can be potentially pre-computed. The only issue is the computational time and storage. If the database is too large and computing one thing is fast, then compute it on the fly may be a better choice. But here 
+
+[^3]: The way we leverage symmetry is detailed in the appendix. 
 
 ## Estimate Win Rate
 
