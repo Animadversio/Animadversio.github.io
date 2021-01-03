@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI for Texas Hold'em
-img: ..\assets\img\portfolio\Texas_Holdem.svg
+img: ..\assets\img\portfolio\Texas_Holdem.png
 # feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
 author: Binxu Wang
 use_math: true
@@ -15,6 +15,8 @@ tags: [Math, Probability, Artificial Intelligence, Game]
 ## Motivation
 
 
+
+![Img From https://www.instructables.com/Learn-To-Play-Poker---Texas-Hold-Em-aka-Texas-Ho/](..\assets\img\portfolio\PokerRanking.png)
 
 
 
@@ -136,12 +138,12 @@ Fold will result in a fixed loss of money $-d_i$ .
 
 Not fold and follow will result in a distribution of outcomes but we can estimate it roughly by 
 $$
-p(win_i)*(\mathbb E[Income\mid win_i]-\bar d) -(1-P(win_i)) * \bar d\\
-=p(win_i)*\mathbb E[Income\mid win_i]-\bar d
+p(win_i)*(\mathbb E[RawIncome\mid win_i]-\bar d) -(1-P(win_i)) * \bar d\\
+=p(win_i)*\mathbb E[RawIncome\mid win_i]-\bar d
 $$
-A key part is the Expected raw income $\mathbb E[Income\mid win_i]$ . We know a lower bound for this expected income, however it's much more involved to estimate its exact value. 
+A key part is the Expected raw income $\mathbb E[RawIncome\mid win_i]$ . We know a lower bound for this expected income, however it's much more involved to estimate its exact value. 
 $$
-\mathbb E[Income\mid win_i] > MoneyOnTable + \bar d - d_i
+\mathbb E[RawIncome\mid win_i] > MoneyOnTable + \bar d - d_i
 $$
 So in the next section I'll specifically describe how to estimate this expectation by Monte Carlo simulation. 
 
