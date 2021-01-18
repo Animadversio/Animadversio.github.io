@@ -32,7 +32,5 @@ Comparison:
 
 
 
-
-
 ## Gaussian Process Regression
 
