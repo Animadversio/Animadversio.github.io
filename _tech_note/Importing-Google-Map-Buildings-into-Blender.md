@@ -32,7 +32,11 @@ https://github.com/eliemichel/MapsModelsImporter
 
 * Join the patches to a single object. 
 * And merge vertices by distance。 
+* Process texture and stuff to retain a single kind of material with the color. 
 
-* Process texture and stuff! 
 
-See the youtube video for more info. 
+
+See the youtube video for a tutorial. 
+
+* [Google Maps 3D: Data into Blender](https://www.youtube.com/watch?v=F_XsmoZJmG8)
+* [Google Maps 3D: Photogrammetry Mesh Clean-up](https://www.youtube.com/watch?v=XUkMY8Sp_AM)
