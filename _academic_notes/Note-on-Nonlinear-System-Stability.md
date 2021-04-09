@@ -102,7 +102,7 @@ With 1,2 the system is stable at $x^*$, with 1,3 system is asymptotic stable at 
 * $\dot V(x)\leq - c_3\|x\|^k$
 
 
-Another **Lyapnov theorem for Global Exponentially Stability**: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, $\exists \alpha$ s.t. $\forall x$
+Alternative **Lyapnov theorem for Exponentially Stability**: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, $\exists \alpha$ s.t. $\forall x$
 
 * $V(x)$ is pos.def.
 * $\dot V(x)\leq -\alpha V(x)$ 
