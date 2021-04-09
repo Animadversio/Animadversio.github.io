@@ -16,15 +16,15 @@ typora-copy-images-to: ..\assets\img\notes\dynsys
 ## Definitions
 **Definitions** Given a system $\dot x=f(x)$, and a equilibrium point $f(x^*)=0$ let it be $x^*=0$. The equilibrium point is 
 
-* Stable: $\exist \delta,\epsilon, \|x(0)\|<\delta \implies \forall t>0,\|x(t)\|<\epsilon$
+* Stable: $\exists \delta,\epsilon, \|x(0)\|<\delta \implies \forall t>0,\|x(t)\|<\epsilon$
 	* *Interpret*: Points starts around fix point, stays around it. 
 * Unstable: When it's not stable. 
-* Attractive: $\exist \delta,\|x(0)\|<\delta \implies \|x(t)\|\to 0,when\; t\to\infty$
+* Attractive: $\exists \delta,\|x(0)\|<\delta \implies \|x(t)\|\to 0,when\; t\to\infty$
 	* *Interpret*: Points starts around fix point, converge to it finally.
 	* *Note*: A equilibrium can be attractive without being stable. (Saddle on Limit Cycle)
 * Asymptotic stable: Attractive and stable
 	* *Interpret*: points starts around fix point, stays around and converge finally.
-* Exponentially stable: $\exist \delta,\|x(0)\|<\delta \implies \forall t, \|x(t)\|\leq ce^{-\alpha t}$, for $c,\alpha>0$
+* Exponentially stable: $\exists \delta,\|x(0)\|<\delta \implies \forall t, \|x(t)\|\leq ce^{-\alpha t}$, for $c,\alpha>0$
 	* *Interpret*: Points converge to fix point, can be bounded by exponential.
 	* *Note*: $ES\implies AS$
 * Globally Asymptotic Stable: For all initial $x_0$ 
@@ -95,7 +95,28 @@ With 1,2 the system is stable at $x^*$, with 1,3 system is asymptotic stable at 
 
 *Note*: a radially unbounded $V$ guarantees the sublevel sets are bounded.
 
+
+**Lyapnov theorem for Exponentially Stability**: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, and $\exists c_1,c_2,c_3,k>0$ s.t. $\forall x\in D$
+
+* $c_1\|x\|^k\leq V(x)\leq c_2\|x\|^k$
+* $\dot V(x)\leq - c_3\|x\|^k$
+
+
+Another **Lyapnov theorem for Global Exponentially Stability**: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, $\exists \alpha$ s.t. $\forall x$
+
+* $V(x)$ is pos.def.
+* $\dot V(x)\leq -\alpha V(x)$ 
+
+
+
+
+
+
+
+
 ## Invariance Set Theorems
+> This theorem is useful to assist Lyapnov main theorem, when $\dot V(x)$ is neg.semi.def. in the domain.
+
 **LaSalle Theorem**
 
 
@@ -107,7 +128,7 @@ For LTI system, the criterion above could be reduced to a linear algebraic probl
 
 
 
-### Lyapnov's Indirect Method
+## Lyapnov's Indirect Method
 Connection of LTI and Nonlinear Stability
 
 

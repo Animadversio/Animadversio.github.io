@@ -4,7 +4,7 @@ title: Some principles to establish a lifestyle
 author: Binxu Wang
 comments: true
 categories: [personal writing]
-tags: [essay,personal writing, life]
+tags: [essay, personal writing, life, Philosophy]
 ---
 
 ## 一些建立生活体系的基本原则[^1]

@@ -11,5 +11,5 @@ typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
 
 
-[Stability Theory](Note-on-Nonlinear-System-Stability)
+[Stability Theory](Note-on-Nonlinear-System-Stability.md)
 
