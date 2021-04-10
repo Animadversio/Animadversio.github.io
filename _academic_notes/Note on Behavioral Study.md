@@ -198,7 +198,7 @@ Brain structure share similarity among
 ## Why Learning Evolves? 
 
 * Learning is based on environment regularity but not totally fixed! 
-* What's good for a learnt behavior VS innate behavior
+* Q: What's good for a learnt behavior VS innate behavior
 
 
 

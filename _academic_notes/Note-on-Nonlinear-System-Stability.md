@@ -108,34 +108,80 @@ Alternative **Lyapnov theorem for Exponentially Stability**: Given a system $\do
 * $\dot V(x)\leq -\alpha V(x)$ 
 
 
-
-
-
-
-
-
 ## Invariance Set Theorems
 > This theorem is useful to assist Lyapnov main theorem, when $\dot V(x)$ is neg.semi.def. in the domain.
 
 **LaSalle Theorem**
 
 
-### Stability Criterion for LTI
 
-For LTI system, the criterion above could be reduced to a linear algebraic problem. 
 
-**Lyapnov Equation**
 
 
 
 ## Lyapnov's Indirect Method
-Connection of LTI and Nonlinear Stability
+
+### Stability Criterion for LTI
+For LTI system $\dot x=Ax$, the criterion above could be reduced to a linear algebraic problem. 
+
+**Lyapnov Equation** $A^T P+PA=-Q$, Given $A$ any n-by-n matrix; $Q$ is positive definite symmetric matrix; Solving $P$ as positive definite matrix.
+
+**Theorem**: There exists a positive definite $P$ solution for any a positive definite $Q$. $\equiv$  $A$ is Hurwitz matrix. 
+* Further if $A$ is Hurwitz, $P$ is unique for $Q$
+
+*Interpret*: Given a stable linear system, we can pick a $Q$, solve Lyapnov Equation to get $P$.
+* Then we can define $V(x)=x^TPx$, this $V(x)$ will be a Lyapnov function. We can test this function for the non linear system 
+* For this $V$, $\dot V=-x^TQx$ will be negative definite
+* In fact, it's proven that $P$ equals, but this is too hard for computation. solving linear algebra is easier.
+
+$$
+P=\int_0^\infty e^{A^T\tau}Qe^{A\tau}d\tau 
+$$
 
 
+**Connection of LTI and Nonlinear Exponentially Stability** For system $\dot x=f(x)$, $f$ is C1 and for a $r>0$ the Jacobian map $x\to df_x$ is Lipschitz on $B_r(0)$, then the followings are equivalent.
 
+* $x^*$ is the exponentially stable fix point of the non linear system 
+* $x^*$ is an exponentially stable / asymptotic stable fixed point for the linearized system 
+* $A=df_{x^*}$ is a Hurwitz matrix
 
+*Interpret*: If the linearized matrix has Eigenvalue on imaginary axis, then the fixed point will not be exponentially stable, i.e. it will not converge exponentially on some dimension. 
 
 ## Converse Stability Theorems
+Converse Stability Theorems describes the existence of Lyapnov function given the Stability properties of a fixed point. 
+
+**Converse Asymptotic Stability (Massera)** For $\dot x=f(x)$, $x^*=0$ is an asymptotic stable equilibrium point. $f(x)$ is locally Lipschitz on $\chi$
+
+* Then there exists a ball $B_r(0)$, $r>0$ and C1 function $B_r(0)\to \mathbb R$, satisfying
+	1. $V(x)$ is pos.def. at 0. 
+	2. $\dot V(x)$ is neg.def at 0. 
+
+If $x^*=0$ is globally asymptotic stable (GAS) and $\chi=\mathbb R^n$ 
+
+* Then there exist a C1 function $V:\mathbb R^n\to \mathbb R$ satisfying
+	1. $V$ is radially unbounded 
+	2. $V(x)$ is pos.def. at 0. 
+	3. $\dot V(x)$ is neg.def at 0. 
+
+**Converse Asymptotic Stability with Domain of Attraction** For $\dot x=f(x)$, $x^*=0$ is an asymptotic stable equilibrium point. Its domain of attraction is $D_0$. Suppose $f(x)$ is locally Lipschitz on $\chi$
+
+* Then exist a C1 function $V:D_0\to \mathbb R$ satisfying
+	1. $V(x)$ is pos.def at 0
+	2. $V(x)\to+\infty,when x\to\partial D_0. (*Radially unbounded*)
+	3. $\forall c>0$, $\Omega_c=\{x\mid V(x)\leq c\}$ is compact subset of $D_0$
+	4. $\dot V(x)$ is neg.def. at 0
+
+*Interpret*: The $V$ is a perfect Lyapnov function describing the shape of the domain of attraction. 
+
+**Converse Exponentially Stability** For $\dot x=f(x)$, $x^*=0$ is an exponentially stable equilibrium point. $f(x)$ is locally Lipschitz on $\chi$. 
+
+* Then there exists a ball $B_r(0)$, $r>0$ and function $B_r(0)\to \mathbb R$, satisfying
+	1. $c_1 \|x\|^2\leq V(x)\leq c_2\|x\|^2$
+	2. $\dot V(x)\leq c_3 \|x\|^2$
+	3. $\|\partial V/ \partial x\|\leq c_4 \|x\|$
+	4. With $c_1,c_2,c_3,c_4>0$
+
+*Interpret*: The $V$ is a quadratic type function. 
 
 
 
@@ -143,4 +189,5 @@ Connection of LTI and Nonlinear Stability
 
 
 
-[Oriolo](http://www.diag.uniroma1.it/~oriolo/amr/material/stability.pdf)
+* [Oriolo](http://www.diag.uniroma1.it/~oriolo/amr/material/stability.pdf)
+* [Stanford ee363](https://web.stanford.edu/class/ee363/lectures/lyap.pdf)

@@ -104,3 +104,5 @@ If you have a good Q model function, then you can use some simple policy to choo
 Deep Q Learning is to substitute the big $(s_i, a_j)$ table for a complex function approximator DNN, and to learn Q functions by backprop. 
 
 DQN could be done by batch learning, record the $s_i,s',a_i,r_i$ pair for a few trials, and then revive these memory and learn from them. 
+
+**Tricks**
