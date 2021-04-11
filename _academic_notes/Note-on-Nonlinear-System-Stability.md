@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Stability Theory
+title: Note on Lyapnov Stability Theory
 author: Binxu Wang
 date: Apr 9th, 2021
 use_math: true
@@ -10,9 +10,13 @@ tags: [Math, Geometry, Dynamic System, Control Theory]
 typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
 
-<!-- # Nonlinear Dynamic System Notes -->
 
 # Stability Theory
+
+## Motivation
+We want to know for a dynamic system, in this note majorly autonomous system, when it is stable? The meaning of stability? If it's stable how to prove so. 
+Majorly we are going to use Lyapnov functions and spectral properties of linearized system to prove. 
+
 ## Definitions
 **Definitions** Given a system $\dot x=f(x)$, and a equilibrium point $f(x^*)=0$ let it be $x^*=0$. The equilibrium point is 
 
@@ -45,12 +49,12 @@ Linear system $\dot x=Ax$ has one or infinite equilibrium points.
 
 
 **Criterion**
-Stable for LTI:
+**Stable for LTI**:
 * If and only if, for $A$ 
 	* For the eigen space that geometric multiplicity equal to algebraic multiplicity, $\Re \lambda\leq 0$
 	* For the eigen space that geometric multiplicity less than algebraic multiplicity, $\Re \lambda< 0$
 
-Asymptotic / Exponentially Stable for LTI:
+**Asymptotic / Exponentially Stable for LTI**:
 * If and only if $\Re \lambda_i<0$, for $A$. 
 	* Also known as $A$ is a Hurwitz matrix. 
 
@@ -107,11 +111,14 @@ Alternative **Lyapnov theorem for Exponentially Stability**: Given a system $\do
 * $V(x)$ is pos.def.
 * $\dot V(x)\leq -\alpha V(x)$ 
 
+*Interpret*:
+* $V(x)$ is bounded by a parabola type thing up and down. so is $\dot V(x)$ bounded to be more negative than a parabola
+
 
 ## Invariance Set Theorems
 > This theorem is useful to assist Lyapnov main theorem, when $\dot V(x)$ is neg.semi.def. in the domain.
 
-**LaSalle Theorem**
+**LaSalle Theorem** 
 
 
 
@@ -129,23 +136,31 @@ For LTI system $\dot x=Ax$, the criterion above could be reduced to a linear alg
 **Theorem**: There exists a positive definite $P$ solution for any a positive definite $Q$. $\equiv$  $A$ is Hurwitz matrix. 
 * Further if $A$ is Hurwitz, $P$ is unique for $Q$
 
-*Interpret*: Given a stable linear system, we can pick a $Q$, solve Lyapnov Equation to get $P$.
-* Then we can define $V(x)=x^TPx$, this $V(x)$ will be a Lyapnov function. We can test this function for the non linear system 
-* For this $V$, $\dot V=-x^TQx$ will be negative definite
+*Interpret*: 
+* If a LTI system is exponentially or asymptotic stable, then there is a quadratic Lyapnov function to prove it. 
+	* Given a stable linear system, we can pick a $Q$, solve Lyapnov Equation to get $P$.
+	* Then we can define $V(x)=x^TPx$, this $V(x)$ will be a Lyapnov function. We can test this function for the non linear system  
+	* For this $V$, $\dot V=-x^TQx$ will be negative definite, so it's Lyapnov function.
 * In fact, it's proven that $P$ equals, but this is too hard for computation. solving linear algebra is easier.
 
 $$
 P=\int_0^\infty e^{A^T\tau}Qe^{A\tau}d\tau 
 $$
 
+* Numerically we solve it by `lyap` in `matlab`. 
 
-**Connection of LTI and Nonlinear Exponentially Stability** For system $\dot x=f(x)$, $f$ is C1 and for a $r>0$ the Jacobian map $x\to df_x$ is Lipschitz on $B_r(0)$, then the followings are equivalent.
+
+**Lyapnov's Indirect Method(Connection of LTI and Nonlinear Exponentially Stability)** For system $\dot x=f(x)$, $f$ is C1 and for a $r>0$ the Jacobian map $x\to df_x$ is Lipschitz on $B_r(0)$, then the followings are equivalent.
 
 * $x^*$ is the exponentially stable fix point of the non linear system 
 * $x^*$ is an exponentially stable / asymptotic stable fixed point for the linearized system 
 * $A=df_{x^*}$ is a Hurwitz matrix
 
-*Interpret*: If the linearized matrix has Eigenvalue on imaginary axis, then the fixed point will not be exponentially stable, i.e. it will not converge exponentially on some dimension. 
+*Interpret*: 
+
+* This is a very strong connection of linearized and nonlinear exponential stability. Spatial geometry + convergence speed. 
+
+* If the linearized matrix has Eigenvalue on imaginary axis, then the fixed point **will not be exponentially stable**, i.e. it will not converge exponentially on some dimension. 
 
 ## Converse Stability Theorems
 Converse Stability Theorems describes the existence of Lyapnov function given the Stability properties of a fixed point. 
@@ -167,7 +182,7 @@ If $x^*=0$ is globally asymptotic stable (GAS) and $\chi=\mathbb R^n$
 
 * Then exist a C1 function $V:D_0\to \mathbb R$ satisfying
 	1. $V(x)$ is pos.def at 0
-	2. $V(x)\to+\infty,when x\to\partial D_0. (*Radially unbounded*)
+	2. $V(x)\to+\infty,when\;x\to\partial D_0$. (*Radially unbounded*)
 	3. $\forall c>0$, $\Omega_c=\{x\mid V(x)\leq c\}$ is compact subset of $D_0$
 	4. $\dot V(x)$ is neg.def. at 0
 
@@ -182,10 +197,6 @@ If $x^*=0$ is globally asymptotic stable (GAS) and $\chi=\mathbb R^n$
 	4. With $c_1,c_2,c_3,c_4>0$
 
 *Interpret*: The $V$ is a quadratic type function. 
-
-
-
-
 
 
 

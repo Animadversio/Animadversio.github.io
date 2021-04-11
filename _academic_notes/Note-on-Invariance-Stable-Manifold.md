@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Nonlinear Dynamic System
+title: Note on Invariance and Stable Manifold 
 author: Binxu Wang
 date: Apr 9th, 2021
 use_math: true
@@ -9,8 +9,3 @@ categories: [mathematics]
 tags: [Math, Geometry, Dynamic System, Control Theory]
 typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
-
-[Invariance and Stable Manifold](Note-on-Invariance-Stable-Manifold.md)
-
-[Stability Theory](Note-on-Nonlinear-System-Stability.md)
-
