@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Oct. 1st, 2019
 comments: true
 categories: [neuroscience]
-tags: [academic note, Neuroscience,Memory]
+tags: [academic note, Neuroscience,Memory,Cognition]
 typora-root-url: ../assets/img/notes/Behav_Sci
 ---
 
