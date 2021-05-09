@@ -96,6 +96,12 @@ class _DenseBlock(nn.ModuleDict):
         return torch.cat(features, 1)
 ```
 
+Actually, DenseNet is relatively light weighted, the DenseNet 169 is only54Mb on disk. 
+
+
+
+
+
 ## GoogLeNet / Inception Net
 
 In a sense the motivation of Inception module is to reduce computational cost and also go deeper. 
