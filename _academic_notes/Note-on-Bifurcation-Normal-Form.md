@@ -6,7 +6,7 @@ date: May 9th, 2021
 use_math: true
 comments: true
 categories: [mathematics]
-tags: [Math, Geometry, Dynamic System, Control Theory]
+tags: [Math, Geometry, Dynamic System]
 typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
 
