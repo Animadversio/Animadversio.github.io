@@ -14,8 +14,6 @@ typora-copy-images-to: ..\assets\img\notes\dynsys
 
 When a system has control, then comes the questions of whether we could make it stable under the control. 
 
-Regular Feedback: regular feedback is a function $\bar u$ on state space $\mathbb R^n$, 1) Locally Lipschitz on $\mathbb R^n\setminus \{0\}$ 2) continuous at 0
-
 ## Problem Setup
 A control affine system is this
 
@@ -30,6 +28,9 @@ $$
 
 
 The **equilibrium stablization** problem is: For a controlled equilibrium $0$, $f(0)+g(0) u^\ast=0$, find a feedback function $u:\mathbb R^n\to\mathbb R^m$, s.t. $x=0$ is a globally asymptotic stable equilibrium. 
+
+**Regular Feedback**: regular feedback is a function $\bar u$ on state space $\mathbb R^n$, 1) Locally Lipschitz on $\mathbb R^n\setminus \{0\}$ 2) continuous at 0
+* Regular feedback is continuous. 
 
 ## Condition for Existence
 
@@ -54,6 +55,27 @@ Main theorem is **Arstein Sontag theorem**
 
 **Small Control Property** For a C.L.F., $\mathbb R\to\mathbb R$, $\forall \epsilon>0,\; \exists \delta >0$, such that, $\forall x\in B_\delta(0)\setminus 0$, there $\exists u\in B_\epsilon(0)$, s.t. $L_{f}V+\sum_i u_i L_{g_i}V<0$. 
 
-*Interpretation*: When the state deviation from equilibrium is small, you can use a small control to make it converge. (the Columb repulsion is like a counter example.)
+*Interpretation*: When the state deviation from equilibrium is small, you can use a small control to make it converge (decrease the C.L.F.). (the Columb repulsion is like a counter example.)
+
+## General Results
+**Brockett's Necessary Condition**: For system $\dot x=f(x,u)$, $f$ is locally Lipschitz w.r.t. $x$ and $u$. If it has a continuous stablizer $\bar u(x)$, $\bar u(0)=0$. then $\forall \epsilon >0, \exists\delta>0$, s.t. $B^n_\delta(0)\in f(B^n_\epsilon(0)\times B^m_\epsilon(0))$. 
+
+**Interpretation**:
+* Any neighborhood around 0 in the tangent space, could be covered by the image of the function $f(x,u)$ on a small neighborhood of control and state. 
+* In a small neighborhood around 0, small control signal and the drift can create vector $\dot x$ to any direction / small amplitude! (This system is fully steerable)
+	* In a sense, the velocity created is not limited to a subspace. 
+
+
+
+**Corrolary for driftless affine system**: If $f=0$ and $\dot x=\sum_i \bar u_i g_i(x)$, then if the $g_i$ vectors are rank deficient $rank([g_1(0),g_2(0),...,g_i(0)])< n$ then the 0 cannot be stablized continuously. 
+
+
+**Controllability for LTI system**: For linear control system, $\dot x=Ax+Bu$, then the controllabilty is determined by the Kalman rank condition: $rank\,\mathcal C=n$, $\mathcal C=[B,AB,A^2B,A^{n-1}B]$
+
+
+
+**Interpretation**:
+* This is a corrolary of Brockett theorem for LTI. 
+* 
 
 [MIT Dynamic System and Control 2011](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-241j-dynamic-systems-and-control-spring-2011/lecture-notes/)
