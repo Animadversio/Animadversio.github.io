@@ -14,5 +14,7 @@ typora-copy-images-to: ..\assets\img\notes\dynsys
 
 [Invariance and Stable Manifold](Note-on-Invariance-Stable-Manifold.md)
 
-[Stability Theory](Note-on-Nonlinear-System-Stability.md)
+[Lyapnov Stability Theory](Note-on-Nonlinear-System-Stability.md)
+
+[Feedback Stablization](Note-on-Feedback-Stablization.md)
 
