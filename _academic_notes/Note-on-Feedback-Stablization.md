@@ -72,10 +72,17 @@ Main theorem is **Arstein Sontag theorem**
 
 **Controllability for LTI system**: For linear control system, $\dot x=Ax+Bu$, then the controllabilty is determined by the Kalman rank condition: $rank\,\mathcal C=n$, $\mathcal C=[B,AB,A^2B,A^{n-1}B]$
 
-
-
 **Interpretation**:
-* This is a corrolary of Brockett theorem for LTI. 
-* 
+* This is related to Brockett theorem for LTI. 
+
+## Passivity
+**Intuition**: The system doesn't generate energy, the energy increase in it is less than or equal to the energy input. 
+* This property is inspired by the energy property in a electrical / mechanical system. 
+
+
+
+## Passivity Based Control
+
+
 
 [MIT Dynamic System and Control 2011](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-241j-dynamic-systems-and-control-spring-2011/lecture-notes/)

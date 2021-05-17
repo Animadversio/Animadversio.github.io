@@ -37,7 +37,6 @@ $$
 \dot x=\alpha-x^2
 $$
 
-
 **Pitchfork bifurcation**
 $$
 \dot x = x(\alpha-x^2)
@@ -48,7 +47,6 @@ $$
 $$
 \dot x=x(x-\alpha)
 $$
-
 
 **Hopf Bifurcation**
 
