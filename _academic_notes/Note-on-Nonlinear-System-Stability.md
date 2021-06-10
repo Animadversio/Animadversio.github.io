@@ -77,7 +77,7 @@ Linear system $\dot x=Ax$ has one or infinite equilibrium points.
 2. $\dot V(x)$ is neg.semi.def. on $D$
 3. $\dot V(x)$ is neg.def. on $D$
 
-With 1,2 the system is stable at $x^*$, with 1,3 system is asymptotic stable at $x^*$. 
+With 1,2 the system is stable at $x^\ast$, with 1,3 system is asymptotic stable at $x^\ast$. 
 
 **Comments**: 
 * Existence of Lyapnov function is sufficient but not necessary for stable fix point. See [Converse Theorems](#Converse-Stability-Theorems)

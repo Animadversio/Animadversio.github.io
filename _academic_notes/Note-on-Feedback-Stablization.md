@@ -70,10 +70,12 @@ Main theorem is **Arstein Sontag theorem**
 **Corrolary for driftless affine system**: If $f=0$ and $\dot x=\sum_i \bar u_i g_i(x)$, then if the $g_i$ vectors are rank deficient $rank([g_1(0),g_2(0),...,g_i(0)])< n$ then the 0 cannot be stablized continuously. 
 
 
-**Controllability for LTI system**: For linear control system, $\dot x=Ax+Bu$, then the controllabilty is determined by the Kalman rank condition: $rank\,\mathcal C=n$, $\mathcal C=[B,AB,A^2B,A^{n-1}B]$
+**Controllability for LTI system**: For linear control system, $\dot x=Ax+Bu$, then the controllabilty is determined by the Kalman rank condition: $rank\,\mathcal C=n$, $\mathcal C=[B,AB,A^2B,...,A^{n-1}B]$
 
 **Interpretation**:
-* This is related to Brockett theorem for LTI. 
+* This is a corrolary of Brockett theorem for LTI. 
+* The controllability matrix characterize the interaction between the control gain and the drift. 
+
 
 ## Passivity
 **Intuition**: The system doesn't generate energy, the energy increase in it is less than or equal to the energy input. 
