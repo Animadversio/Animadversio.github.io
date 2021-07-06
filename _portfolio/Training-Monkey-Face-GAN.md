@@ -18,11 +18,11 @@ tags: [Macaque, Generative Model, GAN, Manifold, ML]
 
 Obtaining a high quality GAN for a specific domain of interest to monkeys is useful for experiments in lab. 
 
-For training a monkey face GAN, there are a few related challenges, 
+For training a monkey face GAN, there are a few related challenges:
 
-1. Obtaining images of monkey faces or bodies
+1. **Data problem**: Obtaining images of monkey faces or bodies
 
-2. An efficient training method for making GAN work for a small dataset. 
+2. **Model problem**: An efficient training method for making GAN work for a small dataset. 
 
 ## DataSets
 
@@ -37,7 +37,7 @@ For training a monkey face GAN, there are a few related challenges,
 A more general way of obtaining these images is to scrape from Youtube video frames, but it needs to be annotated and face needs to be detected and aligned. The tools will be linked if found in the future. 
 
 * [Python Youtube downloader](https://towardsdatascience.com/build-a-youtube-downloader-with-python-8ef2e6915d97) blog. using this [package](https://github.com/pytube/pytube) 
-* Face detector ??
+* Face detector 
 
 One useful code snippet to unzip data is the [following](https://stackoverflow.com/questions/31346790/unzip-all-zipped-files-in-a-folder-to-that-same-folder-using-python-2-7-5) . 
 
@@ -75,12 +75,17 @@ The cropped and aligned version looks like this, which adjust and orientation to
 
 ![](..\assets\img\portfolio\Badonde-5340-170519_0.png)
 
+**Note**: some lab has trained macaque specific face detectors like [this](https://github.com/clwitham/MacaqueFaces) in matlab. But we stick to the more general pipeline here. 
+
+Empirically, we find that applying the Human face landmark model to monkeys will result in 19.8% of the crops to be unusable, although most of these wrong crops are around eyes, or nose or hands, so it's may be caused by a different geometry in monkey face and human face. 
+
 # GAN training
 
 For training a GAN efficiently, we chose from these recent developments
 
+* Data efficient GAN from MIT https://github.com/mit-han-lab/data-efficient-gans
+
 - StyleGAN2 with Limited Data from NVIDIA https://github.com/NVlabs/stylegan2-ada-pytorch
-- Data efficient GAN from MIT https://github.com/mit-han-lab/data-efficient-gans
 - https://github.com/google/lecam-gan
 
 
