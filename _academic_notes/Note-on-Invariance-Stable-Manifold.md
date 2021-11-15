@@ -9,3 +9,13 @@ categories: [mathematics]
 tags: [Math, Geometry, Dynamic System]
 typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
+
+## Invariance 
+
+
+### Properties of an Invariance Set
+
+
+
+## Stable and Unstable Manifold Theorem
+

@@ -76,4 +76,15 @@ Main theorem is **Arstein Sontag theorem**
 * This is a corrolary of Brockett theorem for LTI. 
 * The controllability matrix characterize the interaction between the control gain and the drift. 
 
+
+## Passivity
+**Intuition**: The system doesn't generate energy, the energy increase in it is less than or equal to the energy input. 
+* This property is inspired by the energy property in a electrical / mechanical system. 
+
+
+
+## Passivity Based Control
+
+
+
 [MIT Dynamic System and Control 2011](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-241j-dynamic-systems-and-control-spring-2011/lecture-notes/)

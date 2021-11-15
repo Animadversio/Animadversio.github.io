@@ -64,15 +64,41 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"D:\Github\Google_Vision_Image_L
 ## Use the service through the client! 
 
 ```python
+import os
+import io
+import json
+import pickle
+from os.path import join
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"D:\Github\Google_Vision_Image_Labelling\Image-patch-labelling-4e4cfd1664c2.json"
+# set up the client
+from google.cloud import vision
+client = vision.ImageAnnotatorClient()
+#%%
+imgbasedir = r"N:\Stimuli\2019-Free-Viewing"
+subfolders = ['2019-08-19-Beto',
+]
+for subfolder in subfolders:
+    imgdir = join(imgbasedir, subfolder)
+    # filter image names by their suffix
+    imgnames = [fn for fn in os.listdir(imgdir) if \
+                any(fn.endswith('.'+sfx) for sfx in ["bmp","BMP","jpg","jpeg","png","JPG","JPEG","tiff","TIFF"]) and \
+                not os.path.isdir(join(imgdir, fn))]
+    print("%d Images in %s folder" % (len(imgnames), subfolder))
+
+#%%
+from time import time
 t0 = time()
 for subfolder in subfolders:
-    imgdir = os.path.join(imgbasedir, subfolder)
-    print("%d Images in %s folder" % (len([fn for fn in os.listdir(imgdir) if ".db" not in fn]), subfolder))
-    imgnames = [fn for fn in os.listdir(imgdir) if ".db" not in fn]
-    # %%
+    imgdir = join(imgbasedir, subfolder)
+    # filter image names by their suffix
+    imgnames = [fn for fn in os.listdir(imgdir) if \
+                any(fn.endswith('.'+sfx) for sfx in ["bmp","BMP","jpg","jpeg","png","JPG","JPEG","tiff","TIFF"]) and \
+                not os.path.isdir(join(imgdir, fn))]
+    print("%d Images in %s folder" % (len(imgnames), subfolder))
+
     image_parse_dict = {}
     for imgname in imgnames:
-        with io.open(os.path.join(imgdir, imgname), 'rb') as image_file:
+        with io.open(join(imgdir, imgname), 'rb') as image_file:
             content = image_file.read()
         print(imgname)
         image = vision.types.Image(content=content)
@@ -88,11 +114,16 @@ for subfolder in subfolders:
         print("\n")
         image_parse_dict[imgname] = label_data
 
-    # %%
-    f = open(os.path.join(imgdir, "label_dict.pkl"), "wb")
-    pickle.dump(image_parse_dict, f)
-    f.close()
+    pickle.dump(image_parse_dict, open(join(imgdir, "label_dict.pkl"), "wb")) # Pkl file saved in binary format
+    json.dump(image_parse_dict, open(join(imgdir, 'label_result.json'), 'w')) # json file saved in readable format
     print("%.1fs" % (time() - t0))
+    # JSON is easier for matlab to read!!
+    # do `jsonData = jsondecode(fileread('..\\label_result.json'));` in matlab
+
+print("%.1fs" % (time() - t0))
+#%% Loading code post hoc
+image_parse_dict = pickle.load(open(os.path.join(imgdir, "label_dict.pkl"), "rb"))
+data_dict = json.load(open('result.json', 'r'))
 ```
 
 

@@ -56,6 +56,19 @@ Here I'll state the structure of HALS algorithm.
 
 The core idea is to solve each component to the residue separately, so each subproblem is much simpler, and also local to the component. 
 
+## Multiplicative Update Rule
+
+This is the original algorithm as proposed in Lee & Seung, which is another major kind of learning rule for NMF. 
+
+They proof that the objective is non-increasing under this learning rule. We link a derivation to it. 
+$$
+H_{i,j} \leftarrow H_{ij}   \frac{(AW^T)_{ij}}{(HWW^T)_{ij}}\\
+W_{i,j} \leftarrow W_{ij}  \frac{(H^TA)_{ij}}{(H^THW)_{ij}}
+$$
+https://stats.stackexchange.com/questions/351359/deriving-multiplicative-update-rules-for-nmf
+
+
+
 
 
 
@@ -72,3 +85,4 @@ There are multiple interpretations of NMF, they are mathematically equivalent
 Reference for Implementation is this [repo](<https://github.com/kimjingu/nonnegfac-matlab>). And the HALS algorithm is from this paper specifically.
 
 CICHOCKI, A., & PHAN, A.-H. (2009). Fast Local Algorithms for Large Scale Nonnegative Matrix and Tensor Factorizations. IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences, E92-A(3), 708–721. https://doi.org/10.1587/transfun.E92.A.708
+
