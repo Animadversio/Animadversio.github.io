@@ -1,6 +1,14 @@
-
-
-Hopfield Network
+---
+layout: post
+title: Note on Hopfield Network
+author: Binxu Wang
+date: Nov 15th, 2021
+use_math: true
+comments: true
+categories: [algorithm, machine learning]
+tags: [tech note, Unsupervised Learning, Statistical Learning, ML, RNN, cas]
+typora-copy-images-to: ..\assets\img\notes\hopfield
+---
 
 ## Rationale 
 
@@ -14,7 +22,7 @@ Hopfield Network
 
 
 
-Before google, content addressable memory this is quite amazing. 
+> Before google, content addressable memory this is quite amazing. 
 
 
 
@@ -35,17 +43,20 @@ $$
 
 > Can we derive a cost function or loss, such that minimize that loss lead to the model learn the data? 
 
-Get rid of spurious memory by unlearning. 
+<!--rid of spurious memory by unlearning. --> 
 
-Don't try to learn all memory at one shot, but learn one memory pattern at a time. 
+* Don't try to learn all memory at one shot, but learn one memory pattern at a time. (akin to stochastic gradient)
 
-* Regard 
+* Regard each neuron as a perceptron, let it predict its own value. Perceptron learning rule for each neuron 
+  * akin to "Pseudo likelihood. " in statistics
 
-* "Pseudo likelihood. "
 
 
 
 ## Reference
 
 * [Note of hopfield network (nyu.edu)](http://www.cns.nyu.edu/~eorhan/notes/hopfield.pdf) 
-* 
+* [Hinton's lecture on Hopfield Network](https://youtu.be/DS6k0PhBjpI)
+
+Extension [Modern Hopfield Network](Note-on-Modern-Hopfield-Net-Transformer.md)
+
