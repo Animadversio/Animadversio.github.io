@@ -102,7 +102,7 @@ We trained on a single NVIDIA 2060 GPU on Windows system, it takes ~ 3.5hrs to t
 Training curves:
 ![](..\assets\img\portfolio\monkeyfacegan_training.png)
 
-Fake monkey face distribution generated in 2805 epochs:
-![](..\assets\img\portfolio\monkeyfacegan_training.png)
+Fake monkey face distribution generated in 2805 epochs, looks pretty nice! 
+![](..\assets\img\portfolio\fakes002805_crop_rsz.png)
 
 
