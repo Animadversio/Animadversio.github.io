@@ -9,7 +9,7 @@ published: true
 comments: true
 date: June 9th, 2021
 tags: [Macaque, Generative Model, GAN, Manifold, ML]
-
+excerpt_separator: <!--more-->
 ---
 
 # Training GAN to Model Monkey Face Space
@@ -23,6 +23,7 @@ For training a monkey face GAN, there are a few related challenges:
 1. **Data problem**: Obtaining images of monkey faces or bodies
 
 2. **Model problem**: An efficient training method for making GAN work for a small dataset. 
+<!--more-->
 
 ## DataSets
 

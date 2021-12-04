@@ -8,6 +8,7 @@ use_math: true
 comments: true
 date: Mar 26th, 2021
 tags: [Math, Geometry, Manifold, Generative Model, GAN]
+excerpt_separator: <!--more-->
 ---
 # A Geometric Analysis of Deep Generative Image Models and Its Applications
 
