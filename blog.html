@@ -10,7 +10,7 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
   {% for post in site.posts %}
   {% unless post.categories contains 'personal writing' %}
      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> 
-      <b><i> {{ post.date | date_to_string }} </i></b> <!-- - {{ post.author }}  -->
+      <b><i> {{ post.date | date: "%B %-d, %Y" }} </i></b> <!-- - {{ post.author }}  -->
       <p> {{ post.excerpt | strip_html | truncate:150 }} </p>
       {% include tags_list_post.html tags=post.tags %}
   {% endunless %}
@@ -25,7 +25,7 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
   	{% if post.categories contains 'personal writing' %}
         
 	      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> 
-          <b><i> {{ post.date | date_to_string }} </i></b> <!-- - {{ post.author }}  -->
+          <b><i> {{ post.date | date: "%B %-d, %Y" }} </i></b> <!-- - {{ post.author }}  -->
           <p> {{ post.excerpt | strip_html | truncate:150 }} </p>
           {% include tags_list_post.html tags=post.tags %}
 	    

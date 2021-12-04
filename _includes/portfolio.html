@@ -9,8 +9,8 @@
         </div>
         <div class="colR">
             <h3><a href="{{ item.url }}">{{ item.title }}</a> </h3> 
-            
-            <i><b> {{ item.date | date_to_string }} </b></i> 
+
+            <i><b> {{ item.date | date: "%B %-d, %Y" }} </b></i> 
 
             <p>
                 {{ item.teaser | strip_html | truncate:250 }}
