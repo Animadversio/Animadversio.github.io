@@ -82,24 +82,27 @@ Empirically, we find that applying the Human face landmark model to monkeys will
 
 # GAN training
 
-For training a GAN efficiently, we chose from these recent developments
+For training a GAN with not a lot of images, we chose from these recent developments
 
 * Data efficient GAN from MIT https://github.com/mit-han-lab/data-efficient-gans
-
-- StyleGAN2 with Limited Data from NVIDIA https://github.com/NVlabs/stylegan2-ada-pytorch
-- https://github.com/google/lecam-gan
-
-
-
-## Data Streaming
-
+* StyleGAN2 with Limited Data from NVIDIA https://github.com/NVlabs/stylegan2-ada-pytorch
+* Regularize limited data gan training from Google https://github.com/google/lecam-gan
 
 
 ## Training Code
+We picked the DiffAugment training procedure for StyleGAN2 in [data efficient gans](https://github.com/mit-han-lab/data-efficient-gans/tree/master/DiffAugment-stylegan2-pytorch). Their repo is super well organized, training run itself is quite straight forward, no debugging needed. We used the following script .
 
+```bash
+python DiffAugment-stylegan2-pytorch\train.py --outdir=training-runs --data=$Datasets\macaque_face_aligned\fullsize_clean --gpus=1 --cfg=auto  --batch=12
+```
 
+We trained on a single NVIDIA 2060 GPU on Windows system, it takes ~ 3.5hrs to train 200 epochs. At 1000 epochs, the samples already look pretty good. So it's less than a day to do the training. 
 
+## Results
+Training curves:
+![](..\assets\img\portfolio\monkeyfacegan_training.png)
 
-
+Fake monkey face distribution generated in 2805 epochs:
+![](..\assets\img\portfolio\monkeyfacegan_training.png)
 
 
