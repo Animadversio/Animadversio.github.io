@@ -111,7 +111,7 @@ collections:
     output: true
     permalink: /:collection/:name
 
-category-list: [mathematics, neuroscience, machine learning, algorithm, computer science]
+category-list: [courses, mathematics, neuroscience, machine learning, algorithm, computer science]
 tech-cat-list: [neuroscience, machine learning, coding, misc]
 
 # BUILD SETTINGS
