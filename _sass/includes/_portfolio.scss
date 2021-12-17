@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 1120px;
 
     .caption {
         margin: 0;
@@ -18,7 +18,7 @@
         &::before {
             content: ' ';
             display: inline-block;
-            vertical-align: middle;
+            vertical-align: left;
             height: 100%;
         }
 
@@ -27,14 +27,14 @@
         }
 
         .caption-content {
-            font-size: 15px;
+            font-size: 21px;
             color: white;
             text-shadow: -1px 0 #ddd, 0 1px #ddd, 1px 0 #ddd, 0 -1px #ddd;
             display: inline-block;
-            vertical-align: middle;
+            vertical-align: left;
 
             @media screen and (max-width: $sm-break) {
-                font-size: 7px;
+                font-size: 12px;
             }
         }
     }
@@ -44,9 +44,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
+  max-width: 100%;
 }
 .portfolio-cell {
-  flex: 0 0 32%;
+  flex: 0 0 49%;
   margin-bottom: 10px;
 }

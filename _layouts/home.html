@@ -10,6 +10,24 @@ layout: default
   </div>
   {% endif %}
 
+<div class="colL">
+  <div class="content">
+  <article >
+  <section class="post-content">
+    <h2>Hi, I'm Binxu Wang!</h2>
+      <p>I'm a Neuroscience Ph.D. candidate at <a href="https://neuroscience.wustl.edu/">Washington University in St Louis</a>. Starting 2021 fall, I moved to the <a href="https://neuro.hms.harvard.edu/">Neurobiology program at Harvard Medical School</a> with my advisor <a href="https://ponce.hms.harvard.edu/">Carlos R. Ponce</a>. I'm trying to utilize quantitative and computational thinking to understand our brain and mind (esp. visual system) better. (<a href="https://animadversio.github.io/about/">More about me!</a>)</p>
+
+      <p>This is my personal website (under construction...), a logbook of my journey in neuro and ML. I regularly update <a href="https://animadversio.github.io/academic_notes/">conceptual notes</a> on various topics in neuroscience, machine learning, and math, which I touched upon during my research and teaching. Technical notes like debugging procedures will be posted <a href="https://animadversio.github.io/tech_note/">here</a>, hope it will be useful for others too. Lastly, I sometimes post essays in <a href="https://animadversio.github.io/blog.html">blogs</a>. For the fun projects I did, see my <a href="https://animadversio.github.io/portfolio/">portfolio</a>.</p>
+
+      <p>Here is a link to my <a href="https://scholar.harvard.edu/binxuw">academic / professional website</a>, which describes my research interest and progress more.&nbsp;</p>
+
+      <p>For the full publications list, see <a href="https://scholar.google.com/citations?user=8-njUc8AAAAJ&amp;hl=zh-CN">Google Scholar</a>.</p>
+  </section>
+  </article>
+  </div>
+  <!--  -->
+</div>
+<div class="colR">
   <div class="posts">
     {% for post in paginator.posts %}
     <div class="post-teaser">
@@ -18,17 +36,17 @@ layout: default
          <img src="{{ site.baseurl }}/{{ post.thumbnail }}">
       </div>
       {% endif %}
-      <span>
-          <header>
-            <h1>
+      <!-- <span> -->
+          <!-- <header> -->
+            <h2>
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                 {{ post.title }}
               </a>
-            </h1>
+            </h2>
             <p class="meta">
               {{ post.date | date: "%B %-d, %Y" }}
             </p>
-          </header>
+          <!-- </header> -->
           <div class="excerpt">
               {{ post.excerpt | strip_html | escape }}
             <!--{{ post.content | strip_html | truncate: "250" }}-->
@@ -36,7 +54,8 @@ layout: default
               {{ site.theme_settings.str_continue_reading }}
             </a>-->
           </div>
-      </span>
+          {% include tags_list_post.html tags=post.tags %}
+      <!-- </span> -->
     </div>
     {% endfor %}
   </div>
@@ -58,3 +77,17 @@ layout: default
   </div>
   {% endif %}
 </div>
+</div>
+
+<style>
+.colL {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+.colR {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+</style>

@@ -1,0 +1,8 @@
+{% assign tags = include.tags %}
+<div class="tag-list">
+{% for tag in tags %}
+<a class="button" href="{{site.baseurl}}/tags#{{ tag | cgi_escape }}">
+  <i class="fa fa-tag fa-fw"></i> {{ tag }}
+</a>
+{% endfor %}
+</div>
