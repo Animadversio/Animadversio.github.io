@@ -63,7 +63,7 @@ f(z)=\frac{az+b}{cz+d}
 $$
 Geometrically it's the composition of translation, rotation, scaling and inversion (complex inversion). Since it's analytical complex function, it defines a conformal map! 
 
-All the transformations form a group. This group is **homomorphic** to the matrix group $SL(2,\C)$ by forming the 2 by 2 matrix s.t. $\det\neq0$ 
+All the transformations form a group. This group is **homomorphic** to the matrix group $SL(2,\mathbb C)$ by forming the 2 by 2 matrix s.t. $\det\neq0$ 
 $$
 \frac{az+b}{cz+d}\mapsto\begin{bmatrix}a&b\\c&d\end{bmatrix}
 $$
@@ -102,7 +102,7 @@ Note the
 
 The 2 models' metric are connected by Cayley transform. This is a conformal isometry between the 2 models! Note it's a general mobius transform. 
 $$
-C:\H\to \mathbb D, z\mapsto \frac{z-i}{z+i}
+C:H\to \mathbb D, z\mapsto \frac{z-i}{z+i}
 $$
 
 Thus all the operations derived for disk or for half plane could be push to the other domain through this link. 
