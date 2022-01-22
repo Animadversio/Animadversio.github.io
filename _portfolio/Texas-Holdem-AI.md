@@ -8,6 +8,8 @@ use_math: true
 comments: true
 date: Jan 2nd, 2021
 tags: [Math, Probability, Artificial Intelligence, Game]
+excerpt_separator: <!--more-->
+teaser: Probability calculation to the rescue!
 ---
 
 # AI for Texas Hold'em
@@ -15,10 +17,9 @@ tags: [Math, Probability, Artificial Intelligence, Game]
 ## Motivation
 
 Texas Hold'em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I'd like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. ).
+<!--more-->
 
 ![Img From https://www.instructables.com/Learn-To-Play-Poker---Texas-Hold-Em-aka-Texas-Ho/](..\assets\img\portfolio\PokerRanking.png)
-
-
 
 
 

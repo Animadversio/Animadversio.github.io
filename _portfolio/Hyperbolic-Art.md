@@ -8,9 +8,14 @@ use_math: true
 comments: true
 date: April 11th, 2020
 tags: [Math, Geometry, Manifold, Art]
+excerpt_separator: <!--more-->
+teaser: Can we tile poincare disk with arbitrary equilateral shapes?
 ---
-
-Related to [Note on Hyperbolic Geometry](Hyperbolic-Geometry.md)
+Can we tile poincare disk with arbitrary equilateral shapes?
+This is related to [Note on Hyperbolic Geometry](Hyperbolic-Geometry.md). 
+<!--more-->
+ 
+Here are some samples with different tiling parameters: number of edges in an equilateral shape, number of lines joining at each intersection. 
 
 ![tri_tessal3-7.png](..\assets\img\notes\poincare\tri_tessal3-7.png)
 ![tri_tessal3-8.png](..\assets\img\notes\poincare\tri_tessal3-8.png)

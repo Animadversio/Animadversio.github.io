@@ -8,6 +8,7 @@ use_math: true
 comments: true
 date: June 10th, 2018
 tags: [Visualization, Matlab, General Relativity, Astrophysics, Physics]
+excerpt_separator: <!--more-->
 ---
 
 This work is motivated by Christopher Nolan's [*Interstellar*](https://movie.douban.com/subject/1889243/), in which the astronomers drives their ship into a wormhole near Jupiter. The movie shows a gorgeous visualization of wormhole, which I'd like to reproduce in this project. 

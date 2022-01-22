@@ -14,7 +14,7 @@ theme_settings:
   gravatar: # Email MD5 hash
 
   # Header and footer text
-  header_text: > #two or three lines to describe your site
+  header_text: Binxu's log book for neuroscience, machine learning and life #two or three lines to describe your site
      
   header_text_feature_image: assets/img/pexels/Galaxy.jpg #assets/img/pexels/triangular.jpeg
   footer_text: >
@@ -111,7 +111,7 @@ collections:
     output: true
     permalink: /:collection/:name
 
-category-list: [mathematics, neuroscience, machine learning, algorithm, computer science]
+category-list: [courses, mathematics, neuroscience, machine learning, algorithm, computer science]
 tech-cat-list: [neuroscience, machine learning, coding, misc]
 
 # BUILD SETTINGS
