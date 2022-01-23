@@ -1,4 +1,15 @@
+---
+layout: post
+title: PCA of High Dimensional Trajectory
+author: Binxu Wang
+date: Jan 22nd, 2022
+use_math: true
+comments: true
+categories: [mathematics]
+tags: [Unsupervised Learning, PCA, geometry, high dimensional, random process, Linear Algebra]
+typora-copy-images-to: ..\assets\img\notes\PCA_highdimen
 
+---
 
 ## Motivation 
 
@@ -140,7 +151,7 @@ Similarly, the real eigenvectors are
 
 
 
-
+Thus 
 
 [^3]: Physical intuition is this $S^TS$ represents the 2nd derivative operator of length $T$ signal with zero padding or constant boundary condition; while the circulant matrix represents the 2nd derivative operator of a cyclic signal of length $T$. This difference in boundary condition vanish for long enough $T$.
 
