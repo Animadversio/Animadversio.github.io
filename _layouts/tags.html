@@ -6,7 +6,8 @@ layout: page
 
 <!-- cycles through posts to get tags -->
 {% assign rawtags = "" %}
-{% for post in site.posts %}
+{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+{% for post in all_posts %}
 {% assign post_tags = post.tags | join:'|' | append:'|' %}
 {% assign rawtags = rawtags | append:post_tags %}
 {% endfor %}
@@ -42,7 +43,7 @@ layout: page
         <div class="tag-posts">
 
             <!-- Pages -->
-            {% for page in site.pages %} 
+            {% for page in all_posts %} 
                 {% if page.tags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ page.url | prepend: site.baseurl }}">
