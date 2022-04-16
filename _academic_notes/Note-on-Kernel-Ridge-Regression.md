@@ -6,7 +6,7 @@ date: Dec 17th, 2021
 comments: true
 use_math: true
 categories: [algorithm]
-tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra]
+tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, kernel method]
 
 ---
 
@@ -16,9 +16,7 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Mat
 
 ## Motivation
 
-Understand the use of kernel in regression problems. 
-
-
+Understand the use of kernel in regression problems. For usage in unsupervised learning / dimension reduction, see [notes on Kernel PCA](Note-on-Kernel-PCA.md). 
 
 ## Kernel in Classification
 
