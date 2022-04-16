@@ -7,7 +7,7 @@ author: Binxu Wang
 use_math: true
 comments: true
 date: June 10th, 2018
-tags: [Visualization, Matlab, General Relativity, Astrophysics, Physics]
+tags: [Visualization, matlab, General Relativity, Astrophysics, Physics]
 excerpt_separator: <!--more-->
 ---
 

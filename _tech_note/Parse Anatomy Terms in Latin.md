@@ -4,7 +4,7 @@ title: How to Parse Anatomical/Physiological Terms in Latin/Greek
 author: Binxu Wang
 date: Sept 7th, 2019
 comments: true
-categories: [neuroscience, misc]
+categories: [Neuroscience, misc]
 tags: [tech note, language, Anatomy, Latin, neuroscience]
 ---
 

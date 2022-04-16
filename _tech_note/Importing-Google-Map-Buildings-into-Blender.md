@@ -6,7 +6,7 @@ use_math: false
 comments: true
 date: Apr. 29th, 2020
 categories: [coding,misc]
-tags: [cg,graphics, blender, python, 3d models]
+tags: [computer graphics, graphics, blender, python, 3d models]
 ---
 
 ## Motivation
