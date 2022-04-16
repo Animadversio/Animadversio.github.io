@@ -29,36 +29,49 @@ layout: default
 </div>
 <div class="colR">
   <div class="posts">
-    {% assign all_posts = paginator.posts | concat: site.academic_notes | concat: site.tech_note %}
-    {% for post in paginator.posts  %}
+    {% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+    {% assign sorted_notes = all_posts | sort:"date" | reverse %}
+    {% assign latest_posts = sorted_notes | slice:0, 10 %}
+    <h3>Latest Notes</h3>
+    <ol>
+      {% for post in latest_posts %}
+          {% if post.thumbnail %} 
+          <div class="post-img">
+             <img src="{{ site.baseurl }}/{{ post.thumbnail }}">
+          </div>
+          {% endif %}
+          <!-- <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3>  -->
+          <h4><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title }}
+          </a></h4> 
+          <b><i> {{ post.date | date: "%B %-d, %Y" }} </i></b> <!-- - {{ post.author }}  -->
+          {% include tags_list_post.html tags=post.tags %}
+        
+      {% endfor %}
+    </ol>
+
+
+    <!-- {% for post in paginator.posts  %}
     <div class="post-teaser">
       {% if post.thumbnail %} 
       <div class="post-img">
          <img src="{{ site.baseurl }}/{{ post.thumbnail }}">
       </div>
       {% endif %}
-      <!-- <span> -->
-          <!-- <header> -->
-            <h2>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                {{ post.title }}
-              </a>
-            </h2>
-            <p class="meta">
-              {{ post.date | date: "%B %-d, %Y" }}
-            </p>
-          <!-- </header> -->
-          <div class="excerpt">
-              {{ post.excerpt | strip_html | escape }}
-            <!--{{ post.content | strip_html | truncate: "250" }}-->
-            <!--<a class="button" href="{{ post.url | prepend: site.baseurl }}">
-              {{ site.theme_settings.str_continue_reading }}
-            </a>-->
-          </div>
-          {% include tags_list_post.html tags=post.tags %}
-      <!-- </span> -->
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p class="meta">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+      <div class="excerpt">
+          {{ post.excerpt | strip_html | escape }}
+      </div>
+      {% include tags_list_post.html tags=post.tags %}
     </div>
-    {% endfor %}
+    {% endfor %} -->
   </div>
 
   {% if paginator.total_pages > 1 %}
@@ -88,7 +101,8 @@ layout: default
 }
 .colR {
     float: left;
-    width: 50%;
+    width: 40%;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 </style>

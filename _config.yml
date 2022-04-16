@@ -40,7 +40,7 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: # "twitter username"
+  twitter: "WangBinxu" # "twitter username"
   vimeo:
   wordpress:
   youtube:
@@ -95,7 +95,7 @@ theme_settings:
   
   
 # PAGINATION
-paginate: 5
+paginate: 8
 paginate_path: "blog/page:num"
 
 

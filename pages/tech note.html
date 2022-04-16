@@ -5,11 +5,14 @@ permalink: /tech_note/
 feature-img: assets/img/pexels/eyesight_Iris.jpg
 ---
 
-<h1>Latest Notes</h1>
+<h1>Latest</h1>
 <ul>
-  {% for post in site.tech_note %}
+  {% assign sorted_notes = site.tech_note | sort:"date" | reverse %}
+  {% for post in sorted_notes %}
     <li>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> {{ post.date | date_to_string }} - {{ post.author }} 
+      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> 
+      <b><i> {{ post.date | date: "%B %-d, %Y" }} </i></b> <!-- - {{ post.author }}  -->
+      {% include tags_list_post.html tags=post.tags %}
     </li>
   {% endfor %}
 </ul>

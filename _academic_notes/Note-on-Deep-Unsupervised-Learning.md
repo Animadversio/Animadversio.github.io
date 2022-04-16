@@ -2,7 +2,7 @@
 layout: post
 title: Note on Deep Unsupervised Learning
 author: Binxu Wang
-date: Semptember 13th, 2019
+date: September 13th, 2019
 comments: true
 use_math: true
 categories: [machine learning]

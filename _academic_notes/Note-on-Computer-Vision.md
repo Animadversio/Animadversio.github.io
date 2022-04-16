@@ -2,7 +2,7 @@
 layout: post
 title: Note on Computer Vision
 author: Binxu Wang
-date: Semptember 10th, 2019
+date: September 10th, 2019
 comments: true
 use_math: true
 categories: [computer science,courses]

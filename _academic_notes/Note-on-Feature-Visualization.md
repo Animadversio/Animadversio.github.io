@@ -2,7 +2,7 @@
 layout: post
 title: Note on Feature Visualization (Updating)
 author: Binxu Wang
-date: Semptember 17th, 2019
+date: September 17th, 2019
 comments: true
 use_math: true
 categories: [machine learning]
