@@ -29,7 +29,8 @@ layout: default
 </div>
 <div class="colR">
   <div class="posts">
-    {% for post in paginator.posts %}
+    {% assign all_posts = paginator.posts | concat: site.academic_notes | concat: site.tech_note %}
+    {% for post in all_posts  %}
     <div class="post-teaser">
       {% if post.thumbnail %} 
       <div class="post-img">

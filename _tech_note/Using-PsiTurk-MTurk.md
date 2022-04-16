@@ -5,7 +5,7 @@ author: Binxu Wang
 date: Nov. 21st, 2020
 comments: true
 categories: [coding]
-tags: [tech note, neuroscience, psychology, behavior, web, psychophysics]
+tags: [tech note, Neuroscience, psychology, behavior, web, psychophysics]
 ---
 
 ## MTurk 

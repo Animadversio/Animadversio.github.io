@@ -6,7 +6,8 @@ layout: page
 
 <!-- cycles through posts to get tags -->
 {% assign rawtags = "" %}
-{% for post in site.posts %}
+{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+{% for post in all_posts %}
 {% assign post_tags = post.tags | join:'|' | append:'|' %}
 {% assign rawtags = rawtags | append:post_tags %}
 {% endfor %}
@@ -43,7 +44,8 @@ layout: page
 
             <!-- Pages -->
             {% for page in site.pages %} 
-                {% if page.tags contains tag %}
+                {% assign lowcasetags = page.tags %}
+                {% if lowcasetags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ page.url | prepend: site.baseurl }}">
                         <i class="fa fa-file-image-o" aria-hidden="true"></i>
@@ -58,8 +60,11 @@ layout: page
             {% endfor %} 
             
             <!-- Posts -->
-            {% for post in site.posts %} 
-                {% if post.tags contains tag %}
+            {% for post in all_posts %} 
+                <!-- {% assign lowcasetags = post.tags | downcase | split "," | where: "tag", tag %}
+                {% unless lowcasetags == empty %} -->
+                {% assign lowcasetags = post.tags %}
+                {% if lowcasetags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -71,11 +76,13 @@ layout: page
                     </div>
                 </h5>
                 {% endif %} 
+                <!-- {% endunless %} -->
             {% endfor %} 
             
             <!-- Portfolio -->
             {% for note in site.portfolio %} 
-                {% if note.tags contains tag %}
+                {% assign lowcasetags = note.tags %}
+                {% if lowcasetags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ site.baseurl }}{{ note.url }}">
                         <i class="fa fa-file-o" aria-hidden="true"></i>

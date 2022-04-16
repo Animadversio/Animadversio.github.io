@@ -6,7 +6,7 @@ date: Apr 16th, 2021
 use_math: true
 comments: true
 categories: [algorithm, mathematics, neuroscience]
-tags: [statistics, EM, neuro-model, Bayesian]
+tags: [statistics, EM, neuro-model, Bayesian, Statistical Learning]
 typora-copy-images-to: ..\assets\img\notes\probmodel
 
 ---

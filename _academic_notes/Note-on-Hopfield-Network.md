@@ -6,7 +6,7 @@ date: Nov 15th, 2021
 use_math: true
 comments: true
 categories: [algorithm, machine learning]
-tags: [tech note, Unsupervised Learning, Statistical Learning, ML, RNN, cas]
+tags: [tech note, Unsupervised Learning, Statistical Learning, ML, RNN]
 typora-copy-images-to: ..\assets\img\notes\hopfield
 ---
 
