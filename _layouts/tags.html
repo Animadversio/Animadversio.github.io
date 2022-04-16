@@ -43,7 +43,7 @@ layout: page
         <div class="tag-posts">
 
             <!-- Pages -->
-            {% for page in all_posts %} 
+            {% for page in site.pages %} 
                 {% if page.tags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ page.url | prepend: site.baseurl }}">
@@ -59,7 +59,7 @@ layout: page
             {% endfor %} 
             
             <!-- Posts -->
-            {% for post in site.posts %} 
+            {% for post in all_posts %} 
                 {% if post.tags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ post.url | prepend: site.baseurl }}">
