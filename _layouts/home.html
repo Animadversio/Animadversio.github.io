@@ -33,65 +33,6 @@ layout: default
     {% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
     {% assign sorted_notes = all_posts | sort:"date" | reverse %}
     {% assign latest_posts = sorted_notes | slice:0, MAXPOSTNUM %}
-
-    <!-- {% for c in sorted_notes %}
-    {% if c.title == page.title %}
-      {% assign thisPost = c %}
-      {% if forloop.index == 1 %}
-        {% assign prevflag = 0 %}
-        {% assign nextflag = 1 %}
-      {% elsif forloop.index == forloop.length %}
-        {% assign prevflag = 1 %}
-        {% assign nextflag = 0 %}
-      {% else %}
-        {% assign prevflag = 1 %}
-        {% assign nextflag = 1 %}
-      {% endif %}  
-    {% endif %}
-    {% endfor %}
-
-    {% for c in sorted_notes %}
-      {% if c.title == page.title %}
-        {% assign prevflag = 0 %}
-      {% endif %}
-      {% if prevflag == 1 %}
-        {% assign prevPost = c %}
-        {% assign page.previous = c %}
-      {% endif %}
-    {% endfor %}
-
-    {% if nextflag == 1 %}
-      {% for c in sorted_notes %}
-        {% if foundPost == 1 %}
-          {% assign getNext = 1 %}
-        {% endif %}
-        {% if c.title == page.title %}
-          {% assign foundPost = 1 %}        
-        {% endif %}
-        {% if getNext == 1%}
-          {% assign nextPost = c %}
-          {% assign page.next = c %}
-          {% assign foundPost = 0 %}
-          {% assign getNext = 0 %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-    <div id="post-nav">
-        <div >    
-            {% if prevPost.url %}
-            <a class="prev" href="{{prevPost.url}}">
-                <span>&lt; {{prevPost.title}}</span>
-            </a> 
-            {% endif %} 
-            {% if nextPost.url %} 
-            <a class="next" href="{{nextPost.url}}">
-                <span>{{nextPost.title}} &gt;</span>
-            </a> 
-            {% endif %} 
-        </div>
-    </div> -->
-
     <h3>Latest Notes</h3>
     <ol>
       {% for post in latest_posts %}
@@ -109,7 +50,6 @@ layout: default
         
       {% endfor %}
     </ol>
-
 
     <!-- {% for post in paginator.posts  %}
     <div class="post-teaser">
