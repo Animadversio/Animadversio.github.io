@@ -147,3 +147,117 @@ MathJax.Hub.Config({
 Note, MathJax 3 has been out now, but it does not support `\\` as the line changing symbol in latex block.....So we are sticking to MathJax2 until that is supported
 
 https://github.com/mathjax/MathJax/issues/2312
+
+# How to add dark mode toggle? 
+
+I currently use this package [`DarkReader`](https://www.npmjs.com/package/darkreader). 
+
+I checked out this tutorial ["dark-mode-jekyll"](https://randomwits.com/blog/dark-mode-jekyll) and add the button  to my navigation bar. 
+
+* Note that I also used a icon service to get the dark light icons: [font awesome](https://fontawesome.com/start) by adding a key to the `default.html`  file. 
+
+The final script I put in `navbar.html` looks like this. 
+
+```html
+<a class="dark-mode-button" >
+    <!-- <i class="fa-solid fa-user"></i> -->
+    <i id="icon-dark" class="fa fa-moon"></i>
+    <span id="dark-text">Sunset</span>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.44/darkreader.js"></script>
+
+<script >
+    // disable() // Set all pages to light mode by default
+    // enable() // Set all pages to dark mode by default. 
+    document.getElementsByClassName('dark-mode-button')[0].onclick = function() {
+        darkmode()
+    }
+    function darkmode() {
+        let enabled = localStorage.getItem('dark-mode')
+
+        if (enabled === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                enableDarkmode();
+            }
+        } else if (enabled === 'true') {
+            enableDarkmode();
+        }
+
+        if (localStorage.getItem('dark-mode') === 'false') {
+            enableDarkmode();
+        } else {
+            disableDarkmode();
+        }
+    }
+    function enableDarkmode()  {
+        DarkReader.setFetchMethod(window.fetch)
+        DarkReader.enable();
+        localStorage.setItem('dark-mode', 'true');
+        document.getElementById('icon-dark').className = 'fa fa-sun';
+        document.getElementById('dark-text').textContent = 'Sunrise';
+    }
+
+    function disableDarkmode() {
+        DarkReader.disable();
+        localStorage.setItem('dark-mode', 'false');
+        document.getElementById('icon-dark').className = 'fa fa-moon';
+        document.getElementById('dark-text').textContent = 'Sunset';
+    }
+</script>
+```
+
+* *Known problem*: if I run `enableDarkmode()` before page load complete, then `disqus ` and `Mathjax` loading will have some problems, color will be not correct or the math won't render. 
+
+
+
+# Enabling Full text search. 
+
+Edit `assets/data/search.json`  to search all posts and collections. 
+
+```html
+{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+   {% for post in all_posts %}
+      {
+        "title"    : "{{ post.title | escape }}",
+        "category" : "{{ post.category }}",
+        "tags"     : "{{ post.tags | join: ', ' | prepend: " " }}",
+        "url"      : "{{ site.baseurl }}{{ post.url }}",
+        "date"     : "{{ post.date | date: "%B %-d, %Y" }}",
+        "excerpt"  : {{ post.content | truncate: '250' | jsonify }},
+        "content"  : {{ post.content | jsonify }}
+      } {% unless forloop.last %},{% endunless %}
+{% endfor %}
+```
+
+Edit `_layouts/search.html`   `searchResultTemplate` to change the format of presenting search results and limit of results. 
+
+```html
+SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '{{ site.baseurl }}/assets/data/search.json',
+            searchResultTemplate: '<div class="search-title"><a href="{url}"><h3> {title}</h3></a><div class="meta">{date} <div class="right"><i class="fa fa-tag"></i> {tags}</div> <hr> ',
+            // searchResultTemplate: '<div class="search-title"><a href="{url}"><h3> {title}</h3></a><div class="meta">{date} <div class="right"><i class="fa fa-tag"></i> {tags}</div></div><p>{excerpt}</p></div><hr> ',
+            noResultsText: 'No results found',
+            limit: 25,
+            fuzzy: false,
+            exclude: []
+        })
+```
+
+# Change Source of unique tags
+
+`_layouts/tags.html` change the `liquid` script there to include tags from post collections. 
+
+```html
+{% assign rawtags = "" %}
+{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+{% for post in all_posts %}
+{% assign post_tags = post.tags | join:'|' | append:'|' %}
+{% assign rawtags = rawtags | append:post_tags %}
+{% endfor %}
+```
+
+
+
