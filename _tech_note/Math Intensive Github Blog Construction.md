@@ -250,6 +250,9 @@ SimpleJekyllSearch({
 {% endfor %}
 ```
 
-# Build github pages with extra plugins. 
+# Publish github pages with extra plugins including `jekyll-paginate-v2`
+Follow this guide to setup Github action to run jekyll build and serve it on Github page! 
+As an effect, I actually just have to add one file and then push `.github/workflows/build-jekyll.yml`. Super straight forward. 
 
 https://ayastreb.me/deploy-jekyll-to-github-pages-with-travis-ci/
+https://github.com/jeffreytse/jekyll-deploy-action
