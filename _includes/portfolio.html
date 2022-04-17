@@ -1,4 +1,17 @@
 <!-- Portfolio Grid Section -->
+<style>
+    .portfolio-cell {
+      flex: 0 0 48%;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 932px) { 
+        .portfolio-cell {
+          flex: 0 0 85%;
+          margin-bottom: 10px;
+        }
+    }
+</style>
+
 
 <div class="portfolio-grid">
     {% for item in site.portfolio %}
