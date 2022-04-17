@@ -2,7 +2,8 @@
 ---
 [
   {% if site.theme_settings.special_page.search.enabled %}
-   {% for post in site.posts %}
+   {% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+   {% for post in all_posts %}
       {
         "title"    : "{{ post.title | escape }}",
         "category" : "{{ post.category }}",
