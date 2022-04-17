@@ -24,7 +24,77 @@ layout: default
     <div id="main" class="call-out call-out_img">
         <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
     </div>
+    <!-- Make the main page layout dynamic w.r.t. the screen size -->
+    <style>
+        .colL {
+            float: left;
+            width: 50%;
+            padding-bottom: 20px;
+        }
+        .colR {
+            float: left;
+            width: 40%;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+        @media screen and (max-width: 768px) { 
+            .colL {
+                float: left;
+                width: 85%;
+                padding-left: 40px;
+                padding-bottom: 20px;
+            }
+            .colR {
+                float: left;
+                width: 85%;
+                padding-left: 40px;
+                padding-top: 40px;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
 
-    {% include blog/blog.liquid %}
+    <div class="colL">
+      <div class="content">
+      <article >
+      <section class="post-content">
+        <h2>Hi, I'm Binxu Wang!</h2>
+          <p>I'm a Neuroscience Ph.D. candidate at <a href="https://neuroscience.wustl.edu/">Washington University in St Louis</a>. Starting 2021 fall, I moved to the <a href="https://neuro.hms.harvard.edu/">Neurobiology program at Harvard Medical School</a> with my advisor <a href="https://ponce.hms.harvard.edu/">Carlos R. Ponce</a>. I'm trying to utilize quantitative and computational thinking to understand our brain and mind (esp. visual system) better. (<a href="https://animadversio.github.io/about/">More about me!</a>)</p>
+
+          <p>This is my personal website (under construction...), a logbook of my journey in neuro and ML. I regularly update <a href="https://animadversio.github.io/academic_notes/">conceptual notes</a> on various topics in neuroscience, machine learning, and math, which I touched upon during my research and teaching. Technical notes like debugging procedures will be posted <a href="https://animadversio.github.io/tech_note/">here</a>, hope it will be useful for others too. Lastly, I sometimes post essays in <a href="https://animadversio.github.io/blog.html">blogs</a>. For the fun projects I did, see my <a href="https://animadversio.github.io/portfolio/">portfolio</a>.</p>
+
+          <p>Here is a link to my <a href="https://scholar.harvard.edu/binxuw">academic / professional website</a>, which describes my research interest and progress more.&nbsp;</p>
+
+          <p>For the full publications list, see <a href="https://scholar.google.com/citations?user=8-njUc8AAAAJ&amp;hl=zh-CN">Google Scholar</a>.</p>
+      </section>
+      </article>
+      </div>
+      <!--  -->
+    </div>
+    <div class="colR">
+      <div class="posts">
+        {% assign MAXPOSTNUM = 12 %}
+        {% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+        {% assign sorted_notes = all_posts | sort:"date" | reverse %}
+        {% assign latest_posts = sorted_notes | slice:0, MAXPOSTNUM %}
+        <h2>Latest Notes</h2>
+        <ol>
+          {% for post in latest_posts %}
+              {% if post.thumbnail %} 
+              <div class="post-img">
+                 <img src="{{ site.baseurl }}/{{ post.thumbnail }}">
+              </div>
+              {% endif %}
+              <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+              </a></h3> 
+              <i> {{ post.date | date: "%B %-d, %Y" }} </i> <!-- - {{ post.author }}  -->
+              {% capture tag_list %}{{ post.tags | join: "|"}}{% endcapture %}
+              {% include default/tags_list.liquid tags=tag_list %}
+            
+          {% endfor %}
+        </ol>
+
+  </div>
 
 </div>
