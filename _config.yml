@@ -12,6 +12,7 @@ theme_settings:
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
+  color_theme: auto                     # color theme auto, dark or light
 
   # Header and footer text
   header_text: Binxu's log book for neuroscience, machine learning and life #two or three lines to describe your site
@@ -128,6 +129,7 @@ relative_links:
   enabled:     true
   collections: true
 #theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
+remote_theme: sylhare/Type-on-Strap 
 exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
 timezone: America/Chicago
 future: true 

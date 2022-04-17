@@ -23,4 +23,19 @@
     </div>
     {% include footer.html %}
   </body>
+  <script >
+    // start dark mode after loading, or it will conflict with 
+    // https://stackoverflow.com/questions/807878/how-to-make-javascript-execute-after-page-load
+    document.onload = function (){
+      // disableDarkmode() // Set all pages to light mode by default
+      // enableDarkmode() // Set all pages to dark mode by default. 
+      DarkReader.setFetchMethod(window.fetch)
+      // DarkReader.enable();
+      DarkReader.enable({
+          brightness: 100,
+          contrast: 90,
+          sepia: 10
+      });
+    }
+  </script> 
 </html>

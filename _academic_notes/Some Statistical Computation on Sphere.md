@@ -67,6 +67,7 @@ Check this repo for different method to generate points on a sphere and compare.
 **Problem**: Given a set of sample points $z_i$ and their function value $y_i$, estimate a function defined on sphere $f(z;\theta):S^2\mapsto \R$, such that $\arg\min_\theta\|f(z_i;\theta)-y_i\|$ 
 
 **Problem Variant**: If we know the noise scheme (like that of neuron firing rate or photon counts), then the problem could be formulated as a statistical estimation problem
+
 $$
 y_i =f(z_i;\theta)+\epsilon\\
 \arg\min_\theta\ \mathcal \log L(\theta;y_i,z_i)=\sum_i \log p(y_i,z_i,\theta)
@@ -78,9 +79,11 @@ $$
 The problem is intrisically the same to the curve fitting problem on Euclidean space, which could be solved by optimizing the loss function in the $\theta$ space by gradient or non-gradient optimization methods. The only tricky part is the parametrization of  $f$. 
 
 For example, the function defining Kent distribution is 
+
 $$
-f(\mathbf {x} )={\frac {A}{{\textrm {c}}(\kappa ,\beta )}}\exp\{\kappa {\boldsymbol {\gamma }}_{1}^{T}\cdot \mathbf {x} +\beta [({\boldsymbol {\gamma }}_{2}^{T}\cdot \mathbf {x} )^{2}-({\boldsymbol {\gamma }}_{3}^{T}\cdot \mathbf {x} )^{2}]\}
+f(\mathbf {x} )={\frac {A}{c(\kappa ,\beta )}}\exp\{\kappa {\boldsymbol {\gamma }}_{1}^{T}\cdot \mathbf {x} +\beta [({\boldsymbol {\gamma }}_{2}^{T}\cdot \mathbf {x} )^{2}-({\boldsymbol {\gamma }}_{3}^{T}\cdot \mathbf {x} )^{2}]\}
 $$
+
 The parameters are an amplitude parameter $A$, and 2 parameters characterizing the shape and peakness of the function $\kappa,\beta$. And 3 unit-vectors $\gamma_1,\gamma_2,\gamma_3$ forming a set of orthonormal basis ($[\gamma_1,\gamma_2,\gamma_3]\in SO(3)$ which is a 3 parameter matrix group), thus there are 6 parameters for this function. And we can fit this function just as  normal with matlab fitting routines. 
 
 ```matlab
