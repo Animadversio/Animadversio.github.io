@@ -23,7 +23,7 @@
         {% assign name_page = "" %}
 
         {% for page in site.pages %}
-            {% unless page.title == null or page.hide or name_page contains page.title %}
+            {% unless page.title == null or page.hide or name_page contains page.title or page.url contains "page" %}
             {% if page.icon %} 
             {% continue %} 
             {% endif%}
@@ -38,7 +38,7 @@
         {% endfor %}
 
         {% for page in site.pages %}
-            {% unless page.title == null or page.hide or name_page contains page.title %}
+            {% unless page.title == null or page.hide or name_page contains page.title or page.url contains "page" %}
             <li class="separator"> | </li>
             <li>
                 <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
