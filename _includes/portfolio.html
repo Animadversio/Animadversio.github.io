@@ -1,5 +1,33 @@
 <!-- Portfolio Grid Section -->
+
 <div class="portfolio-grid">
+    {% for item in site.portfolio %}
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="{{ item.url }}"> 
+                <div class="caption" title="{{ item.title }}">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt=""> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="{{ item.url }}">{{ item.title }}</a> </h3> 
+
+            <i><b> {{ item.date | date: "%B %-d, %Y" }} </b></i> 
+
+            <p>
+                {{ item.teaser | strip_html | truncate:250 }}
+            </p>
+            {% capture tag_list %}{{ item.tags | join: "|"}}{% endcapture %}
+            {% include default/tags_list.liquid tags=tag_list %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- <div class="portfolio-grid">
     {% for item in site.portfolio %}
     <div class="portfolio-cell">
         <a class="portfolio-link" data-keyboard="true" href="{{ item.url | relative_url }}">
@@ -12,4 +40,16 @@
         </a>
     </div>
     {% endfor %}
-</div>
+</div> -->
+<style>
+.colL {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+.colR {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+</style>
