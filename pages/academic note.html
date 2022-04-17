@@ -29,32 +29,23 @@ feature-img: assets/img/pexels/eyesight_Iris.jpg
   {% endfor %}
 -->
 
-
 <style>
-.coll {
-    float: left;
-    width: 33.33%;
-    padding-bottom: 50px;
-}
-.coll2 {
-    float: left;
-    width: 49.9%;
-    padding-bottom: 50px;
-}
-.coll4 {
-    float: left;
-    width: 24.9%;
-    padding-bottom: 50px;
-}
-.coll5 {
-    float: left;
-    width: 19.99%;
-    padding-bottom: 50px;
-}
-/* Clear floats after the columns */
-.roww:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+    .coll2 {
+        float: left;
+        width: 48%;
+        padding-bottom: 50px;
+    }
+    @media screen and (max-width: 800px) { 
+    .coll2 {
+        float: left;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    }
+    /* Clear floats after the columns */
+    .roww:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 </style>
