@@ -216,18 +216,9 @@ The final script I put in `navbar.html` looks like this.
 Edit `assets/data/search.json`  to search all posts and collections. 
 
 ```html
- `assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note`
-   {% for post in all_posts %}
-      {
-        "title"    : "{{ post.title | escape }}",
-        "category" : "{{ post.category }}",
-        "tags"     : "{{ post.tags | join: ', ' | prepend: " " }}",
-        "url"      : "{{ site.baseurl }}{{ post.url }}",
-        "date"     : "{{ post.date | date: "%B %-d, %Y" }}",
-        "excerpt"  : {{ post.content | truncate: '250' | jsonify }},
-        "content"  : {{ post.content | jsonify }}
-      } {% unless forloop.last %},{% endunless %}
- `endfor` 
+ assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note
+  for post in all_posts 
+ endfor
 ```
 
 Edit `_layouts/search.html`   `searchResultTemplate` to change the format of presenting search results and limit of results. 
