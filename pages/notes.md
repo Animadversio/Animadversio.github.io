@@ -1,17 +1,18 @@
 ---
 layout: page
 title: Notes Feed
-hide: false
+hide: true
 ---
 
 {% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
 {% assign sorted_notes = all_posts | sort:"date" | reverse %}
 
 {% assign pageIdx = 14 %}
+{% assign post_per_page = 8 %}
 {% assign post_num = sorted_notes.size %}
-{% assign total_pages = post_num | divided_by: site.paginate | plus: 1 %}
-{% assign startIndex = pageIdx | minus: 1 | times: site.paginate %}
-{% assign endIndex = pageIdx | times: site.paginate %}
+{% assign total_pages = post_num | divided_by: post_per_page | plus: 1 %}
+{% assign startIndex = pageIdx | minus: 1 | times: post_per_page %}
+{% assign endIndex = pageIdx | times: post_per_page %}
 
 {{post_num}} posts in total, in {{total_pages}} pages, {{startIndex}} to {{endIndex}}. 
 

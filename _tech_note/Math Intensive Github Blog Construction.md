@@ -216,7 +216,7 @@ The final script I put in `navbar.html` looks like this.
 Edit `assets/data/search.json`  to search all posts and collections. 
 
 ```html
-{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}
+ `assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note`
    {% for post in all_posts %}
       {
         "title"    : "{{ post.title | escape }}",
@@ -227,7 +227,7 @@ Edit `assets/data/search.json`  to search all posts and collections.
         "excerpt"  : {{ post.content | truncate: '250' | jsonify }},
         "content"  : {{ post.content | jsonify }}
       } {% unless forloop.last %},{% endunless %}
-{% endfor %}
+ `endfor` 
 ```
 
 Edit `_layouts/search.html`   `searchResultTemplate` to change the format of presenting search results and limit of results. 
@@ -259,5 +259,6 @@ SimpleJekyllSearch({
 {% endfor %}
 ```
 
+# Build github pages with extra plugins. 
 
-
+https://ayastreb.me/deploy-jekyll-to-github-pages-with-travis-ci/
