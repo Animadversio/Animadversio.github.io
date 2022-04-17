@@ -1,41 +1,32 @@
 <!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
 {% if page.use_math %}
       {% include mathjax_support %}
 {% endif %}
-<html>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-125498144-1');
-</script>
-  {% include google-analytics.html %}
-
-  {% include head.html %}
-  
+<html lang="en">
+  {% include default/head.liquid %}
   <body>
-    {% include navbar.html %}
+    {% include default/navbar.liquid %}
     <div class="content">
       {{ content }}
     </div>
-    {% include footer.html %}
+    {% include default/footer.liquid %}
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script>
   </body>
-  <script >
-    // start dark mode after loading, or it will conflict with 
-    // https://stackoverflow.com/questions/807878/how-to-make-javascript-execute-after-page-load
-    document.onload = function (){
-      // disableDarkmode() // Set all pages to light mode by default
-      // enableDarkmode() // Set all pages to dark mode by default. 
-      DarkReader.setFetchMethod(window.fetch)
-      // DarkReader.enable();
-      DarkReader.enable({
-          brightness: 100,
-          contrast: 90,
-          sepia: 10
-      });
-    }
-  </script> 
 </html>

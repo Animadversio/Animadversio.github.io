@@ -5,17 +5,23 @@ permalink: /tech_note/
 feature-img: assets/img/pexels/eyesight_Iris.jpg
 ---
 
-<h1>Latest</h1>
+<!-- <h1>Latest</h1> -->
+{% for cat in site.tech-cat-list %}
+{% unless cat == 'personal writing' %}
+<div class=coll2>
+<h3> {{ cat }} </h3>
 <ul>
-  {% assign sorted_notes = site.tech_note | sort:"date" | reverse %}
-  {% for post in sorted_notes %}
-    <li>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a> </h3> 
-      <b><i> {{ post.date | date: "%B %-d, %Y" }} </i></b> <!-- - {{ post.author }}  -->
-      {% include tags_list_post.html tags=post.tags %}
-    </li>
-  {% endfor %}
+  {% for page in site.tech_note %}
+      {% for pc in page.categories %}
+        {% if pc == cat %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li> {{ post.date | date_to_string }}
+        {% endif %}   <!-- cat-match-p -->
+      {% endfor %}  <!-- page-category -->
+  {% endfor %}  <!-- page -->
 </ul>
+</div>
+{% endunless %}
+{% endfor %}  <!-- cat -->
 
 <style>
 .coll {
