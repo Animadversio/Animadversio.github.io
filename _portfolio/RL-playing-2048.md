@@ -37,5 +37,7 @@ Performance comparison of PPO, DQN with the baseline ExpectiMax agent.
 
 ![](..\assets\img\portfolio\2048\score_comparison_DQN2_PPO_ExpectiMax.png) 
 
+<iframe width="560" height="640" src="https://www.youtube.com/embed/COQoG1CeGxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Code for 2048 Project](https://github.com/Animadversio/py2048)
 
