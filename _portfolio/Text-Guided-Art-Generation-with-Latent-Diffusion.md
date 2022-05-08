@@ -8,7 +8,7 @@ use_math: true
 published: true
 comments: true
 date: May 8th, 2022
-tags: [ML, AI, diffusion model, generative model]
+tags: [ML, AI, diffusion model, Generative Model, Art]
 excerpt_separator: <!--more-->
 teaser: Let's paint with sentences!
 ---
