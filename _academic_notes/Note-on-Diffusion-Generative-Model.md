@@ -34,9 +34,9 @@ As for diffusion models, after training, one could modulate the image output wit
 
 Given any sample $x$, if you iteratively adding noise to it, finally signal will be overwhelmed by noise and you will get a purely Gaussian while noise image. We call this noising (diffusion) process. 
 
-However, we could revert this process, starting from a sample $x_T$ from white noise and revert the process step by step back $p(x_{t-1}|x_t)$ , this is called the denoising process. 
+However, we could revert this process, starting from a sample $x_T$ from white noise and revert the process step by step back $p(x_{t-1}\mid x_t)$ , this is called the denoising process. 
 
-Thus if we could properly model the conditional distribution $p(x_{t-1}|x_t)$ we could define a **Markov chain**, by iteratively sample from $x_{t-1}\sim p(x_{t-1}|x_t)$ and one could sample from $p(x_0)$. 
+Thus if we could properly model the conditional distribution $p(x_{t-1}\mid  x_t)$ we could define a **Markov chain**, by iteratively sample from $x_{t-1}\sim p(x_{t-1}\mid x_t)$ and one could sample from $p(x_0)$. 
 
 In some sense this is using a sequence of maps to transform a Gaussian distribution to any distribution you'd like to model. 
 
