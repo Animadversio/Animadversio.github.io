@@ -13,7 +13,9 @@ excerpt_separator: <!--more-->
 teaser: Let's paint with sentences!
 ---
 
-[Latent diffusion github](https://github.com/CompVis/latent-diffusion), [Huggingface playground](https://huggingface.co/spaces/multimodalart/latentdiffusion)
+**Source**: [Latent diffusion github](https://github.com/CompVis/latent-diffusion)
+
+[Huggingface playground](https://huggingface.co/spaces/multimodalart/latentdiffusion) for the **Latent Diffusion LAION-400M** model. 
 
 
 
