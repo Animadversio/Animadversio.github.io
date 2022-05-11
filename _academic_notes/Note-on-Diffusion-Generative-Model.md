@@ -92,7 +92,7 @@ This framework is really reminiscent of the activation maximization framework fr
 ## Reference
 
 * The great [Blogpost](https://yang-song.github.io/blog/2021/score/) by one main author Yang Song, walk through the development from the score-based model / score matching, SDE perspective. More theoretically motivated. 
-* The other great blog post by Lili Wong, introduced the matter from the diffusion model perspective: [What are Diffusion Models? | Lil'Log](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+* The other great blog post by Lili Weng, introduced the matter from the diffusion model perspective: [What are Diffusion Models?  Lil'Log](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 * Details for deriving the reverse time diffusion equation (the basis of generative models): [REVERSE TIME STOCHASTIC DIFFERENTIAL EQUATIONS [FOR GENERATIVE MODELLING]](https://ludwigwinkler.github.io/blog/ReverseTimeAnderson/)
   * This the detailed derivation of the     
     Anderson, B. D. (1982). [Reverse-time diffusion equation models](https://www.sciencedirect.com/science/article/pii/0304414982900515). *Stochastic Processes and their Applications*, *12*(3), 313-326. 
