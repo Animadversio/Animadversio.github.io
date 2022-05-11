@@ -66,6 +66,19 @@ Given an unconditional dataset $\{x_i\}$ sampled from distribution $p(x)$ , how 
 
 ## Relation to score-based model
 
+Basically, score-based model using a sequence of decreasing noising scale, and denoising diffusion probabilistic models are both discretizations of a family of SDEs. 
+
+These two lines are developed independently and in the end pointed at the same underlying model, which is remarkable.  	
+
+> Collectively, these latest developments seem to indicate that both score-based generative modeling with multiple noise perturbations and diffusion probabilistic models are different perspectives of the same model family, much like how [wave mechanics](https://en.wikipedia.org/wiki/Wave_mechanics) and [matrix mechanics](https://en.wikipedia.org/wiki/Matrix_mechanics) are equivalent formulations of quantum mechanics in the history of physics.
+> The perspective of score matching and score-based models allows one to calculate log-likelihoods exactly, solve inverse problems naturally, and is directly connected to energy-based models, Schrödinger bridges and optimal transport. The perspective of diffusion models is naturally connected to VAEs, lossy compression, and can be directly incorporated with variational probabilistic inference. 
+>
+> -- yang song blog. 
+
+## Relation to flow and neural ODE.
+
+The SDE could be re-written as an ODE, which retains the same marginal distribution at each step. With the score network, this is an instance of Neural ODE. 
+
 
 
 ## Relation to Activation Maximization
@@ -78,6 +91,9 @@ This framework is really reminiscent of the activation maximization framework fr
 
 ## Reference
 
-* [What are Diffusion Models? | Lil'Log](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
-* 
+* The great [Blogpost](https://yang-song.github.io/blog/2021/score/) by one main author Yang Song, walk through the development from the score-based model / score matching, SDE perspective. More theoretically motivated. 
+* The other great blog post by Lili Wong, introduced the matter from the diffusion model perspective: [What are Diffusion Models? | Lil'Log](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+* Details for deriving the reverse time diffusion equation (the basis of generative models): [REVERSE TIME STOCHASTIC DIFFERENTIAL EQUATIONS [FOR GENERATIVE MODELLING]](https://ludwigwinkler.github.io/blog/ReverseTimeAnderson/)
+  * This the detailed derivation of the     
+    Anderson, B. D. (1982). [Reverse-time diffusion equation models](https://www.sciencedirect.com/science/article/pii/0304414982900515). *Stochastic Processes and their Applications*, *12*(3), 313-326. 
 
