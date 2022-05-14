@@ -6,7 +6,7 @@ date: Apr 22th, 2020
 use_math: true
 comments: true
 categories: [mathematics, algorithm]
-tags: [tech note, Math, Linear Algebra, cv, segmentation, graph theory]
+tags: [tech note, Math, Linear Algebra, computer vision, segmentation, graph theory]
 typora-copy-images-to: ..\assets\img\notes\spectgraph
 
 ---

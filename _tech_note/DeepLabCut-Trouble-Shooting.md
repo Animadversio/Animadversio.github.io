@@ -4,7 +4,7 @@ title: DeepLabCut Trouble Shooting
 author: Binxu Wang
 date: July.2nd, 2019
 comments: true
-categories: [neuroscience, machine learning]
+categories: [Neuroscience, machine learning]
 tags: [tech note, Image Analysis, Machine Learning, Behavior]
 typora-copy-images-to: ..\assets\img\notes\dlc
 ---

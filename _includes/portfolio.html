@@ -1,9 +1,28 @@
 <!-- Portfolio Grid Section -->
+<style>
+    .portfolio-cell {
+      flex: 0 0 48%;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 932px) { 
+        .portfolio-cell {
+          flex: 0 0 85%;
+          margin-bottom: 10px;
+        }
+    }
+</style>
+
+
 <div class="portfolio-grid">
     {% for item in site.portfolio %}
     <div class="portfolio-cell">
         <div class="colL">
-            <a href="{{ item.url }}"> 
+            <a class="portfolio-link" data-keyboard="true" href="{{ item.url }}"> 
+                <div class="caption" title="{{ item.title }}">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
                 <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt=""> 
             </a>
         </div>
@@ -15,12 +34,26 @@
             <p>
                 {{ item.teaser | strip_html | truncate:250 }}
             </p>
-            {% include tags_list_post.html tags=item.tags %}
+            {% capture tag_list %}{{ item.tags | join: "|"}}{% endcapture %}
+            {% include default/tags_list.liquid tags=tag_list %}
         </div>
     </div>
     {% endfor %}
 </div>
-
+<!-- <div class="portfolio-grid">
+    {% for item in site.portfolio %}
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="{{ item.url | relative_url }}">
+            <div class="caption" title="{{ item.title }}">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="{{ item.img | relative_url }}">
+        </a>
+    </div>
+    {% endfor %}
+</div> -->
 <style>
 .colL {
     float: left;
@@ -33,21 +66,3 @@
     padding-bottom: 20px;
 }
 </style>
-
-<!-- <div class="portfolio-grid">
-    {% for item in site.portfolio %}
-    <div class="portfolio-cell">
-        <a href="{{ site.baseurl }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
-            <div class="caption" title="{{ item.title }}">
-                <div class="caption-content">
-                    <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-            </div>
-            <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt="">
-            <p>
-                {{ item.excerpt | strip_html | truncate:250 }}
-            </p>
-        </a>
-    </div>
-    {% endfor %}
-</div> -->

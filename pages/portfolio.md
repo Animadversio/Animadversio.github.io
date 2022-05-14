@@ -1,10 +1,10 @@
 --- 
 layout: page
-title : Projects 
+title : Portfolio 
 permalink: /portfolio/
-subtitle: "Fun Projects I have worked on" 
-feature-img: assets/img/pexels/Rat_primary_cortical_neuron.jpg
-tags: [Archive]
+subtitle: "Projects I have worked on" 
+feature-img: "assets/img/pexels/computer.jpeg"
+tags: [Page]
 ---
 
 {% include portfolio.html %}
