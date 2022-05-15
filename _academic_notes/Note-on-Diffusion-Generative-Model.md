@@ -60,6 +60,8 @@ Why denoising process could model any data distribution? This notion has emerged
 
 ## DDPM formulation
 
+DDPM formulate the model in a Bayesion, graphic model style, with some variational trick. 
+
 In this formulation, we deal with the aforementioned markov chain $x_0\to x_1\to... x_T$ . Then all $x_{1:T}$ become latent variables. Consider the joint probability, which could be decomposed in forward or reverse direction. 
 
 $$
@@ -103,9 +105,11 @@ $$
 
 ## Score-based model and Langevin dynamics 
 
-An alternative, more theoretical way is to think about the data distribution to be modelled as $p(x)$. We focus on its score, i.e. gradient to the log likelihood function $\nabla_x \log p(x)$. In plain language, the score function described, locally **how you shall modify $x$ to make the likelihood higher**. 
+An alternative, more theoretical and more geometrical formulation is the score based modelling approach. 
 
-Thus, if we have this gradient information in hand, we could create samples with high likelihood by gradient ascent. 
+Let's think about the data distribution to be modelled as $p(x)$. We focus on its score, i.e. gradient to the log likelihood function $\nabla_x \log p(x)$. In plain language, the score function described, locally **how you shall modify $x$ to make the likelihood higher**. 
+
+So, if we have this gradient information in hand, we could create samples with high likelihood by gradient ascent. 
 
 $$
 x=\arg\max_x\log p(x)
@@ -120,13 +124,17 @@ $$
 
 The noise term shall be tuned to reduce over time for convergence (annealing). 
 
-In practise, since the exact score function is missing, what we need is to approximate the score function with a model $s_\theta (x)$, then do langevin dynamics with it. 
+In practise, since the exact score function is missing, what we need is to approximate the score function with a model $s_\theta (x)$, then do Langevin dynamics with it. This Langevin dynamics is the *de facto* reverse diffusion process. 
+
+### How to train score-based models?
+
+So how to train score model? It seems insanely hard! we only have access to a discrete set of points $\{x_i\}$ how to get gradient information.
+
+One way to deal with it is the gradual noising method (NCSM)
 
 
 
 
-
-## How to train thee
 
 Given an unconditional dataset $\{x_i\}$ sampled from distribution $p(x)$ , how to train this denoising model?
 
