@@ -13,7 +13,18 @@ tags: [tech note, Bayesian, Statistical Learning, MLE]
 
 How to understand EM algorithm from a theoretical perspective? This post tries to understand EM as a form of alternative ascent of a lower bound of likelihood. 
 
+## The Key Trick of EM
 
+The key trick we need to remember is the usage of **Jensen Inequality** on logarithm. So we could swap Expectation and logarithm and obtain a lower bound on likelihood. Generally, we have such inequality, given a positive function $q(z)$ that sums to $1$ (probability density), 
+$$
+\log \sum_z p(z)=\log \sum_zq(z)\frac{p(z)}{q(z)}\geq \sum_zq(z) (\log p(z)-\log q(z))
+$$
+This form is particularly useful when we have a latent variable model. Since we are interested in the likelihood of data itself $\log p(x)$ the latent variable part needs to be integrated out. 
+$$
+\log \int_zp(x|z)p(z) \geq \int_z q(z)\log\frac{p(x|z)p(z)}{q(z)}\\
+=\mathbb E_{z\sim q(z)} [\log p(x|z) + \log p(z) - \log q(z)]
+$$
+This tricky is the foundation of variational inference. However, this still feels distant from the common formulation of EM. The distinctive feature of EM is that it could optimize $q(z)$ in one step: by setting $q(z)=p(z|x)$ , then without any optimization iteration, you could tighten the bound and optimize the probe distribution $q$ . 
 
 ## Example: Gaussian Mixture
 
@@ -88,10 +99,13 @@ All in all, EM solve subproblem of part of variables alternatively, but each sub
 ## Issues of EM
 
 That being said, EM has its own problem
-* Note that, EM directly optimizes the lower bound of $\mathcal L(\Theta)$. the bound is tight only when $q(z)=P(z\midx;\Theta)$, so when $z$ itself has a complex posterior distribution (not a simple discrete distr.), then parametrizing it and optimizing it becomes tricky. For example, one could use a Gaussian distribution to approximate the posterior, but when this approximation is not exact, EM iteration is not guaranteed to increase the data likelihood. 
+* Note that, EM directly optimizes the lower bound of $\mathcal L(\Theta)$. the bound is tight only when $q(z)=P(z\mid x;\Theta)$, so when $z$ itself has a complex posterior distribution (not a simple discrete distr.), then parametrizing it and optimizing it becomes tricky. For example, one could use a Gaussian distribution to approximate the posterior, but when this approximation is not exact, EM iteration is not guaranteed to increase the data likelihood. 
 
 **Reference**
 * [Short Lecture note from Princeton](https://www.cs.princeton.edu/courses/archive/spring08/cos424/scribe_notes/0311b) which I found most illuminating!
 * [Lecture slides from U Toronto](https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec15_16_handout.pdf) longer but quite hand holding
 * [EM and variational inference](https://chrischoy.github.io/research/Expectation-Maximization-and-Variational-Inference/)
-* Bishop's [PRML](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/)
+* Bishop's [PRML](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) 
+
+* This post is adapted from [my answer in math exchange](https://math.stackexchange.com/questions/4444592/em-algorithm-vs-gradient-descent/4450007#4450007)
+

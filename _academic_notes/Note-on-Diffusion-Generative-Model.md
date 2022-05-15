@@ -30,17 +30,25 @@ As for diffusion models, after training, one could modulate the image output wit
 
 # Diffusion models
 
-## Intuition behind denoising diffusion
+## Intuition of denoising diffusion
 
-Given any sample $x$, if you iteratively adding noise to it, finally signal will be overwhelmed by noise and you will get a purely Gaussian while noise image. We call this noising (diffusion) process. 
+As is eloquently put in one of Yang Song's paper opening
 
+> Creating noise from data is easy; creating data from noise is generative modeling.  - Yang Song 2021. 
+
+Given any sample $x$, if you iteratively adding noise to it, while properly scale down signal, then finally signal will be overwhelmed by noise and you will get Gaussian white noise. We call this noising (diffusion) process
+$$
+x_0\to x_1\to ...x_T
+$$
 However, we could revert this process, starting from a sample $x_T$ from white noise and revert the process step by step back $p(x_{t-1}\mid x_t)$ , this is called the denoising process. 
-
-Thus if we could properly model the conditional distribution $p(x_{t-1}\mid  x_t)$ we could define a **Markov chain**, by iteratively sample from $x_{t-1}\sim p(x_{t-1}\mid x_t)$ and one could sample from $p(x_0)$. 
+$$
+x_T\to x_{T-1}\to ...x_0
+$$
+Thus if we properly model the conditional distribution $p(x_{t-1}\mid  x_t)$ we could define a **Markov chain**, by iteratively sample from $x_{t-1}\sim p(x_{t-1}\mid x_t)$ and one could sample from $p(x_0)$. 
 
 In some sense this is using a sequence of maps to transform a Gaussian distribution to any distribution you'd like to model. 
 
-## Formulism
+## Formalism
 
 **[Denoising Diffusion Probabilistic Models (DDPM)](https://arxiv.org/abs/2006.11239)** This is the fundamental paper introduced the in this recent wave. 
 
