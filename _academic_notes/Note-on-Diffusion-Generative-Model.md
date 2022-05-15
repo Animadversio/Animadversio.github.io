@@ -94,7 +94,11 @@ q(x_t\mid x_{t-1})=\mathcal N(x_t;\sqrt{1-\beta_t} x_{t-1},\beta_t I)\\
 p(x_{t-1}\mid x_t)=\mathcal N(x_{t-1};\mu_\theta(x_t),\sigma_t^2 I)\\
 $$
 
+Note that in this formulation, the conditional distribution of $x_t$ has a closed form. To abbreviate the notation, introduce $\alpha_t =1-\beta_t,\bar \alpha_t = \prod_{s=1}^t \alpha_s$. As we can see $\bar \alpha_t$ gradually approaches $0$ and noise dominates. 
 
+$$
+q(x_t\mid x_0)=\mathcal N(x_t\mid \sqrt{\bar \alpha_t}x_t,(1-\bar \alpha_t)I)
+$$
 
 
 ## Score-based model and Langevin dynamics 
