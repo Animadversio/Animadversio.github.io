@@ -18,30 +18,34 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Generative 
 
 ## Motivation
 
-Consider a distribution $p(x)$, we could "convolve" it with a kernel $p(\tilde x|x)=q(\tilde x-x)$. Note the distribution of $\tilde x$ as $p_\sigma(\tilde x)$
+Consider a distribution $p(x)$, we could "convolve" it with a kernel $p(\tilde x\mid x)=q(\tilde x-x)$. Note the distribution of $\tilde x$ as $p_\sigma(\tilde x)$
 
 Then we would like to prove the equivalence of the two objectives in the sense of they share the same optimality with respect to $\psi_\theta$ 
 
 ## Formulation
 
 The score-model $\psi_\theta$ with the following objective  **"Explicit Score matching objective"**
+
 $$
 J(\theta)=\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x)\|^2
 $$
+
 and the following **"Denoising Score matching objective"** 
+
 $$
-J(\theta)=\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x|x)\|^2
+J(\theta)=\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\|^2
 $$
+
 The key to prove this equivalence is to see the interaction term are the same 
 $$
 \begin{align}
-&\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}   \lang \psi_\theta(\tilde x),\nabla_\tilde x\log p_\sigma(\tilde x|x)\rang\\
-=&\int dx\int d\tilde x p_\sigma(\tilde x|x)p(x)   \lang \psi_\theta(\tilde x),\nabla_\tilde x\log p_\sigma(\tilde x|x)\rang\\
-=&\int dx\int d\tilde x p(x)   \lang \psi_\theta(\tilde x),\nabla_\tilde x  p_\sigma(\tilde x|x)\rang\\
-=&\int d\tilde x   \lang \psi_\theta(\tilde x),\nabla_\tilde x  \int dx p(x)p_\sigma(\tilde x|x)\rang\\
-=&\int d\tilde x   \lang \psi_\theta(\tilde x),\nabla_\tilde x  p_\sigma(\tilde x)\rang\\
-=&\int d\tilde x  p_\sigma(\tilde x) \lang \psi_\theta(\tilde x),\nabla_\tilde x  \log p_\sigma(\tilde x)\rang\\
-=&\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\lang \psi_\theta(\tilde x),\nabla_\tilde x  \log p_\sigma(\tilde x)\rang\\
+&\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}   \langle \psi_\theta(\tilde x),\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\rangle\\
+=&\int dx\int d\tilde x p_\sigma(\tilde x\mid x)p(x)   \langle \psi_\theta(\tilde x),\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\rangle\\
+=&\int dx\int d\tilde x p(x)   \langle \psi_\theta(\tilde x),\nabla_\tilde x  p_\sigma(\tilde x\mid x)\rangle\\
+=&\int d\tilde x   \langle \psi_\theta(\tilde x),\nabla_\tilde x  \int dx p(x)p_\sigma(\tilde x\mid x)\rangle\\
+=&\int d\tilde x   \langle \psi_\theta(\tilde x),\nabla_\tilde x  p_\sigma(\tilde x)\rangle\\
+=&\int d\tilde x  p_\sigma(\tilde x) \langle \psi_\theta(\tilde x),\nabla_\tilde x  \log p_\sigma(\tilde x)\rangle\\
+=&\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\langle \psi_\theta(\tilde x),\nabla_\tilde x  \log p_\sigma(\tilde x)\rangle\\
 \end{align}
 $$
 To put it in human words, if we want to fit the score of $p_\sigma(\tilde x)$ , instead of directly evaluating $\nabla \log p_\sigma(\tilde x)$, we could equivalently use the denoising objective which draw sample pairs from the noised, and pure distribution $(x,\tilde x)$. 
@@ -49,7 +53,7 @@ To put it in human words, if we want to fit the score of $p_\sigma(\tilde x)$ , 
 In the special case of Gaussian kernel $q(z)=\mathcal N(0,\sigma^2 I)$ , the denoising objective is explicitly 
 $$
 \begin{align}
-J(\theta)=&\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x|x)\|^2\\
+J(\theta)=&\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\|^2\\
 =&\mathbb E_{x\sim p(x)} \mathbb E_{\Delta x\sim \mathcal N(0,\sigma^2 I)}\frac 12\|\psi_\theta(x+\Delta x) +\frac 1{\sigma^2}\Delta x\|^2\\
 =&\mathbb E_{x\sim p(x)} \mathbb E_{z\sim \mathcal N(0,I)}\frac 12\|\psi_\theta(x+\sigma z) +\frac 1{\sigma}z\|^2\\
 \end{align}
