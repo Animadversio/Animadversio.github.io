@@ -18,25 +18,25 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Generative 
 
 ## Motivation
 
-Consider a distribution $p(x)$, we could "convolve" it with a kernel $p(\tilde x\mid x)=q(\tilde x-x)$. Note the distribution of $\tilde x$ as $p_\sigma(\tilde x)$
+Consider a distribution $p(x)$, we could "convolve" it with a kernel $p(\tilde x\mid x)=q(\tilde x-x)$. The marginal distribution of $\tilde x$ is denoted as $p_\sigma(\tilde x)$. We want to model the score of this convolved distribution and that of the original distribution $\nabla\log p_\sigma(\tilde x)$ . 
 
 Then we would like to prove the equivalence of the two objectives in the sense of they share the same optimality with respect to $\psi_\theta$ 
 
 ## Formulation
 
-The score-model $\psi_\theta$ with the following objective  **"Explicit Score matching objective"**
+The score-model $\psi_\theta$ with the following objective  **"Explicit Score matching objective"**: in essence it samples $\tilde x$ from the convolved distribution, then match $\psi$ to the score of marginal distribution. 
 
 $$
-J(\theta)=\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x)\|^2
+J_{ESM}(\theta)=\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x)\|^2
 $$
 
-and the following **"Denoising Score matching objective"** 
+and the following **"Denoising Score matching objective"**: this objective samples $x$ from the original distribution and the noised version $\tilde x$ from $x$, then train $\psi$  to minimize the distance to the score of the conditional distribution (convolution kernel). 
 
 $$
-J(\theta)=\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\|^2
+J_{DSM}(\theta)=\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}\frac 12\|\psi_\theta(\tilde x)-\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\|^2
 $$
 
-The key to prove this equivalence is to see the interaction term are the same 
+These objectives are all quadratic function in $\psi$. The key to prove this equivalence is to see the interaction term are the same 
 $$
 \begin{align}
 &\mathbb E_{\tilde x,x\sim p_\sigma(\tilde x,x)}   \langle \psi_\theta(\tilde x),\nabla_\tilde x\log p_\sigma(\tilde x\mid x)\rangle\\
@@ -48,6 +48,12 @@ $$
 =&\mathbb E_{\tilde x\sim p_\sigma(\tilde x)}\langle \psi_\theta(\tilde x),\nabla_\tilde x  \log p_\sigma(\tilde x)\rangle\\
 \end{align}
 $$
+Thus, these two objectives (expectation) differ by a constant. Though we need to note that given the same number of samples the variance of the distribution differs. 
+
+$$
+J_{ESM}(\theta)=J_{DSM}(\theta) +C
+$$
+
 To put it in human words, if we want to fit the score of $p_\sigma(\tilde x)$ , instead of directly evaluating $\nabla \log p_\sigma(\tilde x)$, we could equivalently use the denoising objective which draw sample pairs from the noised, and pure distribution $(x,\tilde x)$. 
 
 In the special case of Gaussian kernel $q(z)=\mathcal N(0,\sigma^2 I)$ , the denoising objective is explicitly 
