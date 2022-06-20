@@ -138,7 +138,14 @@ One way to deal with it is the gradual noising method (NCSM)
 
 Given an unconditional dataset $\{x_i\}$ sampled from distribution $p(x)$ , how to train this denoising model?
 
+Usually this denoising score-matching objective is used
+$$
+\int_{t=0}^1\mathbb E_{x\sim p(x)} \mathbb E_{x'\sim p(x_t|x_0=x)}
+\lambda(t) \|\nabla_{x'}\log p_{0t}(x'|x)-s(x',t)\|
+$$
+This denoising score matching objective could be derived for any distribution with any noising kernel. Here with Gaussian Kernel, the formulation becomes more explicit. 
 
+See  [equivalence of score matching objective](Note-on-Equiv-Score-Matching-Objective.md) for the derivation. 
 
 # Related Models
 
