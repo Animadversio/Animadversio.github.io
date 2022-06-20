@@ -16,9 +16,9 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Generative 
 
 ## Motivation
 
-Recently, a line of research in generative image models, diffusion models, emerged, which showed a competitive performance with GAN [^1]. Moreover, a modern version gave rise to the ground breaking model DALL E 2 and its precursor GLIDE. 
+Recently, a line of research emerged in generative image models, diffusion models, which showed a competitive performance with GAN [^1]. More recently, a larger scale version of it gave rise to the ground breaking model DALL-E 2 and its precursor GLIDE. 
 
-These tremendous success in generative modelling motivates me to write about them to understand this new type of models. This post devotes to introduce the formula underlying these models and organize the relation between different variants. 
+These tremendous success in generative modelling motivates me to write about them to understand this new type of models. This post devotes to introducing the formula underlying these models and organize the relation between different variants. 
 
 ## Practical consideration
 
