@@ -192,6 +192,18 @@ So to summarize the working of a S4 is like
 4. Use kernel $K$ to causal convolve input signal $y=K*u$ 
 5. Use backprop to learn the parameters $\Lambda,P,Q,B,\tilde C,\Delta$ 
 
+### RNN mode
+
+Note that above we used a series of tricks to compute the convolution kernel for S4, this is useful in training since sequence exists. 
+
+But in generation RNN mode is more useful, we can turn the $A,B$ paramters in to $\bar A,\bar B,C$ for generation.
+$$
+
+$$
+
+
+
+
 
 
 
