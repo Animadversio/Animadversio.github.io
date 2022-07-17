@@ -75,10 +75,7 @@ The hidden states $x(t)$ keep track of the coefficients **when projecting the si
 
 To compute the kernel for convolution, the limiting step involves raising matrix $A$ or $\bar A$ to exponent as high as the sequence length $L-1$. 
 
-We know for diagonal matrices or normal matrices, the matrix exponent is much cheaper and could be compute simply by raising the diagonal values. 
-
-First note that to compute FFT of the large Kernel $K$ we need to evaluate the generator function, which sums the values by the exponents of $z$
-
+**Generating function**  First note that to compute FFT of the large Kernel $K$ we need to evaluate the generator function, which sums the values by the exponents of $z$
 $$
 f(z)= \bar C\bar B+z\bar C\bar A\bar B+z^2\bar C\bar A^2\bar B+z^3\bar C\bar A^3\bar B...\\
 =\bar C(\sum_{i=0}^{L-1}(z\bar A)^i)\bar B\\
@@ -127,8 +124,6 @@ $$
 
 If the $A$ matrix has diagonal + low rank structure, we can use Woodbery identity to compute exponent and inversion easier. 
 
-
-
 **Diagonal case** Let's first assume $A$ is diagonal matrix, then the generator function is just a dot product of the diagonal elements shifted by $z$. 
 
 $$
@@ -173,7 +168,29 @@ $$
 D=\frac 2\Delta \frac{1-z}{1+z}I-\Lambda = diag(\frac 2\Delta \frac{1-z}{1+z}-\lambda_i,...)
 $$
 
+Thus we define the cauchy dot operator
 
+$$
+K_{z,\Lambda}(A,B)=\sum_i\frac{A_iB_i}{\frac 2\Delta \frac{1-z}{1+z}-\lambda_i}
+$$
+
+We have 
+
+$$
+f(z)=2 (1+z)\left[K_{z,\Lambda}(\tilde C,B)-\frac{K_{z,\Lambda}(\tilde C,P)K_{z,\Lambda}(Q^*,B)}{1+K_{z,\Lambda}(Q^*,P)}\right]
+$$
+
+Note that for each $z$, the output of $K_{z,\Lambda}$ is a scalar, and $f(z)$ is a scalar. So this computation could be actually vectorized across a huge numebr of $z$ . (this could be easily done by `jax.vmap`) 
+
+### Put it together
+
+So to summarize the working of a S4 is like  
+
+1. Given $z,\Lambda,P,Q,B,\tilde C,\Delta$ ,
+2. Create the $K_{z,\Lambda}$ function which is used to create $f(z)$ function. 
+3. Evaluate $f(z)$ at $z=\omega^i,i=0,...L-1$ to form kernel $K=[f(1),f(\omega),f(\omega^2),...]$
+4. Use kernel $K$ to causal convolve input signal $y=K*u$ 
+5. Use backprop to learn the parameters $\Lambda,P,Q,B,\tilde C,\Delta$ 
 
 
 
