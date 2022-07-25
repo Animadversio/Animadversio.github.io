@@ -12,6 +12,10 @@ tags: [tech note, Algorithm, Statistical Learning, linear algebra, Dynamic Syste
 
 ![](https://github.com/HazyResearch/state-spaces/raw/main/assets/s4.png)
 
+[TOC]
+
+
+
 ## Motivation
 
 S4 sequence model is rising in the sequence modelling field. It dominates on long sequence modelling over RNN, LSTM and transformers. It's both mathematically elegant and useful, and it's trending, so why not write about it. 
@@ -55,7 +59,7 @@ x_2&=\bar A^2\bar Bu_0 + \bar A \bar B u_1+\bar B u_2,& y_2=&\bar C\bar A^2\bar 
 \end{align}
 $$
 
-Thus the output $y$ is a convolution on the input signal $u$ with a $L$ long kernel $K=[\bar C\bar B,\bar C\bar A\bar B,\bar C\bar A^2\bar B,\bar C\bar A^3\bar B,...]$, which involves the matrix exponents of $\bar A$. 
+Thus the output $y$ is a convolution on the input signal $u$ with a $L$ long kernel $K=[\bar C\bar B,\bar C\bar A\bar B,\bar C\bar A^2\bar B,\bar C\bar A^3\bar B,...]$, which involves the matrix exponents from 0 to $L-1$ order of $\bar A$. 
 
 Further, this convolution could be done in the frequency domain by FFT on $K$, using the convolution theorem for circular convolution. 
 
