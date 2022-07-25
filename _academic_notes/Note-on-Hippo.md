@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Hippo: Recurrent Memory with Optimal Polynomial Projection
+title: Note on Hippo- Recurrent Memory with Optimal Polynomial Projection
 author: Binxu Wang
 date: July  25th, 2022 
 comments: true
