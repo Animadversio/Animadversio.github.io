@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on S4: Efficiently Modeling Long Sequences with Structured State Spaces
+title: Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces
 author: Binxu Wang
 date: July  17th, 2022 
 comments: true
