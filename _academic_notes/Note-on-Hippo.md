@@ -12,7 +12,9 @@ tags: [tech note, Algorithm, RNN, Recurrent, Memory, linear algebra, Dynamic Sys
 
 ## Hippo: Recurrent Memory with Optimal Polynomial Projection
 
+## Motivation
 
+Hidden state in RNN represents a form of memory of the past. For a sequence, a natural way to represent the past sequence is to project it onto an orthonormal basis set. Here depending on the different emphasis of the past, we could define different measures on the time axis and define the basis set based on this measure. Then we can keep track of the projection coefficient on this basis when observing new data points. 
 
 ## Problem setup
 
@@ -118,7 +120,7 @@ LHS=\frac 1t f(t)\\
 -\frac 1t \left((2n+1)^{-1/2}(n+1)c_n(t)+(2n-1)^{1/2}c_{n-1}(t)+(2n-3)^{1/2}c_{n-2}(t)+...\right)
 $$
 
-Putting it all together we have the linear dynamic equation of $c(t)$
+Putting it all together we have the linear dynamic equation of the coefficient vector $c(t)$ .
 
 $$
 \frac {dc(t)}{dt}=-\frac 1tAc(t)+\frac 1tBf(t)
