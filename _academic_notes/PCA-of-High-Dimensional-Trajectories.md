@@ -33,7 +33,7 @@ We represent $x_i,\eta_i$ as row vectors, then we form the $T$-by-$d$ data matri
 
 ### Reduce Data Matrix to Steps
 
-How to compute this covariance matrix? This paper [^1] noticed that it was easier to tackle $H$ than $X$. First they noticed the relationship between the data matrix $X$ and the matrix, where $S$ is the matrix of "differentiation" between rows. 
+How to compute this covariance matrix? This paper [^1] noticed that it was easier to tackle $H$ than $X$. First they noticed the relationship between the data matrix $X$ and the matrix, where $S$ is the $T$-by-$T$ matrix of "differentiation" between rows. 
 
 $$
 SX=H\\
@@ -47,7 +47,7 @@ S=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-Then we know the inverse of this, $S^{-1}$ is the matrix of "accumulating" rows, i.e. the lower triangular matrix filled with $1$.  
+Then we know the inverse of this, $S^{-1}$ is the $T$-by-$T$ matrix of "accumulating" rows, i.e. the lower triangular matrix filled with $1$.  
 
 $$
 X=S^{-1}H\\
@@ -68,7 +68,7 @@ $$
 \Sigma[x]=\mathbb E[\hat X \hat X^T]=\mathbb E[CS^{-1}HH^TS^{-T}C]
 $$
 
-Note that $C,S$ are both constant, and $C$ is symmetric, the only random variables are $H$. Thus we only need to compute the expectation for $H H^T$. 
+Note that $C,S$ are both constant matrix with shape $T$-by-$T$ , and $C$ is symmetric, the only random variables are $H$. Thus we only need to compute the expectation for $H H^T$. 
 
 ### Covariance of Steps $H$
 
@@ -86,13 +86,13 @@ $$
 \mathbb E[\eta_i\eta_i^T]=\mathbb E[\sum_k {\eta_i^{(k)}}^2]\\
 =\sum_k^d \mathbb E[{\eta_i^{(k)}}^2]\\
 =\sum_k^d Var[\eta^{(k)}]\\
-=\tr[\Sigma(\mathcal P)]
+=tr[\Sigma(\mathcal P)]
 $$
 
-Without loss of generality, we can assume $\tr[\Sigma(\mathcal P)]=1$, by just rescaling $x$.  Thus we have 
+Without loss of generality, we can assume $tr[\Sigma(\mathcal P)]=1$, by just rescaling $x$.  Thus we have 
 
 $$
-\mathbb E[HH^T]=\tr[\Sigma(\mathcal P)]I=I
+\mathbb E[HH^T]=tr[\Sigma(\mathcal P)]I=I
 $$
 
 
@@ -110,13 +110,54 @@ $$
 
 From this we can already see, the **covariance structure** of high dimensional random walk is **universal**, independent of the distribution $\mathcal P$ where steps are sampled from [^2], even independent of the dimension $d$. All random walk of $T$ steps in high dimension will have the same covariance structure up to scaling, thus they shall all have the same PCA structure. 
 
+We noticed that 
+$$
+S^{-1}S^{-T}=\begin{bmatrix}
+ 1 & 1 & 1 & ... & 1 & 1\\
+ 1 & 2 & 2 & ... & 2 & 2\\
+ 1 & 2 & 3 & ... & 3 & 3\\
+ 1 & 2 & 3 &... \\
+ 1 & 2 & 3 &...  & T-1 & T-1\\
+ 1 & 2 & 3 & ... & T-1 & T
+\end{bmatrix}
+$$
+Then the total variance or the trace of the covariance matrix is 
+$$
+\begin{align}
+tr[\Sigma[x]]&=tr[CS^{-1}S^{-T}C]\\
+&=tr[CCS^{-1}S^{-T}]\\
+&=tr[CS^{-1}S^{-T}]\\
+&=tr[(I-\frac 1T 11^T)S^{-1}S^{-T}]\\
+&=tr[S^{-1}S^{-T}-\frac 1T 11^TS^{-1}S^{-T}]\\
+&=tr[S^{-1}S^{-T}]-\frac 1T tr[1^TS^{-1}S^{-T}1]\\
+\end{align}
+$$
+The second term is the summation of all entries in the $T$-by-$T$ matrix $S^{-1}S^{-T}$. We find this matrix could be viewed as the sum of $T$ matrices, each of them filled with $k$-by-$k$ submatrix full of $1$. 
+$$
+\begin{align}
+&tr[1^TS^{-1}S^{-T}1]\\
+=&\sum_{k=1}^T k^2\\
+=&\frac{[T(T + 1)(2T + 1)]}{6}
+\end{align}
+$$
+Thus the original trace of the covariance matrix reads 
+$$
+\begin{align}
+tr[\Sigma[x]]&=tr[S^{-1}S^{-T}]-\frac 1T tr[1^TS^{-1}S^{-T}1]\\
+&=\sum_{i=1}^T k -\frac{T(T + 1)(2T + 1)}{6T}\\
+&=\frac{T(T + 1)}{2} -\frac{(T + 1)(2T + 1)}{6}\\
+&=\frac{(T+1)(T-1)}{6}
+\end{align}
+$$
+This is the sum of variance in all dimensions in the random walk. (which should be the correct denominator in Eq. 12 of [^1]) 
+
 [^1]: Antognini, J., & Sohl-Dickstein, J. (2018). [PCA of high dimensional random walks with comparison to neural network training](https://proceedings.neurips.cc/paper/2018/hash/7a576629fef88f3e636afd33b09e8289-Abstract.html). *Advances in Neural Information Processing Systems*, *31*.
 
 [^2]: Note that this is the $T$-by-$T$ covariance matrix, it's structured is independent of $\mathcal P$, thus the projected trajectories are independent of $\mathcal P$. However, this does not mean the PC axes i.e. the right singular vectors of $\hat X$ in $n$ dimensional space is independent of $\mathcal P$.
 
 ### Eigen Structure of Circulant Matrix 
 
-Finally let's analyze the eigen structure of $CS^{-1}S^{-T}C$. Since $S^TS$ is a real symmetric matrix, we can analyze it's eigenvalue and eigenvectors, and $(S^TS)^{-1}$ will share the same eigenvectors with inverted eigenvalues. 
+Finally let's analyze the eigen structure of $CS^{-1}S^{-T}C$. Since $S^TS$ is a real symmetric matrix, we can analyze its real eigenvalue and eigenvectors, and $(S^TS)^{-1}$ will share the same eigenvectors with inverted eigenvalues. 
 
 By calculation or intuition ($S$ as row differentiation operator ), $S^TS$ manifests itself as a center difference (2nd order differentiation) matrix on a grid formed by $T$ points. 
 
@@ -220,7 +261,11 @@ $$
 \lambda_k =(2-2\cos \frac{k\pi}{T+1})^{-1},k=1,...T
 $$
 
+For matrix $C$ , we know it has one $0$ eigenvalue, along the dimension of $1$ (vector full of 1) and the complement of $1$ vector has eigenvalue 1. 
 
+
+
+Thus the explained variance of 
 
 [^3]: Physical intuition is this $S^TS$​ represents the 2nd derivative operator of length $T$​ signal with zero padding or constant boundary condition; while the circulant matrix represents the 2nd derivative operator of a cyclic signal of length $T$​. This difference in boundary condition vanish for long enough $T$​.
 [^4]: Borowska, J., & Łacińska, L. (2015). [Eigenvalues of 2-tridiagonal Toeplitz matrix](https://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-1455d930-653b-4f23-a7ad-6c9431dc8f96/c/2015_Borowska_4-art_02.pdf)  *Journal of Applied Mathematics and Computational Mechanics*, *14*(4).  See Eq. 17. 
