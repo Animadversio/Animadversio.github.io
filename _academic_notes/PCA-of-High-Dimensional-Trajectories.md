@@ -111,6 +111,7 @@ $$
 From this we can already see, the **covariance structure** of high dimensional random walk is **universal**, independent of the distribution $\mathcal P$ where steps are sampled from [^2], even independent of the dimension $d$. All random walk of $T$ steps in high dimension will have the same covariance structure up to scaling, thus they shall all have the same PCA structure. 
 
 We noticed that 
+
 $$
 S^{-1}S^{-T}=\begin{bmatrix}
  1 & 1 & 1 & ... & 1 & 1\\
@@ -121,6 +122,7 @@ S^{-1}S^{-T}=\begin{bmatrix}
  1 & 2 & 3 & ... & T-1 & T
 \end{bmatrix}
 $$
+
 Then the total variance or the trace of the covariance matrix is 
 $$
 \begin{align}
@@ -146,7 +148,8 @@ $$
 tr[\Sigma[x]]&=tr[S^{-1}S^{-T}]-\frac 1T tr[1^TS^{-1}S^{-T}1]\\
 &=\sum_{i=1}^T k -\frac{T(T + 1)(2T + 1)}{6T}\\
 &=\frac{T(T + 1)}{2} -\frac{(T + 1)(2T + 1)}{6}\\
-&=\frac{(T+1)(T-1)}{6}
+&=\frac{(T+1)(T-1)}{6}\\
+&=\frac{T^2-1}{6}
 \end{align}
 $$
 This is the sum of variance in all dimensions in the random walk. (which should be the correct denominator in Eq. 12 of [^1]) 
@@ -155,11 +158,11 @@ This is the sum of variance in all dimensions in the random walk. (which should 
 
 [^2]: Note that this is the $T$-by-$T$ covariance matrix, it's structured is independent of $\mathcal P$, thus the projected trajectories are independent of $\mathcal P$. However, this does not mean the PC axes i.e. the right singular vectors of $\hat X$ in $n$ dimensional space is independent of $\mathcal P$.
 
-### Eigen Structure of Circulant Matrix 
+## Eigen Structures 
 
-Finally let's analyze the eigen structure of $CS^{-1}S^{-T}C$. Since $S^TS$ is a real symmetric matrix, we can analyze its real eigenvalue and eigenvectors, and $(S^TS)^{-1}$ will share the same eigenvectors with inverted eigenvalues. 
+Finally let's analyze the eigen structure of $CS^{-1}S^{-T}C$. Since $S^TS$ is a real symmetric matrix, its eigenvalue and eigenvectors are real, and $(S^TS)^{-1}$ will share the same eigenvectors with inverted eigenvalues. 
 
-By calculation or intuition ($S$ as row differentiation operator ), $S^TS$ manifests itself as a center difference (2nd order differentiation) matrix on a grid formed by $T$ points. 
+By calculation or intuition ($S$ as row differentiation operator ), $S^TS$ manifests itself as a center difference (2nd order differentiation) matrix on a grid formed by $T$ points, with a difference of $1$ in lower right corner.  
 
 $$
 S^TS=\begin{bmatrix}
@@ -177,7 +180,7 @@ S^TS=\begin{bmatrix}
  & & &... \\
  & & &...& 1 & 0\\
  0 & 0 & 0 & ... & -1 & 1
-\end{bmatrix}
+\end{bmatrix}\\
 =\begin{bmatrix}
  2 & -1 & 0 & ... & 0 & 0\\
 -1 & 2 & -2 & ... & 0 & 0\\
@@ -188,7 +191,7 @@ S^TS=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-This matrix is different from a circulant matrix by only three elements ( $-1$ at upper-right and lower left and $1$ at bottom), and it's provable that its eigen structure converge to the eigenstructure of the [circulant matrix](https://en.wikipedia.org/wiki/Circulant_matrix)[^3] when $T\to\infty$. We denote the exact circulant matrix as $Q$ and the one without upper-right and lower left $-1$ as $P$. 
+This matrix is different from a circulant matrix by only three elements ( $-1$ at upper-right and lower left and $1$ at bottom), and it's provable that its eigen structure converge to the eigenstructure of the [circulant matrix](https://en.wikipedia.org/wiki/Circulant_matrix)[^3] when $T\to\infty$. We denote the exact circulant matrix as $Q$, and we denote the tridiagonal matrix without upper-right and lower left $-1$ as $P$, notice the 1 element difference between $P$ and $S^TS$ 
 
 $$
 Q=\begin{bmatrix}
@@ -198,7 +201,8 @@ Q=\begin{bmatrix}
  & & &... \\
  & & &...& 2 & -1\\
  -1 & 0 & 0 & ... & -1 & 2
-\end{bmatrix},P=\begin{bmatrix}
+\end{bmatrix}\\
+P=\begin{bmatrix}
  2 & -1 & 0 & ... & 0 & 0\\
 -1 & 2 & -2 & ... & 0 & 0\\
  0 & -1 & 2 & ... & 0 & 0\\
@@ -208,6 +212,8 @@ Q=\begin{bmatrix}
 \end{bmatrix}
 $$
 
+### Digression: Relation to diffusion operator
+
 From physics to engineering, these matrix appears everywhere. What do we know about the eigenstructure of these matrices? As we know from the theory of 2nd order Partial Differential Equations (e.g. diffusion / heat equation and wave equation as below), the 2nd order derivative, or Laplacian operator has its distinct eigenfunctions -- Fourier series. As a side note, actually, analyzing heat conduction was the exact reason Fourier discovered Fourier decomposition. These eigen functions of Laplacian are the reason we see sinusoidal waves on strings and on the surface of water! 
 
 $$
@@ -216,6 +222,10 @@ $$
 $$
 
 Recall from Quantum mechanics and Wave equation. An important lesson we learnt from PDE is that, the specific Fourier mode that goes into the solution depend on the boundary condition: $u(t,0)=0$ or $\partial_x u=0$  or  $\partial_t u=0$. For example when one side of rope is fixed when you perturbing it, then only $\sin$ waves mode could be in the solution. This subtle point is important as we shall see below, since the different elements between $SS^T$ and a circulant matrix $Q$ is tightly related to boundary condition. The exact circulant matrix $Q$ is the 2nd order differentiation operator on a **circular boundary condition**. 
+
+
+
+### Eigenstructure of Circulant $Q$ 
 
 Back to our matrix, let's translate this intuition for continuous space to discrete spaces. We will expect the eigenvectors of $S^TS$ to be also cosine and sine waves. Indeed, it's known that the [eigenvectors for circulant matrices](https://en.wikipedia.org/wiki/Circulant_matrix#Eigenvectors_and_eigenvalues) are the Fourier modes. For $T$ length sequence, the normalized complex eigenvectors and eigenvalues are as following (numbering starts from $0$. )
 
@@ -228,16 +238,11 @@ In our case, there are only three non-zero element in each column $c_0=2,c_1=c_{
 
 $$
 \lambda_k=2-\exp(2\pi i\frac{k}{T})-\exp(2\pi i\frac{(T-1)k)}{T})\\=2-2\cos(\frac{2\pi k}{T})\\
-\lambda_k=\lambda_{T-k}\mbox{  for  } k\neq0
 $$
 
-Similarly, the real eigenvectors are ???
+We note that $\lambda_k=\lambda_{T-k}\mbox{  for  } k\neq0$ , each eigenvalue has a 2d eigenspace. This is intuitive since the matrix $Q$ is the laplacian on a circular space, we expect the eigenmodes to be rotational symmetric, thus it has two eigenvectors corresponding to $\sin$ and $\cos$ for each eigenvalue, weighted combining these two eigenvectors admit eigen functions of any phase. 
 
-
-
-This is intuitive since the matrix $Q$ is the laplacian on a circular space, we expect the eigenmodes to be rotational symmetric, thus it has two eigenvectors corresponding to $\sin$ and $\cos$ for each eigenvalue, these two eigenvectors admit eigen function of any phase. 
-
-## Eigenstructure of $SS^T$ 
+### Eigenstructure of Tridiagonal $P$ 
 
 Next, let us consider the eigenstructure of the tridiagonal matrix $P$, its eigenvalues are less straightforward to calculate. We need to solve the eigenpolynomial directly. 
 
@@ -247,15 +252,24 @@ $$
 \lambda_k =2-2\cos \frac{k\pi}{T+1},k=1,...T
 $$
 
-Notice the difference from the eigenvalues of $Q$ above? There are no more repeating eigenvalues, and $\lambda=0$ is no longer a eigenvalue to this matrix. 
+Notice the difference from the eigenvalues of $Q$ above? There are no more repeating eigenvalues, and $\lambda=0$ is no longer a eigenvalue to this matrix, so this matrix. 
+
+### Eigenstructure of $S^TS$  and  $CS^{-1}S^{-T}C$
+
+Per the paper, and simulation we knew that the eigenvalues of the matrix $CS^{-1}S^{-T}C$ also has analytical solution
+$$
+\lambda_k =(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
+\lambda_k=0
+$$
+
 
 ## Relating Back to PCA
 
-OK, we have talked enough about eigenvalues, how this have to do with the PCA of random walk? 
+So, we have talked enough about eigenvalues, how this have to do with the PCA of random walk? 
 
-Just to recap, performing PCA to a random walk in high dimension is just performing eigen-decomposition to this matrix $\Sigma[x]=CS^{-1}S^{-T}C$ . The eigenvectors are the projected coefficient on to each PC, and eigenvalues correspond to the explained variance of that PC. 
+Just to recap, performing PCA to a random walk in high dimension is just performing eigen-decomposition to the covariance matrix $\Sigma[x]=CS^{-1}S^{-T}C$ . The eigenvectors are the projected coefficient on to each PC, and eigenvalues correspond to the explained variance of that PC. 
 
-Since we have got an estimate of the eigenvalues of $S^TS$, we know its inverse $S^{-1}S^{-T}$ shares the same eigenvectors but the inverse of its eigenvalue. 
+From the section above we knew the eigenvalues of the matrix $CS^{-1}S^{-T}C$ are 
 
 $$
 \lambda_k =(2-2\cos \frac{k\pi}{T+1})^{-1},k=1,...T
@@ -265,7 +279,15 @@ For matrix $C$ , we know it has one $0$ eigenvalue, along the dimension of $1$ (
 
 
 
-Thus the explained variance of 
+Thus the explained variance of each PCs will be the following, which corrects the error version in the paper[^1] Eq.12. 
+
+$$
+\begin{align}
+\rho(k)&=\frac{\lambda_k}{tr[\Sigma[x]]}\\
+&=\frac{(2-2\cos\frac{k\pi}{T+1})^{-1}}{\frac16(T^2-1)}\\
+&=\frac{(1-\cos\frac{k\pi}{T+1})^{-1}}{\frac13(T^2-1)}\\
+\end{align}
+$$
 
 [^3]: Physical intuition is this $S^TS$​ represents the 2nd derivative operator of length $T$​ signal with zero padding or constant boundary condition; while the circulant matrix represents the 2nd derivative operator of a cyclic signal of length $T$​. This difference in boundary condition vanish for long enough $T$​.
 [^4]: Borowska, J., & Łacińska, L. (2015). [Eigenvalues of 2-tridiagonal Toeplitz matrix](https://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-1455d930-653b-4f23-a7ad-6c9431dc8f96/c/2015_Borowska_4-art_02.pdf)  *Journal of Applied Mathematics and Computational Mechanics*, *14*(4).  See Eq. 17. 
