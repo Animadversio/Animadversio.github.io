@@ -237,7 +237,10 @@ $$
 In our case, there are only three non-zero element in each column $c_0=2,c_1=c_{T-1}=-1$ the other terms are $0$. Thus it's easy to obtain the real eigenvalues 
 
 $$
-\lambda_k=2-\exp(2\pi i\frac{k}{T})-\exp(2\pi i\frac{(T-1)k)}{T})\\=2-2\cos(\frac{2\pi k}{T})\\
+\begin{align}
+\lambda_k&=2-\exp(2\pi i\frac{k}{T})-\exp(2\pi i\frac{(T-1)k)}{T})\\
+&=2-2\cos(\frac{2\pi k}{T}),\;\; k=1,2...T\\
+\end{align}
 $$
 
 We note that $\lambda_k=\lambda_{T-k}\mbox{  for  } k\neq0$ , each eigenvalue has a 2d eigenspace. This is intuitive since the matrix $Q$ is the laplacian on a circular space, we expect the eigenmodes to be rotational symmetric, thus it has two eigenvectors corresponding to $\sin$ and $\cos$ for each eigenvalue, weighted combining these two eigenvectors admit eigen functions of any phase. 
@@ -256,10 +259,13 @@ Notice the difference from the eigenvalues of $Q$ above? There are no more repea
 
 ### Eigenstructure of $S^TS$  and  $CS^{-1}S^{-T}C$
 
-Per the paper, and simulation we knew that the eigenvalues of the matrix $CS^{-1}S^{-T}C$ also has analytical solution
+Per the paper[^1], and numerical simulation we found that the eigenvalues of the matrix $CS^{-1}S^{-T}C$ also has **analytical solution**, with finite $T$ values. 
+
 $$
-\lambda_k =(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
-\lambda_k=0
+\begin{align}
+\lambda_k &=(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
+\lambda_T &=0
+\end{align}
 $$
 
 
@@ -272,8 +278,10 @@ Just to recap, performing PCA to a random walk in high dimension is just perform
 From the section above we knew the eigenvalues of the matrix $CS^{-1}S^{-T}C$ are 
 
 $$
-\lambda_k =(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
-\lambda_k=0
+\begin{align}
+\lambda_k =&(2-2\cos \frac{k\pi}{T})^{-1},\;\;k=1,...T-1\\
+\lambda_T=&0
+\end{align}
 $$
 
 Thus the explained variance of each PCs will be the following, which corrects the error version in the paper[^1] Eq.12. 
