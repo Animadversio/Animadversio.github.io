@@ -272,12 +272,9 @@ Just to recap, performing PCA to a random walk in high dimension is just perform
 From the section above we knew the eigenvalues of the matrix $CS^{-1}S^{-T}C$ are 
 
 $$
-\lambda_k =(2-2\cos \frac{k\pi}{T+1})^{-1},k=1,...T
+\lambda_k =(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
+\lambda_k=0
 $$
-
-For matrix $C$ , we know it has one $0$ eigenvalue, along the dimension of $1$ (vector full of 1) and the complement of $1$ vector has eigenvalue 1. 
-
-
 
 Thus the explained variance of each PCs will be the following, which corrects the error version in the paper[^1] Eq.12. 
 
