@@ -238,7 +238,7 @@ In our case, there are only three non-zero element in each column $c_0=2,c_1=c_{
 
 $$
 \begin{align}
-\lambda_k&=2-\exp(2\pi i\frac{k}{T})-\exp(2\pi i\frac{(T-1)k)}{T})\\
+\lambda_k(Q)&=2-\exp(2\pi i\frac{k}{T})-\exp(2\pi i\frac{(T-1)k)}{T})\\
 &=2-2\cos(\frac{2\pi k}{T}),\;\; k=1,2...T\\
 \end{align}
 $$
@@ -252,7 +252,7 @@ Next, let us consider the eigenstructure of the tridiagonal matrix $P$, its eige
 However, we are still saved, mathematicians have derived close form solution to the eigenvalues of a tri-diagonal Toeplitz matrix [^4]. For a derivation of this solution, see [my note](Spectrum-of-Tri-Toeplitz-matrix.md)!
 
 $$
-\lambda_k =2-2\cos \frac{k\pi}{T+1},k=1,...T
+\lambda_k(P) =2-2\cos \frac{k\pi}{T+1},k=1,...T
 $$
 
 Notice the difference from the eigenvalues of $Q$ above? There are no more repeating eigenvalues, and $\lambda=0$ is no longer a eigenvalue to this matrix, so this matrix. 
@@ -263,8 +263,8 @@ Per the paper[^1], and numerical simulation we found that the eigenvalues of the
 
 $$
 \begin{align}
-\lambda_k &=(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
-\lambda_T &=0
+\lambda_k(CS^{-1}S^{-T}C) &=(2-2\cos \frac{k\pi}{T})^{-1},k=1,...T-1\\
+\lambda_T(CS^{-1}S^{-T}C) &=0
 \end{align}
 $$
 
