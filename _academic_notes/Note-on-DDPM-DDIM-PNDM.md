@@ -49,7 +49,37 @@ The insights obvious from the SDE framework
 
 ## DDPM
 
-In this formulation[^2], we start from a **discrete Markov chain model**, with discrete time point, then design a process to reverse the Markov Chain. 
+In this formulation[^2], we start from a **discrete Markov chain model**, with discrete time point, then design a process to reverse the Markov Chain. We call them the forward / inference process and the reverse / generative process. 
+
+In the forward process, 
+$$
+q(x_t\mid x_{t-1})=\mathcal N(\sqrt\frac{\alpha_t}{\alpha_{t-1}} x_{t-1}+,(1-\frac{\alpha_t}{\alpha_{t-1}})I)\\
+x_t=\sqrt\frac{\alpha_t}{\alpha_{t-1}} x_{t-1}+\sqrt{1-\frac{\alpha_t}{\alpha_{t-1}}} \xi,\;\xi\sim\mathcal N(0,I)
+$$
+We also have the marginal distribution of each time point given the initial sample $x_0$. (In other word, this forward process is analytical solution.)
+$$
+q(x_t\mid x_{0})=\mathcal N(\sqrt{\alpha_t} x_{0},(1-\alpha_t)I))\\
+x_t=\sqrt{\alpha_t} x_{0}+\sqrt{1-\alpha_t}\xi, \;\xi\sim\mathcal N(0,I)
+$$
+
+
+
+
+The generative / reverse process is also a Markov Chain, with the samples at intermediate time points as latent variables. 
+$$
+
+$$
+
+
+
+
+For DDPM, as the model is effectively a latent variable model, the parameter inference will be done via a variational inference lower bound (ELBO). 
+
+
+
+* The rationale of the ELBO is different from the score matching, but they arrived at the same simple training objective in the end. 
+* They also acknowledged that their training objective is similar to denoising score matching, and the sampling scheme is a annealed Langevin dynamics. 
+  * This ELBO is different from the derivation of the score from the SDE formulation. But xxx. 
 
 
 
@@ -57,9 +87,42 @@ In this formulation[^2], we start from a **discrete Markov chain model**, with d
 
 ## DDIM
 
+One motivation DDIM got is, the training objective of DDPM or score matching only depends on the marginal distribution at any given $t$, (*time dependent score function*) and it doesn't depend on the joint of joint of the variables. Thus the authors are motivated to design other processes with the same marginal, but different conditional or joint. 
+
+
+
+From this motivation, they designed an alternative forward (noising) process that is no longer Markovian, i.e. not just dependent on the last time steps. 
+
+
+
+
+
 Comparing to DDPM the insights afforded by DDIM is, 
 
 * The sampling could be totally deterministic, and the sampling schedule could be changed without affecting the score function learning. 
+
+$$
+x_{t-1}=\sqrt{\alpha_{t-1}} \left( \frac{x_t-\sqrt{1-\alpha_{t}}\epsilon(x_t,t)}{\sqrt{\alpha_{t}}}\right)
++\sqrt{1-\alpha_{t-1}-\sigma_t^2} \epsilon(x_t,t)
++\sigma_t \epsilon(x_t,t)
+$$
+
+* In the deterministic case, all the $\sigma_t$ are set as 0, then the sampling dynamics could be written as 
+  $$
+  x_{t-1}=\sqrt{\alpha_{t-1}} f_t(x_t,\epsilon(x_t,t))
+  +\sqrt{1-\alpha_{t-1}} \epsilon(x_t,t)\\
+  f_t(x_t,\epsilon)=\frac{x_t-\sqrt{1-\alpha_{t}}\epsilon(x_t,t)}{\sqrt{\alpha_{t}}}\approx \hat x_0
+  $$
+
+  * Thus, if the score function is somewhat exact, then by this design, the states $x_t$ should travel on the two dimensional plane, spanned by the initial state and the potential end state. 
+
+* Another insight is the weights $\gamma$ in the score matching objective has a connection to the $\sigma$ parameter in this Non-markovian model. (Theorem 1), there exist $\gamma$ for every $\sigma$ choice and a constant value $C$ such that the ELBO for DDIM is a shifted version of DDPM. 
+
+  * This provides a interpretation for the $\gamma$ weights and made it less arbitrary during training. 
+
+
+
+
 
 
 
@@ -67,7 +130,7 @@ Comparing to DDPM the insights afforded by DDIM is,
 
 ## PNDM
 
-As a step forward the paper PNDM summarize the progress in the DDPM and DDIM, and embraced the ODE formulation. It incorporates a higher order solver for the ODE, using linear multi-step methods (RK4 is also a choice) to estimate the real "gradient" and use it to solve the ODE in time. 
+As a step forward the paper PNDM summarize the progresses in the DDPM and DDIM, and embraced the ODE / deterministic formulation. It incorporates a higher order solver for the ODE, using linear multi-step methods (RK4 is also a choice) to estimate the real "gradient" and use it to solve the ODE in time. 
 
 It's similar to DDIM in that they both used a nonlinear transport part, but differ in they used different gradient estimation method: DDIM used the score estimate directly, PNDM used the score estimates from last few steps to construct a better linear estimate of the current score. 
 
