@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Note on Variants of Diffusion Scheduler: DDPM DDIM PNDM
+title: Note on Variants of Diffusion Scheduler, DDPM DDIM PNDM
 author: Binxu Wang
 date: Jan. 16th, 2023
 comments: true
