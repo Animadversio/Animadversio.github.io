@@ -1,0 +1,3017 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/pexels/eyesight_Iris.jpg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Notes | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notes" />
+<script type="application/ld+json">
+{"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"WebPage","url":"https://animadversio.github.io/academic_notes/","headline":"Notes","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Notes">
+    <meta name="twitter:description" content="{% for cat in site.category-list %}{% unless cat == 'personal writing' %} {{ cat }}   {% for page in site.academic_notes %}      {% for pc in page.categories...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/pexels/eyesight_Iris.jpg">
+    <meta name="twitter:image:alt" content="Notes">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Notes " aria-label="Notes" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+
+  <header id="main" style="background-image: url('/assets/img/pexels/eyesight_Iris.jpg')">
+    <div class="title-padder">
+      
+        <h1 id="Notes" class="title"> Notes</h1>
+        
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+	
+
+<div class=coll2>
+<h3> courses </h3>
+<ul>
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-computer-vision">Note on Computer Vision</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-advanced-cv">Note on Advanced Computer Vision</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-nonlinear-dynamic-system">Note on Nonlinear Dynamic System</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+
+
+<div class=coll2>
+<h3> mathematics </h3>
+<ul>
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/some-statistical-computation-on-sphere">Some Computation on Sphere</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-krylov-subspace-conjugate-gradient-and-lancosz-iteration">Krylov Subspace, Conjugate Gradient and Lancosz Iteration</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/epipolar-geometry-and-optic-flow">Note on Epipolar Geometry and Optic Slow</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/hyperbolic-geometry">Computations on Hyperbolic Geometry</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/spectral-graph-and-segmentation">Spectral Graph Theory and Segmentation</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-laplacian-operator-geometry">Note on Laplacian Operator (Diffusion) in Geometry Processing</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-bayesian-optimization">Note on Bayesian Optimization</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-gaussian-process">Note on Gaussian Process</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-non-parametric-regression">Note on Non-Parametric Regression</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-invariance-stable-manifold">Note on Invariance and Stable Manifold</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-nonlinear-dynamic-system">Note on Nonlinear Dynamic System</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-nonlinear-system-stability">Note on Lyapnov Stability Theory</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-bifurcation-normal-form">Note on Bifurcation Normal Form</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-feedback-stablization">Note on Feedback Stablization</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/pca-of-high-dimensional-trajectories">PCA of High Dimensional Trajectory</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/spectrum-of-tri-toeplitz-matrix">Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-matrix-inversion-determinant-lemma">Some Famous Matrix Determinant and Inversion Identities</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-probabilistic-model-of-population">Probabilistic Models of Neural Population</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+
+
+<div class=coll2>
+<h3> neuroscience </h3>
+<ul>
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-selective-attention">Note on Selective Attention</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/notes-on-computation-by-synaptic-plasticity">Note on Computation by Synaptic Plasticity</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-behavioral-study">Note on Behavioral Study</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-animal-perception">Note on Animal Perception</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-fragment-based-object-recognition">Note on Fragment Based Object Recognition</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-forms-of-memory">Note on Forms of Memory</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-categorization-and-concepts">Note on Categorization and Concepts</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-visual-imagery">Note on Visual Imagery</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-cortical-waves">Note on Cortical Waves</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-neural-tuning-and-information">Note on Neural Tuning and Information</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-probabilistic-model-of-population">Probabilistic Models of Neural Population</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+
+
+<div class=coll2>
+<h3> machine learning </h3>
+<ul>
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-deep-unsupervised-learning">Note on Deep Unsupervised Learning</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-feature-visualization">Note on Feature Visualization (Updating)</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-cnn-interpretability">Note on CNN Interpretability</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/comparison-of-major-dl-frameworks">Comparison of Major Deep Learning Frameworks (Updating)</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-gans">Note on Generative Adversarial Network</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-deep-rl">Note on Deep Reinforcement Learning</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-minmax-game">Note on MinMax Game</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-bayesian-optimization">Note on Bayesian Optimization</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-gaussian-process">Note on Gaussian Process</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-non-parametric-regression">Note on Non-Parametric Regression</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-word-embedding">Note on Word2Vec</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-classic-cnn-architecture">Note on Classic CNNs</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-hopfield-network">Note on Hopfield Network</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-modern-hopfield-net-transformer">Note on Modern Hopfield Network and Transformers</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-em-and-lower-bound">Note on EM algorithm and likelihood lower bound</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-s4-model">Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-hippo">Note on Hippo- Recurrent Memory with Optimal Polynomial Projection</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-ddpm-ddim-pndm">Note on Variants of Diffusion Scheduler, DDPM DDIM PNDM</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+
+
+<div class=coll2>
+<h3> algorithm </h3>
+<ul>
+  
+      
+        
+          <li><a href="/academic_notes/note-on-belief-propagation-algorithm">Note on Belief Propagation Algorithm (Updating)</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/constrained-cma-es-algorithm">Constrained CMA-ES Algorithm</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/notes-on-algorithms-for-non-negative-matrix-factorization">Note on Algorithm for Non-Negative Matrix Factorization</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-optimization-on-manifold">Note on Optimization on Manifold</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-lbfgs">LBFGS Algorithm</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-online-update-regression-algorithms">Note on Online Linear Regression Algorithm</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-krylov-subspace-conjugate-gradient-and-lancosz-iteration">Krylov Subspace, Conjugate Gradient and Lancosz Iteration</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-hessian-aware-zoo-framework">Note on Hessian Aware Zeroth Order Optimization Framework</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/spectral-graph-and-segmentation">Spectral Graph Theory and Segmentation</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-laplacian-operator-geometry">Note on Laplacian Operator (Diffusion) in Geometry Processing</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-minmax-game">Note on MinMax Game</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/brief-note-on-online-computing-correlation">Brief Note on Online Correlation Computation</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-bayesian-optimization">Note on Bayesian Optimization</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-gaussian-process">Note on Gaussian Process</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-variational-inference">Note on Variational Inference (Updating)</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-non-parametric-regression">Note on Non-Parametric Regression</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-word-embedding">Note on Word2Vec</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-hopfield-network">Note on Hopfield Network</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-modern-hopfield-net-transformer">Note on Modern Hopfield Network and Transformers</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-kernel-ridge-regression">Note on Kernel Ridge Regression</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-kernel-pca">Note on Kernel PCA</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-probabilistic-model-of-population">Probabilistic Models of Neural Population</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-diffusion-generative-model">Note on Diffusion Generative Models</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-em-and-lower-bound">Note on EM algorithm and likelihood lower bound</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-equiv-score-matching-objective">Note on Equivalent Score Matching Objective</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-s4-model">Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-hippo">Note on Hippo- Recurrent Memory with Optimal Polynomial Projection</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-ddpm-ddim-pndm">Note on Variants of Diffusion Scheduler, DDPM DDIM PNDM</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+
+
+<div class=coll2>
+<h3> computer science </h3>
+<ul>
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-network-commnunication">Note on Network Commnunication</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-computer-vision">Note on Computer Vision</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-shapecollage">Note on ShapeCollage and Patch Based Shape Interpretation</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-local-feature-descriptors">Note on Local Feature Descriptors</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-image-prior">Note on Image Prior-Spatial Relationship Modeling</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-advanced-cv">Note on Advanced Computer Vision</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-mrf-image-prior">Note on Image Prior-Markov Random Field Modelling</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/semantics-vision-task">Note on Semantic Vision Task</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/stereo-algorithms">Note on Stereo Problem</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/epipolar-geometry-and-optic-flow">Note on Epipolar Geometry and Optic Slow</a></li> 
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-computational-photography">Note on Computational Photography</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-hardware-computational-photography">Note on Hardware Based Computational Photography</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+        
+          <li><a href="/academic_notes/note-on-photometric-analysis">Note on Photometric Reasoning</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+        
+          <li><a href="/academic_notes/note-on-minmax-game">Note on MinMax Game</a></li> 
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+  
+      
+           <!-- cat-match-p -->
+      
+           <!-- cat-match-p -->
+        <!-- page-category -->
+    <!-- page -->
+</ul>
+</div>
+
+  <!-- cat -->
+
+<!--  
+    <li>
+      <h3><a href="/academic_notes/note-on-belief-propagation-algorithm">Note on Belief Propagation Algorithm (Updating)</a> </h3> 18 May 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/constrained-cma-es-algorithm">Constrained CMA-ES Algorithm</a> </h3> 20 Jun 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-selective-attention">Note on Selective Attention</a> </h3> 24 Jun 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/notes-on-computation-by-synaptic-plasticity">Note on Computation by Synaptic Plasticity</a> </h3> 24 Jun 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/notes-on-algorithms-for-non-negative-matrix-factorization">Note on Algorithm for Non-Negative Matrix Factorization</a> </h3> 25 Jun 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/this-week-s-learning-about-brain-4-neural-correlate-of-visual-consciousness">This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)</a> </h3> 02 Jul 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-network-commnunication">Note on Network Commnunication</a> </h3> 30 Jul 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-behavioral-study">Note on Behavioral Study</a> </h3> 28 Aug 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-computer-vision">Note on Computer Vision</a> </h3> 10 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-animal-perception">Note on Animal Perception</a> </h3> 12 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-deep-unsupervised-learning">Note on Deep Unsupervised Learning</a> </h3> 13 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-feature-visualization">Note on Feature Visualization (Updating)</a> </h3> 17 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-fragment-based-object-recognition">Note on Fragment Based Object Recognition</a> </h3> 25 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-optimization-on-manifold">Note on Optimization on Manifold</a> </h3> 29 Sep 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-forms-of-memory">Note on Forms of Memory</a> </h3> 01 Oct 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-cnn-interpretability">Note on CNN Interpretability</a> </h3> 04 Oct 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/some-statistical-computation-on-sphere">Some Computation on Sphere</a> </h3> 13 Oct 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-categorization-and-concepts">Note on Categorization and Concepts</a> </h3> 24 Oct 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-shapecollage">Note on ShapeCollage and Patch Based Shape Interpretation</a> </h3> 02 Nov 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-local-feature-descriptors">Note on Local Feature Descriptors</a> </h3> 04 Nov 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-visual-imagery">Note on Visual Imagery</a> </h3> 05 Nov 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-lbfgs">LBFGS Algorithm</a> </h3> 11 Nov 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-online-update-regression-algorithms">Note on Online Linear Regression Algorithm</a> </h3> 15 Dec 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/comparison-of-major-dl-frameworks">Comparison of Major Deep Learning Frameworks (Updating)</a> </h3> 18 Dec 2019 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-krylov-subspace-conjugate-gradient-and-lancosz-iteration">Krylov Subspace, Conjugate Gradient and Lancosz Iteration</a> </h3> 01 Jan 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-image-prior">Note on Image Prior-Spatial Relationship Modeling</a> </h3> 14 Jan 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-advanced-cv">Note on Advanced Computer Vision</a> </h3> 20 Jan 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-hessian-aware-zoo-framework">Note on Hessian Aware Zeroth Order Optimization Framework</a> </h3> 21 Jan 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-mrf-image-prior">Note on Image Prior-Markov Random Field Modelling</a> </h3> 28 Jan 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/semantics-vision-task">Note on Semantic Vision Task</a> </h3> 04 Feb 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/stereo-algorithms">Note on Stereo Problem</a> </h3> 04 Feb 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/epipolar-geometry-and-optic-flow">Note on Epipolar Geometry and Optic Slow</a> </h3> 17 Feb 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-computational-photography">Note on Computational Photography</a> </h3> 27 Feb 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-hardware-computational-photography">Note on Hardware Based Computational Photography</a> </h3> 27 Feb 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-gans">Note on Generative Adversarial Network</a> </h3> 07 Mar 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-photometric-analysis">Note on Photometric Reasoning</a> </h3> 17 Mar 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-deep-rl">Note on Deep Reinforcement Learning</a> </h3> 18 Mar 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/hyperbolic-geometry">Computations on Hyperbolic Geometry</a> </h3> 10 Apr 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/spectral-graph-and-segmentation">Spectral Graph Theory and Segmentation</a> </h3> 22 Apr 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-cortical-waves">Note on Cortical Waves</a> </h3> 06 May 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-laplacian-operator-geometry">Note on Laplacian Operator (Diffusion) in Geometry Processing</a> </h3> 08 May 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-minmax-game">Note on MinMax Game</a> </h3> 18 May 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/brief-note-on-online-computing-correlation">Brief Note on Online Correlation Computation</a> </h3> 22 May 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-bayesian-optimization">Note on Bayesian Optimization</a> </h3> 01 Jul 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-gaussian-process">Note on Gaussian Process</a> </h3> 01 Jul 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-variational-inference">Note on Variational Inference (Updating)</a> </h3> 27 Jul 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-neural-tuning-and-information">Note on Neural Tuning and Information</a> </h3> 24 Aug 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-non-parametric-regression">Note on Non-Parametric Regression</a> </h3> 13 Oct 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-word-embedding">Note on Word2Vec</a> </h3> 27 Nov 2020 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-classic-cnn-architecture">Note on Classic CNNs</a> </h3> 17 Jan 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-invariance-stable-manifold">Note on Invariance and Stable Manifold</a> </h3> 09 Apr 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-nonlinear-dynamic-system">Note on Nonlinear Dynamic System</a> </h3> 09 Apr 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-nonlinear-system-stability">Note on Lyapnov Stability Theory</a> </h3> 09 Apr 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-bifurcation-normal-form">Note on Bifurcation Normal Form</a> </h3> 09 May 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-feedback-stablization">Note on Feedback Stablization</a> </h3> 10 May 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-hopfield-network">Note on Hopfield Network</a> </h3> 15 Nov 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-modern-hopfield-net-transformer">Note on Modern Hopfield Network and Transformers</a> </h3> 15 Nov 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-kernel-ridge-regression">Note on Kernel Ridge Regression</a> </h3> 17 Dec 2021 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/pca-of-high-dimensional-trajectories">PCA of High Dimensional Trajectory</a> </h3> 22 Jan 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/spectrum-of-tri-toeplitz-matrix">Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix</a> </h3> 04 Feb 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-kernel-pca">Note on Kernel PCA</a> </h3> 21 Mar 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-matrix-inversion-determinant-lemma">Some Famous Matrix Determinant and Inversion Identities</a> </h3> 16 Apr 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-probabilistic-model-of-population">Probabilistic Models of Neural Population</a> </h3> 16 Apr 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-diffusion-generative-model">Note on Diffusion Generative Models</a> </h3> 09 May 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-em-and-lower-bound">Note on EM algorithm and likelihood lower bound</a> </h3> 13 May 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-equiv-score-matching-objective">Note on Equivalent Score Matching Objective</a> </h3> 20 Jun 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-s4-model">Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces</a> </h3> 17 Jul 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-hippo">Note on Hippo- Recurrent Memory with Optimal Polynomial Projection</a> </h3> 25 Jul 2022 - Binxu Wang 
+    </li>
+  
+    <li>
+      <h3><a href="/academic_notes/note-on-ddpm-ddim-pndm">Note on Variants of Diffusion Scheduler, DDPM DDIM PNDM</a> </h3> 16 Jan 2023 - Binxu Wang 
+    </li>
+  
+-->
+
+<style>
+    .coll2 {
+        float: left;
+        width: 48%;
+        padding-bottom: 50px;
+    }
+    @media screen and (max-width: 800px) { 
+    .coll2 {
+        float: left;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    }
+    /* Clear floats after the columns */
+    .roww:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+  
+  </section>
+
+
+  <!-- Tag list for portfolio -->
+  
+  
+
+
+  <div class="tag-list"></div>
+
+
+
+</article>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

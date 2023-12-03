@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Debugging StyleGAN2 in PyTorch | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Debugging StyleGAN2 in PyTorch" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Environment Bug" />
+<meta property="og:description" content="Environment Bug" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/debugging-stylegan2" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/debugging-stylegan2" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Debugging StyleGAN2 in PyTorch" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Environment Bug","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/debugging-stylegan2","headline":"Debugging StyleGAN2 in PyTorch","dateModified":"2020-06-10T00:00:00+00:00","datePublished":"2020-06-10T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/debugging-stylegan2"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Debugging StyleGAN2 in PyTorch">
+    <meta name="twitter:description" content="Environment Bughttps://github.com/rosinality/stylegan2-pytorch/issues/70Compiler not found bugWe need to change compiler_bindir_search_path in  ./stylegan2/d...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Debugging StyleGAN2 in PyTorch">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Debugging StyleGAN2 in PyTorch " aria-label="Debugging StyleGAN2 in PyTorch" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Debugging+StyleGAN2+in+PyTorch" class="title">Debugging StyleGAN2 in PyTorch</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      June 10, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="environment-bug">Environment Bug</h2>
+
+<p>https://github.com/rosinality/stylegan2-pytorch/issues/70</p>
+
+<p><strong>Compiler not found bug</strong></p>
+
+<p>We need to change <code class="language-plaintext highlighter-rouge">compiler_bindir_search_path</code> in  <code class="language-plaintext highlighter-rouge">./stylegan2/dnnlib/tflib/custom_ops.py</code>Need to be changed to have the C compiler on the machine. Note Visual Studio 2019 is not supported so have to use 2017!</p>
+
+<p><strong>Tensorflow Header Bug</strong></p>
+
+<pre><code class="language-log">Cannot open include file: 'tensorflow/core/framework/op.h'
+</code></pre>
+
+<p>So I have to rename <code class="language-plaintext highlighter-rouge">tensorflow_core</code> in <code class="language-plaintext highlighter-rouge">C:\ProgramData\Anaconda3\envs\tf\Lib\site-packages\tensorflow_core\include</code> as <code class="language-plaintext highlighter-rouge">tensorflow</code> . Then it worked.</p>
+
+<h2 id="operators-bug">Operators Bug</h2>
+
+<p>As torch cuda compilation of these pytorch operators doesn’t work, one solution is to find and debug the <strong>native pytorch implementations of it</strong> and just use them.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
+<span class="k">def</span> <span class="nf">fused_leaky_relu</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">negative_slope</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">F</span><span class="p">.</span><span class="n">leaky_relu</span><span class="p">(</span><span class="nb">input</span> <span class="o">+</span> <span class="n">bias</span><span class="p">.</span><span class="n">view</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">,)</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">input</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)),</span> <span class="n">negative_slope</span><span class="o">=</span><span class="n">negative_slope</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">upfirdn2d_native</span><span class="p">(</span>
+    <span class="nb">input</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">up_x</span><span class="p">,</span> <span class="n">up_y</span><span class="p">,</span> <span class="n">down_x</span><span class="p">,</span> <span class="n">down_y</span><span class="p">,</span> <span class="n">pad_x0</span><span class="p">,</span> <span class="n">pad_x1</span><span class="p">,</span> <span class="n">pad_y0</span><span class="p">,</span> <span class="n">pad_y1</span>
+<span class="p">):</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">in_h</span><span class="p">,</span> <span class="n">in_w</span><span class="p">,</span> <span class="n">minor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">shape</span>
+    <span class="n">kernel_h</span><span class="p">,</span> <span class="n">kernel_w</span> <span class="o">=</span> <span class="n">kernel</span><span class="p">.</span><span class="n">shape</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">input</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">in_h</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">in_w</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">minor</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">pad</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">up_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">up_y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">in_h</span> <span class="o">*</span> <span class="n">up_y</span><span class="p">,</span> <span class="n">in_w</span> <span class="o">*</span> <span class="n">up_x</span><span class="p">,</span> <span class="n">minor</span><span class="p">)</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">pad</span><span class="p">(</span>
+        <span class="n">out</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">pad_x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pad_x1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pad_y0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pad_y1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span>
+        <span class="p">:,</span>
+        <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">pad_y0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="n">out</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">pad_y1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">pad_x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="n">out</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">pad_x1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">:,</span>
+    <span class="p">]</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span>
+        <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">in_h</span> <span class="o">*</span> <span class="n">up_y</span> <span class="o">+</span> <span class="n">pad_y0</span> <span class="o">+</span> <span class="n">pad_y1</span><span class="p">,</span> <span class="n">in_w</span> <span class="o">*</span> <span class="n">up_x</span> <span class="o">+</span> <span class="n">pad_x0</span> <span class="o">+</span> <span class="n">pad_x1</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">flip</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]).</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kernel_h</span><span class="p">,</span> <span class="n">kernel_w</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span>
+        <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">minor</span><span class="p">,</span>
+        <span class="n">in_h</span> <span class="o">*</span> <span class="n">up_y</span> <span class="o">+</span> <span class="n">pad_y0</span> <span class="o">+</span> <span class="n">pad_y1</span> <span class="o">-</span> <span class="n">kernel_h</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">in_w</span> <span class="o">*</span> <span class="n">up_x</span> <span class="o">+</span> <span class="n">pad_x0</span> <span class="o">+</span> <span class="n">pad_x1</span> <span class="o">-</span> <span class="n">kernel_w</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># out = out.permute(0, 2, 3, 1)
+</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="n">down_y</span><span class="p">,</span> <span class="p">::</span><span class="n">down_x</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Note this native pytorch implementation will decrease forward and backward pass time by a large margin…</p>
+
+<p>Finally the moment of faith!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python generate.py <span class="nt">--ckpt</span> stylegan2-ffhq-config-f.pt <span class="nt">--size</span> 1024
+python generate.py <span class="nt">--ckpt</span> model.ckpt-533504.pt <span class="nt">--size</span> 512
+</code></pre></div></div>
+
+<p>https://libraries.io/pypi/torch-dwconv</p>
+
+<h2 id="solving-compiling-issue">Solving Compiling Issue</h2>
+
+<p>Major issue faced by this is the just in time compiler in pytorch will call C compiler in the process to compile the c code into library. On the windows platform it’s using  <code class="language-plaintext highlighter-rouge">cl.exe</code> , while on unix <code class="language-plaintext highlighter-rouge">gcc</code> or <code class="language-plaintext highlighter-rouge">clang</code> may be used.</p>
+
+<p>But the <code class="language-plaintext highlighter-rouge">cl.exe</code> requires <strong>several path variables to know where are the standard libraries</strong>. Usually for <code class="language-plaintext highlighter-rouge">cl.exe</code> this is set by <code class="language-plaintext highlighter-rouge">vcvar64.bat</code> . or <code class="language-plaintext highlighter-rouge">vcvarall.bat 64</code> (use other config for other architecture.) Usually the work flow is to run <code class="language-plaintext highlighter-rouge">vcvarall.bat 64</code> in a cmd console and then run the python code in the same console, through this, the environment variables will be shared with <code class="language-plaintext highlighter-rouge">cl.exe</code></p>
+
+<p>A possible command to call this <code class="language-plaintext highlighter-rouge">bat</code> is like</p>
+
+<pre><code class="language-cmd">C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
+</code></pre>
+
+<p>Thus you can load <code class="language-plaintext highlighter-rouge">StyleGAN2</code> easily in terminal. But in an IDE, it’s harder to call on <code class="language-plaintext highlighter-rouge">vcvarall.bat</code> to set the environment variables.  As the environment variables will be set into a different process and <code class="language-plaintext highlighter-rouge">cl.exe</code> know nothing about it….</p>
+
+<h2 id="compile-extension-permanently-on-windows">Compile Extension Permanently on Windows</h2>
+
+<p>The major issue for the method used above is the extension needs to be compiled everytime you restart your process and load the model. So you need to setup <code class="language-plaintext highlighter-rouge">vcvarsall.bat</code> beforehand to run <code class="language-plaintext highlighter-rouge">cl.exe</code> . But that requires you to have a command line environment, and many IDE do not have the capability to run <code class="language-plaintext highlighter-rouge">vcvarsall.bat</code> and then keep all the environment variables set in it.</p>
+
+<p>So at the end I decided to <strong>compile the extension into a package once and for all</strong>! All we need is to write up a <code class="language-plaintext highlighter-rouge">setup.py</code> file and compile the <code class="language-plaintext highlighter-rouge">.cpp</code> <code class="language-plaintext highlighter-rouge">.cu</code> codes into a library. And then some linking packages will create interface in python to these library to use the compiled functions.</p>
+
+<p>Following the example in this <a href="https://pytorch.org/tutorials/advanced/cpp_extension.html">tutorial</a>  the <code class="language-plaintext highlighter-rouge">setup.py</code> file reads like this, pretty simple.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">Extension</span>
+<span class="kn">from</span> <span class="nn">torch.utils</span> <span class="kn">import</span> <span class="n">cpp_extension</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'op_cpp'</span><span class="p">,</span>
+      <span class="n">ext_modules</span><span class="o">=</span><span class="p">[</span><span class="n">cpp_extension</span><span class="p">.</span><span class="n">CUDAExtension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"fused"</span><span class="p">,</span>
+                            <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s">"fused_bias_act.cpp"</span><span class="p">,</span> <span class="s">"fused_bias_act_kernel.cu"</span><span class="p">],</span> <span class="n">include_dirs</span><span class="o">=</span><span class="n">cpp_extension</span><span class="p">.</span><span class="n">include_paths</span><span class="p">(),),</span>
+                   <span class="n">cpp_extension</span><span class="p">.</span><span class="n">CUDAExtension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"upfirdn2d"</span><span class="p">,</span>
+                             <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s">"upfirdn2d.cpp"</span><span class="p">,</span> <span class="s">"upfirdn2d_kernel.cu"</span><span class="p">],</span><span class="n">include_dirs</span><span class="o">=</span><span class="n">cpp_extension</span><span class="p">.</span><span class="n">include_paths</span><span class="p">(),),</span>
+                   <span class="p">],</span>
+      <span class="n">cmdclass</span><span class="o">=</span><span class="p">{</span><span class="s">'build_ext'</span><span class="p">:</span> <span class="n">cpp_extension</span><span class="p">.</span><span class="n">BuildExtension</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+<p>Note you need to choose <code class="language-plaintext highlighter-rouge">cpp_extension.CUDAExtension</code> if you are compiling some <code class="language-plaintext highlighter-rouge">.cu</code> CUDA code. If it’s purely <code class="language-plaintext highlighter-rouge">c++</code> you can use <code class="language-plaintext highlighter-rouge">cpp_extension.CppExtension</code>.</p>
+
+<p>Note here you need to run <code class="language-plaintext highlighter-rouge">vcvarsall.bat</code> first to set up all the variables. And then run the command <code class="language-plaintext highlighter-rouge">python setup.py install</code> in the <code class="language-plaintext highlighter-rouge">op</code> folder, to compile the C++ code into a python library.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>running install
+running bdist_egg
+running egg_info
+writing op_cpp.egg-info\PKG-INFO
+writing dependency_links to op_cpp.egg-info\dependency_links.txt
+writing top-level names to op_cpp.egg-info\top_level.txt
+reading manifest file 'op_cpp.egg-info\SOURCES.txt'
+writing manifest file 'op_cpp.egg-info\SOURCES.txt'
+installing library code to build\bdist.win-amd64\egg
+running install_lib
+running build_ext
+building 'fused' extension
+creating D:\Github\stylegan2-pytorch\op\build\temp.win-amd64-3.7\Release
+Emitting ninja build file D:\Github\stylegan2-pytorch\op\build\temp.win-amd64-3.7\Release\build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] cl /showIncludes /nologo /Ox /W3 /GL /DNDEBUG /MT /MD /wd4819 /EHsc -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\torch\csrc\api\include -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\TH -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\THC -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\torch\csrc\api\include -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\TH -IC:\ProgramData\Anaconda3\envs\tf\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include" -IC:\ProgramData\Anaconda3\envs\tf\include -IC:\ProgramData\Anaconda3\envs\tf\include "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.27.29110\ATLMFC\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.27.29110\include" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.27.29110\ATLMFC\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.27.29110\include" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" -c D:\Github\stylegan2-pytorch\op\fused_bias_act.cpp /FoD:\Github\stylegan2-pytorch\op\build\temp.win-amd64-3.7\Release\fused_bias_act.obj -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=fused -D_GLIBCXX_USE_CXX11_ABI=0 /std:c++14
+cl : Command line warning D9025 : overriding '/MT' with '/MD'
+
+[Thousands line of warning.....]
+
+Generating code
+Finished generating code
+creating build\bdist.win-amd64
+creating build\bdist.win-amd64\egg
+copying build\lib.win-amd64-3.7\fused.cp37-win_amd64.pyd -&gt; build\bdist.win-amd64\egg
+copying build\lib.win-amd64-3.7\upfirdn2d.cp37-win_amd64.pyd -&gt; build\bdist.win-amd64\egg
+creating stub loader for fused.cp37-win_amd64.pyd
+creating stub loader for upfirdn2d.cp37-win_amd64.pyd
+byte-compiling build\bdist.win-amd64\egg\fused.py to fused.cpython-37.pyc
+byte-compiling build\bdist.win-amd64\egg\upfirdn2d.py to upfirdn2d.cpython-37.pyc
+creating build\bdist.win-amd64\egg\EGG-INFO
+copying op_cpp.egg-info\PKG-INFO -&gt; build\bdist.win-amd64\egg\EGG-INFO
+copying op_cpp.egg-info\SOURCES.txt -&gt; build\bdist.win-amd64\egg\EGG-INFO
+copying op_cpp.egg-info\dependency_links.txt -&gt; build\bdist.win-amd64\egg\EGG-INFO
+copying op_cpp.egg-info\top_level.txt -&gt; build\bdist.win-amd64\egg\EGG-INFO
+writing build\bdist.win-amd64\egg\EGG-INFO\native_libs.txt
+zip_safe flag not set; analyzing archive contents...
+__pycache__.fused.cpython-37: module references __file__
+__pycache__.upfirdn2d.cpython-37: module references __file__
+creating dist
+creating 'dist\op_cpp-0.0.0-py3.7-win-amd64.egg' and adding 'build\bdist.win-amd64\egg' to it
+removing 'build\bdist.win-amd64\egg' (and everything under it)
+Processing op_cpp-0.0.0-py3.7-win-amd64.egg
+creating c:\programdata\anaconda3\envs\tf\lib\site-packages\op_cpp-0.0.0-py3.7-win-amd64.egg
+Extracting op_cpp-0.0.0-py3.7-win-amd64.egg to c:\programdata\anaconda3\envs\tf\lib\site-packages
+Adding op-cpp 0.0.0 to easy-install.pth file
+
+Installed c:\programdata\anaconda3\envs\tf\lib\site-packages\op_cpp-0.0.0-py3.7-win-amd64.egg
+Processing dependencies for op-cpp==0.0.0
+Finished processing dependencies for op-cpp==0.0.0
+</code></pre></div></div>
+
+<p>After compiling and seeing lots of output we will be able to import <code class="language-plaintext highlighter-rouge">upfirdn2d</code> and <code class="language-plaintext highlighter-rouge">fused</code> anywhere in the python environment.</p>
+
+<p>And currently your folder <code class="language-plaintext highlighter-rouge">op</code> will look like</p>
+
+<pre><code class="language-cmd">STYLEGAN2-PYTORCH\OP
+│   fused_act.py
+│   fused_bias_act.cpp
+│   fused_bias_act_kernel.cu
+│   setup.py
+│   upfirdn2d.cpp
+│   upfirdn2d.py
+│   upfirdn2d_kernel.cu
+│   __init__.py
+│
+├───build
+│   ├───bdist.win-amd64
+│   ├───lib.win-amd64-3.7
+│   │       fused.cp37-win_amd64.pyd
+│   │       upfirdn2d.cp37-win_amd64.pyd
+│   │
+│   └───temp.win-amd64-3.7
+│       └───Release
+│               .ninja_deps
+│               .ninja_log
+│               build.ninja
+│               fused.cp37-win_amd64.exp
+│               fused.cp37-win_amd64.lib
+│               fused_bias_act.obj
+│               fused_bias_act_kernel.obj
+│               upfirdn2d.cp37-win_amd64.exp
+│               upfirdn2d.cp37-win_amd64.lib
+│               upfirdn2d.obj
+│               upfirdn2d_kernel.obj
+│
+├───dist
+│       op_cpp-0.0.0-py3.7-win-amd64.egg
+│
+├───op_cpp.egg-info
+│       dependency_links.txt
+│       PKG-INFO
+│       SOURCES.txt
+│       top_level.txt
+</code></pre>
+
+<p>And then you can modify the code in <code class="language-plaintext highlighter-rouge">fused_act.py</code> and <code class="language-plaintext highlighter-rouge">upfirdn2d.py</code> to import <code class="language-plaintext highlighter-rouge">fused</code> and ` upfirdn2d` directly instead of loading and compiling them on the fly!</p>
+
+<p>Through this PyCharm can run StyleGAN2 models as smoothly!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">upfirdn2d</span> <span class="k">as</span> <span class="n">upfirdn2d_op</span>
+<span class="c1"># module_path = os.path.dirname(__file__)
+# upfirdn2d_op = load(
+#     "upfirdn2d",
+#     sources=[
+#         os.path.join(module_path, "upfirdn2d.cpp"),
+#         os.path.join(module_path, "upfirdn2d_kernel.cu"),
+#     ], verbose=True,
+#     extra_ldflags=['c10_cuda.lib'],
+# )
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">fused</span>
+<span class="c1"># module_path = os.path.dirname(__file__)
+# fused = load(
+#     "fused",
+#     sources=[
+#         os.path.join(module_path, "fused_bias_act.cpp"),
+#         os.path.join(module_path, "fused_bias_act_kernel.cu"),
+#     ], verbose=True,
+#     extra_ldflags=['c10_cuda.lib'],
+# )
+</span></code></pre></div></div>
+
+<p>Seems like this is the first time I successfully build / compile a package!</p>
+
+<h2 id="compiling-operator-on-linux">Compiling Operator on Linux</h2>
+
+<p>Setup the environment and related packages.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load cuda-10.1
+export CUDA_HOME=/export/cuda-10.1
+module load cuDNN-7.6.0
+module load gcc-5.5.0
+</code></pre></div></div>
+
+<p>cublas_v2.h not found error….found in cuda-10.0 folder.</p>
+
+<p>So</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load cuda-10.1
+export CUDA_HOME=/export/cuda-10.0
+module load cuDNN-7.6.0
+module load gcc-5.5.0
+python setup.py install
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python generate.py --ckpt /scratch/binxu/torch/StyleGANckpt/ffhq-512-avg-tpurun1.pt --size 512
+
+python generate.py --ckpt /scratch/binxu/torch/StyleGANckpt/stylegan2-ffhq-config-f.pt --size 1024
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RuntimeError: CUDA error: no kernel image is available for execution on the device
+
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This error is raised if some CUDA code wasn’t compiled for the compute capability of your device.
+How did you install PyTorch and which GPU are you using?
+</code></pre></div></div>
+
+<p>This is related to the <code class="language-plaintext highlighter-rouge">from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d</code> operators. They are not well compiled on gpu</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import torch
+from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
+tmp = fused_leaky_relu(torch.randn(512,512),torch.randn(1))
+
+tmp = fused_leaky_relu(torch.randn(512,512).cuda(),torch.randn(1).cuda())
+
+
+upfirdn2d(torch.randn(1,3,10,10).cuda(),torch.randn(3,3).cuda())
+upfirdn2d(torch.randn(1,3,10,10),torch.randn(3,3))
+
+
+g_ema = Generator(
+        512, 512, 8, 2
+    ).to("cuda")
+    checkpoint = torch.load(args.ckpt)
+</code></pre></div></div>
+
+<p><strong>Reference</strong></p>
+
+<ul>
+  <li>About <code class="language-plaintext highlighter-rouge">vcvarsall.bat</code>
+    <ul>
+      <li><a href="https://renenyffenegger.ch/notes/Windows/development/Visual-Studio/environment-variables/index">List and Table of Environment Variables that are Set by VCVARSALL.bat</a></li>
+      <li><a href="https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019">Command Line Tools to Build on Windows</a></li>
+      <li><a href="https://github.com/ninja-build/ninja/wiki#windows">Note for using ninja build on windows</a></li>
+      <li><a href="https://stackoverflow.com/questions/14697629/running-a-bat-file-though-python-in-current-process">How to run vcvarsall.bat in the same process as python?</a></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>you will never get variables to persist after a process has terminated</p>
+</blockquote>
+
+<ul>
+  <li>About general build C extension for pytorch
+    <ul>
+      <li><a href="https://pytorch.org/tutorials/advanced/cpp_extension.html">Tutorial on CPP Extension</a></li>
+    </ul>
+  </li>
+</ul>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/debugging-stylegan2" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Debugging+StyleGAN2+in+PyTorch%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fdebugging-stylegan2"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/debugging-stylegan2&quote=Debugging+StyleGAN2+in+PyTorch%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/debugging-stylegan2&media=$description=Environment+Bug%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/debugging-stylegan2&title=Debugging+StyleGAN2+in+PyTorch%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/debugging-stylegan2&title=Debugging+StyleGAN2+in+PyTorch%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/debugging-stylegan2"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Debugging StyleGAN2 in PyTorch%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/debugging-stylegan2"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computer+Vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computer Vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#debug">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> debug</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Compiling C Extensions for PyTorch" href="/tech_note/note-on-compiling-torch-extensions">
+            <p>Previous post</p>
+            Compiling C Extensions for PyTorch
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Publishing and Using Pretrained model through `Torch.hub`" href="/tech_note/publish-and-use-pretrained-torch">
+            <p>Next post</p>
+            Publishing and Using Pretrained model through `Torch.hub`
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

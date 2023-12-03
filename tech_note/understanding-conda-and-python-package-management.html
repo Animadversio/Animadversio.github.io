@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Understanding conda and python package management (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Understanding conda and python package management (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-25T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Understanding conda and python package management (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management","headline":"Understanding conda and python package management (Updating)","dateModified":"2019-07-25T00:00:00+00:00","datePublished":"2019-07-25T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Understanding conda and python package management (Updating)">
+    <meta name="twitter:description" content="  Background: Python Importing Mechanism  Objective: What is package installation  Package Management System  What does pip do?  What does Conda do  Referenc...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Understanding conda and python package management (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Understanding conda and python package management (Updating) " aria-label="Understanding conda and python package management (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Understanding+conda+and+python+package+management+%28Updating%29" class="title">Understanding conda and python package management (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 25, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#background-python-importing-mechanism" id="markdown-toc-background-python-importing-mechanism">Background: Python Importing Mechanism</a></li>
+  <li><a href="#objective-what-is-package-installation" id="markdown-toc-objective-what-is-package-installation">Objective: What is package installation</a></li>
+  <li><a href="#package-management-system" id="markdown-toc-package-management-system">Package Management System</a></li>
+  <li><a href="#what-does-pip-do" id="markdown-toc-what-does-pip-do">What does pip do?</a></li>
+  <li><a href="#what-does-conda-do" id="markdown-toc-what-does-conda-do">What does Conda do</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<p>Python is a script language.</p>
+
+<p>Most of the packages are written in python, and they are just a bunch of script files in a folder hierachy. For these packages, it’s just as easy as find the script file and run them.</p>
+
+<p>Some packages involves compiled binary files (maybe from C), <code class="language-plaintext highlighter-rouge">.exe</code> in Windows and no-extension in Unix. (you can see some of these in your <code class="language-plaintext highlighter-rouge">./anaconda3/bin</code> folder) These files can normally be run directly in the terminal. Some packages involves compiled library from C++ or something, these files are <code class="language-plaintext highlighter-rouge">.so</code> in Unix and <code class="language-plaintext highlighter-rouge">.dll</code> in Windows. (you can see some of these in your <code class="language-plaintext highlighter-rouge">./anaconda3/lib</code> folder) The python script files can import functions from dynamic library and call them during runtime. So it’s crucial for the scripts to know where these libraries / binaries are.</p>
+
+<h2 id="background-python-importing-mechanism">Background: Python Importing Mechanism</h2>
+<p>When using python packages or modules, we type <code class="language-plaintext highlighter-rouge">import pkg</code></p>
+
+<p><strong>Package Searching</strong> Then it will search in the following folders (<code class="language-plaintext highlighter-rouge">sys.path</code>) (cf. path in <code class="language-plaintext highlighter-rouge">matlab</code>). And all the folders with a <code class="language-plaintext highlighter-rouge">__init__.py</code> file in it will be identified as a package. All the <code class="language-plaintext highlighter-rouge">.py</code> script will be seen as a module so it can be imported as well.</p>
+
+<p><em>Note</em>: The first term <code class="language-plaintext highlighter-rouge">''</code> in the <code class="language-plaintext highlighter-rouge">path</code> list is the current directory. You can see where you are by <code class="language-plaintext highlighter-rouge">os.getcwd()</code>. This can be helpful esp. when you are in a IDE like <code class="language-plaintext highlighter-rouge">SPyder</code> or <code class="language-plaintext highlighter-rouge">PyCharm</code> or <code class="language-plaintext highlighter-rouge">Jupyter</code>. When you are in terminal that’s just where you call <code class="language-plaintext highlighter-rouge">python</code>.    So what’s in the current folder will affect what you can import!</p>
+
+<p>For example for Windows,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">path</span>
+<span class="p">[</span><span class="s">''</span><span class="p">,</span> <span class="s">'C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">john</span><span class="se">\\</span><span class="s">Documents</span><span class="se">\\</span><span class="s">Python</span><span class="se">\\</span><span class="s">doc'</span><span class="p">,</span> <span class="s">'C:</span><span class="se">\\</span><span class="s">Python36</span><span class="se">\\</span><span class="s">Lib</span><span class="se">\\</span><span class="s">idlelib'</span><span class="p">,</span>
+<span class="s">'C:</span><span class="se">\\</span><span class="s">Python36</span><span class="se">\\</span><span class="s">python36.zip'</span><span class="p">,</span> <span class="s">'C:</span><span class="se">\\</span><span class="s">Python36</span><span class="se">\\</span><span class="s">DLLs'</span><span class="p">,</span> <span class="s">'C:</span><span class="se">\\</span><span class="s">Python36</span><span class="se">\\</span><span class="s">lib'</span><span class="p">,</span>
+<span class="s">'C:</span><span class="se">\\</span><span class="s">Python36'</span><span class="p">,</span> <span class="s">'C:</span><span class="se">\\</span><span class="s">Python36</span><span class="se">\\</span><span class="s">lib</span><span class="se">\\</span><span class="s">site-packages'</span><span class="p">]</span>
+</code></pre></div></div>
+<p>Ubuntu Anaconda python3.7</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">path</span>
+<span class="p">[</span><span class="s">''</span><span class="p">,</span> <span class="s">'/disk1/home/wangbx/anaconda3/lib/python37.zip'</span><span class="p">,</span> <span class="s">'/disk1/home/wangbx/anaconda3/lib/python3.7'</span><span class="p">,</span> <span class="s">'/disk1/home/wangbx/anaconda3/lib/python3.7/lib-dynload'</span><span class="p">,</span> <span class="s">'/disk1/home/wangbx/anaconda3/lib/python3.7/site-packages'</span><span class="p">]</span>
+</code></pre></div></div>
+<p>Ubuntu System python3.6</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">path</span>
+<span class="p">[</span><span class="s">''</span><span class="p">,</span> <span class="s">'/usr/lib/python36.zip'</span><span class="p">,</span> <span class="s">'/usr/lib/python3.6'</span><span class="p">,</span> <span class="s">'/usr/lib/python3.6/lib-dynload'</span><span class="p">,</span> <span class="s">'/disk1/home/wangbx/.local/lib/python3.6/site-packages'</span><span class="p">,</span> <span class="s">'/usr/local/lib/python3.6/dist-packages'</span><span class="p">,</span> <span class="s">'/usr/lib/python3/dist-packages'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>If you want to change this, use <code class="language-plaintext highlighter-rouge">sys.path.append(r'C:\Users\john')</code> Or add path to environment variable <code class="language-plaintext highlighter-rouge">PYTHONPATH</code>.</p>
+
+<h2 id="objective-what-is-package-installation">Objective: What is package installation</h2>
+
+<p>The package could be written in pure python (most of the small packages), then all is well, all you need is a bunch of <code class="language-plaintext highlighter-rouge">.py</code> in a zip or <code class="language-plaintext highlighter-rouge">tarball</code>. In this case, the management system just needs to unzip the source and place it in the right place. (sometimes it needs to track meta-data and solve dependencies.)</p>
+
+<p>However sometimes it contains functions written in <code class="language-plaintext highlighter-rouge">C</code> and needs compiled <code class="language-plaintext highlighter-rouge">binary</code> and <code class="language-plaintext highlighter-rouge">lib</code>. However, as we all know these compiled <code class="language-plaintext highlighter-rouge">bin</code> and <code class="language-plaintext highlighter-rouge">lib</code> is platform-dependent and CPU architecture dependent, and the most robust method is to compile them (with C++ compiler) from source code to binary. But compilation is painful and can usually cost much time and energy from newbies without deep knowledge in it. So a workaround is to download these compiled <code class="language-plaintext highlighter-rouge">bin</code> and <code class="language-plaintext highlighter-rouge">lib</code> directly, and these files must match your system and CPU well! This is why your OS and CPU architecture matters for some basic numerical package (esp. those involving numerical operation), as they usually involves C functions / routines for speed, and these packages’ <code class="language-plaintext highlighter-rouge">Wheel</code> are quite large. However generic compiled <code class="language-plaintext highlighter-rouge">lib</code> and <code class="language-plaintext highlighter-rouge">bin</code> may not use the deepest potential of your machine<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, So if you really care you may compile the source on your machine for yourself (<em>with the rigth configuration.</em>)!</p>
+
+<p>To wrap up, the same Package/Project could be disributed in multiple formats, the source distribution (which may need compilation) usually published on <code class="language-plaintext highlighter-rouge">Github</code> or the <code class="language-plaintext highlighter-rouge">built distribution</code> which contains compiled files. <a href="https://wheel.readthedocs.io/en/latest/"><code class="language-plaintext highlighter-rouge">Wheel</code></a> and <a href="https://setuptools.readthedocs.io/en/latest/formats.html">obsoleting <code class="language-plaintext highlighter-rouge">Egg</code></a> are such built distribution, such that it could be used after moving to the correct system. As we can see, these wheels are platform-dependent (Cf. <a href="https://pypi.org/project/tensorflow/#files">PyPI Tensorflow</a> and <a href="https://github.com/mind/wheels">Performance-optimized wheels for TensorFlow</a>).</p>
+
+<p>For more information, explore <a href="https://packaging.python.org/glossary/">Glossary</a></p>
+
+<p>Last but not least, one package does not work on it’s own. It usually requires other python packages, and dynamic libraries or probably shared C libraries. <strong>How do we specify these dependencies?</strong> For other python packages, it’s sometimes specified in <code class="language-plaintext highlighter-rouge">requirement.txt</code> in the python package<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>. Or it’s written in <code class="language-plaintext highlighter-rouge">setup.py</code> in the folder. For more complicated cases, you needs an engine to determine which is the best version for each package<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">3</a></sup>.</p>
+
+<p>For C libraries, to check what shared library a binary file depends, use <code class="language-plaintext highlighter-rouge">ldd /path_to_binary_file</code> (Linux system).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ldd /disk1/home/wangbx/anaconda3/bin/python
+    linux-vdso.so.1 <span class="o">(</span>0x00007ffc18dbc000<span class="o">)</span>
+    libpthread.so.0 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/libpthread.so.0 <span class="o">(</span>0x00007f50c0d00000<span class="o">)</span>
+    libc.so.6 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/libc.so.6 <span class="o">(</span>0x00007f50c090f000<span class="o">)</span>
+    libdl.so.2 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/libdl.so.2 <span class="o">(</span>0x00007f50c070b000<span class="o">)</span>
+    libutil.so.1 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/libutil.so.1 <span class="o">(</span>0x00007f50c0508000<span class="o">)</span>
+    librt.so.1 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/librt.so.1 <span class="o">(</span>0x00007f50c0300000<span class="o">)</span>
+    libm.so.6 <span class="o">=&gt;</span> /lib/x86_64-linux-gnu/libm.so.6 <span class="o">(</span>0x00007f50bff62000<span class="o">)</span>
+    /lib64/ld-linux-x86-64.so.2 <span class="o">(</span>0x00007f50c1290000<span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="package-management-system">Package Management System</h2>
+<p>The <strong>objective</strong> of python package management is to let python find the script files and the dependent files (which can be compiled binary or library).</p>
+
+<p>Besides, it should have a good <strong>category / repository</strong> of packages so that when you let it install something, it know where it exists online and know how to choose the right version (of wheel) according to your system.</p>
+
+<p>Moreover, packages are developped and upgraded asynchronously and distributedly, and they depends on each other (sometimes specific version of some package) in a complicated way. To find which version of package can live with other packages, it needs to solve the <strong>dependencies</strong> of the current packages and to upgrade or downgrade other packages to match. This is intrinsically a <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">Boolean Satisfiability Problem (SAT)</a>, which is NP-hard. And the solver’s objective is to find the feasible and newest version of every packages in the environment. We can easily imagine that this problem could have no single solution or multiple solutions. For this problem, <code class="language-plaintext highlighter-rouge">pip</code> takes a cheating way, just use eager algorithm to solve dependency one by one and it can fail. <code class="language-plaintext highlighter-rouge">conda</code> really has a solver, but we know it’s <a href="https://www.anaconda.com/understanding-and-improving-condas-performance/">quite slow</a>. (However, it can fail as well, as sometimes there is conflicting requirement and no-solution…)</p>
+
+<h2 id="what-does-pip-do">What does pip do?</h2>
+<p><code class="language-plaintext highlighter-rouge">pip</code> is the default package management system, it’s basic and robust, (<a href="https://pip.pypa.io/en/latest/user_guide/">User guide</a>)but does not come with a virtual-enviroment system with it!</p>
+
+<p><strong>Dependency Solving</strong> Till now it <strong>does not</strong> have a <a href="https://github.com/pypa/pip/issues/988">real dependency solving system</a>! It just make use of <code class="language-plaintext highlighter-rouge">requirement.txt</code> in the package folder, you can do <code class="language-plaintext highlighter-rouge">pip install -r requirements.txt</code> to install the required packages line by line (seems equivalent to run <code class="language-plaintext highlighter-rouge">pip install</code> for it line by line). And it can induce conflicts. However it’s fast and work in most cases<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>.</p>
+
+<p><strong>Repository</strong> As for package coverage, there are far more packages on the default repository of <code class="language-plaintext highlighter-rouge">pip</code> - <a href="https://pypi.org/">python package index</a>. So if you cannot find the package in <code class="language-plaintext highlighter-rouge">conda install xxx</code> you can try <code class="language-plaintext highlighter-rouge">pip install xxx</code>.</p>
+
+<p><strong>Install pip</strong> Normally it is installed in the system. But if there are multiple version of python (esp. you have system python and anaconda python), the <code class="language-plaintext highlighter-rouge">pip</code> must be the right one corresponding to the right python version. Use <code class="language-plaintext highlighter-rouge">pip -V</code> to see where the pip file is and which python it correspond to.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nt">-V</span>
+pip 19.1.1 from /disk1/home/wangbx/anaconda3/lib/python3.7/site-packages/pip <span class="o">(</span>python 3.7<span class="o">)</span>
+</code></pre></div></div>
+<p>Or for system wide python</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nt">-V</span> 
+pip 19.1.1 from /disk1/home/wangbx/.local/lib/python3.6/site-packages/pip <span class="o">(</span>python 3.6<span class="o">)</span>
+</code></pre></div></div>
+
+<p>It can be installed by fetching the <code class="language-plaintext highlighter-rouge">get-pip.py</code> script from web and running <code class="language-plaintext highlighter-rouge">python get-pip.py</code> using the right version of python (check the version by <code class="language-plaintext highlighter-rouge">which python</code>).</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://bootstrap.pypa.io/get-pip.py <span class="nt">-o</span> get-pip.py
+python get-pip.py
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">pip show numpy</code> To see where you’ve installed the package, and what are the dependency and dependant of the package, which is highly useful!</p>
+
+<h2 id="what-does-conda-do">What does Conda do</h2>
+<p>Conda provides well isolated environments, and has a real dependency solver <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">solving SAT problems</a> so we usually use it for complex version configuring.</p>
+
+<p><strong>Dependency Solving</strong> To understand the inner mechanism to the conda solver, see <a href="https://www.anaconda.com/understanding-and-improving-condas-performance/">understanding-and-improving-condas-performance</a></p>
+
+<p><strong>Repository</strong> There are multiple channel / repository of packages for <code class="language-plaintext highlighter-rouge">conda</code>.Although the default channel does not provides as many packages as <code class="language-plaintext highlighter-rouge">PyPI</code>, it has <a href="https://conda.anaconda.org/conda-forge">conda-forge</a> as a custom built wheels.</p>
+
+<p><strong>Check Info</strong> The <code class="language-plaintext highlighter-rouge">conda search numpy --info</code> and <code class="language-plaintext highlighter-rouge">conda info numpy</code> are nearly equivalent to <code class="language-plaintext highlighter-rouge">pip show numpy</code></p>
+
+<p><strong>Structure</strong> Some important structure in anaconda folder, you can explore the structure and the format of the files with <code class="language-plaintext highlighter-rouge">file</code> command. See <code class="language-plaintext highlighter-rouge">conda info</code> for more specs.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">anaconda3</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">include</code> # all the C header files</li>
+      <li><code class="language-plaintext highlighter-rouge">bin</code> # binary files, including python / jupyter / spyder usually you can use these utilities in shell / console</li>
+      <li><code class="language-plaintext highlighter-rouge">lib</code> # some dynamic libraries collection. (ending in <code class="language-plaintext highlighter-rouge">.dll</code> in Windows, <code class="language-plaintext highlighter-rouge">.dylib</code> in OSX in <code class="language-plaintext highlighter-rouge">.so</code> in Linux)</li>
+      <li><code class="language-plaintext highlighter-rouge">envs</code> contains the environments, each has the same structure as the basic anaconda folder
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin     conda-meta  include     lib     share       ssl
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="reference">Reference</h1>
+<ul>
+  <li><a href="https://realpython.com/python-modules-packages/">Introduction to python packages</a></li>
+  <li><a href="https://medium.com/python-pandemonium/better-python-dependency-and-package-management-b5d8ea29dff1">Better Python dependency while packaging your project</a></li>
+  <li><a href="https://caremad.io/posts/2013/07/setup-vs-requirement/">setup.py vs requirements.txt</a></li>
+  <li><a href="https://stackoverflow.com/questions/1471994/what-is-setup-py">What is setup.py?</a></li>
+  <li><a href="https://pythonhosted.org/an_example_pypi_project/setuptools.html">Distribute your package on PyPI–Guide to setup.py</a></li>
+  <li>Check out <code class="language-plaintext highlighter-rouge">Pipdeptree</code> package</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>For example, you may see <code class="language-plaintext highlighter-rouge">The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.</code> this means your machine (CPU) support some new operations, but the code are not compiled to use these…. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Generate your own <code class="language-plaintext highlighter-rouge">requirement.txt</code> following this <a href="https://www.idiotinside.com/2015/05/10/python-auto-generate-requirements-txt/">guide</a> (Use <code class="language-plaintext highlighter-rouge">pip freeze &gt; requirements.txt</code> or Use <code class="language-plaintext highlighter-rouge">pipreqs</code> to generate from script) <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Comparing to Julia, it has an in-built package management syste. <code class="language-plaintext highlighter-rouge">] add xxx</code> and it’s much cleaner than python. Besides, the index system for packages is called <code class="language-plaintext highlighter-rouge">Registry</code>, and it has one global Registry and multiple private and local registry for some organization. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>For most small projects on github, having a <code class="language-plaintext highlighter-rouge">requirement.txt</code> is enough and usually work~ <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Understanding+conda+and+python+package+management+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Funderstanding-conda-and-python-package-management"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management&quote=Understanding+conda+and+python+package+management+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management&title=Understanding+conda+and+python+package+management+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management&title=Understanding+conda+and+python+package+management+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Understanding conda and python package management (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/understanding-conda-and-python-package-management"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#coding">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> coding</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#environment">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> environment</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Linux">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Linux</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> python</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="How to Parse Anatomical/Physiological Terms in Latin/Greek" href="/tech_note/parse-anatomy-terms-in-latin">
+            <p>Previous post</p>
+            How to Parse Anatomical/Physiological Terms in Latin/Greek
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Linux Working Environment Build Up (Updating)" href="/tech_note/build-up-a-linux-working-environment">
+            <p>Next post</p>
+            Linux Working Environment Build Up (Updating)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

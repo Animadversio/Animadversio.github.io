@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Derivative Free Optimization Method (Based Feature Visulization) Notes 1 | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Derivative Free Optimization Method (Based Feature Visulization) Notes 1" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html" />
+<meta property="og:url" content="https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Derivative Free Optimization Method (Based Feature Visulization) Notes 1" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html","headline":"Derivative Free Optimization Method (Based Feature Visulization) Notes 1","dateModified":"2018-09-09T00:00:00+00:00","datePublished":"2018-09-09T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Derivative Free Optimization Method (Based Feature Visulization) Notes 1">
+    <meta name="twitter:description" content="  Task discription  Algorithm in current Experimental Code  CMA-ES Covariance Matrix Adaptation Evolution Strategy  Amoeba Algorithm  Algorithm in the ZOO-Bl...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Derivative Free Optimization Method (Based Feature Visulization) Notes 1">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Derivative Free Optimization Method (Based Feature Visulization) Notes 1 " aria-label="Derivative Free Optimization Method (Based Feature Visulization) Notes 1" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Derivative+Free+Optimization+Method+%28Based+Feature+Visulization%29+Notes+1" class="title">Derivative Free Optimization Method (Based Feature Visulization) Notes 1</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 09, 2018
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#task-discription" id="markdown-toc-task-discription">Task discription</a></li>
+  <li><a href="#algorithm-in-current-experimental-code" id="markdown-toc-algorithm-in-current-experimental-code">Algorithm in current Experimental Code</a></li>
+  <li><a href="#cma-es-covariance-matrix-adaptation-evolution-strategy" id="markdown-toc-cma-es-covariance-matrix-adaptation-evolution-strategy">CMA-ES Covariance Matrix Adaptation Evolution Strategy</a></li>
+  <li><a href="#amoeba-algorithm" id="markdown-toc-amoeba-algorithm">Amoeba Algorithm</a></li>
+  <li><a href="#algorithm-in-the-zoo-black-box-attack-paper" id="markdown-toc-algorithm-in-the-zoo-black-box-attack-paper">Algorithm in the ZOO-Black Box Attack paper</a></li>
+  <li><a href="#targets-next-step-updated-20197" id="markdown-toc-targets-next-step-updated-20197">Targets Next Step (Updated 2019.7)</a></li>
+</ul>
+
+<h2 id="task-discription">Task discription</h2>
+<p>To find/generate the stimuli that evoked the strongest response of a neuron in a visual system is in essense an optimization problem. 
+But the optimization task on hand has several <strong>unique features</strong> that are essential to the choice of optimization algorithms, for example,</p>
+
+<ul>
+  <li>Black box setting
+    <ul>
+      <li>No explicit/analytical form of the function. So the method must not rely on the analytical form of gradient (1st order information).</li>
+    </ul>
+  </li>
+  <li>Stochasticity:
+    <ul>
+      <li>Neuronal response (spike count or other) is stochastic with noise of some sort (<em>specific noise class / noise level is to be characterized from data</em>). Thus the “energy landscape” is vibrating/fluctuating. Because of this, the derivative is dominated by high frequency fluctuation, thus we cannot estimate the derivatve from finite difference method, or the finite difference method must make use of larger scale structure to get rid of noise.</li>
+    </ul>
+  </li>
+  <li>Very high-dimensional input space, esp. the <strong>image space</strong>.
+    <ul>
+      <li>Dimension reduction of the input space is crucial. The current method of GAN compressed code images (from millions dimension to 4096) has greatly reduced the dimension of space.</li>
+      <li>This requirement is the same with CNN black box attack setting. So many of their <strong>dimension reduction techniques</strong> of the input space should be useful in our setting</li>
+    </ul>
+  </li>
+  <li>Non-linear / Non-convex / Multipeak of target function:
+    <ul>
+      <li>Most preferably, we would like to get all the preferred stimuli (roughly correspond to the local maxima) for a neuron and get the respective score for those peaks.</li>
+    </ul>
+  </li>
+  <li><strong>Purpose</strong> of the optimization:
+    <ul>
+      <li>Our purpose of doing “optimization” is different from that in many other practical applications.</li>
+      <li>The “accuracy” of solution is not pursuited in our project, (there is no point spending 80% of time updating a small fraction of pixels’ value). Nor do we aim at minor improvement in the response score, knowing one single most favorable stimuli to a neuron is not very informative, but knowing a bunch of relatively strongly responded stimuli is educational.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="algorithm-in-current-experimental-code">Algorithm in current Experimental Code</h2>
+<p>It is a classical genetic algorithm.</p>
+
+<p>So the question is whether genetic algorithm is suitable for our problem. According to <a href="https://en.wikipedia.org/wiki/Genetic_algorithm#The_building_block_hypothesis"><strong>building block hypothesis (BBH)</strong></a> Genetic algorithm is useful for cases where each coordinate (gene)/ small bunch of coordinates determine the fitness separately, and those coordinates work as building blocks for the whole system.</p>
+
+<p>I’m not sure of whether that is the case for the compressed image code space generated by Generative Adversarial Method. It may need further work to get the answer.</p>
+
+<h2 id="cma-es-covariance-matrix-adaptation-evolution-strategy">CMA-ES Covariance Matrix Adaptation Evolution Strategy</h2>
+
+<p>Comparing to genetic algorithm, CMA ES is an Evolution Algorithm with more rigorous mathematical formalism permitting a more geometrical understanding.</p>
+
+<p>It models each generation/population of code (“genetic pool”) as a parametrized statistical distribution $P(X,\phi)$. Each step, it generates a sample from the distribution ${X_i}$, i.e. the generation of samples, and then evaluate function value (“fitness”) at these sample points. And then use these sampled values to update the parameters of the distribution $\phi$. And it iterates this process until convergence.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Concept_of_directional_optimization_in_CMA-ES_algorithm.png" alt="CMA-ES Demo" /></p>
+
+<p>Specificly, it uses a Multivariate Normal Distribution $\bf{m}+\sigma^{(g)}\mathcal N(0,C)$ as the model disctribution class. And sampling from it 
+\(X_k^{(g+1)} \sim \bf{m}^{(g)}+\sigma^{(g)}\mathcal N(0,C^{(g)})\)</p>
+
+<ul>
+  <li>The mean of the distribution $\bf{m}$ is the estimate of optimal value.</li>
+  <li>The normal distribution add random noise to the center simulating the mutation process.</li>
+  <li>$\sigma^{(g)}$ controls the explorative step length. $C^{(g)}$ controls the shape of the equi-density ellipsoid in high-dim space, which controls the direction of exploration in the space.</li>
+</ul>
+
+<p>The method evaluates the target function at the sampled points ${X_k^{(g+1)}}$, and uses these values  $f(X_k^{(g+1)})$ to update the mean, step size and covariance matrix parameter $\bf{m}^{(g+1)}, \sigma^{(g+1)}, C^{(g+1)}$.</p>
+
+<p><strong>Mean update</strong> weighted average the top $\lambda$ fittest sample in the generation.</p>
+
+\[\bf{m}^{(g+1)}=\sum^\mu_{i=1} w_iX_{i:\lambda}\]
+
+<p><strong>Covariant Matrix Adaptation</strong> As the name of the algorithm indicates, this is the most sophisticated and developped step. The tutorial paper introduced 3 different strategies to do Cov Mat update, and presents a blended strategy of the 3 in the demo code. And the target of all these sophistication is to ameliorate the sampling of next generation, i.e. sampling more informative good points while keeping informative.</p>
+
+<ol>
+  <li><em>Naive Cov Matrix Estimation</em>: i.e. estimate the new covariant matrix from the selected best $\mu$ samples.</li>
+</ol>
+
+\[C_{CMNA}=\frac1\mu \sum_{i=1}^\mu (X_{i:\lambda}^{(g+1)}-m^{(g+1)})(X_{i:\lambda}^{(g+1)}-m^{(g+1)})^T\\
+m^{(g+1)}=\frac1\mu \sum_{i=1}^\mu X_{i:\lambda}^{(g+1)}\]
+
+<p>The drawback of which is, it requires relatively large $\mu$ to get a faithful estimate of covariant matrix.</p>
+
+<ol>
+  <li><em>Rank $\mu$ update</em>: which is similar to the strategy 1, but add a “momentum” / memory term from the last generation. Thus by taking the samples from last generation into account, they can use a smaller number of $\mu$ to estimate $C$.  The covariant information from current generation is denoted by $C_\mu^{(g+1)}$, and the updating rate is governed by $c_\mu$.</li>
+</ol>
+
+<p>Note that, they especially use $m^{(g)}$ centered and $\sigma^{(g)}$ normalized deviation $Y_{i:\lambda}^{(g+1)} = \frac{X_{i:\lambda}^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$. The purpose of this is to  get rid of the effect of overall stepsize, and make the deviation comparable between generation.</p>
+
+\[C^{(g+1)}=(1-c_\mu)C^{(g)}+ c_\mu C_\mu^{(g+1)}\\
+C_\mu^{(g+1)}= \frac 1{(\sigma^{(g)})^2}\sum_{i=1}^\mu (X_{i:\lambda}^{(g+1)}-m^{(g)})(X_{i:\lambda}^{(g+1)}-m^{(g)})^T = \sum_{i=1}^\mu Y_{i:\lambda}^{(g+1)} {Y_{i:\lambda}^{(g+1)}}^T\]
+
+<p>Note, we can also add $w_i$ weight to do weighted estimation of covariant matrix.</p>
+
+<ol>
+  <li><em>Rank 1 update</em>: it is to directly add a rank one component $c_1pp^T$ to $C$, which is to increase the spread on the direction of vector $p$, i.e. targeting the ellipsoid into $p$ direction. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> Like the second strategy, they also utilize a momentum coefficient $c_1$ to control the update rate of covariant matrix.</li>
+</ol>
+
+<p>So which direction should $p$ be target at? In the paper, they cumulate the normalized steps $\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$ in the last few generations to form the $p_c$ vector, and the momentum coefficient is $c_c$. The rationale behind it is that if the steps are always in one direction, then they should try in this direction even harder.</p>
+
+\[C^{(g+1)}=(1-c_1)C^{(g)} + c_1 p_c^{(g+1)}{p_c^{(g+1)}}^T\\
+p_c^{(g+1)} = (1-c_c) p_c^{(g)} + \sqrt{c_c(2-c_c) \mu_{eff} } 
+\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}\]
+
+<p>So mix the 3 strategy together, we get the final form of Covariant Matrix Adaptation.</p>
+
+\[C^{(g+1)}=(1-c_\mu-c_1) C^{(g)}+ c_\mu \sum_{i=1}^\mu w_i Y_{i:\lambda}^{(g+1)} {Y_{i:\lambda}^{(g+1)}}^T + c_1 p_c^{(g+1)}{p_c^{(g+1)}}^T\]
+
+<p><strong>Cumulative Step Size Adaptation</strong> They separate the update of the overall spread scale $\sigma$ and the spread scale in different directions $C$.</p>
+
+<p>So this step is to control the overall step length. According to the authors, the strategy is that, if the evolution steps of center is targeting in similar direction, then the step size should be increase to accelerate the walk. If the evolution steps are not correlated and cancel each other, then the step size should be decreased to facilitate more local search.</p>
+
+<p>$p_s$ is the cumulated evolution path length. $c_s$ control the update rate. And the most important thing to note is that they insert a scaling matrix ${C^{(g)}}^{-1/2}$. The idea is that if the selection of next generation is random, then the ${C^{(g)}}^{-1/2} \frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}$ should be a standard normal random vector subject to $\mathcal N(0,I)$. Thus</p>
+
+\[p_s^{(g+1)} = (1-c_s) p_s^{(g)} + \sqrt{c_s(2-c_s) \mu_{eff} } {C^{(g)}}^{-1/2}
+\frac{m^{(g+1)}-m^{(g)}}{\sigma^{(g)}}\]
+
+<p>More specificly, they update $\sigma^{(g)}$ according to whether the evolution path length $p_s^{(g+1)}$ is longer or shorter than its expectation in random selection condition.</p>
+
+\[\ln \sigma^{(g+1)} = \ln \sigma^{(g)} + \frac{c_s}{d_s} (\frac{\| p_s \|_2}{E\|\mathcal N(0,I)\|_2}-1)\\
+\approx \ln \sigma^{(g)} + \frac{c_s}{d_s} (\frac{\| p_s \|_2 }{\sqrt{n}}-1)\]
+
+<p>In another word</p>
+
+\[\sigma^{(g+1)}= \sigma^{(g)} \exp {\frac{c_s}{d_s} (\frac{\| p_s \|_2 }{\sqrt{n}}-1) }\]
+
+<p>To sum up, the parameters controling this algorithm are</p>
+
+<ul>
+  <li>Population size $\lambda$</li>
+  <li>${w_i}$ weight, and selecting number $\mu$
+    <ul>
+      <li>$\mu_{eff}=(\sum^\mu_{i=1} w_i^2 )^{-1}$</li>
+    </ul>
+  </li>
+  <li>$c_1$, $c_\mu$ controls the fraction of rank 1 and rank $\mu$ update in CMA step</li>
+  <li>$c_c$, $c_s$ controls the evolution path updating rate of $p_c$ in CMA step and of $p_s$ in $\sigma$ adaptation step respectively.</li>
+  <li>$d_s$ controls the updating rate of $\sigma^{(g)}$.</li>
+</ul>
+
+<p><strong>Matlab Code</strong> And from wiki, I copied the core code implemented in matlab.</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% Sort by fitness and compute weighted mean into xmean</span>
+<span class="p">[</span><span class="n">arfitness</span><span class="p">,</span> <span class="n">arindex</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sort</span><span class="p">(</span><span class="n">arfitness</span><span class="p">);</span> <span class="c1">% minimization</span>
+    <span class="n">xold</span> <span class="o">=</span> <span class="n">xmean</span><span class="p">;</span>
+    <span class="n">xmean</span> <span class="o">=</span> <span class="n">arx</span><span class="p">(:,</span><span class="n">arindex</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">mu</span><span class="p">))</span><span class="o">*</span><span class="n">weights</span><span class="p">;</span>   <span class="c1">% recombination, new mean value</span>
+    <span class="c1">% sliced mat * vect = mean col of feature </span>
+
+<span class="c1">% Cumulation: Update evolution paths</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">ps</span> <span class="k">...</span><span class="c"> </span>
+    <span class="o">+</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">cs</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">*</span><span class="n">mueff</span><span class="p">)</span> <span class="o">*</span> <span class="n">invsqrtC</span> <span class="o">*</span> <span class="p">(</span><span class="n">xmean</span><span class="o">-</span><span class="n">xold</span><span class="p">)</span> <span class="p">/</span> <span class="n">sigma</span><span class="p">;</span> 
+<span class="n">hsig</span> <span class="o">=</span> <span class="nb">norm</span><span class="p">(</span><span class="n">ps</span><span class="p">)/</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cs</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">counteval</span><span class="p">/</span><span class="n">lambda</span><span class="p">))/</span><span class="n">chiN</span> <span class="o">&lt;</span> <span class="mf">1.4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">/(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> 
+<span class="n">pc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cc</span><span class="p">)</span><span class="o">*</span><span class="n">pc</span> <span class="k">...</span>
+    <span class="o">+</span> <span class="n">hsig</span> <span class="o">*</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">cc</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">cc</span><span class="p">)</span><span class="o">*</span><span class="n">mueff</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xmean</span><span class="o">-</span><span class="n">xold</span><span class="p">)</span> <span class="p">/</span> <span class="n">sigma</span><span class="p">;</span>
+
+<span class="c1">% Adapt covariance matrix C</span>
+<span class="n">artmp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">/</span><span class="n">sigma</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">arx</span><span class="p">(:,</span><span class="n">arindex</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">mu</span><span class="p">))</span><span class="o">-</span><span class="nb">repmat</span><span class="p">(</span><span class="n">xold</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">mu</span><span class="p">));</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="o">-</span><span class="n">cmu</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span> <span class="k">...</span><span class="c">                  % regard old matrix  </span>
+   <span class="o">+</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="n">pc</span><span class="o">*</span><span class="n">pc</span><span class="o">'</span> <span class="k">...</span><span class="c">                 % plus rank one update</span>
+        <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">hsig</span><span class="p">)</span> <span class="o">*</span> <span class="n">cc</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">cc</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span> <span class="k">...</span><span class="c"> % minor correction if hsig==0</span>
+   <span class="o">+</span> <span class="n">cmu</span> <span class="o">*</span> <span class="n">artmp</span> <span class="o">*</span> <span class="nb">diag</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span> <span class="o">*</span> <span class="n">artmp</span><span class="o">'</span><span class="p">;</span> <span class="c1">% plus rank mu update</span>
+
+<span class="c1">% Adapt step size sigma</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="nb">exp</span><span class="p">((</span><span class="n">cs</span><span class="p">/</span><span class="n">damps</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">norm</span><span class="p">(</span><span class="n">ps</span><span class="p">)/</span><span class="n">chiN</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span> 
+</code></pre></div></div>
+
+<p><strong>Remarks</strong>:</p>
+<ul>
+  <li>Some says CMA-ES can be understood as to fit a quadratic function on the landscape / get second order (Hessian) information and choose the best direction to go!</li>
+  <li>Wiki says this method works quite well in 10s ~ 100s dimension space! Not sure our 4096 dim space will work.</li>
+  <li>By definition, the algorithm exhibits invariance to order preserving transforming of function $f$, scaling of $X$, rotation of domain space $R^n$.</li>
+</ul>
+
+<hr />
+
+<h2 id="amoeba-algorithm">Amoeba Algorithm</h2>
+<p>Amoeba Algorithm (a.k.a Down hill simplex algorithm / Nelder Mead Algorithm) <a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">wiki</a>, randomly set a simplex in high dimensional space, and move the simplex step by step according to the function value at the vertices.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Nelder-Mead_Himmelblau.gif" alt="Amoeba Algorithm Demo" /></p>
+
+<p><strong>Remark</strong></p>
+<ul>
+  <li>In some sense, it is a 1st-order method (comparing to CMA-ES which estimates 2nd order info), as it estimates the “gradient” information from a simplex.</li>
+  <li>In a $n$ dimensional space, the initiation needs to evaluate $n+1$ function values. And then 1 evaluation is needed each step.</li>
+  <li>The initialization is tricky and maybe hard to control where the algorithm converge to.</li>
+</ul>
+
+<p>(DETAILS TO BE ADDED.)</p>
+
+<h2 id="algorithm-in-the-zoo-black-box-attack-paper">Algorithm in the ZOO-Black Box Attack paper</h2>
+
+<p>Combine stochastic coordinate descent and dimension reduction of the input space dimension.</p>
+
+<p>(DETAILS TO BE ADDED.)</p>
+
+<h2 id="targets-next-step-updated-20197">Targets Next Step (Updated 2019.7)</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Adapt a demo for CMA-ES algorithm in low dimensional problems and get intuition for the rather compicated update rules.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Try it in normal CNN setting</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Try it in noisy CNN setting (shallower/low-dim ones and deeper ones)
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Get the right noise scheme for CNN. (Cf. Carlos, Poisson Noise mean+-2s.d. covers the full dynamic range of the unit.)</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Compare with genetic algorithm</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Try in monkey experimental setting</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Note that, for a covariant matrix $C$ of a vector of random variables $X$. $v^TCv$ is the variance of the recombined variable $y=v^TX$, i.e. the variance of the whole distribution projected to the line spanned by $v$. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Derivative+Free+Optimization+Method+%28Based+Feature+Visulization%29+Notes+1%20https%3A%2F%2Fanimadversio.github.io%2F2018%2F09%2F09%2FDerivative-Free-Optimization-Method-note.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html&quote=Derivative+Free+Optimization+Method+%28Based+Feature+Visulization%29+Notes+1%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html&title=Derivative+Free+Optimization+Method+%28Based+Feature+Visulization%29+Notes+1%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html&title=Derivative+Free+Optimization+Method+%28Based+Feature+Visulization%29+Notes+1%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Derivative Free Optimization Method (Based Feature Visulization) Notes 1%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/2018/09/09/Derivative-Free-Optimization-Method-note.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Optimization</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="This Week's Learning about Brain 2 Frequency Tuning of Hair Cell" href="/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html">
+            <p>Previous post</p>
+            This Week's Learning about Brain 2 Frequency Tuning of Hair Cell
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="This Week's Learning about Brain 0" href="/2018/09/01/This-Week's-Learning-about-Brain-0.html">
+            <p>Next post</p>
+            This Week's Learning about Brain 0
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

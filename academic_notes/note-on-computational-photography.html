@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Computational Photography | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Computational Photography" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Computational Photography" />
+<meta property="og:description" content="Computational Photography" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-computational-photography" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-computational-photography" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Computational Photography" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Computational Photography","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-computational-photography","headline":"Note on Computational Photography","dateModified":"2020-02-27T00:00:00+00:00","datePublished":"2020-02-27T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-computational-photography"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Computational Photography">
+    <meta name="twitter:description" content="Computational Photography  Computational Photography  CG2REAL  SEAM Carving          Content Amplification      SEAM Insertion      Object Removal        Tex...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Computational Photography">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Computational Photography " aria-label="Note on Computational Photography" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Computational+Photography" class="title">Note on Computational Photography</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      February 27, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="computational-photography">Computational Photography</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#computational-photography" id="markdown-toc-computational-photography">Computational Photography</a></li>
+  <li><a href="#cg2real" id="markdown-toc-cg2real">CG2REAL</a></li>
+  <li><a href="#seam-carving" id="markdown-toc-seam-carving">SEAM Carving</a>    <ul>
+      <li><a href="#content-amplification" id="markdown-toc-content-amplification">Content Amplification</a></li>
+      <li><a href="#seam-insertion" id="markdown-toc-seam-insertion">SEAM Insertion</a></li>
+      <li><a href="#object-removal" id="markdown-toc-object-removal">Object Removal</a></li>
+    </ul>
+  </li>
+  <li><a href="#texture-synthesis" id="markdown-toc-texture-synthesis">Texture Synthesis</a>    <ul>
+      <li><a href="#texture-transfer" id="markdown-toc-texture-transfer">Texture Transfer</a></li>
+    </ul>
+  </li>
+  <li><a href="#neural-style-transfer" id="markdown-toc-neural-style-transfer">Neural Style Transfer</a></li>
+  <li><a href="#poisson-image-editting" id="markdown-toc-poisson-image-editting">Poisson Image Editting</a></li>
+  <li><a href="#generative-adversarial-network" id="markdown-toc-generative-adversarial-network">Generative Adversarial Network</a>    <ul>
+      <li><a href="#conditional-gan" id="markdown-toc-conditional-gan">Conditional GAN</a></li>
+      <li><a href="#dc-gan" id="markdown-toc-dc-gan">DC-GAN</a></li>
+      <li><a href="#progressive-growing-gan" id="markdown-toc-progressive-growing-gan">Progressive Growing GAN</a></li>
+      <li><a href="#gan-application" id="markdown-toc-gan-application">GAN application</a>        <ul>
+          <li><a href="#image-impainting" id="markdown-toc-image-impainting">Image Impainting</a></li>
+          <li><a href="#image-to-image-tranlation" id="markdown-toc-image-to-image-tranlation">Image to Image Tranlation</a></li>
+          <li><a href="#image-editting-with-gan" id="markdown-toc-image-editting-with-gan">Image Editting with GAN</a></li>
+        </ul>
+      </li>
+      <li><a href="#image-generation-from-caption" id="markdown-toc-image-generation-from-caption">Image Generation from Caption</a></li>
+    </ul>
+  </li>
+  <li><a href="#motion-magnification" id="markdown-toc-motion-magnification">Motion Magnification</a>    <ul>
+      <li><a href="#blind-deblurring" id="markdown-toc-blind-deblurring">Blind Deblurring</a></li>
+      <li><a href="#dehazing" id="markdown-toc-dehazing">Dehazing</a></li>
+      <li><a href="#amplifying-irregularity" id="markdown-toc-amplifying-irregularity">Amplifying Irregularity</a></li>
+    </ul>
+  </li>
+</ul>
+<blockquote>
+  <p>Basically, enhance image by computation!</p>
+</blockquote>
+
+<p>Intersection of 3 fields</p>
+
+<ul>
+  <li>Optics</li>
+  <li>Vision</li>
+  <li>Graphics</li>
+</ul>
+
+<p>Majorly two kinds of work</p>
+
+<ul>
+  <li>Co-design camera and image processing (optics + vision)</li>
+  <li>Use Vision to help Graphics to help generate better image faster!</li>
+</ul>
+
+<h1 id="cg2real">CG2REAL</h1>
+
+<p>CG rendering is very computational intensive!</p>
+
+<ul>
+  <li>Shape model</li>
+  <li>Texture model</li>
+  <li>Light transport is complex (huge number of )</li>
+</ul>
+
+<p>How to make the expensive photorealistic rendering cheaper?</p>
+
+<ul>
+  <li>Vision can help to swap in basic texture and object info into roughly rendered image (Use NN to enhance rendering! Add details to it! )</li>
+</ul>
+
+<p>Johnson, CG2REAL 2010</p>
+
+<p><strong>The Pre-CNN Pipeline</strong></p>
+
+<ol>
+  <li>Find most similar images to a given one
+    <ul>
+      <li>E.g. using SIFT keypoint features and match the descriptors</li>
+      <li>Similar to <a href="Semantics-Vision-Task.md#Content-Based-Image-Retrieval">content based image retriviel</a></li>
+    </ul>
+  </li>
+  <li>Co-Segmentation.
+    <ul>
+      <li>MRF based way</li>
+    </ul>
+  </li>
+  <li>Local Style Transfer
+    <ul>
+      <li>On matched region of source and target image.</li>
+      <li>Match intensity and gradient histogram, in order to transfer texture.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Comments</strong></p>
+
+<ul>
+  <li>So-called image based rendering: doesn’t go back to physics, just render image better based on a given image.</li>
+</ul>
+
+<h1 id="seam-carving">SEAM Carving</h1>
+
+<blockquote>
+  <p>Classic powerful algorithm. Extremely simple! Directly goes into Photoshop….</p>
+</blockquote>
+
+<blockquote>
+  <p>How do you Resize a image and keep most of the interesting regions cleverly?</p>
+</blockquote>
+
+<ul>
+  <li><em>Crop</em> :</li>
+  <li><em>Imresize</em> : may force you to crop out interesting parts.</li>
+</ul>
+
+<p>Both of them are suboptimal. Try to keep interesting part, merge different part together. By throwing away uninteresting pixels!</p>
+
+<ul>
+  <li>SEAM Carving</li>
+</ul>
+
+<p><strong>Basic Idea</strong>:</p>
+
+<ul>
+  <li>Each time delete a curved horizontal line and a curved vertical line. Then the image will have -1 row and -1 col!</li>
+  <li>Find this curved line by some optimization (path programming).</li>
+</ul>
+
+<p><strong>Optimization Setup</strong></p>
+
+<p>Define the line as $y[x]$ (horizontal curve). Variational energy minimization. The Energy function reads</p>
+
+<ul>
+  <li>
+    <p>Connected line constraints between neighbors $|y[i+1]-y[i]|\leq 1$</p>
+  </li>
+  <li>
+    <p>Pixel-wise energy term can be as simple as gradient energy.  $e[x,y]=|\nabla I|^2_2$</p>
+  </li>
+</ul>
+
+<p>Thus it’s a chain structure MRF, <strong>Viterbi Algorithm</strong> solve this. See <a href="">Stereo Vision</a></p>
+
+<p>Forward Backward Algorithm.</p>
+
+<ol>
+  <li>Propagate from left to right, accumulate a cost matrix <code class="language-plaintext highlighter-rouge">[h,w]</code></li>
+  <li>Collect from right to left.</li>
+</ol>
+
+<p>Actually the smoothing cost is much simpler than the stereo case!</p>
+
+<p>How should you remove X row and Y col? In essence a path programming on square grid.</p>
+
+<ul>
+  <li>Each time compare a row SEM and a col SEM, compare the cost.</li>
+</ul>
+
+<h2 id="content-amplification">Content Amplification</h2>
+
+<h2 id="seam-insertion">SEAM Insertion</h2>
+
+<p>Find all the SEAM curves passing through the image</p>
+
+<h2 id="object-removal">Object Removal</h2>
+
+<p>Annotate and segment out an object! Add high energy on anywhere except your object.</p>
+
+<blockquote>
+  <p>This is the basic framework for image-retargetting.</p>
+</blockquote>
+
+<p>**Following research **</p>
+
+<ul>
+  <li>Come up with better energy function than gradient energy
+    <ul>
+      <li>Saliency map is connected to this, saliency map is the enegy map for interesting regions on the image.</li>
+    </ul>
+  </li>
+  <li>Insert a forbidden region (like face detector) that SEAM cannot go through!</li>
+  <li>Insert a region of interest that SEAM has to go through!</li>
+</ul>
+
+<h1 id="texture-synthesis">Texture Synthesis</h1>
+
+<p>Taking a sample texture patch.</p>
+
+<ul>
+  <li>Crop out smaller patches, paste them on your canvas randomly.</li>
+  <li>Paste one patch, paste another patch by finding the best patch matched well to the boundary of the old patch.</li>
+</ul>
+
+<blockquote>
+  <p>Simple but super impressive algorithm.</p>
+</blockquote>
+
+<h2 id="texture-transfer">Texture Transfer</h2>
+
+<p>Paster the texture patches on the new image of the object, by finding the closest mathcing patch from the original texutre template.</p>
+
+<h1 id="neural-style-transfer">Neural Style Transfer</h1>
+
+<p>Match the covariance matrix (Gram Matrix) of the channel-wise feature vector! in 2 feature tensor produced by 2 CNNs.</p>
+
+<h1 id="poisson-image-editting">Poisson Image Editting</h1>
+
+<blockquote>
+  <p>Another Classic algorithm that works super well with simple ideas.</p>
+</blockquote>
+
+<blockquote>
+  <p>How do you transfer gradient from one image to the other.</p>
+</blockquote>
+
+<p><strong>Mathematical Observation</strong></p>
+
+<ul>
+  <li>Gradiant image  $\nabla I$ plus a reference absolute value, can give back your image by path integration! (Poisson PDE problem)
+    <ul>
+      <li>But you don’t really care the integratability !</li>
+    </ul>
+  </li>
+  <li>Editting gradient is easier than editting  pixel values.</li>
+</ul>
+
+<p><strong>Poisson Solver</strong> :</p>
+
+<ul>
+  <li>Solve a linear least square problem defined by finite difference !</li>
+  <li>Or solve it in the Fourier Domain.</li>
+</ul>
+
+<p>Same as the process of going from normal vector to depth in classic stereo!</p>
+
+<blockquote>
+  <p>The more general lesson is in <strong>some domain / representation</strong> manipulation is more <strong>intuitive</strong> and easier than other domains, thus easier for us to do editting! Seems gradient is more natural than direct pixel.</p>
+</blockquote>
+
+<p><strong>General Process</strong></p>
+
+<ul>
+  <li>Get a gradient image by filtering</li>
+  <li>Manipulate an image by inserting or deleting gradient in a domain.</li>
+  <li>Re-run the poisson solver to integrate the image back.</li>
+</ul>
+
+<p><strong>Application</strong></p>
+
+<ul>
+  <li>Texture Flattening
+    <ul>
+      <li>Set a region’s gradient to zero make the texure in one region flat!</li>
+    </ul>
+  </li>
+  <li>Object insertion:
+    <ul>
+      <li>Copy gradient instead of copy pixel value <em>per se</em></li>
+      <li>The object can blend much better to the environment! Water color and lighting can be transferred from neighboring pixels.</li>
+    </ul>
+  </li>
+  <li>Translucent image copying
+    <ul>
+      <li>Alpha blend or Max blend the gradient of source and target, instead of just copy.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>CG2REAL actually uses this technique to match the gradient histogram in 2 regions. (match the histogram of gradient; reintegrate to get the image. )</p>
+
+<h1 id="generative-adversarial-network">Generative Adversarial Network</h1>
+
+<p><strong>What are the priors</strong></p>
+
+<ul>
+  <li>Given a image evaluate the likelihood: Local probability model</li>
+  <li>Given a image, find the most similar natural looking image: Denoising prior.</li>
+</ul>
+
+<p><strong>Idea of GAN</strong></p>
+
+<ul>
+  <li></li>
+</ul>
+
+<p>So power of GAN is to morph the input distribution to the output one, not to output a single image.</p>
+
+<blockquote>
+  <p>Note, the general way of sample from an arbitrary distribution is to find the inverse CDF that map a normal distribution to that one. GAN is the inverse CDF here.</p>
+</blockquote>
+
+<p><strong>Comments</strong></p>
+
+<ul>
+  <li>GAN doesn’t strive to make one to one mapping between training sample and generated sample. VAE does.</li>
+  <li>Thus GAN is doing a match on the distribution level instead of individual level. The distribution level match is done by a CNN Discriminator.</li>
+</ul>
+
+<p>Simultaneously training $D, G$</p>
+
+<p><strong>Theoretical Analysis</strong></p>
+
+<p>What if we have the real probability density function $p_X$ and $p_G$,</p>
+
+<p>Then $p_G$ should match $p_X$ to get optimal score.</p>
+
+<p>In some assumptions.</p>
+
+<h2 id="conditional-gan">Conditional GAN</h2>
+
+<blockquote>
+  <p>Learning Conditional Distribution</p>
+</blockquote>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Model $p(y</td>
+      <td>x)$ instead of $p(y)$ i.e. natural image in certain class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>LAPGANs, Deep Generative image Models using a Laplacian Pyramid of Adversarial Network.</p>
+
+<p><strong>Motivation</strong>: High Resolution Image Generation is unstable</p>
+
+<p>Laplacian Pyramid is actually $X\to [L_0,L_1,L_2,L_3,L_4,G_4]$ , you can decompose or recombine the pyramid.</p>
+
+<p>$G_0=X,\ G_i=G_{i-1}\downarrow_2$</p>
+
+<p>Thus you can factorize your distribution</p>
+
+<p>Thus you learn a superresolution operator, learn the conditional distribution of residue based on the lower resolution image.</p>
+
+<h2 id="dc-gan">DC-GAN</h2>
+
+<p>2016 ICLR DC-GAN</p>
+
+<p>Use transposed convolution to do upsampling</p>
+
+<blockquote>
+  <p>GAN stability has become far more stable than before. 2016 people haven’t figure out how to generate high-res images.</p>
+</blockquote>
+
+<h2 id="progressive-growing-gan">Progressive Growing GAN</h2>
+
+<p>Train a lower-resolution G and D.</p>
+
+<p><img src="../assets/img/notes/cv2/prog_grow_GAN.png" alt="" /></p>
+
+<p>Can generate up to 1024 images of faces</p>
+
+<p>https://towardsdatascience.com/progressively-growing-gans-9cb795caebee</p>
+
+<h2 id="gan-application">GAN application</h2>
+
+<h3 id="image-impainting">Image Impainting</h3>
+
+<p>Discriminator’s ability of generating samples</p>
+
+<p>You can do impainting with the Discriminator</p>
+
+<p>2016 CVPR Context Encoders.</p>
+
+<p>Use the Adversarial Loss</p>
+
+<blockquote>
+  <p>Note, sometimes you don’t want an average output, but just one plausible output. L2 will give you an average, but Adversarial Loss is better for single sample plausibility.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note the discriminator is somehow G specific, it’s trained to tell if it’s a fake image from this G. So change to another</p>
+</blockquote>
+
+<h3 id="image-to-image-tranlation">Image to Image Tranlation</h3>
+
+<p>This is more useful than random image generator!</p>
+
+<blockquote>
+
+</blockquote>
+
+<h3 id="image-editting-with-gan">Image Editting with GAN</h3>
+
+<blockquote>
+  <p>Note this is related to the <a href="#Poisson Image Editting">Poisson Edit</a></p>
+
+  <p>Now your GAN is your Poisson solver! And you need much less edge information.</p>
+</blockquote>
+
+<p>Reconstruct image from sparse edge feature map!</p>
+
+<p>2018 CVPR Sparse Smart Contours to Represent and Edit Images.</p>
+
+<p>Same as Poisson Editting, the edge map editting is much more easier than editting image itself.</p>
+
+<blockquote>
+  <p>Combining the traditional controlability idea and the current GAN as renderer.</p>
+</blockquote>
+
+<blockquote>
+  <p>Doing this is crazy for CGer, Invert a image and rerendering will be bad.</p>
+
+  <p>We doesn’t have a generic GAN, so it’s crucial to train domain specific GAN, like face or cat or dog.</p>
+</blockquote>
+
+<h2 id="image-generation-from-caption">Image Generation from Caption</h2>
+
+<p>2016 ICML, Generative Adversarial Text to Image Synthesis</p>
+
+<p>The inverse of Image Captioning</p>
+
+<h1 id="motion-magnification">Motion Magnification</h1>
+
+<p>Exaggerate smaller movement! Extrapolate the magnitude of motion, instead of</p>
+
+<blockquote>
+  <p>This can have medical applications, magnifying the motion for the ease of diagnosis. (Heart beat! )</p>
+</blockquote>
+
+<p><img src="../assets/img/notes/cv2/image-20200324131114885.png" alt="image-20200324131114885" style="zoom:80%;" /></p>
+
+<blockquote>
+  <p>Original method 2005, fairly old, many parts to be tuned, very fragile, if any parts fail it fail.</p>
+</blockquote>
+
+<p>Basic formulation based on optical flow
+\(I[x,y]\to I[x+\Delta x,y+\Delta y]\)
+In Fourier analysis, Translation is a change in phase
+\(I[x]=\exp(-j\omega x)\to I[x]\exp(-j\omega \Delta x)\)</p>
+
+<p>2013, Phase based video motion editting.</p>
+
+<p>Build a representation by Local frequency decomposition —- Complex steerable pyramid</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200324132246665.png" alt="image-20200324132246665" /></p>
+
+<ul>
+  <li>Spatial filtering</li>
+  <li>Gets phase, and temporal filtering the phase</li>
+  <li>Use the temporal difference to amplify phase
+    <ul>
+      <li>You can choose which frequency band to magnify</li>
+      <li>You can suppress large motions.</li>
+    </ul>
+  </li>
+  <li>Spatially smooth that</li>
+  <li>And transform it back.</li>
+</ul>
+
+<blockquote>
+  <p>Motion magnification could be used to enhance detection of small changes to our eye! Interesting for science, monitoring</p>
+</blockquote>
+
+<h2 id="blind-deblurring">Blind Deblurring</h2>
+
+\[x,k =\arg\min_{x,k}\sum_n\|y[n]-k*x[n]\| +R(x)+R(k)\]
+
+<p>Note the $k$ can be $x$ dependent, like motion blur can be depth dependent,</p>
+
+<p>Note motion blur usually looks like motion trajectory! So we have some prior over it.</p>
+
+<p><strong>Image Prior</strong></p>
+
+<p>A trivial answer can be $k=\delta[n]$</p>
+
+<p>Note for normal image prior, you prefer smaller gradient, which is what blurry image provides</p>
+
+<p>We need stronger prior, not just smooth! It needs some degree of clean image edges. But it’s hard to have a model for all images (patch).</p>
+
+<p>2014 ECCV Blind Deblurring Patch Recurring</p>
+
+<p><strong>Internal Consistency Prior</strong></p>
+
+<ul>
+  <li>Note within a image, the statistics should be consistent, Pattern can be recurring!</li>
+  <li>Maybe some patches recurring at different scale (across pyramid).</li>
+</ul>
+
+<p>Note an insight is, normal images have self similarity across scales. But blur image . (Only works for certain image degradation…But most degradation in netural world is not exactly gaussian,)</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200324134805305.png" alt="image-20200324134805305" /></p>
+
+<p><strong>How to apply this prior</strong> 
+\(\rho\)</p>
+
+<ul>
+  <li>
+    <p>Learning patch distribution from the image itself!</p>
+  </li>
+  <li>
+    <p>Model the</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>It’s like matching all matches in the downsampled image and the original image. Quite a large matrix!</p>
+</blockquote>
+
+<p>Use the radial basis function to estimate empirical distribution of patch.</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200324135605955.png" alt="image-20200324135605955" /></p>
+
+<p>Note, you need to do iterative optimization</p>
+
+<ul>
+  <li>Keep $k$ the same, deconvolve $x$</li>
+  <li>Keep $x$ and estimate $k$</li>
+</ul>
+
+<p>Need to solve at different levels, from coarse to find level</p>
+
+<ul>
+  <li>Initialize the next level after convergence at last level.</li>
+</ul>
+
+<p>You can get a kernel from this and send into classical deblurring pipeline and image prior</p>
+
+<blockquote>
+  <p>The lesson is our classical prior leeads to an incorrect</p>
+</blockquote>
+
+<h2 id="dehazing">Dehazing</h2>
+
+<blockquote>
+  <p>In essence you want to inverse the effect of scattering</p>
+</blockquote>
+
+<p><img src="../assets/img/notes/cv2/image-20200324141025886.png" alt="image-20200324141025886" /></p>
+
+<p>Two effects:</p>
+
+<ul>
+  <li>Attenuation and Adding light (contrast decrease and blur)</li>
+  <li>Light direct from light source directly scattered to camera! (Image become more bright overall)</li>
+</ul>
+
+<p>SImple model of this, is each observed pixel is a convex combination of the original pixel and the air light. Combination coefficient depends on the distance of the pixel. 
+\(Y[n]=t[n]X[n]+(1-t[n])A\\
+t[n] = exp(-\beta Z[n])\)
+$A$ is like the air light!</p>
+
+<p><strong>Internal Patch recurrence 2016 ICCV</strong></p>
+
+<p>Estimate $t[n]$ , assume $t[n]$ affects uniformly on a patch, assume you have</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200324142108078.png" alt="image-20200324142108078" /></p>
+
+<p>THe core idea is the contrast is affected by the haze! So you can get depth information from standard deviation of pixels within a patch. 
+\(P_1[n] = \\
+P_2[n] = \\
+t_1/t_2 \approx std(P_1[n])/std(P_2[n])\)
+So the next question is to find the matched patches within an image.</p>
+
+<p>Note, assuming $A$ only shifts the mean, distance depended $t$ only shifts the std, then you can z-score the patch! 
+\(zP[n] = (P[n]-Mean(P[n]))/std(P[n])\)</p>
+
+<ul>
+  <li>
+    <p>Then compute L2 distance for all $zP[n]$ patches can give matching.</p>
+  </li>
+  <li>
+    <p>For a matched patch pair, you can infer a relationship between the $t1$ and $t2$ , thus you have a edge constraint over the $t$ map.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>The foundamental assumption for solving this problem is patch recurs in natural images. Patch size have to be chosen by cross validation.</p>
+</blockquote>
+
+<h2 id="amplifying-irregularity">Amplifying Irregularity</h2>
+
+<blockquote>
+  <p>How can you exagerate the deviation of similar patches from the mean appearance of decrese that deviation?</p>
+</blockquote>
+
+<p><img src="../assets/img/notes/cv2/image-20200326133057695.png" alt="image-20200326133057695" /></p>
+
+<p>SIGGRAPH Asia 2015.</p>
+
+<p><strong>Basic idea</strong></p>
+
+<ul>
+  <li>Find the nearest neighbor for a patch in the image</li>
+  <li>Find the differnce to that neighbor</li>
+  <li>Fit the transform to the neighbor, depending on what you want to morph.
+    <ul>
+      <li>Like a flow field to exaggerate shape deviation</li>
+      <li>Or a color transform to exaggerate color deviation! (useful for imaging! )</li>
+    </ul>
+  </li>
+  <li>Amplyfy the transform or attenuate the transform</li>
+</ul>
+
+<p>Note patch size could be explored in a image resolution pyramid.</p>
+
+<p>Transformming images taken in the day to that in night.</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200326133556778.png" alt="image-20200326133556778" /></p>
+
+<p>Actually you may not need a network to do this! Don’t need training.</p>
+
+<ul>
+  <li>You collect a database of time lapsed image. Assume they are aligned well!</li>
+  <li>Find the linear color transformation, and warp field</li>
+</ul>
+
+<p>Overlap handling</p>
+
+<ul>
+  <li>You can apply the transform to the center part only</li>
+  <li>Or to the whole patch, but boundary should be handled properly, like
+    <ul>
+      <li>averaging transform results of the 2 covering patch</li>
+      <li>doing the averaging on the transform.</li>
+    </ul>
+  </li>
+  <li>Note the key is you only get enough data to fit a transform over a patch, but how to apply that transform is your freedom.
+    <ul>
+      <li>e.g. NN segmentation only apply to center of the FoV</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>It has a similar idea to supervised image transform in NN.</p>
+
+  <p>But it doesn’t do overall training, but learn the relavent transform on a iamge by image / patch by patch basis.</p>
+</blockquote>
+
+<blockquote>
+  <p>Overall, there is a lot you can do without NN.</p>
+</blockquote>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-computational-photography" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Computational+Photography%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-computational-photography"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-computational-photography&quote=Note+on+Computational+Photography%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-computational-photography&media=$description=Computational+Photography%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-computational-photography&title=Note+on+Computational+Photography%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-computational-photography&title=Note+on+Computational+Photography%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-computational-photography"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Computational Photography%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-computational-photography"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+graphics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer graphics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Hardware Based Computational Photography" href="/academic_notes/note-on-hardware-computational-photography">
+            <p>Previous post</p>
+            Note on Hardware Based Computational Photography
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Epipolar Geometry and Optic Slow" href="/academic_notes/epipolar-geometry-and-optic-flow">
+            <p>Next post</p>
+            Note on Epipolar Geometry and Optic Slow
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

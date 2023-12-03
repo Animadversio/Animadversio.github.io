@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Network Commnunication | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Network Commnunication" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note on Network Commnunication" />
+<meta property="og:description" content="Note on Network Commnunication" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-network-commnunication" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-network-commnunication" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Network Commnunication" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Note on Network Commnunication","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-network-commnunication","headline":"Note on Network Commnunication","dateModified":"2019-07-30T00:00:00+00:00","datePublished":"2019-07-30T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-network-commnunication"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Network Commnunication">
+    <meta name="twitter:description" content="Note on Network Commnunication  Note on Network Commnunication  General Introduction          LAN and WAN      Protocol                  Seven layer model of...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Network Commnunication">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Network Commnunication " aria-label="Note on Network Commnunication" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Network+Commnunication" class="title">Note on Network Commnunication</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 30, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="note-on-network-commnunication">Note on Network Commnunication</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#note-on-network-commnunication" id="markdown-toc-note-on-network-commnunication">Note on Network Commnunication</a></li>
+  <li><a href="#general-introduction" id="markdown-toc-general-introduction">General Introduction</a>    <ul>
+      <li><a href="#lan-and-wan" id="markdown-toc-lan-and-wan">LAN and WAN</a></li>
+      <li><a href="#protocol" id="markdown-toc-protocol">Protocol</a>        <ul>
+          <li><a href="#seven-layer-model-of-osi-open-system-interconnection" id="markdown-toc-seven-layer-model-of-osi-open-system-interconnection">Seven layer model of OSI (Open System Interconnection)</a></li>
+          <li><a href="#packet" id="markdown-toc-packet">Packet</a></li>
+          <li><a href="#example-tcp-and-udp" id="markdown-toc-example-tcp-and-udp">Example: TCP and UDP</a></li>
+        </ul>
+      </li>
+      <li><a href="#how-a-packet-gets-to-the-destination" id="markdown-toc-how-a-packet-gets-to-the-destination">How a Packet gets to the destination</a>        <ul>
+          <li><a href="#types-of-address" id="markdown-toc-types-of-address">Types of Address</a></li>
+          <li><a href="#ip-address-structure" id="markdown-toc-ip-address-structure">IP address structure</a></li>
+          <li><a href="#ip-address-assigning---dhcp" id="markdown-toc-ip-address-assigning---dhcp">IP Address Assigning - DHCP</a></li>
+          <li><a href="#adding-address-capacity---network-address-translationnat" id="markdown-toc-adding-address-capacity---network-address-translationnat">Adding Address Capacity - Network Address Translation(NAT)</a></li>
+          <li><a href="#how-to-find-target-address---routing" id="markdown-toc-how-to-find-target-address---routing">How to find target address? - Routing</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#specific-application-notes" id="markdown-toc-specific-application-notes">Specific Application Notes</a>    <ul>
+      <li><a href="#note-ports" id="markdown-toc-note-ports">Note: Ports</a></li>
+      <li><a href="#virtual-private-network-vpn" id="markdown-toc-virtual-private-network-vpn">Virtual Private Network (VPN)</a></li>
+      <li><a href="#secure-sockets-layer-ssl" id="markdown-toc-secure-sockets-layer-ssl">Secure Sockets Layer (SSL)</a></li>
+      <li><a href="#secure-shell-ssh" id="markdown-toc-secure-shell-ssh">Secure Shell (SSH)</a></li>
+      <li><a href="#wifi" id="markdown-toc-wifi">WiFi</a></li>
+      <li><a href="#wifi-direct-connect-widi" id="markdown-toc-wifi-direct-connect-widi">WiFi Direct Connect (WiDi)</a></li>
+    </ul>
+  </li>
+  <li><a href="#hardware" id="markdown-toc-hardware">Hardware</a>    <ul>
+      <li><a href="#hub-and-switch交换机" id="markdown-toc-hub-and-switch交换机">Hub and Switch(交换机)</a></li>
+      <li><a href="#modem调制解调器-and-router路由器" id="markdown-toc-modem调制解调器-and-router路由器">Modem(调制解调器) and Router(路由器)</a></li>
+    </ul>
+  </li>
+</ul>
+<h1 id="general-introduction">General Introduction</h1>
+
+<p>Network connects devices to transfer data / information.</p>
+
+<h2 id="lan-and-wan">LAN and WAN</h2>
+<ul>
+  <li>LAN: Localized network, connected machines in the same area.</li>
+  <li>WAN: Wide area, Internet is the largest WAN!</li>
+</ul>
+
+<p>The 2 types are less distinct now, they are blurred because of cellular tech and wireless network.</p>
+
+<p><strong>Network Topology</strong></p>
+<ul>
+  <li>Bus,</li>
+  <li>Ring,</li>
+  <li>Star,</li>
+  <li>Mixed</li>
+</ul>
+
+<p><strong>Internet</strong>: The largest WAN.</p>
+
+<p>Reference</p>
+
+<ul>
+  <li>
+    <p>http://www.informit.com/articles/article.aspx?p=131034</p>
+  </li>
+  <li>
+    <p>More introductory https://blog.hubspot.com/marketing/how-the-internet-works</p>
+  </li>
+</ul>
+
+<h2 id="protocol">Protocol</h2>
+<p><strong>Protocol</strong> defines the format of data transmitted and received.</p>
+
+<ul>
+  <li>Transmission Control Protocol/Internet Protocol TCP/IP: The collection of communications protocols used to <strong>connect hosts</strong> on the Internet. TCP/IP is by far the most commonly used network protocol. The TCP and IP protocols are both part of TCP/IP.
+    <ul>
+      <li><strong>Transmission Control Protocol TCP</strong>: dividing data into packets at one end of a transmission and reassembling those packets at the other end!</li>
+      <li><strong>Internet Protocols (IP)</strong>—The protocols for managing and transmitting data between packet-switched computer networks originally developed for the Department of Defense (DOD). E-mail, File Transfer Protocol (FTP), Telnet, and Hypertext Transfer Protocol (HTTP) are all Internet Protocols.</li>
+    </ul>
+  </li>
+  <li>Ethernet: The most widely implemented LAN standard.</li>
+</ul>
+
+<p>The packet switching is a breakthrough at that time! https://blog.hubspot.com/marketing/how-the-internet-works</p>
+
+<h3 id="seven-layer-model-of-osi-open-system-interconnection">Seven layer model of OSI (Open System Interconnection)</h3>
+<blockquote>
+  <p>each layer hides the detailed functions it performs from the other layers</p>
+</blockquote>
+
+<p>Cf. Multi-level model of neural computation, one layer of algorithm may not be relavent to the level of implementation</p>
+
+<blockquote>
+  <p>Cf.  Table 3.1 The OSI Model</p>
+</blockquote>
+
+<blockquote>
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Layer</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>7</td>
+        <td>Application</td>
+        <td>Deals with program-level communication.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Presentation</td>
+        <td>Performs data conversion functions when needed.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Session</td>
+        <td>Establishes and maintains communications channels.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Transport</td>
+        <td>Handles end-to-end transmission and integrity of transmitted data.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Network</td>
+        <td>Routes data from one system to another.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Data Link</td>
+        <td>Handles the physical passing of data from one system to another.</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Physical</td>
+        <td>Manages the transmission and reception of data on the network media.</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>Modern network can be simplified into 4 layers</p>
+
+<ul>
+  <li><strong>Application</strong>: represent data and facilitate interaction</li>
+  <li><strong>Transport</strong>: Packaging and depackaging data</li>
+  <li><strong>Internet</strong>: Find IP and determine which route the data will take.</li>
+  <li><strong>Physical</strong> network: Hardware carries the data as phycical signal in wires radios…</li>
+</ul>
+
+<h3 id="packet">Packet</h3>
+
+<p>Data cannot be transmitted in its bulk, mostly, they are splitted and transmitted in small packet, containing <strong>header and data</strong>. 
+Header contains:</p>
+
+<ul>
+  <li>What kind of packet it is <strong>(protocol version number</strong>)</li>
+  <li>How big the header of the packet is (<strong>packet header length</strong>)</li>
+  <li>How to handle this packet (type of service <strong>telling the network whether to use the following options</strong>: minimize delay, maximize throughput, maximize reliability, and minimize cost)</li>
+  <li>How big the packet is (overall length of packet; as this is a 16-bit field, the maximum size of an IP packet is 65,535 bytes, but in practice <em>most packets are around 1,500 bytes</em>)</li>
+  <li>A unique identifier so this packet can be distinguished from other packets</li>
+  <li>Whether this packet is part of a longer data stream and should be handled relative to other packets</li>
+  <li>A description of where this packet fits into the data stream relative to other packets (the fragment offset)</li>
+  <li>A checksum of the packet header (to minimize the potential for data corruption during transmission)</li>
+  <li>Where the packet is from (source IP address such as 10.10.10.5)</li>
+  <li>Where the packet is going (destination IP address such as 10.10.10.10)</li>
+  <li>Option flags governing security and handling restrictions, whether to record timestamps, whether to record the route this packet has taken, and whether to use strict or loose source routing</li>
+  <li>The information this packet carries</li>
+</ul>
+
+<p>Typical IPv4 header</p>
+
+<p><img src="http://ptgmedia.pearsoncmg.com/images/0672321505/elementLinks/03fig05.gif" alt="IPv4 packet" /></p>
+
+<h3 id="example-tcp-and-udp">Example: TCP and UDP</h3>
+
+<ul>
+  <li>TCP: establish reliable connection and transmit data, guaranteed packets are reached and processed in the same order!</li>
+</ul>
+
+<p>Using three-way handshake to establish a connection.</p>
+
+<p><img src="http://ptgmedia.pearsoncmg.com/images/0672321505/elementLinks/03fig06.gif" alt="" /></p>
+
+<h2 id="how-a-packet-gets-to-the-destination">How a Packet gets to the destination</h2>
+
+<p>Postal service is a model for such communication:</p>
+
+<ul>
+  <li>You pack something (Data) up,</li>
+  <li>Add the target zip code, their address (IP address) and your address on the envelope (the Header)</li>
+  <li>Postal service find the rough target by Zip code, and find precise site by address.</li>
+</ul>
+
+<h3 id="types-of-address">Types of Address</h3>
+<p>To send something to a destination, you need an address. There are several addresses of different use.</p>
+
+<ul>
+  <li><strong><em>Media Access Control</em> MAC address</strong> : it’s a <strong>hardware address</strong>, usually <strong>hard-coded by network interface card</strong>(NIC 网卡). Used to <strong>uniquely</strong> identify each node on the network.</li>
+  <li><strong>IP address</strong>:
+    <ul>
+      <li>For IPv4, it’s 32bits address, represented by dot seperated decimals for every 8 bits numbers. E.g. <code class="language-plaintext highlighter-rouge">255.255.255.255</code></li>
+      <li>IPv6, it’s 128bits address, represented by 8 grous of hexadeimal for each 16bits <code class="language-plaintext highlighter-rouge">2001:cdba:0000:0000:0000:0000:3257:9652</code>
+        <ul>
+          <li>https://test-ipv6.com/</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Web address(domain name)</strong>: What we use most, to reach a remote website / server
+    <ul>
+      <li>(www.google.com) <em>domain name service (DNS)</em>   is a service to provide the IP address for such strings e.g. “www.google.com”. DNS server has a hierachical structure:  if the local DNS server does not know the address for a string, it will query a higher level one, until it gets the result.</li>
+      <li><strong>Uniform Resource Locator (URL)</strong>: Is the full address to access your target resource, it may contain directory(<code class="language-plaintext highlighter-rouge">/module/</code>), page (<code class="language-plaintext highlighter-rouge">1_2.html</code>) and data(<code class="language-plaintext highlighter-rouge">/url.gif</code>) path in the node. www.webpages.uidaho.edu/info_literacy/modules/module1/images/url.gif</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ip-address-structure">IP address structure</h3>
+
+<p>It’s easy to see there is not enough public address space within 32bits. Multiple methods are used to resolve.</p>
+
+<p>When you check your IP address you can get multiple 32 bits numbers</p>
+
+<p><img src="../assets/img/notes/image-20190730162510287.png" alt="image-20190730162510287" /></p>
+
+<p><strong>Subnet and IP mask</strong>: There is a binary mask showing which part of the IP address denotes <em>network</em> which part denotes <em>host</em>. Normally bit wise operation $mask\ \&amp;\ IP=subnetID$, $\wedge mask\ \&amp;\ IP=hostID$. Each device can have a unique <strong>hostID</strong>. For the example, only the last 8 bits are host IP, first 3 octets are network IP.</p>
+
+<p>Several class of address pocesses different subnet mask. (<strong>Seems not important now!</strong>)</p>
+
+<ul>
+  <li><strong>Class A</strong>: <strong>0—</strong> : any address from <strong>0.0.0.0 to 127.255.255.255</strong>. Mask FF:00:00:00</li>
+  <li><strong>Class B</strong>: <strong>10–</strong> : any address from <strong>128.0.0.0 to 191.255.255.255</strong>. Mask FF:FF:00:00</li>
+  <li><strong>Class C</strong>: <strong>110-</strong> :  the addresses ranging from <strong>192.0.0.0 to 223.255.255.255</strong>. Mask FF:FF:FF:00</li>
+  <li><strong>Class D</strong>: <strong>1110</strong> : addresses from <strong>224.0.0.0 to 239.255.255.255</strong>. Used for multicasting</li>
+  <li><strong>Class E</strong>: <strong>1111</strong> : addresses between <strong>240.0.0.0 and 255.255.255.255</strong>. Largely not used.</li>
+</ul>
+
+<p>https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking</p>
+
+<h3 id="ip-address-assigning---dhcp">IP Address Assigning - DHCP</h3>
+
+<ul>
+  <li>
+    <p>The static way is just to assign a fixed IP number to a device.</p>
+  </li>
+  <li>
+    <p>The dynamic way of assigning IP is <em>Dynamic Host Configuration Protocol</em> DHCP. <strong>DHCP</strong> server assign IP to each device. Note each IP has a expiration time, and it has to renew the lease upon expiration.</p>
+    <ul>
+      <li>At home the DHCP-server is usually located in router!</li>
+      <li><em>Note</em>: there is a fixed range of IP that a DHCP server can assign. So when this happen the additional device cannot connect to network.</li>
+      <li>https://www.youtube.com/watch?v=RUZohsAxPxQ</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Some IP addresses are special and reserved for local / private network, so these IP are not publicly routable on the internet.</p>
+
+<ul>
+  <li>10.0.0.0 -10.255.255.255</li>
+  <li>172.16.0.0 - 172.31.255.255</li>
+  <li>192.168.0.0 - 192.168.255.255</li>
+</ul>
+
+<p>https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html</p>
+
+<p>https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics</p>
+
+<h3 id="adding-address-capacity---network-address-translationnat">Adding Address Capacity - Network Address Translation(NAT)</h3>
+
+<p>Note, Network address is not enough! So they create this method:</p>
+
+<ul>
+  <li>There is only one public address which hides a lot of private addresses. This method largely increase the total number of IP address!</li>
+</ul>
+
+<p>NAT can translate local network IP into publically routable IP! Perform relay on the packet! Dynamically changing the receiver address / source address.</p>
+
+<p>It’s like the package receiving and dispatching center for Amazon (京东自提点).</p>
+
+<p><img src="http://ptgmedia.pearsoncmg.com/images/0672321505/elementLinks/03fig07.gif" alt="" /></p>
+
+<p>Now, the Wifi Router usually opens the private network, and hide the private IP from public.</p>
+
+<ul>
+  <li>To know your public IP, ask the website / server which will only see your public IP.http://ip4.me/.</li>
+  <li>The modem / router setting page will show the public IP address as well!</li>
+  <li>The public IP is related to the location of the router. https://www.iplocation.net/  Here is the APIhttps://www.db-ip.com/.
+    <ul>
+      <li>And VPN can hide this information</li>
+    </ul>
+  </li>
+</ul>
+
+<p>https://mkdev.me/en/posts/how-networks-work-what-is-a-switch-router-dns-dhcp-nat-vpn-and-a-dozen-of-other-useful-things</p>
+
+<h3 id="how-to-find-target-address---routing">How to find target address? - Routing</h3>
+
+<p>Locally, they can use <em>Address Resolution Protocol (ARP)</em> to ask which is the desination node for an IP address, the machine possessing the address will respond with a packet (MAC)! So you can connect with machines in the same local network quite easily.</p>
+
+<p>Remotely, you will use If the IP address is remote, the <strong>router</strong> will handle this process!</p>
+
+<p>Note, some individual trying to fetch the packet may reroute it, and this may be done by changing the <strong>routing table</strong> of the router.</p>
+
+<h1 id="specific-application-notes">Specific Application Notes</h1>
+<p>Using these basic picture and concepts, we can understand many common web service and applications in their core.</p>
+
+<h2 id="note-ports">Note: Ports</h2>
+<p>Note in actual application, one device has a IP address, and different application use different ports to communicate!</p>
+
+<ul>
+  <li><a href="https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/">Check Ports on Linux/MacOS</a></li>
+  <li><a href="https://www.howtogeek.com/howto/28609/how-can-i-tell-what-is-listening-on-a-tcpip-port-in-windows/">Check Ports on Windows</a></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netstat <span class="nt">-tulpn</span> | <span class="nb">grep </span>LISTEN <span class="c"># Linux</span>
+netstat <span class="nt">-anp</span> tcp | <span class="nb">grep </span>LISTEN <span class="c"># MacOS</span>
+netstat <span class="nt">-ab</span> <span class="c"># Windows </span>
+</code></pre></div></div>
+
+<h2 id="virtual-private-network-vpn">Virtual Private Network (VPN)</h2>
+
+<p><strong>Motivation</strong> This is invented to make users in a distant place (different offices sites) to share the same private network. Communicating directly on the network is not safe, encripting it can make it safer!</p>
+
+<h2 id="secure-sockets-layer-ssl">Secure Sockets Layer (SSL)</h2>
+
+<h2 id="secure-shell-ssh">Secure Shell (SSH)</h2>
+
+<h2 id="wifi">WiFi</h2>
+
+<h2 id="wifi-direct-connect-widi">WiFi Direct Connect (WiDi)</h2>
+
+<h1 id="hardware">Hardware</h1>
+
+<h2 id="hub-and-switch交换机">Hub and Switch(交换机)</h2>
+
+<p>Switch is a metaphor from railway, incoming data can be filtered / sorted and dispatch to different devices connected to the switch!</p>
+
+<p>Hub is dumber, the received packet are sent to any machines connected with it. And the device perform the filtering itself.</p>
+
+<h2 id="modem调制解调器-and-router路由器">Modem(调制解调器) and Router(路由器)</h2>
+
+<p>Modem is changing network signal into physical signal in corresponding devices —— wires fiber, telephone wires, satellite signal, radio …</p>
+
+<p>Router signal the network.</p>
+
+<p><strong>Default gateway</strong> is the gateway it reach first when going to another network (Internet)</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-network-commnunication" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Network+Commnunication%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-network-commnunication"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-network-commnunication&quote=Note+on+Network+Commnunication%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-network-commnunication&media=$description=Note+on+Network+Commnunication%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-network-commnunication&title=Note+on+Network+Commnunication%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-network-commnunication&title=Note+on+Network+Commnunication%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-network-commnunication"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Network Commnunication%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-network-commnunication"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+network">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer network</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Behavioral Study" href="/academic_notes/note-on-behavioral-study">
+            <p>Previous post</p>
+            Note on Behavioral Study
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)" href="/academic_notes/this-week-s-learning-about-brain-4-neural-correlate-of-visual-consciousness">
+            <p>Next post</p>
+            This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

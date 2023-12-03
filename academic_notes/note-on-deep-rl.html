@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Deep Reinforcement Learning | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Deep Reinforcement Learning" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Reinforcement Learning deals with environment and rewards." />
+<meta property="og:description" content="Reinforcement Learning deals with environment and rewards." />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-deep-rl" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-deep-rl" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Deep Reinforcement Learning" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Reinforcement Learning deals with environment and rewards.","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-deep-rl","headline":"Note on Deep Reinforcement Learning","dateModified":"2020-03-18T00:00:00+00:00","datePublished":"2020-03-18T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-deep-rl"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Deep Reinforcement Learning">
+    <meta name="twitter:description" content="Reinforcement Learning deals with environment and rewards.Agents have a set of actions to interact with environment (state $s_i$), and the environment will b...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Deep Reinforcement Learning">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Deep Reinforcement Learning " aria-label="Note on Deep Reinforcement Learning" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Deep+Reinforcement+Learning" class="title">Note on Deep Reinforcement Learning</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      March 18, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p>Reinforcement Learning deals with environment and rewards.</p>
+
+<p>Agents have a set of actions to interact with environment (state $s_i$), and the environment will be changed by these actions $a_j$, from time to time, there will be reward coming from environment!</p>
+
+<p>Fundamentally, you don’t have reward for your every single action, and for your understanding of environment. But how can you solve these problems?</p>
+
+<h1 id="overview-and-concepts">Overview and Concepts</h1>
+
+<blockquote>
+  <p>How to frame reinforcement learning into a general optimization framework? What’s the objective.</p>
+</blockquote>
+
+<p><strong>Markov Decision Process</strong></p>
+
+<ul>
+  <li></li>
+</ul>
+
+<p><strong>State Trajectory</strong></p>
+
+<ul>
+  <li>The game process can be seen as a stochastic process, with some parameter of the agent $\theta$ deciding policy $\pi_\theta(a\mid s)$ and some parameter of the environment determining the transition of states $p_\lambda(s_{t+1},r_{t+1}\mid s_t,a)$</li>
+  <li>If the policy and environment parameters are set, then this is a fixed stochastic process. You can define the expected reward $\mathbb E_{\pi_\theta} \sum^n_{t=1} r_t$ over this stochastic process, i.e. over the ensemble of trajectories.
+    <ul>
+      <li>As you can only change your principle of behavior (policy), you are maximizing expected reward over $\theta$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Temporal Structure</strong></p>
+
+<ul>
+  <li>RL has a clear temporal structure, you are facing the future, trying to maximize the reward in the future (don’t care reward that has been collected)</li>
+  <li>You are reviewing your past experience to learn the strategy.</li>
+</ul>
+
+<h1 id="method-taxonomy">Method Taxonomy</h1>
+
+<p><strong>Model based vs Model free</strong></p>
+
+<ul>
+  <li>If you have a model of the world, you can play with it and simulate response and on and on in your “imagination”, without taking any action.</li>
+</ul>
+
+<p><strong>On-line vs Off-line policy</strong></p>
+
+<ul>
+  <li>Can you learn from recording of games, or have to interact with environment to learn?</li>
+</ul>
+
+<p><strong>Continuous vs Discrete Action Space</strong></p>
+
+<ul>
+  <li>If continuous, your can not evaluate every possible action, but output some distribution over it.</li>
+  <li>If discrete, you can put value on every one of it and find max easily.
+    <ul>
+      <li><em>I feel this distinction is superficial, but seems they have different names, probability based and value based learning.</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="policy-gradient">Policy Gradient</h2>
+
+<p>You want to directly learn a map from observed states to action $p(a_i\mid s_i)$ (<em>see sth, do sth</em>)</p>
+
+<ul>
+  <li>Your source of feedback is reward, but it’s sparse.</li>
+  <li>Simplest thing is to recall all the $(a_i, s_i)$ pairs during an episode, and use reward to reinforce these connections!
+    <ul>
+      <li>However, as not all the actions in an episode contribute to the final reward, we should assign different credits to different action state pair.</li>
+      <li>Like assign credits only to action happen before reward events. And emphasize the actions closer to the reward?</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Comments</strong>:</p>
+
+<ul>
+  <li>Actually the credit assignment problem is really related to causal inference!</li>
+  <li>You have to figure out the real causal relationship instead of just statistical contingency to get reward!</li>
+</ul>
+
+<p><strong>Tricks</strong></p>
+
+<ul>
+  <li>Shift the Baseline so that small reward will be seen as punishment.</li>
+  <li></li>
+</ul>
+
+<p>https://lilianweng.github.io/lil-log/2018/04/08/policy-gradient-algorithms.html</p>
+
+<p>https://towardsdatascience.com/policy-gradients-in-a-nutshell-8b72f9743c5d</p>
+
+<h2 id="actor-critic">Actor Critic</h2>
+
+<h2 id="q-learning">Q-Learning</h2>
+
+<p>Core is the Q function, the expected current reward and the $\gamma$ discounted future reward for a given $(s_i, a_j)$ pair.</p>
+
+<p>If you have a good Q model function, then you can use some simple policy to choose from them.</p>
+
+<ul>
+  <li>Greedy: Maximize Q function</li>
+  <li>Epsilon greedy: Maximize Q function at $1-\epsilon$  times, but do random things at $\epsilon$ probability.</li>
+</ul>
+
+<p>Deep Q Learning is to substitute the big $(s_i, a_j)$ table for a complex function approximator DNN, and to learn Q functions by backprop.</p>
+
+<p>DQN could be done by batch learning, record the $s_i,s’,a_i,r_i$ pair for a few trials, and then revive these memory and learn from them.</p>
+
+<p><strong>Tricks</strong></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-deep-rl" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Deep+Reinforcement+Learning%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-deep-rl"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-deep-rl&quote=Note+on+Deep+Reinforcement+Learning%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-deep-rl&media=$description=Reinforcement+Learning+deals+with+environment+and+rewards.%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-deep-rl&title=Note+on+Deep+Reinforcement+Learning%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-deep-rl&title=Note+on+Deep+Reinforcement+Learning%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-deep-rl"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Deep Reinforcement Learning%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-deep-rl"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#deep+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> deep learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#reinforcment+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> reinforcment learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Computations on Hyperbolic Geometry" href="/academic_notes/hyperbolic-geometry">
+            <p>Previous post</p>
+            Computations on Hyperbolic Geometry
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Photometric Reasoning" href="/academic_notes/note-on-photometric-analysis">
+            <p>Next post</p>
+            Note on Photometric Reasoning
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://animadversio.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://animadversio.github.io/" rel="alternate" type="text/html" /><updated>2023-12-03T21:55:09+00:00</updated><id>https://animadversio.github.io/feed.xml</id><title type="html">The mind palace of Binxu</title><subtitle>Binxu's personal blog site for neuroscience and machine learning</subtitle><entry><title type="html">Alignment Of Objective In Evolution</title><link href="https://animadversio.github.io/personal%20writing/2021/02/16/Alignment-of-Objective-in-Evolution.html" rel="alternate" type="text/html" title="Alignment Of Objective In Evolution" /><published>2021-02-16T00:00:00+00:00</published><updated>2021-02-16T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2021/02/16/Alignment-of-Objective-in-Evolution</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2021/02/16/Alignment-of-Objective-in-Evolution.html">&lt;h2 id=&quot;alignment-of-objective-in-evolution&quot;&gt;Alignment of Objective in Evolution&lt;/h2&gt;
+
+&lt;p&gt;If there is a creator that kick start the Evolution, what is the objective that he has in mind?&lt;/p&gt;
+
+&lt;p&gt;Maybe self preservation and reproduction are two of them. He is super successful in using these objectives to drive the changes in species. We are becoming adaptive and flexible in the history of nature.&lt;/p&gt;
+
+&lt;p&gt;But one thing to note is that, the objectives we have in mind are quite different from what creator thinks about. We desire for career for meaning for love and relationship, for money and social status. But we don’t really care about genes and their reproduction.&lt;/p&gt;
+
+&lt;p&gt;Similarly, the agents created by reinforcement learning algorithms may care about some strange things, but they are still evolved or optimized to reach the goal we are hoping for, but, without knowing it.&lt;/p&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="Philosophy" /><category term="Evolution" /><category term="RL" /><summary type="html">Alignment of Objective in Evolution</summary></entry><entry><title type="html">A Model of Persistency</title><link href="https://animadversio.github.io/personal%20writing/2021/01/15/A-model-of-Persisitency.html" rel="alternate" type="text/html" title="A Model of Persistency" /><published>2021-01-15T00:00:00+00:00</published><updated>2021-01-15T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2021/01/15/A%20model%20of%20Persisitency</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2021/01/15/A-model-of-Persisitency.html">&lt;h1 id=&quot;a-model-of-persistency-and-quit&quot;&gt;A Model of Persistency and Quit&lt;/h1&gt;
+
+&lt;p&gt;Last week, when I have a long philosophical + computational conversation over beers with &lt;a href=&quot;&quot;&gt;Kaining&lt;/a&gt;, we developped these models and understanding. Broadly speaking it’s about how we make sense our life with the RL framework.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-baseline-for-reward&quot;&gt;1 Baseline for Reward&lt;/h2&gt;
+
+&lt;p&gt;In the field of reinforcement learning and in our life, an event can be rewarding or punishing to an agent or to us depending on a reference point, which is called the baseline.&lt;/p&gt;
+
+&lt;p&gt;Think about it, getting 90/ 100 in a course can be a rewarding event for an average student, but it can be dramatically disappointing for a top student who gets 100 / 100 in any course. Similarly, in a class that generally give scores like 70+-10, getting a 90 is quite an achivement, but if the average score is aroung 90+-5, then you will not be that proud of your result.&lt;/p&gt;
+
+&lt;p&gt;These examples show that the reference point or baseline can depend on many factors:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The average or common outcome, that I’ve achieved before. This is the trajectory of your past.&lt;/li&gt;
+  &lt;li&gt;The average or common outcome that others achieved. This is the ensemble of trajectory of others.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similar principle applies to salary, scientific achivement, intellectual gain, knowledge in some domain, artistic taste, and every action or behavior that can be rewarding.&lt;/p&gt;
+
+&lt;p&gt;Note that the reference point is quite related to the Expectation of reward. We estimate these expectation based on the physical world, our action history and your past experience, which is a good choice as a reference point.&lt;/p&gt;
+
+&lt;p&gt;But we don’t necessarily choose expectation as baseline. We can pick lower or higher than the expectation. A lower pick can result in a larger reward prediction error, i.e. surprise in a good direction. A higher pick can result in a lower RPE, then we can be more disappointed.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;You can alter baseline in your mind&lt;/strong&gt; .&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But don’t forget, you are the agent and the game and algorithm designer. You are not bound to one way of setting the baseline. You are free to set and reset baseline as anything or any function.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Even you’ve got paper published you can still believe that’s your first paper, and be as happy as that’s first time.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Even if you know you are strong, you can still be happy at overcoming yet another mountain.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Evern if you know you are smart, you can still be happy about getting another knowledge domain in your mind.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Baseline is important in learning as well! During learning, we usually get intrinsic reward only, without external reward from others (unless we are undergrad and taking classes). In that case, the baseline we set for ourselves can dramatically affect our happiness.
+    &lt;ul&gt;
+      &lt;li&gt;If I think only finishing the book is rewarding, then any time before finishing it yield no reward. Then you can rush to the end without learning much.&lt;/li&gt;
+      &lt;li&gt;If I feel the large rewards come when I finish the whole course, then when I’m getting each lesson done I got few reward.&lt;/li&gt;
+      &lt;li&gt;But if I reset my baseline to be 0, then any experience and new knowledge can be rewarding. That is a good attitude to have in life.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-effect-and-purpose-of-baseline&quot;&gt;2 Effect and Purpose of Baseline&lt;/h3&gt;
+
+&lt;p&gt;What’s the effect of a baseline?&lt;/p&gt;
+
+&lt;p&gt;In the reinforcement algorithm, it’s a critical component that can affect the learnt behavior. For a lower baseline, more diverse behavior can be reinforced, while for a higher baseline, only the top behavior that yield the largest reward will be strengthened.&lt;/p&gt;
+
+&lt;p&gt;I feel why some people are harder to make choices between options of similar reward may be related to a higher baseline.&lt;/p&gt;
+
+&lt;p&gt;Thus, the purpose of choosing a baseline is to titrate the reward / punishment to finally maximize reward and achieve the goal, which is the final goal of reinforcement learning.&lt;/p&gt;
+
+&lt;p&gt;For us, the happiness or unhappiness brought by a baseline &lt;em&gt;per se&lt;/em&gt; is not the final goal, it’s just a reward in one step. The total reward that is brought by your policy over your whole trajectory is the final goal. You can set your baseline as anything to achieve your goal.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-baseline-and-motivation&quot;&gt;3 Baseline and Motivation&lt;/h2&gt;
+
+&lt;p&gt;In real life, one major effect of baseline is on our motivation. Getting the 2nd place always can be encouraging and can be frustrating, depending on the reward baseline.&lt;/p&gt;
+
+&lt;p&gt;For things that do not yield reward frequently, we are less likely to do it usually or persistently. For things that can generate frequent rewards either intinsically or externally, we are much more likely to constantly do those things, which is similar to addiction, as we reinforce ourselves on these actions.&lt;/p&gt;
+
+&lt;p&gt;Similarly, when we set too high a baseline for us, then sometimes, we failed too often and get disappointed too often to the point that we do not want to do that thing anymore.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-expected-outcome-and-motivation&quot;&gt;4 Expected Outcome and Motivation&lt;/h2&gt;
+
+&lt;p&gt;We are constantly and implicitly estimating the expected “reward” by doing sth. in the future. This expected outcome will dramatically affect the decision of us quit or persist.&lt;/p&gt;
+
+&lt;p&gt;Take some physical skills as example. If I’ve never skiied before, and I’ve not done anything similar to it. Then at first I have no expectation of how good I will do. After I take a first try, I get some initial data then I can project the data point and get an expectation of my future outcome.&lt;/p&gt;
+
+&lt;p&gt;If I get negative results too often, I will get the impression that I cannot do this well. And the expected reward in the future is negative, thus I should quit. But as long as I constantly get some reward, I will not quit and I’ll happily continue doing it.&lt;/p&gt;
+
+&lt;p&gt;Thus, keep the interest and motivation is very important. If you set too high a target AND too high baseline, then you will feel the punishment through out the trial. And you would like to quit sooner.&lt;/p&gt;
+
+&lt;p&gt;However if you have a lower baseline and then keep getting the reward, you may get far more by doing something constantly.&lt;/p&gt;
+
+&lt;p&gt;So reward frequently by treating yourself better!&lt;/p&gt;
+
+&lt;h2 id=&quot;5-happiness-and-altruism&quot;&gt;5 Happiness and Altruism&lt;/h2&gt;
+
+&lt;p&gt;What is altruism? What does it mean to make the world better?&lt;/p&gt;
+
+&lt;p&gt;Does that translate to increase the happiness of the whole world?&lt;/p&gt;
+
+&lt;p&gt;Then it relates back to the question of what is reward or utility.&lt;/p&gt;
+
+&lt;p&gt;If that’s the case, then it’s maximizing the utility summed or averaged over the whole population. However, these utility functions are custom to each person. Different persons like different things and can feel happy or sad about the same thing. Sample the utility function of the population is hard. You can know that from the election in 2020.&lt;/p&gt;
+
+&lt;p&gt;How can you maximize summed utility function?&lt;/p&gt;
+
+\[\arg\max_s \sum_{i\in P} U_i(s)\approx \sum_{i\in \tilde P}\]
+
+&lt;p&gt;In another way, you can have an ideal utility function (value function), which is derived from principles or books. This function doesn’t de&lt;/p&gt;
+
+&lt;p&gt;It can be environmentalism, nationalism, equality, freedom of speech.&lt;/p&gt;
+
+&lt;p&gt;These are just functions of state&lt;/p&gt;
+
+&lt;p&gt;Thus instead of using the utility function of real persons, we can use this idealized utility function, which simlify the problem greatly.&lt;/p&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="life" /><category term="RL" /><category term="Reinforcement Learning" /><summary type="html">A Model of Persistency and Quit</summary></entry><entry><title type="html">人间失格 读书札记</title><link href="https://animadversio.github.io/personal%20writing/2020/01/13/Reading-note-on-Disqualify-as-human.html" rel="alternate" type="text/html" title="人间失格 读书札记" /><published>2020-01-13T00:00:00+00:00</published><updated>2020-01-13T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2020/01/13/Reading%20note%20on%20Disqualify%20as%20human</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2020/01/13/Reading-note-on-Disqualify-as-human.html">&lt;p&gt;人间失格是一本高中时就熟知的书，可是也许是一直没有心绪去读，最近才在飞机上认真读完。没想到的是，并没有像以前期待的那样会被这个人和这个故事拉进黑暗的深渊，心情也并不十分抑郁。只是在有些主人公对他身边的女人不善时才会生气或者难过，其余时候对主人公还是很同情的。&lt;/p&gt;
+
+&lt;p&gt;完全可以想象，有些人会十分反感和厌恶主人公，甚至作者自己在序言三张照片中，也表现出了这种”自我”厌恶。我并不那么讨厌他，虽然也有哀其不幸怒其不争的心情，但不可否认主人公的聪明以及有吸引力，而且在这之上对生活有种过早也过于清醒的看法。所以此次读完更想去分辨的是，他清醒地看出了什么，以及哪些是他自己造成的困境。&lt;/p&gt;
+
+&lt;p&gt;文中有一段话能很好的概括主人公的性格悲剧，&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我的不幸乃是一个缺乏拒绝能力的人的不幸。我时常陷入一种恐惧之中，以为如果别人劝我干什么而自己加以拒绝的话，就会在对方的心灵和自己的心灵中剜开一道永远无法修复的裂痕&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;无法拒绝别人，太会讨好他人自然是这个悲剧的动因之一。从CogSci角度，一个人很早拥有了theory of mind能识别他人的动机与欲望似乎是好事，但这很容易就会产生一个reward feedback—- 如果你满足别人的期待就会被reward反之punish, and that’s the definition of 讨好。可以想象，这样的reinforcement learning 可以在人早期性格上留下多大的痕迹。&lt;/p&gt;
+
+&lt;p&gt;有人说 如果一个人评判自我的超我力量太强，就会时常陷入自责中，并因此稍稍做的对不起别人 或者惹人生气，都会是巨大的灾难。&lt;/p&gt;
+
+&lt;p&gt;人间失格的主人公与加缪局外人的主人公有着很值得分析的相似与不同。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;他们都是社会的某种局外人，跟任何团体保持着疏离的关系。&lt;/li&gt;
+  &lt;li&gt;对社会的一般道德原则和现状有些怀疑。&lt;/li&gt;
+  &lt;li&gt;某种意义上都讨女人喜欢。&lt;/li&gt;
+  &lt;li&gt;然而加缪的主人公，在看清看透了这个世界之后会更全面的反叛他。其一是生活不需要接济帮助，独立自主。其二是不会像阿叶一般强烈的自责，直到最后都没怎么自责，而对世界充满了控诉。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="books" /><category term="reading" /><summary type="html">人间失格是一本高中时就熟知的书，可是也许是一直没有心绪去读，最近才在飞机上认真读完。没想到的是，并没有像以前期待的那样会被这个人和这个故事拉进黑暗的深渊，心情也并不十分抑郁。只是在有些主人公对他身边的女人不善时才会生气或者难过，其余时候对主人公还是很同情的。</summary></entry><entry><title type="html">Understanding of Adversarial Attack</title><link href="https://animadversio.github.io/2020/01/07/Why-we-should-care-adversarial-examples.html" rel="alternate" type="text/html" title="Understanding of Adversarial Attack" /><published>2020-01-07T00:00:00+00:00</published><updated>2020-01-07T00:00:00+00:00</updated><id>https://animadversio.github.io/2020/01/07/Why%20we%20should%20care%20adversarial%20examples</id><content type="html" xml:base="https://animadversio.github.io/2020/01/07/Why-we-should-care-adversarial-examples.html">&lt;h1 id=&quot;understanding-of-adversarial-attack&quot;&gt;Understanding of Adversarial Attack&lt;/h1&gt;
+
+&lt;p&gt;Why we should care adversarial examples? Why they are surprising?&lt;/p&gt;
+
+&lt;p&gt;Adversarial example and feature visualization are related intrinsically. Basic algorithm underlying both is to generate image that activate a unit most. For Adversarial attack, the point is to change the image in an in-perceptible way but change the network output dramatically. On the other hand the feature visualization is to generate a perceptually meaningful pattern that represent a natural image that the unit like.&lt;/p&gt;
+
+&lt;p&gt;To put it formally, denote an output unit as a function over image space $f_i(.)$, $i\in{1:n}$, $i$ correspond to the class number. So for adversarial attack the point is to 
+\(\mbox{Find $I$ such that, }
+\|f_i(I+\delta I)-f_i(I)\| \mbox{ is significant}\\
+d(I+\delta I,I) \mbox{ is small.}\)
+With $d(.,.)$ as any &lt;strong&gt;perceptual similarity metric&lt;/strong&gt; &lt;sup id=&quot;fnref:0&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;For feature visualization, it strives for 
+\(\mbox{Find $I$ such that, } 
+p(I) \mbox{ is high for natural image prior}\\
+f_i(I) \mbox{ is high.}\)
+with $p(.)$ a &lt;strong&gt;natural image prior&lt;/strong&gt; &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;And the key difference and one that connect the two topic together is the condition under which they do optimization. One of the key to the adversarial example is its im-perceptibility to human visual system.&lt;/p&gt;
+
+&lt;h2 id=&quot;connection-from-feature-visualization-to-adversarial-attack&quot;&gt;Connection from Feature Visualization to Adversarial Attack&lt;/h2&gt;
+
+&lt;p&gt;A well known &lt;strong&gt;artifact&lt;/strong&gt; for feature visualization is the high frequency artifact&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. If you  $\arg\max_I\ f_i(I)$ by backpropagtion through the composite function $f_i$. The resulting image $I^*$ will be filled with high frequency artifacts. And the essential work of feature visualization is use regularization to counteract these artifacts&lt;sup id=&quot;fnref:2:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;The mechanistic reason is, back propagation through CNN to image introduce enhancement to certain frequency. Mathematically, back-propagation through conv layers are the same as deconvolution. As the convolutional kernal size and strides are usually not integer multiplier of each other, there will be checkerboard like artifacts due to overlap&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;It has been speculated that these checkerboard / high frequency artifacts are closely related to adversarial attacks. Denoting the high frequency pattern as $\epsilon F$, then it’s possible that $f_j(\epsilon F)$ is high. With a approximately linear function $f_j$, $f_j(\epsilon F+I)$ is high as well. It’s easy to imagine this high activation cause a false classification at last. However, though we may perceive $\epsilon F$ &lt;em&gt;per se&lt;/em&gt;, i.e. $d(\epsilon F,0)&amp;gt;\delta$ . The perturbation to image is not perceptible $d(I,I+\epsilon F)&amp;lt;\delta$ .&lt;/p&gt;
+
+&lt;p&gt;From this viewpoint we know the adversarial attack has a deep root in the difference of perceptual similarity metric between human and CNN.&lt;/p&gt;
+
+&lt;h2 id=&quot;interpretation-of-adversarial-attack&quot;&gt;Interpretation of Adversarial Attack&lt;/h2&gt;
+
+&lt;p&gt;There have been an abundance of work trying to understand adversarial attack phenomenon. One interesting work is “Adversarial examples are not bug, but features”&lt;sup id=&quot;fnref:adv&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:adv&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;. Their thesis is the adversarial patterns can be useful features to classify images, but not perceptible to human eye and / or non-robust. (specific to limited image samples.)&lt;/p&gt;
+
+&lt;p&gt;Thus in their experiment, when they use adversarially perturbed cat image (classified as dog) and dog image as sample to train CNN,&lt;/p&gt;
+
+&lt;p&gt;https://distill.pub/2019/advex-bugs-discussion/&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:0&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;For example, this pytorch repo &lt;a href=&quot;https://github.com/richzhang/PerceptualSimilarity&quot;&gt;PerceptualSimilarity&lt;/a&gt; . &lt;a href=&quot;#fnref:0&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;For example the DAE (denoising auto-encoding) prior, smooth prior or GAN “prior”. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://distill.pub/2017/feature-visualization/ &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:2:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://distill.pub/2016/deconv-checkerboard/ &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:adv&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Adversarial Examples Are Not Bugs, They Are Features http://gradientscience.org/adv/ &lt;a href=&quot;#fnref:adv&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Binxu Wang</name></author><category term="Computer Vision" /><category term="Adversarial Example" /><category term="Neural Networks" /><summary type="html">Understanding of Adversarial Attack</summary></entry><entry><title type="html">真理的不同层级 (Updated)</title><link href="https://animadversio.github.io/personal%20writing/2019/08/15/Hierarchy-of-truth.html" rel="alternate" type="text/html" title="真理的不同层级 (Updated)" /><published>2019-08-15T00:00:00+00:00</published><updated>2019-08-15T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2019/08/15/Hierarchy%20of%20truth</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2019/08/15/Hierarchy-of-truth.html">&lt;p&gt;可以以物理, 计算机与神经为例.&lt;/p&gt;
+
+&lt;p&gt;物理学中不同尺度, 不同能级的物质会有不同尺度的物理, 单个粒子的规律与大量粒子整体表现出的状态也极为不同. 因而凝聚态物理学家会谈 More is Different: 少量粒子与大量粒子的规律是不同的, 后者的表象规律(phenomenonal law)也同样是有用的物理; 粒子物理学家会谈Hierarchy: 不同能量标度下的物理可以是不同的, 他们只有在特定标度下才能统一到一个框架之中. 于是乎, 研究机械力学的人不非要知道材料分子的属性, 而只用了解几个宏观材料参数; 研究气体流体的人不非得了解电子轨道的性质, 而可以把分子近似成某种模型并讨论其相互作用; 在原子分子里低能情形下, 不必讨论相对论性修整, Schrodinger方程与Dirac方程各有其用途; 讨论源自核外电子轨道性质的化学, 不非得了解原子核的性质; 关心原子核, 核反应的人不非得了解强子对撞机上的粒子实验 (粒子能级远高于原子核反应). 正是因为不同层面的物理规律有所不同, 而用计算机的语言说, 理解更上层的物理不非要理解底层的机制, 一般只需要理解其包装过后的接口 —- 如表观的相互作用. 因此物理学分成了不同领域, 不同的人专注于不同的规律, 而只需要理解部分的物理.&lt;/p&gt;
+
+&lt;p&gt;对于计算机科学而言, 也是如此, 也许情况还稍好些, 我们所用的软件服务到网络服务背后也有人为设置的一层层软件与硬件, 如网络服务的7层模型, 虽然处理的是同一件事, 从事某一层面开发的人不非要理解更下一层的机制, 而只需要理解其设计好的接口即可. 对于软件与算法同样, 因为我们无法同时思考处理那样复杂的系统, 所以开发者常用一种封装策略, 每一层处理好一些细节, 封装为包与函数, 更上一层的人员便利用这些包与函数, 而无需照看其细节. 所以计算机科学家们也区分出专注于软件与硬件, 前端与后端的人, 每人生活在一个层面上. 不过有趣的是一个层面上的突破经常能引发其他层面的革命性变化. 比如图形处理单元(GPU)的长足进步越来越少的限制了游戏的想象力, 同时也提供了廉价的计算资源给机器学习研究者, 后者可以花样翻新的利用GPU, 帮助他们的神经网络训练scale up.&lt;/p&gt;
+
+&lt;p&gt;对于神经, 似乎同样. 分子细胞机制是神经活动的基础, 蛋白质的转录, 运输, 相互作用, 调节DNA是神经元存续与改变的基石, 而在这之上神经活动, 神经传导构成了更高一级的单元. 神经元形成local circuitry, 组成脑区的组成部分，构建出人脑脑区之间的网络. 在不同的level上似乎有着不一样的研究方法以及知识储备.&lt;/p&gt;
+
+&lt;p&gt;那么我们应该去dive in 哪一个层次的真理呢？还是像物理一样，认为不同层次的真理相互独立，研究哪一层都行呢？&lt;/p&gt;
+
+&lt;p&gt;或者这样问自己，就像物理学家在选择领域时也会考虑优化一些Objective，Intellectual or practical desiderata. Intellectual 理想，比如跟大统一理论的关系，跟暗物质的关系，跟string theory的关系；应用方面的梦想如，如跟造出量子计算机或室温超导的关系。也有非常实际的因素，实验困难以及资源消耗情况，数学推理的难易etc.&lt;/p&gt;
+
+&lt;p&gt;神经科学家在选择领域和问题时也会有一些desiderate. Intellectual 方面如跟这一机制与intelligence or flexible behavior的关系, 应用方面如与疾病的关系; 实际因素，如实验动物操作难易程度，实验动物对问题的适合程度，数据的through put 以及方便建模理解的程度; 如数据的好看程度与噪音.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;后记&lt;/strong&gt;: 本文写于PhD一年级夏天台湾之行前后，那时纠结于应该选择什么实验室，摇摆于三个不同层级的问题之间(Synaptic-cellular, cellular-circuit, circuit-system)，心情十分激荡，夜不能寐时作此文。&lt;/p&gt;
+
+&lt;p&gt;修改于2020.9.15, 浸淫在Ponce实验室一年后回看此文，心境十分不同, 遂发表出来.&lt;/p&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="Science" /><category term="Physics" /><category term="Neuroscience" /><category term="Computation" /><category term="Philosophy" /><summary type="html">可以以物理, 计算机与神经为例.</summary></entry><entry><title type="html">进击的巨人(Attack on Titan) 观剧手记</title><link href="https://animadversio.github.io/personal%20writing/2019/08/14/Attack-on-Titan.html" rel="alternate" type="text/html" title="进击的巨人(Attack on Titan) 观剧手记" /><published>2019-08-14T00:00:00+00:00</published><updated>2019-08-14T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2019/08/14/Attack%20on%20Titan</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2019/08/14/Attack-on-Titan.html">&lt;p&gt;与进击的巨人结缘还是大一暑假, 比许多动漫爱好者晚了许久. 之后断断续续地追看漫画赶上了剧情. 去年秋天某次生病卧床时又偶然捡起来, 一口气追到了目前的进度. 近期看完了第三季, 记录下自己的感受.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-知识-自由&quot;&gt;1 知识, 自由&lt;/h2&gt;
+
+&lt;p&gt;最初, 吸引我们的是进击的巨人的设定: 人类整体活在三道高大的围墙之中, 享受着平静的生活, 但也对墙外的一切一无所知. 那一天超越人们想象的巨人击破了一道围墙, 引发吃人的巨人对人们的可怕屠杀, 将美好打碎, 主角发誓将巨人们清除出去. 而调查兵团就是那群以身犯险 主动杀出围墙求取巨人们的情报的战士. 通过”壁外调查”一点点积累情报, 他们制定出更优的策略进军, 开发更有效的制敌武器, 也更有效地获知情报, 以此迭代从而一步步接近真相, 排除威胁.&lt;/p&gt;
+
+&lt;p&gt;那种突破现有知识领域的围墙, 向无穷的未知进发的心态与当时的自己极其同步. 因为当时来到元培也想走出一条不遵循传统学科规划, 属于自己的道路, 而像这样的求取知识安排课程自然也伴随着许多风险与损失. 所幸自己并未摔得太惨, 最后也走出了自己的路, 不过当时那种不顾一切的想获取知识, 想突破表象理解这个世界的本质的心情与调查兵团真的无比契合.&lt;/p&gt;
+
+&lt;p&gt;当时第一年主要在学物理, 心理以及计算机课程, 这些知识从不同方面揭示出生活日常的表象下, 真实运作的系统的复杂. 无论是我们思想活动对应的心理, 生理机制, 还是使用的电脑背后的算法, 电子线路, 以至于底层的物理. 这样一层层堆叠的系统(hierarchical system)是我们日常生活一般无从触碰的, 只有当其中什么东西损坏时, 人才会感觉到内在系统与外在世界的复杂. 当时自己秉持着一种异常根本主义(radicalism), 有一点还原论意味的信念, 认为自己只要获知了最底层的知识, 就会获得通向其他所有层面的钥匙, 也因此抱着这样的信念选了物理为专业, 并且相信数学的力量. 就像法师们如若了解了这个世界更底层的运作原理(比如元素), 就可以为己所用, 驱使他们为自己战斗, 而了解的越深则所释放出的力量就越强. 这种信念也与剧集中, 通过知识/情报来获取力量的调查兵团不谋而合.&lt;/p&gt;
+
+&lt;p&gt;现在看来当时的信念有些过于简化而不切实际, 理解底层机制并不一定有利于自己应用知识去产生价值, 底层原理与应用的关联常需要数十年乃至百年才会呈现—-虽然整个宇宙都遵循同一套法则运转, 但去理解眼前的世界并开发应用, 并不非要理解最根本的物理定律&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. 因而现在自己追求知识的动机也不再是通过知识来达成更好的应用, 而更纯粹了一些, 能让世界变得更好也不错, 如果不能只是去理解世界并传播这种理解也很好. 不过像调查兵团一般试图通过探索, 犯险获取知识的动机依然存在在心中.&lt;/p&gt;
+
+&lt;p&gt;当然看到第三季也会意识到, 探索就意味着会有牺牲, 而当自己成为那个牺牲品, 成为真的为”人类/真理献出心脏的人”而且发现自己牺牲得如此无意义, 依然会难过. 就像在science中, 面对同一个难题, 不同的人想办法解决, 但最后一组人拔得头筹, 其他方案也许就会沦为炮灰. 这种”牺牲”在探索未知时, 时常出现, 希望自己在面对时也能保持”加入调查兵团”时的勇气.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-绝望-奋起&quot;&gt;2 绝望, 奋起&lt;/h2&gt;
+
+&lt;p&gt;同样非常戳心的是剧集对残酷战斗的毫不避讳, 为了获取知识, 为了保护重要的人, 经常会遭遇牺牲. 面对人类对手尚且如此, 更何况对手是拥有巨大蛮力的巨人. 直接攻击巨人毫无效果, 而一旦失去了立体机动装备就是巨人们的盘中餐, 只有被高度训练的兵士才能在巨人面前存活下来. 在前三季中, 这样悬殊的力量对比以及如此危险的环境经常营造出极其绝望的氛围, 而主角们在这时的反应也十分的戳人.&lt;/p&gt;
+
+&lt;p&gt;第一季中训练兵团毕业第一次出战就遭遇了城里的大量巨人, 艾伦自己牺牲, 三笠少见地愤怒, 对着所有同学们爆发&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, (指责在座的人都弱爆了) 无比戳心. 在怒火下她用最大马力急速飞行连连斩杀了数十个巨人, 然而她也迅速的遭遇压缩气体储备不足, 只能降落等死.&lt;/p&gt;
+
+&lt;p&gt;主人公们会愤怒, 但愤怒并不能使人变成无敌的神, 并不能赢得战斗, 只会带来不理性的决策. 在敌人”赤裸裸的力量”面前, 人们的情感显得这样渺小无力. 那种绝望感, 以及绝望中的奋起非常的戳人.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgsrc.baidu.com/forum/pic/item/b090f6c451da81cb6fe084b85866d016082431ba.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;类似的在第二季的艾伦夺还作战中, 为了拖延时间保护艾伦, 利威尔班的人逐个与女巨人单独决斗并一个个惨死. 利威尔兵长以及艾伦面对着是否继续作战的选择. 但他知道自己是兵团的希望是作战的最终目标, 看着一个个战友为自己而死, 却什么也做不了, 只能背起逝者们的十字架 前进前进再前进. 没人愿意看到友人为自己而死, 在更大的利益面前我们只有背起自己必须要背负的罪孽, 背负起战友的死亡.&lt;/p&gt;
+
+&lt;p&gt;第三季在玛利亚之墙内调查兵团内外交困即将全灭的时候, 团长埃尔文也是如此, 明明距离自己毕生追求的梦想已经那么近了, 明明自己只要脱离岗位去访问地下室, 就可以了解世界的真相, 验证自己的猜想, 了结支持自己坚持战斗的心愿. 然而那样也意味着兵团会全灭. 即使埃尔文口头上说, 即便人类毁灭也要获得真相, 但他还是没能这么做. 在那一刻, 他拥抱了这个残酷的真相. 智慧, 勇猛, 冷静, 意志坚定如他, 最终也敌不过战斗中残酷的必然性. 所以有了那段冲锋时的演说&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;埃尔文：无论怀着什么样的梦想或者希望
+无论曾经经历过多么幸福的人生。
+又或者身体被岩石打得粉碎，其实都一样，人……总是要死的。
+那么我们的人生是毫无意义的吗?
+还是说我们降生到这个世界上也是毫无意义的吗？
+已经战死的同伴也是这样吗？
+那些士兵的死也是毫无意义的吗？
+『不对！！！』
+『只有我们才能赋予那些士兵们意义！！！』
+『也只有我们这些还活着的人！！！』
+『才能回想起那些勇敢的牺牲者，那些可悲的牺牲者！！！』
+「我们今天的牺牲，将把意义托付给那些活着的人！！！」
+「这就是仅有的，能够用来对抗这残酷世界的方法！！！」
+【愤怒吧，士兵们！！！！！】
+【高呼吧，士兵们！！！！！】
+【战斗吧！！！！！】
+【士兵们！！！！！】&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgsrc.baidu.com/forum/pic/item/a4ff6190f603738dd46b0db2bd1bb051f919ec7f.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;因为那么多的牺牲如尸山尸海躺在他身后, 他要去为他人的牺牲赋予意义, 并以自己的牺牲把意义托付给旁人. 即便人世间已然如此的残酷, 许多的死是如此的无意义. 每个生命是如此的脆弱, 如果没有与他人, 与社会与更大的事业的关联, 好像每个人的生与死都显得那么无意义.&lt;/p&gt;
+
+&lt;p&gt;也许自己是深受加缪存在主义的影响, 虽然已经不是中二的年岁了, 但看到那种直视绝望的真相, 看到世界的无意义, 看到毫无生还的可能性, 却依然为了一件相信的事物进击, 把意义托付给他人, 至死方休的人, 依然会无比感动.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-真相-梦碎&quot;&gt;3 真相, 梦碎&lt;/h2&gt;
+
+&lt;p&gt;第三季前一半是所谓王政篇/政变篇, 后一半是玛利亚之墙夺还作战以及世界的真相. 剧情走到这一步, 与前两季的观感十分不同. 主人公以及观众在前两季做梦都想知道的世界的真相此时就要揭晓了. 然而现实听起来远比想象的要更苦涩. &lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;艾伦的身世就是这样一个例子. 王政篇艾伦在雷伊斯王的指引下知道了自己的父亲对雷伊斯家的迫害, 在雷伊斯的诱导下明白了自家对墙内世界的巨大破坏, 因而被愧疚击垮, 希望听从王的话早些死去以身赎罪. 他也知道了自己能爆发出巨人之力, 并非个人天赋, 而是父亲刻意设计, 留给他的遗产—-因而自己并不特别. 当然后来我们发现他只听到了一部分真相, 所以这也是雷伊斯在心理上用内疚来击垮艾伦的策略&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;而观众/每个成长中的少年也同样分享了这种心态的波动, 从少年时认为他/自己就是天选之子, 到发现他/自己的许多成就其实来自父母与前人的积累, 而成功也是与伙伴一起努力的结果. 刚刚理解这些时, 骄傲被击倒在地, 自己仿佛什么都不是, 一事无成. 然而放平心态后, 就会明白他母亲的话, “不特别就不可以吗, 不是天选之子就无法活下去吗. “ 作为普通人, 我们依旧可以和朋友们一起创造价值呀.&lt;/p&gt;
+
+&lt;p&gt;而另一个重要的真相就是, 墙外是什么, 驱逐了巨人, 我们就能获得自由吗?&lt;/p&gt;
+
+&lt;p&gt;当艾伦翻开父亲的笔记本, 那个仿照19/20世纪一战/二战欧洲描绘的真实世界呈现在眼前时, 对观众的震撼与对主角的震撼一样无以言表. 我一直以为这个故事是与真实历史无关的玄幻, 但当故事里的主人公突破围墙, 拆掉童话的包装, 就发现他们一直活在类似我们的真实世界中, 只是被一个”善意的谎言”包裹从不知晓这个世界; 我们以为翻过围墙就是知识, 在海的对面就是自由, 但突破围墙遇到的是可怖的敌人, 海的对面是试图种族灭绝我们的仇人; 曾经与巨人的战斗在真实世界的竞争面前是那么的微不足道. 这时我们会不会后悔拼尽力气, 牺牲了那么多生命来获取真相?&lt;/p&gt;
+
+&lt;p&gt;于是我们理解了墙内的每一代国王在知晓这一切时内心的悲天悯人以及对未来绝望的虚无感. 他们祈求着墙内最后的和平: 如果我们已经不想再与世界为敌, 你们能否放过我们, 让我们在甜美平和的幻象中, 让我们在为自己修建的牢笼, 在与世无争的岛屿上度过最后的时光. 也理解了看似愚蠢的城墙教, 实际正是在崇拜神一般的力量, 崇拜真正保护着墙内人民的东西—-并非杀敌的兵团, 而是与外界世界的结界—-城墙. 这种城墙的确代表了王对人们极深的理解与共情, 这也是城墙教所崇拜的高贵的心理.&lt;/p&gt;
+
+&lt;p&gt;巨人有一首十分著名的配乐&lt;em&gt;Vogel im Cafig (笼中鸟)&lt;/em&gt; , 题目很耐人寻味: 笼子禁锢了鸟的飞翔, 但也同样保全的鸟的性命. 久居笼中的鸟儿拼尽全力突破樊笼后又能活多久呢?&lt;/p&gt;
+
+&lt;p&gt;某种程度上自己读到这个真相, 虽然被深深震撼, 但一个童话故事变得越来越像这个世界的真实历史, 自己都不太能看下去了. 不可避免的, 后续故事会越来越多的涉及国际关系, 国家政治以及与人类的斗争. 墙内人最初与未知的自然(比如最初人们不理解, 视为恶魔的巨人) 的战斗看起来有着保家卫国的天然正义, 但当发现巨人只是被注射药物的同胞, 而真的敌人远在海外时, 这样的抗争显得如此无意义. 而到海外仇敌人与人的战斗好像更加黑暗以及扎心, 就像一战与二战, 而且我们还有什么理由能剥夺其他人的生命呢, 我们为何是正义的呢.&lt;/p&gt;
+
+&lt;p&gt;这样推进的确是发展了作品的主题, 前两季调查兵团面对自己的无知以及可怖的有形敌人, 向真相与自由进击; 到第三季最后人们面对的是残酷的真相, 面对的是自己的胆怯. 有句很有名的话, “ 世界上只有一种英雄主义, 那就是在认清世界真相之后, 依然热爱世界 / 依旧战斗. “ 很期待作者在这个愈发现实主义的故事里为这句话作出有创造性的注脚.&lt;/p&gt;
+
+&lt;p&gt;以上论题以及进击的巨人剧情, 非常像 &lt;em&gt;爱, 死亡, 机器人&lt;/em&gt; 中的 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/61651793&quot;&gt;天鹰座裂缝外&lt;/a&gt; 这一集(07); 也与火影忍者结局部分, 某人试图开启&lt;a href=&quot;https://baike.baidu.com/item/%E6%97%A0%E9%99%90%E6%9C%88%E8%AF%BB&quot;&gt;无限月读&lt;/a&gt;, 让每个人永远活在一个为自己量身定做的美梦里类似; 更远一点, 也与黑客帝国里的模拟世界与真实世界的对比类似. 虽然后两部作品的结局都支持拥抱真实, 击碎幻象, 但他们都面对着相似的悖谬, 当现实如此黑暗, 而梦境/谎言/故事/心理真实这样美好时, 我们一定要获取知识, 面对真实嘛, 还是只要活在内心的真实里, 不管历史, 不管记忆, 不管现实世界变成什么样子都好. 如果更抽象一些大概是价值观上唯物与唯心的争端. 由此也会想到似乎追求真相/知识, 与追求幸福时常会不一致.&lt;/p&gt;
+
+&lt;p&gt;关联到第一部分, 自己深深认同调查兵团的那种突破墙壁获取知识, 向着”自由”冲锋的动机. 获取知识的确能让我们的理解更加接近世界的真实, 也让我们获得不被禁锢的思想, 不被蒙骗的心智, 然而这样就一定能获得幸福吗? 我们在获得知识理解了这个世界的真相后, 是否会后悔, 宁愿活在谎言中呢?&lt;/p&gt;
+
+&lt;p&gt;历史上人们出于对某种价值观, 不愿相信真相/科学的事是有的. 就像日心说撼动了地球的独特与高贵, 进化论撼动了人类作为物种的独特与高贵. 两种”挑战人类尊严”的理论都曾遭到世俗世界的猛烈抨击与谩骂. 那么比如某一天神经科学发展到揭示了产生意识的神经机制, 并让我们看到我们是如此的被自己的生物/物理存在决定着, 我们真的没有自由意志, 也许和运行在计算机上的程序无甚分别, 我们还会愿意相信吗?&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;不同尺度/不同数量级/不同能级/不同层次规律之间的交互是非常有趣的. 在物理, 计算机科学与神经科学都有所体现, 具体可以参见另一篇post. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;“我很强。非常的强，比你们…要强得多！ 所以我，可以将那些巨人消灭掉……就算，只 有我一个人……而你们，全都是没用的胆小鬼！懦弱又窝囊！” 进击的巨人第一季第七集 10:19 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://tieba.baidu.com/p/6151039245&quot;&gt;埃尔文资料的贴吧总结&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;在这种意义上让埃尔文去死, 让他了解世界真相的梦想一直是一个梦想也许是对他最善良的选择. 很多梦想作为目标, 可以给内心提供无穷无尽的动力, 然而当梦想真的实现时, 其实我们不一定会喜欢, 甚至发现这个梦想也许不该追求. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;事实上这类剧情设计很常见, 因为我们时常会忘记 真诚的内疚有时比外界的逼迫更能驱使一个人. which is一个很有趣的心理现象, Guilt带来的负性utility与外界的惩罚甚至可以相提并论. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="Movie" /><category term="Animation" /><category term="Philosophy" /><summary type="html">与进击的巨人结缘还是大一暑假, 比许多动漫爱好者晚了许久. 之后断断续续地追看漫画赶上了剧情. 去年秋天某次生病卧床时又偶然捡起来, 一口气追到了目前的进度. 近期看完了第三季, 记录下自己的感受.</summary></entry><entry><title type="html">2019 台湾纪行</title><link href="https://animadversio.github.io/personal%20writing/2019/08/14/Travel-in-Taiwan.html" rel="alternate" type="text/html" title="2019 台湾纪行" /><published>2019-08-14T00:00:00+00:00</published><updated>2019-08-14T00:00:00+00:00</updated><id>https://animadversio.github.io/personal%20writing/2019/08/14/Travel%20in%20Taiwan</id><content type="html" xml:base="https://animadversio.github.io/personal%20writing/2019/08/14/Travel-in-Taiwan.html">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#自然风物活动&quot; id=&quot;markdown-toc-自然风物活动&quot;&gt;自然/风物/活动&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#十分老街放天灯-拍火车&quot; id=&quot;markdown-toc-十分老街放天灯-拍火车&quot;&gt;十分老街:放天灯 拍火车&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#猴硐猫村矿车与猫猫&quot; id=&quot;markdown-toc-猴硐猫村矿车与猫猫&quot;&gt;猴硐猫村:矿车与猫猫&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#九份老街-山腰上的小街&quot; id=&quot;markdown-toc-九份老街-山腰上的小街&quot;&gt;九份老街: 山腰上的小街&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#野柳地质公园-海边的奇怪石头&quot; id=&quot;markdown-toc-野柳地质公园-海边的奇怪石头&quot;&gt;野柳地质公园: 海边的奇怪石头&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#猫空-缆车与品茶&quot; id=&quot;markdown-toc-猫空-缆车与品茶&quot;&gt;猫空: 缆车与品茶&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#花莲海岸线-海豚与断崖&quot; id=&quot;markdown-toc-花莲海岸线-海豚与断崖&quot;&gt;花莲海岸线: 海豚与断崖&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#太鲁阁-高山土著与绿水青山&quot; id=&quot;markdown-toc-太鲁阁-高山土著与绿水青山&quot;&gt;太鲁阁: 高山土著与绿水青山&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#展览&quot; id=&quot;markdown-toc-展览&quot;&gt;展览&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#建筑&quot; id=&quot;markdown-toc-建筑&quot;&gt;建筑&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#政治&quot; id=&quot;markdown-toc-政治&quot;&gt;政治&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#民主-台大-与-学生运动&quot; id=&quot;markdown-toc-民主-台大-与-学生运动&quot;&gt;民主, 台大 与 学生运动&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#亲民的总统府&quot; id=&quot;markdown-toc-亲民的总统府&quot;&gt;亲民的总统府&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#吃喝&quot; id=&quot;markdown-toc-吃喝&quot;&gt;吃喝&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#冰沙&quot; id=&quot;markdown-toc-冰沙&quot;&gt;冰沙&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#奶茶与清茶&quot; id=&quot;markdown-toc-奶茶与清茶&quot;&gt;奶茶与清茶&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#卤肉饭&quot; id=&quot;markdown-toc-卤肉饭&quot;&gt;卤肉饭&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#面线与牛肉面&quot; id=&quot;markdown-toc-面线与牛肉面&quot;&gt;面线(与牛肉面)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#饭包与便当&quot; id=&quot;markdown-toc-饭包与便当&quot;&gt;饭包与便当&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#瑞穗农场的奶制品&quot; id=&quot;markdown-toc-瑞穗农场的奶制品&quot;&gt;瑞穗农场的奶制品&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#附录-历史&quot; id=&quot;markdown-toc-附录-历史&quot;&gt;附录: 历史&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;8月上旬跟妈妈去台湾玩儿了10天. 本不很在意, 不过8月1号大陆赴台自由行取消, 赶在关口正好去了, 十分幸运~&lt;/p&gt;
+
+&lt;p&gt;这一程我们成功的环岛一周, 从台北与周边小镇(2.5天)–[台铁]–花莲(1.5天)–[大巴]–垦丁(2天)–[出租车]–高雄(2天)–[高铁]–台北(2天).&lt;/p&gt;
+
+&lt;p&gt;台湾的旅行大体可以分成城里的和城外的部分. 如台北和高雄主要去看城里的建筑, 博物馆, 展览以及去大商场血拼; 城外则是感受台湾的自然风土, 如垦丁在台湾最南端的海岸, 如花莲面对的广阔太平洋, 优美的海岸线, 如台北周围山区以及古城村落里的古建筑风格.&lt;/p&gt;
+
+&lt;h2 id=&quot;自然风物活动&quot;&gt;自然/风物/活动&lt;/h2&gt;
+
+&lt;p&gt;人不只是求知的动物, 也是行动的动物. 这一节就举出许多在台湾可以干的好玩儿的事情~&lt;/p&gt;
+
+&lt;h3 id=&quot;十分老街放天灯-拍火车&quot;&gt;十分老街:放天灯 拍火车&lt;/h3&gt;
+
+&lt;p&gt;台北附近的 十分老街, 放天灯以及看火车的地方.&lt;/p&gt;
+
+&lt;p&gt;给喜欢的朋友们许愿祝福写天灯, 放天灯是非常开心的事情~[ 夜间天灯显然更好看, 不过也就看不清写在外面的字迹了.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190806_092021.jpg&quot; alt=&quot;IMG_20190806_092021&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;行人挤着看火车通过~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190806_102423.jpg&quot; alt=&quot;IMG_20190806_102423&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;猴硐猫村矿车与猫猫&quot;&gt;猴硐猫村:矿车与猫猫&lt;/h3&gt;
+
+&lt;p&gt;专程为了看猫猫去了台北附近的猴硐猫村, 一个充满了被人饲养的流浪猫的地方, 游客们围着几只不怕人的小猫拍照, 还不懂事的孩子们试图抱小猫超级可爱&lt;/p&gt;
+
+&lt;p&gt;猴硐的标志—-以前这里是台湾头几大煤矿, 后来因为放养了流浪猫成了拍照圣地. 所以是猫猫和矿车.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190806_143846.jpg&quot; alt=&quot;IMG_20190806_143846&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;玩儿猫猫的小孩子们&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190806_143750.jpg&quot; alt=&quot;IMG_20190806_143750&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一群围着一只趴趴猫拍照的游客.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190806_144219.jpg&quot; alt=&quot;IMG_20190806_144219&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;九份老街-山腰上的小街&quot;&gt;九份老街: 山腰上的小街&lt;/h3&gt;
+
+&lt;h3 id=&quot;野柳地质公园-海边的奇怪石头&quot;&gt;野柳地质公园: 海边的奇怪石头&lt;/h3&gt;
+
+&lt;p&gt;野柳也在台北附近, 是台湾北方海岸的一部分. 岸边分布着许多被海水侵蚀的奇怪石头.&lt;/p&gt;
+
+&lt;h3 id=&quot;猫空-缆车与品茶&quot;&gt;猫空: 缆车与品茶&lt;/h3&gt;
+
+&lt;p&gt;猫空是台北南边的一片山地, 和动物园相接. 政府从地铁站修了蜿蜒的缆车道一直到山上, 于是市民们就可以从地铁站坐缆车到山顶. 山上风光颇为不错, 可以远眺青山以及台北市区, esp. 可以远远望见台北101塔.&lt;/p&gt;
+
+&lt;p&gt;此外猫空的乐趣在于山上茶园茶社密布, 可以走进茶室里品茶买茶, 看着窗外的美景和友人喝茶聊天是很美好的事情~&lt;/p&gt;
+
+&lt;h3 id=&quot;花莲海岸线-海豚与断崖&quot;&gt;花莲海岸线: 海豚与断崖&lt;/h3&gt;
+
+&lt;p&gt;花莲在台湾东海岸, 面朝广阔的太平洋, 其周围有漫长的海岸线, 也有许多处很美的山海交汇的景色.&lt;/p&gt;
+
+&lt;p&gt;一般风平浪静的时候海里常会有鲸鱼海豚出没, 所以随着船出海寻找很容易找到这些可爱的生物.&lt;/p&gt;
+
+&lt;p&gt;比如, 清水断崖&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827232619097.png&quot; alt=&quot;image-20190827232619097&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;太鲁阁-高山土著与绿水青山&quot;&gt;太鲁阁: 高山土著与绿水青山&lt;/h3&gt;
+
+&lt;p&gt;花莲附近另一个好去处是太鲁阁, 即一个原住民很多的自然保护区.&lt;/p&gt;
+
+&lt;p&gt;中午就在太鲁阁里面的这家土著风味饭馆吃了饭, 感觉环境很棒, 菜还算可以.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827232310583.png&quot; alt=&quot;image-20190827232310583&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;展览&quot;&gt;展览&lt;/h2&gt;
+
+&lt;p&gt;不得不说湾湾的许多展览策展都十分用心. 这次看得展览集中在台北市, which is 湾湾的文化中心. 去看了台北故宫, 总统府, 国父纪念堂(孙中山), 中正纪念堂, 士林官邸, 台大校史馆的展览. 此外在高雄的驳二艺术区看了个微缩艺术展. 算是大都市才会有这么多文化体验了 (难怪台北的小伙伴们去了圣路易斯村里都会觉得憋屈得不行…)&lt;/p&gt;
+
+&lt;p&gt;除去台北故宫的展览主要通过文物介绍中国历史, 驳二艺术区主要展现现代艺术以及一些小文创, 其余的展览都与(过去一百年的)台湾历史, 政治紧密相关, 于是有些部分也就留到&lt;a href=&quot;#政治&quot;&gt;政治&lt;/a&gt;部分介绍啦&lt;/p&gt;
+
+&lt;p&gt;台北故宫&lt;/p&gt;
+
+&lt;h2 id=&quot;建筑&quot;&gt;建筑&lt;/h2&gt;
+
+&lt;p&gt;台湾有许多非常有趣的建筑~以台北都市为最.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;国父纪念堂&lt;/strong&gt;, 造型仿佛经典的中式大殿屋檐 &lt;del&gt;被人像掀裙子一般翻起来衣角&lt;/del&gt; 接上了一个飞扬的棚子.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190813_153153.jpg&quot; alt=&quot;IMG_20190813_153153&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;中正纪念堂&lt;/strong&gt;,整个造型略微像北京的天坛,  大殿同样是中正先生的巨型铜像. 下面有中正先生的生平展&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190813_181344.jpg&quot; alt=&quot;IMG_20190813_181344&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;中正纪念堂正对&lt;strong&gt;自由广场&lt;/strong&gt;, 两边是两个长的很像天安门的中式大殿, 有趣的是两栋建筑都是台湾的&lt;strong&gt;国家表演艺术中心&lt;/strong&gt;, 类似北京的国家大剧院的角色. 古典建筑风格与现代的功能结合的很有趣. 下图看不仔细, 真以为自己在天安门看降旗 (&lt;del&gt;青天白日满地红旗&lt;/del&gt;) 仪式哈哈哈&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/IMG_20190813_181015.jpg&quot; alt=&quot;IMG_20190813_181015&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;长得很像大宝剑/竹笋的台北101&lt;/p&gt;
+
+&lt;p&gt;台北北边北投区的农禅寺.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827232011207.png&quot; alt=&quot;image-20190827232011207&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;政治&quot;&gt;政治&lt;/h2&gt;
+
+&lt;p&gt;暗暗地关注台湾的政治有了一阵, 一面是大陆经常讽刺其政治如闹剧, 另一面是其政府&lt;a href=&quot;http://www.huaxia.com/thpl/tbch/jwgc/10/5492880.html&quot;&gt;解严&lt;/a&gt;之后解除报禁党禁, 施行如西方的政党民主政治, 并且人民参与政治程度很高, 各种游行活动层出不穷, 某些时候又引得大陆人向往. 这种矛盾自然是引发好奇心, 想让人去一探究竟的.&lt;/p&gt;
+
+&lt;p&gt;对个人来说, 我会认为台湾像是中国的一面镜子, 或者说现代中国发展的另一种可能性. 当现在西方人质疑中国/东亚人不会民主, 质疑共产党的政府的时候, 我们不止会看向西方国家, 而会想去看一看这些中华文化圈里的民主国家, 看看所谓另一种可能性. 也许并不是中华文化有问题 / 中国人有问题, 而只是目前我们的发展方式 治理方式还不够好. 所以这样想来, 这些历史上与我们相似相连的人现在发展成了这样, 保存下了一种汉文化的体制多样性也是很宝贵的. (就像有评价蒋公说 “给中华民族留下了民主的种子”, 大致是此意.)&lt;/p&gt;
+
+&lt;h3 id=&quot;民主-台大-与-学生运动&quot;&gt;民主, 台大 与 学生运动&lt;/h3&gt;
+
+&lt;p&gt;跟台湾的同学们交流也可以感觉到他们的政治参与度远远强于我们大陆人. 不论是上个学年放圣诞假时一些台湾同学回到故土公投, 进行关于&lt;a href=&quot;https://www.guancha.cn/politics/2018_11_26_481130.shtml&quot;&gt;性少数群体权利的投票&lt;/a&gt;. 还是台大同学们时不常的有关于各种事情的游行, 情愿[^0]以及学生运动.&lt;/p&gt;
+
+&lt;p&gt;听台大同学们说, 目前似乎政府按法律没有办法阻止公民上街游行. 公民只需要告知政府游行的活动范围报备, 即可上街, 不过不能随意走出范围内(像香港的事件…). 听说不少有公民意识的台湾同学, 也是听到有游行的事件, 只要支持游行者的就会跟着上街散散步. 似乎现在的年轻人已经会把公民政治生活当成日常的一部分来看待, 像日常的其他活动一样.&lt;/p&gt;
+
+&lt;p&gt;尽管并不因此就觉得他们的制度就很好. (而且有时候民众的呼声也许是很没什么道理的….比如”反对核四电站用爱发电”) 但给民众一个和平表达自己心声的机会总是不错的~ 表面的嘈杂吵闹比虚假的安静祥和让人更放心. 民主需要学习和练习, 一群从未游行和平表达过意愿的人真的聚众游行时也许真的会出乱子, 而一群早已习惯如何和平发表心声的人就不会.&lt;/p&gt;
+
+&lt;h3 id=&quot;亲民的总统府&quot;&gt;亲民的总统府&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827232844543.png&quot; alt=&quot;image-20190827232844543&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827233313360.png&quot; alt=&quot;image-20190827233313360&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;###建党&lt;/p&gt;
+
+&lt;p&gt;去台湾的第二天 就遇到了台北市长柯文哲的建党大会~ 因为不认同蓝绿(国民党与民进党)的理念, 他试图自己组党参选总统, 以他医学出身的白色作为标志色.&lt;/p&gt;
+
+&lt;p&gt;###选举, 新闻与政治肥皂剧&lt;/p&gt;
+
+&lt;p&gt;去了台湾立刻就理解了我的一位好友为何沉浸于看台湾政论节目. 因为发现自己到了台湾的一大乐趣也是每天回宾馆看新闻. 据我看到的电视台里那一阵的新闻大致有这么几种, 要么是报道台湾的几位知名政治人物–柯文哲 韩国瑜 王金平 郭台铭etc.(是的 蔡英文总统反而报道的少), 今天又做了什么, 要么是讨论下香港最新动向以及大陆政策, 剩下的时间一般报道听起来鸡毛蒜皮的社会新闻. (下面截图比较有代表性….)&lt;/p&gt;
+
+&lt;p&gt;当然最有娱乐性的就是政客每天做了啥的部分, 很有种看政治真人秀的感觉, 即政客就像我们的明星一样, 在公众面前分分合合, 公众也为他们的举动与八卦吃瓜个不停.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827234843151.png&quot; alt=&quot;image-20190827234843151&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827234653078.png&quot; alt=&quot;image-20190827234653078&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190828000728668.png&quot; alt=&quot;image-20190828000728668&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827235131668.png&quot; alt=&quot;image-20190827235131668&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;吃喝&quot;&gt;吃喝&lt;/h2&gt;
+
+&lt;p&gt;一般来说自己不是个特别爱吃的人, 吃好吃的与不好吃的带来的快感差异不会很大. 不过台湾依然给我留下了几种很棒的食物回忆!&lt;/p&gt;
+
+&lt;h3 id=&quot;冰沙&quot;&gt;冰沙&lt;/h3&gt;
+
+&lt;p&gt;esp. 芒果刨冰/沙冰. 现在看到图片依然会流口水的! 在几处吃过, 味道都很棒, 芒果果肉量足, 而且甜度适中.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190827235526187.png&quot; alt=&quot;image-20190827235526187&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;奶茶与清茶&quot;&gt;奶茶与清茶&lt;/h3&gt;
+
+&lt;p&gt;在台湾随处可见珍珠奶茶与茶饮店, 价格一般很便宜, 不到10元一大杯可以嘬上半天. 在美国的孩子们表示要哭死了.&lt;/p&gt;
+
+&lt;h3 id=&quot;卤肉饭&quot;&gt;卤肉饭&lt;/h3&gt;
+
+&lt;p&gt;台湾走出岛门最有名的食物就是台湾卤肉饭了~&lt;/p&gt;
+
+&lt;h3 id=&quot;面线与牛肉面&quot;&gt;面线(与牛肉面)&lt;/h3&gt;
+
+&lt;h3 id=&quot;饭包与便当&quot;&gt;饭包与便当&lt;/h3&gt;
+
+&lt;p&gt;不知是不是日本的影响, 湾湾许多地方以特色便当著称, 池上便当就是一例, 台铁与高铁的铁路便当似乎也很有名, 不过没来及吃到.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190828001212268.png&quot; alt=&quot;image-20190828001212268&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;瑞穗农场的奶制品&quot;&gt;瑞穗农场的奶制品&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190828001757104.png&quot; alt=&quot;image-20190828001757104&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;附录-历史&quot;&gt;附录: 历史&lt;/h2&gt;
+
+&lt;p&gt;历史是现实的根基, 地理是历史发生的舞台. 所以去一个地方通常会首先关注其历史沿革&lt;/p&gt;
+
+&lt;p&gt;以鄙人的记忆里还有印象的&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E8%87%BA%E7%81%A3%E6%AD%B7%E5%8F%B2&quot;&gt;历史事件&lt;/a&gt;有&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从17世纪有记载的, 荷兰及西班牙在岛上局部统治.&lt;/li&gt;
+  &lt;li&gt;1662 郑成功收复台湾&lt;/li&gt;
+  &lt;li&gt;1683 清人统治台湾&lt;/li&gt;
+  &lt;li&gt;1895 中日战争失败, 台湾从清朝割让给日本治理. 从此开始了50年的日据时期
+    &lt;ul&gt;
+      &lt;li&gt;所以能感觉到对台湾文化中对日本一向是比较亲近的~ 众多日本文化中的可爱 萌萌的因素都被台湾接收了&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;1945 日本无条件投降, 国军接收台湾. 开始了国民党的统治&lt;/li&gt;
+  &lt;li&gt;1945-49年 大量国军部队与大陆来客入住台湾. 后称外省人.
+    &lt;ul&gt;
+      &lt;li&gt;1947.2.28 二二八事件, 外省人与本土人的文化, 习惯等冲突. 引发流血事件, 不久开始了国民党的动员戡乱时期.
+        &lt;ul&gt;
+          &lt;li&gt;其实这类族群斗争是挺悲剧性的事件, 按照&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;1990-91年蒋经国选择结束动员戡乱时期, 解除党禁 报禁, 台湾开始民主化进程
+    &lt;ul&gt;
+      &lt;li&gt;于是各类政党如雨后春笋般冒出来, 从民进党, 到最近柯P的台湾民众党, 层出不穷.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/posts/Taiwan/image-20190818101740649.png&quot; alt=&quot;image-20190818101740649&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也因此台湾的早期人口是以 福建,  广东人为主, 其他称为外省人, 更早的就是原住民了(大量台湾歌手有原住民血统)~&lt;/p&gt;</content><author><name>Binxu Wang</name></author><category term="personal writing" /><category term="essay" /><category term="personal writing" /><category term="travel" /><category term="Politics" /></entry><entry><title type="html">This Week’s Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that’s a question)</title><link href="https://animadversio.github.io/2019/07/02/This-Week's-Learning-about-Brain-4-Neural-Correlate-of-Visual-Consciousness.html" rel="alternate" type="text/html" title="This Week’s Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that’s a question)" /><published>2019-07-02T00:00:00+00:00</published><updated>2019-07-02T00:00:00+00:00</updated><id>https://animadversio.github.io/2019/07/02/This%20Week's%20Learning%20about%20Brain%204%20Neural%20Correlate%20of%20Visual%20Consciousness</id><content type="html" xml:base="https://animadversio.github.io/2019/07/02/This-Week's-Learning-about-Brain-4-Neural-Correlate-of-Visual-Consciousness.html">&lt;h2 id=&quot;看得见还是看不见-这是一个问题&quot;&gt;看得见还是看不见, 这是一个问题!&lt;/h2&gt;
+
+&lt;p&gt;如果问你, 你现在看到了什么, 你可以不假思索地说, 就是眼前的屏幕嘛. 如果稍微受过一点生理学或者神经科学训练的人也许会说, 我们看到的是这个充满电磁波的世界里, 光学波段辐射被眼球的光学元件折射之后, 落在我们视网膜上的影像.&lt;/p&gt;
+
+&lt;p&gt;然而我们不总是能看见落到我们视网膜上的东西. 稍加反思, 我们都会想到自己夏日午后&lt;strong&gt;看着&lt;/strong&gt;窗外出神的时候, 其实并没有&lt;strong&gt;看见&lt;/strong&gt;窗外有什么景色；对着讲台发呆的时候也没有&lt;strong&gt;看到&lt;/strong&gt;黑板上的字是什么；对着击球手飞速击出的棒球同样略过了视网膜, 但是否产生了知觉只有他知道. 简而言之, 就像英语中see（看到）与look（看的动作）不同, 我们看到的东西绝不是落在我们视网膜上的光子所携带的所有信息&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;——你看不见不可见光也看不到偏振. 那么是什么决定了我们能看到什么以及看到的世界是什么样子呢?&lt;/p&gt;
+
+&lt;p&gt;我们可以拍脑门的说, 当我们&lt;em&gt;用心&lt;/em&gt;去看就能看到(比如黑板或者窗外), 如果&lt;em&gt;不用心&lt;/em&gt;, 那刺激就被我忽视(Neglect)了嘛——的确没错, 这就将我们引导到了&lt;strong&gt;视觉注意&lt;/strong&gt;(Visual Attention)的领地. 不过这篇post中我们先不讨论注意的问题, 而要去关注一些与视觉意识相关的更基本的情况.&lt;/p&gt;
+
+&lt;h2 id=&quot;什么时候我们看不到-when-we-do-not-see&quot;&gt;什么时候我们看不到 (When we do not see)&lt;/h2&gt;
+
+&lt;p&gt;首先, 我们将自然环境以及落在视网膜上的光子一概称为物理刺激(Physical stimuli), 我们感觉到的那个世界称为主观感受(Perception)&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. 那么刺激与感受&lt;strong&gt;不完全匹配&lt;/strong&gt;的情况其实比比皆是, 下面举几个例子：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;边缘错觉(Contour Illusion)&lt;/strong&gt;: 有时通过巧妙的几何设计我们会”看到”刺激中并不存在的部分. 例如经典的Kanizsa三角形, 我们会“看到”不存在的三角形边界, 即所谓错觉边界(illusory boundary).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/kanizsa_triangle.gif&quot; alt=&quot;kanizsa_triangle&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;运动错觉(Motion Illusion)&lt;/strong&gt;: 有时我们感受到的世界并不是他本来的样子. 如下图(Flash Lag Effect)中如果我们将注意力放在移动的红点上, 则会感受到两点共同出现时红点更靠右. 而事实上两者仅出现在在视频一帧上相同x坐标的位置上, 是纵向对齐的. 因而不对齐的效果是视觉加工的结果. (更有趣的一点是, 如果我们的注意力放在绿点上并一直期待绿点的出现, 那上述不对齐(misalignment)现象就会削弱许多. 因此一些研究者将这一现象归因于我们对视觉场景的期待. )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/Flash_lag.gif&quot; alt=&quot;Flag_lag&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;瞬态知觉与视觉掩蔽(Masking)&lt;/strong&gt;: 掩蔽(Masking)翻译得接地气一点就是遮盖, 说白了就是通过一个刺激来影响另一个刺激引起的知觉. 通常是呈现一个极短时间(20-100ms)的暂态(transient)图片, 然后紧接着呈现一个噪声图片或是干扰刺激. 如果不加掩蔽刺激, 我们便能看清图片, 然而由于干扰刺激, 我们没办法识别前一个刺激中的精细信息. 所以这些信息也输入了我们眼中, 然而还没被加工进入意识就被后一个刺激打乱了.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/demo_character.gif&quot; alt=&quot;demo_noise_mask&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;必须要承认视觉系统在加工图像时改变了视觉输入的许多方面, 使得我们感受到的世界与这个真实的世界有所不同. 如果我们意识到的不是我们视网膜上的图像, 那我们能意识到我们脑中神经活动&lt;strong&gt;渲染的世界&lt;/strong&gt;嘛? 这个问题换一种说法讲就是, 我们意识到的视觉世界与哪里的神经活动相关呢, 如果不是视网膜, 那么是大脑中的什么皮层呢? (视网膜听起来还很低级, 而大脑以及皮层则是各种高级功能甚至意识的所在地. 不过皮层看起来很平等, 但一些皮层比另一些更平等. )&lt;/p&gt;
+
+&lt;h2 id=&quot;怎么找意识的神经相关物how-to-find-neural-correlate-of-visual-consciousness&quot;&gt;怎么找意识的神经相关物?(How to Find Neural Correlate of Visual Consciousness)&lt;/h2&gt;
+
+&lt;p&gt;研究视觉意识的相关物(统称NCC问题), 首先要区分必要与充分条件.&lt;/p&gt;
+
+&lt;p&gt;问什么是视觉意识的必要条件, 我们都知道视网膜, 视神经, 外侧膝状体(LGN), 初级视皮层(V1)都是早期视觉加工的必要通道, 如果损坏了这些神经组织, 显然我们看不到眼前的东西, 自然没有视觉意识. &lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; 不过, 这些生物结构似乎是必要不充分的. 而要寻找充分条件则是很不同的问题. 特别的, 一些初级视皮层损坏的患者即使报告说看不见眼前的东西, 依然能依据视野中的东西作出正确的判断&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, 这一现象被称为盲视(blindsight). 所以V1是否必要, 也存疑问.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/p2520234495.jpg&quot; alt=&quot;Dunkirk&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;寻找视觉意识相关物的一大困难在于, 视皮层的神经元既被外界刺激激活又被内在的心理过程影响. 大多数日常情形下我们意识到的世界与外界刺激本身强烈相关, 于是我们就很难将记录到的神经反应相关于视觉意识本身&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;, 因为它可能只是低级刺激加工的结果, 并没有被意识到——就像视网膜上神经元的反应. 所以寻找视觉意识的神经相关物的实验关键就是要将视觉刺激与意识分离(dissociate)开来, 让两者不再相关. 比如双眼竞争(Binocular rivalry), 比如模棱两可(Ambiguity)造成的视觉双稳态(Perceptual bi-stability)都是经典的实验范式. 这些范式中外界刺激没有改变, 而内在的知觉变了, 我们能清楚地将神经活动相关到视觉意识上. 而另一些时候, 使用相同的临界刺激(Threshold stimuli), 我们感觉到或是没感觉到同样可以比较出视觉意识带来的不同.&lt;/p&gt;
+
+&lt;p&gt;换一个思路, 许多经典的启动效应(priming)与后效(aftereffect)范式也能帮助寻找意识的相关物. 因为, 这些效应就其定义来说, 就是某种没有被觉知到的刺激(阈下刺激), 影响了后续对意识到的刺激的响应. 很多时候这被看做是一种最基本的”潜意识活动”, 或者是基本的学习/记忆行为. 不过现代神经科学的视角下, 这代表了一种在&lt;strong&gt;意识之外&lt;/strong&gt;的&lt;strong&gt;神经活动的记忆性 / 历史依赖性&lt;/strong&gt;——比如一个神经元刚刚被激活之后, 下一次激活的反应会变弱, 这就是一种记忆性. 而如果一些神经元的活动与没被感知到的刺激信息(比如强度太弱的亮点, 过于密的条纹, 无法看清的色彩块)相关, 即包含了比意识表象更多的信息. 那我们也不会认为这些神经元的活动可以被意识到. 因此如果一些神经活动与上述启动效应相关, 那这些活动就不直接与视觉意识相关.&lt;/p&gt;
+
+&lt;p&gt;以上的范式大多是在正常人正常意识状态下进行的, 而一些奇特的意识状态如幻觉(Hallucination), 想象(Imaginery), 与做梦也可以用来探究视觉意识, 这些情况下视觉表象和外界世界完全无关, 其内容就可以更加丰富多彩了. 而且正所谓”脑残病人欢乐多”, 通过观察部分脑损伤病人的视觉意识变化, 我们也能将功能定位到一些脑区, 从而找到哪些脑区是必要的, 以及哪些脑区是不充分的.&lt;/p&gt;
+
+&lt;p&gt;下面仅举一个经典范式, 来展示下科学家们通常是怎么寻找意识相关物的.&lt;/p&gt;
+
+&lt;h2 id=&quot;双眼互搏-left-vs-right&quot;&gt;双眼互搏 (Left VS Right)&lt;/h2&gt;
+
+&lt;p&gt;双眼竞争是很常见的视觉现象, 读者现在就可以尝试: 只需要将手掌放在自己鼻子前面, 让一只眼睛看到手心, 一只眼睛看到手背, 如果你把注意力聚焦在近处(手掌附近而非远处景象/屏幕), 那么你很快就会感觉到手心和手背的感知在交替着主导着你的视野. 经典研究表明每只眼睛主导的平均时长大约10s左右, 呈现一个右偏的分布.&lt;/p&gt;
+
+&lt;p&gt;在2005年的实验中&lt;sup id=&quot;fnref:6:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, 实验者向被试左眼输入红色条纹, 右眼输入蓝色垂直方向条纹, 让被试随时报告主观感知到的图像, 实验者就可以通过这些报告来标记时间轴, 并训练分类器来解码被试看到的图像. 更进一步直接记录被试正常情况下观看红色条纹与蓝色条纹的响应, 也可以训练分类器来识别被试到底看到了哪种图像.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/image-20190723220342257.png&quot; alt=&quot;image-20190723220342257&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下图显示了根据不同脑区的活动模式训练的分类器的成绩, 以及随着体素(Voxel)数量&lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;增加而成绩的提高. 下图中用V1-V3的活动模式训练分类器都可以取得不错的成绩, 也就是说即使在fMRI的测量精度下依然可以从V1-V3早期视觉皮层读出不同眼睛的输入信息, 也就是当时的视觉表象.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/image-20190723212027183.png&quot; alt=&quot;image-20190723212027183&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上述实验的刺激可能过于初级, 我们同样可以使用复杂图像刺激输入双眼, (如房子和人脸)&lt;sup id=&quot;fnref:61&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:61&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; . 如同我们预期的, 在编码复杂刺激的脑区(如FFA对人脸, PPA对地点, 环境有选择性)同样可以观察到随着视觉表象的交替, FFA与PPA的激活也随之交替.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Visual_consciousness/image-20190723220044214.png&quot; alt=&quot;image-20190723220044214&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不过这两个实验不太令人满意, 总感觉这一范式有些初级. 在人身上, 双眼信息在V1才第一次汇聚到同一个神经元上. 所以可以想象由于某种局部的神经计算(比如相互抑制(mutual inhibition), 适应(adaptation)以及与LGN之间的反馈动力学(feedback dynamics)), 两眼输入交替主导着初级视皮层的活动. 于是下游的神经活动也被两种刺激交替主导. 但我们并不能肯定V1的活动模式是否在更精细的意义上与我们的视觉表象对应. 因此在人类的双眼竞争的现象中, 初级视皮层编码了哪只眼睛的图像成为我们的视觉表象, 但我们依然不知道&lt;strong&gt;初级视皮层否足以产生我们的视觉意识&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;我们能意识到v1的神经活动吗are-we-aware-of-v1-activity&quot;&gt;我们能意识到V1的神经活动吗(Are we aware of V1 activity?)&lt;/h2&gt;
+
+&lt;p&gt;这个问题也是1995年Christopher Koch与Crick一篇著名猜想文章的标题(&lt;a href=&quot;http://dx.doi.org/10.1038/375121a0&quot;&gt;Are we aware of neural activity in primary visual cortex?&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;这个问题的表述就可以进行一番&lt;strong&gt;概念讨论&lt;/strong&gt;, 显然我们并不能意识到V1某个神经元在每时每刻发放了多少个动作电位——否则也就不需要电生理仪器做什么了, 只要让研究生回家记录自己的神经元发放了多少个脉冲就行. 显见, 包括神经活动在内的许多生物细节信息对主体是不透明的. 因而当我们说意识到V1的神经活动, 并不是指这个.&lt;/p&gt;
+
+&lt;p&gt;在更一般的意义上, 意识内容, 物理刺激以及神经活动之间的关系显然不是同一(identical)的关系(你意识到的红色并不等同于某个波长, 你听到的音调不等同于某个振动频率, 也不等同于某组神经活动模式. ) 但他们会有相关关系(correlation)&lt;sup id=&quot;fnref:70&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:70&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;. 如果相关这个词比较”难听”, 我们可以更定量化, 说他们有&lt;strong&gt;互信息&lt;/strong&gt;(mutual information). 比如不同朝向的条纹可以激活V1中不同偏好(tuning)的神经元, 因而我们可以讲V1神经元群体编码(encode)了朝向信息, 同样我感知到的不同朝向条纹与不同神经元集群的发放, 也是相关关系. 更一般的, 只要神经活动会随着主观感知 / 刺激变化(modulation), 这种互信息关系就存在, 我们就可以谈”神经活动编码了xxx”. 当然, 除了刺激内容, 还有时间上的相关性, 当一组刺激出现 总是伴随着一组神经活动模式, 以及一种特别的感知内容(允许有时间上的延迟), 那么他们就有一种相关性.&lt;/p&gt;
+
+&lt;p&gt;这种相关性是一般科学视角下讨论意识与神经活动关系的概念根基&lt;sup id=&quot;fnref:72&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:72&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;. 所以这里我们实际追问的是V1的神经活动与我们的视觉意识在什么方面是相关的. 粗粗看来V1神经活动的许多方面与视觉意识紧密相关, 比如它编码了视野中条纹的局部朝向; 比如由于视野到视皮层的连续映射(Retinotopy), 神经元激活的位置也代表了刺激在视野中的位置.&lt;/p&gt;
+
+&lt;p&gt;然而, 在2002年的一篇综述&lt;sup id=&quot;fnref:0&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;里也概括了V1神经活动与视觉表象在许多方面的不同(dissociation), 我在这里整理如下.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;解剖上, V1对前额叶, 运动前皮层(prefrontal premotor)没有直接投射, 因而传统上认为无法直接提供信息给决策中枢.&lt;/li&gt;
+  &lt;li&gt;心理物理学上, V1常常中包含了超出视觉意识的信息.
+    &lt;ul&gt;
+      &lt;li&gt;如果(通过特制眼镜)视觉刺激仅从两眼中的一个射入, 你是无法分辨刺激是从哪只眼睛进来的. 然而V1包含着对左眼或右眼有偏好的细胞组成的(Ocular Dominance Stripe). 因而包含了刺激来源的信息.&lt;/li&gt;
+      &lt;li&gt;极其密集的条纹(high frequency grating), 对人眼看起来就像一片均匀的颜色一般, 然而依然会有与条纹的方向相关的视觉后效(aftereffect)——这说明条纹的方向信息一定被编码在某处, 但我们没有意识到它. 一般认为朝向选择性最早出现在初级视皮层V1, 所以这也说明V1编码了一些无法被觉察到的信息.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;电生理记录也表明单神经元的活动模式与视觉意识流很不同.
+    &lt;ul&gt;
+      &lt;li&gt;眨眼(blinking)通常不会打断视觉意识流, 但V1的神经元在眨眼时则近乎被关闭了——正如视网膜上的图像被眼帘完全关闭了一般. 在眨眼期间V1神经元发放率甚至比外界刺激关闭时的发放率还低&lt;sup id=&quot;fnref:01&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:01&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;. 这种V1活动的不连续性告诉我们, V1神经元有更短的时间常数, 对外界反应更快, 而我们的视觉意识也许与更高层时间常数更长的皮层有关.&lt;/li&gt;
+      &lt;li&gt;微眼动(microsaccade), 是一种我们通常不会觉知到的眼球的微小跳跃——就在此时此刻, 你在阅读时也会有频繁的眼动行为, 然而你对世界的知觉是连续, 稳定的, 尽管落在视网膜上的图像随着眼动会大幅度变化. 而当有刺激划过感受野, V1神经元会随着微眼动有推迟的激活现象, 这与主观上感受不到微眼动有些冲突&lt;sup id=&quot;fnref:02&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:02&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+      &lt;li&gt;当色彩条纹高速转动时, 我们便无法分清其中每一种颜色, 然而神经元依然可以对其中的单一颜色响应——这也说明视皮层的单神经元中包含着比知觉中更多的信息. (就像落在视网膜上的图像也包含比知觉更多的信息. )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;视觉表象可以独立于V1活动改变: 在猴子身上做双眼竞争任务, V1的单神经元更多的反映了输入刺激的稳定性质, 而非猴子的视觉表象.
+    &lt;ul&gt;
+      &lt;li&gt;与此不同的是人身上就能从V1的fMRI活动模式上提取出视觉表象信息…也许猴子与人的V1功能不尽相同&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;对于一般人, 常出现梦境的快速眼动睡眠(REM)期间, V1活动被抑制, 但不妨碍视觉表象的出现. 失去部分或全部V1的病人, 依然能做视觉梦境, 而双侧颞枕叶切除的病人才会完全失去做视觉梦境的能力.&lt;/li&gt;
+  &lt;li&gt;单侧顶叶脑损伤(parietal damage)病人对于损伤对侧的视觉刺激经常难以觉察. 然而那些没被觉察到的对侧视觉刺激在V1激发起的活动模式与觉察到时很像, 因此, 至少在这些病人身上, V1的活动本身并不能支持对刺激的视觉意识.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;总而言之, V1单神经元的神经活动与视觉表象的活动模式有许多不一致, 包含的信息也超出了视觉意识的范围, 同时并不足够解释/支撑视觉意识——所以在这篇&lt;sup id=&quot;fnref:0:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;综述中作者的结论就是我们意识不到V1的神经活动, 就像我们意识不到视网膜上细胞的活动一样. 而基于一些类似但更复杂的证据作者认为, 高级视觉区域与我们的视觉意识能更好的关联起来. 也许V1中神经元集群的活动模式也能与视觉表象关联, 也许是某种更复杂的脑区间交互作用模式才带来了意识, 但这些都需要更好更大规模的神经记录手段才能了解.&lt;/p&gt;
+
+&lt;h2 id=&quot;总结summary&quot;&gt;总结(Summary)&lt;/h2&gt;
+
+&lt;p&gt;以上数据大多是在正常意识状态下进行的, 视觉感知的内容也比较固定(看到了vs没看到, 左眼图像vs右眼图像), 而一些更奇妙的状态下我们的视觉意识与外界世界完全分离, 这时视觉表象与神经的关联就更加有趣了, 我将在下一篇中介绍.&lt;/p&gt;
+
+&lt;p&gt;限于篇幅, 本文需要到此打住了! 意识是极其复杂的科学问题, 这里我引入了这个问题的一个小小的入手点——视觉意识, 以及前人是怎样试图定位这一意识的神经相关物的. 总的来说, 这篇综述&lt;sup id=&quot;fnref:0:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;认为与视觉意识与高级视觉皮层中的神经活动更相关, 而初级视觉皮层的神经活动则被认为不太会被意识到. 这些结论至今还没有完全建立, 而且也没有一个被所有人接受的意识理论, 因而将神经活动和意识现象对应起来就更加困难了.&lt;/p&gt;
+
+&lt;p&gt;功能定位通常是神经研究的第一步: 把功能局域化到特定的脑区, 就能拿起放大镜仔细研究这一脑区的独特属性, 追问更深层的问题: 她有什么样的投射模式(projection pattern)? 什么特殊的神经元类型(Cell type)? 特殊的局部网络(microcircuitry)? 特殊的胞外环境? 特殊的蛋白表达以及细胞内机理? (说不定真的有量子机制在某个特殊的脑区起作用产生了意识也未可知…) 然后或许能找到意识更微观的机制.&lt;/p&gt;
+
+&lt;p&gt;但另一种可能性是, 我们再努力也无法将意识定位到一个脑区中. 现在观测到的相关性也许只是在我们有限的神经活动记录精度下的结果, 一些更精微的活动模式被磨掉了, 因而看不到与一些脑区的相关性. 当我们真的掌握了全脑的神经活动(如对斑马鱼), 也许会发现意识状态与全脑的神经活动模式都有关系. 那时, 我们该怎么办? 也许对意识重要的不是空间, 而是时间——如同步的神经活动(Synchrony), 高频神经震荡(Gamma Oscillation), 或是不同脑区之间的信号传递(Recurrent / Feedback)&lt;sup id=&quot;fnref:0:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;. 而意识状态也许是这些神经变动的结果, 而无法被保存在凝固的状态里. 在一个真正的网络/相互作用系统中, 我们无法将一个全局的性质划归到任何一个节点上. 如果是这样, 那这种真正的涌现(emergence)现象就更激动人心了. 让我们拭目以待.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;特别的, 心理学也会区分Sensation and perception, 感觉与知觉, 一个更初级更接近物理刺激, 一个更加接近我们的主观感受. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;心灵哲学中也会称之为Qualia即&lt;a href=&quot;https://www.iep.utm.edu/qualia/&quot;&gt;感受质&lt;/a&gt;, 即我们所感觉到的世界的样子. 然而即使扫一下上述参考文献的长度就可以知道关于这一概念的哲学争论是多么的丰富, 此处我们指出与Qualia的关联, 但无意在哲学上下什么结论. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;如果读者看过17年的电影&lt;a href=&quot;https://movie.douban.com/subject/26607693/&quot;&gt;敦刻尔克&lt;/a&gt;的话, 一定记得其中有个情节是被拯救的盟军飞行员阻止船长把船开回去救人, 争吵中把船长的儿子撞下了舷梯磕伤了后脑勺, 然后他说自己什么也看不到了. 让我猜的话很可能是后脑勺对应的枕叶(Occipital lobe)的初级视皮层被破坏导致什么也看不见, 即使他前端的视网膜与视神经看起来完好无损. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Haynes, J.-D., &amp;amp; Rees, G. (2005). Predicting the stream of consciousness from activity in human visual cortex. &lt;em&gt;Current Biology&lt;/em&gt;, &lt;em&gt;15&lt;/em&gt;(14), 1301–1307.6  &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:6:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;统计的语言说, 如果有两个强相关的回归因素(regressor), 那么仅通过回归就很难区分出这两个变量谁的贡献更大. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;这里涉及一个fMRI的分析方法, 所谓多体素模式识别(Multi Voxel Pattern Analysis). 对于机器学习来说, 有一个活动模式, 能从中解码出一些信息并不神奇. 不过有趣之处在于它对于fMRI竟然也能用. 众所周知, fMRI的每个体素代表了大约1mm^3量级的空间信息, 对于神经元来说已经是数万个细胞组成的集群了. 而由于BOLD信号直接来源于血管而非神经元, 它测量到的空间信息可能更粗. 在这种粗粒度下, 竟然还能解码出诸如刺激的方向, 色彩等信息, 很大程度上是因为, 每个体素是对携带不同信息神经元的一种不均匀的加权平均, 而不同体素的偏好有些许不同, 如果综合大量体素来训练分类器, 而非直接平均, 就能重新得到不同类神经元的信息. &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:61&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Tong, F., Nakayama, K., Vaughan, J. T., &amp;amp; Kanwisher, N. (1998). Binocular Rivalry and Visual Awareness in Human Extrastriate Cortex. &lt;em&gt;Neuron&lt;/em&gt;, &lt;em&gt;21&lt;/em&gt;(4), 753–759. https://doi.org/10.1016/S0896-6273(00)80592-961  &lt;a href=&quot;#fnref:61&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:70&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;在一些哲学讨论中, 这种关系也被称为表征(representation)关系, 但这个概念的精细刻画还需要与哲学系的小伙伴探讨下. &lt;a href=&quot;#fnref:70&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:72&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;事实上哲学家对意识的神经相关物有大量概念讨论, 我这里无法穷尽, 希望了解心灵哲学的哲学系朋友们可以补充一下. &lt;a href=&quot;#fnref:72&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:0&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Rees, G., Kreiman, G., &amp;amp; Koch, C. (2002). Neural correlates of consciousness in humans. &lt;em&gt;Nature Reviews Neuroscience&lt;/em&gt;, &lt;em&gt;3&lt;/em&gt;(4), 261–270. https://doi.org/10.1038/nrn7830  &lt;a href=&quot;#fnref:0&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:0:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:0:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:0:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:01&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Gawne, T. J., &amp;amp; Martin, J. M. (2000). Activity of Primate V1 Cortical Neurons During Blinks. &lt;em&gt;Journal of Neurophysiology&lt;/em&gt;, &lt;em&gt;84&lt;/em&gt;(5), 2691–2694. https://doi.org/10.1152/jn.2000.84.5.2691 &lt;a href=&quot;#fnref:01&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:02&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Martinez-Conde, S., Macknik, S. L., &amp;amp; Hubel, D. H. (2000). &lt;em&gt;Microsaccadic eye movements and firing of single cells in the striate cortex of macaque monkeys&lt;/em&gt;. Retrieved from http://neurosci.nature.com &lt;a href=&quot;#fnref:02&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Binxu Wang</name></author><category term="This Week's Learning" /><category term="Visual Neuroscience" /><category term="Consciousness" /><category term="Cortex" /><category term="Sensory System" /><category term="Philosophy" /><category term="Concept" /><category term="Computation" /><summary type="html">看得见还是看不见, 这是一个问题!</summary></entry><entry><title type="html">This Week’s Learning about Brain 3 Hard Wired Olfactory Responce</title><link href="https://animadversio.github.io/2018/11/25/This-Week's-Learning-about-Brain-3-Hard-Wired-Olfactory-Responce.html" rel="alternate" type="text/html" title="This Week’s Learning about Brain 3 Hard Wired Olfactory Responce" /><published>2018-11-25T00:00:00+00:00</published><updated>2018-11-25T00:00:00+00:00</updated><id>https://animadversio.github.io/2018/11/25/This%20Week's%20Learning%20about%20Brain%203%20Hard%20Wired%20Olfactory%20Responce</id><content type="html" xml:base="https://animadversio.github.io/2018/11/25/This-Week's-Learning-about-Brain-3-Hard-Wired-Olfactory-Responce.html">&lt;h2 id=&quot;先天与后天-nature-or-nurture&quot;&gt;先天与后天 (Nature or Nurture)&lt;/h2&gt;
+&lt;p&gt;首先让我们从一个更大的背景开始.&lt;/p&gt;
+
+&lt;p&gt;长久以来, 从哲学家, 心理学家到神经科学家, 许多探索人类本性的研究者都会讨论所谓先天与后天的问题.
+哲学家们追问的是人性, 即人作为人的规定性(definitive property)是先天的还是后天的: 在某个讨论中是说, 人到底先天上是有内容, 被规定的, 还是就是一块白板呢&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;; 在心理学的语境中讨论的是行为或心理规律的来源 — 这些规律到底是先天具有, 还是后天被培养, 教导, 学习(learning), 适应(adaptation)才逐步形成的呢. 在物质层面的神经机制上, 我们的神经系统也被两种过程决定, 一部分是生理的发育过程(development)&lt;sup id=&quot;fnref:0&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:0&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, 一部分是后天的学习, 记忆, 适应(learning, memory, adaptation)变化. 前者很大程度被基因决定 (genetically-encoded), 是分子机器的运转诱导下精确的环路组装&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;; 后者则由输入的环境刺激, 以及神经系统自身的可塑性(neural plasticity)决定, 是高度个性化与”文化”相关的.&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; 用常见的神经-计算机类比粗略来讲, 被基因决定的前者像是事前烧好的电路板, 即硬件(hardware); 可以学习适应的后者就像是软件(software), 可以在较快时间尺度内修改.&lt;/p&gt;
+
+&lt;p&gt;而就像计算机一般, 神经系统在大致相同的硬件基础上, 根据输入经验、训练, 甚至内在状态的不同, 可以运行非常不同的程序, 执行极其不同的任务. 就像平时你为了快乐而读一本书, 和哲学课上为了写论文构造某个论证或寻找某个证据而读一本书, 结果会很不同, 后者会让你更敏锐的挑选那些相关信息并深度加工. 而在我们平时训练猴子或者老鼠做不同的行为实验时, 根据不同的给予奖赏的方式, 猴子与老鼠可以很快的改变输入/输出模式, 来获取更多的奖励.&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;  这种能力有时被叫做情境依赖的计算功能(context dependent computation). 而对于我们人类, 我们甚至可以直接用语言, 改变他人的内在状态, 让人们去做什么或者不做什么. (比如, 助教对你说 “再不交报告你这门课就要挂科啦! ““啊啊啊我赶紧回去写TAT”) 分析起来, 就是通过给予对方信息, 改变对方对不同行为结果优劣的期望(Reward expectation of different behavior outcome)的估计, 从而改变其自发行为输出.&lt;/p&gt;
+
+&lt;p&gt;铺垫了这么多学习和经验对神经系统的影响, 好像我们大部分的行为都是这样的, 人生下来啥也不会, 都需要学习. 但对于大部分动物, 他们生下来就几乎准备好了做各种事情, 那么这些所谓先天行为, (innate behavior) 所对应的神经基础就应该是被遗传物质编码好, 并在神经发育时稳定形成的. 那么什么样的行为会被所谓硬件编码(hardware coded)进基因中呢? 对于人, 我们依旧很不清楚, 但对于动物, 我们清楚的知道一些重要的行为通过其环路结构被编码进基因里.&lt;/p&gt;
+
+&lt;h2 id=&quot;果蝇的嗅觉系统drosophilias-olfactory-system&quot;&gt;果蝇的嗅觉系统(Drosophilia’s Olfactory System)&lt;/h2&gt;
+&lt;p&gt;在进入正式的结果前, 再铺垫一点关于果蝇的嗅觉系统的背景知识.&lt;/p&gt;
+
+&lt;p&gt;对应于我们的鼻子, 果蝇的嗅觉感受器(Olfactory Receptor)主要分布在两处器官上: 触角(antennae)与maxillary palps. 在这些感受器官上分布着不同的感受神经元(Olfactory Receptor Neuron, ORN), 感受神经元膜上的受体蛋白(ligand-gated metabotropic channels)结合一些气味分子, 引起一系列细胞内信号分子(如cAMP)的产生, 最终使膜去极化并产生动作电位传递到下游神经元(Action Potential, Spike). 每个感受神经元上的受体蛋白不同, 能接收的气味分子也不同, 因而感受神经元激活的模式(activation pattern)就可以告诉他的大脑它到底闻到了什么气味.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Olfactory-organs-the-antennae-and-maxillary-palps.jpg&quot; alt=&quot;Olfactory Organ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;果蝇的触角上有大约1300个感受神经元, 他们会用将轴突投射到Antennal lobe上的43个嗅球上(Glomerulus&lt;sup id=&quot;fnref:4:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;), 相同类型(即接收相似气味信息)的感受神经元汇聚到几个同类嗅球上, 进行信号汇聚.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Scheme-Drosophila-olfactory-system-The-olfactory-receptor-neurons.jpg&quot; alt=&quot;Olfactory System&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Wiring-Drosophila-olfactory-system.jpg&quot; alt=&quot;Olfactory System Wiring&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;与嗅球相关的有两类不同的神经元. 投射神经元(Projection Neuron, PN)将自己的树凸伸到嗅球里, 接收感受神经元(ORN)的输出, 并将信号接力至蘑菇体(Mushroom Body, MB 因为长得真的很像蘑菇= =)与侧角(Lateral Horn,LH)上. 嗅球中的另一些神经元(Local Neuron)则不会长程投射, 而是负责局部的计算: 比如在嗅球内或两个嗅球间相互抑制或者激活. 改变嗅觉信息的表征. (见上下图&lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Local_anatomy_antennal_lobe.jpg&quot; alt=&quot;Local Circuit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再往下走, 蘑菇体(MB)与侧角(LH)是嗅球的主要下游区域, 他们负责着很不同的功能, 蘑菇体与嗅觉学习(associative olfactory learning)很有关, 近几年的工作也发现了诸多气味的效力(valence, 带来奖赏/惩罚, 是吸引的还是排斥的)是如何在学习过程中被写入和读出蘑菇体的Kenyon Cell (KC)网络的. 而侧角与行为输出直接相关, 即使蘑菇体被损坏, 侧角也可以介导基本的行为输出.&lt;/p&gt;
+
+&lt;p&gt;有了嗅觉系统的基本图像, 这次介绍的神经回路就好理解多了.&lt;/p&gt;
+
+&lt;h2 id=&quot;果蝇的气味回避行为neural-circuit-for-avoidance-in-drosophilia&quot;&gt;果蝇的气味回避行为(Neural Circuit for Avoidance in Drosophilia)&lt;/h2&gt;
+
+&lt;p&gt;有一种叫Geosmin的常见气味分子(闻起来就是土味…), 是一些常见微生物的代谢产物. 但极少计量就能够削弱果醋对果蝇的吸引力. 而果醋正是果蝇最喜欢的食物信号, 所以Geosmin自然是果蝇很”讨厌”的气味了. 那么这种强烈的排斥行为的神经基础是什么呢?&lt;/p&gt;
+
+&lt;p&gt;马普所的一群研究者在2012年做了很漂亮的成果&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;. 他们测量了所有触角上以及口器上的嗅觉神经元(ORN), 发现只有其中一类(ab4B)对Geosmin有强烈的反应; 而更令人惊奇的是他们对自然界中的自然气味(水果, 食物, 粪便等)作了化学成分分解后, 依次刺激该神经元, 在这样的大范围筛选下, 也发现也几乎只有Geosmin一种分子有极强的响应(下图). 这种强选择性(Selectivity)在嗅觉系统里极其罕见了. 果蝇身上另一种与之可比的强选择性受体就是对异性的气味信号分子的接收神经元.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/ORN Specificity.png&quot; alt=&quot;ORN Specificity&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Odor Screening.png&quot; alt=&quot;Odor Screening&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;更令人惊讶的是这类神经元的下游, ab4B神经元几乎只投射到Antennal Lobe的一个嗅球(DA2)上的一类投射神经元DA2, 这一类DA2神经元同样对Geosmin有极强的选择性! 而他们发现, 只要激活DA2投射神经元, 就能激发果蝇的回避行为; 而反过来如果完全阻断了ab4B感受神经元到DA2神经元的信号传递, 则回避行为完全不会出现. 因此可以说Geosmin引起的回避行为完完全全是通过DA2神经元兴奋引起的了.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/DA2 Specificity.png&quot; alt=&quot;DA2 Specificity&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这一神经通路的发现非常惊人, 为什么呢? 因为工程上, 用单一一条神经线路感受仅仅一种气味分子, 即所谓标记线编码(labeled line code)是非常不划算的&lt;strong&gt;设计&lt;/strong&gt;—-想想看触角上总共只有几十种不同的感受神经元, PN总共也只有40余种, 但自然界有成千上万种气味, 不可能被这样一一编码, 因而通常气味是通过感觉神经元特定的共同激活模式来组合编码(Combinatoric coding)的. 而分出一条PN来单独负责(dedicate)一种分子, 就会减少总体能感知到的气味的类型, 缩小嗅觉信道容量. 不过另一方面, 标记线编码也像十万火急的鸡毛信一样, 可以毫无疑问(unambiguously)传递这一种分子的信息, 不用解码, 直接引起下游的输出. 这一逻辑说明, 这条线上(Geosmin-ab4B-DA2)传输的信息应该带有十分重要, 甚至生死攸关的价值&lt;sup id=&quot;fnref:9&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;! 但Geosmin为何重要呢, Geosmin本身并不是毒素, 也不影响果蝇的生活, 那么果蝇为什么要特意分出一条神经电缆来感知这一种物质呢?&lt;/p&gt;
+
+&lt;p&gt;为了探究这个生态价值的问题, 研究者将目光转向了自然界中产生Geosmin的微生物(e.g. S. coelicolor, P. expansum), 他们发现, 这些微生物对于果蝇的幼虫是致命的, 在含有这些微生物的培养基上, 果蝇幼虫活不了五天! 这样看来能直接影响后代存活与否, 可以说是十分强大的选择力量了: 具有对这种气味的感觉的与回避模式的果蝇可以极大地提高下一代存活率, 因而这种基因和相对应的神经环路被选择出来也就很不奇怪了.&lt;/p&gt;
+
+&lt;p&gt;既然这一感觉信号有着如此重要的繁殖价值, 那么很可能这一结构在进化长河中很早就被选择出来了! 事实上的确如此, 研究者检验了其他果蝇品种(下图), 发现了他们的触角上都有相似的一类神经元, 只对Geosmin有极强的选择性, 而且都具有对Geosmin的回避行为. 基于此, 研究者估计这一气味感觉通路是果蝇种(genus Drosophila)的一种根本特点, 在历史中已然存在了四千万年.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Evolutionary Consistency.png&quot; alt=&quot;Evolutionary Consistency&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有趣的是, 果蝇对这些微生物的感知, 仅仅是通过Geosmin这一种气味信号. 当研究者通过基因工程破坏了微生物产生Geosmin的酶, 果蝇就完全无法分辨这种”悄无声息”的有害微生物, 于是会无差别的在含有他们的培养基上产卵, 然后后代也会因此会死掉. R.I.P. 可以说这是一条非常纯粹但是脆弱的感觉通道了= =&lt;/p&gt;
+
+&lt;h2 id=&quot;进一步探索going-deeper-into-circuit&quot;&gt;进一步探索(Going Deeper into Circuit)&lt;/h2&gt;
+
+&lt;p&gt;(前面的故事基本就讲完了, 这部分是最近的后续研究, 有些technical, 如果对学术部分兴趣不大的读者可以跳到最后一部分. )&lt;/p&gt;
+
+&lt;p&gt;说来在今年新出的一篇BioRxiv文章中&lt;sup id=&quot;fnref:8&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;, 马普所的研究者们更是一路追踪下去, 揪出了Geosmin响应通路更下游的神经环路.&lt;/p&gt;
+
+&lt;p&gt;为了追踪DA2投射神经元的下游通路, 首先要判断大方向, 投射神经元(PN)产生行为到底是经过蘑菇体(MB)还是侧角(LH)呢? 他们阻断了蘑菇体的神经元的输出(chemical silencing), 发现并不影响回避行为, 与先前知识吻合, 于是大致排除了蘑菇体的作用. 接下来他们通过电子显微镜与Confocal成像进行显微解剖, 在3D重构的神经元中寻找受到DA2投射的侧角神经元(LN). 有趣的是他们发现接收DA2神经元信号的目标数量远超想象, 他们采样到的151个神经元. 换言之, 这股信息流在侧角LN处发散成了百条溪流走向不同的通路. 而对神经形态做分类后, 他们发现大多是传出神经元(Lateral Horn Output Neuron), 其次是局部神经元(Lateral Horn Local Neuron).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/DA2 Downstream Neurons.png&quot; alt=&quot;DA2 Downstream Neurons&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而这样多的下游神经元难以逐个详尽研究, 他们挑选了数个有代表性的LN神经元进行进一步分析, 发现多种果蝇厌恶的气味(包括Geosmin)会汇聚到几个LN神经元上, (见下表PN神经元与LH神经元的投射矩阵) 或许说明这些神经元可以整合不同气味的回避属性(编码果蝇有多厌恶这种味道), 并引起下游一般的回避行为.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/PN Convergence Pattern.png&quot; alt=&quot;PN Convergence Pattern&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在侧角神经元中, 他们通过复杂的筛选找到了每类神经元对应的光遗传标记, 并发现一类神经元(Av1a1, 下图中的A’’’, A’’'’代号pigeon, duck)对于Geosmin回避行为是充分且必要的—-激活即可引起回避行为, 而阻断其传出即可关闭回避行为. 可以说他们又找到了这个通路在侧角(Lateral Horn)中的一个关键节点(Av1a1).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Selected LN Neuron.png&quot; alt=&quot;Selected PN Downstream Neuron&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;若从侧角输出神经元(LNON)再进一步追踪下游信号, 由于目标太多难以完整进行, 他们选取了两三个神经元进行追踪. 特别的他们发现, 刚才提到的Av1a1神经元下游投射到DNp Redhead 与 DNp Velvet神经元, 而这两种神经元直接投射至腹侧神经索(Ventral Nerve Cord, VNC), 也就是直接控制肌肉的线路. 因而在这个通路中, 从感觉神经元到肌肉控制最短只需要经过4个突触传递, 就可以将气味信号输入转换成了行为输出. 可以说是非常直接的脑回路了! (上述回路结果被概括在下面的网络图示中, 大体是前馈网络, 只有少许的发散与汇聚)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/olfactory_circuit/Current Diagram.png&quot; alt=&quot;Current Full Diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;学术后记academic-reflection&quot;&gt;学术后记(Academic Reflection)&lt;/h2&gt;
+&lt;p&gt;读过这几篇文章&lt;sup id=&quot;fnref:6:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;,&lt;sup id=&quot;fnref:8:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;,&lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt; 写完了这次的post有这样几点感想.&lt;/p&gt;
+
+&lt;p&gt;如同上一个post中介绍的&lt;a href=&quot;/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html&quot;&gt;小动物的听觉系统选频功能&lt;/a&gt;的研究. 本文研究的也是更简单的生命体中的&lt;a href=&quot;/tags/#Sensory+System&quot;&gt;感觉系统&lt;/a&gt;的构造. 这次的感觉环路叫环路(circuit)似乎都有点名不副实, 因为他完全就是个前馈通路(feedforward network)… 而一般的前馈通路还有发散与汇聚(Convergence and divergence), 并非一一对应, 但是对ORN-&amp;gt;PN的通路, 神经传递甚至是一条线连过去的! 因而前文中&lt;sup id=&quot;fnref:6:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;使用的诸多实验技巧才会如此漂亮的展现出其结果: 阻断通路中一环, 下游就完全没有输出; 激活通路中的一环, 下游的输出又出现了. 这样”纯粹”的通路可以说是十分罕见的, 微生物只通过这一种代谢产物Geosmin被觉察, 而果蝇也只通过一种感受神经元(ab4B ORN)以及一类投射神经元(DA2 PN)来传输. 对于神经科学家来说大大简化了问题, 但对果蝇来说这种简单的通路也是脆弱的, 由于果蝇是通过Geosmin分子这单一信道一种感受神经元探查有害微生物, 那么一旦微生物学会不产生Geosmin, 那他们对果蝇就是隐形的! 而这时果蝇也会因为在错误的地方产卵而减少繁殖能力.&lt;/p&gt;
+
+&lt;p&gt;另外在 &lt;strong&gt;技术上&lt;/strong&gt;, 数字显微解剖(&lt;em&gt;in silico&lt;/em&gt; micro-anatomy)对于环路研究(特别是果蝇这类小生物)很有帮助. 由于神经元本身有着极其复杂(而美丽)的三维结构, 为了观察其结构, 追踪其轴突树凸的走向, 寻找突触, 单纯的染色切片是很不足够的. 电镜或者confocal显微镜与计算3D重构则是一种十分有效的工具. 但单纯的解剖结构又是不足够的, 还是需要功能上的调控(抑制与激活(silencing and activation))来验证结构是work的, 以及重要的.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结构与功能&lt;/strong&gt;的关系, 前面提到由于这里网络结构, 以及响应模式都出乎意料的简单, 因而从结构出发我们直接就能理解其功能—-神经的连接就意味着信号的传递, 而且信号表征的就是Geosmin这一种气味分子, 信号的结果就是回避行为, 输入与输出都没有疑义. 简直可以说是”过脑子”的最简单的感觉刺激-行为响应映射了. 而如若在更中枢的系统(大脑皮层)做回路研究, 就很难有这样清晰的解读.&lt;/p&gt;
+
+&lt;p&gt;后一篇工作震惊到我的一点是做连接组追踪, 以及 &lt;strong&gt;理解连接组数据的困难&lt;/strong&gt;, 我本以为对于果蝇这样小的脑子可以通过计算解剖学轻易的拿到连接图谱, 然后理解从输入到输出的整个网络. 然而看到这片文章才意识到技术上的困难, 他们仅仅是从投射神经元PN努力向下追踪了一层, 就绝望的发现由于下游神经元太多, 很难完全的追踪下去&lt;sup id=&quot;fnref:11&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:11&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;, 只能挑选几个代表再追下一层. 而且追踪了连接关系, 想去提取其中principle还是很难, 部分原因是连接组研究的个体数量很少, 不知道能否推广, 也无法下很强的结论. 即便在如此简单的情境中(网络被基因决定十分模式化, 前馈结构, 输入输出都可以理解, 很少冗余, 突触传递次数很少), 去理解一个神经网络的逻辑(Principle of network connectivity)还如此困难, 可以想见如果要直接理解皮层中的连接组(Connectomics of Neocortex)逻辑会多么的抓狂.&lt;/p&gt;
+
+&lt;h2 id=&quot;哲学联想philosophical-speculation&quot;&gt;哲学联想(Philosophical Speculation)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;所谓诚其意者，毋自欺也。如恶恶臭，如好好色，此之谓自慊。&lt;/p&gt;
+
+  &lt;p&gt;–大学&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;让我们重新回到更广的思维图景中. 朱子在四书章句集注中, 对《大学》这句话的解释&lt;sup id=&quot;fnref:12&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:12&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;是, 要使修行者爱好善行, 厌恶恶行, 就如同爱好美好的颜色, 或者厌恶恶臭的气味一般, &lt;em&gt;“以自快足于己”&lt;/em&gt;, 只因为这样做对自身的满足.&lt;/p&gt;
+
+&lt;p&gt;很有趣的是《大学》中举的这两个例子几乎对应于果蝇嗅觉系统相关的两种硬件编码(hardware coded)的行为: 闻到异性的气味而被吸引, 或者是闻到伤害指示性的气味而回避. 这些行为几乎就是将感受信号直接转换成行为(甚至只通过4个突触!!)&lt;sup id=&quot;fnref:13&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:13&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;13&lt;/a&gt;&lt;/sup&gt;. 因此十分直接, 不会被干扰. 这种倾向几乎保持到了人类身上, 因而《大学》也就以这种行为作为自发、无需训练、无需反思、不得不如此(necessary)的喜好或者厌恶的代表, 可以说是非常有道理了.&lt;/p&gt;
+
+&lt;p&gt;这种低等动物身上的研究之所以会让人们惊讶, 也是因为人身上很少有完全的硬件编码行为. 人似乎总能通过训练, 通过内在更高层的控制(overwrite)来改变行为模式, 去控制动物的”本能”, 去改变简单的刺激输出映射, 去克服自然对我们的编程: 我们不会见到”好色”就不可抑制的想冲上去发生性行为, 我们不会因为恶臭而拒绝给亲人端屎擦尿.&lt;/p&gt;
+
+&lt;p&gt;回到前面的《大学》里的那句话, 对于人来说&lt;em&gt;“恶恶臭, 好好色”&lt;/em&gt;的自然倾向是存在的, 但人们不像果蝇一般会直接由刺激导向行为. 我们有着更大的脑子, 有着更复杂的高级调控, 因而除了这些自然倾向, 人们有更多可以提供内在奖赏与外在奖赏的方式, 道德体系, 社会关系等等. 某种意义上人能够能够抑制, 甚至能够改变自己恶恶臭, 好好色的性质, 也是人的神经系统更发达的结果呢~&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;更有争议的例子比如, 黑人同学的成绩不好, 是因为黑人先天就笨基因就差呢, 还是他们更多的来自更低教育水平的家庭环境? &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:0&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;很有意思的是, 发育生物学(developmental biology)与发展心理学(developmental psychology)都叫的development, 但所处理的时间尺度与阶段很不同(从中文翻译的不同也可见一斑). 前者处理的更多是被基因与分子机器决定的统一的过程, 后者更多的涉及包括后天学习与适应的过程, 并存在个体差异. &lt;a href=&quot;#fnref:0&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;因此一些与神经环路组装(circuit assembly)相关的蛋白质对应基因的变异, 直接会引起神经环路的”硬件问题”, 然后导向神经系统功能的障碍. 如自闭症Autism就是较常见的神经发育疾病, 而一种发病机制就是Shank基因的病变, 这一基因对应着突触后的中心支架蛋白Shank蛋白. 因而一个蛋白的损坏可以引起整个回路组装的失调. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;一个最近听说的例子是, 猴子(非人灵长类)动物脑袋里视觉皮层中对面孔响应的神经元区块(Face Patch)是需要在猴子成长过程中多多接触面孔的视觉刺激才会发育而成的. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;中文翻译得不清楚, Glomerulus的拉丁词含义是小线团(ball of thread), 可以说很贴切了. 肾小球也叫这个. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:4:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;图片来源 https://www.researchgate.net/publication/279743049_OLFACTORY_SYSTEM_IN_DROSOPHILA/figures &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Stensmyr, M. C., Dweck, H. K., Farhan, A., Ibba, I., Strutz, A., Mukunda, L., … &amp;amp; Wicher, D. (2012). A conserved dedicated olfactory circuit for detecting harmful microbes in Drosophila. Cell, 151(6), 1345-1357.这篇paper里的工作极其漂亮而且工作量极大, 纯粹是为了基础科学的兴趣, 老师评价是在美国的科研体制下不可能做出来的工作了. &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:6:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:6:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:9&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;之前读过也做过感觉系统最大化信道容量(maximize information content/Channel capacity)的研究, 这回的内容会让我进一步思考最大化信息的意义. 对于生物体, 信息与信息的价值是不同的, 大多数生物并不在乎完整的表征(represent)我们周围的世界—-而且那也是不可能的. 他们要选择性的接收或提取出对自己重要的信息! (就像人眼能且只能看到所谓”可见光”也许也是因为这一波段是阳光辐射最强的波段, 也能提供关于我们感兴趣的日间世界最多的信息.) 而一些并不重要的信息丢掉也无所谓. 所以之后如果再做信息最大化可以考虑加入不同信息价值的权重, 再去最大化. 这件事理论上怎么做也是很有趣. @ 理论研究者们 &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:8&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Huoviala, P., Dolan, M. J., Love, F., Frechter, S., Roberts, R. J., Mitrevica, Z., … &amp;amp; Cornwall, H. (2018). Neural circuit basis of aversive odour processing in Drosophila from sensory input to descending output. bioRxiv, 394403. &lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:8:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Mansourian, S., Corcoran, J., Enjin, A., Löfstedt, C., Dacke, M., &amp;amp; Stensmyr, M. C. (2016). Fecal-derived phenol induces egg-laying aversion in Drosophila. Current Biology, 26(20), 2762-2769. &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:11&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;原文是 “The considerable divergence of the geosmin processing pathway at the 2nd to 3rd order level means that within the scope of this work we are unable to follow all of the connected LHNs deeper into the brain. Instead we chose to focus our efforts on a small number of LHONs we judged to be of special interest.” 可以说十分沮丧了. &lt;a href=&quot;#fnref:11&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:12&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;“言欲自修者知为善以去其恶，则当实用其力，而禁止其自欺。使其恶恶则如恶恶臭，好善则如好好色，皆务决去，而求必得之，以自快足于己，不可徒苟且以殉外而为人也。” https://ctext.org/text.pl?node=89505&amp;amp;if=en&amp;amp;show=meta&amp;amp;remap=gb &lt;a href=&quot;#fnref:12&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:13&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;一个有趣的问题是(food for thought), 如果某些行为是完全硬件编码的, 感觉信号如此直接就可以导向某种行为结果, 那动物真的感受到了这种外界信号了嘛? 还是像条件反射一般, 有了某种信号就直接有了行为. 动物根本不会觉察到自己接收了这种感觉, 而只能在自己已经做出行为之后再”意识到”自己感觉到了什么. @ Philosophers &lt;a href=&quot;#fnref:13&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Binxu Wang</name></author><category term="This Week's Learning" /><category term="Olfactory System" /><category term="Sensory System" /><category term="Neural Circuit" /><category term="Fruit Fly" /><category term="Connectomics" /><category term="Philosophy" /><summary type="html">先天与后天 (Nature or Nurture) 首先让我们从一个更大的背景开始.</summary></entry><entry><title type="html">This Week’s Learning about Brain 2 Frequency Tuning of Hair Cell</title><link href="https://animadversio.github.io/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html" rel="alternate" type="text/html" title="This Week’s Learning about Brain 2 Frequency Tuning of Hair Cell" /><published>2018-10-17T00:00:00+00:00</published><updated>2018-10-17T00:00:00+00:00</updated><id>https://animadversio.github.io/2018/10/17/This%20Week's%20Learning%20about%20Brain%202%20Frequency%20Tuning%20of%20Hair%20Cell</id><content type="html" xml:base="https://animadversio.github.io/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html">&lt;h2 id=&quot;引言-感觉系统&quot;&gt;引言: 感觉系统&lt;/h2&gt;
+&lt;p&gt;一直以来我都被这个简单的事实深深震撼: 我们的心智(mind)其实一直都生活在一个密不透风, 不见天日的黑匣子里(Skull), 但因为我们无比强大的感觉系统(Sensory System), 我们才能在神经信息处理的过程中渲染出这样清晰美妙的主观现实, 并无缝的与这个世界交互. 感觉系统就是这个探测外在物理环境转换成主观现实的存在呀. 
+&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;在科学还属于哲学的时代, 人们就知道人的感觉至少是有5种主要模态(modality)的, 视觉, 听觉, 嗅觉, 味觉, 触觉(包括痛觉,痒).&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 对于任何一种感觉模态, 神经系统核心的问题都是, 如何快速(fast), 有效(efficient)的表征(represent), 分析(analyze)物理世界的刺激, 得到有用的信息. 类似于对电路的分析, 神经环路的分析(neural circuit analysis), 就在追问神经元自身性质(被其中的分子机器决定), 及其连在一起组成的环路是如何解决上述信号处理中的”工程计算”问题的.&lt;/p&gt;
+
+&lt;p&gt;作为一个例子, 这篇post要科普的就是不同生物(特别是低等生物) 的听觉感受细胞是如何解决频率选择问题的.&lt;/p&gt;
+
+&lt;h2 id=&quot;问题-频率选择frequency-tuning&quot;&gt;问题: 频率选择(Frequency Tuning)&lt;/h2&gt;
+&lt;p&gt;就像我们每天听到的乐音, 任何听觉刺激的一个主要属性就是其频率. 因而神经系统想要表征声音信号的一种策略就是去表征声音里的不同频率成分的强度. 事实上, 生物系统似乎的确采取了这种表征策略: 以纯音信号去刺激, 耳蜗的神经节细胞(Cochlea Ganglion Cell), 到听皮层的细胞都拥有一定的频率选择性(frequency tuning). 那么对声音频率的选择性是怎么通过耳朵里的生物结构实现的就是一个有趣的问题.&lt;/p&gt;
+
+&lt;p&gt;(下图是一根听神经对输入频率的选择性. 通过测量不同频率诱发微小响应的声音阈限来展示. )&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.cns.nyu.edu/~david/courses/perception/lecturenotes/pitch/pitch-slides/Slide9.jpg&quot; alt=&quot;Frequency Tuning&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;生物框架-听觉系统与听毛细胞hair-cell&quot;&gt;生物框架: 听觉系统与听毛细胞(Hair Cell)&lt;/h2&gt;
+&lt;p&gt;为了能欣赏生物系统的解决方案, 首先对要听觉系统的结构做一个快速介绍.&lt;/p&gt;
+
+&lt;p&gt;以人为例, 声波会先通过外耳耳道, 将震动传递至鼓膜, 在中耳的听小骨处, 机械波转变为听小骨的连锁震动, 并敲击内耳的耳蜗卵圆窗 (oval window).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/1223/2017/02/07215145/Figure_36_04_02-768x503.jpg&quot; alt=&quot;Ear structure and cochlea&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;卵圆窗是耳蜗中一条充满淋巴液体的管道的端口, 因此敲击这一端就像敲击一个充满水的弹性管子, 会引起管壁的震动. 这里, 震动的管壁就是基底膜(Basiliar Membrane/fiber), 
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a6/Cochlea.svg&quot; alt=&quot;Cochlea Overview&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从下图中容易看到, 基底膜的震动会带动其上纤毛的震动(就是hair cell头上的那一撮毛”hair”), 导致纤毛簇的弯折. 而纤毛簇的弯折又会通过一些毛端连接(tip link)引起一些精巧设计的机械控制离子通道的打开, K+离子涌入导致细胞膜电位的升高(depolarization), 最终将震动的机械信号转换成电流幅度信号, 通过与听神经(auditory nerve)的突触连接, 传输给神经系统. 
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/9/9b/Organ_of_corti.svg&quot; alt=&quot;Hair Cell and Basiliar Membrane&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;那么这个系统是怎么让不同的听毛细胞产生不同的频率选择性的呢?&lt;/p&gt;
+
+&lt;p&gt;对于很多高等动物, 其耳蜗基底膜有着独特的力学属性, 靠近底端的基底膜较硬, 刚性很大, 顶端较宽较软. 可以类比机械共振来理解, 基底膜的底端在高频振动输入下震动响应很强, 而顶端在低频震动输入下震动响应很强. 最佳刺激频率随基底膜上的位置连续变化, 从而当不同频率的听觉刺激输入, 其会激起不同位置的最强震动, 因而响应的听毛细胞, 听纤维也完全不同. 这就是所谓听觉系统的位置编码(Place Code),&lt;sup id=&quot;fnref:2:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 换言之是通过耳蜗与基底膜的机械力学属性达成的频率选择. &lt;sup id=&quot;fnref:9&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:9&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;
+&lt;img src=&quot;/assets/img/posts/hair_cell/Place_Code.png&quot; alt=&quot;Place_Code&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然而问题来了, 对于许多并没有很长的耳蜗基底膜(Cochlear Basal Membrane)的生物, (如乌龟, 小鸡, 青蛙), 他们的耳蜗机械力学属性并不独特, 无法帮助他们完成频率选择, 那怎样才能解决这个问题呢? (如下图的牛蛙, 便是下文中诸多研究的对象, 箭头指向其耳朵)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/frogears.jpg&quot; alt=&quot;Frog_ear&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;低等动物的精妙解答elegant-solution-in-lower-vertebrate&quot;&gt;低等动物的精妙解答(Elegant Solution in Lower Vertebrate)&lt;/h2&gt;
+&lt;p&gt;让我们一点点揭开答案, 首先从这张测量开始&lt;sup id=&quot;fnref:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. 这幅图来源于乌龟耳蜗中听毛细胞的电属性测量. 上图展示了不同频率声音刺激毛细胞, 得到的膜电位振幅曲线, 一条如电学系统般漂亮的频选曲线(tuning curve). 下图展示了用一个声音脉冲, 或者是电流方波去刺激听毛细胞, 都会诱发膜电位的衰减震荡(damped oscillation). 那么对输入频率的选择性, 与对刺激的衰减震荡响应, 这两种现象之间有什么联系呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Bull_Frog_Electric_Tuning.png&quot; alt=&quot;Exp_data_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看到这么漂亮的曲线, 自然会想去建模. 输入电流, 输出电压, 衰减, 震荡, 频率选择, 这几个关键词放在一起, 是否让你想起了什么悠远的记忆呢? (比如大一学过的大学物理/电磁学? ) 对的, RLC震荡电路. &lt;sup id=&quot;fnref:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Circuit_Model.png&quot; alt=&quot;Model_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以微分方程的形式描述电路就是&lt;/p&gt;
+
+\[V = RI_1 + L\dot {I_1} \\
+C\dot V + I_1 = I\]
+
+&lt;p&gt;消元得到&lt;/p&gt;
+
+\[V = R(I-C \dot V) + L(\dot I - C\ddot V)\]
+
+&lt;p&gt;稍加整理就可以得到标准的外界驱动下的衰减震荡方程. ($\gamma = R/L,\ \omega_0^2=1/LC$)&lt;/p&gt;
+
+\[\ddot{V}+\gamma \dot{V}+\omega_0^2 V = \gamma \frac{I}{C} + \frac{\dot I}{C}\]
+
+&lt;p&gt;有了这一简洁的模型系统, 可以解析的分析其在不同输入条件下的行为.&lt;/p&gt;
+
+&lt;p&gt;该系统在正弦波电流$I=\bar{I}\sin(\omega t)$输入下的解, 抛去暂态项, 稳态解为$\boldsymbol{V}=A(\omega)\sin(\omega t+\phi(\omega))$, 其中&lt;/p&gt;
+
+\[A(\omega)=\frac{\overline{I}}{\omega_{0}C}\left\{\frac{Q^{2}+\omega_{0}^{2}/\omega^{2}}{\left(\frac{\omega}{\omega_{0}}-\frac{\omega_{0}}{\omega}\right)^{2}Q^{2}+1}\right\}^{\frac{1}{2}}\\
+\phi(\omega)=\tan^{-1}\left\{\frac{\omega Q}{\omega_{0}}-\frac{\omega^{3}Q}{\omega_{0}^{3}}-\frac{\omega}{\omega_{0}Q}\right\}\]
+
+&lt;p&gt;很容易看出电压震荡幅度与输入频率有一个选择峰(Tuning peak).&lt;/p&gt;
+
+&lt;p&gt;再去求解该系统在方波电流$I=\bar{I}u(t)$输入下的解, 容易得到&lt;/p&gt;
+
+\[V_{u}=\overline{I}R\left\{1+\frac{\omega_{0}^{2}}{\omega_{f}\gamma}e^{-\gamma t/2}\sin\left(\omega_{f}t-\phi^{\prime}\right)\right\}\\
+\phi^{\prime}=\sin^{-1}\frac{\omega_{f}\gamma}{\omega_{0}^{2}}\]
+
+&lt;p&gt;可以发现, 这一模型非常好的复刻了电生理测到的衰减震荡行为, 同时也解释了对输入频率的选择性, 他们是一体两面, 完美! 但是, Caveat! 需要注意, 仅凭方程的形式并不能判定这个系统是按照上图的电学模型运作的! 甚至, 我们都不知道这个系统是一个电学系统还是一个等效的力学系统—用弹簧, 质量与阻尼同样可以得到同样的方程. (就像高等脊椎动物的听毛就是机械力学选频系统). 而且即使是电学系统, 与上述动力学等效的通道、化学机制动力学机制也数不胜数.&lt;/p&gt;
+
+&lt;p&gt;因而唯象模型建到这一步已经完美了, 要进一步确认其机制, 就要做进一步的电生理实验, 控制, 扰动, 拆解(control, perturb, dissociate)这一系统.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;在上述唯象描述的文章&lt;sup id=&quot;fnref:5:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;发表几年后, 进一步解析其生物机制的两篇背靠背文章&lt;sup id=&quot;fnref:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;,&lt;sup id=&quot;fnref:6&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;, 也出现了. 我们先根据先前的模型来猜测下可能的生物机制是怎样的.&lt;/p&gt;
+
+&lt;p&gt;如果要产生一个衰减震荡, 必要的条件就是回复力(rebounding force), 或者说反馈, 无论是力学的回复, 还是电学的回复. 在这里我们先假设震荡是电学震荡, 也即回复是由电属性提供的. 而上图中的电流输入刺激, 或是声音脉冲刺激, 都是直接改变膜电位$V$的, &lt;sup id=&quot;fnref:7&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;. 既然这两种刺激都能开启震荡, 那一种可能性就是存在电压依赖的离子通道(Voltage Gated Ion Channel), 提供一个电流$I_{g(V)}=g(V)(V-E)$, 而该电流可以进一步改变电压, 构成一个动力系统~&lt;/p&gt;
+
+\[C\frac{dV}{dt}=-g(V)(V-E)-g_L(V-E_L)+I\]
+
+&lt;p&gt;然而众所周知, 1维动力系统无法构成震荡, 必然还有些动力学变量, 或者是$g(V)$的电压依赖并非瞬时的, 而有些许延迟, 或者还有其他通道涉及其中. 这时, 纯粹理论的推断就无法前进了, 必须依据生物体内具体的通道类型进行推断.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Channel_Variety.png&quot; alt=&quot;Channel Variety&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而当时的人们有充足的药物, 化学手段做到这一点. 通过施加药物, 可以选择性的堵塞, 关闭某些离子通道; 或者可以调整溶液离子浓度, 从而判断出哪些离子涉及该反应. 上图是神经元上各类离子通道类型的一幅总括, 在这一Big Picture中, 划红线的$Ca_V,K_{Ca}$, 即电压依赖的钙通道与钙依赖的钾通道涉及这一过程. 非常有趣的是这两种通道的关系正应了前面动力系统分析的推测—存在一种依赖于电压的通道$Ca_V$, 同时另一种通道$K_{Ca}$与之耦合.&lt;/p&gt;
+
+&lt;p&gt;明确了通道及其属性, 机制也就清晰起来, 膜电位$V$的升高诱发$g_{Ca_V}$通道打开, 然后$Ca^{2+}$离子的涌入打开了依赖于$Ca^{2+}$的$K^+$通道, 使得$K^+$涌出, 降低膜电位, 关闭 $g_{Ca_V}$通道. 不过这样仅完成了一个回合, 还无法震荡, $Ca^{2+}$的浓度会通过扩散慢慢降低(类似一种适应adaptation机制), 从而关闭$g_{Ca_V}$, 回复膜电位. 这样整个系统就周而复始的运转起来, 产生震荡.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Mechanistic_Model.png&quot; alt=&quot;Mechanistic Model&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;进一步研究发现, 可以通过调节模型中的$g_{K_{Ca}}$通道的密度, 改变震荡频率与衰减频率, 换言之, 只要连续改变不同细胞内的$K_{Ca}$通道的蛋白表达量, 即可得到对输入信号在空间上的频率分解了!!&lt;/p&gt;
+
+&lt;p&gt;在知道谜底时, 我对进化的足智多谋(resourceful)佩服得五体投地—用不了机械工程(Mechanical Engineering)的办法, 就用生化电生理(Biochem/Electrical engineering)的办法来解决频率选择问题!&lt;/p&gt;
+
+&lt;p&gt;事实上, 在感知觉系统中, 不同生物都面临着相似的”工程”问题的挑战, 而就像其他工程问题一样, 问题总有许多的解决方案, 但最终选择哪一种, 依赖于许多物质条件的限制, 而不只是最优性. 而在一些更低等动物简单的狭小的神经系统中, 我们更会被那些有限资源下令人惊艳的”设计”所震撼, 比如这个故事中的”设计”—-采用两个相互耦合的离子通道(电压依赖Ca2+通道与Ca+
+依赖的K+通道) 组成震荡的动力系统已然让人惊叹; 而用细胞内在的震荡频率(intrinsic frequency)作为对输入频率的选频器更是让人击节称叹; 在这个设计下, 不同细胞里不同的通道的表达量(expression level), 即可调节通道密度(channel density)这个参数来调节动力系统的内在震荡频率, 从而组成空间分频阵列, 形成Frequency Place Code. 只能说, 如果让我解决这个工程问题, 我有限的知识与智力一定想不出这么简洁优美的办法, 在生物系统中实现.&lt;/p&gt;
+
+&lt;h2 id=&quot;听毛细胞震荡的数学模型&quot;&gt;听毛细胞震荡的数学模型&lt;/h2&gt;
+&lt;p&gt;(如果您对数学模型一点没有兴趣, 这一部分可以直接跳过! 但如果像一些读文章喜欢直接看图看公式的人, 或是对计算神经/生物模型有过一点了解, 或者对这篇文章的主题有学术兴趣的人, 这一部分就是为您准备的~)&lt;/p&gt;
+
+&lt;p&gt;那么这个机制性的计算模型是如何搭建的呢? 具体的若要写成方程组就是, 膜电压方程:&lt;/p&gt;
+
+\[C\frac{dV}{dt}=-I_{Ca}-g_{K_{Ca}}(V-E_K)-g_L(V-E_L)\]
+
+&lt;p&gt;类似Hodgkin, Huxley在巨型乌贼上研究动作电位时开发的模型, 这里的电压依赖钙电流也可以写成类似的形式: 电流3次依赖于门控变量$m$, $m$以一阶动力学依赖于电压决定的平衡值与时间常数. 其中流入的Ca电流是&lt;/p&gt;
+
+\[I_{Ca}=\bar{g_{Ca}} m(t)^3 (V-E_{Ca})\]
+
+&lt;p&gt;门控变量的动力学为&lt;/p&gt;
+
+\[dm/dt = \beta_m (1-m) -\alpha_m m\\
+\alpha_{m}=\alpha_{0}\exp\left[-\left(V_{\mathrm{m}}+V_{0}\right)/V_{\mathrm{A}}\right]+K_{\mathrm{A}}\\
+\beta_{m}=\beta_{0}\exp\left[\left(V_{\mathrm{m}}+V_{0}\right)/V_{\mathrm{B}}\right]+K_{\mathrm{B}}\]
+
+&lt;p&gt;进一步, 靠近细胞膜处钙离子浓度动力学被过膜的钙电流与钙自身的扩散决定,&lt;/p&gt;
+
+\[\frac{d[\mathrm{Ca}^{2+}]}{dt}=UI_{Ca}/(zFC_{vol}\xi)-K_{s}[Ca^{2+}]\]
+
+&lt;p&gt;而他们还做了非常精细的单通道电生理测量, 对Ca依赖的K通道采用了5状态转换模型. 钙离子影响K通道的动力学由经典的通道动力学模型决定, 
+&lt;img src=&quot;/assets/img/posts/hair_cell/Channel_States.png&quot; alt=&quot;Channel_States&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;具体的微分方程组可以按照上图以质量作用定律如下写出, 作者在论文中还加入了一些解离速率对膜电位的依赖, 此处不再赘述.&lt;/p&gt;
+
+\[\mathrm{d}C_{0}/\mathrm{d}t=k_{-1}C_{1}-k_{1}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}C_{\mathrm{o}}\\
+\mathrm{d}C_{1}\mathrm{d}t=k_{1}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}C_{0}+k_{-2}C_{2}-\left(k_{-1}+k_{2}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}\right)C_{1}\\
+\mathrm{d}C_{2}/\mathrm{d}t=k_{2}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}C_{1}+\alpha_{\mathrm{C}}O_{\mathrm{2}}-\left(k_{-2}+\beta_{\mathrm{C}}\right)C_{\mathrm{z}}\\
+\mathrm{d}O_{2}/\mathrm{d}t=\beta_{\mathrm{c}}C_{2}+k_{-3}O_{3}-\left(\alpha_{\mathrm{C}}+k_{3}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}\right)O_{\mathrm{2}}\\
+\mathrm{d}O_{3}/\mathrm{d}t=k_{3}\left[\mathrm{Ca}^{2+}\right]_{\mathrm{i}}O_{2}-k_{-3}O_{3}\\\]
+
+&lt;p&gt;而$g_{K_{Ca}}$的开放程度由处于最后两个开放状态$O_2,O_3$的通道数量决定.&lt;/p&gt;
+
+\[g_{K_{Ca}}=\overline{g}_{K_{Ca}}(O_{2}+O_{3})\]
+
+&lt;p&gt;这样, 整个系统作为一个巨大的常微分方程组(ODE)就闭环了! 通过许多电生理实验确定相应参数后, 用计算机模拟这个模型, 可以得到与实验测量定性相仿的电压震荡曲线, 如下图所示, 定性模拟得很好! 而且改变实验条件(如$Ca^{2+}$浓度, 施加药物堵塞通道), 测量到的震荡频率变化曲线, 也可用模型参数变化导致的频率变化曲线来极好的拟合. 可以说是一个极其成功的生物物理模型了.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/hair_cell/Model_Validation.png&quot; alt=&quot;Model Validation&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+&lt;p&gt;这个故事是在最近的Cell Neurobiology课上听到, 当场就被惊艳到, 并决定写个post督促自己学习下. 查了文章才发现, 这一系列的实验、模型工作是30年前的, 大致在1980-1990左右完成&lt;sup id=&quot;fnref:8&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;, 完全可以想见那时人们第一次看到细胞膜上能记录到如电路般漂亮的震荡电压时的震撼与惊喜.&lt;/p&gt;
+
+&lt;p&gt;从这个故事可以得到这样几个有益的教训(lesson):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;基于很好的单细胞电生理数据, 能做出很棒的唯象模型. 而根据唯象模型可以去猜测推断通道的机制, 进而能做出从机制出发搭建出完整的机制模型(mechanistic model), 再根据模型的预测与测量比对验证. (有时觉得能遇到这样漂亮数据的生物物理学家真的三生有幸. 看到那样干净的电震荡数据, 哪怕是物理系的本科生, 脑子里大概也能立即蹦出几个电路模型来)&lt;/li&gt;
+  &lt;li&gt;然而要实际验证这些模型的推断则需要pharmacology药物干扰, 确定通道类型; 进行精细的patch clamp实验, 确定电生理参数; 精细的验证不同输入条件下模型的行为(behavior)与细胞一致. &lt;sup id=&quot;fnref:4:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; 最后才能肯定这是一个好模型. 模型是一个开始, 而从不是终结.
+    &lt;ol&gt;
+      &lt;li&gt;这也会促使我们去想, 现在的System Neuroscience, 特别是对cortex的建模中, 什么样的模型是可能的呢? 什么样的模型是可验证的呢? 恐怕由于参数数量的巨大, 和测量数据的稀疏, 所能做的验证总十分有限, 模型通常的预测能力也就很捉急了.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;不同寻常的模型生物身上, 也许有着很不同的问题解决策略, (文中所说的机制是在乌龟, 小鸡和牛蛙等生物身上得到的). 需要注意, 低等动物的问题解决策略不一定就简单, 反而可能更令人称叹! 高等动物的解决方案也不一定就复杂. (Cf. Sebastian Seoug, 一些高等动物的皮层(Cortex)也许比线虫(C Elegans)和视网膜(Retina)更容易理解)&lt;/li&gt;
+  &lt;li&gt;硬币的另一面, 这个故事虽然极其美丽, 但可推广性也许比较有限, 应用价值也不一定就很大. (也许可以开发基因疗法帮助你家的乌龟治疗听力损伤?) 不过, 这也是在post里选择讲这个故事的原因: 去展现一些美丽而无用的东西, 而这是科学与自然(Science and Nature)本来的样子.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;这篇post是一系列试图以容易的方式解释Neuroscience的一部分, 大概也是我对自己写作能力的训练了. 写作于Oct.15th-Oct.29th期间. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Narayan, S. S., Temchin, A. N., Recio, A., &amp;amp; Ruggero, M. A. (1998). &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3578392/&quot;&gt;Frequency tuning of basilar membrane and auditory nerve fibers in the same cochleae&lt;/a&gt;. Science (New York, N.Y.), 282(5395), 1882-4. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:2:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:9&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;事实上正是因为耳蜗的位置编码理论, 现代的人工耳蜗植入物(Cochlea Implant)便是将输入声音分解成不同频段成分输送给耳蜗不同位置的听纤维的. 换言之, 是使用电子电路代替耳蜗完成了频率分选的任务. &lt;a href=&quot;#fnref:9&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Fettiplace, Robert. “Electrical tuning of hair cells in the inner ear.” Trends in Neurosciences 10.10 (1987): 421-425. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Crawford, A. C., &amp;amp; Fettiplace, R. (1981). An electrical tuning mechanism in turtle cochlear hair cells. The Journal of Physiology, 312(1), 377-412. (电学唯象模型文章) &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:5:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Hudspeth, A. J., and R. S. Lewis. “Kinetic analysis of voltage‐and ion‐dependent conductances in saccular hair cells of the bull‐frog, Rana catesbeiana.” The Journal of Physiology 400.1 (1988): 237-274. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:4:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Hudspeth, A. J., &amp;amp; Lewis, R. S. (1988). A model for electrical resonance and frequency tuning in saccular hair cells of the bull‐frog, Rana catesbeiana. The Journal of physiology, 400(1), 275-297. (这两篇背靠背文章加起来有60页也是那个时代研究者的风范了. 两篇文章在超长篇幅里做了极其全面的研究, 从电生理, 药物, 单通道测量到模型, 计算, 理论工作, 十分扎实.) &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;当然这个猜测不唯一, 可能是电流输入引发了细胞自身的机械振动, 声音脉冲也引起了机械振动, 是震动开启了膜电位震荡. &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:8&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;事实上, 那几年有大量关于听毛细胞的基本电生理属性的经典工作被完成. 而这篇科普引用的几篇论文的作者A. James Hudspeth, Robert Fettiplace也刚在2018年获得了&lt;a href=&quot;http://kavliprize.org/events-and-features/2018-kavli-prize-neuroscience-conversation-robert-fettiplace-james-hudspeth-and&quot;&gt;Kavli Prize for Neuroscience&lt;/a&gt;. 也是很巧了. &lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Binxu Wang</name></author><category term="This Week's Learning" /><category term="Auditory Neuroscience" /><category term="Sensory System" /><category term="Neural Circuit" /><category term="Biophysics" /><summary type="html">引言: 感觉系统 一直以来我都被这个简单的事实深深震撼: 我们的心智(mind)其实一直都生活在一个密不透风, 不见天日的黑匣子里(Skull), 但因为我们无比强大的感觉系统(Sensory System), 我们才能在神经信息处理的过程中渲染出这样清晰美妙的主观现实, 并无缝的与这个世界交互. 感觉系统就是这个探测外在物理环境转换成主观现实的存在呀. 1 这篇post是一系列试图以容易的方式解释Neuroscience的一部分, 大概也是我对自己写作能力的训练了. 写作于Oct.15th-Oct.29th期间. &amp;#8617;</summary></entry></feed>

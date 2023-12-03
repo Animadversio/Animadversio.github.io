@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Lyapnov Stability Theory | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Lyapnov Stability Theory" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Stability Theory" />
+<meta property="og:description" content="Stability Theory" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Lyapnov Stability Theory" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Stability Theory","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability","headline":"Note on Lyapnov Stability Theory","dateModified":"2021-04-09T00:00:00+00:00","datePublished":"2021-04-09T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Lyapnov Stability Theory">
+    <meta name="twitter:description" content="Stability TheoryMotivationWe want to know for a dynamic system, in this note majorly autonomous system, when it is stable? The meaning of stability? If it’s ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Lyapnov Stability Theory">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Lyapnov Stability Theory " aria-label="Note on Lyapnov Stability Theory" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Lyapnov+Stability+Theory" class="title">Note on Lyapnov Stability Theory</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      April 09, 2021
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="stability-theory">Stability Theory</h1>
+
+<h2 id="motivation">Motivation</h2>
+<p>We want to know for a dynamic system, in this note majorly autonomous system, when it is stable? The meaning of stability? If it’s stable how to prove so. 
+Majorly we are going to use Lyapnov functions and spectral properties of linearized system to prove.</p>
+
+<h2 id="definitions">Definitions</h2>
+<p><strong>Definitions</strong> Given a system $\dot x=f(x)$, and a equilibrium point $f(x^<em>)=0$ let it be $x^</em>=0$. The equilibrium point is</p>
+
+<ul>
+  <li>Stable: $\exists \delta,\epsilon, |x(0)|&lt;\delta \implies \forall t&gt;0,|x(t)|&lt;\epsilon$
+    <ul>
+      <li><em>Interpret</em>: Points starts around fix point, stays around it.</li>
+    </ul>
+  </li>
+  <li>Unstable: When it’s not stable.</li>
+  <li>Attractive: $\exists \delta,|x(0)|&lt;\delta \implies |x(t)|\to 0,when\; t\to\infty$
+    <ul>
+      <li><em>Interpret</em>: Points starts around fix point, converge to it finally.</li>
+      <li><em>Note</em>: A equilibrium can be attractive without being stable. (Saddle on Limit Cycle)</li>
+    </ul>
+  </li>
+  <li>Asymptotic stable: Attractive and stable
+    <ul>
+      <li><em>Interpret</em>: points starts around fix point, stays around and converge finally.</li>
+    </ul>
+  </li>
+  <li>Exponentially stable: $\exists \delta,|x(0)|&lt;\delta \implies \forall t, |x(t)|\leq ce^{-\alpha t}$, for $c,\alpha&gt;0$
+    <ul>
+      <li><em>Interpret</em>: Points converge to fix point, can be bounded by exponential.</li>
+      <li><em>Note</em>: $ES\implies AS$</li>
+    </ul>
+  </li>
+  <li>Globally Asymptotic Stable: For all initial $x_0$</li>
+  <li>Globally Exponentially Stable: For all initial $x_0$</li>
+</ul>
+
+<p><strong>Comments</strong>:</p>
+<ul>
+  <li>Stability concept refers to a fixed point, not a system; but for LTI, you can say stability of a system.</li>
+</ul>
+
+<h3 id="comments-for-linear-system">Comments for Linear System</h3>
+<p><strong>Comments for Linear System</strong></p>
+
+<p>For Linear system (LTI)</p>
+<ul>
+  <li>Asymptotic stable $\equiv$ Exponentially Stable</li>
+</ul>
+
+<p>Linear system $\dot x=Ax$ has one or infinite equilibrium points.</p>
+<ul>
+  <li>LTI can be AS/ES only when it has only 1 equilibrium point.</li>
+  <li>When LTI has infinite equilibrium point, it’s stable or unstable.</li>
+</ul>
+
+<p><strong>Criterion</strong>
+<strong>Stable for LTI</strong>:</p>
+<ul>
+  <li>If and only if, for $A$
+    <ul>
+      <li>For the eigen space that geometric multiplicity equal to algebraic multiplicity, $\Re \lambda\leq 0$</li>
+      <li>For the eigen space that geometric multiplicity less than algebraic multiplicity, $\Re \lambda&lt; 0$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Asymptotic / Exponentially Stable for LTI</strong>:</p>
+<ul>
+  <li>If and only if $\Re \lambda_i&lt;0$, for $A$.
+    <ul>
+      <li>Also known as $A$ is a Hurwitz matrix.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="spectral-stability-theorems-lyapnovs-first-methods">Spectral Stability Theorems (Lyapnov’s First Methods)</h2>
+<p><strong>Lyapnov’s First Methods</strong>: For a system $\dot x=f(x)$, with a fix point $x^* $, consider the Jacobian of it at fix point $J=\partial f/\partial x$</p>
+
+<ul>
+  <li>If $\Re\lambda_i&lt;0,\forall i$, then the fix point is asymptotically stable.</li>
+  <li>If $\Re\lambda_i&gt;0,\exists i$, then the fix point is unstable.</li>
+  <li>If $\Re\lambda_i=0,\exists i$, then cannot decide.</li>
+</ul>
+
+<p><em>Comments</em>: This connects to the stable and unstable manifold theorems.</p>
+
+<h2 id="lyapnov-functions-stability-theorems-lyapnovs-second-methods">Lyapnov Functions Stability Theorems (Lyapnov’s Second Methods)</h2>
+
+<p><strong>Lyapnov Main Theorem</strong>: Given a system $\dot x=f(x)$, with a fix point $x^* $. If exists a C1 function $V:D\to\mathbb R$</p>
+
+<ol>
+  <li>$V(x)$ is pos.def. on $D$</li>
+  <li>$\dot V(x)$ is neg.semi.def. on $D$</li>
+  <li>$\dot V(x)$ is neg.def. on $D$</li>
+</ol>
+
+<p>With 1,2 the system is stable at $x^\ast$, with 1,3 system is asymptotic stable at $x^\ast$.</p>
+
+<p><strong>Comments</strong>:</p>
+<ul>
+  <li>Existence of Lyapnov function is sufficient but not necessary for stable fix point. See <a href="#Converse-Stability-Theorems">Converse Theorems</a></li>
+</ul>
+
+<p><strong>Chetaev Instability Theorem</strong>: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$</p>
+
+<ol>
+  <li>$x^*$ is on the boundary of $G={V(x)&gt; 0}$, which implies
+    <ul>
+      <li>$V(0)=0$</li>
+      <li>$0\in \partial\bar G$</li>
+    </ul>
+  </li>
+  <li>Exist a neighborhood $U$, $\dot V(x)&lt;0,\forall x\in U\cap G$</li>
+</ol>
+
+<p><em>Interpret</em>: There is a direction or space that $x$ will leave fix point and keep increase $V$.</p>
+
+<p><strong>Barbashin-Krasovskii theorem for Globally Asymptotic stable</strong>: Given a system $\dot x=f(x)$, with a fix point $x^* $. If exists a C1 function $V:\mathbb R^n\to\mathbb R$</p>
+
+<ul>
+  <li>$V(x)$ is pos.def.</li>
+  <li>$V(x)$ is radially unbounded. $|x|\to\infty,V(x)\to\infty$</li>
+  <li>$\dot V(x)$ is neg.def.</li>
+</ul>
+
+<p><em>Note</em>: a radially unbounded $V$ guarantees the sublevel sets are bounded.</p>
+
+<p><strong>Lyapnov theorem for Exponentially Stability</strong>: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, and $\exists c_1,c_2,c_3,k&gt;0$ s.t. $\forall x\in D$</p>
+
+<ul>
+  <li>$c_1|x|^k\leq V(x)\leq c_2|x|^k$</li>
+  <li>$\dot V(x)\leq - c_3|x|^k$</li>
+</ul>
+
+<p>Alternative <strong>Lyapnov theorem for Exponentially Stability</strong>: Given a system $\dot x=f(x)$, with a fix point $x^*=0 $. If exists a C1 function $V:D\to\mathbb R$, $\exists \alpha$ s.t. $\forall x$</p>
+
+<ul>
+  <li>$V(x)$ is pos.def.</li>
+  <li>$\dot V(x)\leq -\alpha V(x)$</li>
+</ul>
+
+<p><em>Interpret</em>:</p>
+<ul>
+  <li>$V(x)$ is bounded by a parabola type thing up and down. so is $\dot V(x)$ bounded to be more negative than a parabola</li>
+</ul>
+
+<h2 id="invariance-set-theorems">Invariance Set Theorems</h2>
+<blockquote>
+  <p>This theorem is useful to assist Lyapnov main theorem, when $\dot V(x)$ is neg.semi.def. in the domain.</p>
+</blockquote>
+
+<p><strong>LaSalle Theorem</strong></p>
+
+<h2 id="lyapnovs-indirect-method">Lyapnov’s Indirect Method</h2>
+
+<h3 id="stability-criterion-for-lti">Stability Criterion for LTI</h3>
+<p>For LTI system $\dot x=Ax$, the criterion above could be reduced to a linear algebraic problem.</p>
+
+<p><strong>Lyapnov Equation</strong> $A^T P+PA=-Q$, Given $A$ any n-by-n matrix; $Q$ is positive definite symmetric matrix; Solving $P$ as positive definite matrix.</p>
+
+<p><strong>Theorem</strong>: There exists a positive definite $P$ solution for any a positive definite $Q$. $\equiv$  $A$ is Hurwitz matrix.</p>
+<ul>
+  <li>Further if $A$ is Hurwitz, $P$ is unique for $Q$</li>
+</ul>
+
+<p><em>Interpret</em>:</p>
+<ul>
+  <li>If a LTI system is exponentially or asymptotic stable, then there is a quadratic Lyapnov function to prove it.
+    <ul>
+      <li>Given a stable linear system, we can pick a $Q$, solve Lyapnov Equation to get $P$.</li>
+      <li>Then we can define $V(x)=x^TPx$, this $V(x)$ will be a Lyapnov function. We can test this function for the non linear system</li>
+      <li>For this $V$, $\dot V=-x^TQx$ will be negative definite, so it’s Lyapnov function.</li>
+    </ul>
+  </li>
+  <li>In fact, it’s proven that $P$ equals, but this is too hard for computation. solving linear algebra is easier.</li>
+</ul>
+
+\[P=\int_0^\infty e^{A^T\tau}Qe^{A\tau}d\tau\]
+
+<ul>
+  <li>Numerically we solve it by <code class="language-plaintext highlighter-rouge">lyap</code> in <code class="language-plaintext highlighter-rouge">matlab</code>.</li>
+</ul>
+
+<p><strong>Lyapnov’s Indirect Method(Connection of LTI and Nonlinear Exponentially Stability)</strong> For system $\dot x=f(x)$, $f$ is C1 and for a $r&gt;0$ the Jacobian map $x\to df_x$ is Lipschitz on $B_r(0)$, then the followings are equivalent.</p>
+
+<ul>
+  <li>$x^*$ is the exponentially stable fix point of the non linear system</li>
+  <li>$x^*$ is an exponentially stable / asymptotic stable fixed point for the linearized system</li>
+  <li>$A=df_{x^*}$ is a Hurwitz matrix</li>
+</ul>
+
+<p><em>Interpret</em>:</p>
+
+<ul>
+  <li>
+    <p>This is a very strong connection of linearized and nonlinear exponential stability. Spatial geometry + convergence speed.</p>
+  </li>
+  <li>
+    <p>If the linearized matrix has Eigenvalue on imaginary axis, then the fixed point <strong>will not be exponentially stable</strong>, i.e. it will not converge exponentially on some dimension.</p>
+  </li>
+</ul>
+
+<h2 id="converse-stability-theorems">Converse Stability Theorems</h2>
+<p>Converse Stability Theorems describes the existence of Lyapnov function given the Stability properties of a fixed point.</p>
+
+<p><strong>Converse Asymptotic Stability (Massera)</strong> For $\dot x=f(x)$, $x^*=0$ is an asymptotic stable equilibrium point. $f(x)$ is locally Lipschitz on $\chi$</p>
+
+<ul>
+  <li>Then there exists a ball $B_r(0)$, $r&gt;0$ and C1 function $B_r(0)\to \mathbb R$, satisfying
+    <ol>
+      <li>$V(x)$ is pos.def. at 0.</li>
+      <li>$\dot V(x)$ is neg.def at 0.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>If $x^*=0$ is globally asymptotic stable (GAS) and $\chi=\mathbb R^n$</p>
+
+<ul>
+  <li>Then there exist a C1 function $V:\mathbb R^n\to \mathbb R$ satisfying
+    <ol>
+      <li>$V$ is radially unbounded</li>
+      <li>$V(x)$ is pos.def. at 0.</li>
+      <li>$\dot V(x)$ is neg.def at 0.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><strong>Converse Asymptotic Stability with Domain of Attraction</strong> For $\dot x=f(x)$, $x^*=0$ is an asymptotic stable equilibrium point. Its domain of attraction is $D_0$. Suppose $f(x)$ is locally Lipschitz on $\chi$</p>
+
+<ul>
+  <li>Then exist a C1 function $V:D_0\to \mathbb R$ satisfying
+    <ol>
+      <li>$V(x)$ is pos.def at 0</li>
+      <li>$V(x)\to+\infty,when\;x\to\partial D_0$. (<em>Radially unbounded</em>)</li>
+      <li>$\forall c&gt;0$, $\Omega_c={x\mid V(x)\leq c}$ is compact subset of $D_0$</li>
+      <li>$\dot V(x)$ is neg.def. at 0</li>
+    </ol>
+  </li>
+</ul>
+
+<p><em>Interpret</em>: The $V$ is a perfect Lyapnov function describing the shape of the domain of attraction.</p>
+
+<p><strong>Converse Exponentially Stability</strong> For $\dot x=f(x)$, $x^*=0$ is an exponentially stable equilibrium point. $f(x)$ is locally Lipschitz on $\chi$.</p>
+
+<ul>
+  <li>Then there exists a ball $B_r(0)$, $r&gt;0$ and function $B_r(0)\to \mathbb R$, satisfying
+    <ol>
+      <li>$c_1 |x|^2\leq V(x)\leq c_2|x|^2$</li>
+      <li>$\dot V(x)\leq c_3 |x|^2$</li>
+      <li>$|\partial V/ \partial x|\leq c_4 |x|$</li>
+      <li>With $c_1,c_2,c_3,c_4&gt;0$</li>
+    </ol>
+  </li>
+</ul>
+
+<p><em>Interpret</em>: The $V$ is a quadratic type function.</p>
+
+<ul>
+  <li><a href="http://www.diag.uniroma1.it/~oriolo/amr/material/stability.pdf">Oriolo</a></li>
+  <li><a href="https://web.stanford.edu/class/ee363/lectures/lyap.pdf">Stanford ee363</a></li>
+</ul>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Lyapnov+Stability+Theory%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-nonlinear-system-stability"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability&quote=Note+on+Lyapnov+Stability+Theory%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability&media=$description=Stability+Theory%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability&title=Note+on+Lyapnov+Stability+Theory%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability&title=Note+on+Lyapnov+Stability+Theory%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Lyapnov Stability Theory%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-nonlinear-system-stability"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Control+Theory">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Control Theory</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Dynamic+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Dynamic System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Geometry">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Geometry</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Bifurcation Normal Form" href="/academic_notes/note-on-bifurcation-normal-form">
+            <p>Previous post</p>
+            Note on Bifurcation Normal Form
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Nonlinear Dynamic System" href="/academic_notes/note-on-nonlinear-dynamic-system">
+            <p>Next post</p>
+            Note on Nonlinear Dynamic System
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

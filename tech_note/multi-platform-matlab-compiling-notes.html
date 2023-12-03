@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Multi-platform Matlab compiling | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Multi-platform Matlab compiling" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Multi-platform Matlab compiling" />
+<meta property="og:description" content="Multi-platform Matlab compiling" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Multi-platform Matlab compiling" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Multi-platform Matlab compiling","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes","headline":"Multi-platform Matlab compiling","dateModified":"2019-11-03T00:00:00+00:00","datePublished":"2019-11-03T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Multi-platform Matlab compiling">
+    <meta name="twitter:description" content="Multi-platform Matlab compilingWhen trying to compile a matlab code, I faced and solved many errors either on the Windows platform and the MacOS platform. He...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Multi-platform Matlab compiling">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Multi-platform Matlab compiling " aria-label="Multi-platform Matlab compiling" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Multi-platform+Matlab+compiling" class="title">Multi-platform Matlab compiling</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 03, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="multi-platform-matlab-compiling">Multi-platform Matlab compiling</h1>
+
+<p>When trying to compile a matlab code, I faced and solved many errors either on the Windows platform and the MacOS platform. Here I note some prominent difference across platform and how to debug the compiling process.</p>
+
+<h2 id="concept">Concept</h2>
+<p>There are 2 types of compilation in <code class="language-plaintext highlighter-rouge">matlab</code>.</p>
+<ul>
+  <li>Matlab compiler is compiling matlab code <code class="language-plaintext highlighter-rouge">*.m</code> into standalone executive files, like <code class="language-plaintext highlighter-rouge">.exe</code> such that it can run on its own.</li>
+  <li><code class="language-plaintext highlighter-rouge">mex</code> is compiling code written in other languages into <code class="language-plaintext highlighter-rouge">mex</code> file such that it can interact with matlab code, through some <code class="language-plaintext highlighter-rouge">Matlab data API</code></li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>If they use <code class="language-plaintext highlighter-rouge">mcc</code>, needs MCC (matlab compiler) add-on for matlab</li>
+  <li><code class="language-plaintext highlighter-rouge">mex</code> uses some compiler to compile the foreign code.</li>
+  <li>Choose the c compiler for  by checking <code class="language-plaintext highlighter-rouge">mex -setup</code> or <code class="language-plaintext highlighter-rouge">mex -setup c++</code> You will see.
+    <blockquote>
+      <p>MEX configured to use ‘Microsoft Visual C++ 2017 (C)’ for C language compilation.
+Warning: The MATLAB C and Fortran API has changed to support MATLAB
+   variables with more than 2^32-1 elements. You will be required
+   to update your code to utilize the new API.
+   You can find more information about this at:
+   https://www.mathworks.com/help/matlab/matlab_external/upgrading-mex-files-to-use-64-bit-api.html.
+To choose a different C compiler, select one from the following:
+<strong>MinGW64 Compiler (C)</strong>  <em>mex -setup:’C:\Program Files\MATLAB\R2019a\bin\win64\mexopts\mingw64.xml’ C</em>
+<strong>Microsoft Visual C++ 2017 (C)</strong>  <em>mex -setup:C:\Users\binxu\AppData\Roaming\MathWorks\MATLAB\R2019a\mex_C_win64.xml C</em>
+To choose a different language, select one from the following:
+ <code class="language-plaintext highlighter-rouge">mex -setup C++ </code>
+ <code class="language-plaintext highlighter-rouge">mex -setup FORTRAN</code></p>
+    </blockquote>
+  </li>
+  <li>On windows, you can change the compiler just by clicking the link!</li>
+  <li>On macOS you cannot. The gcc it use is usually the <code class="language-plaintext highlighter-rouge">Clang</code> compiler coming with <code class="language-plaintext highlighter-rouge">Xcode</code>. Thus it’s different from <code class="language-plaintext highlighter-rouge">gcc</code> and some options are not supported by <code class="language-plaintext highlighter-rouge">Clang</code> like <code class="language-plaintext highlighter-rouge">gcc -fopenmp</code>.
+    <ul>
+      <li>If you want to use authentic <code class="language-plaintext highlighter-rouge">gcc</code> instead, you have to install it yourself. Like <code class="language-plaintext highlighter-rouge">homebrew install gcc</code> or <code class="language-plaintext highlighter-rouge">homebrew update gcc</code></li>
+      <li>And then change the <code class="language-plaintext highlighter-rouge">mex</code>  command like <code class="language-plaintext highlighter-rouge">mex CC="/usr/local/bin/gcc-9 -fopenmp" LD="/usr/local/bin/gcc-9 -fopenmp" xxx.c</code>. Using the path to real <code class="language-plaintext highlighter-rouge">gcc</code> to substitute! (Note MacOS automatically alias <code class="language-plaintext highlighter-rouge">gcc</code> with the Clang compiler, so we have to use <code class="language-plaintext highlighter-rouge">gcc-9</code> for the real one.)</li>
+    </ul>
+  </li>
+  <li>For official reference see <a href="https://www.mathworks.com/help/releases/R2019a/matlab/matlab_external/changing-default-compiler.html?lang=en">Change Default Compiler</a></li>
+</ul>
+
+<h2 id="debugging-notes-for-multi-platform-compiling">Debugging Notes for multi-platform compiling</h2>
+
+<ul>
+  <li>Some library may have different names on different platforms like <code class="language-plaintext highlighter-rouge">winsock2.h</code> is used instead of</li>
+  <li>The pre-compiling flags are used to choose which lib / header to use <code class="language-plaintext highlighter-rouge">#if !defined(WIN32) &amp;&amp; !defined(_WIN64)</code> so some win32 flag may not be identified in win64 machine. Needs to modify that to make it work.
+    <ul>
+      <li>Note <code class="language-plaintext highlighter-rouge">WIN32</code> may not be recognized, so use <code class="language-plaintext highlighter-rouge">_WIN32</code> or <code class="language-plaintext highlighter-rouge">__WIN32__</code> instead</li>
+      <li>Look into <a href="http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system">this table</a> for the difference</li>
+    </ul>
+  </li>
+  <li>The language and command in terminal is different in linux, mac and windows, should change for that. like <code class="language-plaintext highlighter-rouge">rm -rf</code> in unix and <code class="language-plaintext highlighter-rouge">DEL -rf</code> in windows</li>
+  <li>The midfile generated in C code compilation differs in unix and windows. <code class="language-plaintext highlighter-rouge">.o</code> vs <code class="language-plaintext highlighter-rouge">.obj</code></li>
+  <li>Note if some external function is not found. It normally means some library is not linked or imported properly. So find the target library (which the function resides). and to include it!
+    <blockquote>
+      <p>Error using mex
+ Creating library mslisten.lib and object mslisten.exp
+mslisten.obj : error LNK2019: unresolved external symbol __imp_bind referenced in function mexFunction
+mslisten.obj : error LNK2019: unresolved external symbol __imp_closesocket referenced in function mexFunction</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Only <code class="language-plaintext highlighter-rouge">#include &lt;winsock2.h&gt;</code> will cause the error above. And we should import the corresponding library as well. 
+<code class="language-plaintext highlighter-rouge">#pragma comment(lib, "Ws2_32.lib")</code>
+(the meaning of <code class="language-plaintext highlighter-rouge">#pragma comment</code> is to add an additional dependent library to the object file, before going into linker.  <a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/7f0aews7(v=vs.120)?redirectedfrom=MSDN">MSDN Doc</a>,  <a href="https://stackoverflow.com/questions/3484434/what-does-pragma-comment-mean">Q&amp;A</a>)</p>
+
+<p>So the final debugged C code header looks like, and it can be compiled via <code class="language-plaintext highlighter-rouge">mex -I. msconnect.c</code></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if !defined(_WIN32) &amp;&amp; !defined(_WIN64)
+#include</span> <span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/select.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;netdb.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;arpa/inet.h&gt;</span><span class="cp">
+#else
+#include</span> <span class="cpf">&lt;winsock2.h&gt;</span><span class="cp">
+#pragma comment(lib, "Ws2_32.lib")
+#endif
+</span></code></pre></div></div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Multi-platform+Matlab+compiling%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fmulti-platform-matlab-compiling-notes"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes&quote=Multi-platform+Matlab+compiling%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes&media=$description=Multi-platform+Matlab+compiling%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes&title=Multi-platform+Matlab+compiling%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes&title=Multi-platform+Matlab+compiling%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Multi-platform Matlab compiling%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/multi-platform-matlab-compiling-notes"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#C">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> C</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#compilation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> compilation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#matlab">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> matlab</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#multi-platform">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> multi-platform</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Computer Graphics Environment in Matlab" href="/tech_note/computer-graphics-in-matlab">
+            <p>Previous post</p>
+            Computer Graphics Environment in Matlab
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Working with Caffe" href="/tech_note/working-with-caffe">
+            <p>Next post</p>
+            Working with Caffe
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

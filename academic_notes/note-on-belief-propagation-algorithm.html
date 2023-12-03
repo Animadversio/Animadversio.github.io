@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Belief Propagation Algorithm (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Belief Propagation Algorithm (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Belief Propagation Algorithm (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm","headline":"Note on Belief Propagation Algorithm (Updating)","dateModified":"2019-05-18T00:00:00+00:00","datePublished":"2019-05-18T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Belief Propagation Algorithm (Updating)">
+    <meta name="twitter:description" content="  Objective of Algorithm 目标  Graphical Models： What relates graph to probability?  Energy Formalism  Algorithm 算法形式  Derivation 推导  Intuition 算法的直观理解  Conver...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Belief Propagation Algorithm (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Belief Propagation Algorithm (Updating) " aria-label="Note on Belief Propagation Algorithm (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Belief+Propagation+Algorithm+%28Updating%29" class="title">Note on Belief Propagation Algorithm (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 18, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#objective-of-algorithm-目标" id="markdown-toc-objective-of-algorithm-目标">Objective of Algorithm 目标</a></li>
+  <li><a href="#graphical-models-what-relates-graph-to-probability" id="markdown-toc-graphical-models-what-relates-graph-to-probability">Graphical Models： What relates graph to probability?</a></li>
+  <li><a href="#energy-formalism" id="markdown-toc-energy-formalism">Energy Formalism</a></li>
+  <li><a href="#algorithm-算法形式" id="markdown-toc-algorithm-算法形式">Algorithm 算法形式</a></li>
+  <li><a href="#derivation-推导" id="markdown-toc-derivation-推导">Derivation 推导</a></li>
+  <li><a href="#intuition-算法的直观理解" id="markdown-toc-intuition-算法的直观理解">Intuition 算法的直观理解</a></li>
+  <li><a href="#convergence--exactness-收敛性精确性" id="markdown-toc-convergence--exactness-收敛性精确性">Convergence / Exactness 收敛性、精确性</a></li>
+  <li><a href="#belief-propagation-in-hmm-forward-backward-algorithm" id="markdown-toc-belief-propagation-in-hmm-forward-backward-algorithm">Belief Propagation in HMM: Forward Backward Algorithm</a></li>
+  <li><a href="#belief-propagation-in-restricted-bolzmann-machine-rbm" id="markdown-toc-belief-propagation-in-restricted-bolzmann-machine-rbm">Belief Propagation in Restricted Bolzmann Machine (RBM)</a></li>
+  <li><a href="#appliction" id="markdown-toc-appliction">Appliction</a></li>
+</ul>
+
+<p>最近在阅读<sup id="fnref:0" role="doc-noteref"><a href="#fn:0" class="footnote" rel="footnote">1</a></sup>，是以为记。</p>
+
+<h2 id="objective-of-algorithm-目标">Objective of Algorithm 目标</h2>
+<p>Belief Propagation算法想解决的是Markov随机场，Bayes网络等图模型的边缘概率估计，以及求解最可能的状态的问题。</p>
+
+<p>有许多名字称呼这一General的算法，如sum-product, max-product, min-sum, Message Passing等，属于更general的Message Passing算法范畴。</p>
+
+<p>同时这一算法可以说是一种通用框架或者philosophy，因此在不同结构的模型中有许多著名的特例，这些具体算法也有各自的名字(如前向后向算法，Kalman Filter等等)</p>
+
+<p>对于统计学习问题，通常会区分模型与算法，模型设定一些假设，抽象现实的某个方面，建立问题的结构；而算法求解问题(很多时候是转化为优化问题来求解)。在这个post中将要介绍的Belief Propagation算法，属于后者，但为了理解他，我们首先需要理解他对应的模型，即概率图模型。</p>
+
+<h2 id="graphical-models-what-relates-graph-to-probability">Graphical Models： What relates graph to probability?</h2>
+<p>第一次接触概率图模型的人（像我）都会问，概率和图这两者有什么关系呢？ 我们知道图是一种直观的表征事物之间二元关系的方法通常由$(\mathcal V, \mathcal E)$定点和边组成。在概率图模型中，顶点通常代表随机变量，而边代表随机变量之间的关系。</p>
+
+<blockquote>
+  <p>Graph is a concise way to visualize the relationship (dependency / factorization) between the random variables of a probability distribution!</p>
+</blockquote>
+
+<p>There are many graphical models appearing in different names, but intrinsically very similar things.</p>
+
+<p><strong>Definitions</strong>:</p>
+
+<ul>
+  <li><strong>Bayes Network</strong> Bayes Network这种模型模拟的是变量间的条件概率关系，即有向边$A\to B$代表一种条件概率/变量间的依赖关系$P(B\mid A)$。因而这一模型经常伴随着因果关系的解释(Causal Interpretation). 见<a href="https://en.wikipedia.org/wiki/Bayesian_network#Example">示例</a>. 因而对应的图，就是有向无环图(Directed Acyclic Graph)。</li>
+  <li><strong>Markov Random Field</strong> MRF。
+    <ul>
+      <li>使得变量间满足条件独立性的图即马尔科夫随机场。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Conditional Random Field</strong> Similar to MRF.</p>
+  </li>
+  <li><strong>Graph Model</strong>: When there is only unary, binary relationship, then it is a <strong>graph model</strong>. (if there is dependency that include more than 2 variables than it will be a hypergraph.)</li>
+</ul>
+
+<p>对于图模型，一些常见的问题就是</p>
+
+<ul>
+  <li>最大化(Maximization): 寻找对于整个分布，最可能的状态(Most probable configuration)</li>
+  <li>边缘化(Marginalization)： 求某个或某几个随机变量的边缘分布
+    <ul>
+      <li>这两个问题都与EM算法的状态估计(E)一步紧密相关。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>而本文中的Belief Propagation算法就是求解这些问题的一个主要方法。</p>
+
+<!-- ## Basic Framework / Concepts-->
+
+<!-- ### Factor Graph-->
+
+<h2 id="energy-formalism">Energy Formalism</h2>
+
+<p>Note that the algorithm can be written in terms of joint probability maximization, or in terms of cost minimization. The 2 formulisms can be connected by a <strong>Statistical Physics</strong> point of view.</p>
+
+<p>In statistical physics models like Ising Model, the probability of a state happening is subject to the Bolztmann Distribution, which is exponentiating the negative energy. 
+\(p(\{s_i\})\propto\exp(-\beta H(\{s_i\}))\\
+H(\{s_i\})=\sum_iD(s_i)+\sum_{(i,j)\in \mathcal E}V(s_i,s_j)\\
+p(\{s_i\})\propto\prod_i\exp(-\beta D(s_i))\prod_{(i,j)\in \mathcal E}\exp(-\beta V(s_i,s_j))\)
+Thus the task of finding highest probability configuration is the same as finding the lowest energy configuration (ground state). 
+\(\arg\max_{\{s_i\}}p(\{s_i\}) = \arg\min_{\{s_i\}}H(\{s_i\})\)
+And in fact the dependency structure presented in the joint distribution $p({s_i})$, is also presented in the dependency structure of energy term $H({s_i})$.</p>
+
+<p>Thus, even for a pure Probabilistic Graph Model, we can take the $-\log(p)$ as energy and formulate the problem as a energy minimization problem.</p>
+
+<p>For the maximize probability case, the belief propagation is also termed as <em>Max-Product</em> algorithm. For the minimize energy case, the belief propagation is termed as <em>Min-Sum</em> Algorithm.</p>
+
+<p>Refer to <a href="http://stanford.edu/~montanar/TEACHING/Stat375/handouts/bp_book2.pdf">Stanford Belief Propagation Note</a></p>
+
+<h2 id="algorithm-算法形式">Algorithm 算法形式</h2>
+
+<p><strong>Min-Sum Algorithm</strong> for solving ground state configuration problem. 
+\(m^t_{pq}(f_q)=\min_{f_p} (V(f_p,f_q)+D(f_p)+\sum_{s\in\mathcal N(p)/q} m^{t-1}_{sp}(f_p))\\
+b^t_q(f_q)=D_q(f_q)+\sum_{p\in\mathcal N(q)}m^t_{pq}(f_q)\)
+<strong>Max-Product Algorithm</strong> for solving the most probable state (mode state) problem. If we have a model like 
+\(p(\{x_i\})\propto\prod_i\exp(\phi_i(x_i))\prod_{(i,j)\in\mathcal E}\exp(\psi_{ij}(x_i,x_j))\\\)
+Then the algorithm reads. 
+\(m^t_{ij}(x_j)\propto\max_{x_i}\exp(\phi_i(x_i))\exp(\psi_{ij}(x_i,x_j))\prod_{k\in \mathcal N(i)/j}m^{t-1}_{ki}(x_i)\\
+\sum_{x_j} m^t_{ij}(x_j)=1\\
+b^t_i(x_i)\propto \exp(\phi_i(x_i))\prod_{k\in \mathcal N(i)}m^{t}_{ki}(x_i)\\
+b^t_i(x_i,x_j)\propto \exp(\phi_i(x_i)+\phi_j(x_j)+\psi_{ij}(x_i,x_j))\prod_{k\in \mathcal N(i)/j}m^{t-1}_{ki}(x_i)\prod_{k\in \mathcal N(j)/i}m^{t}_{kj}(x_j)\)</p>
+
+<h2 id="derivation-推导">Derivation 推导</h2>
+
+<p>For tree structured graph, message passing algorithm can be derived from principle, which is the <strong>sum-product</strong> or <strong>max-product</strong> algorithm.</p>
+
+<p>When you try to marginalize / maximize a joint probability distribution, you can rearrange and commute the summation / maximization over some parameters to make it more efficient.</p>
+
+<p>For example, 
+\(p(x_{1:5})=\psi_{13}(x_1,x_3)\psi_{12}(x_1,x_2)\psi_{24}(x_2,x_4)\psi_{25}(x_2,x_5)\prod_i\phi_i(x_i)\)
+Marginalize to $p(x_1)$ requires summation over $x_{2:5}$. It could be done by passing messages from the leaves to the root which is $x_1$.</p>
+
+<p>Finding mode requires maximization over $x_{1:5}$. And it can be done by passing messages as well.</p>
+
+<p>When it is parallelized and generalized to Cyclic graph, it can still work fine, which becomes the <strong>loopy belief propagation algorithm</strong>.</p>
+
+<h2 id="intuition-算法的直观理解">Intuition 算法的直观理解</h2>
+
+<p>The intuition behind Belief Propagation / message passing algorithm is quite clear.</p>
+
+<p>The message $m^t_{pq}$ is what node $p$ ‘think’ node $q$ should be like, given node $p$ ‘s unary cost $D(f_p)$ and $pq$ ‘s interaction cost $V(f_p,f_q)$.</p>
+
+<p>The belief $b_q(f_q)$ is what node $q$ believes its state will be, given all the message passed from neighbors and its own cost $D_q(f_q)$.</p>
+
+<h2 id="convergence--exactness-收敛性精确性">Convergence / Exactness 收敛性、精确性</h2>
+<p>收敛性以及精确性决定于图的结构。</p>
+
+<p>当整个图的结构是树时，整个算法是解析上精确的。可以采用任意节点作为根节点并用到根节点距离作为次序，先从根节点开始message passing到叶子节点，再从叶子节点message passing返回。</p>
+
+<p>这个算法可以被并行化为parallel message passing algorithm, 每个节点单独计算message.</p>
+
+<p>当图中带有环(loop)时, 并没有统一的顺序可以进行message passing，整个算法也成为了近似估计，被称为Loopy Belief Propagation. 每个时刻每个节点sum up上个时刻周围节点的信息并生成新的message pass给周围节点。</p>
+
+<p>这一算法看似缺乏理论保证但许多实际问题中的表现很好，偶尔会奇妙的失败。更多关于Loopy Belief Propagation理论属性的解释可以参见<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-438-algorithms-for-inference-fall-2014/lecture-notes/MIT6_438F14_Lec15-16.pdf">MIT Note</a> .</p>
+
+<p>对于Loopy Belief Propagation, 一般实现所需要的时间复杂度是$O(Ek^2T)$, $n$ 是节点数量, $E$ 是边的数量, $k$ 是可能状态的数量，$T$是message passing的迭代次数。若网络不是非常稠密(如图片网格)，$E\sim O(n)$ 边的数量线性正比于节点数目。则复杂度是$O(nk^2T)$. 不过在许多实现中存在加速的办法不必显示计算$k^2$</p>
+
+<p>注意到Message propagation的速度是每个iteration只走一步，因此对于grid网络，需要足够长的时间$\sim n^{1/2}$才能使一个信息传遍整个网络，使得收敛速度可能很慢。 增加长距离连接以及multi-scale的网络可以帮助解决这一问题。</p>
+
+<h2 id="belief-propagation-in-hmm-forward-backward-algorithm">Belief Propagation in HMM: Forward Backward Algorithm</h2>
+
+<p>Note that Markov Chain and HMM are basic and common graph models. And as the graph topology is a tree, belief propagation is exact on HMM and Markov Chain. Sequential belief propagation in Markov Chain is usually called <em>Forward-Backward</em> or <em>Viterbi</em> algorithm.</p>
+
+<h2 id="belief-propagation-in-restricted-bolzmann-machine-rbm">Belief Propagation in Restricted Bolzmann Machine (RBM)</h2>
+
+<h2 id="appliction">Appliction</h2>
+
+<ul>
+  <li>Estimation in many early vision tasks, Stereo vision (disparity estimate), Segmentation, Optic Flow etc.</li>
+  <li>Estimate the inner state of the neural network model, from observed data.</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:0" role="doc-endnote">
+      <p>This MIT course <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-438-algorithms-for-inference-fall-2014/lecture-notes/">MIT Course Algorithm for Inference</a> organizes the relevant knowledge and material really well, and I will add my note for that course to this. <a href="#fnref:0" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Belief+Propagation+Algorithm+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-belief-propagation-algorithm"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm&quote=Note+on+Belief+Propagation+Algorithm+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm&title=Note+on+Belief+Propagation+Algorithm+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm&title=Note+on+Belief+Propagation+Algorithm+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Belief Propagation Algorithm (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-belief-propagation-algorithm"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Graph+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Graph Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Constrained CMA-ES Algorithm" href="/academic_notes/constrained-cma-es-algorithm">
+            <p>Previous post</p>
+            Constrained CMA-ES Algorithm
+        </a>
+    </div>
+    
+
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

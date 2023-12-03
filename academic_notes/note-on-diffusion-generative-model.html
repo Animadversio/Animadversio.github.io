@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Diffusion Generative Models | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Diffusion Generative Models" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Diffusion Generative Models" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model","headline":"Note on Diffusion Generative Models","dateModified":"2022-05-09T00:00:00+00:00","datePublished":"2022-05-09T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Diffusion Generative Models">
+    <meta name="twitter:description" content="  Motivation  Practical consideration  Diffusion models          Intuition of denoising diffusion      Variants      DDPM formulation      Score-based model ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Diffusion Generative Models">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Diffusion Generative Models " aria-label="Note on Diffusion Generative Models" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Diffusion+Generative+Models" class="title">Note on Diffusion Generative Models</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 09, 2022
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#practical-consideration" id="markdown-toc-practical-consideration">Practical consideration</a></li>
+  <li><a href="#diffusion-models" id="markdown-toc-diffusion-models">Diffusion models</a>    <ul>
+      <li><a href="#intuition-of-denoising-diffusion" id="markdown-toc-intuition-of-denoising-diffusion">Intuition of denoising diffusion</a></li>
+      <li><a href="#variants" id="markdown-toc-variants">Variants</a></li>
+      <li><a href="#ddpm-formulation" id="markdown-toc-ddpm-formulation">DDPM formulation</a></li>
+      <li><a href="#score-based-model-and-langevin-dynamics" id="markdown-toc-score-based-model-and-langevin-dynamics">Score-based model and Langevin dynamics</a>        <ul>
+          <li><a href="#how-to-train-score-based-models" id="markdown-toc-how-to-train-score-based-models">How to train score-based models?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#related-models" id="markdown-toc-related-models">Related Models</a>    <ul>
+      <li><a href="#relation-to-score-based-model" id="markdown-toc-relation-to-score-based-model">Relation to score-based model</a></li>
+      <li><a href="#relation-to-flow-and-neural-ode" id="markdown-toc-relation-to-flow-and-neural-ode">Relation to flow and neural ODE.</a></li>
+      <li><a href="#relation-to-activation-maximization" id="markdown-toc-relation-to-activation-maximization">Relation to Activation Maximization</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Recently, a line of research emerged in generative image models, diffusion models, which showed a competitive performance with GAN [^1]. More recently, a larger scale version of it gave rise to the ground breaking model DALL-E 2 and its precursor GLIDE.</p>
+
+<p>These tremendous success in generative modelling motivates me to write about them to understand this new type of models. This post devotes to introducing the formula underlying these models and organize the relation between different variants.</p>
+
+<h2 id="practical-consideration">Practical consideration</h2>
+
+<p>From a user perspective, comparing to GAN, diffusion models are slower in sampling: they requires iterative denoising improvement compared to a single pass processing of GAN. Thus in a fraction of a second you could sample a batch of images (5-40) from GAN easily, but the diffusion models need at least 7-10 sec on a high end GPU to sample a batch (1-4) of images.</p>
+
+<p>However, the benefit of diffusion model is its flexibility. Usually, GANs model a fixed distribution or condition distribution. After training, one is stuck with that image distribution. Though attempts have been made to condition GAN output after training (\cite{}).</p>
+
+<p>As for diffusion models, after training, one could modulate the image output with different conditioning function (detailed below). Moreover, one could initialize diffusion from an existing image, or just modify part of an image , these features make it a flexible tool for creative art generation and iterative editing.</p>
+
+<h1 id="diffusion-models">Diffusion models</h1>
+
+<h2 id="intuition-of-denoising-diffusion">Intuition of denoising diffusion</h2>
+
+<p>As is eloquently put in one of Yang Song’s paper opening</p>
+
+<blockquote>
+  <p>Creating noise from data is easy; creating data from noise is generative modeling.  - Yang Song 2021.</p>
+</blockquote>
+
+<p>Given any sample $x$, if you iteratively adding noise to it, while properly scale down signal, then finally signal will be overwhelmed by noise and you will get Gaussian white noise. We call this noising (diffusion) process</p>
+
+\[x_0\to x_1\to ...x_T\]
+
+<p>However, we could revert this process, starting from a sample $x_T$ from white noise and revert the process step by step back $p(x_{t-1}\mid x_t)$ , this is called the denoising process.</p>
+
+\[x_T\to x_{T-1}\to ...x_0\]
+
+<p>Thus if we properly model the conditional distribution $p(x_{t-1}\mid  x_t)$ we could define a <strong>Markov chain</strong>, by iteratively sample from $x_{t-1}\sim p(x_{t-1}\mid x_t)$ , and finally sample from $p(x_0)$.</p>
+
+<p>Why denoising process could model any data distribution? This notion has emerged in CV for a while. Previously, it is known that denoising autoencoder (DAE) $f(x): x+\epsilon \mapsto x$  is a form of image prior. Intuitively, you need to “know” what is noise versus signal to properly denoise.</p>
+
+<h2 id="variants">Variants</h2>
+
+<p><strong><a href="https://arxiv.org/abs/2006.11239">Denoising Diffusion Probabilistic Models (DDPM)</a></strong> This is the fundamental paper introduced the in this recent wave.</p>
+
+<p><strong><a href="https://arxiv.org/abs/2010.02502">Denoising Diffusion Implicit Models (DDIM)</a></strong> This is a follow up version of DDPM, which is deterministic. It’s used in many recent models (e.g. OpenAI <a href="https://github.com/openai/guided-diffusion">guided-diffusion</a>).</p>
+
+<h2 id="ddpm-formulation">DDPM formulation</h2>
+
+<p>DDPM formulate the model in a Bayesion, graphic model style, with some variational trick.</p>
+
+<p>In this formulation, we deal with the aforementioned markov chain $x_0\to x_1\to… x_T$ . Then all $x_{1:T}$ become latent variables. Consider the joint probability, which could be decomposed in forward or reverse direction.</p>
+
+\[p(x_{0:T})=q(x_0)\prod_t q(x_t\mid x_{t-1})\\
+= p(x_T)\prod_t p(x_{t-1}|x_t)\]
+
+<p>How to learn such a latent variable model? The key to generate data is the reverse diffusion model $p_\theta(x_{t-1}\mid x_t)$ , so we parametrize it with $\theta$ a neural network. Just like all latent variable models, we could form the lower bound of the log likelihood of the data</p>
+
+\[\log p(x_0) \geq \mathbb E_q \log \frac{p(x_{0:T})}{q(x_{1:T}\mid x_0)}\]
+
+<p>Then decomposing the chain with markov property we get the following.</p>
+
+\[\log p(x_0) \geq L\\ :=\mathbb E_q [\log p(x_T) +\sum_t \log p_\theta(x_{t-1}\mid x_t)-\sum_t \log q(x_t \mid x_{t-1})]\]
+
+<p>Now we expressed a bound $L$ on the data log likelihood with the expectation over three terms.</p>
+
+<ul>
+  <li>$\log p(x_T)$ which is the log density of final stage Gaussian distribution.</li>
+  <li>$-\sum_t \log q(x_t \mid x_{t-1})$ log density of generating this trajectory given $x_0$. Using the forward diffusion model. No neural network within.</li>
+  <li>
+    <p>$\sum_t \log p_\theta(x_{t-1}\mid x_t)$ the log density of inverse model, this requires the iterative application of the reverse diffusion model – the neural network.</p>
+  </li>
+  <li>Finally for the expectation over $q(x_{1:T}\mid x_0)$ ,  we can sample multiple trajectories for each sample $x_0$ to Monte Carlo estimate this loss.</li>
+</ul>
+
+<p>To be more concrete, we control the forward diffusion process to be a gaussian with a variance schedule; and the reverse diffusion to be a Gaussian with mean controlled by a neural network $\mu_\theta$ and an isotropic variance with decaying schedule $\sigma_t^2$.</p>
+
+\[q(x_t\mid x_{t-1})=\mathcal N(x_t;\sqrt{1-\beta_t} x_{t-1},\beta_t I)\\
+p(x_{t-1}\mid x_t)=\mathcal N(x_{t-1};\mu_\theta(x_t),\sigma_t^2 I)\\\]
+
+<p>Note that in this formulation, the conditional distribution of $x_t$ has a closed form. To abbreviate the notation, introduce $\alpha_t =1-\beta_t,\bar \alpha_t = \prod_{s=1}^t \alpha_s$. As we can see $\bar \alpha_t$ gradually approaches $0$ and noise dominates.</p>
+
+\[q(x_t\mid x_0)=\mathcal N(x_t\mid \sqrt{\bar \alpha_t}x_t,(1-\bar \alpha_t)I)\]
+
+<h2 id="score-based-model-and-langevin-dynamics">Score-based model and Langevin dynamics</h2>
+
+<p>An alternative, more theoretical and more geometrical formulation is the score based modelling approach.</p>
+
+<p>Let’s think about the data distribution to be modelled as $p(x)$. We focus on its score, i.e. gradient to the log likelihood function $\nabla_x \log p(x)$. In plain language, the score function described, locally <strong>how you shall modify $x$ to make the likelihood higher</strong>.</p>
+
+<p>So, if we have this gradient information in hand, we could create samples with high likelihood by gradient ascent.</p>
+
+\[x=\arg\max_x\log p(x)\]
+
+<p>Specifically, to implement the optimization, we use <strong>Langevin dynamics</strong>, which could be called <strong>noisy gradient ascent</strong> or <strong>diffusion process under the guidance by an energy landscape</strong>.</p>
+
+\[x\gets x+\epsilon \nabla_x\log p(x)+\sqrt{2\epsilon} z\\
+z\sim \mathcal N(0,I)\]
+
+<p>The noise term shall be tuned to reduce over time for convergence (annealing).</p>
+
+<p>In practise, since the exact score function is missing, what we need is to approximate the score function with a model $s_\theta (x)$, then do Langevin dynamics with it. This Langevin dynamics is the <em>de facto</em> reverse diffusion process.</p>
+
+<h3 id="how-to-train-score-based-models">How to train score-based models?</h3>
+
+<p>So how to train score model? It seems insanely hard! we only have access to a discrete set of points ${x_i}$ how to get gradient information.</p>
+
+<p>One way to deal with it is the gradual noising method (NCSM)</p>
+
+<p>Given an unconditional dataset ${x_i}$ sampled from distribution $p(x)$ , how to train this denoising model?</p>
+
+<p>Usually this denoising score-matching objective is used
+\(\int_{t=0}^1\mathbb E_{x\sim p(x)} \mathbb E_{x'\sim p(x_t|x_0=x)}
+\lambda(t) \|\nabla_{x'}\log p_{0t}(x'|x)-s(x',t)\|\)
+This denoising score matching objective could be derived for any distribution with any noising kernel. Here with Gaussian Kernel, the formulation becomes more explicit.</p>
+
+<p>See  <a href="Note-on-Equiv-Score-Matching-Objective.md">equivalence of score matching objective</a> for the derivation.</p>
+
+<h1 id="related-models">Related Models</h1>
+
+<h2 id="relation-to-score-based-model">Relation to score-based model</h2>
+
+<p>Basically, score-based model using a sequence of decreasing noising scale, and denoising diffusion probabilistic models are both discretizations of a family of SDEs.</p>
+
+<p>These two lines are developed independently and in the end pointed at the same underlying model, which is remarkable.</p>
+
+<blockquote>
+  <p>Collectively, these latest developments seem to indicate that both score-based generative modeling with multiple noise perturbations and diffusion probabilistic models are different perspectives of the same model family, much like how <a href="https://en.wikipedia.org/wiki/Wave_mechanics">wave mechanics</a> and <a href="https://en.wikipedia.org/wiki/Matrix_mechanics">matrix mechanics</a> are equivalent formulations of quantum mechanics in the history of physics.
+The perspective of score matching and score-based models allows one to calculate log-likelihoods exactly, solve inverse problems naturally, and is directly connected to energy-based models, Schrödinger bridges and optimal transport. The perspective of diffusion models is naturally connected to VAEs, lossy compression, and can be directly incorporated with variational probabilistic inference.</p>
+
+  <p>– yang song blog.</p>
+</blockquote>
+
+<h2 id="relation-to-flow-and-neural-ode">Relation to flow and neural ODE.</h2>
+
+<p>The SDE could be re-written as an ODE, which retains the same marginal distribution at each step. With the score network, this is an instance of Neural ODE.</p>
+
+<h2 id="relation-to-activation-maximization">Relation to Activation Maximization</h2>
+
+<p>This framework is really reminiscent of the activation maximization framework frequently used to do feature visualization. What’s the relation between these two lines of thoughts?</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>The great <a href="https://yang-song.github.io/blog/2021/score/">Blogpost</a> by one main author Yang Song, walk through the development from the score-based model / score matching, SDE perspective. More theoretically motivated.</li>
+  <li>The other great blog post by Lili Weng, introduced the matter from the diffusion model perspective: <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/">What are Diffusion Models?  Lil’Log</a></li>
+  <li>Details for deriving the reverse time diffusion equation (the basis of generative models): <a href="https://ludwigwinkler.github.io/blog/ReverseTimeAnderson/">REVERSE TIME STOCHASTIC DIFFERENTIAL EQUATIONS [FOR GENERATIVE MODELLING]</a>
+    <ul>
+      <li>This the detailed derivation of the   <br />
+Anderson, B. D. (1982). <a href="https://www.sciencedirect.com/science/article/pii/0304414982900515">Reverse-time diffusion equation models</a>. <em>Stochastic Processes and their Applications</em>, <em>12</em>(3), 313-326.</li>
+    </ul>
+  </li>
+</ul>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Diffusion+Generative+Models%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-diffusion-generative-model"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model&quote=Note+on+Diffusion+Generative+Models%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model&title=Note+on+Diffusion+Generative+Models%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model&title=Note+on+Diffusion+Generative+Models%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Diffusion Generative Models%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-diffusion-generative-model"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Generative+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Generative Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on EM algorithm and likelihood lower bound" href="/academic_notes/note-on-em-and-lower-bound">
+            <p>Previous post</p>
+            Note on EM algorithm and likelihood lower bound
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Probabilistic Models of Neural Population" href="/academic_notes/note-on-probabilistic-model-of-population">
+            <p>Next post</p>
+            Probabilistic Models of Neural Population
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Kernel PCA | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Kernel PCA" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-kernel-pca" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-kernel-pca" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Kernel PCA" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-kernel-pca","headline":"Note on Kernel PCA","dateModified":"2022-03-21T00:00:00+00:00","datePublished":"2022-03-21T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-kernel-pca"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Kernel PCA">
+    <meta name="twitter:description" content="  Motivation  Method  Projection to Kernel PC space  Relation to Spectral Embedding  ReferenceMotivationSimply put, “kernel trick” is the finding that someti...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Kernel PCA">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Kernel PCA " aria-label="Note on Kernel PCA" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Kernel+PCA" class="title">Note on Kernel PCA</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      March 21, 2022
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#method" id="markdown-toc-method">Method</a></li>
+  <li><a href="#projection-to-kernel-pc-space" id="markdown-toc-projection-to-kernel-pc-space">Projection to Kernel PC space</a></li>
+  <li><a href="#relation-to-spectral-embedding" id="markdown-toc-relation-to-spectral-embedding">Relation to Spectral Embedding</a></li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Simply put, “kernel trick” is the finding that sometimes only inner product appears in the formulation of some algorithms. because of this, we could substitute the inner product with some fancier kernel function, i.e. inner product in some other spaces.  This post is about another usage of kernel trick. Another usage is <a href="Note-on-Kernel-Ridge-Regression.md">Kernel (ridge) Regression</a>.</p>
+
+<p>We want to analyze the principal component in a feature space instead of the original $x$ space, can we do so by specifying a kernel function $K(x,x’)$ instead of the feature map $\phi(x)$ explicitly?</p>
+
+<h2 id="method">Method</h2>
+
+<p>Given a dataset ${x_1,x_2,…x_N}$. For a principal component analysis, we would like to analyze the spectral structure of the covariance matrix. Assume the feature map $\phi:\mathbb R^d\to\mathbb R^D$. Then our feature matrix $\Phi$ is of shape $D\times N$.<br />
+\(\Phi = [\phi(x_1),\phi(x_2),...\phi(x_N)]\)
+The covariance matrix is the inner product matrix of centered features $\Phi$. 
+\(C= \bar\Phi\bar\Phi^T\\
+\bar \Phi = \Phi - \frac 1N\Phi 11^T\)
+Note the feature covariance matrix ($D\times D$) is different from the kernel matrix $K$, $N\times N$. 
+\(K = \Phi^T\Phi\)
+Note that if we want to use high dimensional feature spaces (e.g. neural network, kernel features) the covariance matrix is rank deficient:  $\rank C \leq N &lt;D$. Thus, it will have a large null space with 0 eigen values. For the meaningful, non zero eigenvalues, the eigenvectors live in the column space of $\Phi$. Let we have an eigen pair $v,\lambda$
+\(Cv = \lambda v\\
+\bar\Phi (\bar\Phi^T v)  = \lambda v\)
+We represent the eigenvectors by the coefficients $v:=\bar\Phi \alpha$, $\alpha$ is a coefficient vector of length $N$. 
+\(\bar\Phi \bar\Phi^T \bar\Phi \alpha  = \lambda \bar\Phi \alpha\\
+\bar\Phi \bar K \alpha = \lambda \bar\Phi\alpha\\
+\bar K^2 \alpha = \lambda \bar K\alpha\)
+Thus we got another eigenvalue problem w.r.t the kernel matrix which we could solve.</p>
+
+<p>As the eigenvectors need to be normalized properly, the squared L2 norm of coefficients shall be $1/\lambda$, 
+\(v^Tv = 1\\
+ \alpha^T \bar K \alpha = 1\\
+\alpha^T\alpha = 1/\lambda\)
+For the centering operation, we could do so by modifying the kernel matrix
+\(\begin{align}
+\bar K =&amp;\bar\Phi^T\bar\Phi=(\Phi - \frac 1N\Phi 1_N1_N^T)^T(\Phi - \frac 1N\Phi 1_N1_N^T)\\
+=&amp; \Phi^T\Phi-\frac 1N 1_N1_N^T \Phi^T\Phi - \frac 1N \Phi^T\Phi1_N1_N^T +\frac 1 {N^2} 1_N1_N^T \Phi^T\Phi 1_N1_N^T\\
+=&amp; K - \frac 1N\mathbb 1_N K - \frac 1N K\mathbb 1_N - \frac 1 {N^2} \mathbb 1_N K\mathbb 1_N 
+\end{align}\)
+The matrix $\mathbb 1_N = 1_N1_N^T$ is a $N\times N$ matrix full of one.</p>
+
+<h2 id="projection-to-kernel-pc-space">Projection to Kernel PC space</h2>
+
+<p>One key usage of PCA is to visualize samples onto the PC space, i.e. we need to obtain projections of sample features with the PC vectors $v$. 
+\(v^T\phi (x)= \phi(x)^Tv = \phi(x)^T \bar\Phi \alpha \\
+= \sum_i^N \alpha_i (\phi(x)^T\phi(x_i))\\
+= \sum_i^NK(x,x_i) \alpha_i\)
+Similar to regression, we can also use kernel function to obtain projection coefficients.</p>
+
+<h2 id="relation-to-spectral-embedding">Relation to Spectral Embedding</h2>
+
+<p>Note this view of kernel PCA  is also related to <a href="Spectral-Graph-and-Segmentation.md">spectral embedding</a>, i.e. the inverse of kernel matrix $K$ is a form of distance matrix.</p>
+
+<p>The top eigenvectors of kernel matrices == the bottom eigenvectors of the inverse. These eigenvectors could be used as coordinates to embed the samples, since these coordinates will minimize the stress energy of the embedding if we regard the $K$ as a form of elasticity strength. 
+\(E(u)=\sum_{ij} K_{ij} (u_i-u_j)^2 \\
+= 2\sum_{ij}K_{ij}u_j^2-2\sum_{ij} u_i K_{ij} u_j \\
+=2 1_N^TK u^2 - 2 u^TKu\)
+Thus choose $u$ as the top eigenvectors will reduce this energy $E(u)$.</p>
+
+<h2 id="reference">Reference</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Kernel principal component analysis</td>
+      <td>SpringerLink](https://link.springer.com/chapter/10.1007/BFb0020217)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-kernel-pca" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Kernel+PCA%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-kernel-pca"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-kernel-pca&quote=Note+on+Kernel+PCA%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-kernel-pca&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-kernel-pca&title=Note+on+Kernel+PCA%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-kernel-pca&title=Note+on+Kernel+PCA%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-kernel-pca"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Kernel PCA%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-kernel-pca"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Applied+Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Applied Math</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#kernel+method">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> kernel method</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Linear+Algebra">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Linear Algebra</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Some Famous Matrix Determinant and Inversion Identities" href="/academic_notes/note-on-matrix-inversion-determinant-lemma">
+            <p>Previous post</p>
+            Some Famous Matrix Determinant and Inversion Identities
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix" href="/academic_notes/spectrum-of-tri-toeplitz-matrix">
+            <p>Next post</p>
+            Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

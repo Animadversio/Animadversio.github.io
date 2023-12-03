@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How to Parse Anatomical/Physiological Terms in Latin/Greek | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="How to Parse Anatomical/Physiological Terms in Latin/Greek" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to Parse Latin/Greek Anatomical/Physiological Terms" />
+<meta property="og:description" content="How to Parse Latin/Greek Anatomical/Physiological Terms" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to Parse Anatomical/Physiological Terms in Latin/Greek" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"How to Parse Latin/Greek Anatomical/Physiological Terms","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin","headline":"How to Parse Anatomical/Physiological Terms in Latin/Greek","dateModified":"2019-09-07T00:00:00+00:00","datePublished":"2019-09-07T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="How to Parse Anatomical/Physiological Terms in Latin/Greek">
+    <meta name="twitter:description" content="How to Parse Latin/Greek Anatomical/Physiological Terms  How to Parse Latin/Greek Anatomical/Physiological Terms          词根      变位                  名词单复数  ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="How to Parse Anatomical/Physiological Terms in Latin/Greek">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="How to Parse Anatomical/Physiological Terms in Latin/Greek " aria-label="How to Parse Anatomical/Physiological Terms in Latin/Greek" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="How+to+Parse+Anatomical%2FPhysiological+Terms+in+Latin%2FGreek" class="title">How to Parse Anatomical/Physiological Terms in Latin/Greek</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 07, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="how-to-parse-latingreek-anatomicalphysiological-terms">How to Parse Latin/Greek Anatomical/Physiological Terms</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#how-to-parse-latingreek-anatomicalphysiological-terms" id="markdown-toc-how-to-parse-latingreek-anatomicalphysiological-terms">How to Parse Latin/Greek Anatomical/Physiological Terms</a>    <ul>
+      <li><a href="#词根" id="markdown-toc-词根">词根</a></li>
+      <li><a href="#变位" id="markdown-toc-变位">变位</a>        <ul>
+          <li><a href="#名词单复数" id="markdown-toc-名词单复数">名词单复数</a></li>
+          <li><a href="#名词形容词变位" id="markdown-toc-名词形容词变位">名词形容词变位</a></li>
+          <li><a href="#形容词变位" id="markdown-toc-形容词变位">形容词变位</a></li>
+        </ul>
+      </li>
+      <li><a href="#useful-resources" id="markdown-toc-useful-resources">Useful Resources</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>大部分现代医学 解剖术语似乎是文艺复兴之后生理学家创造的，但为了显得高端，使用当时的国际学术语言Latin书写。因为当时Latin在当时早已不是日常语言，所以大多是科学家们非常规整的用Classic Latin/Greek 的词根Root 词缀Pre-/Suffix 变位法Conjugation，人工构词产生的，算New Latin。所以知道了词根之后拼写起来单词就会像写中文组词一样，记忆起来也容易<sup id="fnref:0" role="doc-noteref"><a href="#fn:0" class="footnote" rel="footnote">1</a></sup>，也更容易根据词形记忆解剖结构的位置。</p>
+
+<h2 id="词根">词根</h2>
+<p>单个词大多是由词根词缀组合而成</p>
+
+<p>比如</p>
+<ul>
+  <li>肋骨rib= costa costae(单数形容词) costarum(复数形容词)</li>
+  <li>腹股沟groin= Ilium Ilio(变位形式)</li>
+  <li>
+    <p>合在一起成了Iliocostalis 髂肋肌</p>
+  </li>
+  <li>Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_medical_roots,_suffixes_and_prefixes">List of medical roots, suffixes and prefixes</a></li>
+  <li><a href="http://manoa.hawaii.edu/undergrad/learning/wp-content/uploads/2014/03/Word-Roots.pdf">Word Root PDF</a></li>
+</ul>
+
+<p><img src="https://c8.alamy.com/comp/ADTYM6/deep-muscles-of-the-back-ADTYM6.jpg" alt="" /></p>
+
+<h2 id="变位">变位</h2>
+<p>多个词的复合词会涉及名词的变位(Conjugation) Latin用词尾后缀的小变化表示单复数 以及作为名词还是形容词</p>
+<h3 id="名词单复数">名词单复数</h3>
+<p>单数复数变位 比如</p>
+<ul>
+  <li>-us/-um变成-i
+    <ul>
+      <li>musculus musculi</li>
+      <li>transversarium transversarii</li>
+    </ul>
+  </li>
+  <li>-a变成-ae
+    <ul>
+      <li>spina spinae</li>
+    </ul>
+  </li>
+  <li>-is之类变成 -es</li>
+  <li>etc.</li>
+</ul>
+
+<h3 id="名词形容词变位">名词形容词变位</h3>
+<p>名词主格变成形容词 比如</p>
+<ul>
+  <li>头=Caput(主格), 但表示Sth of head或Sth’s head就会用形容词形式的Capitis(从属格genetive).</li>
+  <li>颈=cervix(主格) cervicis(从属格)</li>
+  <li>胸部=thorax thoracis(从属格)</li>
+  <li>胸breast=Pector pectoris(从属格)</li>
+  <li>腰=lumbar lumborum(复数 从属格)
+    <ul>
+      <li>Quadratus lumborum 腰上的四头肌</li>
+    </ul>
+  </li>
+  <li>脊柱 spina spinalis(从属格) 复数spinales
+    <ul>
+      <li>Interspinalis/-es 椎间肌肉</li>
+    </ul>
+  </li>
+</ul>
+
+<p>比如</p>
+<ul>
+  <li>Splenius=绷带bandage in Grk.</li>
+  <li>Splenius capitis ~ Bandage of head</li>
+  <li>Splenius cervicis ~ Bandage of neck</li>
+</ul>
+
+<p>比如</p>
+<ul>
+  <li>Levatores costarum</li>
+  <li>Levatores 是Levator的复数 意思是用来提升的东西近似elevator</li>
+  <li>肋骨rib= costa  costarum(复数形容词)
+    <ul>
+      <li>所以直译成英文就是elevator (muscle) of rib</li>
+    </ul>
+  </li>
+</ul>
+
+<p>以及一些解剖结构常用词</p>
+<ul>
+  <li>Foramen=opening</li>
+  <li>Fasciculus=bunch bundle</li>
+</ul>
+
+<h3 id="形容词变位">形容词变位</h3>
+<p>形容词会涉及比较级最高级</p>
+<ul>
+  <li>长=Longus, 比较长longer=Longior, 最长the longest=Longissimus
+    <ul>
+      <li>Longissimus~ 背上最长的那条muscle</li>
+    </ul>
+  </li>
+</ul>
+
+<p>形容词在形容单数与复数时也有词尾变化</p>
+<ul>
+  <li>长的 Longus 复数 longi, e.g. Levatores costarum longi</li>
+  <li>短的 Brevis 复数 breves , e.g. Levatores costarum breves</li>
+</ul>
+
+<h2 id="useful-resources">Useful Resources</h2>
+
+<ul>
+  <li>发现超级长的解剖词，Google搜索 [anatomical term] etymology 就能找到每个词的词根分解 Wiki里经常也会附带词根分解的解释</li>
+  <li><a href="https://translate.google.com/">Google Translator</a> 可以翻译 Latin to English</li>
+  <li><a href="https://en.wikipedia.org/wiki/Latin_declension">Latin Declension Table</a></li>
+  <li><a href="http://rharriso.sites.truman.edu/summary-of-latin-noun-and-adjective-endings/">Latin Noun and Adjective endings</a></li>
+  <li>有关的小册子
+    <ul>
+      <li><a href="https://umed.pl/pliki/2015/12/Medical-Latin-Course-second-version.pdf">Medical Latin Tutorial PDF</a></li>
+      <li><a href="https://sites.google.com/site/mededlinks/anat-latin-3.pdf">Anatomical Latin Tutorial PDF</a></li>
+      <li><a href="https://www.amazon.com/Kennedys-Revised-Primer-Benjamin-Kennedy/dp/0582362407">Latin Grammer Primer</a> 里面有非常详细的变位表</li>
+    </ul>
+  </li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:0" role="doc-endnote">
+      <p>Chunking Effect! <a href="#fnref:0" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=How+to+Parse+Anatomical%2FPhysiological+Terms+in+Latin%2FGreek%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fparse-anatomy-terms-in-latin"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin&quote=How+to+Parse+Anatomical%2FPhysiological+Terms+in+Latin%2FGreek%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin&media=$description=How+to+Parse+Latin%2FGreek+Anatomical%2FPhysiological+Terms%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin&title=How+to+Parse+Anatomical%2FPhysiological+Terms+in+Latin%2FGreek%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin&title=How+to+Parse+Anatomical%2FPhysiological+Terms+in+Latin%2FGreek%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=How to Parse Anatomical/Physiological Terms in Latin/Greek%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/parse-anatomy-terms-in-latin"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Anatomy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Anatomy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#language">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> language</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Latin">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Latin</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> neuroscience</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Using Google Cloud Service for Large Scale Image Labelling" href="/tech_note/using-google-cloud-service-for-large-scale-image-labelling">
+            <p>Previous post</p>
+            Using Google Cloud Service for Large Scale Image Labelling
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Understanding conda and python package management (Updating)" href="/tech_note/understanding-conda-and-python-package-management">
+            <p>Next post</p>
+            Understanding conda and python package management (Updating)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

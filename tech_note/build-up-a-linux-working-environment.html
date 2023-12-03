@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Linux Working Environment Build Up (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Linux Working Environment Build Up (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/build-up-a-linux-working-environment" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/build-up-a-linux-working-environment" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-25T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Linux Working Environment Build Up (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/build-up-a-linux-working-environment","headline":"Linux Working Environment Build Up (Updating)","dateModified":"2019-07-25T00:00:00+00:00","datePublished":"2019-07-25T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/build-up-a-linux-working-environment"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Linux Working Environment Build Up (Updating)">
+    <meta name="twitter:description" content="  Objective  Software System          Caffe      Tensorflow      Deeplabcut      Torch        CUDA and GPU          Trouble Shooting      Useful testing bina...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Linux Working Environment Build Up (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Linux Working Environment Build Up (Updating) " aria-label="Linux Working Environment Build Up (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Linux+Working+Environment+Build+Up+%28Updating%29" class="title">Linux Working Environment Build Up (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 25, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#objective" id="markdown-toc-objective">Objective</a></li>
+  <li><a href="#software-system" id="markdown-toc-software-system">Software System</a>    <ul>
+      <li><a href="#caffe" id="markdown-toc-caffe">Caffe</a></li>
+      <li><a href="#tensorflow" id="markdown-toc-tensorflow">Tensorflow</a></li>
+      <li><a href="#deeplabcut" id="markdown-toc-deeplabcut">Deeplabcut</a></li>
+      <li><a href="#torch" id="markdown-toc-torch">Torch</a></li>
+    </ul>
+  </li>
+  <li><a href="#cuda-and-gpu" id="markdown-toc-cuda-and-gpu">CUDA and GPU</a>    <ul>
+      <li><a href="#trouble-shooting" id="markdown-toc-trouble-shooting">Trouble Shooting</a></li>
+      <li><a href="#useful-testing-binaries" id="markdown-toc-useful-testing-binaries">Useful testing binaries</a></li>
+    </ul>
+  </li>
+  <li><a href="#status-checking-commands" id="markdown-toc-status-checking-commands">Status Checking Commands</a>    <ul>
+      <li><a href="#check-library" id="markdown-toc-check-library">Check Library</a></li>
+      <li><a href="#disk-usage-and-mounting" id="markdown-toc-disk-usage-and-mounting">Disk usage and mounting</a></li>
+    </ul>
+  </li>
+  <li><a href="#remote-working" id="markdown-toc-remote-working">Remote Working</a>    <ul>
+      <li><a href="#ssh-solution" id="markdown-toc-ssh-solution">ssh solution</a></li>
+      <li><a href="#jupyter-notebook" id="markdown-toc-jupyter-notebook">Jupyter notebook</a>        <ul>
+          <li><a href="#conda-env-selection-in-jupyter-notebook" id="markdown-toc-conda-env-selection-in-jupyter-notebook">Conda env selection in jupyter notebook</a></li>
+        </ul>
+      </li>
+      <li><a href="#pycharm-remote-interpreter--environment" id="markdown-toc-pycharm-remote-interpreter--environment">PyCharm Remote Interpreter / Environment</a></li>
+      <li><a href="#remote-desktop-solution" id="markdown-toc-remote-desktop-solution">Remote Desktop Solution</a></li>
+    </ul>
+  </li>
+  <li><a href="#file-transfer" id="markdown-toc-file-transfer">File transfer</a></li>
+</ul>
+
+<h1 id="objective">Objective</h1>
+<p>Build the software environment for <strong>Scientific Computing</strong> <strong>Data Analysis</strong> and <strong>Deep Learning</strong> for a GPU enabled Linux work station.</p>
+
+<p>This post majorly summarizes the tools and references for building up a Linux Working Environment. I’ll update the errors and trouble shooting notes as I encounter them.</p>
+
+<h1 id="software-system">Software System</h1>
+<ul>
+  <li>Anaconda (python)
+    <ul>
+      <li>tensorflow</li>
+      <li>keras</li>
+      <li>pytorch
+        <ul>
+          <li>https://pytorch.org/get-started/locally/</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Matlab</li>
+  <li>Julia</li>
+</ul>
+
+<p>The software above can all be installed easily, even without using <code class="language-plaintext highlighter-rouge">sudo</code>. The binary files of them can be written in the home folder of your user.</p>
+
+<p>Other utilities</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">htop</code> like the task manager in Windows.</li>
+</ul>
+
+<h2 id="caffe">Caffe</h2>
+<p><strong>Caffe is the most difficult platform to build and install!!!!!</strong></p>
+
+<p>Ubuntu 18 install is just as easy as <code class="language-plaintext highlighter-rouge">sudo apt install</code> https://caffe.berkeleyvision.org/install_apt.html 
+Other version Ubuntu needs <code class="language-plaintext highlighter-rouge">make</code> and <code class="language-plaintext highlighter-rouge">compilation</code></p>
+
+<p>After that you can use <code class="language-plaintext highlighter-rouge">caffe</code> command in your terminal to use the binary (language independent). If you want to use it in <code class="language-plaintext highlighter-rouge">Python</code> or <code class="language-plaintext highlighter-rouge">Matlab</code> more work should be done.</p>
+
+<p>conda can install <code class="language-plaintext highlighter-rouge">caffe</code> and <code class="language-plaintext highlighter-rouge">caffe-gpu</code>
+<code class="language-plaintext highlighter-rouge">conda install caffe</code></p>
+
+<h2 id="tensorflow">Tensorflow</h2>
+<p>uninstall and reinstall tensorflow in conda environment could solve many problems.</p>
+
+<p><strong>Testing</strong>: <code class="language-plaintext highlighter-rouge">import tensorflow as tf; tf.Session()</code> usually is enough.</p>
+
+<h2 id="deeplabcut">Deeplabcut</h2>
+<p><a href="https://github.com/AlexEMG/DeepLabCut/blob/master/docs/installation.md#step-3-easy-install-for-windows-and-macos-use-our-supplied-anaconda-environments">Linux install guide</a></p>
+
+<p>Using 3.7 may encounter error in <code class="language-plaintext highlighter-rouge">pip install deeplabcut</code> so it may be better to open a <code class="language-plaintext highlighter-rouge">python=3.6</code> environment and install deeplabcut there.</p>
+
+<h2 id="torch">Torch</h2>
+
+<p>Torch is another super popular system and install it seems much simpler than the other 2 frameworks.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-c</span> anaconda pytorch-gpu
+conda <span class="nb">install</span> <span class="nt">-c</span> anaconda torchvision
+conda <span class="nb">install </span><span class="nv">pillow</span><span class="o">=</span>6.1 <span class="c"># in case of PIL import error</span>
+conda <span class="nb">install </span>matplotlib
+</code></pre></div></div>
+
+<h1 id="cuda-and-gpu">CUDA and GPU</h1>
+<p>CUDA and GPU is a major source of trouble in building a workstation.</p>
+
+<p>Download the CUDA and the driver could be installed with CUDA. (In our case <code class="language-plaintext highlighter-rouge">CUDA 10.0</code> is totally usable)
+Linux system seems to be very sensitive to GPU driver, CUDA version and driver version must match quite well.</p>
+
+<h2 id="trouble-shooting">Trouble Shooting</h2>
+<p>if 
+<code class="language-plaintext highlighter-rouge">NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver</code>
+Reinstall Nvidia driver and CUDA and the package will be fine. 
+Install packages may broke some of the kernal / driver. 
+<a href="https://stackoverflow.com/questions/42984743/nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver"></a></p>
+
+<h2 id="useful-testing-binaries">Useful testing binaries</h2>
+<p>Used to query the state and driver and compatibility of programs and other specs.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> wangbx@tao-cbi315:~/NVIDIA_CUDA-10.0_Samples/bin/x86_64/linux/release<span class="nv">$ </span><span class="nb">cat</span> /proc/driver/nvidia/version
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  410.48  Thu Sep  6 06:36:33 CDT 2018
+GCC version:  gcc version 7.4.0 <span class="o">(</span>Ubuntu 7.4.0-1ubuntu1~18.04.1<span class="o">)</span> 
+</code></pre></div></div>
+<p>Check <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#running-binaries">cuda-installation-guide-linux</a></p>
+
+<p>After installation, the <a href="https://docs.nvidia.com/cuda/cuda-samples/index.html">samples</a> src file will be put in <code class="language-plaintext highlighter-rouge">/usr/local/cuda/samples</code> binary file is not accompanied in the folder, so you should compile it to somewhere. (if you don’t have <code class="language-plaintext highlighter-rouge">root</code> authority, then somewhere in your home folder is fine~)
+Use <code class="language-plaintext highlighter-rouge">cuda-install-samples-10.1.sh &lt;target_path&gt;</code> to install</p>
+
+<p>Some useful testing binaries like <code class="language-plaintext highlighter-rouge">./deviceQuery</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> wangbx@tao-cbi315:~/NVIDIA_CUDA-10.0_Samples/bin/x86_64/linux/release<span class="nv">$ </span>./deviceQuery
+./deviceQuery Starting...
+
+ CUDA Device Query <span class="o">(</span>Runtime API<span class="o">)</span> version <span class="o">(</span>CUDART static linking<span class="o">)</span>
+
+Detected 1 CUDA Capable device<span class="o">(</span>s<span class="o">)</span>
+
+Device 0: <span class="s2">"GeForce RTX 2080 Ti"</span>
+  CUDA Driver Version / Runtime Version          10.0 / 10.0
+  CUDA Capability Major/Minor version number:    7.5
+  Total amount of global memory:                 10986 MBytes <span class="o">(</span>11519983616 bytes<span class="o">)</span>
+  <span class="o">(</span>68<span class="o">)</span> Multiprocessors, <span class="o">(</span> 64<span class="o">)</span> CUDA Cores/MP:     4352 CUDA Cores
+  GPU Max Clock rate:                            1605 MHz <span class="o">(</span>1.61 GHz<span class="o">)</span>
+  Memory Clock rate:                             7000 Mhz
+  Memory Bus Width:                              352-bit
+  L2 Cache Size:                                 5767168 bytes
+  Maximum Texture Dimension Size <span class="o">(</span>x,y,z<span class="o">)</span>         <span class="nv">1D</span><span class="o">=(</span>131072<span class="o">)</span>, <span class="nv">2D</span><span class="o">=(</span>131072, 65536<span class="o">)</span>, <span class="nv">3D</span><span class="o">=(</span>16384, 16384, 16384<span class="o">)</span>
+  Maximum Layered 1D Texture Size, <span class="o">(</span>num<span class="o">)</span> layers  <span class="nv">1D</span><span class="o">=(</span>32768<span class="o">)</span>, 2048 layers
+  Maximum Layered 2D Texture Size, <span class="o">(</span>num<span class="o">)</span> layers  <span class="nv">2D</span><span class="o">=(</span>32768, 32768<span class="o">)</span>, 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 65536
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  1024
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block <span class="o">(</span>x,y,z<span class="o">)</span>: <span class="o">(</span>1024, 1024, 64<span class="o">)</span>
+  Max dimension size of a grid size    <span class="o">(</span>x,y,z<span class="o">)</span>: <span class="o">(</span>2147483647, 65535, 65535<span class="o">)</span>
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 3 copy engine<span class="o">(</span>s<span class="o">)</span>
+  Run <span class="nb">time </span>limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            No
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement <span class="k">for </span>Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing <span class="o">(</span>UVA<span class="o">)</span>:      Yes
+  Device supports Compute Preemption:            Yes
+  Supports Cooperative Kernel Launch:            Yes
+  Supports MultiDevice Co-op Kernel Launch:      Yes
+  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0
+  Compute Mode:
+     &lt; Default <span class="o">(</span>multiple host threads can use ::cudaSetDevice<span class="o">()</span> with device simultaneously<span class="o">)</span> <span class="o">&gt;</span>
+
+deviceQuery, CUDA Driver <span class="o">=</span> CUDART, CUDA Driver Version <span class="o">=</span> 10.0, CUDA Runtime Version <span class="o">=</span> 10.0, NumDevs <span class="o">=</span> 1
+Result <span class="o">=</span> PASS
+</code></pre></div></div>
+
+<p><a href="https://www.jianshu.com/p/0816c3a5fa5c"><code class="language-plaintext highlighter-rouge">CUDA_VISIBLE_DEVICES</code> EV</a> is used to tell programs like tensorflow which GPU to use (and which not to use).</p>
+
+<h1 id="status-checking-commands">Status Checking Commands</h1>
+<h2 id="check-library">Check Library</h2>
+<p><code class="language-plaintext highlighter-rouge">ldconfig -v</code>
+export relevant dir of lib by <code class="language-plaintext highlighter-rouge">LD_LIBRARY_PATH='$LD_LIBRARY_PATH:/usr/local/lib/opencv-3.4.6/'</code></p>
+
+<h2 id="disk-usage-and-mounting">Disk usage and mounting</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">du</span> <span class="k">*</span> <span class="c"># disk usage</span>
+	<span class="nt">-s</span> <span class="c">#summarize the files in the folder</span>
+	<span class="nt">-h</span> <span class="c">#human readable</span>
+<span class="nb">df</span> <span class="c"># disk free space(for mounted file system), very helpful</span>
+	<span class="nt">-h</span> <span class="c">#human readable</span>
+fdisk <span class="c"># display partitions (may need sudo)</span>
+	<span class="nt">-l</span> <span class="c"># list</span>
+</code></pre></div></div>
+
+<h1 id="remote-working">Remote Working</h1>
+
+<h2 id="ssh-solution">ssh solution</h2>
+<p><code class="language-plaintext highlighter-rouge">ssh -X ....</code> <code class="language-plaintext highlighter-rouge">ssh -Y ....</code> Graphic interface forwarding. Requires the remote machine has graphical interface like <code class="language-plaintext highlighter-rouge">gnome</code>!</p>
+
+<h2 id="jupyter-notebook">Jupyter notebook</h2>
+<p>Most generic, even with GUI-less server. 
+<a href="https://towardsdatascience.com/running-jupyter-notebooks-on-remote-servers-603fbcc256b3">Reference</a>
+Open the jupyter notbook in one terminal 
+<code class="language-plaintext highlighter-rouge">nohup ssh -f username:password@remote_server_ip "cd project_folder; . virtual_environment/bin/activate; jupyter notebook --no-browser --port=8889"</code>
+Port forwarding 
+<code class="language-plaintext highlighter-rouge">nohup ssh -N -f -L localhost:8891:localhost:8891 wangbx:wangbx@tlab.ink</code></p>
+
+<p>Then you can see your jupyter notebook in any browser by <code class="language-plaintext highlighter-rouge">localhost:8891</code></p>
+
+<h3 id="conda-env-selection-in-jupyter-notebook">Conda env selection in jupyter notebook</h3>
+<p>Many times, we work with multiple conda env in python, we can use this <code class="language-plaintext highlighter-rouge">nb_conda</code> package to enable environment selection
+<code class="language-plaintext highlighter-rouge">conda install nb_conda</code></p>
+
+<h2 id="pycharm-remote-interpreter--environment">PyCharm Remote Interpreter / Environment</h2>
+<p>Quite generic, just use environment, can be used without graphics.</p>
+
+<h2 id="remote-desktop-solution">Remote Desktop Solution</h2>
+<ul>
+  <li>TeamViewer (QUITE GENERIC! ALL PLATFORM)</li>
+  <li>Google Remote Desktop (<em>Need google connection….</em> Relatively high speed flexible!)</li>
+  <li>MobaXterm (Only available to Windows.)</li>
+  <li>VNC (Mac √ )</li>
+  <li>x2go (Mac √ )</li>
+</ul>
+
+<h1 id="file-transfer">File transfer</h1>
+<p>Direct disk mounting like <code class="language-plaintext highlighter-rouge">mount</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">scp</code> file transfer</p>
+
+<ul>
+  <li>FileZilla</li>
+  <li>TeamViewer</li>
+  <li>GoogleRemoteDesktop</li>
+</ul>
+
+<p>Ref https://blog.csdn.net/marchfaith/article/details/7562442</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Linux+Working+Environment+Build+Up+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fbuild-up-a-linux-working-environment"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment&quote=Linux+Working+Environment+Build+Up+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment&title=Linux+Working+Environment+Build+Up+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment&title=Linux+Working+Environment+Build+Up+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Linux Working Environment Build Up (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/build-up-a-linux-working-environment"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#coding">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> coding</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Computation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#environment">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> environment</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Linux">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Linux</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Understanding conda and python package management (Updating)" href="/tech_note/understanding-conda-and-python-package-management">
+            <p>Previous post</p>
+            Understanding conda and python package management (Updating)
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="DeepLabCut Trouble Shooting" href="/tech_note/deeplabcut-trouble-shooting">
+            <p>Next post</p>
+            DeepLabCut Trouble Shooting
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

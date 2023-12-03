@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Comparison of Major Deep Learning Frameworks (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Comparison of Major Deep Learning Frameworks (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Objective" />
+<meta property="og:description" content="Objective" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Comparison of Major Deep Learning Frameworks (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Objective","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks","headline":"Comparison of Major Deep Learning Frameworks (Updating)","dateModified":"2019-12-18T00:00:00+00:00","datePublished":"2019-12-18T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Comparison of Major Deep Learning Frameworks (Updating)">
+    <meta name="twitter:description" content="ObjectiveHere I want to compare several common deep learning frameworks and make sense of their workflow.Core LogicTensorflowGeneral Comments:  TF is more li...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Comparison of Major Deep Learning Frameworks (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Comparison of Major Deep Learning Frameworks (Updating) " aria-label="Comparison of Major Deep Learning Frameworks (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Comparison+of+Major+Deep+Learning+Frameworks+%28Updating%29" class="title">Comparison of Major Deep Learning Frameworks (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      December 18, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="objective">Objective</h1>
+
+<p>Here I want to compare several common deep learning frameworks and make sense of their workflow.</p>
+
+<h1 id="core-logic">Core Logic</h1>
+
+<h2 id="tensorflow">Tensorflow</h2>
+
+<p><strong>General Comments</strong>:  TF is more like a <strong>library</strong>, in which many low-level operations are defined and programs are long. In contrast, <code class="language-plaintext highlighter-rouge">Keras</code> which can use <code class="language-plaintext highlighter-rouge">tensorflow</code> as backend has the similar level of abstraction as <code class="language-plaintext highlighter-rouge">PyTorch</code>, which is a higher level deep learning package. <code class="language-plaintext highlighter-rouge">TFLearn</code> may also be a higher level wrapper.</p>
+
+<p>Besides, the design logic is quite different. TF is designed for static graph. Construct the computational graph first, and then put in data, and operate really in Session.  It normally follows <em>lazy execution</em> instead of <em>eager execution</em>.</p>
+
+<p>So it’s more like a compile and run language like C++ or Julia, than script language like Python.</p>
+
+<ul>
+  <li>General Programming Model: Graph and Execution
+    <ul>
+      <li>Use tensorflow <code class="language-plaintext highlighter-rouge">operations</code> to create a computational Graph</li>
+      <li>Evaluate / Run the graph in <code class="language-plaintext highlighter-rouge">session</code> .
+        <ul>
+          <li>Input can be feed into a graph, and results could be fetched in <code class="language-plaintext highlighter-rouge">sess.run(fetches,feeds)</code> .</li>
+          <li>Example: <code class="language-plaintext highlighter-rouge">sess.run([output, intermediate], feed_dict={input1:[7.], input2:[2.]})</code></li>
+          <li><code class="language-plaintext highlighter-rouge">Session</code> is interacting with the C++ runtime evaluating the graph.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/r0.10/tensorflow/g3doc/get_started/basic_usage.md">Basic TF usage</a></li>
+  <li>Data Structure
+    <ul>
+      <li>Tensor. the basic datatype in computational graph.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">tensor.eval()</code> will evaluate the tensor by evaluating all the operations along the graph.</li>
+          <li><code class="language-plaintext highlighter-rouge">tf.convert_to_tensor</code> is the way to convert other things into <code class="language-plaintext highlighter-rouge">tensor</code></li>
+          <li><code class="language-plaintext highlighter-rouge">tf.constant</code> is just a type of tensor. not really special.</li>
+        </ul>
+      </li>
+      <li>Variable, like old <code class="language-plaintext highlighter-rouge">PyTorch</code> it’s a wrapper over tensor. It can keep states over several <code class="language-plaintext highlighter-rouge">run</code> call.
+        <ul>
+          <li><a href="https://stackoverflow.com/questions/44167134/whats-the-difference-between-tensor-and-variable-in-tensorflow/44167844">Tensor vs Variable</a></li>
+          <li>Varibales have to be <code class="language-plaintext highlighter-rouge">initialize</code> to use. You can do that by executing <code class="language-plaintext highlighter-rouge">tf.global_variables_initializer()</code>.</li>
+        </ul>
+      </li>
+      <li>Placeholder, is a way to let user inject data into computational graph. You have to specify this when run a computational graph
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">placeholder(dtype, shape=None, name=None)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Gradient Computation
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">tf.gradients</code> can explicit compute gradient like <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code>. see <a href="https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/gradients">official note</a>.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">z = tf.subtract(tf.sin(x), tf.pow(y,3));
+grad = tf.gradients(z, [x, y])</code></li>
+        </ul>
+      </li>
+      <li>Loss variables can be sent into <code class="language-plaintext highlighter-rouge">optimizer</code> so that gradient could be computed towards target variables. Useful functionalities like
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">optimizer.compute_gradients(L,var_list=[v1,v2])</code>  returns the variable and gradient pairs for each variable in <code class="language-plaintext highlighter-rouge">var_list</code>! Good to see the gradients if you want to manipulate it.</li>
+          <li><code class="language-plaintext highlighter-rouge">optimizer.apply_gradients(grads_and_vars,)</code> will apply gradients to update variables.</li>
+          <li><code class="language-plaintext highlighter-rouge">optimizer.minimize(L)</code> combines the 2 steps and update the variables.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vstr</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">3.0</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span> 
+<span class="n">vstr2</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">Variable</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">vstr</span><span class="p">,</span> <span class="n">vstr2</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">train</span><span class="p">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">beta1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">beta2</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">cG</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">.</span><span class="n">compute_gradients</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">var_list</span><span class="o">=</span><span class="p">[</span><span class="n">vstr2</span><span class="p">,</span><span class="n">vstr</span><span class="p">])</span>
+<span class="n">Min</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">.</span><span class="n">apply_gradients</span><span class="p">(</span><span class="n">cG</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+	<span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">cG</span><span class="p">))</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">vstr</span><span class="p">,</span><span class="n">vstr2</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">Min</span><span class="p">]))</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="n">vstr</span><span class="p">,</span><span class="n">vstr2</span><span class="p">]))</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Neural Networks
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://tensorflow-notes.readthedocs.io/zh_CN/latest/index.html">Tensorflow Notes</a></p>
+
+<p><a href="https://www.toptal.com/machine-learning/tensorflow-machine-learning-tutorial">Tensorflow tutorial</a></p>
+
+<h2 id="pytorch">PyTorch</h2>
+
+<p>Logic of pytorch is quite intuitive. PyTorch is designed for dynamics computational graph, very useful for debugging, try out things and for RNN training.</p>
+
+<p>Generally, <code class="language-plaintext highlighter-rouge">PyTorch</code> is a great tool for general purpose differentiable computing, not just deep learning.</p>
+
+<ul>
+  <li>Data Structure
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">torch.tensor</code> is the basic data type, which is quite similar to <code class="language-plaintext highlighter-rouge">np.array</code> format in <code class="language-plaintext highlighter-rouge">numpy</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">tensor</code> behave much like <code class="language-plaintext highlighter-rouge">numpy</code> so many basic visualization tool can still work with tensor!</li>
+          <li>But <code class="language-plaintext highlighter-rouge">tensor</code> only interact with <code class="language-plaintext highlighter-rouge">tensor</code> don’t add <code class="language-plaintext highlighter-rouge">np.array</code> with <code class="language-plaintext highlighter-rouge">tensor</code></li>
+          <li>(For ancient <code class="language-plaintext highlighter-rouge">PyTorch</code> versions, Tensors could be wrapped up as <code class="language-plaintext highlighter-rouge">Variable</code>, and for <code class="language-plaintext highlighter-rouge">Variable</code>  you can set the <code class="language-plaintext highlighter-rouge">requires_grad</code> flag as <code class="language-plaintext highlighter-rouge">True</code> to enable gradient computation, <a href="https://www.quora.com/What-is-the-difference-between-a-Tensor-and-a-Variable-in-Pytorch">now tensor also support gradient computation</a>. )</li>
+          <li><code class="language-plaintext highlighter-rouge">tmp = torch.tensor([1.0,2,3], requires_grad=True)</code></li>
+        </ul>
+      </li>
+      <li>Just as <code class="language-plaintext highlighter-rouge">numpy</code> there are different datatypes of data in <code class="language-plaintext highlighter-rouge">tensor</code> like <code class="language-plaintext highlighter-rouge">torch.float</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">tsr.type(dtype)</code> will returns you a copy of tensor in the given format.</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">tensor</code> can live in different devices, and only tensor on the same device could operate with each other.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">tsr.device</code> show you the device it lives in.</li>
+          <li><code class="language-plaintext highlighter-rouge">tsr.cpu()</code> and <code class="language-plaintext highlighter-rouge">tsr.cuda()</code> returns you the same object if it’s already on that device. It will returns you copy if it’s not!
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">tsr=tsr.cuda()</code> will transfer data to gpu, but  <code class="language-plaintext highlighter-rouge">tsr.cuda()</code> itself will not.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Gradients computation</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">requires_grad</code> could be set for <code class="language-plaintext highlighter-rouge">tensor</code> (and <code class="language-plaintext highlighter-rouge">Variable</code>) to enable gradient flow.
+        <ul>
+          <li>This flag will propagate automatically when other variables are constructed depending on a <code class="language-plaintext highlighter-rouge">Variable</code> that requires gradient.</li>
+          <li>i.e. Computational graph is generated while performing operation.</li>
+        </ul>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">detach</code> gives you a tensor detached from the computational graph! <code class="language-plaintext highlighter-rouge">.detach()</code> gives you a copy, and <code class="language-plaintext highlighter-rouge">.detach_()</code> just modifies the target tensor.</p>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">tensor</code> s could be put into <code class="language-plaintext highlighter-rouge">torch.autograd</code> machinery or <code class="language-plaintext highlighter-rouge">torch.optim</code> optimizers to compute gradients and optimize!
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">optimizer = torch.optim.Adam([img_tensor], lr=0.1, weight_decay=1e-6)</code></li>
+          <li><code class="language-plaintext highlighter-rouge">torch.autograd.grad(loss,img_tsr)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Neural Networks</p>
+
+    <ul>
+      <li>Basic component of PyTorch is <code class="language-plaintext highlighter-rouge">module</code> , it normally implements a <code class="language-plaintext highlighter-rouge">forward</code> and a <code class="language-plaintext highlighter-rouge">backward</code> function.
+        <ul>
+          <li>Note, as <code class="language-plaintext highlighter-rouge">autograd</code> is available, you don’t always need to write a <code class="language-plaintext highlighter-rouge">backward</code> function explicitly. You can <code class="language-plaintext highlighter-rouge">loss.backward()</code> then the gradient just flow back on the graph constructed during <code class="language-plaintext highlighter-rouge">forward</code> pass.</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">module</code>s could be chained or constructed together to make <code class="language-plaintext highlighter-rouge">models</code> which we usually call networks.</li>
+      <li>Flags
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">model.cuda()</code> returns you a copy of model with all parameters living on gpu</li>
+          <li><code class="language-plaintext highlighter-rouge">model.eval()</code> set the flag into evaluation mode instead of training mode.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Serialization</li>
+  <li>Torch save model with 2 formats, serialize whole model object with <code class="language-plaintext highlighter-rouge">torch.save</code> or save weight through <code class="language-plaintext highlighter-rouge">torch.save(model.state_dict())</code> See the <a href="https://pytorch.org/docs/stable/notes/serialization.html#recommend-saving-models">recommended method </a>
+    <ul>
+      <li>The former method mandates you have the class of the model defined or loading will fail.</li>
+      <li>The latter is more general, as long as you have the class definition for the model.</li>
+    </ul>
+  </li>
+  <li>Conventions</li>
+  <li>Axis convention <code class="language-plaintext highlighter-rouge">B,C,H,W</code> same as caffe, but the channel is in <code class="language-plaintext highlighter-rouge">RGB</code> order.</li>
+</ul>
+
+<p><a href="https://github.com/jcjohnson/pytorch-examples/blob/master/README.md">Starting Tutorial to Learn Pytorch</a></p>
+
+<p><a href="https://github.com/FrancescoSaverioZuppichini/Pytorch-how-and-when-to-use-Module-Sequential-ModuleList-and-ModuleDict">How and When to use Module, Sequential, ModuleList and ModuleDict</a></p>
+
+<h2 id="caffe">Caffe</h2>
+
+<ul>
+  <li>Data Structure
+    <ul>
+      <li>Basic datastructure in Caffe is just <code class="language-plaintext highlighter-rouge">numpy.array</code> nothing special.</li>
+      <li>The input and output to layers are <code class="language-plaintext highlighter-rouge">blob</code> s</li>
+    </ul>
+  </li>
+  <li>Neural Networks
+    <ul>
+      <li><a href="https://caffe.berkeleyvision.org/tutorial/net_layer_blob.html">Net Layer Blobs</a></li>
+      <li>Neural Network structure could be specified in <a href="https://github.com/BVLC/caffe/blob/master/src/caffe/proto/caffe.proto"><code class="language-plaintext highlighter-rouge">caffe.proto</code></a> format, which is a form of google <code class="language-plaintext highlighter-rouge">protobuf</code></li>
+    </ul>
+  </li>
+  <li>Conventions
+    <ul>
+      <li>Axis convention <code class="language-plaintext highlighter-rouge">B,C,H,W</code>  and also the channel direction for images are flipped, so the <code class="language-plaintext highlighter-rouge">[0,1,2]</code> channel is <code class="language-plaintext highlighter-rouge">BGR</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="matlab">Matlab</h2>
+
+<ul>
+  <li>Data Structure
+    <ul>
+      <li>Basic data structure in matlab deep learning toolbox is <code class="language-plaintext highlighter-rouge">dlarray</code> . You have to wrap your normal matrix into <code class="language-plaintext highlighter-rouge">dlarray</code> to use as input to models. This is like <code class="language-plaintext highlighter-rouge">torch.Tensor</code> in pytorch, this wrap is needed to compute gradient and ease gpu acceleration.</li>
+      <li><code class="language-plaintext highlighter-rouge">extractdata</code> is like <code class="language-plaintext highlighter-rouge">torch.Tensor.numpy()</code> that you can get your data back from the wrap, but this also breaks the gradient trace for your <code class="language-plaintext highlighter-rouge">dlarray</code></li>
+      <li><code class="language-plaintext highlighter-rouge">dlarray</code> has a labelled version and a un-labelled version. Labels will tell the framework whats the meaning of each axis.
+        <ul>
+          <li>Some operation requires a un-labelled <code class="language-plaintext highlighter-rouge">dlarray</code> some requires a labelled <code class="language-plaintext highlighter-rouge">dlarray</code></li>
+        </ul>
+      </li>
+      <li>Note the order of dimension in matlab is different from most python frameworks. Matlab uses <code class="language-plaintext highlighter-rouge">[H,W,C,B]</code> torch uses <code class="language-plaintext highlighter-rouge">[B,C,H,W]</code> . Besides, matlab is row (first dim) major array storage, python is column (last dim) major storage. So reshape can be very different in 2.</li>
+      <li>As for weight of conv layer, matlab stores it as <code class="language-plaintext highlighter-rouge">[FilterSize(1),FilterSize(2),NumChannels,NumFilters]</code></li>
+      <li>In comparison, PyTorch uses <code class="language-plaintext highlighter-rouge">[out_channels(NumFilters), in_channels(NumChannels), kernel_size ]</code></li>
+    </ul>
+  </li>
+  <li>Neural Networks
+    <ul>
+      <li>Neural Networks have <code class="language-plaintext highlighter-rouge">Layers</code> and a <code class="language-plaintext highlighter-rouge">graph</code></li>
+      <li><code class="language-plaintext highlighter-rouge">predict</code> and <code class="language-plaintext highlighter-rouge">activations</code> seems like the function that calculate the activation like <code class="language-plaintext highlighter-rouge">forward</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">calculateActivations</code> is the core function underlying it.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Gradient Computation
+    <ul>
+      <li>In 2019b, matlab auto differentiation is done through <code class="language-plaintext highlighter-rouge">dlgradient</code> which could compute first order gradient for multiple input function using <code class="language-plaintext highlighter-rouge">dlarray</code> . However its current usage is not like <code class="language-plaintext highlighter-rouge">torch.autograd</code> see <a href="https://www.mathworks.com/help/deeplearning/ug/include-automatic-differentiation.html">example</a> . It has to be used in a function that gets passed to <code class="language-plaintext highlighter-rouge">dlfeval</code> .</li>
+      <li>Currently <strong>it doesn’t support higher order derivative</strong> in the backward mode! (like Hessian. So still needs pytorch for Hessian computation. )
+        <ul>
+          <li>However if you do artificial forward differentiation to approximate the Hessian! There you only first order gradients.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">]</span> <span class="o">=</span> <span class="n">dlfeval</span><span class="p">(</span><span class="o">@</span><span class="n">model</span><span class="p">,</span><span class="n">net</span><span class="p">,</span><span class="n">dlX</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">net</span><span class="p">,</span><span class="n">dlX</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+<span class="c1">% Calculate objective using supported functions for dlarray</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">forward</span><span class="p">(</span><span class="n">net</span><span class="p">,</span><span class="n">dlX</span><span class="p">);</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">fcnvalue</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">T</span><span class="p">);</span> <span class="c1">% crossentropy or similar</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">dlgradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">net</span><span class="o">.</span><span class="n">Learnables</span><span class="p">);</span> <span class="c1">% Automatic gradient</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x0</span> <span class="o">=</span> <span class="n">dlarray</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]);</span>
+<span class="p">[</span><span class="n">fval</span><span class="p">,</span><span class="n">gradval</span><span class="p">]</span> <span class="o">=</span> <span class="n">dlfeval</span><span class="p">(</span><span class="o">@</span><span class="n">rosenbrock</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+
+<span class="k">function</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">dydx</span><span class="p">]</span> <span class="o">=</span> <span class="n">rosenbrock</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">% calculate the dlgradient inside the function within dlfeval</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">dydx</span> <span class="o">=</span> <span class="n">dlgradient</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Weight Initialization
+    <ul>
+      <li>Matlab provides some init algorithms like <code class="language-plaintext highlighter-rouge">glorot</code> (<code class="language-plaintext highlighter-rouge">Xavier</code> in torch) <code class="language-plaintext highlighter-rouge">He</code> (<code class="language-plaintext highlighter-rouge">Kaiming</code> in torch).</li>
+    </ul>
+  </li>
+  <li>Learning Control
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">WeightLearnRateFactor</code> can control the weight learning in each layer. like <code class="language-plaintext highlighter-rouge">requires_grad</code> in pytorch.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="peripheral-functionalities">Peripheral Functionalities</h1>
+
+<h2 id="tensorflow-1">Tensorflow</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Tensorboard</code>  awesome visualization for the training phase!
+    <ul>
+      <li>It can also visualize the computational graph as well!</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Lucid</code>  awesome infrastruture to visualize and interpret deep neural networks.</li>
+  <li>Input pipeline of Tensorflow, is well handled by <code class="language-plaintext highlighter-rouge">tf.data</code>
+    <ul>
+      <li><a href="https://www.tensorflow.org/guide/data">Build tensorflow pipeline</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="pytorch-1">PyTorch</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">torch.nn.DataParallel</code> is a great tool, makes parallelized training at almost no cost!</li>
+  <li>PyTorch support tensorboard now! (Through tensorboardX in older versions.)</li>
+  <li>In parallel <code class="language-plaintext highlighter-rouge">Lucent</code> came out in May 2020 as a pytorch version of <code class="language-plaintext highlighter-rouge">Lucid</code>.</li>
+</ul>
+
+<h2 id="see-also">See also</h2>
+
+<p><a href="https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b">Pytorch vs Tensorflow</a></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Comparison+of+Major+Deep+Learning+Frameworks+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fcomparison-of-major-dl-frameworks"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks&quote=Comparison+of+Major+Deep+Learning+Frameworks+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks&media=$description=Objective%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks&title=Comparison+of+Major+Deep+Learning+Frameworks+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks&title=Comparison+of+Major+Deep+Learning+Frameworks+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Comparison of Major Deep Learning Frameworks (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/comparison-of-major-dl-frameworks"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Deep+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Deep Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Krylov Subspace, Conjugate Gradient and Lancosz Iteration" href="/academic_notes/note-on-krylov-subspace-conjugate-gradient-and-lancosz-iteration">
+            <p>Previous post</p>
+            Krylov Subspace, Conjugate Gradient and Lancosz Iteration
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Online Linear Regression Algorithm" href="/academic_notes/note-on-online-update-regression-algorithms">
+            <p>Next post</p>
+            Note on Online Linear Regression Algorithm
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

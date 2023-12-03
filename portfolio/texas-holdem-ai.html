@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>AI for Texas Hold’em | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="AI for Texas Hold’em" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AI for Texas Hold’em Motivation Texas Hold’em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I’d like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. )." />
+<meta property="og:description" content="AI for Texas Hold’em Motivation Texas Hold’em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I’d like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. )." />
+<link rel="canonical" href="https://animadversio.github.io/portfolio/texas-holdem-ai" />
+<meta property="og:url" content="https://animadversio.github.io/portfolio/texas-holdem-ai" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AI for Texas Hold’em" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"AI for Texas Hold’em Motivation Texas Hold’em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I’d like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. ).","@type":"BlogPosting","url":"https://animadversio.github.io/portfolio/texas-holdem-ai","headline":"AI for Texas Hold’em","dateModified":"2021-01-02T00:00:00+00:00","datePublished":"2021-01-02T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/portfolio/texas-holdem-ai"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="AI for Texas Hold'em">
+    <meta name="twitter:description" content="AI for Texas Hold’emMotivationTexas Hold’em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and le...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="AI for Texas Hold'em">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="AI for Texas Hold'em " aria-label="AI for Texas Hold'em" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="AI+for+Texas+Hold%27em" class="title">AI for Texas Hold'em</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      January 02, 2021
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="ai-for-texas-holdem">AI for Texas Hold’em</h1>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Texas Hold’em is a game of probability and calculation. Sometimes, we feel playing it with human mind is too inefficient and learning the strategy is too slow or costly. Thus I’d like to develop an artificial intelligent system that plays the game and we human and the system can learn from each other. Human can learn to estimate the probability better and counter our biases, the system may learn how to approximate many intuitive strategy in human. By this we may find the probabilistic foundation of strategy in human players (e.g. bluffing early raising etc. ).
+<!--more--></p>
+
+<p><img src="..\assets\img\portfolio\PokerRanking.png" alt="Img From https://www.instructables.com/Learn-To-Play-Poker---Texas-Hold-Em-aka-Texas-Ho/" /></p>
+
+<h2 id="heuristics">Heuristics</h2>
+
+<p>As we played Hold’em a lot recently, some rule of thumbs could be learnt easily.</p>
+
+<ul>
+  <li>Usually follow when your card is weak.</li>
+  <li>Fold if you cannot afford to bet you can win.</li>
+  <li>Raise to win money if you are strong.</li>
+  <li>Raise gradually to lure people in.</li>
+  <li>All in if you are sure that you will win and the other side want’s to follow.</li>
+</ul>
+
+<h2 id="conceptualize-texas-holdem">Conceptualize Texas Hold’em</h2>
+
+<h2 id="encoding">Encoding</h2>
+
+<p>How to represent cards by numbers?</p>
+
+<p>Here we follow a simple way of using a binary tuple to represent a card \((color, num),\;color\in[1,2,3,4].\; num\in[1,...,13]\) , which can easily be mapped to a number in the range of \(1-52\).</p>
+
+<h2 id="match-table-representation">Match Table Representation</h2>
+
+<p>As we think about it, there are \(C^{3}_{52}=22100\) possible 3 card sets in 52 available cards. Given this set of public cards, there are $C_{49}^2=1176$ possible sets of private card, and the same number of possible un-revealed cards<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Given this setup, we have a 1176 by 1176 (N of possible private cards by N of possible public cards) square matrix for each set of public cards.</p>
+
+<p>Note some entry of this matrix is not possible, since, the public card and the private card share the same card. As a result, \(95*1176=111720\) entries of this matrix is forbidden. I call this matrix of unavailable matrix <code class="language-plaintext highlighter-rouge">CollideMat</code>.</p>
+
+<p>The entry of this matrix can contain different things, for example, it can contains the best (strongest) 5 card set for the \(7=3+2+2\) cards. A step further, I can compute the ranking or percentile of each private card set given a public card set (rank within column). After this we can simply compare the ranking instead compare the five card set, thus making the following computation easier.</p>
+
+<p>Note the <strong>full game play after public card reveal can be well described in this matrix</strong>.</p>
+
+<p>Each revealed public card will cross out some column, for example, the 4th public card will leave only 48 columns (or less) in the matrix, 5th public card will leave only 1 column left.</p>
+
+<p>On the side of private cards, the $N$ players each occupies a unique and mutually compatible row. For each player he know his own row in this matrix, without knowing other player’s row. To win the game means in the final column of public card, your row has a higher ranking / percentile than other players on table.</p>
+
+<p>For each game, this matrix IS the BATTLEGROUND for all the player.</p>
+
+<h2 id="pre-compute-match-table">Pre-Compute Match Table</h2>
+
+<p>Note the structure we detailed in the last section is not dependent on any game state or mind set of player. It’s just a fixed structure inherent in the rule of games, because of this we can compute it beforehand.</p>
+
+<p>At the first glance, what we need to compute are 22100 square matrices of 1176 by 1176, correspond to match matrix of all public card combinations.</p>
+
+<p>But memory and computation-wise this is not very efficient. In my current CPU, compute one match table takes ~ 2 mins, thus all the match table will take ~ 30 CPU days. On the storage side, this can takes ~ 120 Gb to store all the tables, even though I use low precision integer number to store the ranking and collision matrix.</p>
+
+<p>In the end, I leveraged the symmetry of public card sets, i.e. 4 colors are equivalent thus many public sets are the same just by remapping the cards’ color<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>. This dramatically save computation. At the end of the day, only 1795 sets of public card (match table) needs to be computed. Then I designed a color remapping process to rename the colors to get the match table they need.</p>
+
+<p>This computation takes around half a day by distributing onto 10 CPU nodes on cluster. And the database is less than 10 Gb, which can be further compressed to ~ 1Gb using zip.</p>
+
+<p>A general lesson I take from this is actually anything that doesn’t rely on game state like player’s action history can be potentially pre-computed. The only issue is the computational time and storage. If the database is too large and computing one thing is fast, then compute it on the fly may be a better choice. But here</p>
+
+<h2 id="estimate-win-rate">Estimate Win Rate</h2>
+
+<p>Given this database, we can <strong>instantaneously</strong> estimate many aspect of the game given public cards!</p>
+
+<p>In this section, I’ll talk about “naïve” win rate estimation, i.e. without guessing other’s card. This is effectively assuming a uniform distributed prior for  others’ private card.  (their cards are distributed in any non-colliding row with my card.)</p>
+
+<p>Before diving into calculation, let’s first fix the notations. In the following sections we use these symbols, all assuming the first 3 public cards are revealed:</p>
+
+<ul>
+  <li>\(PUB\) is the discrete random variable representing the last 2 public cards.</li>
+  <li>\(PRV_i\) is the discrete variable representing private card sets for player $i$.
+    <ul>
+      <li>These random variable’s distribution can easily be represented by a 1176 weight vector, or an index set indicating the rows / columns.</li>
+      <li>For public sets, we should always assume it distributes uniformly after excluding colliding possibilities.</li>
+    </ul>
+  </li>
+  <li>The collision function $C(PRV_i,PUB)$ is a Boolean function or matrix, indicating which sets of private cards are not compatible with the public cards and vise versa.
+    <ul>
+      <li>Note this function is symmetric to its two variables. i.e. the collision matrix is also symmetric, if we order the row and columns in the same way.</li>
+    </ul>
+  </li>
+  <li>The percentile function \(S(PRV_i,PUB)\) is the private cards’ percentile, which could be represented by a float matrix with some NaN values. Here I adopted the convention of descending percentile. (e.g. $S(PRV_i,PUB)=0$ is the strongest private set).</li>
+</ul>
+
+<p>Thus the win rate of your card sets estimated naively is the following, (you are the $i$ player and assuming set of players on table is $Ply$)</p>
+
+\[\mathbb E\{\prod_{j\in Ply,j\neq i}[S(PRV_j,PUB)&gt;S(PRV_i,PUB)]\}\\
+=\sum_{PUB}P(PUB)\prod_{j\in Ply,j\neq i}\sum_{PRV_j}(S(PRV_j,PUB)&gt;S(PRV_i,PUB))P(PRV_j)\]
+
+<p>Given a uniform and independent distribution<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">3</a></sup> to \(PRV_j\) then the expression above could be written simply</p>
+
+\[\sum_{PUB}P(PUB)(1-S(PRV_i,PUB))^{\|Ply\|-1}\]
+
+<p>$|Ply|$ is the number of player on table. This naive win rate can be computed efficiently from the table \(S\) by exponentiating and averaging one row!</p>
+
+<p>This result is both illuminating and limited. This expression captures the fact that generally the fewer player on table, the more probable for you to win! This fact leads players to reduce the number of player on table by raising draw.</p>
+
+<p>But it’s also limiting, as it assumes a flat distribution to other’s card, this can be a good approximation at the start of the game; but at the end, <strong>those who have not folded are generally much stronger than average</strong>. Then a flat prior can be too optimistic, and this expression can be over-estimating your win rate.</p>
+
+<p>Nonetheless, this expression is highly useful in the case when no information about other’s card is available and it’s super efficient. Further, the first equation can incorporate our belief distribution of other’s card, thus is still a useful framework.</p>
+
+<h2 id="decision-making">Decision Making</h2>
+
+<p>In each stage of the game, we are facing a decision making problem, the decisions are “Fold”, “Follow” or “Raise”. Within “Raise”, we can choose the amount of draw we’d like to use (including All In). In a broader scope, this whole problem is a sequential decision making problem.</p>
+
+<p>I modelled this decision process in two stage (2 layer decision tree). First the agent decides to Fold or not, based on some rough estimation of win rate; then if not fold, decide the amount of draw, by estimating the potential income given my draw.</p>
+
+<p>The general framework to treat this decision problem is that each action will give rise to a distribution of incomes (rewards). We will choose the action to maximize the mean outcome or maximize a certain percentile of outcome. (like maximize lower bound is the same as minimize loss, maximize a higher percentile is the same as risk seeking.)</p>
+
+<p>Let’s first use the decision of Fold or not as example. Given your current draw $d_i$ and the maximal draw $\bar d$</p>
+
+<p>Fold will result in a fixed loss of money $-d_i$ .</p>
+
+<p>Not fold and follow will result in a distribution of outcomes but we can estimate it roughly by 
+\(p(win_i)*(\mathbb E[RawIncome\mid win_i]-\bar d) -(1-P(win_i)) * \bar d\\
+=p(win_i)*\mathbb E[RawIncome\mid win_i]-\bar d\)
+A key part is the Expected raw income $\mathbb E[RawIncome\mid win_i]$ . We know a lower bound for this expected income, however it’s much more involved to estimate its exact value. 
+\(\mathbb E[RawIncome\mid win_i] &gt; MoneyOnTable + \bar d - d_i\)
+So in the next section I’ll specifically describe how to estimate this expectation by Monte Carlo simulation.</p>
+
+<p>Currently this decision is made by comparing the two expectation values.</p>
+
+<h2 id="estimating-income">Estimating Income</h2>
+
+<p>Note in the game of Hold’em, you do not have a fixed reward size like in bandit. You are controlling your income size by adjusting your raising and following behavior.</p>
+
+<h2 id="appendix-leveraging-symmetry-in-card-sets">Appendix: Leveraging Symmetry in Card Sets</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Note this is an over-estimate, since for each player his private information (2 cards he holds) informs him that some (95) combination of public cards are not possible, thus cross out some column of the matrix. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>The way we leverage symmetry is detailed in the appendix. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>which is definitely not true, but it’s approximating when we have no knowledge of other’s cards <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/portfolio/texas-holdem-ai" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=AI+for+Texas+Hold%27em%20https%3A%2F%2Fanimadversio.github.io%2Fportfolio%2Ftexas-holdem-ai"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/portfolio/texas-holdem-ai&quote=AI+for+Texas+Hold%27em%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/portfolio/texas-holdem-ai&media=$description=AI+for+Texas+Hold%E2%80%99em%0A%0AMotivation%0A%0ATexas+Hold%E2%80%99em+is+a+game+of+probability+and+calculation.+Sometimes%2C+we+feel+playing+it+with+human+mind+is+too+inefficient+and+learning+the+strategy+is+too+slow+or+costly.+Thus+I%E2%80%99d+like+to+develop+an+artificial+intelligent+system+that+plays+the+game+and+we+human+and+the+system+can+learn+from+each+other.+Human+can+learn+to+estimate+the+probability+better+and+counter+our+biases%2C+the+system+may+learn+how+to+approximate+many+intuitive+strategy+in+human.+By+this+we+may+find+the+probabilistic+foundation+of+strategy+in+human+players+%28e.g.+bluffing+early+raising+etc.+%29.%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/portfolio/texas-holdem-ai&title=AI+for+Texas+Hold%27em%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/portfolio/texas-holdem-ai&title=AI+for+Texas+Hold%27em%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/portfolio/texas-holdem-ai"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=AI for Texas Hold'em%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/portfolio/texas-holdem-ai"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Artificial+Intelligence">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Artificial Intelligence</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Game">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Game</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Probability">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Probability</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Geometry of Generative Adversarial Networks" href="/portfolio/geometry-of-gan">
+            <p>Previous post</p>
+            Geometry of Generative Adversarial Networks
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Art in Hyperbolic Space" href="/portfolio/hyperbolic-art">
+            <p>Next post</p>
+            Art in Hyperbolic Space
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

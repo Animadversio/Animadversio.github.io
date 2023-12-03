@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Motivation" />
+<meta property="og:description" content="Motivation" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-02-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Motivation","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix","headline":"Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix","dateModified":"2022-02-04T00:00:00+00:00","datePublished":"2022-02-04T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix">
+    <meta name="twitter:description" content="MotivationAs mentioned in our high-dimensional PCA note, understanding the spectrum of Toeplitz matrix is important.The subject itself is a bit technical, bu...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix " aria-label="Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Analytical+Techniques+for+Finding+Spectrum+of+Tridiagonal+Toeplitz+Matrix" class="title">Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      February 04, 2022
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="motivation">Motivation</h2>
+
+<p>As mentioned in our <a href="PCA-of-High-Dimensional-Trajectories.md">high-dimensional PCA note</a>, understanding the spectrum of Toeplitz matrix is important.</p>
+
+<p>The subject itself is a bit technical, but the analytical techniques involved in it are splendid and general. So here I took note from this paper and present way to calculate the spectrum on paper (or by mathematica).</p>
+
+<h2 id="problem-formulation">Problem Formulation</h2>
+
+<p>Given a $n$ dimensional tri-toeplitz matrix $A$,</p>
+
+<p>Classic way of finding eigenvalues is to solve the eigenequation $(A-\lambda I)v=0$ or the eigen polynomial $\det(A-\lambda I)$.</p>
+
+<p>Note the eigen-polynomial $W_n(\lambda)$ is a $n$ degree polynomial in $\lambda$. The first useful trick is to calculate this polynomial by recursion or mathematical induction!</p>
+
+<h2 id="eigenpolynomial-by-induction">Eigenpolynomial by Induction</h2>
+
+<p>Simply, we denote the eigenpolynomial of dimension $n$ matrix as $W_n(\lambda)$. These polynomials are easy to calculate by hand for low dimensions.</p>
+
+<ul>
+  <li>For $n=1$, $W_1=a-\lambda$,</li>
+  <li>For $n=2$, $W_2=(a-\lambda)^2-bc$</li>
+</ul>
+
+<p>The key is to notice that $W_n$ of different dimensions were recursively connected: using <a href="https://en.wikipedia.org/wiki/Minor_(linear_algebra)#Cofactor_expansion_of_the_determinant">the minor expansion formula of determinant</a>, we can see</p>
+
+\[W_{n+2}(\lambda)=(a-\lambda)W_{n+1}(\lambda)-bcW_{n}(\lambda)\]
+
+<h3 id="solve-the-linear-recurrence-relation">Solve the Linear Recurrence Relation</h3>
+
+<p>We got the two element recursion rule for determinant, what’s the closed form solution for this sequence? For <a href="https://en.wikipedia.org/wiki/Constant-recursive_sequence">constant recursive sequence</a> also known as linear recurrence relation, a general way to solve it is to <a href="https://en.wikipedia.org/wiki/Linear_recurrence_with_constant_coefficients#General_solution">solve the characteristic polynomial equation</a>.</p>
+
+\[\eta^2-(a-\lambda)\eta+bc=0\]
+
+<p>When there are two distinct solutions $\Delta\neq0$</p>
+
+\[\eta_{1,2}=\frac{(a-\lambda)\pm\sqrt{\Delta}}{2}\\
+\Delta = (a-\lambda)^2-4bc\]
+
+<p>Let’s make ansatz $W_n(\lambda)=A\eta_1^n+B\eta_2^n$ and solve the coefficients $A,B$ by the initial condition.</p>
+
+\[\begin{bmatrix}
+\eta_1 &amp; \eta_2\\
+\eta_1^2 &amp; \eta_2^2
+\end{bmatrix}
+\begin{bmatrix}
+A\\
+B
+\end{bmatrix}=
+\begin{bmatrix}
+a-\lambda\\
+(a-\lambda)^2-bc
+\end{bmatrix}\]
+
+<p>By tedious computation (or Mathematica), we got</p>
+
+\[A=\eta_1/\sqrt{\Delta}\\B=-\eta_2/\sqrt{\Delta}\\
+W_n(\lambda)=\frac{1}{\sqrt{\Delta}}(\eta_1^{n+1}-\eta_2^{n+1})\]
+
+<h2 id="solve-eigenpolynomial">Solve Eigenpolynomial</h2>
+
+<p>Given this beautiful relationship, solve the polynomial became easier $W_n(\lambda)=0$</p>
+
+\[\eta_1\eta_2=bc\\
+\eta_1+\eta_2=a-\lambda\\
+\frac{1}{\sqrt{\Delta}}(\eta_1^{n+1}-\eta_2^{n+1})=0\\
+(\eta_1^{2n+2}-(bc)^{n+1})\frac{\eta_2^{n+1}}{\sqrt{\Delta}}=0\]
+
+<p>Solution to this equation is</p>
+
+\[(\frac{\eta_1^2}{bc})^{n+1}=1\\
+\eta_1^2 = bc\exp{\frac{i2k\pi}{n+1}},\mbox{ for }k=0,...n\\
+\eta_1 = \pm\sqrt{bc}\exp{\frac{ik\pi}{n+1}}\\
+\eta_2 = \pm\sqrt{bc}\exp{\frac{-ik\pi}{n+1}}\\\]
+
+<p>Thus by $\eta_1+\eta_2$</p>
+
+\[\lambda= a - (\eta_1+\eta_2)\\
+\lambda_k=a\mp\sqrt{bc}(\exp{\frac{ik\pi}{n+1}}+\exp{\frac{-ik\pi}{n+1}})\\
+\lambda_k =a\mp2\sqrt{bc} \cos(\frac{k\pi}{n+1}),\mbox{ for }k=0,...n\\\]
+
+<p>It seems there are $2(n+1)$ choices, but there are $n+2$ unique values in this formula, since.</p>
+
+\[a+2\sqrt{bc} \cos(\frac{k\pi}{n+1})=a-2\sqrt{bc} \cos(\frac{(n+1-k)\pi}{n+1})\mbox{ for }k=1...n\]
+
+<p>Thus we could summarize the $n+2$ unique values in this formula</p>
+
+\[\lambda_k =a-2\sqrt{bc} \cos(\frac{k\pi}{n+1}),\mbox{ for }k=0,...n+1\\\]
+
+<p>Notice that $k=0,n+1$ will generate eigenvalue $\lambda_0=a\pm2\sqrt{bc}$. which leads to $\Delta=(a-\lambda)^2-4bc=0$, thus it violates the assumption above.</p>
+
+<p>In summary the valida solution for $\lambda$ are the following, exactly $n$ values. (since the $W_n$ is a $n$ degree polynomial, it shall only have $n$ solutions. )</p>
+
+\[\lambda_k =a-2\sqrt{bc} \cos(\frac{k\pi}{n+1}),\mbox{ for }k=1,...n\\\]
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Analytical+Techniques+for+Finding+Spectrum+of+Tridiagonal+Toeplitz+Matrix%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fspectrum-of-tri-toeplitz-matrix"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix&quote=Analytical+Techniques+for+Finding+Spectrum+of+Tridiagonal+Toeplitz+Matrix%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix&media=$description=Motivation%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix&title=Analytical+Techniques+for+Finding+Spectrum+of+Tridiagonal+Toeplitz+Matrix%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix&title=Analytical+Techniques+for+Finding+Spectrum+of+Tridiagonal+Toeplitz+Matrix%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/spectrum-of-tri-toeplitz-matrix"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Eigenvalue+problem">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Eigenvalue problem</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Linear+Algebra">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Linear Algebra</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Recursion">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Recursion</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Kernel PCA" href="/academic_notes/note-on-kernel-pca">
+            <p>Previous post</p>
+            Note on Kernel PCA
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="PCA of High Dimensional Trajectory" href="/academic_notes/pca-of-high-dimensional-trajectories">
+            <p>Next post</p>
+            PCA of High Dimensional Trajectory
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

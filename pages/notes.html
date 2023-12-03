@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Notes Feed | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Notes Feed" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/pages/notes.html" />
+<meta property="og:url" content="https://animadversio.github.io/pages/notes.html" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notes Feed" />
+<script type="application/ld+json">
+{"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"WebPage","url":"https://animadversio.github.io/pages/notes.html","headline":"Notes Feed","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Notes Feed">
+    <meta name="twitter:description" content="{% assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note %}{% assign sorted_notes = all_posts | sort:"date" | reverse %}{% ass...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Notes Feed">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Notes Feed " aria-label="Notes Feed" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+
+  <header id="main" style="background-image: url('')">
+    <div class="title-padder">
+      
+        <h1 id="Notes+Feed" class="title"> Notes Feed</h1>
+        
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+	
+<p>117 posts in total, in 15 pages, 104 to 112.</p>
+
+<!--
+
+
+
+
+
+ -->
+
+<ul>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="Constrained CMA-ES Algorithm" class="post-link" href="/academic_notes/constrained-cma-es-algorithm">
+                    Constrained CMA-ES Algorithm
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      June 20, 2019
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/academic_notes/constrained-cma-es-algorithm">Constrained CMA-ES Algorithm</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      June 20, 2019
+    </p></div>
+ -->
+      <!-- -<b><i> Jun 20, 2019 </i></b>  Binxu Wang 
+      <p>  </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Optimization</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="Note on Belief Propagation Algorithm (Updating)" class="post-link" href="/academic_notes/note-on-belief-propagation-algorithm">
+                    Note on Belief Propagation Algorithm (Updating)
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 18, 2019
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/academic_notes/note-on-belief-propagation-algorithm">Note on Belief Propagation Algorithm (Updating)</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 18, 2019
+    </p></div>
+ -->
+      <!-- -<b><i> May 18, 2019 </i></b>  Binxu Wang 
+      <p>  </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Graph+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Graph Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="Resources for Zebrafish Study" class="post-link" href="/tech_note/resources-for-zebrafish-study">
+                    Resources for Zebrafish Study
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      April 18, 2019
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/tech_note/resources-for-zebrafish-study">Resources for Zebrafish Study</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      April 18, 2019
+    </p></div>
+ -->
+      <!-- -<b><i> Apr 18, 2019 </i></b>  Binxu Wang 
+      <p> Larval zebrafish is a tiny vertebrate, really suitable for circuit study, as its translucency.
+ </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#atlas">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> atlas</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Connectomics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Connectomics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#zebrafish">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> zebrafish</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="Note on Automatic 3D Instance Segmentation Pipeline" class="post-link" href="/tech_note/note-on-automatic-3d-segmentation-pipeline">
+                    Note on Automatic 3D Instance Segmentation Pipeline
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      December 09, 2018
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/tech_note/note-on-automatic-3d-segmentation-pipeline">Note on Automatic 3D Instance Segmentation Pipeline</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      December 09, 2018
+    </p></div>
+ -->
+      <!-- -<b><i> Dec 9, 2018 </i></b>  Binxu Wang 
+      <p> Note on Automatic 3D Instance Segmentation Pipeline
+ </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Connectomics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Connectomics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Image+Analysis">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Image Analysis</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="This Week's Learning about Brain 3 Hard Wired Olfactory Responce" class="post-link" href="/2018/11/25/This-Week's-Learning-about-Brain-3-Hard-Wired-Olfactory-Responce.html">
+                    This Week's Learning about Brain 3 Hard Wired Olfactory Responce
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 25, 2018
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/2018/11/25/This-Week's-Learning-about-Brain-3-Hard-Wired-Olfactory-Responce.html">This Week's Learning about Brain 3 Hard Wired Olfactory Responce</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 25, 2018
+    </p></div>
+ -->
+      <!-- -<b><i> Nov 25, 2018 </i></b>  Binxu Wang 
+      <p> 先天与后天 (Nature or Nurture)
+首先让我们从一个更大的背景开始.
+ </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Connectomics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Connectomics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Fruit+Fly">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Fruit Fly</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neural+Circuit">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neural Circuit</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Olfactory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Olfactory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sensory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sensory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="Automatic Behavioral Quantification Pipeline" class="post-link" href="/tech_note/automatic-behavioral-quantification-pipeline">
+                    Automatic Behavioral Quantification Pipeline
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 17, 2018
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/tech_note/automatic-behavioral-quantification-pipeline">Automatic Behavioral Quantification Pipeline</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 17, 2018
+    </p></div>
+ -->
+      <!-- -<b><i> Nov 17, 2018 </i></b>  Binxu Wang 
+      <p> How to automatically analyze behavior video?
+ </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Behavior">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Behavior</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Image+Analysis">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Image Analysis</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="This Week's Learning about Brain 2 Frequency Tuning of Hair Cell" class="post-link" href="/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html">
+                    This Week's Learning about Brain 2 Frequency Tuning of Hair Cell
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      October 17, 2018
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html">This Week's Learning about Brain 2 Frequency Tuning of Hair Cell</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      October 17, 2018
+    </p></div>
+ -->
+      <!-- -<b><i> Oct 17, 2018 </i></b>  Binxu Wang 
+      <p> 引言: 感觉系统
+一直以来我都被这个简单的事实深深震撼: 我们的心智(mind)其实一直都生活在一个密不透风, 不见天日的黑匣子里(Skull), 但因为我们无比强大的感觉系统(Sensory System), 我们才能在神经信息处理的过程中渲染出这样清晰美妙的主观现实, 并无缝的与这个世界交... </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Auditory+Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Auditory Neuroscience</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Biophysics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Biophysics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neural+Circuit">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neural Circuit</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sensory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sensory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+      <div class="post-teaser">
+            
+            <span>
+                <h2>
+                  <a aria-label="How to translate matlab code into python (numpy)" class="post-link" href="/tech_note/translate-matlab-into-python-numpy">
+                    How to translate matlab code into python (numpy)
+                  </a>
+                </h2>
+                
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 10, 2018
+    </p></div>
+
+          </span>
+        </div>
+     <!-- <h3><a href="/tech_note/translate-matlab-into-python-numpy">How to translate matlab code into python (numpy)</a> </h3> 
+     
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 10, 2018
+    </p></div>
+ -->
+      <!-- -<b><i> Sep 10, 2018 </i></b>  Binxu Wang 
+      <p> Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, lov... </p> -->
+      <!-- 
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#coding">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> coding</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#matlab">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> matlab</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> python</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+ -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+<!-- <div id="post-nav">
+    
+    
+</div>
+ -->
+
+<div class="pagination">
+  
+    <div class="previous">
+        
+        
+        <!-- << -->
+        <a aria-label="Prev" href="/collection/page1" class="button">
+            <span><i class="fas fa-angle-double-left"></i></span>
+        </a>
+        
+        
+        <!-- < previous -->
+        
+        <a aria-label="Prev" href="/collection/page14" class="button">
+            <span><i class="fas fa-chevron-left"></i></span>
+            Prev
+        </a>
+        
+    </div>
+
+    <div class="page_number">
+        14 / 15
+    </div>
+
+    <div class="next">
+        
+        <!-- next > -->
+        
+        <a aria-label="Next" href="/collection/page14" class="button">
+            Next
+            <span><i class="fas fa-chevron-right"></i></span>
+        </a>
+        
+
+        
+        <!-- >> -->
+        <a aria-label="Next" href="/collection/page15" class="button">
+            <span><i class="fas fa-angle-double-right"></i></span>
+        </a>
+        
+        
+    </div>
+</div>
+
+  
+  </section>
+
+
+  <!-- Tag list for portfolio -->
+  
+  
+
+
+  <div class="tag-list"></div>
+
+
+
+</article>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

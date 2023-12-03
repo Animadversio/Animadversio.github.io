@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on EM algorithm and likelihood lower bound | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on EM algorithm and likelihood lower bound" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Motivation" />
+<meta property="og:description" content="Motivation" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on EM algorithm and likelihood lower bound" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Motivation","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound","headline":"Note on EM algorithm and likelihood lower bound","dateModified":"2022-05-13T00:00:00+00:00","datePublished":"2022-05-13T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on EM algorithm and likelihood lower bound">
+    <meta name="twitter:description" content="MotivationHow to understand EM algorithm from a theoretical perspective? This post tries to understand EM as a form of alternative ascent of a lower bound of...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on EM algorithm and likelihood lower bound">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on EM algorithm and likelihood lower bound " aria-label="Note on EM algorithm and likelihood lower bound" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+EM+algorithm+and+likelihood+lower+bound" class="title">Note on EM algorithm and likelihood lower bound</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 13, 2022
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="motivation">Motivation</h2>
+
+<p>How to understand EM algorithm from a theoretical perspective? This post tries to understand EM as a form of alternative ascent of a lower bound of likelihood.</p>
+
+<h2 id="the-key-trick-of-em">The Key Trick of EM</h2>
+
+<p>The key trick we need to remember is the usage of <strong>Jensen Inequality</strong> on logarithm. So we could swap Expectation and logarithm and obtain a lower bound on likelihood. Generally, we have such inequality, given a positive function $q(z)$ that sums to $1$ (probability density), 
+\(\log \sum_z p(z)=\log \sum_zq(z)\frac{p(z)}{q(z)}\geq \sum_zq(z) (\log p(z)-\log q(z))\)
+This form is particularly useful when we have a latent variable model. Since we are interested in the likelihood of data itself $\log p(x)$ the latent variable part needs to be integrated out. 
+\(\log \int_zp(x|z)p(z) \geq \int_z q(z)\log\frac{p(x|z)p(z)}{q(z)}\\
+=\mathbb E_{z\sim q(z)} [\log p(x|z) + \log p(z) - \log q(z)]\)
+This tricky is the foundation of variational inference. However, this still feels distant from the common formulation of EM. The distinctive feature of EM is that it could optimize $q(z)$ in one step: by setting $q(z)=p(z|x)$ , then without any optimization iteration, you could tighten the bound and optimize the probe distribution $q$ .</p>
+
+<h2 id="example-gaussian-mixture">Example: Gaussian Mixture</h2>
+
+<p>To make it concrete, let’s take a simple example, Gaussian mixture models let observed variable $X$, discrete latent variable $Z$ and parameters $\Theta$.</p>
+
+\[P(Z=k;\Theta)=\pi_k\\
+P(X\mid Z=k;\Theta)=\mathcal N(\mu_k,\Sigma_k)\]
+
+<p>Then the likelihood function is the summation over dataset $x\in D$</p>
+
+\[\log\mathcal L(\Theta)=\sum_i \log P(x_i;\Theta)=\sum_i \log \sum_k P(x_i\mid z=k;\Theta)P(z=k;\Theta)\]
+
+<p>As a trick, we use an arbitrary distribution over latent variables $q(z)$ to probe it</p>
+
+\[\log\mathcal L(\Theta)=\sum_i \log \sum_k q(z=k)\frac{ P(x_i\mid z=k;\Theta)P(z=k;\Theta)}{q(z=k)}\\
+\geq\sum_i \sum_k q(z=k) \log \frac{ P(x_i\mid z=k;\Theta)P(z=k;\Theta)}{q(z=k)}\]
+
+<p>In the 2nd line, the swap of $\log$ and $\sum$ comes from Jensen Inequality, with $\log$ a concave function and $q(z)$ probability summing to $1$. Since $z$ is discrete, function $q(z)$ is just a vector $q$.</p>
+
+<p>Let’s call the lower bound $J(q,\theta)$, then the EM algorithm is maximizing it alternatively,</p>
+
+<ul>
+  <li>E step $q^{(t)}\gets \arg\max_q J(q,\Theta^{(t)})$</li>
+  <li>M step $\Theta^{(t+1)}\gets \arg\max_\Theta J(q^{(t)},\Theta)$</li>
+</ul>
+
+<p>In classic formulation, E step estimate the posterior of $Z$ given $X$ and current $\Theta$. To see the connection, I claim, $q(z)=p(z\mid x;\Theta^{(t)})$ solve the maximization problem $\arg\max_q J(q,\Theta^{(t)})$.</p>
+
+<p>To prove this, we show that the posterior makes the aforementioned bound tight. When $q(z)=p(z\mid x;\Theta)\$</p>
+
+\[\log p(x;\Theta) = \log \sum_z p(x,z;\Theta) \\
+\geq \sum_z q(z)\log \frac{p(x,z;\Theta)}{q(z)}\\
+=\sum_z p(z\mid x;\Theta) \log \frac{p(x,z;\Theta)}{p(z\mid x;\Theta)} \\
+=\sum_z p(z\mid x;\Theta) \log p(x;\Theta)\\
+=\log p(x;\Theta)\]
+
+<p>which is tight. This shows that $p(z\mid x;\Theta)=\arg\max_q J(q,\Theta^{(t)})$. As we said, this maximization could be done in closed form without iteration.</p>
+
+<p>Similarly in M step, retaining only terms related to $\Theta$</p>
+
+\[J(q^{(t)},\Theta)\\
+=\sum_i \sum_k q_i(z=k) (\log P(x_i\mid z=k;\Theta)+\log P(z=k;\Theta)-\log q_i(z=k))\\
+=\sum_i \sum_k q_i(z=k) (\log P(x_i\mid z=k;\Theta)+\log P(z=k;\Theta))+const\]
+
+<p>Which is a weighted MLE, for basic distributions like Gaussian it’s also solvable in one step in closed form.</p>
+
+<p>Using Gaussian as example, abreviating $q_i(z_k)=q_{ik}$</p>
+
+\[LHS=\sum_i \sum_k q_{ik}(-\frac 12\log \det\Sigma_k  -\frac 12(x_i-\mu_k)^T\Sigma_k^{-1}(x_i-\mu_k) + \log \pi_k)+const\]
+
+<p>Optimizing w.r.t. $\Sigma_k,\mu_k,\pi_k$ all have closed form solution. No gradient iteration is needed.</p>
+
+<p>All in all, EM solve subproblem of part of variables alternatively, but each subproblem could be maximized to global maxima without iteration.</p>
+
+<h2 id="compare-em-and-gradient-descent">Compare EM and Gradient Descent</h2>
+
+<ul>
+  <li>One way to think of the EM algorithm is that it’s doing coordinate ascent/descent on a surrogate, i.e. a <strong>lower bound of likelihood</strong>. (your textbook also showed this point on P396) It optimizes one set of variables and then the other set of variables, alternatively. However, <strong>for each set of variables the optimization problem has a closed-form global maximum</strong>, which could be optimized without iteration.</li>
+  <li>In contrast, gradient descent optimizes the likelihood directly. It optimizes all variables jointly but always takes local optimization steps. Even for part of the quadratic problem grad descent could be slow to converge, not to mention hard multi-modal problems.</li>
+</ul>
+
+<hr />
+
+<h2 id="issues-of-em">Issues of EM</h2>
+
+<p>That being said, EM has its own problem</p>
+<ul>
+  <li>Note that, EM directly optimizes the lower bound of $\mathcal L(\Theta)$. the bound is tight only when $q(z)=P(z\mid x;\Theta)$, so when $z$ itself has a complex posterior distribution (not a simple discrete distr.), then parametrizing it and optimizing it becomes tricky. For example, one could use a Gaussian distribution to approximate the posterior, but when this approximation is not exact, EM iteration is not guaranteed to increase the data likelihood.</li>
+</ul>
+
+<p><strong>Reference</strong></p>
+<ul>
+  <li><a href="https://www.cs.princeton.edu/courses/archive/spring08/cos424/scribe_notes/0311b">Short Lecture note from Princeton</a> which I found most illuminating!</li>
+  <li><a href="https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec15_16_handout.pdf">Lecture slides from U Toronto</a> longer but quite hand holding</li>
+  <li><a href="https://chrischoy.github.io/research/Expectation-Maximization-and-Variational-Inference/">EM and variational inference</a></li>
+  <li>
+    <p>Bishop’s <a href="https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/">PRML</a></p>
+  </li>
+  <li>This post is adapted from <a href="https://math.stackexchange.com/questions/4444592/em-algorithm-vs-gradient-descent/4450007#4450007">my answer in math exchange</a></li>
+</ul>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+EM+algorithm+and+likelihood+lower+bound%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-em-and-lower-bound"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound&quote=Note+on+EM+algorithm+and+likelihood+lower+bound%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound&media=$description=Motivation%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound&title=Note+on+EM+algorithm+and+likelihood+lower+bound%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound&title=Note+on+EM+algorithm+and+likelihood+lower+bound%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on EM algorithm and likelihood lower bound%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-em-and-lower-bound"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Bayesian">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Bayesian</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#MLE">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> MLE</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Equivalent Score Matching Objective" href="/academic_notes/note-on-equiv-score-matching-objective">
+            <p>Previous post</p>
+            Note on Equivalent Score Matching Objective
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Diffusion Generative Models" href="/academic_notes/note-on-diffusion-generative-model">
+            <p>Next post</p>
+            Note on Diffusion Generative Models
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

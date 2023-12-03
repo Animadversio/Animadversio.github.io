@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Stereo Problem | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Stereo Problem" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Stereo" />
+<meta property="og:description" content="Stereo" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/stereo-algorithms" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/stereo-algorithms" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Stereo Problem" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Stereo","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/stereo-algorithms","headline":"Note on Stereo Problem","dateModified":"2020-02-04T00:00:00+00:00","datePublished":"2020-02-04T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/stereo-algorithms"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Stereo Problem">
+    <meta name="twitter:description" content="StereoBasic Stereo algorithm can be formulated as Markov Random Field.Thus Methods in MRF inference could all be used. PriorPlanar PriorNatural scene is usua...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Stereo Problem">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Stereo Problem " aria-label="Note on Stereo Problem" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Stereo+Problem" class="title">Note on Stereo Problem</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      February 04, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="stereo">Stereo</h1>
+
+<p>Basic Stereo algorithm can be formulated as Markov Random Field.</p>
+
+<p>Thus Methods in MRF inference could all be used. <a href="Note-on-MRF-Image-Prior.md">Prior</a></p>
+
+<h2 id="planar-prior">Planar Prior</h2>
+
+<p>Natural scene is usually piece-wise! How to impose this idea to depth map?</p>
+
+<p>So basic procedure:</p>
+
+<ul>
+  <li>Do disparity map $D(x,y)$</li>
+  <li>Run SGM type MRF inference algorithm, get a initial depth estimate</li>
+  <li>Use super-pixel clustering to find a region of pixel that may <strong>lie  on a single plane</strong>.</li>
+  <li>Do a smooth plane fit to the initial depth</li>
+</ul>
+
+<p>2013 ECCV</p>
+
+<p><strong>SLIC cost</strong>
+\(\alpha\|I[n]-\mu^i_k\|^2+\beta\|n-\mu^s_k\|^2+\gamma\|d^0[n]-\alpha_kn_x-\beta_kn_y-\gamma_k\|^2\)
+For each cluster it has parameters $\mu^i_k,\mu^s_k,\alpha_k,\beta_k,\gamma_k$  mean pixel value, mean spatial location and the plane going through it.</p>
+
+<p><strong>SLIC</strong> essentially is a K-means clustering, so it’s iteratively doing</p>
+
+<ul>
+  <li>Assign pixel to cluster</li>
+  <li>Fit the parameters for the cluster.
+    <ul>
+      <li>Here we will find the mean pixel value, plane parameters.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>What’s the right superpixel size? Can’t be too small or too large.</p>
+</blockquote>
+
+<h3 id="superpixel-mrf">Superpixel MRF</h3>
+
+<p>Maybe run MRF on the superpixels! And merge then iteratively.</p>
+
+<p><a href="https://arxiv.org/abs/1204.1393">Continuous Markov Random Fields for Robust Stereo Estimation</a></p>
+
+<p><strong>Graph Construction</strong></p>
+
+<ul>
+  <li>
+    <p>Each superpixel is a node. Each node has 3 parameters, $y_k=[\alpha_k,\beta_k,\gamma_k]$ .</p>
+  </li>
+  <li>
+    <p>Unary cost, is the residue of the planar fit to the depth at this pixel. $|d^0[n]-\alpha_kn_x-\beta_kn_y-\gamma_k|$</p>
+  </li>
+  <li>
+    <p>Construct a graph with all neighboring superpixels sharing an edge, with an additional label $o_{ij}$ describing the geometric relationship of the 2 planes.</p>
+    <ul>
+      <li>The label is a discrete label define the states, and the costs come in $\phi(o_{ij},y_i,y_j)$</li>
+      <li>Note this could be extend naturally to 3-way junction and 4-way clique and enforce geometric constraint on it.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Geometric Relationships</strong></p>
+
+<ul>
+  <li>Co-planar: Mean depth difference between the 2 plane over all pixels of union ($P_1\cup P_2$)
+    <ul>
+      <li>$$</li>
+    </ul>
+  </li>
+  <li>Hinge: Mean depth difference between the 2 plane over all pixels on boundary ($P_1\cap P_2$)
+    <ul>
+      <li>$$</li>
+    </ul>
+  </li>
+  <li>Occlusion: left occlusion, right occlusion. If there is pixel on the boundary that the front patch gives a larger depth value than the back patch.
+    <ul>
+      <li>$$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Thus you get a huge hybrid MRF!</p>
+
+<p><strong>Tricks for Inference</strong></p>
+
+<ul>
+  <li><a href="">Particle belief propagation</a> for continuous variables:
+    <ul>
+      <li>Use discrete samples to represent the distribution. Resample after each round of BP. Decrease the std of Gaussian sampling each time.</li>
+    </ul>
+  </li>
+  <li>Use factor graph to turn 3 way relationship back to binary graph.</li>
+  <li>Use library of MRF solver it will work ! (SOTA! 2012)</li>
+</ul>
+
+<blockquote>
+  <p>Note, if you can define your MRF, then solving MRF has established libraries, which is powerful.</p>
+</blockquote>
+
+<h2 id="hierarchical-mrf">Hierarchical MRF</h2>
+
+<p><strong>Thoughts</strong>: Why do we need superpixels?</p>
+
+<ul>
+  <li>MRF cannot be too large!</li>
+  <li>SLIC is dirty but fast!</li>
+</ul>
+
+<p>May be we can make this multi-scale</p>
+
+<p><a href="">Lower level vision by consensus in a spatial hierachy of regions</a></p>
+
+<p>Use a hierarchy of multi-scale overlapping patches, $S={4,8,16,32}$, $stride=1$ .</p>
+
+<p>Use a parameter $I_i$ to describe if it’s planar or not! And a parameter $\theta_i$ describing the planar parameters.</p>
+
+<p>Alternatively updating ${I_i,\theta_i}$ and $d_i$</p>
+
+<ul>
+  <li>Updating ${I_i,\theta_i}$ ,</li>
+  <li>Updating $d_i$ pixelwise independent, i.e. find mean of the depth estimation across all patches covering this pixel AND is planar.</li>
+</ul>
+
+<p>Still too computational intense! Regular <strong>square patch</strong> can help us, all these computation could be done in convolution!</p>
+
+<ul>
+  <li>Besides, using $log_2$ scale will help us aggregate information across scale. As downsampling will help you do multi-scale</li>
+</ul>
+
+<h2 id="plane-sweep-stereo">Plane Sweep Stereo</h2>
+
+<p>More than 2 image, How</p>
+
+<p><strong>Rectification Trick</strong>: If you have 2 cameras, rotate one of them to make the sight center align. But doesnt work</p>
+
+<p><a href="Note-on-Computer-Vision.md#Rectification">Rectification</a></p>
+
+<ul>
+  <li>If we know the poses of the multiple cameras, we could build a grid model of the world, $(x,y,z)$
+    <ul>
+      <li>Descritize $z$ by uniform interval in $1/z$ space.</li>
+    </ul>
+  </li>
+  <li>Each point in the world, correspond to a point $(x_i^A,y_i^A)$ in each camera view.</li>
+  <li>
+    <p>You can compute consistency between the point pairs.</p>
+  </li>
+  <li>3 cameras or more cameras may give you more pairs, (point is occluded in B but not in AC so AC can still fit a match )</li>
+</ul>
+
+<h1 id="monocular-flow">Monocular Flow</h1>
+
+<blockquote>
+  <p>Multiple images or 2 images from a moving camera is kind of equivalent!</p>
+</blockquote>
+
+<p>Simplest case, fixed physical world, only camera is moving!</p>
+
+<p><em>Note</em>: Optical flow doesn’t provide the depth <em>per se</em>.</p>
+
+<ul>
+  <li>If you don’t know your camera’s speed or movement, moving camera at 2 speed ~ objects are 2 times far away.</li>
+  <li>So if you only know direction of movement, then you know depte <strong>Up to a scaling factor</strong></li>
+</ul>
+
+<p>Planar model trick $1/z=\alpha x+\beta y+\gamma\propto d[x,y]$</p>
+
+<p>If only one moving object, IT’s EQUIVALENT to epipolar system.</p>
+
+<ul>
+  <li>Moving is relative, no matter the object or camera.</li>
+</ul>
+
+<p>If multiple moving object.</p>
+
+<ul>
+  <li>Chop the frame into more than one patch, so that one object in one patch, and each object is its own epipolar system.</li>
+  <li>Finally you can estimate</li>
+</ul>
+
+<p>Finally, you get all the components into a giant MRF.</p>
+
+<h2 id="scene-flow">Scene Flow</h2>
+
+<p>????? Piecewise rigid motion</p>
+
+<p>Cycle consistency.</p>
+
+<p>IJCV 2015 <a href="">3D scene flow estimation with a pievewise rigid scene model</a></p>
+
+<blockquote>
+  <p>Still pre-CNN method, but CNN doesn’t do much better than this for a long time.</p>
+</blockquote>
+
+<h2 id="optical-flow">Optical Flow</h2>
+
+<p>First problem is finding correspondence! Theoretically, you want to build a 4d cost volume $C[x,y,dx,dy]$ , if there exist large movement, this volume will be infeasible to process.</p>
+
+<h3 id="patchmatch">PatchMatch</h3>
+
+<p>Core of <em>PatchMatch</em> is a randomized search algorithm. Use neighbor and random sample as a heuristic guess.</p>
+
+<ul>
+  <li>Initialize the flow value $f(x,y)=[u(x,y),v(x,y)]$, randomly, or</li>
+  <li>Iteratively, check the answers of neighbors $f(x-1,y),f(x,y-1),(x+1,y),f(x,y+1)$  and a random value within a distance</li>
+  <li>Check if any displacement reduce the cost. If do, adopt the answer.</li>
+</ul>
+
+<blockquote>
+  <p>Work super well in practice….</p>
+</blockquote>
+
+<p><strong>Comment</strong>:</p>
+
+<ul>
+  <li>Here, smooth is not an constraint, but as a heuristic of good answer, by giving search preference to answers of neighbors.</li>
+</ul>
+
+<h3 id="hierarchical-optical-flow">Hierarchical Optical Flow</h3>
+
+<p>CVPR 2016 <a href="">Efficient Coarse to fine PatchMatch for Large Displacement Optical Flow</a></p>
+
+<p>Building image pyramid, apply patch match from a coarse to fine level, use the answer at coarse level, resize to initialize the fine level PatchMatch</p>
+
+<ul>
+  <li></li>
+  <li>Up sampling, initialize your finer level search, and restrict your search around the initialization!</li>
+</ul>
+
+<h3 id="epicflow">EpicFlow</h3>
+
+<p>CVPR 2015</p>
+
+<p>Sparse to dense estimation, estimate the flow value for each object.</p>
+
+<blockquote>
+  <p>Was State of the art at 2015~</p>
+</blockquote>
+
+<p>In the heart, it’s like a <strong>flow denoising / flow inpainting</strong> problem.</p>
+
+<ul>
+  <li>Require the flow value match the sparse estimation.</li>
+  <li>Require smoothness</li>
+  <li>
+    <p>Loosen the smooth constraint when edge is detected in the image. (~ The content aware image prior)</p>
+  </li>
+  <li>Add a post processing step, minimize Lucas-Kandae energy by perturbing (Taylor Expansion) around the input flow map.</li>
+</ul>
+
+<h1 id="cnn-based-method">CNN based method</h1>
+
+<blockquote>
+  <p>Overall theme, inspired by traditional methods, replace some components by NN.</p>
+</blockquote>
+
+<h2 id="cnn-matching-cost-stereo">CNN Matching Cost Stereo</h2>
+
+<blockquote>
+  <p>Replacing the matching cost by CNN, can already boost a huge improvement! ($f$ )</p>
+</blockquote>
+
+<blockquote>
+  <p>CNN can be a better model of the low level image statistics and image metric.</p>
+</blockquote>
+
+<p><a href="">Stereo Matching by Training a CNN to compare image patch</a></p>
+
+<p><strong>How to train such network?</strong></p>
+
+<ul>
+  <li>Learn a similarity score of patch, by constructing a triplet loss.
+    <ul>
+      <li>Reference patch, true matched patch, and a wrong one along the same epipolar line.</li>
+    </ul>
+  </li>
+  <li>Use a Hinge Loss function $L = \max(0, m+d(I_r,I_c) -d(I_r,I_w))$</li>
+</ul>
+
+<p>Network structure: <strong>Siamese Network</strong></p>
+
+<blockquote>
+  <p>Siamese means twins conjoined at one point.</p>
+</blockquote>
+
+<p><img src="../assets/img/notes/cv2/image-20200225015904981.png" alt="image-20200225015904981" /></p>
+
+<h2 id="pyramid-stereo-matching-nn-stereo">Pyramid Stereo Matching NN stereo</h2>
+
+<blockquote>
+
+</blockquote>
+
+<p>Feature vector for each pixel for left and right image,</p>
+
+<p>2018 CVPR <a href="">Pyramid Stereo Matching Network</a></p>
+
+<p>Use a weight sharing CNN to encode feature,</p>
+
+<p>Build cost volume and do 3D Convolution to process cost volume.</p>
+
+<p><strong>Loss</strong></p>
+
+<ul>
+  <li>Note, <strong>soft-max</strong> gives a probability distribution.
+    <ul>
+      <li>Note, it’s usually better to produce a distribution of value (like belief), instead of a single best one.</li>
+    </ul>
+  </li>
+  <li>
+    <p>However you want a regression type loss! Not just classification</p>
+  </li>
+  <li>
+    <p>Do the loss on the expectation of the distribution formed by soft-max.</p>
+
+    <ul>
+      <li>$\sum_0^{D-1}SoftMax(s[x,y,d])*d$</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Maybe use distribution, and compute distribution Expectation and do loss is a trick.</p>
+</blockquote>
+
+<ul>
+  <li><strong>Huber loss</strong>: Use quadratic loss for small difference, L1 loss for large difference, make it more robust.
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$L=0.5x^2\ if\</td>
+              <td>x</td>
+              <td>&lt;1;L=</td>
+              <td>x</td>
+              <td>-0.5\ if\</td>
+              <td>x</td>
+              <td>&gt;1$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>a mixture of L1 and L2 loss.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Supervision</strong></p>
+
+<ul>
+  <li>You can add supervision to intermediate layers.</li>
+</ul>
+
+<h2 id="pwc-net-nn-optical-flow">PWC-Net: NN Optical Flow</h2>
+
+<blockquote>
+  <p>The biggest issue in <em>large displacement optical flow</em> is the potential choices (match) is too large. cmp. to stereo when displacement is usually small.</p>
+</blockquote>
+
+<p><a href="">PWC-Net: CNN for Optical FLow Using Pyramid, Warping and Cost Volume</a></p>
+
+<p>Hierarchical processing and pyramid is a classical way to deal with large number of match. Ref to <a href="#Hierachical Optical Flow">Hierachical Optical Flow</a></p>
+
+<ul>
+  <li>Convolution (with stride) automatically provides you a <strong>feature pyramid</strong> of different resolutions!</li>
+  <li>Then you can do matching at different level of this pyramid
+    <ul>
+      <li>You go from coarse to fine, and up sample your low resolution result (as initial guess)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="../assets/img/notes/cv2/image-20200310160849228.png" alt="image-20200310160849228" /></p>
+
+<ul>
+  <li>Note you need some warping operation, i.e. look up the value around the “flowed” index, and fetch those value back around you to continue the search.
+    <ul>
+      <li>$F^{t+1}_w[x,y,f]=F^{t+1}[x+u[x,y],y+v[x,y],f]$</li>
+    </ul>
+  </li>
+  <li><em>Note</em>: BackProp through <strong>Warping</strong> layers is tricky and needs some care.
+    <ul>
+      <li>Without backprop to $u,v$ flow vector field, you can never train a network to perform optical flow.</li>
+      <li>We need to treat $u[x,y]$ as a real value, and use bilinear interpolation to find dependency of output on $u$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2015 NIPS <a href="">Spatical Transformation Network</a></p>
+
+<p>In essense we do a bilinear interpolation, then we can differentiate.</p>
+
+<ul>
+  <li>In bilinear interpolation, $h(x,y)=h(i,j)+h(i, )$</li>
+</ul>
+
+<p>And Bilinear interpolation could be done through convolution!</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Create a mask $k(x,y)=\max(0,1-</td>
+          <td>x</td>
+          <td>)\max(0,1-</td>
+          <td>y</td>
+          <td>)$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Then $h=\sum_{x’,y’}k(x’-c_x,y’-c_y)g[x’,y’]$</li>
+  <li></li>
+</ul>
+
+<blockquote>
+  <p>Spatial transformer network is super useful tool</p>
+</blockquote>
+
+<blockquote>
+  <p>Note backprop through the warping layer to flow, is like doing a local search for better match! Which may not be efficient. 
+Doing bilinear interpolation at a larger</p>
+</blockquote>
+
+<h1 id="monocular-depth-estimation">Monocular depth estimation</h1>
+
+<blockquote>
+  <p>Highly ill-posed, but human can do it………</p>
+</blockquote>
+
+<p>Some lessons from human perception, cues for monocular depth</p>
+
+<ul>
+  <li>Shading,</li>
+  <li>Contour</li>
+  <li>Texture</li>
+  <li>Familiar object</li>
+</ul>
+
+<blockquote>
+  <p>Note, you need a large RF to get and process information in global scale to make sense. (human cannot know shape / depth from very local fragments.  )</p>
+</blockquote>
+
+<p>Eigen et al., “Depth map prediction from a single image using a multi-scale deep network.” NIPS 2014.</p>
+
+<p>Wang et al., “Towards unified depth and semantic prediction from a single image.” CVPR 2015</p>
+
+<ul>
+  <li>Reasoning about depth and semantics boundary seems to help each other. (esp. in single image)</li>
+</ul>
+
+<p>Chakrabarti et al., “Depth from a Single Image by Harmonizing Overcomplete Local Network Predictions.” NIPS 2016</p>
+
+<h2 id="collect-depth-dataset">Collect Depth Dataset</h2>
+
+<p>Collecting ground truth is hard which is also challenging.</p>
+
+<ul>
+  <li>All data type is kind of <strong>biased towards some scenario</strong>
+    <ul>
+      <li>Kinect works for indoor</li>
+      <li>LADAR works for outdoor, where car can drive.</li>
+    </ul>
+  </li>
+  <li>Human cannot label precise depth! So MTurk doesn’t annotate everything.
+    <ul>
+      <li>but human can estimate <strong>relative depth and surface normal</strong>.</li>
+      <li>These feedback easily generated by human can be used to train a model.</li>
+    </ul>
+  </li>
+</ul>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/stereo-algorithms" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Stereo+Problem%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fstereo-algorithms"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/stereo-algorithms&quote=Note+on+Stereo+Problem%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/stereo-algorithms&media=$description=Stereo%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/stereo-algorithms&title=Note+on+Stereo+Problem%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/stereo-algorithms&title=Note+on+Stereo+Problem%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/stereo-algorithms"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Stereo Problem%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/stereo-algorithms"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Epipolar Geometry and Optic Slow" href="/academic_notes/epipolar-geometry-and-optic-flow">
+            <p>Previous post</p>
+            Note on Epipolar Geometry and Optic Slow
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Semantic Vision Task" href="/academic_notes/semantics-vision-task">
+            <p>Next post</p>
+            Note on Semantic Vision Task
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Feedback Stablization | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Feedback Stablization" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Stability Theory" />
+<meta property="og:description" content="Stability Theory" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-feedback-stablization" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-feedback-stablization" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Feedback Stablization" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Stability Theory","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-feedback-stablization","headline":"Note on Feedback Stablization","dateModified":"2021-05-10T00:00:00+00:00","datePublished":"2021-05-10T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-feedback-stablization"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Feedback Stablization">
+    <meta name="twitter:description" content="Stability TheoryWhen a system has control, then comes the questions of whether we could make it stable under the control.Problem SetupA control affine system...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Feedback Stablization">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Feedback Stablization " aria-label="Note on Feedback Stablization" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Feedback+Stablization" class="title">Note on Feedback Stablization</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      May 10, 2021
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p><a href="Note-on-Nonlinear-System-Stability.md">Stability Theory</a></p>
+
+<p>When a system has control, then comes the questions of whether we could make it stable under the control.</p>
+
+<h2 id="problem-setup">Problem Setup</h2>
+<p>A control affine system is this</p>
+
+\[\dot x =f(x)+\sum_i g_i(x)\bar u_i=f(x)+g(x)\bar u\]
+
+<p><strong>Interpretation</strong>:</p>
+<ul>
+  <li>This control system has multiple vector field, a drift field $f$ by default, and a few “Gain” field that you can control $g_i$.</li>
+  <li>You can modulate those “Gain” fields and leverage the drift fields to navigate the space.</li>
+  <li>Note in the degenerate case, if $f=0$ and $m=1$, then $\dot x=\bar ug(x)$, this system is driftless, and the control signal can only modulate speed / time, cannot change the track.</li>
+</ul>
+
+<p>The <strong>equilibrium stablization</strong> problem is: For a controlled equilibrium $0$, $f(0)+g(0) u^\ast=0$, find a feedback function $u:\mathbb R^n\to\mathbb R^m$, s.t. $x=0$ is a globally asymptotic stable equilibrium.</p>
+
+<p><strong>Regular Feedback</strong>: regular feedback is a function $\bar u$ on state space $\mathbb R^n$, 1) Locally Lipschitz on $\mathbb R^n\setminus {0}$ 2) continuous at 0</p>
+<ul>
+  <li>Regular feedback is continuous.</li>
+</ul>
+
+<h2 id="condition-for-existence">Condition for Existence</h2>
+
+<p>Main theorem is <strong>Arstein Sontag theorem</strong></p>
+
+<p><strong>Arstein Sontag theorem</strong>: For $\dot x=f(x)+g(x)\bar u$, $f(0)=0$,  there exists a <strong>global</strong> regular stablizer if and only if, there exist a $C1$ contrrolled lyapnov function (CLF), which satisfied small controlled property.</p>
+
+<ul>
+  <li>Note this theorem states only continuous feedback. There are scenarios that requires in-continuous or more complex feedback like those with internal dynamics.</li>
+</ul>
+
+<p><strong>Controlled Lyapnov Function</strong>: A function $V:\mathbb R^n\to \mathbb R$, that is pos. def. at 0 and radially unbounded. Also satisfies the equivalent conditions</p>
+
+<ul>
+  <li>When $x\neq 0$, and when $L_{g_1}V=L_{g_2}V=L_{g_i}V=0$, then $L_{f}V\neq 0$</li>
+  <li>$\forall x\neq 0$, then there $\exists u\in \mathbb R^m$ s.t. $L_{f}V+\sum_i u_i L_{g_i}V&lt;0$
+    <ul>
+      <li>Or $\forall x\neq 0$, $\inf_{u\in \mathbb R^m} [L_{f}V+\sum_i u_i L_{g_i}V]&lt;0$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>Interpretation</em>:</p>
+<ul>
+  <li>This C.L.F.’s property and existance is mandated by the <a href="Note-on-Nonlinear-System-Stability.md#Converse-Stability-Theorems">converse Lyapnov theorems</a>.</li>
+  <li>There exists at least a control vector everywhere to decrease the C.L.F.</li>
+  <li>When all the control signal cannot decrease C.L.F. (geometrically, the gradient of C.L.F. is orthogonal to all the vector fields $g_i$), then the drift field can still decrease C.L.F.</li>
+</ul>
+
+<p><strong>Small Control Property</strong> For a C.L.F., $\mathbb R\to\mathbb R$, $\forall \epsilon&gt;0,\; \exists \delta &gt;0$, such that, $\forall x\in B_\delta(0)\setminus 0$, there $\exists u\in B_\epsilon(0)$, s.t. $L_{f}V+\sum_i u_i L_{g_i}V&lt;0$.</p>
+
+<p><em>Interpretation</em>: When the state deviation from equilibrium is small, you can use a small control to make it converge (decrease the C.L.F.). (the Columb repulsion is like a counter example.)</p>
+
+<h2 id="general-results">General Results</h2>
+<p><strong>Brockett’s Necessary Condition</strong>: For system $\dot x=f(x,u)$, $f$ is locally Lipschitz w.r.t. $x$ and $u$. If it has a continuous stablizer $\bar u(x)$, $\bar u(0)=0$. then $\forall \epsilon &gt;0, \exists\delta&gt;0$, s.t. $B^n_\delta(0)\in f(B^n_\epsilon(0)\times B^m_\epsilon(0))$.</p>
+
+<p><strong>Interpretation</strong>:</p>
+<ul>
+  <li>Any neighborhood around 0 in the tangent space, could be covered by the image of the function $f(x,u)$ on a small neighborhood of control and state.</li>
+  <li>In a small neighborhood around 0, small control signal and the drift can create vector $\dot x$ to any direction / small amplitude! (This system is fully steerable)
+    <ul>
+      <li>In a sense, the velocity created is not limited to a subspace.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Corrolary for driftless affine system</strong>: If $f=0$ and $\dot x=\sum_i \bar u_i g_i(x)$, then if the $g_i$ vectors are rank deficient $rank([g_1(0),g_2(0),…,g_i(0)])&lt; n$ then the 0 cannot be stablized continuously.</p>
+
+<p><strong>Controllability for LTI system</strong>: For linear control system, $\dot x=Ax+Bu$, then the controllabilty is determined by the Kalman rank condition: $rank\,\mathcal C=n$, $\mathcal C=[B,AB,A^2B,…,A^{n-1}B]$</p>
+
+<p><strong>Interpretation</strong>:</p>
+<ul>
+  <li>This is a corrolary of Brockett theorem for LTI.</li>
+  <li>The controllability matrix characterize the interaction between the control gain and the drift.</li>
+</ul>
+
+<h2 id="passivity">Passivity</h2>
+<p><strong>Intuition</strong>: The system doesn’t generate energy, the energy increase in it is less than or equal to the energy input.</p>
+<ul>
+  <li>This property is inspired by the energy property in a electrical / mechanical system.</li>
+</ul>
+
+<h2 id="passivity-based-control">Passivity Based Control</h2>
+
+<p><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-241j-dynamic-systems-and-control-spring-2011/lecture-notes/">MIT Dynamic System and Control 2011</a></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-feedback-stablization" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Feedback+Stablization%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-feedback-stablization"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-feedback-stablization&quote=Note+on+Feedback+Stablization%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-feedback-stablization&media=$description=Stability+Theory%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-feedback-stablization&title=Note+on+Feedback+Stablization%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-feedback-stablization&title=Note+on+Feedback+Stablization%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-feedback-stablization"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Feedback Stablization%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-feedback-stablization"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Control+Theory">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Control Theory</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Dynamic+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Dynamic System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Geometry">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Geometry</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Hopfield Network" href="/academic_notes/note-on-hopfield-network">
+            <p>Previous post</p>
+            Note on Hopfield Network
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Bifurcation Normal Form" href="/academic_notes/note-on-bifurcation-normal-form">
+            <p>Next post</p>
+            Note on Bifurcation Normal Form
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

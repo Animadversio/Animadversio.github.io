@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Semantic Vision Task | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Semantic Vision Task" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Semantics Vision Task" />
+<meta property="og:description" content="Semantics Vision Task" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/semantics-vision-task" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/semantics-vision-task" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-04T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Semantic Vision Task" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Semantics Vision Task","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/semantics-vision-task","headline":"Note on Semantic Vision Task","dateModified":"2020-02-04T00:00:00+00:00","datePublished":"2020-02-04T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/semantics-vision-task"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Semantic Vision Task">
+    <meta name="twitter:description" content="Semantics Vision TaskNote semantics and geometric reasoning is conceptually similar to each other  Stereo and Optical flow is about finding correspondence / ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Semantic Vision Task">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Semantic Vision Task " aria-label="Note on Semantic Vision Task" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Semantic+Vision+Task" class="title">Note on Semantic Vision Task</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      February 04, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="semantics-vision-task">Semantics Vision Task</h1>
+
+<p>Note semantics and geometric reasoning is conceptually similar to each other</p>
+
+<ul>
+  <li>Stereo and Optical flow is about finding correspondence / matches.</li>
+  <li>Object recognition in some sense is finding correspondence w.r.t. a template, and make the template match the observation.</li>
+</ul>
+
+<h1 id="semantic-vision-before-cnn">Semantic Vision before CNN</h1>
+
+<p>So ancient semantic detector works like this</p>
+
+<ul>
+  <li>Finding interesting key points
+    <ul>
+      <li>You want to make it sparse, make the matching problem easier.</li>
+      <li>Need to have non-smooth area,</li>
+    </ul>
+  </li>
+  <li>Region detectors, make it invariant to physical changes as possible.</li>
+</ul>
+
+<h2 id="keypoint-detector">Keypoint Detector</h2>
+
+<p>To do matching and recognition, what is a good Keypoint Detector?</p>
+
+<ul>
+  <li>Superpixel is not a good candidate
+    <ul>
+      <li>Shape, boundary, change too much, not invariant across scene.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="sift">SIFT</h3>
+
+<p>Link to <a href="Note-on-Local-Feature-Descriptors.md">Local Feature Descriptor</a></p>
+
+<p>Set a few heuristic rules to detect blobs.</p>
+
+<h4 id="blob-detector">Blob Detector</h4>
+
+<p>Basically, blob detector could be designed by convolving image with some filters and select local maximum (non-maximum suppression). Could use a Laplacian of Guassian as kernel, 
+\(K=\nabla^2G(0,\sigma^2)\)
+<img src="..\assets\img\notes\cv2\image-20200225212211378.png" alt="image-20200225212211378" /></p>
+
+<p>This is the so-called center surround receptive field. (found in many sensory system)</p>
+
+<p><em>Note</em>:</p>
+
+<ul>
+  <li>Only the right size of gaussian $\sigma$ can detect the blob, i.e. you will only detect the blob if the scale matches.
+    <ul>
+      <li>If the scale doesn’t match, the Laplacian can fire as well! But not give you a single minimum</li>
+    </ul>
+  </li>
+  <li>So you need to search in scale space!</li>
+</ul>
+
+<h4 id="scale-space">Scale Space</h4>
+
+<p>The observation above gives us the motivation to do the filtering in multiple scales, and detect local maximum in 3d neighborhood.</p>
+
+<p><img src="..\assets\img\notes\cv2\image-20200225212844370.png" alt="image-20200225212844370" /></p>
+
+<p>But the higher the $\sigma^2$ the smaller the filter output. Empirically, multiplying $\sigma^2$ factor can renormalize. 
+\(K = \sigma^2 \nabla^2 G_\sigma\)
+<img src="..\assets\img\notes\cv2\image-20200225213002933.png" alt="image-20200225213002933" /></p>
+
+<h4 id="efficiency-consideration">Efficiency consideration</h4>
+
+<p>Use the Difference of Gaussian (DoG) instead of Laplacian of Gaussian for faster computation (at 2004…), because you can filter image with a pyramid of Gaussians and just take difference between 2 neighbors, to get DoG filtered image. 
+\(K_{DoG} = G(x,y,k\sigma)-G(x,y,\sigma)\)</p>
+
+<h4 id="suppress-edge">Suppress Edge</h4>
+
+<p>DoG filter will fire at edge as well, have to suppress that.</p>
+
+<p>Compute Hessian of image local patch (Structural Tensor) at the scale of image (Filtered with corresponding $\sigma$ ). And set a criterion that the 2 eigen value of the structural tensor is not very large! Can use <code class="language-plaintext highlighter-rouge">tr</code> and <code class="language-plaintext highlighter-rouge">det</code> to detect this efficiently.</p>
+
+<ul>
+  <li></li>
+</ul>
+
+<h3 id="sift-descriptor">SIFT Descriptor</h3>
+
+<p>Link to <a href="Note-on-Local-Feature-Descriptors.md">Local Feature Descriptor</a></p>
+
+<p>This are done <em>post hoc</em>, describe the keypoints by a vector to match in this feature space .</p>
+
+<p><em>Note</em>, ref, Census transform and Hamming distance is the most basic feature descriptor.</p>
+
+<p><strong>Desiderata</strong></p>
+
+<ul>
+  <li>Hope the descriptor to be lighting, scale, rotation invariance</li>
+</ul>
+
+<p><strong>Scale invariance</strong></p>
+
+<ul>
+  <li>Resize the patch to a certain size!</li>
+</ul>
+
+<p><strong>Rotation invariance</strong></p>
+
+<ul>
+  <li>Do angular histogram for the gradient, find the mode as dominant direction. Then rotate the angle descriptor.</li>
+  <li>Pixel is weighted by gradient strength and distance from center to make weighted histogram.</li>
+</ul>
+
+<p><strong>Full SIFT descriptor</strong></p>
+
+<ul>
+  <li>Subdivide region into small non-overlapping regions and concatenate the histogram</li>
+</ul>
+
+<p><img src="..\assets\img\notes\cv2\image-20200225214816241.png" alt="image-20200225214816241" /></p>
+
+<p><strong>Affine Invariance</strong></p>
+
+<ul>
+  <li>Apply affine transformation to the region (not just rotation + scaling) then compute gradient and feature.</li>
+</ul>
+
+<blockquote>
+  <p>Anciently, there is a huge effort to make the better, and evaluate what features should be invariant across view. Things could still be learnt about how features statistics change across view / light</p>
+
+  <p>2005 Gradient descent by a bunch of researchers</p>
+
+  <p>Mikolajczyk et al., “A Comparison of Affine Region Detectors,” IJCV 2005.</p>
+</blockquote>
+
+<h3 id="usage-of-sift">Usage of SIFT</h3>
+
+<ul>
+  <li>Even for geometric matching, when you cannot afford to do the dense matching / disparity map, you can do SIFT detection and matching among them.
+    <ul>
+      <li>Image registration</li>
+    </ul>
+  </li>
+  <li>SIFT could be used to make a coarse and sparse match!</li>
+</ul>
+
+<h2 id="content-based-image-retrieval">Content Based Image Retrieval</h2>
+
+<blockquote>
+  <p>Note this is quite hard… no one really solve it even now.</p>
+</blockquote>
+
+<p>Given a query image, find all other images that are “similar”. Thus you need a whole image descriptor to match each other.</p>
+
+<p>2003 ICCV Video Google: Sivic Zisserman</p>
+
+<blockquote>
+  <p>Historical Note: at 2003 NLP is more successful than CV…. so people map semantic vision task to NLP problem for inspiration!</p>
+</blockquote>
+
+<ul>
+  <li>Step 1: Map SIFT descriptors as “words”
+    <ul>
+      <li>Do clustering on all SIFTS into discrete labels. Reduce continuous output to discrete</li>
+      <li>Note normalized the continuous space by the overall covariance matrix of Descriptor</li>
+      <li><em>Post hoc</em> drop those words that are too frequent or too rare! (Cluster size is too large or too small.)
+        <ul>
+          <li><em>Note</em>: this is the same philosophy with the <code class="language-plaintext highlighter-rouge">image atom</code> study. Too common or too rare words doesn’t help recognition.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Step 2: Document images as bag of words, and match image based on occurrence of words.
+    <ul>
+      <li>Record labels</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Building a vocabulary of all possible photographs is hard! (Image Atoms for Object Recognition)</p>
+
+<blockquote>
+
+</blockquote>
+
+<h2 id="hog-human-detection">HoG Human Detection</h2>
+
+<blockquote>
+  <p>General idea, the keypoint detector and descriptor could be used to solve object recognition problem.</p>
+</blockquote>
+
+<p>CVPR 2005 Dalal Triggs</p>
+
+<blockquote>
+  <p>Note pedestrian detection and face detection was the only obj detection task at the time…</p>
+</blockquote>
+
+<p><strong>Basic Thoughts</strong></p>
+
+<ul>
+  <li>Moving a fixed box across image, compute the HoG descriptors</li>
+  <li>Use a binary detector to say if it’s a human
+    <ul>
+      <li>In their case, do HoG on non-overlapping patches in the box,</li>
+      <li>Use SVM / perceptron like linear classifier to say if it’s human.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Practise</strong></p>
+
+<ul>
+  <li><em>Note</em> the binary detector could be applied by convolution the feature tensor for all overlapping patch. (Here its HoG vector.)</li>
+  <li>They add local contrastive normalization, normalize a feature by its surround</li>
+</ul>
+
+<p><strong>Comments</strong></p>
+
+<ul>
+  <li>It’s in its essence 1 layer convolutional NN, huge kernel and hand crafted HoG feature descriptor!</li>
+  <li>Only classifier is learned, feature extraction is fixed.
+    <ul>
+      <li>Thus it’s data efficient actually!</li>
+    </ul>
+  </li>
+  <li>Current CNN is using the Conv Layers to do feature extraction.</li>
+</ul>
+
+<p><strong>Limitation</strong></p>
+
+<ul>
+  <li>This is a single template for an object, doesn’t tolerate deformed spatial structure.
+    <ul>
+      <li>Note this works for pedestrian and face, as pedestrian and face usually has fixed spatial structure.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="deformable-parts-model">Deformable Parts Model</h2>
+
+<blockquote>
+  <p>SOTA for a while, inspired modern CNN pooling layer.</p>
+</blockquote>
+
+<p>2010 PAMI Felzenszwalb, Object detection with Discriminatively Trained Part Based Model</p>
+
+<p>Here we have a graphical model $G=(V,E)$ MRF.</p>
+
+<ul>
+  <li>Vertex is different part of object.
+    <ul>
+      <li>Cost can be the single part (linear) detector’s prediction.</li>
+      <li>Can use HoG feature map and linear detector for each object.</li>
+    </ul>
+  </li>
+  <li>Edge is the connection between parts.
+    <ul>
+      <li>Can use a <strong>spring cost</strong>. Difference between distance and expected distance $|p_i-p_j-(p_{i0}-p_{j0})|$</li>
+      <li>You can add a window and upper bound for this spring cost.</li>
+    </ul>
+  </li>
+</ul>
+
+\[\mathcal L=\sum_im_i(p_i)-d_{ij}(p_i,p_j)\\
+S(p_0)=m_0(p_0)+\sum_i \max_{p_i} m_i(p_i)-d_{i0}(p_i,p_0)\]
+
+<p><em>Efficiency Note</em>:</p>
+
+<ul>
+  <li>MRF can be inferenced efficiently if it’s a tree!</li>
+  <li>We could build a tree like MRF, and a special case star MRF. And the root node can even be an abstract location!
+    <ul>
+      <li>However, it cannot express all constraints for a physical entity! A general MRF is more expressive but harder to tackle with.</li>
+    </ul>
+  </li>
+  <li>Efficient inference for this model
+    <ul>
+      <li>Add a canonical distance / location for each part $(\delta_{x,i},\delta_{y,i})$</li>
+    </ul>
+  </li>
+</ul>
+
+\[\mathcal L(p_0,...p_n)=\sum_0^n\]
+
+<p>To find the best object location root node $p_0$ can be found be maximizing
+\(S(p_0)=m_0(p_0)+\sum_i \max_{p_i} m_i(p_i)-d_{i0}(p_i,p_0)\)
+<em>Note</em> :</p>
+
+<ul>
+  <li>The maximization can be very inefficient if $d$ is not structured</li>
+  <li>Finally, it’s just convolution (local part detector), moving a window, and maxpooling</li>
+  <li>Maxpooling kind of relax the geometric distance constraint of 1 single filter! (“Parts can move now! “)</li>
+</ul>
+
+<p><strong>Training Method</strong></p>
+
+<ul>
+  <li>Latent SVM, train the internal classifiers.</li>
+</ul>
+
+<blockquote>
+  <p>This obsolete model has all the components that a modern CNN has!</p>
+
+  <ul>
+    <li>“Hand craft” feature map: SIFT, HoG</li>
+    <li>Max pooling: allowing slack relationships between parts</li>
+    <li>Learning method: end to end training! No longer latent SVM.</li>
+  </ul>
+</blockquote>
+
+<h1 id="semantic-vision-with-cnn">Semantic Vision with CNN</h1>
+
+<p>CNN based Object Detection</p>
+
+<h2 id="taxonomy-of-tasks">Taxonomy of Tasks</h2>
+
+<ul>
+  <li>Object recognition (classification)</li>
+  <li>Segmentation
+    <ul>
+      <li>Classify pixel based on surrounding patch</li>
+      <li>Fully convolutional architecture, diluted convolution, encoder Decoder architecture</li>
+    </ul>
+  </li>
+  <li>Object detection</li>
+</ul>
+
+<h2 id="object-detection">Object Detection</h2>
+
+<blockquote>
+  <p>The challenge is to propose arbitrary number bounding box with arbitrary shape!</p>
+</blockquote>
+
+<h3 id="r-cnn">R-CNN</h3>
+
+<p>2014 CVPR, Girshick</p>
+
+<p>R-CNN,i.e. region with CNN features</p>
+
+<ul>
+  <li>Propose boxes</li>
+  <li>Warp your box</li>
+  <li>Pass through</li>
+</ul>
+
+<p>They used MRF based method to do region proposal, Min Cut algorithm.</p>
+
+<p>Constraint Parametric Min Cuts for Automatic Object Segmentation</p>
+
+<p>2015 ICCV, Fast RCNN</p>
+
+<ul>
+  <li>Improve R-CNN to share computation from the start! (R-CNN warp each bounding box so you cannot share convolution)</li>
+  <li>You</li>
+</ul>
+
+<p>2015 NIPS, Faster RCNN</p>
+
+<ul>
+  <li>Note, you can have more than one  BB centered at each pixel.
+    <ul>
+      <li>You cannot let one pixel output only one box,</li>
+    </ul>
+  </li>
+  <li>Non-maxima suppression to reduce redundancy of bounding box.</li>
+  <li>Run classifier</li>
+</ul>
+
+<h3 id="yolo">YOLO</h3>
+
+<ul>
+  <li>First split the image into multiple bounding boxes.
+    <ul>
+      <li>Each bounding boxes has a bunch of class labels</li>
+    </ul>
+  </li>
+  <li>Predict property of the box
+    <ul>
+      <li>4 coordinates and confidence “objectness”</li>
+    </ul>
+  </li>
+  <li>Product of objectness $[Math Processing Error]\times$ bounding box label $[Math Processing Error]=$ Final object label.</li>
+  <li>Classifier and Box proposal can run in parallel!</li>
+  <li></li>
+</ul>
+
+<p><strong>Limitation</strong></p>
+
+<ul>
+  <li>There is a strong assumption about object size and grid size!
+    <ul>
+      <li>Scales dependent! But, you can run multiscale YOLO</li>
+    </ul>
+  </li>
+  <li>This is super fast, now you can run YOLO real time! Features are real robust!</li>
+</ul>
+
+<blockquote>
+  <p>Object detection is very important, and can be super slow. YOLO change that</p>
+</blockquote>
+
+<h2 id="image-segmentation">Image Segmentation</h2>
+
+<p><strong>Segmentation vs Detection</strong></p>
+
+<ul>
+  <li>Detection is able to detect different instances (<em>dog1 bb, dog2 bb, not dogs</em>)</li>
+  <li>Segmentation usually just has the class label (this pixel belongs to a “dog” according to surrounding patch).</li>
+</ul>
+
+<h3 id="image-instance-segmentation">Image Instance Segmentation</h3>
+
+<blockquote>
+  <p>Not just say this pixel is a car, but also label different car instances as different label.</p>
+</blockquote>
+
+<p>Simplest thought: Combine the Detection and Segmentation,</p>
+
+<ul>
+  <li>Detect the boxes, and do foreground background segmentation within box.
+    <ul>
+      <li>Graph cut type algorithm could be used.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Neural network version of border distance transform</p>
+
+<h3 id="distance-transform">Distance Transform</h3>
+
+<ul>
+  <li>Distance transform find the distance to the closest boundary</li>
+  <li>Erode the boundary and find connected components, then you will get different instances
+    <ul>
+      <li>Assumption is that a instance should be contiguous!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Train a network to produce the distance / watershed transform.</p>
+
+<ul>
+  <li>Distance is not a local entity, hard to know just from local info</li>
+  <li>Edge or boundary is local information, thus orientation vector towards boundary is local information.
+    <ul>
+      <li>You could compute boundary, perform traditional watershed transform $d(I)$, compute gradient $\nabla d(I)$</li>
+      <li>These proxy could be used as intermediate supervision.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="..\assets\img\notes\cv2\image-20200307143345861.png" alt="image-20200307143345861" /></p>
+
+<p><img src="..\assets\img\notes\cv2\image-20200307143415110.png" alt="image-20200307143415110" /></p>
+
+<blockquote>
+  <p><strong>Lesson</strong>: Key inspiration is that for some task you don’t have a unique label or output (e.g. instance label is interchangeable, cannot train on that). But you can find a unique proxy output (object boundary and distance to boundary) as supervision!</p>
+</blockquote>
+
+<h1 id="image-captioning">Image Captioning</h1>
+
+<blockquote>
+  <p>Many tasks are assuming the image belongs to certain classes! And classify images to them. Natural language description is one step forward, seeking richer description!</p>
+</blockquote>
+
+<blockquote>
+  <p>Amusingly finding images and the natural language caption on Internet is not hard! (Semantic data is more abundant than physical or optical data)</p>
+</blockquote>
+
+<h2 id="nlp-101--sequence-generation">NLP 101 : Sequence Generation</h2>
+
+<blockquote>
+  <p><em>Seems not a traditional classification task</em>: (space of sentences is exponentially large! Generative power of language)</p>
+</blockquote>
+
+<p>But how do you generate these “semi-structured “ output?</p>
+
+<ul>
+  <li>Sequence of words -&gt; Sequence of vectors (can be one-hot encoding. )</li>
+  <li>This sequence can be seen as a joint distribution on list of vectors $p([S_1,S_2,S_3…S_n,stop])$, NN can predict the distribution of next word based on the first few words and then recursively generate new words. $p(S_n\mid[S_{1:n-1}])=f([S_{1:n-1}])$
+    <ul>
+      <li>But the problem of this idea is, you still have different size input for the <em>Next word predictor</em>, which is not map.</li>
+    </ul>
+  </li>
+  <li>So come the idea of recursive computation and intermediate input, assuming this map is homogeneous (thus recursive).</li>
+</ul>
+
+\[[p(S_n\mid[S_{1:n-1}]), m_n]=f(S_{n-1},m_{n-1})\]
+
+<p><strong>Intermediate output</strong></p>
+
+<ul>
+  <li>Use RNN to solve this, hope it learns a good intermediate representation, without direct supervision.
+    <ul>
+      <li>Hope $m_{n-1}$ will be a representation of $S_{1:n-1}$ which is useful for next word prediction</li>
+      <li>Since some info in $S_{1:n-1}$ is useful for prediction, some words are not, so <strong>Gating</strong> is important in these thing.</li>
+    </ul>
+  </li>
+  <li>Pass a latent representation through (RNN): $p_i,m_i=f(S_{i-1},m_{i-1})$
+    <ul>
+      <li>$p_i$ is a distribution over words, but $S_{i-1}$ is a specific last word. So you need to choose one!</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Practicality</strong>: Solving the arbitrary length problem</p>
+
+<ul>
+  <li>Add the word <code class="language-plaintext highlighter-rouge">start</code> <code class="language-plaintext highlighter-rouge">stop</code> as marker to start a sentence and stop a statement.</li>
+</ul>
+
+<p>What we need is to prime our sentence generation machine by a image.</p>
+
+<blockquote>
+  <p>Sorry, but CNN representation is not written in English…So need to translate your visual features to the linguistic representation. (A dictionary or embedding links the two.)</p>
+</blockquote>
+
+<ul>
+  <li>So we need a translation dictionary $(F,D)$ matrix $W$ linearly mapping $D$ dim distribution over words to $F$ dim visual representation.</li>
+  <li>The $S_i$ words could be represented in $F$ dim visual feature space. $x_i=WS_i$</li>
+</ul>
+
+<p><img src="..\assets\img\notes\cv2\image-20200307141612769.png" alt="image-20200307141612769" /></p>
+
+<h2 id="sequence-model-training">Sequence Model Training</h2>
+
+<ul>
+  <li>Use the last word $S_{n-1}$ (correct initial sentence) to predict the current word
+    <ul>
+      <li>$[p(S_n), m_n]=f(S_{n-1},m_{n-1}(S_{1:n-2};\theta);\theta)$</li>
+      <li>$p(S_n)$ can be used to compute loss and gradient.</li>
+    </ul>
+  </li>
+  <li>Build as deep a network as your output sentence.
+    <ul>
+      <li>Note you need a <strong>different computational graph</strong> for different sentences! which requires a eager execution <code class="language-plaintext highlighter-rouge">autograd</code> framework.</li>
+      <li>Thus, <code class="language-plaintext highlighter-rouge">torch</code> was much more preferred than <code class="language-plaintext highlighter-rouge">tf</code> since <code class="language-plaintext highlighter-rouge">tf</code> rebuilding graph takes so much time!</li>
+    </ul>
+  </li>
+  <li>Mini-Batch: Different length output
+    <ul>
+      <li>You can batch together sentences output of same length!</li>
+      <li>Or you can run several sentences, average the gradient and apply it.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="model-architecture-lstm">Model Architecture: LSTM</h2>
+
+<p><strong>Motivation</strong></p>
+
+<ul>
+  <li>Vanishing / Exploding Gradient is classic problem in RNN</li>
+  <li>LSTM designed to address this!</li>
+</ul>
+
+<p><strong>Gating Variable</strong>: more refined manipulation of memory vector than linear map.</p>
+
+<ul>
+  <li>$i_i,f_i,o_i$ : input weighting, memory decaying and output weighting variable.</li>
+</ul>
+
+\[c_t=f_t\odot c_{t-1}+i_t\odot h(W_{cx}x_t+W_{cm}m_{t-1})\\
+m_t=o_t\odot c_t\\
+p_{t}=Softmax(m_t)\]
+
+<p><strong>Gated Recurrent Unit (GRU)</strong> inherit the <strong>gating</strong> idea and work as well
+\(z_{t}=\sigma _{g}(W_{z}x_{t}+U_{z}h_{t-1}+b_{z})\\
+r_{t}=\sigma _{g}(W_{r}x_{t}+U_{r}h_{t-1}+b_{r})\\
+h_{t}=z_{t}\odot h_{t-1}+(1-z_{t})\odot \phi _{h}(W_{h}x_{t}+U_{h}(r_{t}\odot h_{t-1})+b_{h})\)</p>
+
+<ul>
+  <li>Still one forget gate $z_t$ and one $r_t$ masking last hidden vector</li>
+</ul>
+
+<h2 id="sequence-model-inference">Sequence Model Inference</h2>
+
+<p><strong>Inference</strong> is trickier than training</p>
+
+<ul>
+  <li>Note this probabilistic language model can generate many different sentences! How do we sample from that?
+    <ul>
+      <li><em>Greedy approach</em> : Over committing to one choice at first is not a good idea……(Choose the optimal first word is not optimal at all. Severely suboptimal…)</li>
+      <li><em>Exhaustive Search</em> : The sample number grows too fast. Not practical.</li>
+    </ul>
+  </li>
+  <li><strong>Beam Search</strong>: Each time keep the top-k sentences forward one step through RNN generate D samples. Pick the top k in all the children generation. Iterate
+    <ul>
+      <li>You can have different length</li>
+    </ul>
+  </li>
+  <li>It’s kind of a <em>tree search</em> algorithm! Each node can have $D$ children, each time you keep the top $k$ leaves and keep growing from them until termination!</li>
+  <li><em>Note</em>: These sequence model are <strong>generative</strong> in nature when inference</li>
+</ul>
+
+<blockquote>
+  <p>This kind of problem is common to probabilistic sequence generation! The inference inefficiency of sound generating WaveNet is the same problem!</p>
+</blockquote>
+
+<p><strong>Evaluation</strong></p>
+
+<ul>
+  <li>Evaluating caption can be done humanly using MTurk, or <strong>semantic distance</strong> to a real caption!</li>
+  <li></li>
+</ul>
+
+<p>2015 Neural Image Captioning</p>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/semantics-vision-task" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Semantic+Vision+Task%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fsemantics-vision-task"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/semantics-vision-task&quote=Note+on+Semantic+Vision+Task%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/semantics-vision-task&media=$description=Semantics+Vision+Task%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/semantics-vision-task&title=Note+on+Semantic+Vision+Task%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/semantics-vision-task&title=Note+on+Semantic+Vision+Task%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/semantics-vision-task"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Semantic Vision Task%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/semantics-vision-task"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Stereo Problem" href="/academic_notes/stereo-algorithms">
+            <p>Previous post</p>
+            Note on Stereo Problem
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Image Prior-Markov Random Field Modelling" href="/academic_notes/note-on-mrf-image-prior">
+            <p>Next post</p>
+            Note on Image Prior-Markov Random Field Modelling
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

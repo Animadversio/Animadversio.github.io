@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Math Intensive Github Blog Construction | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Math Intensive Github Blog Construction" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview Objective:" />
+<meta property="og:description" content="Overview Objective:" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/math-intensive-github-blog-construction" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/math-intensive-github-blog-construction" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Math Intensive Github Blog Construction" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Overview Objective:","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/math-intensive-github-blog-construction","headline":"Math Intensive Github Blog Construction","dateModified":"2018-09-10T00:00:00+00:00","datePublished":"2018-09-10T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/math-intensive-github-blog-construction"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Math Intensive Github Blog Construction">
+    <meta name="twitter:description" content="OverviewObjective:  Build a online blog. Most preferably  Posts can be written in Markdown, which is the format of most of my notes.          Math formula (i...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Math Intensive Github Blog Construction">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Math Intensive Github Blog Construction " aria-label="Math Intensive Github Blog Construction" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Math+Intensive+Github+Blog+Construction" class="title">Math Intensive Github Blog Construction</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 10, 2018
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="overview">Overview</h1>
+<p><strong>Objective</strong>:</p>
+
+<ul>
+  <li>Build a online blog. Most preferably</li>
+  <li>Posts can be written in Markdown, which is the format of most of my notes.
+    <ul>
+      <li>Math formula (in Latex syntax) and equation rendering are</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<p>After researching for some time (like 10 hours, I start from afternoon and get posts online at midnight), I found this combination of tools can perfectly suits my need!</p>
+
+<p><strong>Tools</strong>: Github.page + jekyll + MathJax + Disqus + Google Analytics</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Github.page</code>: provide the space / server that the pages lives on. But the basic <code class="language-plaintext highlighter-rouge">Github.page</code> does not support math rendering. So that trigger this whole research.
+    <ul>
+      <li>As we base the system on <code class="language-plaintext highlighter-rouge">Github.page</code>, it’s pretty easy to upload. Just use <code class="language-plaintext highlighter-rouge">git push</code> to deploy the website.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Jekyll</code>: A “blog-aware, static site generator in Ruby”, which means it compiles the Markdown and whatever you write into <code class="language-plaintext highlighter-rouge">html</code> webpages and link them together. And it allows local server to preview the website.</li>
+  <li><code class="language-plaintext highlighter-rouge">MathJax</code>: Math formula rendering engine, which is supported in <code class="language-plaintext highlighter-rouge">Jekyll</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Disqus</code>: Tool for discussion under post.</li>
+  <li><code class="language-plaintext highlighter-rouge">Google Analytics</code>: Tool to inspect the most visited page and article.</li>
+</ul>
+
+<p>Basing on these tool, I can achieve likewise result as Wordpress blog site, and the style and site structure are far more versatile. Besides, the whole solution is free.</p>
+
+<h1 id="tutorials">Tutorials</h1>
+<p>Some Good tutorial I found:</p>
+
+<p>I start from this post, aiming at exactly the same thing as I do: 
+https://bbabenko.github.io/moving-to-github/</p>
+
+<p>Official Step by Step tutorial
+https://jekyllrb.com/docs/step-by-step/08-blogging/</p>
+
+<p>Simple Jekyll tutorial with Github Pages
+https://briancaffey.github.io/2016/03/17/jekyll-tutorial.html</p>
+
+<p>How to use MathJax in Jekyll generated Github pages
+http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/
+This tutorial is perfect except a few minor changes we have to make:</p>
+<ul>
+  <li>We do not need to change the markdowen processor now. <code class="language-plaintext highlighter-rouge">kramdown</code> is OK!</li>
+  <li>And we need a newer MathJax engine to do render. Cf. the news https://www.mathjax.org/cdn-shutting-down/
+    <ul>
+      <li>Use <code class="language-plaintext highlighter-rouge">src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;"&gt;</code> instead of <code class="language-plaintext highlighter-rouge">src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="issue-in-windows">Issue in Windows</h1>
+<p><em>Note</em>:</p>
+
+<p>If encounter error like <code class="language-plaintext highlighter-rouge">C:/Ruby25-x64/lib/ruby/2.5.0/rubygems/core_ext/kernel_require.rb:59:in </code>require’: cannot load such file – bundler (LoadError)`
+Refers to this <a href="https://github.com/jekyll/jekyll/issues/5165">issue</a>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install bundler
+$ bundle install
+$ bundle exec jekyll serve
+</code></pre></div></div>
+<p>under current Windows environment, it seems we have to use <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> to serve it locally.</p>
+
+<p>If encounter error like <code class="language-plaintext highlighter-rouge">Error:  Permission denied - bind(2) for 127.0.0.1:4000</code> , <a href="https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/">thanks to this post</a> Just kill the <code class="language-plaintext highlighter-rouge">FxService</code> in the Service part.</p>
+
+<h1 id="how-to-upload-a-post">How to upload a post?</h1>
+<p>(This part is mainly for my own reference)</p>
+
+<ol>
+  <li>Editing the local repertoire (directory denoted as <code class="language-plaintext highlighter-rouge">.io/</code>), with any editor you like. (Sublime, Typora, MacDown)</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">jekyll serve</code> in the console from the directory of <code class="language-plaintext highlighter-rouge">.io/</code>, preview the changes you’ve just make. (If you do something to <code class="language-plaintext highlighter-rouge">_config.yml</code> you’d better restart the <code class="language-plaintext highlighter-rouge">jekyll serve</code> to see the change.)</li>
+  <li>After you feel everything is good, use <code class="language-plaintext highlighter-rouge">git</code> in console, or github desktop to <code class="language-plaintext highlighter-rouge">commit</code> and <code class="language-plaintext highlighter-rouge">push</code></li>
+</ol>
+
+<h1 id="how-to-add-a-top-bar-section">How to add a top bar section</h1>
+
+<ol>
+  <li>add a html at base folder <code class="language-plaintext highlighter-rouge">academic note.html</code>, like this just a normal html page file.</li>
+  <li>initialize a folder to contain your posts <code class="language-plaintext highlighter-rouge">.\_academic_notes</code></li>
+  <li>change the <code class="language-plaintext highlighter-rouge">_config.yml</code> file in the <code class="language-plaintext highlighter-rouge">Collections</code> section</li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># PORTFOLIO</span>
+<span class="na">collections</span><span class="pi">:</span>
+  <span class="na">portfolio</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/:collection/:name</span>
+  <span class="na">tech_note</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/:collection/:name</span>
+  <span class="na">academic_notes</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/:collection/:name</span>
+
+</code></pre></div></div>
+
+<h1 id="how-to-add-inner-link-within-site">How to add inner link within site.</h1>
+<p>See <a href="https://www.digitalocean.com/community/tutorials/controlling-urls-and-links-in-jekyll#understanding-how-urls-are-controlled">Controlling url and links in Jekyll</a></p>
+
+<p>Check <a href="https://jekyllrb.com/docs/liquid/">Liquid</a>, <a href="https://shopify.github.io/liquid/tags/raw/">Liquid pkg</a> and <a href="https://jekyllrb.com/docs/liquid/tags/#links">Link syntax</a></p>
+
+<ul>
+  <li>Can use variables like <code class="language-plaintext highlighter-rouge">{{ page.previous.url }}</code>.</li>
+  <li>Can use variables to parse the name of post and form url. <code class="language-plaintext highlighter-rouge">{ % post_url 2010-09-08-welcome-to-jekyll % }</code></li>
+  <li>Or absolute url like <code class="language-plaintext highlighter-rouge">{{ site.baseurl }}</code></li>
+  <li>Note These variables should be placed in <code class="language-plaintext highlighter-rouge">{{</code> and  <code class="language-plaintext highlighter-rouge">}}</code></li>
+</ul>
+
+<h1 id="jekyll-relative-link">Jekyll Relative Link</h1>
+
+<p>As a official <a href="https://github.blog/2016-12-05-relative-links-for-github-pages/">post</a> suggests, the <code class="language-plaintext highlighter-rouge">jekyll-relative-links</code>  seems to support the links between markdown files and just translate them to links between webpages. This gem could be installed from https://rubygems.org/gems/jekyll-relative-links to local build system. However, the github support for this relative link practise seems problematic.</p>
+
+<p>https://github.com/benbalter/jekyll-relative-links</p>
+
+<p>https://github.com/github/pages-gem/issues/69</p>
+
+<p>Current modification to make this work include</p>
+
+<ul>
+  <li>Add <code class="language-plaintext highlighter-rouge">gem 'jekyll-relative-links'
+gem 'wdm', '~&gt; 0.1.0' if Gem.win_platform?</code> to the <code class="language-plaintext highlighter-rouge">Gemfile</code></li>
+  <li>Add <code class="language-plaintext highlighter-rouge">jekyll-relative-links (0.6.1)
+      jekyll (&gt;= 3.3, &lt; 5.0)</code> to <code class="language-plaintext highlighter-rouge">Gemfile.lock</code></li>
+  <li>Then note that you should not add space in the link <code class="language-plaintext highlighter-rouge">[name](xxx xxx.md)</code> instead, use ``<a href="xxx-xxx.md">name</a>` and it will be translated properly!</li>
+</ul>
+
+<h1 id="what-if-mathjax-is-not-rendering-correctly">What if <code class="language-plaintext highlighter-rouge">MathJax</code> is not rendering correctly</h1>
+
+<p><code class="language-plaintext highlighter-rouge">MathJax</code> is a JS package hosted and maintained by someone else.</p>
+
+<p>So it’s possible that the JS path we are using has suddenly gone down. If so change the <code class="language-plaintext highlighter-rouge">src</code> in<code class="language-plaintext highlighter-rouge">_include\mathjax_support</code> . Also additional rendering configurations could be added to config the package. Recently (2020, Nov) the <code class="language-plaintext highlighter-rouge">cdn</code> server for mathjax has been down, and we will use the MathJax served in <code class="language-plaintext highlighter-rouge">cdnjs</code> instead.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-mathjax-config"</span><span class="nt">&gt;</span>
+<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+  <span class="na">TeX</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">equationNumbers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">autoNumber</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AMS</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+  <span class="na">tex2jax</span><span class="p">:</span> <span class="p">{</span><span class="na">inlineMath</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="se">\\</span><span class="s1">(</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="se">\\</span><span class="s1">)</span><span class="dl">'</span><span class="p">]]}</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">async</span> <span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span><span class="nt">&gt;</span>
+<span class="c1">//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML"&gt;</span>
+<span class="c1">//cdn server shut down.... use cdnjs instead from now on. </span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Note, MathJax 3 has been out now, but it does not support <code class="language-plaintext highlighter-rouge">\\</code> as the line changing symbol in latex block…..So we are sticking to MathJax2 until that is supported</p>
+
+<p>https://github.com/mathjax/MathJax/issues/2312</p>
+
+<h1 id="how-to-add-dark-mode-toggle">How to add dark mode toggle?</h1>
+
+<p>I currently use this package <a href="https://www.npmjs.com/package/darkreader"><code class="language-plaintext highlighter-rouge">DarkReader</code></a>.</p>
+
+<p>I checked out this tutorial <a href="https://randomwits.com/blog/dark-mode-jekyll">“dark-mode-jekyll”</a> and add the button  to my navigation bar.</p>
+
+<ul>
+  <li>Note that I also used a icon service to get the dark light icons: <a href="https://fontawesome.com/start">font awesome</a> by adding a key to the <code class="language-plaintext highlighter-rouge">default.html</code>  file.</li>
+</ul>
+
+<p>The final script I put in <code class="language-plaintext highlighter-rouge">navbar.html</code> looks like this.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dark-mode-button"</span> <span class="nt">&gt;</span>
+    <span class="c">&lt;!-- &lt;i class="fa-solid fa-user"&gt;&lt;/i&gt; --&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">id=</span><span class="s">"icon-dark"</span> <span class="na">class=</span><span class="s">"fa fa-moon"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"dark-text"</span><span class="nt">&gt;</span>Sunset<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/darkreader@4.9.44/darkreader.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;script &gt;</span>
+    <span class="c1">// disable() // Set all pages to light mode by default</span>
+    <span class="c1">// enable() // Set all pages to dark mode by default. </span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-mode-button</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">darkmode</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">darkmode</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">enabled</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-mode</span><span class="dl">'</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">enabled</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="dl">'</span><span class="s1">(prefers-color-scheme: dark)</span><span class="dl">'</span><span class="p">).</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">enableDarkmode</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">enabled</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">enableDarkmode</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-mode</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">enableDarkmode</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">disableDarkmode</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">enableDarkmode</span><span class="p">()</span>  <span class="p">{</span>
+        <span class="nx">DarkReader</span><span class="p">.</span><span class="nx">setFetchMethod</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">fetch</span><span class="p">)</span>
+        <span class="nx">DarkReader</span><span class="p">.</span><span class="nx">enable</span><span class="p">();</span>
+        <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-mode</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">icon-dark</span><span class="dl">'</span><span class="p">).</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">fa fa-sun</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-text</span><span class="dl">'</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Sunrise</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">disableDarkmode</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">DarkReader</span><span class="p">.</span><span class="nx">disable</span><span class="p">();</span>
+        <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-mode</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">);</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">icon-dark</span><span class="dl">'</span><span class="p">).</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">fa fa-moon</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">dark-text</span><span class="dl">'</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Sunset</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Known problem</em>: if I run <code class="language-plaintext highlighter-rouge">enableDarkmode()</code> before page load complete, then <code class="language-plaintext highlighter-rouge">disqus </code> and <code class="language-plaintext highlighter-rouge">Mathjax</code> loading will have some problems, color will be not correct or the math won’t render.</li>
+</ul>
+
+<h1 id="enabling-full-text-search">Enabling Full text search.</h1>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">assets/data/search.json</code>  to search all posts and collections.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> assign all_posts = site.posts | concat: site.academic_notes | concat: site.tech_note
+  for post in all_posts 
+ endfor
+</code></pre></div></div>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">_layouts/search.html</code>   <code class="language-plaintext highlighter-rouge">searchResultTemplate</code> to change the format of presenting search results and limit of results.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '/assets/data/search.json',
+            searchResultTemplate: '<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"search-title"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{url}"</span><span class="nt">&gt;&lt;h3&gt;</span> {title}<span class="nt">&lt;/h3&gt;&lt;/a&gt;&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>{date} <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-tag"</span><span class="nt">&gt;&lt;/i&gt;</span> {tags}<span class="nt">&lt;/div&gt;</span> <span class="nt">&lt;hr&gt;</span> ',
+            // searchResultTemplate: '<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"search-title"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{url}"</span><span class="nt">&gt;&lt;h3&gt;</span> {title}<span class="nt">&lt;/h3&gt;&lt;/a&gt;&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>{date} <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-tag"</span><span class="nt">&gt;&lt;/i&gt;</span> {tags}<span class="nt">&lt;/div&gt;&lt;/div&gt;&lt;p&gt;</span>{excerpt}<span class="nt">&lt;/p&gt;&lt;/div&gt;&lt;hr&gt;</span> ',
+            noResultsText: 'No results found',
+            limit: 25,
+            fuzzy: false,
+            exclude: []
+        })
+</code></pre></div></div>
+
+<h1 id="change-source-of-unique-tags">Change Source of unique tags</h1>
+
+<p><code class="language-plaintext highlighter-rouge">_layouts/tags.html</code> change the <code class="language-plaintext highlighter-rouge">liquid</code> script there to include tags from post collections.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+</code></pre></div></div>
+
+<h1 id="publish-github-pages-with-extra-plugins-including-jekyll-paginate-v2">Publish github pages with extra plugins including <code class="language-plaintext highlighter-rouge">jekyll-paginate-v2</code></h1>
+<p>Follow this guide to setup Github action to run jekyll build and serve it on Github page! 
+As an effect, I actually just have to add one file and then push <code class="language-plaintext highlighter-rouge">.github/workflows/build-jekyll.yml</code>. Super straight forward.</p>
+
+<p>https://ayastreb.me/deploy-jekyll-to-github-pages-with-travis-ci/
+https://github.com/jeffreytse/jekyll-deploy-action</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Math+Intensive+Github+Blog+Construction%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fmath-intensive-github-blog-construction"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction&quote=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction&media=$description=Overview%0AObjective%3A%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction&title=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction&title=Math+Intensive+Github+Blog+Construction%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Math Intensive Github Blog Construction%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/math-intensive-github-blog-construction"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#blog+construction">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> blog construction</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#jekyll">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> jekyll</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="How to translate matlab code into python (numpy)" href="/tech_note/translate-matlab-into-python-numpy">
+            <p>Previous post</p>
+            How to translate matlab code into python (numpy)
+        </a>
+    </div>
+    
+
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

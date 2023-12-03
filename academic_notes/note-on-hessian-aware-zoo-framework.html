@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Hessian Aware Zeroth Order Optimization Framework | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Hessian Aware Zeroth Order Optimization Framework" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Motivation" />
+<meta property="og:description" content="Motivation" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-21T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Hessian Aware Zeroth Order Optimization Framework" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Motivation","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework","headline":"Note on Hessian Aware Zeroth Order Optimization Framework","dateModified":"2020-01-21T00:00:00+00:00","datePublished":"2020-01-21T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Hessian Aware Zeroth Order Optimization Framework">
+    <meta name="twitter:description" content="MotivationMajor Reference Zeroth order optimization, or derivative free optimization is also known as the oracle problem. It’s nothing new to optimization co...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Hessian Aware Zeroth Order Optimization Framework">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Hessian Aware Zeroth Order Optimization Framework " aria-label="Note on Hessian Aware Zeroth Order Optimization Framework" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Hessian+Aware+Zeroth+Order+Optimization+Framework" class="title">Note on Hessian Aware Zeroth Order Optimization Framework</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      January 21, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="motivation">Motivation</h2>
+
+<p><a href="https://arxiv.org/abs/1812.11377">Major Reference </a></p>
+
+<p>Zeroth order optimization, or derivative free optimization is also known as <strong>the oracle problem</strong>. It’s nothing new to optimization community.</p>
+
+<p>Interest in ZOO algorithm resurges partly because it could be used in black box adversarial attack, if the softmax probability is given; and it could also be used in optimization of experimental output; and it could also be used for many design problem as the result has a non-analytical relationship with the parameters.</p>
+
+<blockquote>
+  <p>When we give up analytical gradients, there are so many things we could do!</p>
+</blockquote>
+
+<h2 id="background">Background</h2>
+
+<p>To give Zeroth Order Optimization a theoretical foundation, people want to map the constructs into normal gradient based optimization.</p>
+
+<p>For an optimization problem 
+\(\arg\max_xf(x)\)
+For normal optimizations, we have gradients and Hessian
+\(g(x)=\nabla f(x)\\
+H(x)=\nabla^2f(x)=\nabla g(x)\)</p>
+
+<p>The classical Newtonian step is 
+\(x_{t+1}=x_t-\eta H(x)^{-1}g(x)\)
+As Hessian computation is expensive even in the differentiable case, and inverting a large matrix is expensive, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian, for the ease of computation and inversion. So comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see <a href="Note-on-LBFGS.md">Note on LBFGS method</a>.</p>
+
+<p>And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods with a highly structured Hessian matrix (diagonal) assumption.</p>
+
+<p>Before diving into their method, the geometric intuition behind Newtonian step is that: 
+\(H^{-1}g=U\Lambda^{-1}U^Tg\)
+Using the eigen decomposition of $H(x)=U\Lambda U^T$ , we project the gradient into the eigen coordinates of the Hessian matrix, and then scale the components according to the inverse of the eigenvalue.  and then rotate the vector back to normal coordinates system.</p>
+
+<p>So the directions with larger eigen value (steeper direction) get shrunk, so the optimizer proceeds slower ; and the directions (flat subspace) with smaller eigen values get amplified, so the optimizer march faster in this subspace.</p>
+
+<h2 id="gradient-estimator">Gradient Estimator</h2>
+
+<p>It’s intuitive that we can guess the gradient from sampling the function, but what is a good guess (estimator)?</p>
+
+<h2 id="hessian-estimator">Hessian Estimator</h2>
+
+<p>Moreover, Hessian is not a construct that is directly available from 0th order information, so we have to estimate it in some way.</p>
+
+<h3 id="diagonal-approximation">Diagonal approximation</h3>
+
+<p>ADAM, ADAGRAD, ADADELTA can be viewed from this perspective, i.e. they assume the hessian matrix is diagonal. That is to say the major axis are aligned to the coordinate axis. This guess will make the variable drop from $n^2$ to $n$ .</p>
+
+<p>Then they can use the memory of gradient vectors to estimate the diagonal values of Hessian. As the Newtonian Equation shows this is equivalent to adjust the learning rate for different variable / axis separately. Those variables with larger gradient will have a smaller learning rate, and the variables with smaller gradient will have a larger learning rate.</p>
+
+<p>Geometrically you kind of scale the space you are optimized in along each axis to make it more isotropic!</p>
+
+<h3 id="low-rank-plus-identity">Low-rank plus Identity</h3>
+
+<p>Another Hessian estimator is the Gaussian sampling estimator. 
+\(\tilde H=\frac1b\sum_{i=1}^b\frac{f(x+\mu u_i)+f(x-\mu u_i)-2f(x)}{2\mu^2}u_iu_i^T+\lambda I_d\)
+in which $u_i\sim N(0,I_d)$ are samples from isotropic Gaussian.</p>
+
+<p>Actually, they prove that this estimator $ \tilde H$ has such desirable property. 
+\(\nabla^2f_\mu(x)\preceq\mathbb E_u[\tilde H]=\nabla^2f_\mu(x)+(\lambda-{f(x)-f_\mu(x)\over\mu^2})\cdot I_d\)
+The prove has to be in another post. But as long as the expectation converge fast enough with the batch size $b$ then it’s possible to estimate the Hessian.</p>
+
+<p>For how to invert the hessian, see <a href="#Inverting-Hessian">below</a>.</p>
+
+<h3 id="full-estimator">Full estimator</h3>
+
+<h3 id="inverting-hessian">Inverting Hessian</h3>
+
+<p>We have mentioned that inverting an unstructured hessian matrix is $O(n^3)$, we need to do it faster based on the structure.</p>
+
+<p>For <strong>Diagonal matrix</strong>, it’s trivial.</p>
+
+<p>For <strong>Low rank plus Identity</strong>, $C\in \R^{n\times b},H\in\R^{n\times n}$
+\(H=CC^T+\lambda I\)
+Doing SVD decomposition of $C$ gives us $C=U_C\Lambda_CV_C^T$, $U_C\in\R^{n\times b}, \Lambda_C\in\R^{b\times b}, V_C\in\R^{b\times b}$. Thus we have 
+\(H=U_C\Lambda^2_CU_C^T+\lambda I\)
+It’s easy to see square root of $H$ is 
+\(H^{1/2}=U_C(\Lambda^2_C+\lambda I)^{1/2}U_C^T+\lambda^{1/2} (I-U_CU_C^T)\\
+H^{1/2}=U_C[(\Lambda^2_C+\lambda I)^{1/2}-\lambda^{1/2}]U_C^T+\lambda^{1/2} I\\\)
+Actually, without the complicated <a href="https://en.wikipedia.org/wiki/Woodbury_matrix_identity">Woodbury matrix inversion identity</a> we can still figure out the inverse of the square root by geometric intuition
+\(H^{-1/2}=U_C(\Lambda^2_C+\lambda I)^{-1/2}U_C^T+\lambda^{-1/2} (I-U_CU_C^T)\\
+H^{-1/2}=U_C((\Lambda^2_C+\lambda I)^{-1/2}-\lambda^{-1/2})U_C^T+\lambda^{-1/2} I\\\)
+Thus we only have to do SVD for each population sample vectors to compute the inverse. And the best thing is as long as we have the $C$ matrix factorized, the eigen decomposition of Hessian is done as well.</p>
+
+<h3 id="what-does-it-mean-to-be-a-good-hessian-estimate">What does it mean to be a good Hessian estimate?</h3>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Hessian+Aware+Zeroth+Order+Optimization+Framework%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-hessian-aware-zoo-framework"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework&quote=Note+on+Hessian+Aware+Zeroth+Order+Optimization+Framework%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework&media=$description=Motivation%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework&title=Note+on+Hessian+Aware+Zeroth+Order+Optimization+Framework%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework&title=Note+on+Hessian+Aware+Zeroth+Order+Optimization+Framework%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Hessian Aware Zeroth Order Optimization Framework%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-hessian-aware-zoo-framework"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Adversarial+Example">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Adversarial Example</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Optimization</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Image Prior-Markov Random Field Modelling" href="/academic_notes/note-on-mrf-image-prior">
+            <p>Previous post</p>
+            Note on Image Prior-Markov Random Field Modelling
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Advanced Computer Vision" href="/academic_notes/note-on-advanced-cv">
+            <p>Next post</p>
+            Note on Advanced Computer Vision
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

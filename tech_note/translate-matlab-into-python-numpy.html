@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How to translate matlab code into python (numpy) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="How to translate matlab code into python (numpy)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration." />
+<meta property="og:description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration." />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to translate matlab code into python (numpy)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration.","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy","headline":"How to translate matlab code into python (numpy)","dateModified":"2018-09-10T00:00:00+00:00","datePublished":"2018-09-10T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="How to translate matlab code into python (numpy)">
+    <meta name="twitter:description" content="Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="How to translate matlab code into python (numpy)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="How to translate matlab code into python (numpy) " aria-label="How to translate matlab code into python (numpy)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="How+to+translate+matlab+code+into+python+%28numpy%29" class="title">How to translate matlab code into python (numpy)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 10, 2018
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p>Just like written languages, different programming languages have different innate styles, which suit different needs. Like Matlab love matrix, love script; python favors tensor, favors subfunction, favors objective-oriented programming; Mathematica are muchly functional; R are better at datatable demonstration.</p>
+
+<p>But if we just want to translate an algorithm from one language to another, we can do so.</p>
+
+<p>Note: An official table of translation could be looked up here. <a href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">numpy for matlab users</a> .</p>
+
+<p><strong>Objective</strong> : If we have a script in matlab, how can we translate that into python. (<code class="language-plaintext highlighter-rouge">numpy</code> and <code class="language-plaintext highlighter-rouge">matplotlib</code>)</p>
+
+<ul>
+  <li>General
+    <ul>
+      <li>Replace all the comment mark <code class="language-plaintext highlighter-rouge">%</code> with <code class="language-plaintext highlighter-rouge">#</code>. use <code class="language-plaintext highlighter-rouge">''''''</code> for multiline.</li>
+      <li>Discard all <code class="language-plaintext highlighter-rouge">end</code> and corret the indentation by tab</li>
+      <li>Line break <code class="language-plaintext highlighter-rouge">...</code> in mat , <code class="language-plaintext highlighter-rouge">\</code> in python</li>
+      <li><code class="language-plaintext highlighter-rouge">lambda</code> is protected in python, use another var name</li>
+    </ul>
+  </li>
+  <li>Operators
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">^</code> in matlab = <code class="language-plaintext highlighter-rouge">**</code> in python</li>
+      <li><code class="language-plaintext highlighter-rouge">.*</code> <code class="language-plaintext highlighter-rouge">./</code> <code class="language-plaintext highlighter-rouge">.^</code> in matlab = default operator in <code class="language-plaintext highlighter-rouge">numpy</code></li>
+      <li>Matrix transpose <code class="language-plaintext highlighter-rouge">'</code> into <code class="language-plaintext highlighter-rouge">.T</code></li>
+      <li>Matrix multiplication <code class="language-plaintext highlighter-rouge">*</code> in matlab, <code class="language-plaintext highlighter-rouge">.</code> in Mathematica, but not easy in python. Seems for 2 <code class="language-plaintext highlighter-rouge">ndarray</code>, <code class="language-plaintext highlighter-rouge">A@B</code> do the job in numpy!</li>
+    </ul>
+  </li>
+  <li>Indexing
+    <ul>
+      <li>Matlab indexing using <code class="language-plaintext highlighter-rouge">( , )</code>, python using <code class="language-plaintext highlighter-rouge">[ , ]</code>. Mathematica using <code class="language-plaintext highlighter-rouge">[[, ]]</code></li>
+      <li>
+        <p>Matlab start from <code class="language-plaintext highlighter-rouge">1</code> end in <code class="language-plaintext highlighter-rouge">end</code>, numpy from <code class="language-plaintext highlighter-rouge">0</code> to ``(nothing)</p>
+      </li>
+      <li>
+        <p>Note one of the super useful thing in matlab is <code class="language-plaintext highlighter-rouge">find</code> i.e. find all the none zero entries’ index. <strong>Python doesn’t have function with exactly the same functionality</strong>.</p>
+
+        <ul>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">np.non_zero</code>, <code class="language-plaintext highlighter-rouge">np.where</code> may be a choice for numpy arrays, but the indices it returns are more complex, you need to extract it from tuple.  <code class="language-plaintext highlighter-rouge">ii = np.where(values == searchval)[0]</code></p>
+          </li>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">[i for i, x in enumerate(my_list) if x == "whatever"]</code> may be a quick way to do so for lists.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Number Array
+    <ul>
+      <li>Matlab use <code class="language-plaintext highlighter-rouge">strt:step:end</code> numpy use <code class="language-plaintext highlighter-rouge">range(strt,end,step)</code></li>
+      <li>And use <code class="language-plaintext highlighter-rouge">np.arange</code> for actual array.</li>
+      <li><code class="language-plaintext highlighter-rouge">np.array</code> has a little bit complex control of dimension: all 1-d array (even vertical ones) are neither 1<em>n nor n</em>1 thus has to be reshaped to do matrix multiply!</li>
+      <li><code class="language-plaintext highlighter-rouge">size()</code>, <code class="language-plaintext highlighter-rouge">length()</code> in matlab, <code class="language-plaintext highlighter-rouge">len()</code> in python</li>
+      <li><code class="language-plaintext highlighter-rouge">[;]</code> can represent break the row in matlab, but cannot do so in python.</li>
+      <li>Append with <code class="language-plaintext highlighter-rouge">+</code> or <code class="language-plaintext highlighter-rouge">[].append()</code> in Python; <code class="language-plaintext highlighter-rouge">list = [list, new_itm]</code> in Matlab</li>
+    </ul>
+  </li>
+  <li>
+    <p>Numpy functions</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">min</code> in matlab works element wise, the corresponding function in <code class="language-plaintext highlighter-rouge">numpy</code> is <code class="language-plaintext highlighter-rouge">minimum</code> not <code class="language-plaintext highlighter-rouge">min</code></li>
+      <li><code class="language-plaintext highlighter-rouge">numpy</code> is more sensitive to data type, sometimes you don’t need to change data type to <code class="language-plaintext highlighter-rouge">int</code> to run in matlab. But you have to cast to <code class="language-plaintext highlighter-rouge">int</code> to run in python. Esp. when doing indexing!</li>
+      <li>Argument format is quite different for quite a few common functions
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">np.zeros</code> only takes list or tuple of size. if only input one value <code class="language-plaintext highlighter-rouge">np.zeros(3)</code> it outputs a 1d array</li>
+          <li><code class="language-plaintext highlighter-rouge">zeros</code> takes both list and individual values, if only input one value <code class="language-plaintext highlighter-rouge">zeros(3)</code> it outputs a square mat</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">norm</code> in matlab doesn’t work for vector norm along 1 axis. <code class="language-plaintext highlighter-rouge">np.linalg.norm</code> can do this.</li>
+    </ul>
+  </li>
+  <li>Dictionary and Struct and Cell</li>
+  <li>
+    <ul>
+      <li>In matlab, no <code class="language-plaintext highlighter-rouge">dict</code> to use! <code class="language-plaintext highlighter-rouge">struct</code> is similar, you can add fields to a <code class="language-plaintext highlighter-rouge">struct</code> object</li>
+      <li><code class="language-plaintext highlighter-rouge">struct</code> is also good for structured array data!
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">repmat(struct('image',[],'eig',[]),1,10)</code>  can create an array of structure which is easy to</li>
+          <li>Matlab <code class="language-plaintext highlighter-rouge">cell</code> is like the python <code class="language-plaintext highlighter-rouge">list</code> which is a universal container for any heterogenous things.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>String and Printing</p>
+
+    <ul>
+      <li>Python string is so easy to use <code class="language-plaintext highlighter-rouge">"%s-%d" % (str,int)</code> syntax can perform string formatting anywhere; Matlab has more cumbersome syntax, with several choices
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">sprintf(%s-%d", (str,int))</code></li>
+          <li><code class="language-plaintext highlighter-rouge">compose(%s-%d", (str,int))</code></li>
+        </ul>
+      </li>
+      <li>Python print function <code class="language-plaintext highlighter-rouge">print</code> is so flexible. Matlab counterpart is <code class="language-plaintext highlighter-rouge">disp</code> but more for display array and structure instead of string</li>
+      <li>Python <code class="language-plaintext highlighter-rouge">print(str)</code> will implicitly add <code class="language-plaintext highlighter-rouge">\n</code> to the end to change line. For Matlab, <code class="language-plaintext highlighter-rouge">fprintf</code> will not add <code class="language-plaintext highlighter-rouge">\n</code> you have to add yourself. But <code class="language-plaintext highlighter-rouge">disp</code> will change line automatically</li>
+    </ul>
+  </li>
+  <li>Flow Control
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">for i=1:2:10</code> to <code class="language-plaintext highlighter-rouge">for i in range(1,10,2): </code></li>
+      <li>Note Python add <code class="language-plaintext highlighter-rouge">:</code> to any control command; Matlab don’t</li>
+    </ul>
+  </li>
+  <li>Common command
+    <ul>
+      <li>Print out words: In Python, <code class="language-plaintext highlighter-rouge">print("%.f, %.d".%( x, arg2))</code>; In matlab <code class="language-plaintext highlighter-rouge">fprintf("x: %.1f, arg1: %d", x, arg2)</code>. Or using <code class="language-plaintext highlighter-rouge">disp(var)</code></li>
+      <li>Formatted string control: In python, <code class="language-plaintext highlighter-rouge">"%.f, %.d".%( x, arg2)</code>, in matlab <code class="language-plaintext highlighter-rouge">str = sprintf("x: %.1f, arg1: %d", x, arg2)</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Subfunction define</p>
+
+    <ul>
+      <li>in matlab
+        <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">out</span><span class="o">=</span><span class="n">Y</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> 
+<span class="k">...</span><span class="c">. </span>
+<span class="k">end</span> 
+</code></pre></div>        </div>
+        <p>in python</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Y</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">out</span>
+</code></pre></div></div>
+<h2 id="tricky-points">Tricky points</h2>
+
+<ul>
+  <li>Complicated control of <code class="language-plaintext highlighter-rouge">ndarray</code> and <code class="language-plaintext highlighter-rouge">matrix</code> in numpy
+    <ul>
+      <li>Reduce into 1D: <code class="language-plaintext highlighter-rouge">M.flat</code> return iterator, <code class="language-plaintext highlighter-rouge">M.flatten()</code> return a 1_D array</li>
+      <li>In matlab <code class="language-plaintext highlighter-rouge">A(:)</code> will give you a 1d array, but in python <code class="language-plaintext highlighter-rouge">A[:]</code> will return the same shape.</li>
+      <li>Aside from reshape there are quite a few handy functions in matlab <a href="https://www.mathworks.com/help/matlab/math/reshaping-and-rearranging-arrays.html">See this.</a></li>
+    </ul>
+  </li>
+  <li>Array Storage in Memory
+    <ul>
+      <li>A subtle difference is the convention of storing multidimensional array in matlab or python. As matlab use column major order, and numpy and torch use row major order. <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order">Major order</a></li>
+      <li>Note row major is the convention of C, Pascal etc. Column major is the convention of Fortran. (Matlab and Julia inherit this) So in python you can specify these 2 conventions by <code class="language-plaintext highlighter-rouge">C</code> for row major and <code class="language-plaintext highlighter-rouge">F</code> for column major. <code class="language-plaintext highlighter-rouge">output=output.reshape((row*col, depth), order='F')</code> (Really confusing….)</li>
+      <li>Because of this, the 2 language can have very different result when applying <code class="language-plaintext highlighter-rouge">reshape</code> operation. If you really want to match the result from 2 languages, carefully match your input and then:
+        <ul>
+          <li>See which numbers come consecutively on the first dimension.</li>
+          <li>And then permute those axis to left most and then do reshape.</li>
+          <li>For python, you should look at the right most dimension, entries will be stored in that dimension first.</li>
+        </ul>
+      </li>
+      <li>See the following corresponding code in matlab vs python</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pixelshuffle</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">upscale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span>  <span class="n">in_height</span><span class="p">,</span> <span class="n">in_width</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">channels</span> <span class="o">//=</span> <span class="n">upscale_factor</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1">#*3 if 3D
+</span>    <span class="c1">#out_depth = in_depth * self.upscale_factor  if 3D
+</span>    <span class="n">out_height</span> <span class="o">=</span> <span class="n">in_height</span> <span class="o">*</span> <span class="n">upscale_factor</span>
+    <span class="n">out_width</span> <span class="o">=</span> <span class="n">in_width</span> <span class="o">*</span> <span class="n">upscale_factor</span>
+    <span class="n">input_view</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">.</span><span class="n">contiguous</span><span class="p">().</span><span class="n">view</span><span class="p">(</span>
+        <span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">upscale_factor</span><span class="p">,</span> <span class="n">upscale_factor</span><span class="p">,</span> <span class="n">in_height</span><span class="p">,</span> <span class="n">in_width</span><span class="p">)</span>
+    <span class="c1">#shuffle_out = input_view.permute(0, 1, 5, 2, 6, 3, 7, 4).contiguous() if 3D
+</span>    <span class="n">shuffle_out</span> <span class="o">=</span> <span class="n">input_view</span><span class="p">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">).</span><span class="n">contiguous</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shuffle_out</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">out_height</span><span class="p">,</span> <span class="n">out_width</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Corresponds to matlab code</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="p">[</span><span class="n">out</span><span class="p">]</span> <span class="o">=</span> <span class="n">pixelshuffle</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">upscale</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">nargin</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="n">upscale</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="nb">size</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">W</span> <span class="o">=</span> <span class="nb">size</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Ch</span> <span class="o">=</span> <span class="nb">size</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">/</span> <span class="n">upscale</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="nb">size</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">input_fact</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="nb">input</span><span class="p">,[</span><span class="n">H</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">upscale</span><span class="p">,</span><span class="n">upscale</span><span class="p">,</span><span class="n">Ch</span><span class="p">,</span><span class="n">B</span><span class="p">]);</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="nb">permute</span><span class="p">(</span><span class="n">input_fact</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]),</span> <span class="p">[</span><span class="n">H</span> <span class="o">*</span> <span class="n">upscale</span><span class="p">,</span><span class="n">W</span> <span class="o">*</span> <span class="n">upscale</span><span class="p">,</span><span class="n">Ch</span><span class="p">,</span><span class="n">B</span><span class="p">]);</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><a href="http://www.cs.utsa.edu/~cs1173/resources/CS1173ReshapeFunction.pdf">Slide of Reshape function</a></p>
+
+<h2 id="let-matlab-and-python-talk-to-each-other">Let Matlab and Python Talk to Each Other</h2>
+
+<ul>
+  <li>For common non-binary file types, they usually have good readers like
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">csv</code> , python <code class="language-plaintext highlighter-rouge">import csv</code></li>
+      <li><code class="language-plaintext highlighter-rouge">json</code></li>
+      <li>Which are good for exchange of configurations and string information</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">.mat</code> format could be read in python, with some drawbacks
+    <ul>
+      <li>Old simple <code class="language-plaintext highlighter-rouge">.mat</code> files could be read by <code class="language-plaintext highlighter-rouge">scipy.io.loadmat</code></li>
+      <li>new <code class="language-plaintext highlighter-rouge">.mat</code> files (v7.3+) could be read by <code class="language-plaintext highlighter-rouge">h5py.File</code>
+        <ul>
+          <li>The matrix and tensor will be read directly as datasets</li>
+          <li>But the objects will be formed in a reference array, and you feed the reference back to the file to get the object into python. See <a href="http://docs.h5py.org/en/latest/refs.html">Refs in h5py</a>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">.npy</code> format could be read in matlab</li>
+</ul>
+
+<p>For more detailed exposition on this topic, see the other notes <a href="Data-Transport-Python-Matlab.md">Data Transport between Python Matlab</a>, <a href="Matlab-Python-Hybrid-Programming.md">Matlab Python Hybrid Programming</a></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=How+to+translate+matlab+code+into+python+%28numpy%29%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Ftranslate-matlab-into-python-numpy"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy&quote=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy&media=$description=Just+like+written+languages%2C+different+programming+languages+have+different+innate+styles%2C+which+suit+different+needs.+Like+Matlab+love+matrix%2C+love+script%3B+python+favors+tensor%2C+favors+subfunction%2C+favors+objective-oriented+programming%3B+Mathematica+are+muchly+functional%3B+R+are+better+at+datatable+demonstration.%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy&title=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy&title=How+to+translate+matlab+code+into+python+%28numpy%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=How to translate matlab code into python (numpy)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/translate-matlab-into-python-numpy"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#coding">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> coding</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#matlab">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> matlab</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> python</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Automatic Behavioral Quantification Pipeline" href="/tech_note/automatic-behavioral-quantification-pipeline">
+            <p>Previous post</p>
+            Automatic Behavioral Quantification Pipeline
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Math Intensive Github Blog Construction" href="/tech_note/math-intensive-github-blog-construction">
+            <p>Next post</p>
+            Math Intensive Github Blog Construction
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Image Prior-Spatial Relationship Modeling | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Image Prior-Spatial Relationship Modeling" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Image Prior: Modeling Spatial Relaionship" />
+<meta property="og:description" content="Image Prior: Modeling Spatial Relaionship" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-image-prior" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-image-prior" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Image Prior-Spatial Relationship Modeling" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Image Prior: Modeling Spatial Relaionship","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-image-prior","headline":"Note on Image Prior-Spatial Relationship Modeling","dateModified":"2020-01-14T00:00:00+00:00","datePublished":"2020-01-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-image-prior"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Image Prior-Spatial Relationship Modeling">
+    <meta name="twitter:description" content="Image Prior: Modeling Spatial RelaionshipMaterials: https://www.cse.wustl.edu/~ayan/courses/cse659a/lec1.html#/  Image Prior: Modeling Spatial Relaionship  S...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Image Prior-Spatial Relationship Modeling">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Image Prior-Spatial Relationship Modeling " aria-label="Note on Image Prior-Spatial Relationship Modeling" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Image+Prior-Spatial+Relationship+Modeling" class="title">Note on Image Prior-Spatial Relationship Modeling</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      January 14, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="image-prior-modeling-spatial-relaionship">Image Prior: Modeling Spatial Relaionship</h1>
+
+<p>Materials: https://www.cse.wustl.edu/~ayan/courses/cse659a/lec1.html#/</p>
+
+<ul id="markdown-toc">
+  <li><a href="#image-prior-modeling-spatial-relaionship" id="markdown-toc-image-prior-modeling-spatial-relaionship">Image Prior: Modeling Spatial Relaionship</a></li>
+  <li><a href="#smoothing-regularization" id="markdown-toc-smoothing-regularization">Smoothing Regularization</a>    <ul>
+      <li><a href="#how-to-analyze-a-prior" id="markdown-toc-how-to-analyze-a-prior">How to analyze a prior?</a>        <ul>
+          <li><a href="#heavy-tail-distribution" id="markdown-toc-heavy-tail-distribution">Heavy Tail Distribution</a></li>
+          <li><a href="#shrinkage-function" id="markdown-toc-shrinkage-function">Shrinkage function</a></li>
+        </ul>
+      </li>
+      <li><a href="#solvable-case" id="markdown-toc-solvable-case">Solvable Case</a></li>
+      <li><a href="#optimization" id="markdown-toc-optimization">Optimization</a>        <ul>
+          <li><a href="#how-lp-affect-optimization" id="markdown-toc-how-lp-affect-optimization">How Lp affect optimization</a></li>
+        </ul>
+      </li>
+      <li><a href="#algorithms" id="markdown-toc-algorithms">Algorithms</a>        <ul>
+          <li><a href="#problem-setting" id="markdown-toc-problem-setting">Problem setting</a></li>
+          <li><a href="#fourier-domain-least-square" id="markdown-toc-fourier-domain-least-square">Fourier Domain Least Square</a></li>
+          <li><a href="#conjugate-gradient" id="markdown-toc-conjugate-gradient"><strong>Conjugate Gradient</strong></a></li>
+          <li><a href="#iterative-reweighted-least-square-irls" id="markdown-toc-iterative-reweighted-least-square-irls">Iterative Reweighted Least Square (IRLS)</a></li>
+          <li><a href="#quadratic-splitting" id="markdown-toc-quadratic-splitting">Quadratic splitting</a></li>
+        </ul>
+      </li>
+      <li><a href="#gradient-penalty-regularizer" id="markdown-toc-gradient-penalty-regularizer">Gradient Penalty Regularizer</a>        <ul>
+          <li><a href="#radial-function-regularizer" id="markdown-toc-radial-function-regularizer">Radial function regularizer</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#learning-image-prior" id="markdown-toc-learning-image-prior">Learning Image Prior</a>    <ul>
+      <li><a href="#how-to-learn-a-distribution" id="markdown-toc-how-to-learn-a-distribution">How to learn a distribution?</a></li>
+      <li><a href="#gaussian-prior" id="markdown-toc-gaussian-prior">Gaussian Prior</a>        <ul>
+          <li><a href="#gaussian-prior-characteristics" id="markdown-toc-gaussian-prior-characteristics">Gaussian Prior Characteristics</a></li>
+          <li><a href="#applying-prior" id="markdown-toc-applying-prior">Applying Prior</a></li>
+          <li><a href="#bayesian-interpretation-of-gaussian-denoising" id="markdown-toc-bayesian-interpretation-of-gaussian-denoising">Bayesian Interpretation of Gaussian Denoising</a></li>
+        </ul>
+      </li>
+      <li><a href="#gaussian-mixture-prior" id="markdown-toc-gaussian-mixture-prior">Gaussian Mixture Prior</a>        <ul>
+          <li><a href="#fitting-a-gaussian-mixture" id="markdown-toc-fitting-a-gaussian-mixture">Fitting a Gaussian Mixture</a></li>
+          <li><a href="#expectation-maximization" id="markdown-toc-expectation-maximization">Expectation Maximization</a></li>
+          <li><a href="#mixture-gaussian-patch-prior" id="markdown-toc-mixture-gaussian-patch-prior">Mixture Gaussian Patch Prior</a></li>
+          <li><a href="#gmm-regularizer" id="markdown-toc-gmm-regularizer">GMM Regularizer</a></li>
+          <li><a href="#from-patch-prior-to-image-prior" id="markdown-toc-from-patch-prior-to-image-prior">From Patch Prior to Image Prior</a></li>
+        </ul>
+      </li>
+      <li><a href="#sparse-dictionary-regularizer" id="markdown-toc-sparse-dictionary-regularizer">Sparse Dictionary Regularizer</a>        <ul>
+          <li><a href="#algorithm" id="markdown-toc-algorithm">Algorithm</a></li>
+          <li><a href="#dictionary-result" id="markdown-toc-dictionary-result">Dictionary Result</a></li>
+        </ul>
+      </li>
+      <li><a href="#cnn-denoiser-based-prior" id="markdown-toc-cnn-denoiser-based-prior">CNN-Denoiser Based Prior</a>        <ul>
+          <li><a href="#learning-deep-denoising-prior" id="markdown-toc-learning-deep-denoising-prior">Learning Deep Denoising Prior</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>This is the basis for most further applications</p>
+
+<p>We need Regularizer for a spatial configuration</p>
+
+\[\hat X=\arg\min_X \phi(X)+R(X)\\\]
+
+<p>This could be interpreted in a Bayesian way,</p>
+
+\[\hat X=\arg\max_XP(X|I)P(I)=\arg\max_X\log\exp(-\phi(X))+\log\exp(-R(X))\]
+
+<h1 id="smoothing-regularization">Smoothing Regularization</h1>
+
+<p>Images (and labels) are smooth (Gradients are small) !</p>
+
+\[R(X)=\sum_n\sum_fR(\nabla_f*X[n])\]
+
+<p><strong>Design Choices</strong></p>
+
+<ol>
+  <li>What kind of gradient to penalize</li>
+  <li>How do you penalize (L1, L2, Lp?) (L1 penalty is better often)</li>
+</ol>
+
+<h2 id="how-to-analyze-a-prior">How to analyze a prior?</h2>
+
+<ul>
+  <li>Find the distribution corresponding to that regularizer</li>
+</ul>
+
+\[p(v)\propto\exp(-R(v))\]
+
+<ul>
+  <li>See how it affect the minimizing result of a loss</li>
+</ul>
+
+\[\min_v(v-v_0)^2+R(v)\]
+
+<h3 id="heavy-tail-distribution">Heavy Tail Distribution</h3>
+
+<ul>
+  <li>The smaller the p (p&lt;2) the more heavy tail distribution</li>
+  <li>Comparing to Gaussian, More emphasis in closing to 0, or quite large!
+    <ul>
+      <li>So it’s said to be sparse prior!</li>
+    </ul>
+  </li>
+  <li>Natural image gradients appears to be heavy tail</li>
+</ul>
+
+<p><img src="../assets/img/notes/cv2/Untitled.png" alt="Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled.png" /></p>
+
+<h3 id="shrinkage-function">Shrinkage function</h3>
+
+<p>The operator defined by solving minimization with regularization</p>
+
+\[s(v_0)=\arg\min_v\alpha(v-v_0)^2+R(v)\]
+
+<ul>
+  <li>L2: scale the identity line ! $s(v_0) = \lambda v_0$</li>
+  <li>L1: Shrink to 0 below $\alpha$, offset other things linearly by $\alpha$</li>
+  <li>Lp ($p&lt;1$):  Shrink to 0 below $\alpha$, offset other things</li>
+</ul>
+
+<p>Thus, Heavy tail regularizer will leave small values to be 0, and penalize not as hard towards the larger values.</p>
+
+<p><img src="../assets/img/notes/cv2/Untitled 1.png" alt="Image%20Prior%20Modeling%20Spatial%20Relaionship/Untitled%201.png" /></p>
+
+<h2 id="solvable-case">Solvable Case</h2>
+
+<p>If you use wavelet transform (unitary matrix), then</p>
+
+<h2 id="optimization">Optimization</h2>
+
+<h3 id="how-lp-affect-optimization">How Lp affect optimization</h3>
+
+<ul>
+  <li>L2, it’s a Least square problem,
+    <ul>
+      <li>Can solve in Fourier Domain, and can use conjugate gradient! (to avoid forming the matrix Q)</li>
+    </ul>
+  </li>
+  <li>L1, Convex optimization, iteratively solvable with shrinkage function</li>
+  <li>Lp &lt; 1, Not even convex !</li>
+</ul>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<h3 id="problem-setting">Problem setting</h3>
+
+\[\hat X=\arg\min_X\|AX-Y\|^2+\lambda\sum_n |\nabla_x*X[n]|^p + |\nabla_y*X[n]|^p\]
+
+<h3 id="fourier-domain-least-square">Fourier Domain Least Square</h3>
+
+<p>If it’s</p>
+
+<h3 id="conjugate-gradient"><strong>Conjugate Gradient</strong></h3>
+
+<p>We can do CG if $p==2$</p>
+
+<p>Note, if you have per pixel weight, you have to use CG, because it’s not convolution.</p>
+
+<h3 id="iterative-reweighted-least-square-irls">Iterative Reweighted Least Square (IRLS)</h3>
+
+<p><strong>Rationale</strong>: We know how to solve least square, so just map the problem to least square</p>
+
+<ul>
+  <li>Use weight to transform problem as p=2</li>
+  <li>Solve the p=2 Least square</li>
+  <li>Update the weights</li>
+  <li>Iterate!</li>
+</ul>
+
+<p><strong>Note</strong>:</p>
+
+<ul>
+  <li>p=1 it’s convex, so globally converging</li>
+  <li>p&lt;1 it’s not guanranteed, as loss is not convex.</li>
+</ul>
+
+<h3 id="quadratic-splitting">Quadratic splitting</h3>
+
+<p>It’s the simplest case of <strong>Proximal method</strong> in optimization.</p>
+
+<p><strong>Basic Idea: Split the optimization variables into 2, and</strong> introduce relaxation variable</p>
+
+<ul>
+  <li>Split the problem into 2 and let the 2 parts negotiate and compete!</li>
+</ul>
+
+<p>Relax the problem of</p>
+
+<p>\(\arg\min_XF(X)+G(X)\)
+Into</p>
+
+<p>\(\arg\min_X\min_WF(X)+G(W)+{\beta\over2}\|X-W\|^2\)
+When $\beta$ is large enough, this goes back to original problem</p>
+
+<p>Then you can optimize the 2 variables alternatively and iteratively, if these problems are simple enough!</p>
+
+<p>\(\hat X_t=\arg\min_X F(X)+{\beta\over2}\|X-W\|^2\\
+\hat W_t=\arg\min_WG(W)+{\beta\over2}\|X-W\|^2\)
+And then you increase $\beta$ from time to time, tighten it up! make it converge back to original problem.</p>
+
+<p>Note ADMM is more principled version of this.</p>
+
+<p>In our case, relax the problem as</p>
+
+\[\hat X=\arg\min_X\|AX-Y\|^2+{\beta\over2}\sum_n |\nabla_x*X[n]-w_x[n]|^2 + |\nabla_y*X[n]-w_y[n]|^2+|w_x[n]|^p+|w_y[n]|^p\]
+
+<ul>
+  <li>Thus Optimization towards $X$ can be solved by Fourier Domain Least Square.</li>
+  <li>Optimization towards $w_x, w_y$ are pixelwise 1-d optimization. Can use shrinkage function LUT to compute.</li>
+  <li>Also increase $\beta$</li>
+</ul>
+
+<p>Work super well in practise</p>
+
+<ul>
+  <li>If your problem has multiple parts, these parts doesn’t work well with each other, but they all work with quadratic loss,</li>
+  <li>Then you can try splitting your problem!</li>
+</ul>
+
+<p>This could be applied to deblurring!</p>
+
+<h2 id="gradient-penalty-regularizer">Gradient Penalty Regularizer</h2>
+
+<p>Maybe the function should not be applied <strong>pixel wise</strong> to gradient, it can be applied to the gradient space as a whole.</p>
+
+\[R(X)=R(\nabla*X)[n]\]
+
+<p>$R(.)$ can be a function on the whole space!</p>
+
+<ul>
+  <li>Using pixelwise regularizer is assuming independence between pixels / channels. May not be true.</li>
+  <li>Also the operation is independent on different pixel / elements! May not be desirable.</li>
+</ul>
+
+<h3 id="radial-function-regularizer">Radial function regularizer</h3>
+
+\[R(v_1,v_2...)=(\sqrt{v_1^2+v_2^2+...})^p=(\|v\|)^p\]
+
+<p>Regularizer applies to vector norm instead of individual component.</p>
+
+<p><strong>n dimension Shrinkage function</strong> 
+\([v_1,v_2]=\arg\min_{v_1,v_2}\|v-v_0\|^2+\|v\|^p\)
+The result is interesting, It’s just the original shrinkage function applied to radial direction (the vector norm direction).</p>
+
+<p>This could be applied to RGB image, the 3 channels are not independent.</p>
+
+<ul>
+  <li>The pixel is shrink to 0 only if all 3 channels are small to some extant!</li>
+  <li>Shrink 3 channel independently can cause color shifting.</li>
+</ul>
+
+<h1 id="learning-image-prior">Learning Image Prior</h1>
+
+<p>Almost universal truth</p>
+
+<ul>
+  <li>Better prior are more complicated, harder to optimize</li>
+  <li>Better priors are more data driven, better than hand crafted
+    <ul>
+      <li>But if you have data, use data driven prior.</li>
+    </ul>
+  </li>
+</ul>
+
+\[R(X)=-\log p(X)\]
+
+<p><strong>Caveat</strong>: Image itself is too high dimensional, you’d better start working with patch!</p>
+
+<h2 id="how-to-learn-a-distribution">How to learn a distribution?</h2>
+
+<p>Choose a parametric form of distribution \(p(X\mid\theta)\), which you could evaluate likelihood!</p>
+
+<p>Given the Samples $[X_1,X_2…]$, Do maximum likelihood inference for the $\theta$</p>
+
+<h2 id="gaussian-prior">Gaussian Prior</h2>
+
+<p>Training a Gaussian prior is analytically exact! Just compute the mean and covariance matrix of all your data (image patch) samples. 
+\(\mu=\frac 1T\sum_tX_t,\; \Sigma=\frac 1T\sum_t(X_t-\mu)(X_t-\mu)^T\)</p>
+
+<h3 id="gaussian-prior-characteristics">Gaussian Prior Characteristics</h3>
+
+<ul>
+  <li>Normally your mean vector at small scale is equal luminance !</li>
+  <li>If you do Eigen decomposition of covariance matrix (do PCA), $\Sigma=VDV^T$ then you will find interesting result
+    <ul>
+      <li>PC1 pattern is the overall luminance</li>
+      <li>PC2-…. looks really like Fourier Basis !!!!</li>
+    </ul>
+  </li>
+  <li>Note if your samples are translational invariant, the Fourier Basis is expected!
+    <ul>
+      <li>Note if your images are aligned by sth., then it’s no longer translational invariant, then you will see interesting patterns around the alignment point!</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="../assets/img/notes/cv2/image-20200122002016744.png" alt="" /></p>
+
+<h3 id="applying-prior">Applying Prior</h3>
+
+<p>Actually Gaussian prior regularizer is equivalent to regularizing a filtered image.</p>
+
+<ul>
+  <li>Note the first PC is different!
+    <ul>
+      <li>Usually the first eigenvalue is pretty large !</li>
+      <li>And the distribution over the first eigenvector is not Gaussian! more uniform.</li>
+    </ul>
+  </li>
+  <li>The next few components will work like convolving $V_i$ onto image with a squared penalty on gradients</li>
+</ul>
+
+<h3 id="bayesian-interpretation-of-gaussian-denoising">Bayesian Interpretation of Gaussian Denoising</h3>
+
+<p>The posterior of 2 Gaussian multiplied is still a Gaussian! Good !</p>
+
+<p>Two kinds of <strong>Bayesian estimator</strong></p>
+
+<ul>
+  <li>MAP, maximum / <strong>mode</strong> of the posterior $\arg\max_X p(X\mid Y)$</li>
+  <li>Mean Estimator $\mathbb E_{p(X\mid Y)}(X)$</li>
+</ul>
+
+<p>Note for Gaussian, mean and mode are the same!</p>
+
+<h2 id="gaussian-mixture-prior">Gaussian Mixture Prior</h2>
+
+\[p(x)=\sum_i\pi_ip(x;\mu_i,\Sigma_i)\\
+\sum_i \pi_i=1\]
+
+<p>One step further, GMM is still a pretty good distribution.</p>
+
+<ul>
+  <li>Mean $\mu=\sum_i\pi_i\mu_i$</li>
+  <li>Covariance: Consists of within gaussian term and across gaussian term (variance between the mean).
+    <ul>
+      <li>$\mathbb E (X-\mu)(X-\mu)^T=\sum_i\pi_i\Sigma_i +\sum_i\pi_i(\mu_i-\mu)(\mu_i-\mu)^T$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>High Flexibility</strong></p>
+
+<ul>
+  <li>Multimodal</li>
+  <li>The covariance structure is not “ellipsoidal”, it can be more restrictive, choosing between axis 1,2,3 !</li>
+  <li>The decay is not of gaussian speed! —- heavier tail distribution!
+    <ul>
+      <li>Choosing between close to 0,</li>
+    </ul>
+  </li>
+  <li>etc. approximation to any function, given enough components.</li>
+</ul>
+
+<p><strong>Note</strong>: this is also quite powerful for theoretical purpose, can use this as model of underlying distribution.</p>
+
+<h3 id="fitting-a-gaussian-mixture">Fitting a Gaussian Mixture</h3>
+
+<p><strong>Parameters</strong>: $\Theta ={\pi_i,\mu_i,\Sigma_i}$</p>
+
+<p><strong>Bad news</strong>: likelihood non-convex!</p>
+
+<ul>
+  <li>Note, there is <strong>internal swap symmetry</strong> of the Likelihood function, thus it’s definitely non-convex</li>
+</ul>
+
+\[\arg\max_\Theta \sum_t\log\sum_i\pi_i\det(2\pi\Sigma_i)^{-1/2}\exp(-\frac12 (X_t-\mu_i)^T\Sigma^{-1}(X_t-\mu_i))\]
+
+<p>You have to use EM algorithm.</p>
+
+<h3 id="expectation-maximization">Expectation Maximization</h3>
+
+<p>Think of mixture of gaussian distribution as a 2 step process.</p>
+
+<p>Introduce the label variable $Z\in{1,2,…k}$ with distribution</p>
+
+<p>$p(Z=i)=\pi_i$</p>
+
+<p>The posterior distribution of $X$ is Gaussian. 
+\(p(X\mid Z=i)=\mathcal N(X\mid \mu_i,\Sigma_i)\)
+The variable $X$ marginalizes as the GMM
+\(p(X)=\mathbb E_Z p(X\mid Z)=\sum_ip(Z=i)p(X\mid Z=i)\)
+<strong>Key Observation</strong>: If you know the value of $Z_i$ for each sample (cluster belonging), then estimate the Gaussian parameters are easy.</p>
+
+<p><strong>EM Algorithm</strong>:</p>
+
+<ul>
+  <li>Estimate $Z_i$ based on ${\mu_i,\Sigma_i}$</li>
+  <li>Fix $Z_i$ and estimate ${\mu_i,\Sigma_i}$.</li>
+</ul>
+
+<p><strong>Properties</strong></p>
+
+<ul>
+  <li>Similar to K Means, just with soft assignment!</li>
+  <li>No guanrantee of anything …..</li>
+</ul>
+
+<p><strong>Tricks to make it work</strong></p>
+
+<ul>
+  <li>One component can die! $\pi_i$ can go to 0 and it will not resurrect
+    <ul>
+      <li>You need to add smallest value to constraint, or reinitialize the component manually.</li>
+    </ul>
+  </li>
+  <li><strong>Initialization Tricks</strong>
+    <ul>
+      <li>Do random initialization</li>
+      <li>Try different number of K</li>
+    </ul>
+  </li>
+  <li><strong>Heat up EM</strong>
+    <ul>
+      <li>You can do hard K Means first and then do EM.</li>
+    </ul>
+  </li>
+  <li><strong>Constrain EM</strong>
+    <ul>
+      <li>You can add constraints among $\mu_i$ or $\Sigma_i$ relationship, so that you have less variable.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mixture-gaussian-patch-prior">Mixture Gaussian Patch Prior</h3>
+
+<p>Each <strong>component allows a certain kind of variation</strong>. It behaves like classifying the local patches first, and then regularize one kind of patch with the Gaussian estimated from PCA of training sample.</p>
+
+<p>Zoran and Weiss 2011</p>
+
+<p><img src="../assets/img/notes/cv2/image-20200128015643749.png" alt="" /></p>
+
+<h3 id="gmm-regularizer">GMM Regularizer</h3>
+
+\[\|Y-X\|^2-\log p(X)=\|Y-X\|^2-\log\sum_i\pi_if(X;\mu_i,\Sigma_i)\]
+
+<p>Conceptually, note that this could be think of as posterior $p(X\mid Y)$</p>
+
+<p>The posterior is also in GMM family! with the new parameters $\Theta’={\pi’_i,\mu’_i,\Sigma’_i}$</p>
+
+<p>So it’s kind of adaptive Gaussian denoising. Given a patch in a image,</p>
+
+<h3 id="from-patch-prior-to-image-prior">From Patch Prior to Image Prior</h3>
+
+<p>Note the priors we derived are all patch based prior. So when we denoise overlapping patches, some procedure should be taken to prevent <strong>Oversmoothing</strong>!</p>
+
+<p>More principle way is to crop out patches by operator $P_i$ and inference them as prior
+\(\arg\min_X\|AX-Y\|^2-\sum_i\log p(P_iX)\)
+Thus it could be inferenced by the Half Quadratic Splitting Trick!</p>
+
+<p>Weiss &amp; Zoran 2011 EPLL</p>
+
+<h2 id="sparse-dictionary-regularizer">Sparse Dictionary Regularizer</h2>
+
+<p>Having a few templates, and enforce that each patch should look like the linear combination of a few templates (atoms).  Requires that the recombination weights are sparse, only a few non-zero entries. 
+\(\arg\min\|X-\sum_i\alpha_iD_i\|^2\)</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<p>Dictionary learning</p>
+
+<ul>
+  <li>Direct $\alpha$ learning is combinatoric hard! There are combinatorical way of active $\alpha$</li>
+  <li>Learning the templates is also hard
+    <ul>
+      <li>SOTA algorithm K-SVD Aharon et.al.</li>
+      <li><a href="https://www.caam.rice.edu/~optimization/L1/optseminar/K-SVD_talk_lijun.pdf">K-SVD talk</a></li>
+      <li><a href="https://sites.fas.harvard.edu/~cs278/papers/ksvd.pdf">K-SVD paper</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dictionary-result">Dictionary Result</h3>
+
+<p>Note the learned dictionary looks much like the templates, more than Fourier Basis. Thus more informative.</p>
+
+<p><strong>Comparison to GMM</strong></p>
+
+<ul>
+  <li><strong>GMM</strong>: select one branch and allow a certain type of variation.</li>
+  <li><strong>Sparse Dictionary</strong>: Store different atoms of the image.</li>
+</ul>
+
+<p><img src="../assets/img/notes/cv2/image-20200128020002353.png" alt="image-20200128020002353" /></p>
+
+<p>Refer to the advanced course.</p>
+
+<p><a href="https://cigroup.wustl.edu/teaching/cse585t-2018/">CSE 585T Sparse Modeling for Imaging and Vision</a></p>
+
+<h2 id="cnn-denoiser-based-prior">CNN-Denoiser Based Prior</h2>
+
+<p>Observe that in half quadratic splitting, the prior only affects denoising, i.e. the following problem<br />
+\(Z=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)\)
+So no matter your application, i.e.
+\(X=\arg\min_X\|AX-Y\|_2^2+{\beta\over 2}\|X-Z\|^2-\log p(Z)\)
+you can use the denoising prior!</p>
+
+<h3 id="learning-deep-denoising-prior">Learning Deep Denoising Prior</h3>
+
+<p>Given the denoising problem, It’s easy to generate some image sample pairs $(X,Z)$ and use them to train a CNN to fit this function 
+\(Z=f(X;\beta)=\arg\min_Z{\beta\over2}\|X-Z\|^2-\log p(Z)\)
+So we note that we have to train a different CNN to solve the problem with a different strength of prior.</p>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-image-prior" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Image+Prior-Spatial+Relationship+Modeling%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-image-prior"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-image-prior&quote=Note+on+Image+Prior-Spatial+Relationship+Modeling%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-image-prior&media=$description=Image+Prior%3A+Modeling+Spatial+Relaionship%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-image-prior&title=Note+on+Image+Prior-Spatial+Relationship+Modeling%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-image-prior&title=Note+on+Image+Prior-Spatial+Relationship+Modeling%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-image-prior"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Image Prior-Spatial Relationship Modeling%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-image-prior"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Advanced Computer Vision" href="/academic_notes/note-on-advanced-cv">
+            <p>Previous post</p>
+            Note on Advanced Computer Vision
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Krylov Subspace, Conjugate Gradient and Lancosz Iteration" href="/academic_notes/note-on-krylov-subspace-conjugate-gradient-and-lancosz-iteration">
+            <p>Next post</p>
+            Krylov Subspace, Conjugate Gradient and Lancosz Iteration
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/pexels/eyesight_Iris.jpg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Blog | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/blog/" />
+<meta property="og:url" content="https://animadversio.github.io/blog/" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blog" />
+<script type="application/ld+json">
+{"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"WebPage","url":"https://animadversio.github.io/blog/","headline":"Blog","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Blog">
+    <meta name="twitter:description" content="Scientific Posts  {% for post in site.posts %}  {% unless post.categories contains 'personal writing' %}     {{ post.title }}         {{ post.date | date: "%...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/pexels/eyesight_Iris.jpg">
+    <meta name="twitter:image:alt" content="Blog">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Blog " aria-label="Blog" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+
+  <header id="main" style="background-image: url('/assets/img/pexels/eyesight_Iris.jpg')">
+    <div class="title-padder">
+      
+        <h1 id="Blog" class="title"> Blog</h1>
+        
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+	<div class=coll2>
+<h2>Scientific Posts</h2>
+<ul>
+  
+  
+  
+  
+  
+  
+  
+  
+     <h3><a href="/2020/01/07/Why-we-should-care-adversarial-examples.html">Understanding of Adversarial Attack</a> </h3> 
+      <b><i> January 7, 2020 </i></b> <!-- - Binxu Wang  -->
+      <p> Understanding of Adversarial Attack
+ </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Adversarial+Example">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Adversarial Example</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Computer+Vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computer Vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neural+Networks">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neural Networks</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     <h3><a href="/2019/07/02/This-Week's-Learning-about-Brain-4-Neural-Correlate-of-Visual-Consciousness.html">This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)</a> </h3> 
+      <b><i> July 2, 2019 </i></b> <!-- - Binxu Wang  -->
+      <p> 看得见还是看不见, 这是一个问题!
+ </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Concept">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Concept</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Consciousness">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Consciousness</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Cortex">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Cortex</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sensory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sensory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Visual+Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Visual Neuroscience</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+     <h3><a href="/2018/11/25/This-Week's-Learning-about-Brain-3-Hard-Wired-Olfactory-Responce.html">This Week's Learning about Brain 3 Hard Wired Olfactory Responce</a> </h3> 
+      <b><i> November 25, 2018 </i></b> <!-- - Binxu Wang  -->
+      <p> 先天与后天 (Nature or Nurture)
+首先让我们从一个更大的背景开始.
+ </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Connectomics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Connectomics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Fruit+Fly">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Fruit Fly</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neural+Circuit">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neural Circuit</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Olfactory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Olfactory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sensory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sensory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+     <h3><a href="/2018/10/17/This-Week's-Learning-about-Brain-2-Frequency-Tuning-of-Hair-Cell.html">This Week's Learning about Brain 2 Frequency Tuning of Hair Cell</a> </h3> 
+      <b><i> October 17, 2018 </i></b> <!-- - Binxu Wang  -->
+      <p> 引言: 感觉系统
+一直以来我都被这个简单的事实深深震撼: 我们的心智(mind)其实一直都生活在一个密不透风, 不见天日的黑匣子里(Skull), 但因为我们无比强大的感觉系统(Sensory System), 我们才能在神经信息处理的过程中渲染出这样清晰美妙的主观现实, 并无缝的与这个世界交... </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Auditory+Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Auditory Neuroscience</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Biophysics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Biophysics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neural+Circuit">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neural Circuit</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sensory+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sensory System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+     <h3><a href="/2018/09/09/Derivative-Free-Optimization-Method-note.html">Derivative Free Optimization Method (Based Feature Visulization) Notes 1</a> </h3> 
+      <b><i> September 9, 2018 </i></b> <!-- - Binxu Wang  -->
+      <p>  </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Optimization</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+     <h3><a href="/2018/09/01/This-Week's-Learning-about-Brain-0.html">This Week's Learning about Brain 0</a> </h3> 
+      <b><i> September 1, 2018 </i></b> <!-- - Binxu Wang  -->
+      <p> 题记
+一直计划着博士期间定期写一点note把自己最近学到的有趣的, 美妙的东西记下来. 如果读得是一个数学物理的博士, 或者理论神经科学的博士, 那这种Note就像是在数学世界中的探险笔记, 可以叫This week’s finding, 大约就是这周看了什么书, 学会了什么数学, 玩儿了什么... </p>
+      
+      
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Connectomics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Connectomics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Geometry">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Geometry</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#This+Week%27s+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> This Week's Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Visual+Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Visual Neuroscience</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+  
+  
+  
+  
+  
+  
+</ul>
+</div>
+
+<div class=coll2>
+<h2>Personal Writings</h2>
+<ul>
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2021/02/16/Alignment-of-Objective-in-Evolution.html">Alignment Of Objective In Evolution</a> </h3> 
+          <b><i> February 16, 2021 </i></b> <!-- - Binxu Wang  -->
+          <p> Alignment of Objective in Evolution
+ </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Evolution">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Evolution</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#RL">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> RL</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2021/01/15/A-model-of-Persisitency.html">A Model of Persistency</a> </h3> 
+          <b><i> January 15, 2021 </i></b> <!-- - Binxu Wang  -->
+          <p> A Model of Persistency and Quit
+ </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#life">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> life</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Reinforcement+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Reinforcement Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#RL">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> RL</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2020/01/13/Reading-note-on-Disqualify-as-human.html">人间失格 读书札记</a> </h3> 
+          <b><i> January 13, 2020 </i></b> <!-- - Binxu Wang  -->
+          <p> 人间失格是一本高中时就熟知的书，可是也许是一直没有心绪去读，最近才在飞机上认真读完。没想到的是，并没有像以前期待的那样会被这个人和这个故事拉进黑暗的深渊，心情也并不十分抑郁。只是在有些主人公对他身边的女人不善时才会生气或者难过，其余时候对主人公还是很同情的。
+ </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#books">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> books</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#reading">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> reading</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2019/08/15/Hierarchy-of-truth.html">真理的不同层级 (Updated)</a> </h3> 
+          <b><i> August 15, 2019 </i></b> <!-- - Binxu Wang  -->
+          <p> 可以以物理, 计算机与神经为例.
+ </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neuroscience</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Physics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Physics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Science</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2019/08/14/Travel-in-Taiwan.html">2019 台湾纪行</a> </h3> 
+          <b><i> August 14, 2019 </i></b> <!-- - Binxu Wang  -->
+          <p>  </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Politics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Politics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#travel">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> travel</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2019/08/14/Attack-on-Titan.html">进击的巨人(Attack on Titan) 观剧手记</a> </h3> 
+          <b><i> August 14, 2019 </i></b> <!-- - Binxu Wang  -->
+          <p> 与进击的巨人结缘还是大一暑假, 比许多动漫爱好者晚了许久. 之后断断续续地追看漫画赶上了剧情. 去年秋天某次生病卧床时又偶然捡起来, 一口气追到了目前的进度. 近期看完了第三季, 记录下自己的感受.
+ </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Animation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Animation</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Movie">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Movie</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	   <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2018/05/30/Some-principles-of-establishing-a-lifestyle.html">Some principles to establish a lifestyle</a> </h3> 
+          <b><i> May 30, 2018 </i></b> <!-- - Binxu Wang  -->
+          <p> 一些建立生活体系的基本原则1
+
+
+  
+    
+      Written in the last semester of undergrad. When I was intensively taking Math, Chinese Philosophy and History of Bud... </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#life">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> life</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Philosophy">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Philosophy</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+  	
+        
+	      <h3><a href="/personal%20writing/2017/03/17/Antithesis.html">Antithesis</a> </h3> 
+          <b><i> March 17, 2017 </i></b> <!-- - Binxu Wang  -->
+          <p> Antithesis 1
+
+  Search out necessary in everything for the sake of divine; and the divine we should search for the sake of a life of such happiness... </p>
+        
+        
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#essay">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> essay</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#life">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> life</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#personal+writing">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> personal writing</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+	    
+       <!-- cat-match-p -->
+  
+</ul>
+</div>
+
+<style>
+    .coll2 {
+        float: left;
+        width: 48%;
+        padding-bottom: 50px;
+    }
+    @media screen and (max-width: 800px) { 
+    .coll2 {
+        float: left;
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    }
+    /* Clear floats after the columns */
+    .roww:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+  
+  </section>
+
+
+  <!-- Tag list for portfolio -->
+  
+  
+
+
+  <div class="tag-list"></div>
+
+
+
+</article>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

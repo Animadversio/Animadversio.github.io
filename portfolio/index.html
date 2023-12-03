@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/pexels/computer.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Portfolio | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Portfolio" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/portfolio/" />
+<meta property="og:url" content="https://animadversio.github.io/portfolio/" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Portfolio" />
+<script type="application/ld+json">
+{"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"WebPage","url":"https://animadversio.github.io/portfolio/","headline":"Portfolio","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Portfolio">
+    <meta name="twitter:description" content="{% include portfolio.html %}">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/pexels/computer.jpeg">
+    <meta name="twitter:image:alt" content="Portfolio">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Portfolio " aria-label="Portfolio" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+
+  <header id="main" style="background-image: url('/assets/img/pexels/computer.jpeg')">
+    <div class="title-padder">
+      
+        <h1 id="Portfolio" class="title"> Portfolio</h1>
+        
+        <h2 class="subtitle">Projects I have worked on</h2>
+        
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+	<!-- Portfolio Grid Section -->
+<style>
+    .portfolio-cell {
+      flex: 0 0 48%;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 932px) { 
+        .portfolio-cell {
+          flex: 0 0 85%;
+          margin-bottom: 10px;
+        }
+    }
+</style>
+
+<div class="portfolio-grid">
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/wormhole-visualization"> 
+                <div class="caption" title="Visualizing Wormhole Distortion of Spacetime">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/assets/img/portfolio/WormHoleVisualize2.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/wormhole-visualization">Visualizing Wormhole Distortion of Spacetime</a> </h3> 
+
+            <i><b> June 10, 2018 </b></i> 
+
+            <p>
+                
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Astrophysics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Astrophysics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#General+Relativity">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> General Relativity</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#matlab">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> matlab</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Physics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Physics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Visualization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Visualization</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/control-nn-by-optimization"> 
+                <div class="caption" title="Control by Optimization in Biological Neural Network">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/assets/img/portfolio/Code_space_opt_traj_cmp_3D_score0.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/control-nn-by-optimization">Control by Optimization in Biological Neural Network</a> </h3> 
+
+            <i><b> June 10, 2019 </b></i> 
+
+            <p>
+                Can we control visual neurons by optimization algorithms?
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Neuroscience</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Optimization</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Visual+Neuroscience">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Visual Neuroscience</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/hyperbolic-art"> 
+                <div class="caption" title="Art in Hyperbolic Space">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\notes\poincare\nona_tessal9-3.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/hyperbolic-art">Art in Hyperbolic Space</a> </h3> 
+
+            <i><b> April 11, 2020 </b></i> 
+
+            <p>
+                Can we tile poincare disk with arbitrary equilateral shapes?
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Art">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Art</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Geometry">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Geometry</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Manifold">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Manifold</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/texas-holdem-ai"> 
+                <div class="caption" title="AI for Texas Hold'em">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\portfolio\Texas_Holdem.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/texas-holdem-ai">AI for Texas Hold'em</a> </h3> 
+
+            <i><b> January 2, 2021 </b></i> 
+
+            <p>
+                Probability calculation to the rescue!
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Artificial+Intelligence">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Artificial Intelligence</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Game">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Game</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Probability">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Probability</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/geometry-of-gan"> 
+                <div class="caption" title="Geometry of Generative Adversarial Networks">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\portfolio\ConsistencySchema_Artboard2.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/geometry-of-gan">Geometry of Generative Adversarial Networks</a> </h3> 
+
+            <i><b> March 26, 2021 </b></i> 
+
+            <p>
+                
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#GAN">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> GAN</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Generative+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Generative Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Geometry">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Geometry</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Manifold">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Manifold</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Math">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Math</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/training-monkey-face-gan"> 
+                <div class="caption" title="Training GAN to Model Monkey Face Space">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\portfolio\monkeyfaces.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/training-monkey-face-gan">Training GAN to Model Monkey Face Space</a> </h3> 
+
+            <i><b> June 9, 2021 </b></i> 
+
+            <p>
+                
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#GAN">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> GAN</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Generative+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Generative Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Macaque">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Macaque</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Manifold">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Manifold</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#ML">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> ML</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/rl-playing-2048"> 
+                <div class="caption" title="Train Agents to Play 2048">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\portfolio\2048GameShot.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/rl-playing-2048">Train Agents to Play 2048</a> </h3> 
+
+            <i><b> April 27, 2022 </b></i> 
+
+            <p>
+                How good is tree search vs RL?
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#AI">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> AI</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Game">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Game</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#ML">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> ML</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#RL">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> RL</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+    <div class="portfolio-cell">
+        <div class="colL">
+            <a class="portfolio-link" data-keyboard="true" href="/portfolio/text-guided-art-generation-with-latent-diffusion"> 
+                <div class="caption" title="Text Guided Art Generation with Latent Diffusion">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img src="/..\assets\img\portfolio\a_photo_of_a_ballerina_lady_embracing_her_cat_in_Monet_style2.png" class="" alt="" /> 
+            </a>
+        </div>
+        <div class="colR">
+            <h3><a href="/portfolio/text-guided-art-generation-with-latent-diffusion">Text Guided Art Generation with Latent Diffusion</a> </h3> 
+
+            <i><b> May 8, 2022 </b></i> 
+
+            <p>
+                Let's paint with sentences!
+            </p>
+            
+            
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#AI">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> AI</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Art">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Art</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#diffusion+model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> diffusion model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Generative+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Generative Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#ML">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> ML</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+    </div>
+    
+</div>
+<!-- <div class="portfolio-grid">
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/wormhole-visualization">
+            <div class="caption" title="Visualizing Wormhole Distortion of Spacetime">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/assets/img/portfolio/WormHoleVisualize2.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/control-nn-by-optimization">
+            <div class="caption" title="Control by Optimization in Biological Neural Network">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/assets/img/portfolio/Code_space_opt_traj_cmp_3D_score0.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/hyperbolic-art">
+            <div class="caption" title="Art in Hyperbolic Space">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cnotes%5Cpoincare%5Cnona_tessal9-3.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/texas-holdem-ai">
+            <div class="caption" title="AI for Texas Hold'em">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cportfolio%5CTexas_Holdem.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/geometry-of-gan">
+            <div class="caption" title="Geometry of Generative Adversarial Networks">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cportfolio%5CConsistencySchema_Artboard2.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/training-monkey-face-gan">
+            <div class="caption" title="Training GAN to Model Monkey Face Space">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cportfolio%5Cmonkeyfaces.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/rl-playing-2048">
+            <div class="caption" title="Train Agents to Play 2048">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cportfolio%5C2048GameShot.png">
+        </a>
+    </div>
+    
+    <div class="portfolio-cell">
+        <a class="portfolio-link" data-keyboard="true" href="/portfolio/text-guided-art-generation-with-latent-diffusion">
+            <div class="caption" title="Text Guided Art Generation with Latent Diffusion">
+                <div class="caption-content">
+                    <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img alt="" class="" src="/..%5Cassets%5Cimg%5Cportfolio%5Ca_photo_of_a_ballerina_lady_embracing_her_cat_in_Monet_style2.png">
+        </a>
+    </div>
+    
+</div> -->
+<style>
+.colL {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+.colR {
+    float: left;
+    width: 50%;
+    padding-bottom: 20px;
+}
+</style>
+
+
+  
+  </section>
+
+
+  <!-- Tag list for portfolio -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#Page">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Page</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

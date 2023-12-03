@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Variational Inference (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Variational Inference (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-variational-inference" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-variational-inference" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Variational Inference (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-variational-inference","headline":"Note on Variational Inference (Updating)","dateModified":"2020-07-27T00:00:00+00:00","datePublished":"2020-07-27T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-variational-inference"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Variational Inference (Updating)">
+    <meta name="twitter:description" content="  Philosophy  Mean Field VI          Example: Latent Dirichlet Allocation, LDA      Evidence Lower Bound      Mean Field Simplification      Stochastic VI   ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Variational Inference (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Variational Inference (Updating) " aria-label="Note on Variational Inference (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Variational+Inference+%28Updating%29" class="title">Note on Variational Inference (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 27, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <ul id="markdown-toc">
+  <li><a href="#philosophy" id="markdown-toc-philosophy">Philosophy</a></li>
+  <li><a href="#mean-field-vi" id="markdown-toc-mean-field-vi">Mean Field VI</a>    <ul>
+      <li><a href="#example-latent-dirichlet-allocation-lda" id="markdown-toc-example-latent-dirichlet-allocation-lda">Example: Latent Dirichlet Allocation, LDA</a></li>
+      <li><a href="#evidence-lower-bound" id="markdown-toc-evidence-lower-bound">Evidence Lower Bound</a></li>
+      <li><a href="#mean-field-simplification" id="markdown-toc-mean-field-simplification">Mean Field Simplification</a></li>
+      <li><a href="#stochastic-vi" id="markdown-toc-stochastic-vi">Stochastic VI</a></li>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="philosophy">Philosophy</h1>
+
+<p>The spirit of Variational Inference is to solve Bayesian inference problem with optimization.</p>
+
+<p>In the scenario of latent factor</p>
+
+<p>It’s not trying to use Bayes rule directly, but to fit this distribution within a class of distributions $q(z;\nu)$, by minimizing the KL-divergence between the 2 models. 
+\(p(z\mid x)=\frac{p(z,x)}{\sum_z p(z,x)}\\
+\nu^*=\arg\min_\nu KL(q(z;\nu)\|p(z\mid x))\\
+p^*(z) = q(z;\nu^*)\)
+In the modern case, the $q(z;\nu)$ can be a properly normalized neural network. And one key task is to make the optimization stochastic (i.e. solvable by stochastic gradient descent) thus distributable at large scale.</p>
+
+<p>Note, many of the work using Variational Inference can be interpreted and stated in other language, like geometry or algebra. But bayesian statistics is also an important interpretation that can provide orthogonal intuition to other methods.</p>
+
+<h1 id="mean-field-vi">Mean Field VI</h1>
+
+<h2 id="example-latent-dirichlet-allocation-lda">Example: Latent Dirichlet Allocation, LDA</h2>
+
+<p>Problem: Find a . (it’s a mixed membership model.)</p>
+
+<p>You want to know the posterior distribution of $p(topic\mid document)$  however, computing the marginal distribution is intractable. 
+\(p(topic\mid document) =\frac{p(topic,doc)}{\sum_z p(topic,doc)}\)
+We can represent the model as a graphic model.</p>
+
+<p>Here we use exponential family as the space of distribution to search in.</p>
+
+<h2 id="evidence-lower-bound">Evidence Lower Bound</h2>
+
+<p>Note that the exact KL requires knowledge of $p(z\mid x)$ but we don’t have it, so we optimize a lower bound of evidence. ELMO. 
+\(KL(q(z;\nu)\|p(z\mid x))=\mathbb E_q \log\frac{q(z;\nu)}{p(z\mid x)}=\mathbb E_q \log q(z;\nu) -\mathbb E_q \log p(z\mid x)\)</p>
+
+\[\mathbb E_q \log p(z\mid x) =\mathbb E_q\log\frac{p(z,x)}{p(x)} =-\log p(x)+\mathbb E_q \log p(z,x)\]
+
+\[\log p(x)=\mathbb E_q \{\log p(z,x) -\log q(z;\nu)\} + KL(q(z;\nu)\|p(z\mid x))\]
+
+<p>Note taking Expectation using $q$ distribution means $\mathbb E_q\phi(z)=\int_zq(z;\nu)\phi(z)$  .</p>
+
+<p>Thus the actual thing being maximized is this. First term maximizing the mass on the observed $p(z;x)$, second term optimize the entropy of $q$ to make it broader. 
+\(\mathcal L(\nu) =\mathbb E_{q(.;\nu)} \{\log p(z,x) -\log q(z;\nu)\}\)
+Note without gradient trick this can still work for many classical models with conjugacy in mind.</p>
+
+<p>The next trick is for gradient, (log expectation trick)
+\(\nabla_\nu \mathcal L(\nu)=\nabla_\nu\mathbb E_{q(.;\nu)} \{\log p(z,x) -\log q(z;\nu)\}\\
+=\mathbb E_q\nabla_\nu \log q(z;\nu)\{\log p(z,x) -\log q(z;\nu)+1\}\)
+Using this trick we can switch gradient inside expectation, thus we can sample $z$ and compute gradient and estimate gradient in a batch, this allows VI to be applicable to complex modern models.</p>
+
+<p>Refer to a great <a href="http://edwardlib.org/tutorials/klqp">Tutorial in EdwardLib</a>.</p>
+
+<p>Note that Variational Information Maximization has a similar method.</p>
+
+<h2 id="mean-field-simplification">Mean Field Simplification</h2>
+
+<p>Limit the family of distribution to the case that are “conditionally” independent.</p>
+
+<p>In this LDA problem,  $\beta$ is the global variable to be inferred, and $z_i$ are the local hidden variables. So mean field assumption is the local variables are independent to each other after conditioning on $\beta$ 
+\(p(\beta,z,x)=p(z)\prod_i p(z_i,x_i\mid\beta)\)</p>
+
+<h2 id="stochastic-vi">Stochastic VI</h2>
+
+<blockquote>
+  <p>It’s just using SGD to solve VI.</p>
+</blockquote>
+
+<ul>
+  <li>Use cheap, estimates of gradient instead of accurate one.
+    <ul>
+      <li>But the estimate should be unbiased.</li>
+      <li>Sampling from the dataset distribution suffices this.</li>
+    </ul>
+  </li>
+  <li>Decrease the step size gradually to converge.
+    <ul>
+      <li>Adam, RMS etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=ogdv_6dbvVQ&amp;t=1674s">Tutorial on NIPS 2016</a></li>
+  <li><a href="https://arxiv.org/abs/1606.03657">InfoGAN</a>: Apply Variational Information Maximization to unsupervised GAN learning</li>
+  <li><a href="https://arxiv.org/abs/1605.09674">VIME</a>: Apply Variational Information Maximization to exploration in RL agent learning. Cf. Curiosity driven learning</li>
+  <li>Edward Tutorials http://edwardlib.org/tutorials/</li>
+</ul>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-variational-inference" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Variational+Inference+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-variational-inference"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-variational-inference&quote=Note+on+Variational+Inference+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-variational-inference&media=$description="
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-variational-inference&title=Note+on+Variational+Inference+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-variational-inference&title=Note+on+Variational+Inference+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-variational-inference"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Variational Inference (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-variational-inference"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Bayesian">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Bayesian</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Graph+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Graph Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Probabilistic+Programming">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Probabilistic Programming</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Variational">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Variational</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Neural Tuning and Information" href="/academic_notes/note-on-neural-tuning-and-information">
+            <p>Previous post</p>
+            Note on Neural Tuning and Information
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Gaussian Process" href="/academic_notes/note-on-gaussian-process">
+            <p>Next post</p>
+            Note on Gaussian Process
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

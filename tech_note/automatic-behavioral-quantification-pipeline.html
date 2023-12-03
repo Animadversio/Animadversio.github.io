@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Automatic Behavioral Quantification Pipeline | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Automatic Behavioral Quantification Pipeline" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to automatically analyze behavior video?" />
+<meta property="og:description" content="How to automatically analyze behavior video?" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Automatic Behavioral Quantification Pipeline" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"How to automatically analyze behavior video?","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline","headline":"Automatic Behavioral Quantification Pipeline","dateModified":"2018-11-17T00:00:00+00:00","datePublished":"2018-11-17T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Automatic Behavioral Quantification Pipeline">
+    <meta name="twitter:description" content="How to automatically analyze behavior video?DeepLabCut is a powerful tool to rapidly1 train a neural network (based on ResNet) to track keypoints on movement...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Automatic Behavioral Quantification Pipeline">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Automatic Behavioral Quantification Pipeline " aria-label="Automatic Behavioral Quantification Pipeline" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Automatic+Behavioral+Quantification+Pipeline" class="title">Automatic Behavioral Quantification Pipeline</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 17, 2018
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="how-to-automatically-analyze-behavior-video">How to automatically analyze behavior video?</h2>
+
+<p><a href="https://github.com/AlexEMG/DeepLabCut"><code class="language-plaintext highlighter-rouge">DeepLabCut</code></a> is a powerful tool to rapidly<sup id="fnref:0" role="doc-noteref"><a href="#fn:0" class="footnote" rel="footnote">1</a></sup> train a neural network (based on ResNet) to track keypoints on movement videos, esp. those of moving human or animals. Thus this is a game changing tool for all kind of behavior quantification for neuroscience and psychology researchers (can be applied to nearly any behavioral science topic, e.g. motor learning, motor control, facial expression, social interaction…). The workflow is relatively simple and it scarcely takes time after the network have been trained, and the video analysis can be done automatically. Because of this it’s really favorable to the reserchers doing long term ecological video recording.</p>
+
+<p>However, several persisitant GUI bug in this module drives me to find a workaround of that, which result in the pipeline in this technical post.</p>
+
+<h2 id="problem-highly-unstable-gui-of-deeplabcut">Problem: Highly unstable GUI of <code class="language-plaintext highlighter-rouge">DeepLabCut</code></h2>
+<p>I’ve installed <code class="language-plaintext highlighter-rouge">DeepLabCut</code> 2.0 on Windows 10 (with GPU) and Ubuntu environment. In both setting I faced quite serious GUI crash problem, which means there are thousands of ways that you can click the wrong button / in the wrong order / drag the slide bar too fast / in the retrograde direction, which can cause the GUI breakdown, and in many cases the python kernel crash togetherwith. However, if there is no GUI involved, the <code class="language-plaintext highlighter-rouge">DeepLabCut</code> works really well! Building up and training deepnetwork (using GPU), analyzing, annotating and exporting video work smoothly and coherently. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup> This bug is driving me mad, as it could crash and destroy the unsaved dataset (the most labor costing part of this pipeline) you are making when doing annotation. This is unacceptable for a smooth workflow.</p>
+
+<p>Certainly, the GUI is inevitable in the frame selection and keypoint annotation processes. But I notice that the <code class="language-plaintext highlighter-rouge">DeepLabCut</code> module only requires input from the bunch of frames/images and data table files, <code class="language-plaintext highlighter-rouge">CollectedData_xxx.csv</code> and <code class="language-plaintext highlighter-rouge">CollectedData_xxx.h5</code>. Thus I get the idea that I can use some more robust and common software with GUI to annotate and save the keypoints’ coordinates, and covert that into the formats (<code class="language-plaintext highlighter-rouge">.csv</code>,<code class="language-plaintext highlighter-rouge">.h5</code>) that <code class="language-plaintext highlighter-rouge">DeepLabCut</code> requires to construct its training dataset. This is the motivation of this project.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>As I usually do, I try to combine several pre-established tools with respective advantages and build the interface between them to make them function concertedly.</p>
+
+<p><strong>Tools</strong></p>
+
+<ul>
+  <li><a href="https://github.com/AlexEMG/DeepLabCut"><code class="language-plaintext highlighter-rouge">DeepLabCut</code></a>: the recent game changing breakthrough, which is the major player of this pipeline.</li>
+  <li><a href="https://imagej.nih.gov/ij/download.html"><code class="language-plaintext highlighter-rouge">ImageJ</code></a>: traditional image analysis software for scientific image analysis. It has pretty robust and easy to use GUI and lots of plugins. It can transform the <code class="language-plaintext highlighter-rouge">.avi</code> movie into frame sequences in many formats, and can also take screenshots and save as image files. Thus, it’s suitable for <strong>Frame Extraction</strong>
+    <ul>
+      <li><a href="http://bigwww.epfl.ch/thevenaz/pointpicker/"><code class="language-plaintext highlighter-rouge">Point Picker</code></a>:  An ImageJ plugin developped by EPFL scientists which can pick up to 1024 points [^2] in an image, and can deal with image sequence well. Thus it’s suitable to <strong>Label Frames</strong></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/PointPickerDataTransform.ipynb">Interface (data format transforming) script</a>: (The only part I write) Transform the output file of <code class="language-plaintext highlighter-rouge">Point Picker</code> to the required formats of <code class="language-plaintext highlighter-rouge">deeplabcut.create_training_dataset(.)</code>.
+    <ul>
+      <li><a href="https://pandas.pydata.org/pandas-docs/stable/"><code class="language-plaintext highlighter-rouge">Pandas</code></a>: <code class="language-plaintext highlighter-rouge">DataFrame</code> in <code class="language-plaintext highlighter-rouge">Pandas</code> is the intermediate data structure I used to do the transformation.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/posts/ImageJ_DeepLabCut/ImageJ PointPicker Output.png" alt="ImageJ Output" /></p>
+
+<h2 id="workflow-combining-imagej-and-deeplabcut">Workflow combining <code class="language-plaintext highlighter-rouge">ImageJ</code> and <code class="language-plaintext highlighter-rouge">DeepLabCut</code></h2>
+<p>Here is the complete workflow / protocol we can follow when starting a behavioral quantification project.</p>
+
+<ul>
+  <li><strong>Video recording</strong></li>
+  <li>Create a project in <code class="language-plaintext highlighter-rouge">DeepLabCut</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">config_path =deeplabcut.create_new_project('Name of the project','Name of the experimenter', ['Full path of video 1','Full path of video2'], working_directory='Full path of the working directory',copy_videos=True/False)</code></li>
+    </ul>
+  </li>
+  <li><strong>Frame Extraction</strong>:
+    <ul>
+      <li>We can use the automatic extraction tool in <code class="language-plaintext highlighter-rouge">deeplabcut</code> as baseline: <code class="language-plaintext highlighter-rouge">deeplabcut.extract_frames(config_path,'automatic','kmeans', crop=True, checkcropping=True)</code> (which is relatively robust)</li>
+      <li>And then, supplement it with manual selection from <code class="language-plaintext highlighter-rouge">ImageJ</code></li>
+      <li>Open the video with <code class="language-plaintext highlighter-rouge">ImageJ</code>. Slide and select the key frames and saveas <code class="language-plaintext highlighter-rouge">png</code> files in <code class="language-plaintext highlighter-rouge">ImageJ</code></li>
+      <li>Note the training set can consist of frames of different size, cropped and uncropped mixed together.</li>
+    </ul>
+  </li>
+  <li><strong>Label the Frames</strong>:
+    <ul>
+      <li>We can use the GUI tool in <code class="language-plaintext highlighter-rouge">deeplabcut.label_frames(config_path)</code></li>
+      <li>Or</li>
+      <li>Use the ImageJ, <code class="language-plaintext highlighter-rouge">Point Picker</code> plugin
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">Import&gt;Image Sequence</code> select the folder of the extracted frames</li>
+          <li>Open <code class="language-plaintext highlighter-rouge">Point Picker</code> and mark the key points in sequence from the first image.</li>
+          <li>Export the coordinates data with <code class="language-plaintext highlighter-rouge">Import/Export</code> tool. save the <code class="language-plaintext highlighter-rouge">data.txt</code> file</li>
+        </ul>
+      </li>
+      <li>Convert the <code class="language-plaintext highlighter-rouge">txt</code> date into <code class="language-plaintext highlighter-rouge">csv</code> and <code class="language-plaintext highlighter-rouge">hdf5</code></li>
+    </ul>
+  </li>
+  <li><strong>Check the annotation</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">deeplabcut.check_labels(config_path)</code></li>
+    </ul>
+  </li>
+  <li><strong>Create Dataset</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">deeplabcut.create_training_dataset(config_path,num_shuffles=1)</code></li>
+    </ul>
+  </li>
+  <li><strong>Train Network</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">deeplabcut.train_network(config_path,shuffle=1)</code></li>
+    </ul>
+  </li>
+  <li><strong>Evaluate Network</strong>: See the training loss and test loss
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">deeplabcut.evaluate_network(config_path,shuffle=[1], plotting=True)</code></li>
+    </ul>
+  </li>
+  <li><strong>Video Analysis</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">deeplabcut</span><span class="p">.</span><span class="n">analyze_videos</span><span class="p">(</span><span class="n">config_path</span><span class="p">,[</span><span class="s">'/analysis/project/videos/reachingvideo1.avi'</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">save_as_csv</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">deeplabcut</span><span class="p">.</span><span class="n">create_labeled_video</span><span class="p">(</span><span class="n">config_path</span> <span class="p">[</span><span class="s">'/analysis/project/videos/reachingvideo1.avi'</span><span class="p">,</span><span class="s">'/analysis/project/videos/reachingvideo2.avi'</span><span class="p">])</span>
+<span class="n">deeplabcut</span><span class="p">.</span><span class="n">plot_trajectories</span><span class="p">(</span><span class="n">config_path</span><span class="p">,[</span><span class="s">'/analysis/project/videos/reachingvideo1.avi'</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>And Voila! Here is the tracking result: <a href="https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut/blob/master/TrackedFaceClip.gif">Tracking result</a></p>
+
+<h2 id="drawback">Drawback</h2>
+<p>Smooth as it may seem, there is an drawback of this annotation workflow. The annotation function is not exactly equivalent to the native <code class="language-plaintext highlighter-rouge">DeepLabCut</code> one. Note, in original <code class="language-plaintext highlighter-rouge">DeepLabCut</code> module, it’s allowed to miss some label in a frame, as <strong>occlusion</strong> happens sometime. But it’s harder to do so in <code class="language-plaintext highlighter-rouge">ImageJ</code> setting.</p>
+
+<p>This is a major direction that I’d like to improve if I’d heavily lean on this pipeline.</p>
+
+<h2 id="appendix-solution-process-and-reference">Appendix: Solution Process and Reference</h2>
+<p>(This part is a collection of references that I checked in this process. )</p>
+
+<p>Major dataframe I/O lines in <a href="https://github.com/AlexEMG/DeepLabCut/blob/master/deeplabcut/generate_training_dataset/labeling_toolbox.py"><code class="language-plaintext highlighter-rouge">DeepLabCut</code> module</a></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="p">.</span><span class="n">oldDF</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="nb">dir</span><span class="p">,</span><span class="s">'CollectedData_'</span><span class="o">+</span><span class="bp">self</span><span class="p">.</span><span class="n">scorer</span><span class="o">+</span><span class="s">'.h5'</span><span class="p">),</span><span class="s">'df_with_missing'</span><span class="p">)</span>
+
+<span class="bp">self</span><span class="p">.</span><span class="n">dataFrame</span><span class="p">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="nb">dir</span><span class="p">,</span><span class="s">"CollectedData_"</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">scorer</span> <span class="o">+</span> <span class="s">".csv"</span><span class="p">))</span>
+<span class="bp">self</span><span class="p">.</span><span class="n">dataFrame</span><span class="p">.</span><span class="n">to_hdf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="nb">dir</span><span class="p">,</span><span class="s">"CollectedData_"</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">scorer</span> <span class="o">+</span> <span class="s">'.h5'</span><span class="p">),</span><span class="s">'df_with_missing'</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s">'table'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'w'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Reference for Pandas data table construction</p>
+
+<ul>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.MultiIndex.html">MultiIndexing Format</a></li>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/indexing.html">Indexing</a></li>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/io.html#csv-text-files">Data I/O</a></li>
+</ul>
+
+<p><a href="https://stackoverflow.com/questions/1773805/how-can-i-parse-a-yaml-file-in-python">YAML Parser in Python</a></p>
+
+<p>Details at my github repertoire <a href="https://github.com/Animadversio/KeyPointDataPreprocess4DeepLabCut">KeyPointDataPreprocess4DeepLabCut</a>.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:0" role="doc-endnote">
+      <p>It is REALLY FAST! The first time I trained a network to track facial keypoints, it was all within half an afternoon. <a href="#fnref:0" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p>I’ve looked for solutions for this problem. The cause of the bug may  root in the complex interaction of GUI, C++ system and the python modules. I cannot find a solution to that online, maybe this is a unique problem of my computer setting. Or maybe it’s just an unsolved bug of the module, as it’s fairly new. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Automatic+Behavioral+Quantification+Pipeline%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fautomatic-behavioral-quantification-pipeline"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline&quote=Automatic+Behavioral+Quantification+Pipeline%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline&media=$description=How+to+automatically+analyze+behavior+video%3F%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline&title=Automatic+Behavioral+Quantification+Pipeline%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline&title=Automatic+Behavioral+Quantification+Pipeline%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Automatic Behavioral Quantification Pipeline%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/automatic-behavioral-quantification-pipeline"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Behavior">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Behavior</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Image+Analysis">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Image Analysis</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Automatic 3D Instance Segmentation Pipeline" href="/tech_note/note-on-automatic-3d-segmentation-pipeline">
+            <p>Previous post</p>
+            Note on Automatic 3D Instance Segmentation Pipeline
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="How to translate matlab code into python (numpy)" href="/tech_note/translate-matlab-into-python-numpy">
+            <p>Next post</p>
+            How to translate matlab code into python (numpy)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>DeepLabCut Trouble Shooting | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="DeepLabCut Trouble Shooting" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DeepLabCut Trouble Shooting @(Ponce Lab) DeepLabCut Trouble Shooting" />
+<meta property="og:description" content="DeepLabCut Trouble Shooting @(Ponce Lab) DeepLabCut Trouble Shooting" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DeepLabCut Trouble Shooting" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"DeepLabCut Trouble Shooting @(Ponce Lab) DeepLabCut Trouble Shooting","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting","headline":"DeepLabCut Trouble Shooting","dateModified":"2019-07-02T00:00:00+00:00","datePublished":"2019-07-02T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="DeepLabCut Trouble Shooting">
+    <meta name="twitter:description" content="DeepLabCut Trouble Shooting@(Ponce Lab)  DeepLabCut Trouble Shooting  Install DLC          Fail at first step        Runtime TroubleShooting          Jupyter...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="DeepLabCut Trouble Shooting">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="DeepLabCut Trouble Shooting " aria-label="DeepLabCut Trouble Shooting" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="DeepLabCut+Trouble+Shooting" class="title">DeepLabCut Trouble Shooting</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 02, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="deeplabcut-trouble-shooting">DeepLabCut Trouble Shooting</h1>
+<p>@(Ponce Lab)</p>
+<ul id="markdown-toc">
+  <li><a href="#deeplabcut-trouble-shooting" id="markdown-toc-deeplabcut-trouble-shooting">DeepLabCut Trouble Shooting</a></li>
+  <li><a href="#install-dlc" id="markdown-toc-install-dlc">Install DLC</a>    <ul>
+      <li><a href="#fail-at-first-step" id="markdown-toc-fail-at-first-step">Fail at first step</a></li>
+    </ul>
+  </li>
+  <li><a href="#runtime-troubleshooting" id="markdown-toc-runtime-troubleshooting">Runtime TroubleShooting</a>    <ul>
+      <li><a href="#jupyter-notebook-environment-checking" id="markdown-toc-jupyter-notebook-environment-checking">Jupyter notebook environment checking</a></li>
+      <li><a href="#check-training-progress" id="markdown-toc-check-training-progress">Check Training progress</a></li>
+      <li><a href="#dlc-installation-issue" id="markdown-toc-dlc-installation-issue">DLC installation issue</a></li>
+      <li><a href="#pytables-issue" id="markdown-toc-pytables-issue">Pytables Issue</a></li>
+      <li><a href="#cuda-issue" id="markdown-toc-cuda-issue">CUDA Issue</a>        <ul>
+          <li><a href="#additional-note-how-to-specify-cuda-version-for-the-environment" id="markdown-toc-additional-note-how-to-specify-cuda-version-for-the-environment">Additional Note: How to specify CUDA version for the environment</a></li>
+        </ul>
+      </li>
+      <li><a href="#test-gpu-availability-to-tensorflow" id="markdown-toc-test-gpu-availability-to-tensorflow">Test GPU availability to Tensorflow</a>        <ul>
+          <li><a href="#show-debugging-information-from-tensorflow" id="markdown-toc-show-debugging-information-from-tensorflow">Show debugging information from Tensorflow</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="install-dlc">Install DLC</h1>
+<p>Windows machine, follow the steps in 	<a href="https://github.com/AlexEMG/DeepLabCut/blob/master/conda-environments/README.md">install tutorial</a> to establish the whole conda environment in the machine.</p>
+<h2 id="fail-at-first-step">Fail at first step</h2>
+<p>Many of us just fail at first step, some error message like</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Solving environment: failed
+
+ResolvePackageNotFound:
+  - msvc<span class="p">_</span>runtime
+</code></pre></div></div>
+<p>According to some <a href="https://blog.csdn.net/langjijianghu_123/article/details/80923293#comments">reference</a>, you can just hack the YAML file and move the error related lines down to <code class="language-plaintext highlighter-rouge">pip:</code> part. It will look like this</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">dlc-windowsGPU</span>
+<span class="na">dependencies</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">python=3.6</span>
+<span class="c1">#  - msvc_runtime</span>
+  <span class="pi">-</span> <span class="s">tensorflow-gpu==1.13.1</span>
+  <span class="pi">-</span> <span class="s">cudnn=7</span>
+  <span class="pi">-</span> <span class="s">wxpython</span>
+  <span class="pi">-</span> <span class="s">jupyter</span>
+  <span class="pi">-</span> <span class="s">pytables==3.4.4</span>
+  <span class="pi">-</span> <span class="na">pip</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">deeplabcut</span>
+    <span class="pi">-</span> <span class="s">msvc_runtime</span>
+</code></pre></div></div>
+<p>For other errors like conflicting requirements, you should do</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error message to be added
+</code></pre></div></div>
+<p>This</p>
+
+<h1 id="runtime-troubleshooting">Runtime TroubleShooting</h1>
+
+<h2 id="jupyter-notebook-environment-checking">Jupyter notebook environment checking</h2>
+<p>Note <code class="language-plaintext highlighter-rouge">DeepLabCut</code> lives in a <code class="language-plaintext highlighter-rouge">conda</code> environment so we have to check if Jupyter notebook is using python and packages from the correct environment! Or the import will be problematic.</p>
+
+<p>So normally we activate the environment first and then start the notebook.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda activate dlc-windowsGPU
+D:
+jupyter notebook
+</code></pre></div></div>
+<p>First we would like to install the extension for notebook <code class="language-plaintext highlighter-rouge">conda install nb_conda</code> so that you will have link in jupyter to start a notebook in the environment
+<img src="..\assets\img\notes\dlc\1562091943732.png" alt="Alt text" /></p>
+
+<h2 id="check-training-progress">Check Training progress</h2>
+<p>Change into the log directory (which contains all the <code class="language-plaintext highlighter-rouge">events.out.tfevents</code> files) and use <code class="language-plaintext highlighter-rouge">tensorboard</code> to check the log file.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>D:<span class="se">\M</span>acaqueFaceRecogition<span class="se">\M</span>acaqueFace-DLC2<span class="se">\H</span>ead-Free-Viewing-CRP-2019-07-01<span class="se">\d</span>lc-models<span class="se">\i</span>teration-0<span class="se">\H</span>ead-Free-ViewingJul1-trainset95shuffle1<span class="se">\t</span>rain<span class="se">\l</span>og
+tensorboard <span class="nt">--logdir</span><span class="o">=</span><span class="nb">.</span> 
+</code></pre></div></div>
+
+<h2 id="dlc-installation-issue">DLC installation issue</h2>
+<p>If there is a previous version of DLC reside in somewhere in conda, you’d better uninstall it totally. 
+Use</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">deeplabcut</span> <span class="k">as</span> <span class="n">dlc</span>
+<span class="n">dlc</span><span class="p">.</span><span class="n">__file__</span>
+</code></pre></div></div>
+<p>To check you are importing <code class="language-plaintext highlighter-rouge">dlc</code>  from the right place. If not you may encounter an error here. And you’d better reinstall the deeplabcut and the environment.</p>
+
+<h2 id="pytables-issue">Pytables Issue</h2>
+<p>When running the <code class="language-plaintext highlighter-rouge">label_frames</code> or</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ImportError                               Traceback (most recent call last)
+C:<span class="k">\ProgramData\Anaconda</span>3<span class="k">\envs\dlc</span>-windowsGPU<span class="k">\lib\site</span>-packages<span class="k">\pandas\io\pytables</span>.py in <span class="p">__</span>init<span class="p">__</span>(self, path, mode, complevel, complib, fletcher32, **kwargs)
+    444         try:
+--&gt; 445             import tables  # noqa
+    446         except ImportError as ex:  # pragma: no cover
+
+C:<span class="k">\Users\ponce\AppData\Roaming\Python\Python</span>36<span class="k">\site</span>-packages<span class="k">\tables\_</span><span class="p">_</span>init<span class="p">__</span>.py in &lt;module&gt;()
+     92 # Necessary imports to get versions stored on the cython extension
+---&gt; 93 from .utilsextension import (
+     94     get<span class="p">_</span>pytables<span class="p">_</span>version, get<span class="p">_</span>hdf5<span class="p">_</span>version, blosc<span class="p">_</span>compressor<span class="p">_</span>list,
+
+ImportError: DLL load failed: The specified procedure could not be found.
+</code></pre></div></div>
+<p>The result is it will save your points coordinates in a <code class="language-plaintext highlighter-rouge">csv</code> file but cannot save it in the <code class="language-plaintext highlighter-rouge">h5</code> file which is needed for training and evaluation.</p>
+
+<p>It’s majorly a <code class="language-plaintext highlighter-rouge">pytables</code> version problem.</p>
+
+<p>Current solution</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda uninstall pytables 
+conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge <span class="nv">pytables</span><span class="o">=</span>3.4.3
+pip <span class="nb">install</span> <span class="nt">--upgrade</span> deeplabcut
+</code></pre></div></div>
+<p>And don’t panic if you encounter this bug, your label coordinate does not lost but is stored in the <code class="language-plaintext highlighter-rouge">csv</code> file. So using <code class="language-plaintext highlighter-rouge">dlc.convertcsv2h5(path_config_file)</code> will rescue the <code class="language-plaintext highlighter-rouge">csv</code> file and generate <code class="language-plaintext highlighter-rouge">h5</code> file. You may debug the <code class="language-plaintext highlighter-rouge">pytables</code> problem and then run this command.</p>
+
+<h2 id="cuda-issue">CUDA Issue</h2>
+<p>When running <code class="language-plaintext highlighter-rouge">train_network</code> you may encounter the error</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>InternalError: cudaGetDevice() failed. Status: CUDA driver version is insufficient for CUDA runtime version
+</code></pre></div></div>
+<p>https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77</p>
+
+<p><strong>Solution</strong>: Install CUDA 10.x and most recent GPU driver and <strong>restart</strong> your system</p>
+<h3 id="additional-note-how-to-specify-cuda-version-for-the-environment">Additional Note: How to specify CUDA version for the environment</h3>
+<p>In some system, we may need to set the environment variable to notify Tensorflow of the correct CUDA to use in the current environment.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$ORIGINAL_LD_LIBRARY_PATH</span>
+<span class="nb">unset </span>ORIGINAL_LD_LIBRARY_PATH
+</code></pre></div></div>
+<div class="language-bat highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">set</span> <span class="kd">ORIGINAL_LD_LIBRARY_PATH</span><span class="o">=</span>$LD_LIBRARY_PATH
+<span class="kd">set</span> <span class="kd">export</span> <span class="kd">LD_LIBRARY_PATH</span><span class="o">=</span><span class="na">/usr/local/cuda</span><span class="o">-</span><span class="m">9</span>.0/lib64:/usr/local/cuda<span class="o">-</span><span class="m">9</span>.0/extras/CUPTI/lib64:/lib/nccl/cuda<span class="o">-</span><span class="m">9</span>:$LD_LIBRARY_PATH
+</code></pre></div></div>
+<p>https://stackoverflow.com/questions/31598963/how-to-set-specific-environment-variables-when-activating-conda-environment</p>
+
+<h2 id="test-gpu-availability-to-tensorflow">Test GPU availability to Tensorflow</h2>
+<p>To test the the GPU acceleration for Tensorflow is working I recommend <a href="https://stackoverflow.com/questions/38009682/how-to-tell-if-tensorflow-is-using-gpu-acceleration-from-inside-python-shell">this scipt</a>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="n">tf</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">tf</span><span class="p">.</span><span class="n">device</span><span class="p">(</span><span class="s">'/gpu:0'</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">constant</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">'a'</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">constant</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s">'b'</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">tf</span><span class="p">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">sess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Then you will see things in the notebook or the console like this, showing that the GPU is utilized and visible to tensorflow.</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2019-07-02 12:54:46.169115: I tensorflow/core/platform/cpu<span class="p">_</span>feature<span class="p">_</span>guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2019-07-02 12:54:46.328165: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:1433] Found device 0 with properties:
+name: GeForce GTX 1060 6GB major: 6 minor: 1 memoryClockRate(GHz): 1.835
+pciBusID: 0000:01:00.0
+totalMemory: 6.00GiB freeMemory: 4.97GiB
+2019-07-02 12:54:46.332011: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:1512] Adding visible gpu devices: 0
+2019-07-02 12:54:46.780035: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-02 12:54:46.782437: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:990]      0
+2019-07-02 12:54:46.784090: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:1003] 0:   N
+2019-07-02 12:54:46.785529: I tensorflow/core/common<span class="p">_</span>runtime/gpu/gpu<span class="p">_</span>device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4716 MB memory) -&gt; physical GPU (device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1)
+</code></pre></div></div>
+<p>Similarly using this line can also tell you what device is available</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.python.client</span> <span class="kn">import</span> <span class="n">device_lib</span>
+<span class="k">print</span><span class="p">(</span><span class="n">device_lib</span><span class="p">.</span><span class="n">list_local_devices</span><span class="p">())</span>
+</code></pre></div></div>
+<p>Output like</p>
+<div class="language-tex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[name: "/device:CPU:0"
+ device<span class="p">_</span>type: "CPU"
+ memory<span class="p">_</span>limit: 268435456
+ locality <span class="p">{</span>
+ <span class="p">}</span>
+ incarnation: 5904775635136544004, name: "/device:GPU:0"
+ device<span class="p">_</span>type: "GPU"
+ memory<span class="p">_</span>limit: 4945621811
+ locality <span class="p">{</span>
+   bus<span class="p">_</span>id: 1
+   links <span class="p">{</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+ incarnation: 6075035587783531498
+ physical<span class="p">_</span>device<span class="p">_</span>desc: "device: 0, name: GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1"]
+</code></pre></div></div>
+
+<h3 id="show-debugging-information-from-tensorflow">Show debugging information from Tensorflow</h3>
+
+<p>If you cannot see the debugging information either in notebook or in the console, you may need to add this line to the front of the code.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="n">tf</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">set_verbosity</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</code></pre></div></div>
+<p>We should do this line before importing the <code class="language-plaintext highlighter-rouge">deeplabcut</code>(DLC imported tensorflow inside the package, so import it again will not change the settings.). Thus we will see the debugging information in the console!</p>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=DeepLabCut+Trouble+Shooting%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fdeeplabcut-trouble-shooting"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting&quote=DeepLabCut+Trouble+Shooting%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting&media=$description=DeepLabCut+Trouble+Shooting%0A%40%28Ponce+Lab%29%0A%0A++DeepLabCut+Trouble+Shooting%0A%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting&title=DeepLabCut+Trouble+Shooting%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting&title=DeepLabCut+Trouble+Shooting%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=DeepLabCut Trouble Shooting%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/deeplabcut-trouble-shooting"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Behavior">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Behavior</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Image+Analysis">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Image Analysis</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Linux Working Environment Build Up (Updating)" href="/tech_note/build-up-a-linux-working-environment">
+            <p>Previous post</p>
+            Linux Working Environment Build Up (Updating)
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Common Statistical Problems in Neural Data Analysis (Updating)" href="/tech_note/common-statistical-problems-in-neural-data-analysis">
+            <p>Next post</p>
+            Common Statistical Problems in Neural Data Analysis (Updating)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

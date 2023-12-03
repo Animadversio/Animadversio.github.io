@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Autograd Mechanism and Hessian Computation in PyTorch | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Autograd Mechanism and Hessian Computation in PyTorch" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Motivation" />
+<meta property="og:description" content="Motivation" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Autograd Mechanism and Hessian Computation in PyTorch" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Motivation","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch","headline":"Autograd Mechanism and Hessian Computation in PyTorch","dateModified":"2019-12-09T00:00:00+00:00","datePublished":"2019-12-09T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Autograd Mechanism and Hessian Computation in PyTorch">
+    <meta name="twitter:description" content="MotivationSometimes we want to examine the Hessian or Jacobian of a function w.r.t some variables. For that purpose, autogradient algorithm can help us.Autog...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Autograd Mechanism and Hessian Computation in PyTorch">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Autograd Mechanism and Hessian Computation in PyTorch " aria-label="Autograd Mechanism and Hessian Computation in PyTorch" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Autograd+Mechanism+and+Hessian+Computation+in+PyTorch" class="title">Autograd Mechanism and Hessian Computation in PyTorch</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      December 09, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="motivation">Motivation</h2>
+
+<p>Sometimes we want to examine the Hessian or Jacobian of a function w.r.t some variables. For that purpose, autogradient algorithm can help us.</p>
+
+<h2 id="autograd-mechanism">Autograd mechanism</h2>
+
+<p>In Essence, <code class="language-plaintext highlighter-rouge">Autograd</code> requires a computational graph. (<em>Directed Acyclic Graph</em>) For each computational node (e.g. $z=f(x,y)$), we define a forward computation $(x,y)\mapsto z,\ z=f(x,y)$ mapping bottom to top, and a backward computation mapping the partial derivative to top to the partial derivative to bottom. $\partial_z\mapsto (\partial_x,\partial_y); (gx,gy)=g(gz;x,y)$ .</p>
+
+<p>Note that, the backward computation $g$ is <em>not a function</em>. In the sense that, it depends on inner variables, same $gz$ can be mapped to different $(gx,gy)$, depending on $x,y$. As a simplest example, for a linear operation<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> (like convolution), 
+\(z=f(x,y)=x^Ty\\
+g(\partial_z)=(\frac{\partial z}{\partial x}\partial_z,\ \frac{\partial z}{\partial y}\partial_z)=(y\partial_z, x\partial_z)\)
+Thus, the node has to store the operand $(x,y)$ in the latest forward pass, which is part of the computational graph. Thus keep track of the operands or output can take up a large amount of memory.</p>
+
+<p>Note for some nodes, the backward operation only depends on output, like for $y=Relu(x)$, $\partial_x=\partial_y\ if\ y&gt;0 \ else\ 0$. and for sigmoid function $y=s(x),\ \partial_x=y(1-y)\partial_y$.</p>
+
+<p>So some important things are</p>
+
+<ul>
+  <li>when to create the computational graph</li>
+  <li>what to keep track of (if some part doesn’t need gradient discard that subgraph)</li>
+  <li>when to let go and compute a new graph</li>
+</ul>
+
+<p>Note from the <a href="https://pytorch.org/docs/master/notes/autograd.html">official documentation</a>, we know the default behavior is,</p>
+
+<blockquote>
+  <p>An important thing to note is that the graph is recreated from scratch at every iteration, and this is exactly what allows for using arbitrary Python control flow statements, that can change the overall shape and size of the graph at every iteration. You don’t have to encode all possible paths before you launch the training - what you run is what you differentiate.</p>
+</blockquote>
+
+<p>And there are some flags that we can add to control what to keep.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">create_graph</code></li>
+  <li><code class="language-plaintext highlighter-rouge">retain_graph</code></li>
+</ul>
+
+<h2 id="hessian-vector-product">Hessian Vector Product</h2>
+
+<h2 id="higher-order-gradient-computation">Higher Order Gradient Computation</h2>
+
+<p>For a function $y=f(x)$, we can easily compute $\partial_x y=g_x$. If we would like to use auto-grad to compute higher order gradient, we need a computational graph from $x$ to $g_x$.  This is a key idea! The gradient is also a function of input $x$ and weights $w$.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">torch</span><span class="p">.</span><span class="n">autograd</span><span class="p">.</span><span class="n">backward</span><span class="p">(</span><span class="n">tensors</span><span class="p">,</span> <span class="n">grad_tensors</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">create_graph</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">grad_variables</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">torch</span><span class="p">.</span><span class="n">autograd</span><span class="p">.</span><span class="n">grad</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">grad_outputs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">create_graph</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">only_inputs</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">allow_unused</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In current <code class="language-plaintext highlighter-rouge">pytorch</code> release version, create graph to gradient is explicitly supported! So what we need is to <code class="language-plaintext highlighter-rouge">create_graph</code> when creating the first order gradient, and send each element in the gradient vector back to <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code>, but set <code class="language-plaintext highlighter-rouge">create_graph=False</code> since we don’t need 3rd order gradient anymore.</p>
+
+<p>Sample code from this repository (See package <a href="">hessian</a>)</p>
+
+<h2 id="memory-efficiency-in-back-propagation">Memory Efficiency in Back Propagation</h2>
+
+<p>For a deep and large network, keeping track of all the internal states, input and output in order to backprop smoothly, will cost a tons of memory.</p>
+
+<p>So if we are limited in memory, we can recompute some of the internal states because all we needs is some former internal states.</p>
+
+<p>And by selecting which nodes to recompute and which node to keep, we can achieve a large memory saving and lose a little in speed. This is exactly what <a href="https://github.com/cybertronai/gradient-checkpointing">gradient checkpointing</a> is doing!</p>
+
+<p>https://hub.packtpub.com/openais-gradient-checkpointing-package-makes-huge-neural-nets-fit-memory/</p>
+
+<h2 id="forward-autograd">Forward Autograd</h2>
+
+<p>Connected to the last point, forward differencing has the great benefit of saving memory since the intermediate states are irrelevant. And it’s suitable for few input, numerous output case.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><em>Note</em>, this credit assignment computation of linear operation is educational, in that the larger argument in $(x,y)$ will get less gradient, and smaller argument will get more! <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Autograd+Mechanism+and+Hessian+Computation+in+PyTorch%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fautograd-mechanism-and-hessian-computation-in-pytorch"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch&quote=Autograd+Mechanism+and+Hessian+Computation+in+PyTorch%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch&media=$description=Motivation%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch&title=Autograd+Mechanism+and+Hessian+Computation+in+PyTorch%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch&title=Autograd+Mechanism+and+Hessian+Computation+in+PyTorch%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Autograd Mechanism and Hessian Computation in PyTorch%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/autograd-mechanism-and-hessian-computation-in-pytorch"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Linear+Algebra">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Linear Algebra</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Pandas" href="/tech_note/pandas-notes">
+            <p>Previous post</p>
+            Note on Pandas
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Dynamic Visualization in Python" href="/tech_note/dynamic-visualization-in-python">
+            <p>Next post</p>
+            Dynamic Visualization in Python
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

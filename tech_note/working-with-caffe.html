@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Working with Caffe | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Working with Caffe" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Installation" />
+<meta property="og:description" content="Installation" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/working-with-caffe" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/working-with-caffe" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Working with Caffe" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Installation","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/working-with-caffe","headline":"Working with Caffe","dateModified":"2019-10-27T00:00:00+00:00","datePublished":"2019-10-27T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/working-with-caffe"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Working with Caffe">
+    <meta name="twitter:description" content="InstallationOfficial note on installation https://caffe.berkeleyvision.org/installation.htmlInstalling CPU version on CHPC      Install Miniconda        Inst...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Working with Caffe">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Working with Caffe " aria-label="Working with Caffe" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Working+with+Caffe" class="title">Working with Caffe</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      October 27, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="installation">Installation</h2>
+
+<p>Official note on installation https://caffe.berkeleyvision.org/installation.html</p>
+
+<h3 id="installing-cpu-version-on-chpc">Installing CPU version on CHPC</h3>
+
+<ul>
+  <li>
+    <p>Install <a href="">Miniconda</a></p>
+  </li>
+  <li>
+    <p>Install caffe using conda<code class="language-plaintext highlighter-rouge">conda install -c intel caffe</code></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>lsb_release -d
+Description:    CentOS release 6.10 (Final)</p>
+</blockquote>
+
+<h3 id="building-gpu-version-on-chpc">Building GPU version on CHPC</h3>
+
+<p>(Not succeeded yet…. aborted)</p>
+
+<ol>
+  <li>Check <code class="language-plaintext highlighter-rouge">gcc</code> version to be 4.8.5 <code class="language-plaintext highlighter-rouge">module load gcc-4.8.5</code></li>
+  <li>Check cmake version to newer than 3 <code class="language-plaintext highlighter-rouge">module load cmake-3.14.5</code></li>
+</ol>
+
+<p><strong>Reference</strong></p>
+
+<p>http://www.andrewjanowczyk.com/installing-caffe-on-the-ohio-super-computing-osc-ruby-cluster/</p>
+
+<p>http://homepage.cs.uiowa.edu/~zli79/notes/Installation_Caffe_on_Argon_Cluster.pdf</p>
+
+<h3 id="installing-gpu-version-on-chpc">Installing GPU version on CHPC</h3>
+
+<p>https://anaconda.org/anaconda/caffe-gpu</p>
+
+<p>Just use miniconda, and <code class="language-plaintext highlighter-rouge">conda install -c anaconda caffe-gpu</code></p>
+
+<h3 id="installing-gpu-version-on-windows-machine">Installing GPU version on Windows machine</h3>
+
+<p>The easiest way is using the the conda export file to copy the same environment. See the attached <a href="..\assets\resource\caffe-torch.yml">caffe-torch</a>  <a href="..\assets\resource\tf-torch.yml">tf-torch.yml</a>  for more information.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">--name</span> caffe36 <span class="nt">--file</span> caffe36_spec-file.txt
+conda create <span class="nt">-f</span> caffe-torch.yml
+</code></pre></div></div>
+
+<p>Then it will download and install all the packages with the required source and version</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda activate caffe36
+</code></pre></div></div>
+
+<p>Check onenote for more debugging note.</p>
+
+<p>If some dlls are missing <code class="language-plaintext highlighter-rouge">MSVCP140D.DLL, VCRUNTIME140D.DLL</code>, download them from net and put it in  <code class="language-plaintext highlighter-rouge">C:\Windows\System32</code>.</p>
+
+<h2 id="testing-installation">Testing Installation</h2>
+
+<p>If on CHPC, start by submitting a gpu job <code class="language-plaintext highlighter-rouge">qsub -I -l nodes=1:ppn=1:gpus=1,walltime=01:00:00 </code></p>
+
+<p>After downloading some weights for models by using</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python download_model_binary.py ../models/bvlc_reference_caffenet/
+</code></pre></div></div>
+
+<p>We have enough material to test loading a network into memory.</p>
+
+<p>Test CPU installation,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">caffe</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="n">caffe</span><span class="p">.</span><span class="n">set_mode_cpu</span><span class="p">()</span>
+<span class="n">net_weights</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">"/home/binxu/caffe/models/bvlc_reference_caffenet/"</span><span class="p">,</span> <span class="s">'bvlc_reference_caffenet.caffemodel'</span><span class="p">)</span>
+<span class="n">net_definition</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">"/home/binxu/caffe/models/bvlc_reference_caffenet/"</span><span class="p">,</span> <span class="s">'deploy.prototxt'</span><span class="p">)</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">caffe</span><span class="p">.</span><span class="n">Net</span><span class="p">(</span><span class="n">net_definition</span><span class="p">,</span> <span class="n">caffe</span><span class="p">.</span><span class="n">TEST</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">net_weights</span><span class="p">)</span>
+
+<span class="n">net</span><span class="p">.</span><span class="n">blobs</span><span class="p">[</span><span class="s">'data'</span><span class="p">].</span><span class="n">data</span><span class="p">[...]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">net</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">end</span><span class="o">=</span><span class="s">'fc6'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Test GPU installation, just use <code class="language-plaintext highlighter-rouge">caffe.set_mode_gpu()</code></p>
+
+<p><a href="http://caffe.berkeleyvision.org/model_zoo.html">Berkeley Model zoo</a></p>
+
+<h2 id="converting-caffe-model-to-pytorch">Converting Caffe Model to PyTorch</h2>
+
+<p>As some operations are much easier in some newer frameworks like <code class="language-plaintext highlighter-rouge">PyTorch</code>, there is a need to convert existing model in <code class="language-plaintext highlighter-rouge">Caffe</code> to <code class="language-plaintext highlighter-rouge">PyTorch</code>.</p>
+
+<p>There is some existing packages target at interpret <code class="language-plaintext highlighter-rouge">proto</code> of caffe and build network according to that in PyTorch, e.g. <a href="https://github.com/marvis/pytorch-caffe">pytorch-caffe</a>. However, to support some layer specific to Caffe, we need to add some modification to the package! See <a href="#Local Response Normalization">LRN</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<h3 id="data-loading-and-transformation">Data loading and transformation</h3>
+
+<p>From the documentation of <code class="language-plaintext highlighter-rouge">caffe.io.Transformer</code> we can see that</p>
+
+<blockquote>
+  <p>Format input for Caffe:</p>
+  <ul>
+    <li>convert to single</li>
+    <li>resize to input dimensions (preserving number of channels)</li>
+    <li>transpose dimensions to K x H x W</li>
+    <li>reorder channels (for instance color to BGR)</li>
+    <li>scale raw input (e.g. from [0, 1] to [0, 255] for ImageNet models)</li>
+    <li>subtract mean</li>
+    <li>scale feature</li>
+  </ul>
+
+  <p>Parameters
+in_ : name of input blob to preprocess for
+data : (H’ x W’ x K) ndarray</p>
+
+  <p>Returns
+caffe_in : (K x H x W) ndarray for input to a Net</p>
+
+</blockquote>
+
+<p>The input convention for Caffe is 4 dimension array in the order of [B, C, H, W]. And for color image, the color channel is in the order of BGR.</p>
+
+<p>So the output from a network built in Caffe have to be transformed by a function to visualize.</p>
+
+<h3 id="pipelining-caffe-networks-in-pytorch">Pipelining Caffe networks in PyTorch</h3>
+
+<p>However, if that output is directly sent into the other network, then the 2 networks can pipe into each other except for one thing.</p>
+
+<p>Standard <code class="language-plaintext highlighter-rouge">preprocess</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">resize</code></li>
+  <li><code class="language-plaintext highlighter-rouge">transpose</code> the axis to C,H,W</li>
+  <li><code class="language-plaintext highlighter-rouge">swap</code> the channel to BGR</li>
+  <li><code class="language-plaintext highlighter-rouge">scale</code> by * 255</li>
+  <li>centralize by <code class="language-plaintext highlighter-rouge">-meanBGR_value</code></li>
+</ul>
+
+<p>Standard <code class="language-plaintext highlighter-rouge">deprocess</code></p>
+
+<ul>
+  <li>de-centralize by <code class="language-plaintext highlighter-rouge">+ meanBGR_value</code></li>
+  <li><code class="language-plaintext highlighter-rouge">scale</code> by <code class="language-plaintext highlighter-rouge">/ 255</code></li>
+  <li><code class="language-plaintext highlighter-rouge">swap</code> the channel to RGB</li>
+  <li><code class="language-plaintext highlighter-rouge">transpose</code> the axis to H,W,C</li>
+  <li><code class="language-plaintext highlighter-rouge">clip</code> the tensor to be within <code class="language-plaintext highlighter-rouge">(0,1)</code></li>
+</ul>
+
+<p>So the 2 process are inverse to each other except for <code class="language-plaintext highlighter-rouge">clip</code> part.</p>
+
+<h3 id="local-response-normalization">Local Response Normalization</h3>
+
+<p>This is an ancient module exists in AlexNet and CaffeNet, but largely abandoned in more recent network architectures. At first, it’s inspired by lateral inhibition just like those happened in biological visual networks. However, it’s not very stable, and help only in certain cases but not others.</p>
+
+<p>Thus, it’s not officially supported in PyTorch for a long time, but currently it is supported.</p>
+
+<p><a href="https://caffe.berkeleyvision.org/tutorial/layers/lrn.html">Caffe LRN Doc</a></p>
+
+<p><a href="https://pytorch.org/docs/stable/nn.html#localresponsenorm">PyTorch LRN Doc</a></p>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/working-with-caffe" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Working+with+Caffe%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fworking-with-caffe"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/working-with-caffe&quote=Working+with+Caffe%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/working-with-caffe&media=$description=Installation%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/working-with-caffe&title=Working+with+Caffe%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/working-with-caffe&title=Working+with+Caffe%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/working-with-caffe"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Working with Caffe%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/working-with-caffe"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computer+Vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computer Vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Machine+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Machine Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Multi-platform Matlab compiling" href="/tech_note/multi-platform-matlab-compiling-notes">
+            <p>Previous post</p>
+            Multi-platform Matlab compiling
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Using Google Cloud Service for Large Scale Image Labelling" href="/tech_note/using-google-cloud-service-for-large-scale-image-labelling">
+            <p>Next post</p>
+            Using Google Cloud Service for Large Scale Image Labelling
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

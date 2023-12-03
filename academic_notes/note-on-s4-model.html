@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<meta property="og:description" content="Binxu’s personal blog site for neuroscience and machine learning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-s4-model" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-s4-model" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Binxu’s personal blog site for neuroscience and machine learning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-s4-model","headline":"Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces","dateModified":"2022-07-17T00:00:00+00:00","datePublished":"2022-07-17T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-s4-model"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces">
+    <meta name="twitter:description" content="[TOC]MotivationS4 sequence model is rising in the sequence modelling field. It dominates on long sequence modelling over RNN, LSTM and transformers. It’s bot...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces " aria-label="Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+S4-Efficiently+Modeling+Long+Sequences+with+Structured+State+Spaces" class="title">Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 17, 2022
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p><img src="https://github.com/HazyResearch/state-spaces/raw/main/assets/s4.png" alt="" /></p>
+
+<p>[TOC]</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>S4 sequence model is rising in the sequence modelling field. It dominates on long sequence modelling over RNN, LSTM and transformers. It’s both mathematically elegant and useful, and it’s trending, so why not write about it.</p>
+
+<h2 id="general-state-space-model-for-sequence-modeling">General State Space Model for Sequence Modeling</h2>
+
+<p>To start, for neuroscientists and applied mathematicians, state space model has been a classic tool in sequence modelling. Basically, we hypothesize there is an underlying dynamic system with input that generates the observed trajectory. State space model is the case where the system is a linear dynamic system.</p>
+
+<p>The classic form is this $A,B,C,D$ formulation:</p>
+
+<ul>
+  <li>$x$ is the latent dynamics veriable, $u$ is the input drive, $y$ is the readout from $x$</li>
+  <li>$A$ governs dynamics, $B$ transform input drive. $C,D$ specify the read out from hidden state $x$ and input $u$</li>
+</ul>
+
+\[\dot x(t)=Ax(t)+Bu(t)\\
+y(t)=Cx(t)+Du(t)\]
+
+<h3 id="state-space-model-as-rnn">State space model as RNN</h3>
+
+<p>It’s intuitve that continuous time state space model could be discretized to a discrete time dynamic system (SSM). The conversion rule from the continuous to discrete matrices could be found in appendix of HiPPO paper<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+\[x_k=\bar A x_{k-1}+\bar Bu_k\\
+y_k = \bar C x_k\]
+
+<p>Basically, this discrete SSM is an iterative map or RNN. As you can imagine, iteratively applying a matrix $A$ can be slow in computation and also detrimental for gradient computation.</p>
+
+<h3 id="rnn-as-convolution">RNN as Convolution</h3>
+
+<p>Let’s take a different view on state space model. First assume $u$ a 1-d input, and $y$ also a 1-d readout. What’s the relationship between input $u$ and output $y$ ?   In this perspective, it starts to feel like a neural network layer (like transformer layer) that transforms a input signal to an output.</p>
+
+<p>In fact, the relation between $u$ and $y$ is a convolution. Assuming the latent state starts from origin $x_{-1}=0$, then we have</p>
+
+\[\begin{align}
+x_0&amp;=\bar B u_0, &amp;y_0=&amp;\bar C\bar B u_0\\
+x_1&amp;=\bar A\bar B u_0 + \bar B u_1,&amp; y_1=&amp;\bar C\bar A\bar B u_0+\bar C\bar B u_1\\
+x_2&amp;=\bar A^2\bar Bu_0 + \bar A \bar B u_1+\bar B u_2,&amp; y_2=&amp;\bar C\bar A^2\bar B u_0+\bar C\bar A\bar B u_1+\bar C\bar B u_2\\
+\end{align}\]
+
+<p>Thus the output $y$ is a convolution on the input signal $u$ with a $L$ long kernel $K=[\bar C\bar B,\bar C\bar A\bar B,\bar C\bar A^2\bar B,\bar C\bar A^3\bar B,…]$, which involves the matrix exponents from 0 to $L-1$ order of $\bar A$.</p>
+
+<p>Further, this convolution could be done in the frequency domain by FFT on $K$, using the convolution theorem for circular convolution.</p>
+
+<h2 id="hippo-special-initialization-and-parametrization-for-ssm">HiPPO: Special Initialization and Parametrization for SSM</h2>
+
+<p>Here a special kind of state space model that found to perform extremely well, called HiPPO.</p>
+
+<p>The hidden states $x(t)$ keep track of the coefficients <strong>when projecting the signal onto Legendre polynomial basis</strong>. The optimal projection coefficients follow a certain dynamics, which is the ODE in the SSM model. This ODE could be discretized and the magic $A$ matrix comes from this ODE for updating projection coefficients onto some basis.</p>
+
+<h2 id="efficient-ssm-with-structured-matrix-a">Efficient SSM with structured matrix $A$</h2>
+
+<p>To compute the kernel for convolution, the limiting step involves raising matrix $A$ or $\bar A$ to exponent as high as the sequence length $L-1$.</p>
+
+<p><strong>Generating function</strong>  First note that to compute FFT of the large Kernel $K$ we need to evaluate the generator function, which sums the values by the exponents of $z$
+\(f(z)= \bar C\bar B+z\bar C\bar A\bar B+z^2\bar C\bar A^2\bar B+z^3\bar C\bar A^3\bar B...\\
+=\bar C(\sum_{i=0}^{L-1}(z\bar A)^i)\bar B\\\)</p>
+
+<p>To evaluate the $k$ th element of the FFT of the kernel, we input $\omega^k$ to the generator function. $\omega$ is the $L$ th root of unit.</p>
+
+\[\tilde K_k=f(\omega^k)=F_k^TK\]
+
+<p>Thus naively to compute FFT, we need to evaluate the generator function for $F_k^T K=f(\omega^k)$ for $k=0…L$. This is a $L^2$ complexity.</p>
+
+<p>One trick to accelerate is that the sum of exponent series could be expressed by this matrix inversion. Then we can evaluate $I-\bar A^L$ once and evaluate the matrix inversion $(I-\bar A\bar z)^{-1}$ $L$ times.</p>
+
+\[\sum_{i=0}^{L-1}(z\bar A)^i=(I-\bar A^Lz^L)(I-\bar A z)^{-1}
+=(I-\bar A^L)(I-\bar A z)^{-1}\]
+
+<p>Thus the generating function can be abbreviated as</p>
+
+\[f(z)=\bar C\sum_{i=0}^{L-1}(z\bar A)^i \bar B=\tilde C(I-\bar A z)^{-1} \bar B\]
+
+<p>Note the discrete version $\bar A,\bar B$ are</p>
+
+\[\bar A =(I-\Delta A/2)^{-1}(I+\Delta A/2)\\
+\bar B = (I-\Delta A/2)^{-1}\Delta B\]
+
+<p>We can rewrite $f(z)$ using the original matrices $A,B$ and step size $\Delta$</p>
+
+\[f(z)=2\Delta\tilde C\left(2(1-z)I-\Delta (1+z)A\right)^{-1}B\]
+
+<blockquote>
+  <p>Note in the end this is a learning system with matrices to be learned. As these are different parametrizations of the same system, we don’t have a ground truth value for $A,B,C$ . We can absorb complex terms to be learned instead of computed.<br />
+Here we can choose to learn $\tilde C$ instead of $C$ to save the matrix exponent computation.</p>
+</blockquote>
+
+<h3 id="efficient-inversion-with-matrix-structure">Efficient Inversion with matrix structure</h3>
+
+<p>If the $A$ matrix has diagonal + low rank structure, we can use Woodbery identity to compute exponent and inversion easier.</p>
+
+<p><strong>Diagonal case</strong> Let’s first assume $A$ is diagonal matrix, then the generator function is just a dot product of the diagonal elements shifted by $z$.</p>
+
+\[f(z)=2\Delta(1+z)\tilde C\left(2\frac{1-z}{1+z}I-\Delta A\right)^{-1}B\\
+f(z)=2\Delta(1+z)\sum_i\frac{\tilde C_iB_i}{2\frac{1-z}{1+z}-\Delta \Lambda_i}\]
+
+<p><strong>Diagonal plus low rank</strong>  Next, let’s assume $A$ is a diagonal matrix plus rank 1 modification</p>
+
+\[A = \Lambda - PQ^*\]
+
+<p>With this modification we basically get</p>
+
+\[f(z)=2\Delta(1+z)\tilde C\left(2\frac{1-z}{1+z}I-\Delta \Lambda+\Delta PQ^*\right)^{-1}B\\
+f(z)=2 (1+z)\tilde C\left(\frac 2\Delta \frac{1-z}{1+z}I-\Lambda+PQ^*\right)^{-1}B\\\]
+
+<p>Using Woodbery identity,</p>
+
+\[(D+PQ^*)^{-1} = D^{-1}-\frac{D^{-1}PQ^*D^{-1}}{1+Q^*D^{-1}P}\]
+
+<p>Then the scalar product</p>
+
+\[\tilde C(D+PQ^*)^{-1}B=\tilde CD^{-1}B-\frac{(\tilde CD^{-1}P)(Q^*D^{-1}B)}{1+Q^*D^{-1}P}\]
+
+<p>You see, actually there is a common motif in this formula which is we called “cauchy dot product”</p>
+
+\[AD^{-1}B=\sum_i\frac{A_iB_i}{D_i}\]
+
+<p>In our case the cauchy dot product can be written as this</p>
+
+\[D=\frac 2\Delta \frac{1-z}{1+z}I-\Lambda = diag(\frac 2\Delta \frac{1-z}{1+z}-\lambda_i,...)\]
+
+<p>Thus we define the cauchy dot operator</p>
+
+\[K_{z,\Lambda}(A,B)=\sum_i\frac{A_iB_i}{\frac 2\Delta \frac{1-z}{1+z}-\lambda_i}\]
+
+<p>We have</p>
+
+\[f(z)=2 (1+z)\left[K_{z,\Lambda}(\tilde C,B)-\frac{K_{z,\Lambda}(\tilde C,P)K_{z,\Lambda}(Q^*,B)}{1+K_{z,\Lambda}(Q^*,P)}\right]\]
+
+<p>Note that for each $z$, the output of $K_{z,\Lambda}$ is a scalar, and $f(z)$ is a scalar. So this computation could be actually vectorized across a huge numebr of $z$ . (this could be easily done by <code class="language-plaintext highlighter-rouge">jax.vmap</code>)</p>
+
+<h3 id="put-it-together">Put it together</h3>
+
+<p>So to summarize the working of a S4 is like</p>
+
+<ol>
+  <li>Given $z,\Lambda,P,Q,B,\tilde C,\Delta$ ,</li>
+  <li>Create the $K_{z,\Lambda}$ function which is used to create $f(z)$ function.</li>
+  <li>Evaluate $f(z)$ at $z=\omega^i,i=0,…L-1$ to form kernel $K=[f(1),f(\omega),f(\omega^2),…]$</li>
+  <li>Use kernel $K$ to causal convolve input signal $y=K*u$</li>
+  <li>Use backprop to learn the parameters $\Lambda,P,Q,B,\tilde C,\Delta$</li>
+</ol>
+
+<h3 id="rnn-mode">RNN mode</h3>
+
+<p>Note that above we used a series of tricks to compute the convolution kernel for S4, this is useful in training since sequence exists.</p>
+
+<p>But in generation RNN mode is more useful, we can turn the $A,B$ paramters in to $\bar A,\bar B,C$ for generation.
+$$</p>
+
+<p>$$</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>
+    <p><a href="https://srush.github.io/annotated-s4/">The Annotated S4 (srush.github.io)</a></p>
+  </li>
+  <li>
+    <p><a href="https://arxiv.org/abs/2008.07669">2008.07669 HiPPO: Recurrent Memory with Optimal Polynomial Projections </a></p>
+  </li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>The HiPPO paper empirically tested different discretization scheme. <strong>Ablation: comparison between different discretization methods</strong>, Figure 4. And bilinear discretization is much better than forward or backward Euler rule. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-s4-model" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+S4-Efficiently+Modeling+Long+Sequences+with+Structured+State+Spaces%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-s4-model"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-s4-model&quote=Note+on+S4-Efficiently+Modeling+Long+Sequences+with+Structured+State+Spaces%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-s4-model&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-s4-model&title=Note+on+S4-Efficiently+Modeling+Long+Sequences+with+Structured+State+Spaces%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-s4-model&title=Note+on+S4-Efficiently+Modeling+Long+Sequences+with+Structured+State+Spaces%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-s4-model"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on S4-Efficiently Modeling Long Sequences with Structured State Spaces%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-s4-model"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Dynamic+System">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Dynamic System</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#linear+algebra">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> linear algebra</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Sequence+Model">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Sequence Model</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Statistical+Learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Statistical Learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Hippo- Recurrent Memory with Optimal Polynomial Projection" href="/academic_notes/note-on-hippo">
+            <p>Previous post</p>
+            Note on Hippo- Recurrent Memory with Optimal Polynomial Projection
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Equivalent Score Matching Objective" href="/academic_notes/note-on-equiv-score-matching-objective">
+            <p>Next post</p>
+            Note on Equivalent Score Matching Objective
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

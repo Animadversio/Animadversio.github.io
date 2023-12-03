@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Photometric Reasoning | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Photometric Reasoning" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note on Photometric Reasoning" />
+<meta property="og:description" content="Note on Photometric Reasoning" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-photometric-analysis" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-photometric-analysis" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Photometric Reasoning" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Note on Photometric Reasoning","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-photometric-analysis","headline":"Note on Photometric Reasoning","dateModified":"2020-03-17T00:00:00+00:00","datePublished":"2020-03-17T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-photometric-analysis"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Photometric Reasoning">
+    <meta name="twitter:description" content="Note on Photometric ReasoningShape $\hat n$, lighting $l$, reflectance $\rho$ affect image appearance $I$. Can we infer them back? \(I=\rho&lt;\hat n,l&gt;\)...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Photometric Reasoning">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Photometric Reasoning " aria-label="Note on Photometric Reasoning" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Photometric+Reasoning" class="title">Note on Photometric Reasoning</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      March 17, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="note-on-photometric-reasoning">Note on Photometric Reasoning</h1>
+
+<p>Shape $\hat n$, lighting $l$, reflectance $\rho$ affect image appearance $I$. Can we infer them back? 
+\(I=\rho&lt;\hat n,l&gt;\)</p>
+
+<blockquote>
+  <p>How much does shading and photometric effects tell us about shape, in natural settings.</p>
+</blockquote>
+
+<h2 id="gbr-degeneracy">GBR Degeneracy</h2>
+
+<p>Theoretical Analysis</p>
+
+<ul>
+  <li>There is ambiguity from geometry. If you have $I,\rho, l$ for a pixel and want to infer $\hat n$. You know $\hat n $ up to a cone around $l$.</li>
+  <li>What if we know these on a patch?</li>
+</ul>
+
+<p>Assume the shape is a graph, $z(x,y)$. Can we infer the normal / depth map from image?</p>
+
+<p>IJCV 1999 The Bas-Relief Ambiguity.</p>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200326135712579.png" alt="image-20200326135712579" /></p>
+
+<p>The Relief appears to be much deeper than they really are, showing that there is ambiguity ($z,z’$ ) from a single view image $I$!</p>
+
+<p>A family of shapes that have the same appearance (and shadow) when you move light accordingly.</p>
+
+<p>Assume a family of transform GBR linear transform parametrized by $\lambda,\mu,\nu$ 
+\(z'(x,y)=\lambda z(x,y)+\mu x +\nu y\)</p>
+
+\[[x,y,z']=p'=Gp,\ G=\begin{bmatrix}1&amp; 0&amp; 0\\
+							 0&amp; 1&amp; 0\\
+							 \mu&amp; \nu&amp; \lambda\end{bmatrix}\]
+
+\[\hat n'=G^{-T}\hat n\]
+
+<p>Assume $\rho$ is same, then it could be absorbed into $l$ thus if $l’=Gl$, then</p>
+
+<p>$\hat n’\cdot l’=(G^{-T}\hat n)^T\cdot Gl= \hat n’\cdot l$</p>
+
+<p><strong>Shadow</strong></p>
+
+<ul>
+  <li>Attached shadow: When the $\hat n$ turns away from light $\hat n\cdot l &lt;0$</li>
+  <li>Cast shadow: When one part of shape block light to the other part. $p_1\cdot l$</li>
+</ul>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200326141203463.png" alt="image-20200326141203463" /></p>
+
+<p>Need some albedo renormalization for exact same intensity. But changing human perception don’t rely on albedo that much, so you may not even need to match that!</p>
+
+<p><em>Note</em>: the GBR transformation is designed to work for any kind of image / shape. But even with known light and albedo, is there any degeneracy?</p>
+
+<h2 id="local-shape-amibiguity">Local Shape Amibiguity</h2>
+
+<p>Ayan 2010</p>
+
+<ul>
+  <li>
+    <p>If it’s a planar surface, then the plane’s amibguity is the same as a single point (cone degeneracy.)</p>
+  </li>
+  <li>
+    <p>For curved surface, if it’s a quadratic form</p>
+  </li>
+</ul>
+
+\[z(x,y)=a_1 x^2 + a_2 y^2 + a_3 xy + a_4 x + a_5 y\]
+
+<p>Note, this quadratic form could always be diagonalized into $a_3==0$.</p>
+
+<p>Then your surface normal is 
+\(n_x = -\partial_x z =\\
+n_y = -\partial_y z = \\
+I = {l^Tn}\)
+<strong>General Quadratic case</strong>: 4 symmetric cases</p>
+
+<ul>
+  <li>Flip across major curvature axis for light and curvature.</li>
+</ul>
+
+<p><strong>Cylinder Case</strong>: $a_1=0$ or $a_2=0$ one direction is planar, the other is curved</p>
+
+<ul>
+  <li>If you know the light direction, then you know the shape.</li>
+</ul>
+
+<p><strong>Sphere Degenerate Case</strong>: curvature along 2 directions are the same, $a_1=a_2$.</p>
+
+<blockquote>
+  <p>However, if your lighting direction is aligned with your camera, then it’s still ambiguous in 4 ways.</p>
+</blockquote>
+
+<p>Note this analysis is done within a quadratic family of surfaces.</p>
+
+<h1 id="intrinsic-image-decomposition">Intrinsic Image Decomposition</h1>
+
+\[I[n] = \rho[n]f(\hat n [n],L)\\
+R[n]*S[n]\]
+
+<p>Kind of decomposing pixel intensity into reflectance times shading.</p>
+
+<p><strong>Usage</strong>:</p>
+
+<ul>
+  <li>Note, the decomposition can help recognition, and segmentation</li>
+  <li>Useful for photo editting, only change one part of the vairable</li>
+</ul>
+
+<p>Note, it’s hypothesized human performs intrinsic image decomposition, so we could perceive Adelson’s illusion, because we are perceiving the intrinsic property instead of pixel value.</p>
+
+<h2 id="retinex">Retinex</h2>
+
+<p><strong>Assumption</strong>:</p>
+
+<ul>
+  <li>The change of reflectance and shading don’t happen simultaneously!</li>
+</ul>
+
+\[I= R\cdot S\\
+\log I = \log R + \log S\\
+either \nabla \log I=\nabla \log R\; or\; \nabla \log I=\nabla \log R\]
+
+<ul>
+  <li>Reflectance is usually piecewise constant with sharp boundary! So it has larger gradient. We can set a threshold for it.</li>
+</ul>
+
+<p>So the algorithm is super simple.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Compute gradient for image
+Classify gradient based on amplitude, copy large gradient to $R$, small gradient to $S$
+</code></pre></div></div>
+
+<blockquote>
+  <p>This method is very simple, but the <strong>philosophy</strong> is that naturally graident in $R$ and $S$ are different, So you can classify an observed gradient into one or the other based on the statistics of the gradient!</p>
+</blockquote>
+
+<h2 id="sirps">SIRPS</h2>
+
+<blockquote>
+  <p>Note intrinsic image decomposition appears to be irrelavent to shape, but shading is generated from shape. So a prior on shading per se is ill posed, but prior on shape + lighting seems less ill posed.</p>
+
+  <p>So in later work, they decompose Shape + lighting as well, instead of pure shading.</p>
+</blockquote>
+
+<p>PAMI 2015</p>
+
+<blockquote>
+  <p>Most powerful non nn way of decompose image, SOTA for a long time.</p>
+</blockquote>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200331135848342.png" alt="image-20200331135848342" />
+\(I = R+S(Z,L)\\
+Z,L = \arg\min g(I-S(Z,L))+f(Z)+h(L)\\
+R= I-S(Z,L)\)
+Their light is not encoded by a 3 vector, but as some parameters of spherical harmonics, simulating multiple light source and scene light. And the image from shading could be computed from a quadratic form.</p>
+
+<p>Their major contribution is</p>
+
+<ul>
+  <li>
+    <p>their design of prior.</p>
+  </li>
+  <li>
+    <p>Multi-scale optimization is used to solve this hard problem.</p>
+  </li>
+</ul>
+
+<h3 id="prior">Prior</h3>
+
+<p><strong>Reflectance</strong></p>
+
+<ul>
+  <li>Few distince reflectance value.</li>
+  <li>Reflectance prior could be learnt from natural images using a GMM on 5-by-5 patches.</li>
+</ul>
+
+<p>Shape</p>
+
+<ul>
+  <li>
+    <p>Prior on <strong>Hessian</strong> instead of pure $Z$ value or $n$ value.</p>
+  </li>
+  <li>
+    <p>Smoothness</p>
+  </li>
+</ul>
+
+<h2 id="single-image-reconstruction-in-scene">Single Image Reconstruction in Scene</h2>
+
+<p><strong>Note:</strong> The result of SIRFS is good only when there is a single object in the scene. With reasonable segmentation.</p>
+
+<p>Just 2 changes</p>
+
+<ul>
+  <li>Use nn to segment scene image into object.</li>
+  <li>Learn the shape prior &amp; Reflectance prior from this class of object specifically, instead of all images.</li>
+</ul>
+
+<p>##</p>
+
+<p>Deriving intrinsic images from image sequences ICCV 2001</p>
+
+<p>If the images are ut  from same reflectance but different lighting</p>
+
+<p><strong>Application</strong></p>
+
+<ul>
+  <li>Edit reflectance solely, and the image pattern will blend into the image</li>
+</ul>
+
+<h2 id="retinex-">Retinex ++</h2>
+
+<blockquote>
+  <p>Still classify gradients into different origin. But add a MRF to smooth it.</p>
+</blockquote>
+
+<p>Assume illumination is of uniform color.</p>
+
+<p>Shading is a single channel image, illumination is uniform color.</p>
+
+<p>So the pipeline is</p>
+
+<ul>
+  <li>Shading gradient
+    <ul>
+      <li>$I[n_1]\propto I[n_2]$ then the color is the same but shading changes.</li>
+      <li>This could be used as statistics to classify gradient.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Apply classifier on a patch (as context), classify if the pixel gradient is a shading one or a reflectance one.</p>
+  </li>
+  <li>As this is a binary label classification (reflectance vs shading gradient), then the MRF can clean up your contour!
+    <ul>
+      <li>Normally reflectance gradient is on the contour of image. So use MRF to let the reflectance label propagate along the contour instead of orthogonal to contour.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>One reason that SIRF is better is it applys prior on shape instead of shading itself.</p>
+</blockquote>
+
+<h1 id="shape-from-shading">Shape From Shading</h1>
+
+<h2 id="local-to-global">Local to Global</h2>
+
+<blockquote>
+  <p>Estimate shape from local to global, break up your estimation into a hierachical way.</p>
+</blockquote>
+
+<p>2012 Shape Collage</p>
+
+<ul>
+  <li>Collect training samples, patch of shape and appearance</li>
+  <li>When you have a new image, find key points, crop the patches</li>
+  <li>Go back to search the ground truth shape for the patches.</li>
+  <li>Try to merge them up.
+    <ul>
+      <li>Fit the surfaces to the averaged gradient</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2015 Shading to Local Shape.</p>
+
+<ul>
+  <li>Multiple explanation for each local patch, with different cost or posterior probability or unary potential.</li>
+  <li>To parametrize these guesses, use the angle $\theta$ between the major normal $a_4,a_5$ and the light direction to parametrize your solution</li>
+  <li>Finally, optimize competing between the global depth map (global coherence) and the local compatibility
+    <ul>
+      <li>Optimizing $Z$ directly can solve integrability automatically.</li>
+      <li></li>
+    </ul>
+  </li>
+  <li>Note: don’t know albedo is not a big deal. You can assume the brightest point in your lambertian image is $&lt;n,l&gt;=1$</li>
+</ul>
+
+<p>Note you could also iterate through your lighting direction (if it’s a directional vector. ), it’s 2d if it’s just an vector then you can iterate.</p>
+
+<p>But general lighting is hard to do so.</p>
+
+<p>Silhouette contains the illumination information:</p>
+
+<ul>
+  <li>You can get a rough estimate of shape from the silhouette.</li>
+  <li>And you can use that to get an rough estimate of light info.</li>
+</ul>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200402135914372.png" alt="image-20200402135914372" /></p>
+
+<p>Using your illumination map,</p>
+
+<p>As you are doing</p>
+
+<p>CVPR 2015</p>
+
+<p>Shape reconstruction is usually not that time bounded. esp. like image to 3d shapes.</p>
+
+<h2 id="color-in-sfs">Color in SfS</h2>
+
+<p>Multiple color can help you! (cf. Retinex ++ )</p>
+
+<p>Esp. multiple light source with different color from different direction can uniquely determine normal &amp; shape.</p>
+
+<ul>
+  <li>Essentially you are doing multiple photometric stereo in one image.</li>
+</ul>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200402141213712.png" alt="image-20200402141213712" /></p>
+
+<p>2011 CVPR Shape estimation in Natural Illumination</p>
+
+<p>Natural illumination is good! Make you less ambiguous… really?</p>
+
+<p>Note if your surface albedo is unknown and spatially varying (has color patterns in it. )</p>
+
+<p>Local constant albedo will help you!</p>
+
+<p>Chakrabarti 3DV 2016</p>
+
+<h1 id="learning-based-intrinsic-image-decomposition">Learning Based Intrinsic Image Decomposition</h1>
+
+<p>Hardship is how to provide the supervision. Several solutions below.</p>
+
+<h2 id="datasets-for-intrinsic-image">Datasets for Intrinsic Image</h2>
+
+<p>ICCV 2009</p>
+
+<blockquote>
+  <p>Very painful, but it’s a great breakthrough! Benchmark for intrinsic image. However, the dataset is small, and not</p>
+</blockquote>
+
+<p>Intrinsic Image in the Wild</p>
+
+<blockquote>
+  <p>Similar to surface normal idea.</p>
+
+  <p>Don’t collect dense label, but sparse supervision - pairwise relationship (this part has lower reflectance than that one.) from human being 44</p>
+</blockquote>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200407131153535.png" alt="image-20200407131153535" /></p>
+
+<p>Reflectance and image could be decomposed!</p>
+
+<p>ICCV 2015 Learning Ordinal Relationship for Mid Level Vision.</p>
+
+<blockquote>
+  <p>Let a neural net provide human response. And then use optimization to interpolate between them. 
+Idea is</p>
+</blockquote>
+
+<h2 id="photorealistic-rendering-for-groundtruth">Photorealistic Rendering for GroundTruth</h2>
+
+<p>2018 ECCV CGIntrinsics Network.</p>
+
+<p>You may overfit the statistics of CG instead of synthetic. So they used a mixed training schedule instead of pure CG.</p>
+
+<ul>
+  <li>Real image, output ordinal relationship and loss.</li>
+  <li>Synthetic image, output dense map, L2 loss.</li>
+</ul>
+
+<blockquote>
+  <p>Note for these problems, collect the dataset is much more expensive then training! Making scene and rendering is most labor intensive part in the pipeline.</p>
+</blockquote>
+
+<p>Similar to the depth and optical flow, they abolish the optimization instead of</p>
+
+<blockquote>
+
+</blockquote>
+
+<h2 id="self-supervision">Self Supervision</h2>
+
+<p>Single Image Intrinsic Decomposition without a SIngle Intrinsic Image</p>
+
+<blockquote>
+  <p>Core idea is, the reflectance is constant ~ physics. Shading is caused by lighting and imaging. So using multiple lighting for the same scene will give you this idea. 
+Practically it’s simply turn off a light and on the other.</p>
+</blockquote>
+
+\[\; \|I_1-R_jS_1\|\\
+\; \|I_i-R_iS_i\|\]
+
+<p>However, note that self supervision will result in cheating sometimes. $R_i=1$ will result in a trivial solution (no decomposition at all!)You need regularization to avoid trivial solution.</p>
+
+<ul>
+  <li>Retinex loss: Shading and Reflectance will not have large gradient at the same location.</li>
+  <li>Diversity loss:</li>
+</ul>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200407133842876.png" alt="image-20200407133842876" /></p>
+
+<blockquote>
+  <p>For these hard to find ground truth, Some thoughts on how to get supervision</p>
+
+  <ul>
+    <li>Render image as ground truth</li>
+    <li>Let human to provide sparse labelling and supervision.</li>
+    <li>Use some knowledge of physics as training (constancy of certain property across scene and setting.)</li>
+  </ul>
+</blockquote>
+
+<h1 id="advanced-photometric-stereo">Advanced Photometric Stereo</h1>
+
+<blockquote>
+  <p>Lambertian surface is not a valid model for many situations.</p>
+</blockquote>
+
+<p><strong>Di-electric Model</strong>: A lambertian component and a specular light component. 
+\(I = \rho \hat n^Tl +\alpha(n)\)</p>
+
+<blockquote>
+  <p>Note, specular light will have the same color as the light source under di-electric model. If you know the light color, then you can project the color image in a clever way to throw away this component.</p>
+</blockquote>
+
+<h2 id="polarizer">Polarizer</h2>
+
+<ul>
+  <li>Polarizer Physics
+    <ul>
+      <li>Diffuse reflection will have uniform reflection</li>
+      <li>Specular reflection will have same reflection with the source of light.</li>
+      <li>Thus the image looks like a lambertian surface under Polarizer light.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="color">Color</h2>
+
+<p>If you know your light color $L$ 
+\((\rho\circ L)\)
+THen you can create a vector in the null space of light color</p>
+
+<p><img src="../assets/img/posts/Taiwan/image-20200407135228253.png" alt="image-20200407135228253" /></p>
+
+<h2 id="general-brdf-photometric-stereo">General BRDF Photometric Stereo</h2>
+
+<p>Dictionary Based Approach for Estimating SHape and Spatially Varying Reflectance. ICCP 2016</p>
+
+<p>Still have multiple images under multiple light directions.</p>
+
+<p>General BRDF is a function $\rho(\omega_i,\omega_o)$ ,</p>
+
+<p>But we have a bunch of possible BRDFs like a dictionary, and each pixel is a <strong>linear convex combination</strong> of those materials. ()</p>
+
+<p>They discretize the normal vector into per deg.</p>
+
+<p>So now you are estimating a material definition $c^m[x,y]$ and normal definition $\hat n [x,y]$</p>
+
+<h2 id="near-light-source">Near Light source</h2>
+
+<p>This relax the parallel light assumption.</p>
+
+<h2 id="illumination-estimation">Illumination Estimation</h2>
+
+<h3 id="outdoor-illumination">Outdoor Illumination</h3>
+
+<p>Train a network to estimate the environment map / Illumination map from an image!</p>
+
+<ul>
+  <li></li>
+</ul>
+
+<p>Note outdoor illumination is usually simple! There is sun + few sources</p>
+
+<ul>
+  <li>Estimation is</li>
+</ul>
+
+<p>Panorama is a good source of dataset</p>
+
+<ul>
+  <li>You usually have a location of sun! (Sun detecture is not hard)</li>
+  <li>You have your viewing angles, so you have the light source relative angle to your image.</li>
+</ul>
+
+<blockquote>
+  <p>THere is only one sun, but not one light in the room.</p>
+</blockquote>
+
+<p>Learning to predict indoor illumination from a single image.</p>
+
+<p>Environment light encoding can be done through making a segmentation on sphere, the activation value for each angle on sphere can denote the light strength.</p>
+
+<h2 id="color-constancy-problem">Color Constancy Problem</h2>
+
+<p>a.k.a White Balance Problem</p>
+
+<p>White patch, grey world priors. (doesn’t work well in normal settings. )</p>
+
+<p>You can discretize the chromaticity $R,G,B&gt;=0,R^2+G^2+B^2=1$ , then you could use do classification onto discretized values.</p>
+
+<p>2015 predict chromaticity from luminance</p>
+
+<ul>
+  <li>Predict true chromaticity from a grey pixel.</li>
+  <li>Then divide the apparent color by true chromaticity, then you get the illumination chromaticity.</li>
+</ul>
+
+<p>Convolutional Color Constancy. 2015</p>
+
+<h3 id="spatial-varying-illumination">Spatial Varying illumination</h3>
+
+<p>Flash-Non Flash Pair</p>
+
+<p>A formulation of multi light source image
+\(I[n]=\rho[n]\circ (l_1\alpha[n]+l_2\beta[n])\)
+If you have a flash with known color 
+\(I[n]=\rho[n]\circ (l_1\alpha[n]+l_2\beta[n]+l_f\Delta[n])\)
+Then you will get the intrinsic color $\rho[n]$ and shading caused by flash.</p>
+
+<p>$\rho[n]\Delta[n]$ .Note the chromaticity of this map is the same as image.</p>
+
+<blockquote>
+  <p>Flash is estimating intrinsic chromaticity!</p>
+</blockquote>
+
+<p>Regression loss may not be best</p>
+
+<blockquote>
+  <p>Note, flash is limited. 
+The object could not be too far away, the relative intensity should be adequate, or noise will submerge the information.</p>
+</blockquote>
+
+<p>Train a network to predict chromaticity</p>
+
+<p>You can use</p>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-photometric-analysis" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Photometric+Reasoning%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-photometric-analysis"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-photometric-analysis&quote=Note+on+Photometric+Reasoning%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-photometric-analysis&media=$description=Note+on+Photometric+Reasoning%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-photometric-analysis&title=Note+on+Photometric+Reasoning%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-photometric-analysis&title=Note+on+Photometric+Reasoning%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-photometric-analysis"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Photometric Reasoning%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-photometric-analysis"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+graphics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer graphics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+science">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer science</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Deep Reinforcement Learning" href="/academic_notes/note-on-deep-rl">
+            <p>Previous post</p>
+            Note on Deep Reinforcement Learning
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Generative Adversarial Network" href="/academic_notes/note-on-gans">
+            <p>Next post</p>
+            Note on Generative Adversarial Network
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

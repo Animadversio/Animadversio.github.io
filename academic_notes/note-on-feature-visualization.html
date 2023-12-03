@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+  jax: ["input/TeX","output/SVG"]
+});
+</script>
+<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
+//cdn server shut down.... use cdnjs instead from now on. 
+</script>
+<!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
+-->
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$']],  //, ['\(', '\)'] 
+      displayMath: [ ['$$','$$'], ['\[', '\]']],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
+        //"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        //src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js"
+        //"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Note on Feature Visualization (Updating) | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Note on Feature Visualization (Updating)" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Note on Feature Visualization" />
+<meta property="og:description" content="Note on Feature Visualization" />
+<link rel="canonical" href="https://animadversio.github.io/academic_notes/note-on-feature-visualization" />
+<meta property="og:url" content="https://animadversio.github.io/academic_notes/note-on-feature-visualization" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Note on Feature Visualization (Updating)" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Note on Feature Visualization","@type":"BlogPosting","url":"https://animadversio.github.io/academic_notes/note-on-feature-visualization","headline":"Note on Feature Visualization (Updating)","dateModified":"2019-09-17T00:00:00+00:00","datePublished":"2019-09-17T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/academic_notes/note-on-feature-visualization"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Note on Feature Visualization (Updating)">
+    <meta name="twitter:description" content="Note on Feature VisualizationMotivation  We want to understand what the hidden units “represent”          What are they tuned to? What’s the favorite stimuli...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Note on Feature Visualization (Updating)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Note on Feature Visualization (Updating) " aria-label="Note on Feature Visualization (Updating)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Note+on+Feature+Visualization+%28Updating%29" class="title">Note on Feature Visualization (Updating)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      September 17, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h1 id="note-on-feature-visualization">Note on Feature Visualization</h1>
+
+<h2 id="motivation">Motivation</h2>
+
+<ul>
+  <li>We want to understand what the hidden units “represent”
+    <ul>
+      <li>What are they tuned to? What’s the favorite stimuli?</li>
+    </ul>
+  </li>
+  <li>Why should we find the most excitable stimuli?</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/tensorflow/examples/blob/master/community/en/r1/deepdream.ipynb">DeepDream.ipynb</a> Tensorflow</p>
+  </li>
+  <li><a href="https://github.com/google/deepdream/blob/master/dream.ipynb">Another DeepDream.ipynb</a> Tensorflow.</li>
+  <li><a href="https://towardsdatascience.com/how-to-visualize-convolutional-features-in-40-lines-of-code-70b7d87b0030">Post of fast Feature Visualization</a>  PyTorch.
+    <ul>
+      <li>Explicit blurring to counteract high frequency. Optimize and resize to make multi-scale feature visualization. Very similar to DeepDream</li>
+    </ul>
+  </li>
+  <li><a href="https://dudeperf3ct.github.io/visualize/cnn/catsvsdogs/2018/12/02/Power-of-Visualizing-Convolution-Neural-Networks/">Another Synthesis post</a></li>
+  <li><a href="https://github.com/utkuozbulak/pytorch-cnn-visualizations">Zoo of feature visualization notebook</a> PyTorch</li>
+  <li><a href="https://distill.pub/2017/feature-visualization/">Distill pub’s systemic treatment of FV</a>
+    <ul>
+      <li><a href="https://colab.research.google.com/github/tensorflow/lucid/blob/master/notebooks/feature-visualization/regularization.ipynb">Effect of Regularization on Feature Visualization</a></li>
+      <li>From their treatment, it seems the <code class="language-plaintext highlighter-rouge">lucid</code> package attached to tensorflow <code class="language-plaintext highlighter-rouge">lucid.optvis.render</code> can generate the most useful and good looking visualizations. The major techniques utilized are Spatial Decorrelation and Feature Decorrelation. And use some transform to improve the robustness of visualization</li>
+      <li>Should consider having it in pytorch in the future.</li>
+    </ul>
+  </li>
+  <li><a href="https://distill.pub/2018/building-blocks/">Integrating FV modules into toolkit</a></li>
+</ul>
+
+<h2 id="overview-of-algorithms">Overview of Algorithms</h2>
+
+<p>The basic idea of feature visualization is to optimize for the images that highly activate a hidden unit (or a weighted sum of them), so that its activity could be understood as coding for that feature.</p>
+
+<p>The big enemy of FV is the high frequency artifact, which will arise if you directly back-propagate activity back to pixel space! Kind of visual illusion for CNN, and note these kinds of artifacts can be used as attacks to manipulate the classification result of CNN. And below we will talk about the ways to defeat these artifacts and make pretty looking images.</p>
+
+<p><strong>Remark</strong> : Activation maximization using back-prop has a really close relationship with Generative model and GAN.</p>
+
+<ul>
+  <li>Functionally, they are all taking in an activation pattern (hidden vector) and output an image</li>
+  <li>Mechanistically, the <code class="language-plaintext highlighter-rouge">upconv</code> operation in GAN is just <code class="language-plaintext highlighter-rouge">TransposeCOnv</code>, which is exactly the same operation happened when the gradient vector propagate backward from deeper layers to shallower layers.
+    <ul>
+      <li>Thus they are all using activation in the higher layers to generate filter patterns repetitively!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Common Algorithms Zoo https://github.com/utkuozbulak/pytorch-cnn-visualizations</p>
+
+<h2 id="regularization">Regularization</h2>
+
+<p>There are 3 major groups of regularization.</p>
+
+<ul>
+  <li>Directly eliminate high frequency components
+    <ul>
+      <li>By adding Variation energy during optimization</li>
+      <li>Or by blurring the image!</li>
+    </ul>
+  </li>
+  <li>Reparamtrize the image and add weights to different directions in that parameter space.
+    <ul>
+      <li>Use FFT parametrization,</li>
+      <li>Or use GAN parametrization etc.</li>
+    </ul>
+  </li>
+  <li>Robustness to perturbation
+    <ul>
+      <li>Add jitter and noise and see if the activation is stable across these perturbations.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="optimization">Optimization</h2>
+
+<p>Aside from regularization, another major component of feature visualization algorithms is the optimizer, which optmizer they use and the initialization they use may affect the success of optimization and speed of convergence. Here are some classes of algorithms</p>
+
+<ul>
+  <li>0-order methods
+    <ul>
+      <li>Genetic algorithm</li>
+      <li>CMA-ES</li>
+    </ul>
+  </li>
+  <li>1-order methods
+    <ul>
+      <li>SGD</li>
+      <li>Momentum</li>
+      <li>Adam, AdaGrad, AdaDelta, RMS-prop etc.</li>
+    </ul>
+  </li>
+  <li>Pseudo 2-order methods
+    <ul>
+      <li>LFBGS</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example-deep-dream">Example: Deep Dream</h3>
+
+<p>It’s a Gradient Ascent but the point is to generate good looking images, thus some regularization techniques are used! Like L1, L2!</p>
+
+<p>Matlab has a nested bunch of functions, the major ones are these.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">nnet.internal.cnn.visualize.VisualNetwork.createVisualNetworkForChannelAverage(iNet, layerIdx, channels)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nnet.internal.cnn.visualize.deepDreamImageLaplacianNorm</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nnet.internal.cnn.visualize.TiledGradients.computeTiledGradient</code>
+    <ul>
+      <li>Compute gradient for tiles to save memory!</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">nnet.internal.cnn.visualize.LaplacianPyramid.laplacianNormalizedImage</code>
+    <ul>
+      <li>Normalize the gradient as image in different laplacian levels! Prefer lower frequency stuff!</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nb">gradient</span> <span class="o">=</span> <span class="n">iNormalizeGradient</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="nb">gradient</span><span class="p">)</span> 
+<span class="nb">gradient</span> <span class="o">=</span> <span class="nb">gradient</span> <span class="o">.</span><span class="p">/</span> <span class="nb">shiftdim</span><span class="p">(</span><span class="nb">std</span><span class="p">(</span><span class="nb">reshape</span><span class="p">(</span><span class="nb">gradient</span><span class="p">,</span> <span class="p">[],</span> <span class="nb">size</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span> <span class="o">+</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span> 
+<span class="k">end</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>An image can be compressed into a Laplacian pyramid, and then the pyramid can be merged to give back the original image. In Laplacian pyramid normalization, we normalize each image in the pyramid before merging.</p>
+</blockquote>
+
+<p>Core code is just like this</p>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">iter</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">numIterations</span>
+            <span class="p">[</span><span class="nb">gradient</span><span class="p">,</span> <span class="n">activations</span><span class="p">]</span> <span class="o">=</span> <span class="n">nnet</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">cnn</span><span class="o">.</span><span class="n">visualize</span><span class="o">.</span><span class="n">TiledGradients</span><span class="o">.</span><span class="n">computeTiledGradient</span><span class="p">(</span><span class="k">...</span>
+                <span class="n">iVisualNet</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">tileSize</span><span class="p">);</span>
+            <span class="k">if</span> <span class="n">useLaplacian</span>
+                <span class="nb">gradient</span> <span class="o">=</span> <span class="n">iLaplacianNormalizedImage</span><span class="p">(</span> <span class="nb">gradient</span> <span class="p">);</span>
+            <span class="k">else</span>
+                <span class="nb">gradient</span> <span class="o">=</span> <span class="n">iNormalizeGradient</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="nb">gradient</span><span class="p">);</span>
+            <span class="k">end</span>
+            
+            <span class="c1">% Update step.</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="nb">gradient</span> <span class="o">*</span> <span class="n">stepSize</span><span class="p">;</span>                        
+            
+            <span class="c1">% Display progress.</span>
+            <span class="nb">summary</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">octave</span><span class="p">,</span> <span class="n">iter</span><span class="p">,</span> <span class="n">activations</span><span class="p">);</span>
+            <span class="n">reporter</span><span class="o">.</span><span class="n">reportIteration</span><span class="p">(</span> <span class="nb">summary</span> <span class="p">);</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="example-lucent-framework">Example: Lucent Framework</h3>
+
+<p>Lucent is a recent pytorch implementation of Lucid visualization framework. It’s core code is super clear and easy to read and modify, so lets take a look</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">render_vis</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">objective_f</span><span class="p">,</span> <span class="n">param_f</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">transforms</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+               <span class="n">thresholds</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,),</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">preprocess</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+               <span class="n">show_image</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">save_image</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">image_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">show_inline</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">param_f</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">param_f</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">param</span><span class="p">.</span><span class="n">image</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+    <span class="c1"># param_f is a function that should return two things
+</span>    <span class="c1"># params - parameters to update, which we pass to the optimizer
+</span>    <span class="c1"># image_f - a function that returns an image as a tensor
+</span>    <span class="n">params</span><span class="p">,</span> <span class="n">image_f</span> <span class="o">=</span> <span class="n">param_f</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">optimizer</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">params</span><span class="p">:</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">5e-2</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">transforms</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">transforms</span> <span class="o">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">standard_transforms</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">preprocess</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">model</span><span class="p">.</span><span class="n">_get_name</span><span class="p">()</span> <span class="o">==</span> <span class="s">"InceptionV1"</span><span class="p">:</span>
+            <span class="c1"># Original Tensorflow InceptionV1 takes input range [-117, 138]
+</span>            <span class="n">transforms</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">preprocess_inceptionv1</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Assume we use normalization for torchvision.models
+</span>            <span class="c1"># See https://pytorch.org/docs/stable/torchvision/models.html
+</span>            <span class="n">transforms</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">transform</span><span class="p">.</span><span class="n">normalize</span><span class="p">())</span>
+
+    <span class="c1"># Upsample images smaller than 224
+</span>    <span class="n">image_shape</span> <span class="o">=</span> <span class="n">image_f</span><span class="p">().</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">224</span> <span class="ow">or</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">224</span><span class="p">:</span>
+        <span class="n">transforms</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'bilinear'</span><span class="p">,</span> <span class="n">align_corners</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+
+    <span class="n">transform_f</span> <span class="o">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">compose</span><span class="p">(</span><span class="n">transforms</span><span class="p">)</span>
+
+    <span class="n">hook</span> <span class="o">=</span> <span class="n">hook_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">image_f</span><span class="p">)</span>
+    <span class="n">objective_f</span> <span class="o">=</span> <span class="n">objectives</span><span class="p">.</span><span class="n">as_objective</span><span class="p">(</span><span class="n">objective_f</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="n">model</span><span class="p">(</span><span class="n">transform_f</span><span class="p">(</span><span class="n">image_f</span><span class="p">()))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Initial loss: {:.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">objective_f</span><span class="p">(</span><span class="n">hook</span><span class="p">)))</span>
+
+    <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">thresholds</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">disable</span><span class="o">=</span><span class="p">(</span><span class="ow">not</span> <span class="n">progress</span><span class="p">)):</span>
+            <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">model</span><span class="p">(</span><span class="n">transform_f</span><span class="p">(</span><span class="n">image_f</span><span class="p">()))</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">objective_f</span><span class="p">(</span><span class="n">hook</span><span class="p">)</span>
+            <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">tensor_to_img_array</span><span class="p">(</span><span class="n">image_f</span><span class="p">())</span>
+                <span class="n">images</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">images</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor_to_img_array</span><span class="p">(</span><span class="n">image_f</span><span class="p">()))</span>
+
+    <span class="k">if</span> <span class="n">save_image</span><span class="p">:</span>
+        <span class="n">export</span><span class="p">(</span><span class="n">image_f</span><span class="p">(),</span> <span class="n">image_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show_inline</span><span class="p">:</span>
+        <span class="n">show</span><span class="p">(</span><span class="n">tensor_to_img_array</span><span class="p">(</span><span class="n">image_f</span><span class="p">()))</span>
+    <span class="k">elif</span> <span class="n">show_image</span><span class="p">:</span>
+        <span class="n">view</span><span class="p">(</span><span class="n">image_f</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">images</span>
+</code></pre></div></div>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/academic_notes/note-on-feature-visualization" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Note+on+Feature+Visualization+%28Updating%29%20https%3A%2F%2Fanimadversio.github.io%2Facademic_notes%2Fnote-on-feature-visualization"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/academic_notes/note-on-feature-visualization&quote=Note+on+Feature+Visualization+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/academic_notes/note-on-feature-visualization&media=$description=Note+on+Feature+Visualization%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/academic_notes/note-on-feature-visualization&title=Note+on+Feature+Visualization+%28Updating%29%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/academic_notes/note-on-feature-visualization&title=Note+on+Feature+Visualization+%28Updating%29%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/academic_notes/note-on-feature-visualization"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Note on Feature Visualization (Updating)%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/academic_notes/note-on-feature-visualization"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#academic+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> academic note</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#computer+vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> computer vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#machine+learning">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> machine learning</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#optimization">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> optimization</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Note on Fragment Based Object Recognition" href="/academic_notes/note-on-fragment-based-object-recognition">
+            <p>Previous post</p>
+            Note on Fragment Based Object Recognition
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Note on Deep Unsupervised Learning" href="/academic_notes/note-on-deep-unsupervised-learning">
+            <p>Next post</p>
+            Note on Deep Unsupervised Learning
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>

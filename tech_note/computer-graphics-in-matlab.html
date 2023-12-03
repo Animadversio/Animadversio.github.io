@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.1
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0KX9V5XF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y0KX9V5XF');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://Animadversio.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = 'UA-125498144-1';
+    </script>
+
+    
+    
+        <!-- Global site tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125498144-1"></script>
+        <!-- Page analysis (analytics.js) -->
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Computer Graphics Environment in Matlab | The mind palace of Binxu</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Computer Graphics Environment in Matlab" />
+<meta name="author" content="Binxu Wang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Computer Graphics environment in Matlab" />
+<meta property="og:description" content="Computer Graphics environment in Matlab" />
+<link rel="canonical" href="https://animadversio.github.io/tech_note/computer-graphics-in-matlab" />
+<meta property="og:url" content="https://animadversio.github.io/tech_note/computer-graphics-in-matlab" />
+<meta property="og:site_name" content="The mind palace of Binxu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Computer Graphics Environment in Matlab" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Binxu Wang"},"description":"Computer Graphics environment in Matlab","@type":"BlogPosting","url":"https://animadversio.github.io/tech_note/computer-graphics-in-matlab","headline":"Computer Graphics Environment in Matlab","dateModified":"2019-11-14T00:00:00+00:00","datePublished":"2019-11-14T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://animadversio.github.io/tech_note/computer-graphics-in-matlab"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="The mind palace of Binxu" href="https://animadversio.github.io/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://animadversio.github.io/feed.xml" title="The mind palace of Binxu" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Computer Graphics Environment in Matlab">
+    <meta name="twitter:description" content="Computer Graphics environment in Matlab@(515.1 Computer Graphics)[matlab]Recently, we are using matlab to do computer vision experiments. Thus this note intr...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://animadversio.github.io/assets/img/header/triangular.jpeg">
+    <meta name="twitter:image:alt" content="Computer Graphics Environment in Matlab">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/triangle.png" />
+		</a>
+        
+        <a class="site-title" aria-label="The mind palace of Binxu" href="/">
+        The mind palace of Binxu
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                    About Me
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Notes" title="Notes" href="/academic_notes/">
+                    Notes
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Blog" title="Blog" href="/blog/">
+                    Blog
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                    Portfolio
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+             
+            
+            
+             
+            
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Technical" title="Technical" href="/tech_note/">
+                    Technical
+                </a>
+            </li>
+            
+            
+        
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="All" title="All" href="/all_posts/index.html">
+                    All
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Computer Graphics Environment in Matlab " aria-label="Computer Graphics Environment in Matlab" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Computer+Graphics+Environment+in+Matlab" class="title">Computer Graphics Environment in Matlab</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      November 14, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <h2 id="computer-graphics-environment-in-matlab">Computer Graphics environment in Matlab</h2>
+
+<p>@(515.1 Computer Graphics)[matlab]</p>
+
+<p>Recently, we are using matlab to do computer vision experiments. Thus this note introduces some function controlling the elementary graphics environment.</p>
+
+<p>For Computer Graphics, the basic 3 components are</p>
+<ul>
+  <li>Object
+    <ul>
+      <li>position and shape</li>
+      <li>material (BRDF)</li>
+    </ul>
+  </li>
+  <li>Light</li>
+  <li>Camera</li>
+</ul>
+
+<p>And the rendering engine will take these components and give out a physical looking image.</p>
+
+<h2 id="light-and-camera">Light and Camera</h2>
+<p>Basic property of light is the direction of light, and point source vs parallel light. 
+<code class="language-plaintext highlighter-rouge">light</code> specify the light property.</p>
+
+<p>For more complex control of light source see <a href="https://www.mathworks.com/help/releases/R2019a/matlab/creating_plots/lighting-overview.html">commands</a></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lighting</code>, <code class="language-plaintext highlighter-rouge">flat</code> render each facet the same color, <code class="language-plaintext highlighter-rouge">gouraud</code> interpolate the normal vector field on the curved surface.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">view</code> specify the camera center line of sight. <code class="language-plaintext highlighter-rouge">view(az,el)</code> or <code class="language-plaintext highlighter-rouge">view(v3)</code> will specify the camera direction. Normally it’s enough for plotting figures.</p>
+<ul>
+  <li>Note that <code class="language-plaintext highlighter-rouge">view()</code> can defaultly return the 4 by 4  projection matrix formed by <code class="language-plaintext highlighter-rouge">getAxesTransformationMatrix</code> method. see <code class="language-plaintext highlighter-rouge">viewmtx</code> for reference.</li>
+</ul>
+
+<p>For more specific control of camera, it has the full set of <a href="https://www.mathworks.com/help/releases/R2019a/matlab/creating_plots/defining-scenes-with-camera-graphics.html">commands</a></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">campos</code> set the position of camera</li>
+  <li><code class="language-plaintext highlighter-rouge">camtarget</code> set the target of line of sight
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">camlookat</code> higher level function that target an object (using its handle)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">camroll</code> roll the camera view around the line of sight or any axis.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">camup</code> roll the camera so that the up direction in the view match the vector.</li>
+      <li>Note in <code class="language-plaintext highlighter-rouge">auto</code> mode <code class="language-plaintext highlighter-rouge">[0,0,1]</code> i.e. z direction usually means up. so you will not rotate across y axis in a full cycle.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">camlight</code> will fix the light relative to the view point.</li>
+</ul>
+
+<h2 id="3d-shape-description">3d Shape Description</h2>
+<p><code class="language-plaintext highlighter-rouge">patch</code>, <code class="language-plaintext highlighter-rouge">vertices</code>, <code class="language-plaintext highlighter-rouge">faces</code></p>
+<ul>
+  <li>In the most simple case, it’s a simplicial complex, or triangle mesh network. It’s simple, vertices is a <code class="language-plaintext highlighter-rouge">(nv,3)</code> float array encoding the 3d coordinates of every vertex. And faces is a <code class="language-plaintext highlighter-rouge">(nf,3)</code> int array encoding the row index of vertices it consists.</li>
+  <li>But a face can consists of any number of vertices</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">patch('Faces',F,'Vertices',V)</code> uses the Face and Vertices data to create shape, i.e. it’s kind of the rendering engine in Matlab! 
+<strong>Note</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">patch</code> can not only visualize shapes in the computer graphics sense, it can visualize color data defined on <code class="language-plaintext highlighter-rouge">faces</code> or <code class="language-plaintext highlighter-rouge">vertices</code>. For example, from doc
+    <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">6</span> <span class="mi">3</span><span class="p">];</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">];</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">6</span><span class="p">];</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">patch</span><span class="p">(</span><span class="s1">'Faces'</span><span class="p">,</span><span class="n">faces</span><span class="p">,</span><span class="s1">'Vertices'</span><span class="p">,</span><span class="n">vertices</span><span class="p">,</span><span class="s1">'FaceVertexCData'</span><span class="p">,</span><span class="n">C</span><span class="p">);</span>
+<span class="n">p</span><span class="o">.</span><span class="n">FaceColor</span> <span class="o">=</span> <span class="s1">'interp'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">9</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">faces</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">];</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mf">0.6667</span><span class="p">;</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">patch</span><span class="p">(</span><span class="s1">'Faces'</span><span class="p">,</span><span class="n">faces</span><span class="p">,</span><span class="s1">'Vertices'</span><span class="p">,</span><span class="n">vertices</span><span class="p">,</span><span class="s1">'FaceVertexCData'</span><span class="p">,</span><span class="n">C</span><span class="p">);</span>
+<span class="n">p</span><span class="o">.</span><span class="n">FaceColor</span> <span class="o">=</span> <span class="s1">'flat'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>See the figure in <code class="language-plaintext highlighter-rouge">patch</code> <a href="https://ww2.mathworks.cn/help/matlab/ref/matlab.graphics.primitive.patch-properties.html">Ch doc</a>. <a href="https://www.mathworks.com/help/matlab/ref/matlab.graphics.primitive.patch-properties.html">en doc</a>, <a href="https://www.mathworks.com/help/matlab/creating_plots/how-patch-data-relates-to-a-colormap.html">patch colormap</a>.</p>
+<h3 id="triangulation">Triangulation</h3>
+<p>Note the 2d shape and 3d shapes could be represented as simplicial complex, i.e. triangulation. Using this representation, many properties of the shape like the normal vector at the vertices or facets could be calculated.</p>
+
+<h2 id="brdf">BRDF</h2>
+<p><code class="language-plaintext highlighter-rouge">BRDF</code> is specified by the <code class="language-plaintext highlighter-rouge">material</code> command in <code class="language-plaintext highlighter-rouge">matlab</code></p>
+
+<h2 id="functions">Functions</h2>
+<p><code class="language-plaintext highlighter-rouge">isosurface</code>
+<code class="language-plaintext highlighter-rouge">isonormal</code>
+<code class="language-plaintext highlighter-rouge">isocaps</code>
+<code class="language-plaintext highlighter-rouge">patch</code></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://animadversio.github.io/tech_note/computer-graphics-in-matlab" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Computer+Graphics+Environment+in+Matlab%20https%3A%2F%2Fanimadversio.github.io%2Ftech_note%2Fcomputer-graphics-in-matlab"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://animadversio.github.io/tech_note/computer-graphics-in-matlab&quote=Computer+Graphics+Environment+in+Matlab%20%7C%20The+mind+palace+of+Binxu&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://animadversio.github.io/tech_note/computer-graphics-in-matlab&media=$description=Computer+Graphics+environment+in+Matlab%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://animadversio.github.io/tech_note/computer-graphics-in-matlab&title=Computer+Graphics+Environment+in+Matlab%20%7C%20The+mind+palace+of+Binxu"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://animadversio.github.io/tech_note/computer-graphics-in-matlab&title=Computer+Graphics+Environment+in+Matlab%20%7C%20The+mind+palace+of+Binxu&summary=&source=https://animadversio.github.io/tech_note/computer-graphics-in-matlab"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=Computer Graphics Environment in Matlab%20%7C%20The mind palace of Binxu&body=https://animadversio.github.io/tech_note/computer-graphics-in-matlab"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Computer+Graphics">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computer Graphics</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Computer+Vision">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Computer Vision</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#matlab">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> matlab</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#tech+note">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> tech note</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Dynamic Visualization in Python" href="/tech_note/dynamic-visualization-in-python">
+            <p>Previous post</p>
+            Dynamic Visualization in Python
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Multi-platform Matlab compiling" href="/tech_note/multi-platform-matlab-compiling-notes">
+            <p>Next post</p>
+            Multi-platform Matlab compiling
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/Animadversio"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto:binxu.wang@wustl.edu"
+               title="Follow on Mail"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://twitter.com/WangBinxu"
+               title="Follow on Twitter"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  <script>
+      renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: true},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+    </script> 
+  </body>
+</html>
