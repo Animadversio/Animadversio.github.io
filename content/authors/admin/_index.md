@@ -3,7 +3,7 @@
 title: Binxu Wang
 
 # Name pronunciation (optional)
-name_pronunciation: 
+name_pronunciation: She/They
 
 # Full name (for SEO)
 first_name: Binxu 
@@ -58,7 +58,7 @@ education:
     date_start: 2018-09-01
     date_end: 2023-09-01
     summary: |
-      Thesis on _Why LLMs are awesome_. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
+      Thesis on _the Geometry of Neural Tuning Landscape on Generative Image Manifolds_. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
