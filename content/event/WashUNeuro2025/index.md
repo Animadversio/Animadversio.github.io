@@ -29,15 +29,16 @@ authors:
 tags: [Neuroscience, Seminar, NeuroAI, Visual Neuroscience, Generative Models]
 
 # Is this a featured talk? (true/false)
-featured: false
+featured: true
 
 # Links to recording and related content
-links:
-  - name: "Seminar Recording"
-    url: "#"
-    icon: video
-    icon_pack: fas
-  
+# links:
+#   - name: "Seminar Recording"
+#     url: "#"
+#     icon: video
+#     icon_pack: fas
+
+url_video: 'https://youtu.be/cCeidmUYzck'
 slides: ""
 
 ---
