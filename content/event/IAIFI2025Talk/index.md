@@ -1,24 +1,24 @@
 ---
-title: IAIFI workshop talk
+title: IAIFI Summer Workshop Talk
 
-event: IAFAI workshop
-event_url: https://example.org
+event: NSF IAIFI Summer Workshop
+event_url: https://iaifi.org/summer-workshop
 
-location: Hugo Blox Builder HQ
+location: Harvard University
 address:
-  street: 450 Serra Mall
-  city: Stanford
-  region: CA
-  postcode: '94305'
+  street: 
+  city: Cambridge
+  region: MA
+  postcode: 
   country: United States
 
-summary: 
-abstract: ''
+summary: Analytical Theory of Spectral Effects in Sampling and Learning of Diffusion Model
+abstract: 'Diffusion models generate complex data by estimating the score—the gradient of the log-density—across varying noise scales, but the relationship between the learned neural score and the true data score has remained unclear. For moderate-to-high noise levels, the learned score is dominated by its linear (Gaussian) component, enabling a closed-form integration of the probability-flow ODE. This analytical solution predicts key sampling phenomena including the early specification of coarse structures (e.g., scene layouts), the low dimensionality of sampling trajectories, and their sensitivity to perturbations.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-08-12'
-# date_end: '2025-08-12'
+date: '2025-08-11'
+date_end: '2025-08-15'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
