@@ -1,0 +1,12 @@
+.jekyll-cache/
+_site/
+.DS_Store
+.idea/
+.vscode/
+.hugo_build.lock
+.hugo_build.lock
+public
+resources
+go.sum
+go.mod
+hugo_stats.json
