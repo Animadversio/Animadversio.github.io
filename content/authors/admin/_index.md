@@ -58,7 +58,7 @@ education:
     date_start: 2018-09-01
     date_end: 2023-09-01
     summary: |
-      Thesis on _the Geometry of Neural Tuning Landscape on Generative Image Manifolds_. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
+      Thesis on the Geometry of Neural Tuning Landscape on Generative Image Manifolds. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
@@ -80,10 +80,15 @@ education:
     summary: |
       GPA: 3.78/4.0
       
+
+
 # Courses included:
 # - lorem ipsum dolor sit amet, consectetur adipiscing elit
 # - lorem ipsum dolor sit amet, consectetur adipiscing elit
 #- lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+
+
 work:
   - position: Kempner Research Fellow
     company_name: Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University
