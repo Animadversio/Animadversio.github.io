@@ -130,7 +130,7 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Classic Chinese Dance (古典舞)
+      - name: Classic Chinese Dance (古典舞)🩰
         description: ''
         percent: 
         icon: person-simple-walk
