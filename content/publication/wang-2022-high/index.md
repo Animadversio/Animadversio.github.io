@@ -10,6 +10,9 @@ publication_types:
 publication: "*GECCO '22: Proceedings of the Genetic and Evolutionary Computation
   Conference*"
 
+# Display this page in the Featured widget?
+featured: true
+
 tags:
   - Visual Neuroscience
   - Optimization

@@ -8,4 +8,10 @@ publishDate: '2025-08-08T05:00:23.680764Z'
 publication_types:
 - article-journal
 publication: '*bioRxiv*'
+
+tags:
+  - Visual Neuroscience
+  - Geometry
+  - Generative Model
+  - Ventral Stream
 ---
