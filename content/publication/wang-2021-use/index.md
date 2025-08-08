@@ -12,4 +12,9 @@ publishDate: '2025-08-08T05:00:23.639464Z'
 publication_types:
 - paper-conference
 publication: '*NeurIPS 2021 SVRHM Workshop*'
+
+tags:
+  - NeuroAI
+  - Self-supervised learning
+  - Visual Neuroscience
 ---

@@ -14,6 +14,7 @@ tags:
   - Visual Neuroscience
   - Geometry
   - Generative Model
+  - Ventral Stream
 
 # Display this page in the Featured widget?
 featured: true
