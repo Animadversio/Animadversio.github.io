@@ -6,7 +6,7 @@ type: docs
 math: true
 tags:
   - Computational Neuroscience
-  - Neural Models
+  - NeuroAI
   - Sensory Processing
   - Machine Learning
   - Dynamical Systems
