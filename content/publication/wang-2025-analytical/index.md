@@ -8,4 +8,11 @@ publishDate: '2025-08-08T05:00:23.711084Z'
 publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2503.03206*'
+
+tags:
+  - Diffusion
+  - Science of AI
+
+# Display this page in the Featured widget?
+featured: true
 ---

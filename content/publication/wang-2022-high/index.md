@@ -9,4 +9,9 @@ publication_types:
 - paper-conference
 publication: "*GECCO '22: Proceedings of the Genetic and Evolutionary Computation
   Conference*"
+
+tags:
+  - Visual Neuroscience
+  - Optimization
+  - Evolutionary Computing
 ---

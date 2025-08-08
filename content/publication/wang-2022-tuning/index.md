@@ -8,4 +8,13 @@ publishDate: '2025-08-08T05:00:23.645531Z'
 publication_types:
 - article-journal
 publication: '*Cell reports*'
+
+
+tags:
+  - Visual Neuroscience
+  - Geometry
+  - Generative Model
+
+# Display this page in the Featured widget?
+featured: true
 ---

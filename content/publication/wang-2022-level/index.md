@@ -8,4 +8,8 @@ publishDate: '2025-08-08T05:00:23.651392Z'
 publication_types:
 - paper-conference
 publication: '*NeurIPS 2022 Workshop on Symmetry and Geometry in Neural Representations*'
+
+tags:
+  - Visual Neuroscience
+  - Geometry
 ---

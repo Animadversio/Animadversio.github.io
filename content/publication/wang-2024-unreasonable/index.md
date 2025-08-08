@@ -9,4 +9,11 @@ publishDate: '2025-08-08T05:00:23.716920Z'
 publication_types:
 - article-journal
 publication: '*Transactions on Machine Learning Research (arXiv:2412.09726)*'
+
+tags:
+  - Diffusion
+  - Science of AI
+
+# Display this page in the Featured widget?
+featured: true
 ---

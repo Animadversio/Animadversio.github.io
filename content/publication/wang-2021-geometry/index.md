@@ -8,4 +8,13 @@ publishDate: '2025-08-08T05:00:23.615625Z'
 publication_types:
 - paper-conference
 publication: '*International Conference on Learning Representations, 2021*'
+
+
+tags:
+  - Geometry
+  - Generative Model
+  - Optimization
+
+# Display this page in the Featured widget?
+featured: true
 ---
