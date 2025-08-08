@@ -78,12 +78,12 @@ education:
     date_start: 2013-09-01
     date_end: 2018-07-01
     summary: |
-      GPA: 3.4/4.0
+      GPA: 3.78/4.0
       
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+# Courses included:
+# - lorem ipsum dolor sit amet, consectetur adipiscing elit
+# - lorem ipsum dolor sit amet, consectetur adipiscing elit
+#- lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
   - position: Kempner Research Fellow
     company_name: Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University
@@ -125,18 +125,18 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: Classic Chinese Dance (古典舞)
         description: ''
-        percent: 60
+        percent: 
         icon: person-simple-walk
       - name: Cats
         description: ''
         percent: 100
         icon: cat
-      - name: Photography
-        description: ''
-        percent: 80
-        icon: camera
+      # - name: Photography
+      #   description: ''
+      #   percent: 80
+      #   icon: camera
 
 languages:
   - name: Chinese
