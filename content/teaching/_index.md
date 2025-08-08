@@ -17,6 +17,8 @@ sections:
       filters:
         folders:
           - teaching
+        exclude:
+          hidden: true
     design:
       view: article-grid
       columns: 2

@@ -10,3 +10,4 @@ resources
 go.sum
 go.mod
 hugo_stats.json
+_vendor/*
