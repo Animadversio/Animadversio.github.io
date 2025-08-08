@@ -32,14 +32,16 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: '🧠 → 🖼️  Generative Models x Visual Neuroscience'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
-
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I'm a research fellow at Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University, 
         
-        Please reach out to collaborate 😃
+        I work at the intersection of generative model and visual neuroscience -- generating images from the brain, and dissecting how generative models actually work. I combine theory and experiments, with a toolkit spanning geometry, interpretability, and optimization. 
+
+        I blog about deep learning, math and neuroscience.
+
+        Feel free to reach out for questions and collaborations 😃
     design:
       columns: '1'
   - block: collection
