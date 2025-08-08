@@ -58,7 +58,7 @@ education:
     date_start: 2018-09
     date_end: 2023-09
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      Thesis on _Why LLMs are awesome_. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
@@ -75,8 +75,8 @@ education:
   #     - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: BSc Physics
     institution: Peking University
-    date_start: 2013-09
-    date_end: 2018-07
+    date_start: 2013-09-01
+    date_end: 2018-07-01
     summary: |
       GPA: 3.4/4.0
       
@@ -89,7 +89,7 @@ work:
     company_name: Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University
     company_url: 'https://kempnerinstitute.harvard.edu/'
     company_logo: ''
-    date_start: 2023-10
+    date_start: 2023-10-01
     date_end: ''
     summary: 
   # - position: Backend Software Engineer
