@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Binxu Wang
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: 
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Binxu 
+last_name: Wang
 
 # Status emoji
 status:
@@ -20,36 +20,36 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Research Fellow
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: Kempner Institute at Harvard University
+    url: https://kempnerinstitute.harvard.edu/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:binxu_wang@hms.harvard.edu'
     label: E-mail Me
   - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://x.com/wangbinxu
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/Animadversio
   - icon: brands/linkedin
     url: https://www.linkedin.com/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://scholar.google.com/citations?user=8-njUc8AAAAJ
+  # - icon: academicons/orcid
+  #   url: https://orcid.org/
+  # - icon: brands/instagram
+  #   url: https://www.instagram.com/
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Visual Neuroscience
+  - Generative Model
+  - Science of AI
 
 education:
   - area: PhD Artificial Intelligence
@@ -142,10 +142,10 @@ skills:
         icon: camera
 
 languages:
+  - name: Chinese
+    percent: 100
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
   - name: Portuguese
     percent: 25
 
