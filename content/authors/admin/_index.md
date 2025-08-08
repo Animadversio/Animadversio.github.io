@@ -55,8 +55,8 @@ interests:
 education:
   - area: PhD in Neuroscience
     institution: Washington University | Harvard Medical School
-    date_start: 2018-09
-    date_end: 2023-09
+    date_start: 2018-09-01
+    date_end: 2023-09-01
     summary: |
       Thesis on _Why LLMs are awesome_. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
     button:
