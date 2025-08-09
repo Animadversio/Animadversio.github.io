@@ -18,6 +18,7 @@ marketing:
     twitter: 'wangbinxu'
   analytics:
     google_analytics: 'G-7Y0KX9V5XF'
+    google_tag_manager: 'G-7Y0KX9V5XF'
     baidu_tongji: ''
     plausible: ''
     fathom: ''
