@@ -12,12 +12,12 @@ appearance:
 marketing:
   seo:
     site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    local_business_type: 'research'
+    org_name: 'Kempner Institute'
+    description: 'Personal website of Binxu Wang, a Neuroscience and AI researcher at Kempner, Harvard University.'
+    twitter: 'wangbinxu'
   analytics:
-    google_analytics: ''
+    google_analytics: 'G-7Y0KX9V5XF'
     baidu_tongji: ''
     plausible: ''
     fathom: ''
