@@ -1,5 +1,5 @@
 ---
-title: SfN Nanosymposium 2023
+title: SfN 2023 Nanosymposium
 
 event: Society for Neuroscience Annual Meeting
 event_url: https://www.sfn.org
@@ -12,7 +12,7 @@ address:
   postcode: 
   country: United States
 
-summary: SfN Nanosymposium presentation at the Society for Neuroscience Annual Meeting
+summary: Dynamic Alignment of Neural Tuning to Generative Image Manifolds
 abstract: ''
 
 # Talk start and end times.
