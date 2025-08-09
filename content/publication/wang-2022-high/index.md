@@ -1,7 +1,7 @@
 ---
 title: High-performance Evolutionary Algorithms for Online Neuron Control
 authors:
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Carlos R Ponce
 date: '2022-04-01'
 publishDate: '2025-08-08T05:00:23.633494Z'

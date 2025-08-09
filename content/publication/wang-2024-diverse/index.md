@@ -2,7 +2,7 @@
 title: Diverse capability and scaling of diffusion and auto-regressive models when
   learning abstract rules
 authors:
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Jiaqi Shang
 - Haim Sompolinsky
 date: '2024-11-01'

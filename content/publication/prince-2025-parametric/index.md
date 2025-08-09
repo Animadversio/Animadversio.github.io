@@ -3,7 +3,7 @@ title: Parametric control along the encoding axes of IT neurons uncovers hidden 
   in model-brain alignment
 authors:
 - Jacob S Prince
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Akshay V Jagadeesh
 - Thomas Fel
 - Emily Lo

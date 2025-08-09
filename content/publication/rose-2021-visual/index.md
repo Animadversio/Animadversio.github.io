@@ -4,7 +4,7 @@ title: Visual prototypes in the ventral stream are attuned to complexity and gaz
 authors:
 - Olivia Rose*
 - James Johnson*
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Carlos R. Ponce
 date: '2021-01-01'
 publishDate: '2025-08-08T05:00:23.627527Z'

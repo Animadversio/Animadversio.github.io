@@ -1,7 +1,7 @@
 ---
 title: Do diffusion models generalize on abstract rules for reasoning?
 authors:
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Jiaqi Shang
 - Haim Sompolinsky
 date: '2024-01-01'

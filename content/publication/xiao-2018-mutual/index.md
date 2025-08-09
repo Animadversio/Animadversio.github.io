@@ -2,7 +2,7 @@
 title: Mutual information and information gating in synfire chains
 authors:
 - Zhuocheng Xiao†
-- '<b>Binxu Wang</b>*†'
+- Binxu Wang†
 - Andrew T Sornborger
 - Louis Tao
 date: '2018-01-01'

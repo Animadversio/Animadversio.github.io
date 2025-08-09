@@ -2,7 +2,7 @@
 title: Factorized convolution models for predicting and interpreting neuronal tuning
   in natural images
 authors:
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - Carlos Ponce
 date: '2025-01-01'
 publishDate: '2025-08-08T05:00:23.734857Z'

@@ -2,7 +2,7 @@
 title: On the use of Cortical Magnification and Saccades as Biological Proxies for
   Data Augmentation
 authors:
-- '<b>Binxu Wang</b>*'
+- Binxu Wang
 - David Mayo
 - Arturo Deza
 - Andrei Barbu
