@@ -1,5 +1,5 @@
 ---
-title: Washington University Neuroscience Department Seminar
+title: Special Seminar at Washington University Neuroscience Department 
 
 event: Washington University Neuroscience Department Special Seminar
 event_url: https://neuroscience.wustl.edu/events/
@@ -13,7 +13,7 @@ address:
   country: United States
 
 summary: Special seminar on neuro AI, visual neuroscience, interpretability and generative models
-abstract: 'Special seminar by Kempner Research Fellow focusing on the intersection of neuroscience and artificial intelligence, covering visual neuroscience, interpretability, and generative models.'
+abstract: 'Special seminar focusing on the intersection of neuroscience and artificial intelligence, covering visual neuroscience, interpretability, and generative models.'
 
 # Talk start and end times.
 date: '2025-02-18T10:00:00'
@@ -38,7 +38,7 @@ featured: true
 #     icon: video
 #     icon_pack: fas
 
-url_video: 'https://youtu.be/cCeidmUYzck'
+url_video: 'https://www.youtube.com/watch?v=cCeidmUYzck'
 slides: ""
 
 ---

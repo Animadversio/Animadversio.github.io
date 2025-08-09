@@ -31,5 +31,6 @@ tags: [Kempner Institute, Generative Models, Creativity, Geometry]
 featured: true
 
 slides: ""
+url_video: 'https://www.youtube.com/watch?v=w3rsTcXKzZo'
 
 ---

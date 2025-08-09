@@ -31,5 +31,6 @@ tags: [PhD, Thesis Defense, Neural Code, Generative Models]
 featured: true
 
 slides: ""
+url_video: 'https://www.youtube.com/watch?v=sryXzCDYwU0'
 
 ---

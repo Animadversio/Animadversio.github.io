@@ -2,7 +2,7 @@
 title: NAISYS2024 Conference Talk
 
 event: NAISYS2024 Conference
-event_url: 
+event_url: https://meetings.cshl.edu/meetings.aspx?meet=NAISYS
 
 location: Cold Spring Harbour
 address:
@@ -12,7 +12,7 @@ address:
   postcode: 
   country: United States
 
-summary: Alignment of Neural Code and Generative Models
+summary: Alignment of Neural Code and Generative Image Models
 abstract: ''
 
 # Talk start and end times.
