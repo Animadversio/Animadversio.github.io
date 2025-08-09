@@ -5,7 +5,7 @@ authors:
 - Binxu Wang
 - Jiaqi Shang
 - Haim Sompolinsky
-date: '2024-01-01'
+date: '2024-11-01'
 publishDate: '2025-08-08T05:00:23.692834Z'
 publication_types:
 - paper-conference

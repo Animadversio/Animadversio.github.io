@@ -9,6 +9,8 @@ publication_types:
 - article-journal
 publication: '*bioRxiv*'
 
+url_pdf: https://www.biorxiv.org/content/10.1101/2024.06.20.596072v1
+
 tags:
   - Visual Neuroscience
   - Geometry
