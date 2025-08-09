@@ -12,7 +12,7 @@ address:
   postcode: 
   country: United States
 
-summary: 
+summary: Parametric neural control identifies the deep encoding models with causal alignment to biological feature tuning
 abstract: |
   Deep neural networks have become the leading models for predicting neural responses in mid‐to‐higher visual areas of macaques and humans. However, near‐ceiling prediction accuracy can mask whether these models truly capture the neuronal feature tuning or merely exploit spurious correlations. To address this, we leveraged feature accentuation, a technique allowing an encoding model to modify seed images to amplify the features it uses. By synthesizing images predicted to drive a neuron at specified levels, we tested whether encoding models could “control” neural activity across its full dynamic range—an essential criterion for a true “digital twin.”
 
