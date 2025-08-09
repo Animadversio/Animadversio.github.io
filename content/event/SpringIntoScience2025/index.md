@@ -2,15 +2,15 @@
 title: Spring into Science Retreat Talk
 
 event: Spring into Science Retreat
-event_url: 
+event_url: https://kempnerinstitute.harvard.edu/news/kempner-community-springs-into-science/
 
 location: Spring into Science Retreat
 address:
   street: 
-  city: 
-  region: 
+  city: Boston
+  region: MA
   postcode: 
-  country: 
+  country: United States
 
 summary: Analytical Theory of Spectral Bias in Diffusion Sampling and Learning
 abstract: ''
