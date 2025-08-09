@@ -11,6 +11,8 @@ publication_types:
 - paper-conference
 publication: "*The First Workshop on System-2 Reasoning at Scale, NeurIPS'24*"
 
+url_pdf: https://arxiv.org/abs/2411.07873
+
 tags:
   - Diffusion
   - NeuroAI

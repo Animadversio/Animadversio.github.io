@@ -9,6 +9,8 @@ publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2503.03206*'
 
+url_pdf: https://arxiv.org/abs/2503.03206
+
 tags:
   - Diffusion
   - Science of AI

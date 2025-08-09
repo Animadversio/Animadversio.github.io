@@ -17,4 +17,6 @@ publishDate: '2025-08-08T05:00:23.698757Z'
 publication_types:
 - article-journal
 publication: '*ICML 2025 (arXiv:2502.12892)*'
+
+url_pdf: https://arxiv.org/abs/2502.12892
 ---

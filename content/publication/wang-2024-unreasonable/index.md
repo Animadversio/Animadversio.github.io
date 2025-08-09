@@ -10,6 +10,8 @@ publication_types:
 - article-journal
 publication: '*Transactions on Machine Learning Research (arXiv:2412.09726)*'
 
+url_pdf: https://arxiv.org/abs/2412.09726
+
 tags:
   - Diffusion
   - Science of AI

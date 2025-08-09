@@ -10,6 +10,8 @@ publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2303.02490*'
 
+url_pdf: https://arxiv.org/abs/2303.02490
+
 tags:
   - Diffusion
   - Geometry

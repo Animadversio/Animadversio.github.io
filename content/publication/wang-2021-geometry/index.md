@@ -9,6 +9,14 @@ publication_types:
 - paper-conference
 publication: '*International Conference on Learning Representations, 2021*'
 
+url_pdf: https://arxiv.org/abs/2101.06006
+url_code: 'https://github.com/Animadversio/GAN-Geometry'
+url_video: 'https://www.youtube.com/watch?v=IksDG84seng'
+# url_dataset: '#'
+# url_poster: '#'
+# url_project: ''
+# url_slides: ''
+# url_source: '#'
 
 tags:
   - Geometry
