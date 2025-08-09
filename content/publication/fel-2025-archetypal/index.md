@@ -8,7 +8,7 @@ authors:
 - Matthew Kowal
 - Victor Boutin
 - Isabel Papadimitriou
-- Binxu Wang
+- '**Binxu Wang**'
 - Martin Wattenberg
 - Demba Ba
 - Talia Konkle

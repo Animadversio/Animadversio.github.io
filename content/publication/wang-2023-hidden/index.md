@@ -1,7 +1,7 @@
 ---
 title: The hidden linear structure in score-based models and its application
 authors:
-- Binxu Wang
+- '**Binxu Wang**'
 - John J Vastola
 date: '2023-11-01'
 publishDate: '2025-08-08T05:00:23.722837Z'

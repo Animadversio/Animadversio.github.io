@@ -3,7 +3,7 @@ title: Feature accentuation along the encoding axes of IT neurons uncovers hidde
   differences in model-brain alignment
 authors:
 - Jacob S Prince
-- Binxu Wang
+- '**Binxu Wang**'
 - Akshay V Jagadeesh
 - Thomas Fel
 - Emily Lo

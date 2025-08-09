@@ -5,7 +5,7 @@ authors:
 - Chandana Kuntala
 - Carlos R Ponce
 - Deepak Kumar Sharma
-- Binxu Wang
+- '**Binxu Wang**'
 date: '2023-01-01'
 publishDate: '2025-08-08T05:00:23.674831Z'
 publication_types:
