@@ -1,7 +1,7 @@
 ---
 title: On the Level Sets and Invariance of Neural Tuning Landscapes
 authors:
-- '**Binxu Wang**'
+- '<b>Binxu Wang</b>*'
 - Carlos R Ponce
 date: '2022-12-01'
 publishDate: '2025-08-08T05:00:23.651392Z'

@@ -2,7 +2,7 @@
 title: A mechanism for synaptic copy between neural circuits
 authors:
 - Yuxiu Shao†
-- '**Binxu Wang**†'
+- '<b>Binxu Wang</b>*†'
 - Andrew T Sornborger
 - Louis Tao
 date: '2019-01-01'

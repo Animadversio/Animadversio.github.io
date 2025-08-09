@@ -7,7 +7,7 @@ authors:
 - Carl Craver
 - Margaret Livingstone
 - Martin Schrimpf
-- '**Binxu Wang**'
+- '<b>Binxu Wang</b>*'
 date: '2021-01-01'
 publishDate: '2025-08-08T05:00:23.621581Z'
 publication_types:

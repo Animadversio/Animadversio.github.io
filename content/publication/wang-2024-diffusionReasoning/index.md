@@ -1,7 +1,7 @@
 ---
 title: How do diffusion models learn and generalize on abstract rules for reasoning?
 authors:
-- '**Binxu Wang**'
+- '<b>Binxu Wang</b>*'
 - Jiaqi Shang
 - Haim Sompolinsky
 date: 2024-08-01
