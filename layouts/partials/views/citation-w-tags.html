@@ -7,9 +7,16 @@
   {{ if $item.Params.tags }}
   <div class="flex flex-wrap gap-1 mt-2">
     {{ range $item.Params.tags }}
-    <!-- make the tags clickable link to the tag page -->
+      {{ $h := md5 . }}
+      {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+      {{ $hue := mod $byte 360 }}
+      <!-- href part make the tag clickable and link to the tag page -->
+      <!-- style part make the tag unique colorful with md5 of the tag -->
       <a href="{{ (printf "/tags/%s/" (urlize .)) | relURL }}"
-         class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-0.5 rounded-full hover:bg-gray-300">
+         class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium hover:opacity-80"
+         style="background-color: hsl({{ $hue }}, 80%, 90%);
+                color: hsl({{ $hue }}, 40%, 25%);
+                border: 1px solid hsl({{ $hue }}, 55%, 70%);">
         {{ . }}
       </a>
     {{ end }}
