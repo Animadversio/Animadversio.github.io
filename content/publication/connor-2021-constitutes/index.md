@@ -12,4 +12,9 @@ date: '2021-01-01'
 publishDate: '2025-08-08T05:00:23.621581Z'
 publication_types:
 - article-journal
+
+tags:
+- Position
+- Visual Neuroscience
+- Ventral Stream
 ---

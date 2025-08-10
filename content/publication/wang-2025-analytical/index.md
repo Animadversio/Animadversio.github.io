@@ -13,6 +13,8 @@ url_pdf: https://arxiv.org/abs/2503.03206
 
 tags:
   - Diffusion
+  - Learning Dynamics
+  - Theory
   - Science of AI
 
 # Display this page in the Featured widget?

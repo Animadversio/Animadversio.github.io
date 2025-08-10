@@ -19,6 +19,7 @@ url_pdf: https://arxiv.org/abs/2212.13285
 # url_source: '#'
 
 tags:
-  - Visual Neuroscience
   - Geometry
+  - NeuroAI
+  - Visual Neuroscience
 ---

@@ -9,4 +9,5 @@ publishDate: '2025-08-08T05:00:23.728731Z'
 publication_types:
 - paper-conference
 publication: '*Journal of Vision*'
+draft: true
 ---

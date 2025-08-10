@@ -8,4 +8,11 @@ publishDate: '2025-08-08T05:00:23.657293Z'
 publication_types:
 - paper-conference
 publication: '*2022 Conference on Cognitive Computational Neuroscience*'
+
+
+tags:
+- Visual Neuroscience
+- NeuroAI
+- Neuron Modelling
+- Digital Twins
 ---

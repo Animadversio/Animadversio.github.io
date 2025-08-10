@@ -10,9 +10,15 @@ authors:
 - George A Alvarez
 - Margaret S Livingstone
 - Talia Konkle
-date: '2025-01-01'
+date: '2025-05-12'
 publishDate: '2025-08-08T05:00:23.740853Z'
 publication_types:
 - article-journal
 publication: '*Journal of Vision*'
+
+tags:
+- Visual Neuroscience
+- NeuroAI
+- Neuron Modelling
+- Digital Twins
 ---

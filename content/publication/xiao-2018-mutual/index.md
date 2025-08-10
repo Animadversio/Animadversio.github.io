@@ -21,4 +21,5 @@ publication: '*Entropy*'
 
 tags:
   - Computational Neuroscience
+  - Theory
 ---

@@ -12,4 +12,11 @@ publication_types:
 - paper-conference
 publication: '*NeurIPS 2023 UniReps Workshop: the First Workshop on Unifying Representations
   in Neural Models*'
+
+tags:
+  - Learning Dynamics
+  - Computer Vision
+  - NeuroAI
+  - Science of AI
+  - Self-supervised learning
 ---
