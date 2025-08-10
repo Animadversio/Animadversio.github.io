@@ -35,3 +35,5 @@ url_video: 'https://www.youtube.com/watch?v=Z8pdzfLP-vA'
 slides: ""
 
 ---
+
+{{< youtube Z8pdzfLP-vA >}}
