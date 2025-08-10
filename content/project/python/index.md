@@ -4,7 +4,6 @@ summary: Easily learn Python in 10 minutes!
 date: 1993-10-24
 type: docs
 math: false
-hidden: true
 tags:
   - Python
 image:

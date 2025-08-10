@@ -11,7 +11,8 @@ tags:
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 
-draft: true
+toc: true
+draft: false
 ---
 
 Hugo Blox is designed to give technical content creators a seamless experience. You can focus on the content and Hugo Blox handles the rest.

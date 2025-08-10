@@ -17,10 +17,10 @@ image:
 ## Course Information
 
 **Course:** Neuro 120 - Introduction to Computational Neuroscience  
+**Institution:** Harvard
 **Semester:** Fall 2021  
 **Instructor:** Eleanor Batty
 **Teaching Fellow:** Binxu Wang (Kempner Research Fellow)  
-**Platform:** Harvard Canvas
 
 ## Course Description
 

@@ -17,6 +17,7 @@ image:
 ## Course Information
 
 **Course:** Neuro140/240 - Biological and Artificial Intelligence  
+**Institution:** Harvard
 **Semester:** Spring 2023  
 **Teaching fellow:** Binxu Wang (Kempner Research Fellow, Ph.D. in Neuroscience)  
 **Course Website:** [Official Course Website](https://klab.tch.harvard.edu/academia/classes/BAI/bai.html)

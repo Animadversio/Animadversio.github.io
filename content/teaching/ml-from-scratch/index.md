@@ -17,9 +17,10 @@ image:
 ## Series Information
 
 **Program:** Machine Learning from Scratch  
-**Year:** 2021  
-**Organizers:** Johannes Bill, John Vastloa, Binxu Wang
 **Institution:** Harvard Medical School  
+**Year:** 2021  
+**Organizers:** Johannes Bill, John Vastola, Binxu Wang
+
 **Target Audience:** Neuroscience graduate students and postdocs
 
 ## Series Objective
