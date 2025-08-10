@@ -19,7 +19,8 @@ publication_types:
 publication: '*ICML 2025 (arXiv:2502.12892)*'
 
 url_pdf: https://arxiv.org/abs/2502.12892
-url_project: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/archetypal-saes-adaptive-and-stable-dictionary-learning-for-concept-extraction-in-large-vision-models/'
+url_code: https://github.com/KempnerInstitute/overcomplete
+# url_project: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/archetypal-saes-adaptive-and-stable-dictionary-learning-for-concept-extraction-in-large-vision-models/'
 url_blog: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/archetypal-saes-adaptive-and-stable-dictionary-learning-for-concept-extraction-in-large-vision-models/'
 
 tags:

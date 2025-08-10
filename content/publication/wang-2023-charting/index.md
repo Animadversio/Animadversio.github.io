@@ -7,6 +7,9 @@ publishDate: '2025-08-08T05:00:23.669032Z'
 publication_types:
 - thesis
 
+url_pdf: "https://binxuw.scholars.harvard.edu/sites/g/files/omnuum11221/files/dissertationdraft_landscape_geometry_final_final.pdf"
+
+
 tags:
 - Thesis
 - Visual Neuroscience

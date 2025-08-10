@@ -18,6 +18,8 @@ publication_types:
 - article-journal
 publication: '*Neural computation*'
 
+url_pdf: https://direct.mit.edu/neco/article-abstract/31/10/1964/95557/A-Mechanism-for-Synaptic-Copy-Between-Neural
+
 tags:
   - Computational Neuroscience
   - NeuroAI

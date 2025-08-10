@@ -10,6 +10,7 @@ publication_types:
 publication: '*NeurIPS 2022 Workshop on Symmetry and Geometry in Neural Representations*'
 
 url_pdf: https://arxiv.org/abs/2212.13285
+url_code: https://github.com/Animadversio/Tuning-Manifold-Level-Sets
 # url_code: 
 # url_video: 
 # url_dataset: '#'
