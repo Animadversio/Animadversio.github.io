@@ -61,7 +61,7 @@ education:
       Thesis on the Geometry of Neural Tuning Landscape on Generative Image Manifolds. Adviced by [Prof. Carlos R. Ponce](https://ponce.hms.harvard.edu/). 
     button:
       text: 'Read Thesis'
-      url: 'https://example.com'
+      url: "https://binxuw.scholars.harvard.edu/sites/g/files/omnuum11221/files/dissertationdraft_landscape_geometry_final_final.pdf"
   # - area: MEng Artificial Intelligence
   #   institution: Massachusetts Institute of Technology
   #   date_start: 2016-01-01

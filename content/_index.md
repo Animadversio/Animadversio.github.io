@@ -51,6 +51,7 @@ sections:
     id: papers
     content:
       title: Selected works
+      count: 6
       filters:
         folders:
           - publication
