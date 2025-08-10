@@ -33,9 +33,9 @@ sections:
   - block: markdown
     content:
       title: |-
-        My research: 
+        My research: 🧠 → 🖼️  
 
-        🧠 → 🖼️  Generative Models x Visual Neuroscience
+        Generative Models x Visual Neuroscience
       subtitle: ''
       text: |-
         I'm a research fellow at Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University, 
@@ -69,6 +69,7 @@ sections:
         exclude_featured: false
     design:
       # view: citation
+      # view: citation-w-tags
       view: citation-w-tags-imgs
   - block: collection
     id: talks
@@ -78,7 +79,7 @@ sections:
         folders:
           - event
     design:
-      view: article-grid
+      view: article-grid-imgs
       columns: 1
   # - block: collection
   #   id: news
