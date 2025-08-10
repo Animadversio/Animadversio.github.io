@@ -7,6 +7,7 @@
   {{ if $item.Params.tags }}
   <div class="flex flex-wrap gap-1 mt-2">
     {{ range $item.Params.tags }}
+    <!-- make the tags clickable link to the tag page -->
       <a href="{{ (printf "/tags/%s/" (urlize .)) | relURL }}"
          class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-0.5 rounded-full hover:bg-gray-300">
         {{ . }}
