@@ -9,7 +9,7 @@ publishDate: '2025-08-08T05:00:23.734857Z'
 publication_types:
 - paper-conference
 publication: '*Journal of Vision*'
-
+draft: true
 
 tags:
 - Visual Neuroscience

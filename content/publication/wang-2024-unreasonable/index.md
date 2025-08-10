@@ -12,6 +12,7 @@ publication: '*Transactions on Machine Learning Research (arXiv:2412.09726)*'
 
 url_pdf: https://arxiv.org/abs/2412.09726
 url_project: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/the-hidden-linear-structure-in-diffusion-models-and-its-application-in-analytical-teleportation/'
+url_blog: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/the-hidden-linear-structure-in-diffusion-models-and-its-application-in-analytical-teleportation/'
 
 tags:
   - Diffusion
