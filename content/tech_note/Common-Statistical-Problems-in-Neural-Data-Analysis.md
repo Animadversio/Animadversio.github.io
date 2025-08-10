@@ -2,7 +2,7 @@
 layout: post
 title: Common Statistical Problems in Neural Data Analysis (Updating)
 author: Binxu Wang
-date: July 1st, 2019
+date: 2019-07-01
 use_math: true
 comments: true
 categories: [Neuroscience, machine learning]

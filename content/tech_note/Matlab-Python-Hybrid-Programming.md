@@ -4,7 +4,7 @@ title: Hybrid Programming Matlab and Python
 author: Binxu Wang
 use_math: true
 comments: true
-date: May. 15th, 2020
+date: 2020-05-15
 categories: [coding]
 tags: [python, matlab, data, machine learning]
 
@@ -61,7 +61,8 @@ conda install pytorch=1.3.1 torchvision cudatoolkit=10.1 -c pytorch
 
 I feel there is less case for this but it's doable. If you really need it, check this out! 
 
-[Python与Matlab混合编程]([http://zhaoxuhui.top/blog/2017/12/14/Python%E4%B8%8EMatlab%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B.html](http://zhaoxuhui.top/blog/2017/12/14/Python与Matlab混合编程.html)) 
+[Python与Matlab混合编程](http://zhaoxuhui.top/blog/2017/12/14/Python与Matlab混合编程.html) 
+<!-- [http://zhaoxuhui.top/blog/2017/12/14/Python%E4%B8%8EMatlab%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B.html] -->
 
 ```python
 import matlab.engine

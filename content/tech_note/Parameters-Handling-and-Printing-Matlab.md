@@ -4,7 +4,7 @@ title: Handling and Printing Parameters in matlab
 author: Binxu Wang
 use_math: true
 comments: true
-date: Mar. 3rd, 2020
+date: 2020-03-03
 categories: [coding]
 tags: [matlab, coding]
 ---

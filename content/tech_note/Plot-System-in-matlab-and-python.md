@@ -4,7 +4,7 @@ title: Note on Matlab and Python (matplotlib) Plotting system
 author: Binxu Wang
 use_math: true
 comments: true
-date: Jan. 20th, 2020
+date: 2020-01-20
 categories: [coding]
 tags: [matlab, python, coding, Visualization]
 ---

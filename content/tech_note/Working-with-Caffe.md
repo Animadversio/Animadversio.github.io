@@ -2,7 +2,7 @@
 layout: post
 title: Working with Caffe
 author: Binxu Wang
-date: Oct 27th, 2019
+date: 2019-10-27
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, Machine Learning, Computer Vision]

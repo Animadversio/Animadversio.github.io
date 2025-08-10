@@ -2,7 +2,7 @@
 layout: post
 title: Publishing and Using Pretrained model through `Torch.hub`
 author: Binxu Wang
-date: June 3rd, 2020
+date: 2020-06-03
 comments: true
 use_math: true
 categories: [machine learning, coding]

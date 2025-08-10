@@ -6,7 +6,7 @@ title: How to translate matlab code into python (numpy)
 author: Binxu Wang
 use_math: true
 comments: true
-date: Sept. 10th, 2018
+date: 2018-09-10
 categories: [coding]
 tags: [matlab, python, coding]
 ---

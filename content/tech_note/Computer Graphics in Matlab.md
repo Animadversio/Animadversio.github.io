@@ -2,7 +2,7 @@
 layout: post
 title: Computer Graphics Environment in Matlab
 author: Binxu Wang
-date: Nov 14th, 2019
+date: 2019-11-14
 comments: true
 categories: [coding]
 tags: [tech note, Computer Vision, matlab, Computer Graphics]

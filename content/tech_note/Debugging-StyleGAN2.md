@@ -2,7 +2,7 @@
 layout: post
 title: Debugging StyleGAN2 in PyTorch
 author: Binxu Wang
-date: June 10th, 2020 (Updates Sep 15th)
+date: 2020-06-10
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, Machine Learning, Computer Vision, debug]

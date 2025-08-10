@@ -2,7 +2,7 @@
 layout: post
 title: Math Intensive Github Blog Construction
 author: Binxu Wang
-date: Sept 10th, 2018
+date: 2018-09-10
 comments: true
 categories: [coding]
 tags: [tech note, jekyll, blog construction]

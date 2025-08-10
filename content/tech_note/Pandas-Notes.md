@@ -4,7 +4,7 @@ title: Note on Pandas
 author: Binxu Wang
 use_math: true
 comments: true
-date: Dec. 10th, 2019
+date: 2019-12-10
 categories: [coding]
 tags: [python, coding]
 ---

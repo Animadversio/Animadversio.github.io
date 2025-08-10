@@ -2,7 +2,7 @@
 layout: post
 title: Scene Programming in MonkeyLogic2
 author: Binxu Wang
-date: Oct.13th,2020
+date: 2020-10-13
 comments: true
 categories: [coding]
 tags: [tech note, debug, monkeylogic]

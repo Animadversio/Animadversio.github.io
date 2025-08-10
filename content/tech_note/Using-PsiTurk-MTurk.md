@@ -2,7 +2,7 @@
 layout: post
 title: MTurk 101
 author: Binxu Wang
-date: Nov. 21st, 2020
+date: 2020-11-21
 comments: true
 categories: [coding]
 tags: [tech note, Neuroscience, psychology, behavior, web, psychophysics]

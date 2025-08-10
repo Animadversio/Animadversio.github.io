@@ -2,7 +2,7 @@
 layout: post
 title: Linux Working Environment Build Up (Updating)
 author: Binxu Wang
-date: July 25th, 2019
+date: 2019-07-25
 comments: true
 categories: [machine learning]
 tags: [tech note, coding, Linux, environment, Computation, Machine Learning]

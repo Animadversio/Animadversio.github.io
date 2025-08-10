@@ -2,7 +2,7 @@
 layout: post
 title: Using Google Cloud Service for Large Scale Image Labelling
 author: Binxu Wang
-date: Sept 11th, 2019
+date: 2019-09-11
 comments: true
 categories: [machine learning]
 tags: [tech note, Image Analysis, Machine Learning, Computer Vision]

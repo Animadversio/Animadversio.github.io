@@ -2,7 +2,7 @@
 layout: post
 title: DeepLabCut Trouble Shooting
 author: Binxu Wang
-date: July.2nd, 2019
+date: 2019-07-02
 comments: true
 categories: [Neuroscience, machine learning]
 tags: [tech note, Image Analysis, Machine Learning, Behavior]

@@ -2,7 +2,7 @@
 layout: post
 title: How to Parse Anatomical/Physiological Terms in Latin/Greek
 author: Binxu Wang
-date: Sept 7th, 2019
+date: 2019-09-07
 comments: true
 categories: [Neuroscience, misc]
 tags: [tech note, language, Anatomy, Latin, neuroscience]

@@ -4,7 +4,7 @@ title: Show Animation in PDF Through Latex
 author: Binxu Wang
 use_math: true
 comments: true
-date: Apr. 26rd, 2020
+date: 2020-04-26
 categories: [coding, misc]
 tags: [latex, presentation]
 ---

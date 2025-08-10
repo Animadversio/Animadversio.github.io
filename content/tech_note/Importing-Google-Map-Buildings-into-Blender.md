@@ -4,7 +4,7 @@ title: Importing Geometry from Google Map to Blender
 author: Binxu Wang
 use_math: false
 comments: true
-date: Apr. 29th, 2020
+date: 2020-04-29
 categories: [coding,misc]
 tags: [computer graphics, graphics, blender, python, 3d models]
 ---

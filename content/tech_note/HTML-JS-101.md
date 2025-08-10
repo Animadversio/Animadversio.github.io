@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript + HTML Programming 101 (Updating)
 author: Binxu Wang
-date: Nov 21st, 2020
+date: 2020-11-21
 comments: true
 use_math: true
 categories: [coding]

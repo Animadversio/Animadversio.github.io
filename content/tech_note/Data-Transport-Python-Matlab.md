@@ -4,7 +4,7 @@ title: Transporting Data Between Matlab, Python
 author: Binxu Wang
 use_math: true
 comments: true
-date: Apr. 26rd, 2020
+date: 2020-04-26
 categories: [coding]
 tags: [python, matlab, data]
 ---

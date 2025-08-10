@@ -2,7 +2,7 @@
 layout: post
 title: Compiling C Extensions for PyTorch
 author: Binxu Wang
-date: Sep 15th, 2020
+date: 2020-09-15
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, Machine Learning, Computer Vision, debug]

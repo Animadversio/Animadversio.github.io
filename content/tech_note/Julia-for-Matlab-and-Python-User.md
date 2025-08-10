@@ -4,7 +4,7 @@ title: Julia for Matlab and Python Users (Updating)
 author: Binxu Wang
 use_math: true
 comments: true
-date: Oct. 15th, 2021
+date: 2021-10-15
 categories: [coding]
 tags: [julia, python, matlab, programming languages]
 ---

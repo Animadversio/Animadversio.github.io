@@ -2,7 +2,7 @@
 layout: post
 title: Windows Working Environment Build Up (Updating)
 author: Binxu Wang
-date: Dec 19th, 2019
+date: 2019-12-19
 comments: true
 categories: [machine learning, coding]
 tags: [tech note, coding, Windows, environment, Computation, Machine Learning]

@@ -2,10 +2,11 @@
 layout: post
 title: Direct Gradient Flow in a CNN
 author: Binxu Wang
-date: July 1st, 2019
+date: 2019-07-01
 use_math: true
 comments: true
-published: false
+# published: false
+draft: true
 categories: [machine learning]
 tags: [tech note, Machine Learning,  coding]
 

@@ -2,7 +2,7 @@
 layout: post
 title: Resources for Zebrafish Study
 author: Binxu Wang
-date: Apr 18th, 2019
+date: 2019-04-18
 comments: true
 categories: [neuroscience]
 tags: [tech note, atlas, zebrafish, Connectomics]

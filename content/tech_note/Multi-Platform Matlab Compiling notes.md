@@ -2,7 +2,7 @@
 layout: post
 title: Multi-platform Matlab compiling 
 author: Binxu Wang
-date: Nov 3rd, 2019
+date: 2019-11-03
 comments: true
 categories: [coding]
 tags: [tech note, matlab, compilation, multi-platform, C]

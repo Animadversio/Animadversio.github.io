@@ -4,7 +4,7 @@ title: Procedurally Generating Slides from Script
 author: Binxu Wang
 use_math: true
 comments: true
-date: Apr. 3rd, 2020
+date: 2020-04-03
 categories: [coding, misc]
 tags: [python, coding, presentation, javascript]
 ---

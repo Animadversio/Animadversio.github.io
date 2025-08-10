@@ -2,7 +2,7 @@
 layout: post
 title: Note on Automatic 3D Instance Segmentation Pipeline 
 author: Binxu Wang
-date: Dec 9th, 2018
+date: 2018-12-09
 comments: true
 use_math: true
 categories: [Neuroscience, machine learning]
