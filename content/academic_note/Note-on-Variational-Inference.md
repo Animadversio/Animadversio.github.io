@@ -2,10 +2,12 @@
 layout: post
 title: Note on Variational Inference (Updating)
 author: Binxu Wang
-date: July 27th, 2020
+date: 2020-07-27
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Graph Model, Bayesian, Variational, Probabilistic Programming]
 

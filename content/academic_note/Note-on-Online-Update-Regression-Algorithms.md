@@ -2,9 +2,10 @@
 layout: post
 title: Note on Online Linear Regression Algorithm
 author: Binxu Wang
-date: Dec 15th, 2019
+date: 2019-12-15
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, Numerical Method]
 ---

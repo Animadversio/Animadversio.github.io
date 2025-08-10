@@ -4,7 +4,8 @@ title: JavaScript + HTML Programming 101 (Updating)
 author: Binxu Wang
 date: 2020-11-21
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [coding]
 tags: [tech note, coding, GUI, web, psychophysics]
 ---

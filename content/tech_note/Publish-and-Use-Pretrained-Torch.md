@@ -4,7 +4,8 @@ title: Publishing and Using Pretrained model through `Torch.hub`
 author: Binxu Wang
 date: 2020-06-03
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning, coding]
 tags: [machine learning, reproducibility, productivity]
 typora-copy-images-to: ../assets/img/notes/cv/

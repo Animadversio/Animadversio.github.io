@@ -2,10 +2,12 @@
 layout: post
 title: Stochastic Lancosz Quadrature
 author: Binxu Wang
-date: Jan 9th, 2020
-use_math: true
+date: 2020-01-09
+# use_math: true
+math: true
 comments: true
-published: false
+# published: false
+draft: true
 categories: [mathematics, algorithm]
 tags: [tech note, Linear Algebra, Math, Numerical Algebra, Numerical Analysis, Monte Carlo, Algorithm, Matrix Computation]
 ---

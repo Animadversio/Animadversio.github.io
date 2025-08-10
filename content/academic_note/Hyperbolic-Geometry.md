@@ -2,8 +2,9 @@
 layout: post
 title: Computations on Hyperbolic Geometry
 author: Binxu Wang
-date: Apr 10th, 2020
-use_math: true
+date: 2020-04-10
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [tech note, Math, Geometry, Hyperbolic, Art]

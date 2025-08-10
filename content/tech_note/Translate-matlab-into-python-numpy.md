@@ -4,7 +4,8 @@ title: How to translate matlab code into python (numpy)
 # img: "assets/img/portfolio/WormHoleVisualize2.png"
 # feature-img: "assets/img/pexels/Skysphere_Aitoff.jpg"
 author: Binxu Wang
-use_math: true
+# use_math: true
+math: true
 comments: true
 date: 2018-09-10
 categories: [coding]

@@ -2,7 +2,7 @@
 layout: post
 title: Note on Network Commnunication
 author: Binxu Wang
-date: July 30th, 2019
+date: 2019-07-30
 comments: true
 categories: [computer science]
 tags: [academic note, computer network, computer science]

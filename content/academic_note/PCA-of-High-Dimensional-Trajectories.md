@@ -2,8 +2,9 @@
 layout: post
 title: PCA of High Dimensional Trajectory
 author: Binxu Wang
-date: Jan 22nd, 2022
-use_math: true
+date: 2022-01-22
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [Unsupervised Learning, PCA, Geometry, high dimensional, random process, Linear Algebra]

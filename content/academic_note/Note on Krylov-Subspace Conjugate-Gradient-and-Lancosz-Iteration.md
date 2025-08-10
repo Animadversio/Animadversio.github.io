@@ -2,8 +2,9 @@
 layout: post
 title: Krylov Subspace, Conjugate Gradient and Lancosz Iteration
 author: Binxu Wang
-date: Jan 1st, 2020
-use_math: true
+date: 2020-01-01
+# use_math: true
+math: true
 comments: true
 categories: [mathematics, algorithm]
 tags: [tech note, Linear Algebra, Math, Numerical Algebra, Algorithm, Optimization]

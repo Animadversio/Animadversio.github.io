@@ -2,9 +2,10 @@
 layout: post
 title: Note on Computation by Synaptic Plasticity
 author: Binxu Wang
-date: June 24th, 2019
+date: 2019-06-24
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [neuroscience]
 tags: [academic note, Neuroscience, Computation]
 ---

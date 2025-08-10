@@ -2,9 +2,10 @@
 layout: post
 title: Note on Classic CNNs
 author: Binxu Wang
-date: Jan 17th, 2021
+date: 2021-01-17
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning]
 tags: [academic note, CNN, computer vision, machine learning, deep learning, classics]
 typora-copy-images-to: ../assets/img/notes/GAN/

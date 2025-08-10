@@ -2,9 +2,10 @@
 layout: post
 title: Note on Optimization on Manifold
 author: Binxu Wang
-date: Sept. 29th, 2019
+date: 2019-09-29
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Differential Geometry, Optimization]
 ---

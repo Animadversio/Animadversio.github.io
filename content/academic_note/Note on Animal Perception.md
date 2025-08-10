@@ -2,7 +2,7 @@
 layout: post
 title: Note on Animal Perception
 author: Binxu Wang
-date: Sept 12th, 2019
+date: 2019-09-12
 comments: true
 categories: [neuroscience]
 tags: [academic note, Behavior, Neuroscience, Evolution, Cognition]

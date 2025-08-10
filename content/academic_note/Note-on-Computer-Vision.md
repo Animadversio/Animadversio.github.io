@@ -2,9 +2,10 @@
 layout: post
 title: Note on Computer Vision
 author: Binxu Wang
-date: September 10th, 2019
+date: 2019-09-10
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science,courses]
 tags: [academic note, computer vision, computer science, imaging, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv/

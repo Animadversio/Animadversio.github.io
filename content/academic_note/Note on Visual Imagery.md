@@ -2,7 +2,7 @@
 layout: post
 title: Note on Visual Imagery
 author: Binxu Wang
-date: Nov. 5th, 2019
+date: 2019-11-05
 comments: true
 categories: [neuroscience]
 tags: [academic note, Neuroscience,Vision, Imagery, Visual Neuroscience, Consciousness]

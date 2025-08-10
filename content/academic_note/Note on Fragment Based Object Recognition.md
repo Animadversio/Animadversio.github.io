@@ -2,9 +2,10 @@
 layout: post
 title: Note on Fragment Based Object Recognition
 author: Binxu Wang
-date: Sept 25th, 2019
+date: 2019-09-25
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [neuroscience]
 tags: [academic note, Visual Neuroscience,Computation, Object Recognition, Computer Vision]
 ---

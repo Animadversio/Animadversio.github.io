@@ -2,9 +2,10 @@
 layout: post
 title: Note on Image Prior-Markov Random Field Modelling
 author: Binxu Wang
-date: Jan 28th, 2020
+date: 2020-01-28
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv2

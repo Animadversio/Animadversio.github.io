@@ -2,9 +2,10 @@
 layout: post
 title: Note on Deep Reinforcement Learning
 author: Binxu Wang
-date: Mar 18th, 2020
+date: 2020-03-20
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning]
 tags: [academic note, reinforcment learning, machine learning, deep learning]
 typora-copy-images-to: ../assets/img/notes/RL/

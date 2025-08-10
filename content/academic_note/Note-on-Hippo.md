@@ -2,10 +2,12 @@
 layout: post
 title: Note on Hippo- Recurrent Memory with Optimal Polynomial Projection
 author: Binxu Wang
-date: July  25th, 2022 
+date: 2022-07-25 
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm, machine learning]
 tags: [tech note, Algorithm, RNN, Recurrent, Memory, linear algebra, Dynamic System, Sequence Model]
 ---

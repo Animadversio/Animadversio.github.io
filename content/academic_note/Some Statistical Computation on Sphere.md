@@ -2,8 +2,9 @@
 layout: post
 title: Some Computation on Sphere 
 author: Binxu Wang
-date: Oct 13th, 2019 (updated Dec.1st 2020)
-use_math: true
+date: 2019-10-13
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [tech note, Statistics, Math, Geometry]

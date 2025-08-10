@@ -2,9 +2,10 @@
 layout: post
 title: Brief Note on Online Correlation Computation
 author: Binxu Wang
-date: May 22th, 2020
+date: 2020-05-22
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Statistics]
 

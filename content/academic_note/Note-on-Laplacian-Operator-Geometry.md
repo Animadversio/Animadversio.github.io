@@ -2,8 +2,9 @@
 layout: post
 title: Note on Laplacian Operator (Diffusion) in Geometry Processing
 author: Binxu Wang
-date: May 8th, 2020
-use_math: true
+date: 2020-05-08
+# use_math: true
+math: true
 comments: true
 categories: [mathematics, algorithm]
 tags: [tech note, Math, Linear Algebra, computer vision, Graphics, computer graphics, Geometry]

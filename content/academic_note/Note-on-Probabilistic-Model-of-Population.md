@@ -2,8 +2,9 @@
 layout: post
 title: Probabilistic Models of Neural Population
 author: Binxu Wang
-date: Apr 16th, 2022
-use_math: true
+date: 2022-04-16
+# use_math: true
+math: true
 comments: true
 categories: [algorithm, mathematics, neuroscience]
 tags: [statistics, EM, neuro-model, Bayesian, Statistical Learning]

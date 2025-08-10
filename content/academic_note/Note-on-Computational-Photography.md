@@ -2,9 +2,10 @@
 layout: post
 title: Note on Computational Photography
 author: Binxu Wang
-date: Feb 27th, 2020
+date: 2020-02-27
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning, computer graphics]
 typora-copy-images-to: ../assets/img/notes/cv2

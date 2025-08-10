@@ -2,9 +2,10 @@
 layout: post
 title: Note on Advanced Computer Vision
 author: Binxu Wang
-date: Jan 20th, 2020
+date: 2020-01-20
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science,courses]
 tags: [academic note, computer vision, computer science, imaging, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv2/

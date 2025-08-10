@@ -2,10 +2,12 @@
 layout: post
 title: Note on Equivalent Score Matching Objective
 author: Binxu Wang
-date: June 20th, 2022 
+date: 2022-06-20 
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Generative Model, probability]
 ---

@@ -2,8 +2,9 @@
 layout: post
 title: Note on Feedback Stablization
 author: Binxu Wang
-date: May 10th, 2021
-use_math: true
+date: 2021-05-10
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [Math, Geometry, Dynamic System, Control Theory]

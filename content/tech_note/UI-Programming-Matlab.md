@@ -2,7 +2,8 @@
 layout: post
 title: GUI programming in Matlab
 author: Binxu Wang
-use_math: true
+# use_math: true
+math: true
 comments: true
 date: 2020-05-16
 categories: [coding]

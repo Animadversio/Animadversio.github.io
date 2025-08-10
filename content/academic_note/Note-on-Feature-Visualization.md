@@ -2,9 +2,10 @@
 layout: post
 title: Note on Feature Visualization (Updating)
 author: Binxu Wang
-date: September 17th, 2019
+date: 2019-09-17
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning]
 tags: [academic note, computer vision, machine learning, optimization]
 typora-copy-images-to: ../assets/img/notes/cv/

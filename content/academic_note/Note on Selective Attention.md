@@ -2,7 +2,7 @@
 layout: post
 title: Note on Selective Attention
 author: Binxu Wang
-date: June 24th, 2019
+date: 2019-06-24
 comments: true
 categories: [neuroscience]
 tags: [academic note, Visual Neuroscience,Consciousness]

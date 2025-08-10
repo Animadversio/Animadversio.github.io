@@ -2,9 +2,10 @@
 layout: post
 title: Note on Algorithm for Non-Negative Matrix Factorization
 author: Binxu Wang
-date: June 25th, 2019 (updated May 22, 2020)
+date: 2019-06-25
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, Numerical Method]
 

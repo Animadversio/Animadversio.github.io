@@ -2,7 +2,7 @@
 layout: post
 title: Note on Forms of Memory
 author: Binxu Wang
-date: Oct. 1st, 2019
+date: 2019-10-01
 comments: true
 categories: [neuroscience]
 tags: [academic note, Neuroscience,Memory,Cognition]

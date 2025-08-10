@@ -2,10 +2,12 @@
 layout: post
 title: Analytical Techniques for Finding Spectrum of Tridiagonal Toeplitz Matrix 
 author: Binxu Wang
-date: Feb 4th, 2022
-use_math: true
+date: 2022-02-04
+# use_math: true
+math: true
 comments: true
-published: true
+# published: true
+draft: false
 categories: [mathematics]
 tags: [Linear Algebra, Eigenvalue problem, Recursion]
 typora-copy-images-to: ..\assets\img\notes\PCA_highdimen

@@ -2,9 +2,10 @@
 layout: post
 title: Note on Generative Adversarial Network
 author: Binxu Wang
-date: Mar 7th, 2020
+date: 2020-03-07
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning]
 tags: [academic note, generative model, computer vision, computer graphics, machine learning, deep learning]
 typora-copy-images-to: ../assets/img/notes/GAN/

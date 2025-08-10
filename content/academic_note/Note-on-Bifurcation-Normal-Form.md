@@ -2,8 +2,9 @@
 layout: post
 title: Note on Bifurcation Normal Form
 author: Binxu Wang
-date: May 9th, 2021
-use_math: true
+date: 2021-05-09
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [Math, Geometry, Dynamic System]

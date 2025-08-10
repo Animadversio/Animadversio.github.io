@@ -2,8 +2,9 @@
 layout: post
 title: Note on Invariance and Stable Manifold 
 author: Binxu Wang
-date: Apr 9th, 2021
-use_math: true
+date: 2021-04-09
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [Math, Geometry, Dynamic System]

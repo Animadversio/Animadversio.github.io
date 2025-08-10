@@ -2,9 +2,10 @@
 layout: post
 title: Note on ShapeCollage and Patch Based Shape Interpretation
 author: Binxu Wang
-date: Nov. 2nd, 2019
+date: 2019-11-02
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning, visual neuroscience]
 typora-copy-images-to: ../assets/img/notes/cv/

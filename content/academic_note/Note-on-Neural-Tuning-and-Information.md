@@ -2,7 +2,7 @@
 layout: post
 title: Note on Neural Tuning and Information
 author: Binxu Wang
-date: Aug. 24th, 2020
+date: 2020-08-24
 comments: true
 categories: [neuroscience]
 tags: [academic note, Neuroscience, Statistics, Neural Tuning, Sensory Neuroscience, Information Theory]

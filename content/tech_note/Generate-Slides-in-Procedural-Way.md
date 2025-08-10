@@ -2,7 +2,8 @@
 layout: post
 title: Procedurally Generating Slides from Script
 author: Binxu Wang
-use_math: true
+# use_math: true
+math: true
 comments: true
 date: 2020-04-03
 categories: [coding, misc]

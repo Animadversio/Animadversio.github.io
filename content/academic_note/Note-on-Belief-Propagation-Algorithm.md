@@ -2,10 +2,12 @@
 layout: post
 title: Note on Belief Propagation Algorithm (Updating)
 author: Binxu Wang
-date: May 18th, 2019
+date: 2019-05-18
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Graph Model]
 ---

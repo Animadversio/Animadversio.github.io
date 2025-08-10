@@ -2,9 +2,10 @@
 layout: post
 title: Note on Local Feature Descriptors
 author: Binxu Wang
-date: Nov. 4th, 2019
+date: 2019-11-04
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning]
 typora-copy-images-to: ../assets/img/notes/cv/

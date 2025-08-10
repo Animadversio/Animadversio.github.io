@@ -2,8 +2,9 @@
 layout: post
 title: Note on Modern Hopfield Network and Transformers
 author: Binxu Wang
-date: Nov 15th, 2021
-use_math: true
+date: 2021-11-15
+# use_math: true
+math: true
 comments: true
 categories: [algorithm, machine learning]
 tags: [tech note, Unsupervised Learning, Statistical Learning, ML, Representation Learning, RNN, Transformers]

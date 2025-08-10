@@ -2,7 +2,7 @@
 layout: post
 title: Note on Behavioral Study
 author: Binxu Wang
-date: Aug 28th, 2019
+date: 2019-08-28
 comments: true
 categories: [neuroscience]
 tags: [academic note, Behavior, Neuroscience, Evolution, Cognition]

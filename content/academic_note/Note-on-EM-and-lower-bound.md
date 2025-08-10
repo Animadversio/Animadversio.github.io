@@ -2,8 +2,9 @@
 layout: post
 title: Note on EM algorithm and likelihood lower bound
 author: Binxu Wang
-date: May 13th, 2022
-use_math: true
+date: 2022-05-13
+# use_math: true
+math: true
 comments: true
 categories: [algorithm, machine learning]
 tags: [tech note, Bayesian, Statistical Learning, MLE]

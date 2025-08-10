@@ -2,9 +2,10 @@
 layout: post
 title: Note on Hessian Aware Zeroth Order Optimization Framework
 author: Binxu Wang
-date: Jan. 21th, 2020
+date: 2020-01-21
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Optimization, Adversarial Example]
 ---

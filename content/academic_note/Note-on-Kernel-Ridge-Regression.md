@@ -2,9 +2,10 @@
 layout: post
 title: Note on Kernel Ridge Regression
 author: Binxu Wang
-date: Dec 17th, 2021 
+date: 2021-12-17 
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, kernel method]
 

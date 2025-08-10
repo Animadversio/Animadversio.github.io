@@ -2,7 +2,8 @@
 layout: post
 title: Note on Pandas
 author: Binxu Wang
-use_math: true
+# use_math: true
+math: true
 comments: true
 date: 2019-12-10
 categories: [coding]

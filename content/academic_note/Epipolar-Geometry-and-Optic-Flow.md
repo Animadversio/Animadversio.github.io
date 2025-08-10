@@ -2,9 +2,10 @@
 layout: post
 title: Note on Epipolar Geometry and Optic Slow
 author: Binxu Wang
-date: Feb 17th, 2020
+date: 2020-02-17
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [computer science, mathematics]
 tags: [academic note, computer vision, Math, Geometry, Perception, Vision]
 typora-copy-images-to: ../assets/img/notes/cv2

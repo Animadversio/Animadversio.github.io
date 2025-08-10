@@ -2,9 +2,10 @@
 layout: post
 title: Note on MinMax Game
 author: Binxu Wang
-date: May 18th, 2020 (updated Oct.13th)
+date: 2020-05-18
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning, algorithm, computer science]
 tags: [academic note, reinforcment learning, machine learning, AI, deep learning]
 typora-copy-images-to: ../assets/img/notes/RL/

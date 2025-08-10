@@ -2,8 +2,9 @@
 layout: post
 title: Spectral Graph Theory and Segmentation
 author: Binxu Wang
-date: Apr 22th, 2020
-use_math: true
+date: 2020-04-22
+# use_math: true
+math: true
 comments: true
 categories: [mathematics, algorithm]
 tags: [tech note, Math, Linear Algebra, computer vision, segmentation, graph theory]

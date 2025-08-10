@@ -2,7 +2,7 @@
 layout: post
 title: Comparison of Major Deep Learning Frameworks (Updating)
 author: Binxu Wang
-date: Dec 18th, 2019
+date: 2019-12-18
 comments: true
 categories: [machine learning]
 tags: [tech note, Machine Learning, Deep Learning, Computation]

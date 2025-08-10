@@ -2,8 +2,9 @@
 layout: post
 title: Note on Gaussian Process
 author: Binxu Wang
-date: July 1st, 2020
-use_math: true
+date: 2020-07-01
+# use_math: true
+math: true
 comments: true
 categories: [mathematics, algorithm, machine learning]
 tags: [tech note, Math, Statistics, Statistical Learning, ML]

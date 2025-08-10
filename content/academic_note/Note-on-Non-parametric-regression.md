@@ -2,8 +2,9 @@
 layout: post
 title: Note on Non-Parametric Regression
 author: Binxu Wang
-date: Oct 13th, 2020 (Updated Dec 17th, 2021)
-use_math: true
+date: 2020-10-13
+# use_math: true
+math: true
 comments: true
 categories: [mathematics, algorithm, machine learning]
 tags: [tech note, Math, Statistics, Statistical Learning, ML]

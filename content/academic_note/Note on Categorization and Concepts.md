@@ -2,7 +2,7 @@
 layout: post
 title: Note on Categorization and Concepts
 author: Binxu Wang
-date: Oct 24th, 2019
+date: 2019-10-24
 comments: true
 categories: [neuroscience]
 tags: [academic note, Behavior, Neuroscience, Evolution, Cognition,Concepts]

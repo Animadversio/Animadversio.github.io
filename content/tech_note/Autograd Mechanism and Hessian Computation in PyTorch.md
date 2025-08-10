@@ -4,7 +4,8 @@ title: Autograd Mechanism and Hessian Computation in PyTorch
 author: Binxu Wang
 date: 2019-12-09
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning, algorithm]
 tags: [tech note, Machine Learning, Algorithm, Linear Algebra]
 ---

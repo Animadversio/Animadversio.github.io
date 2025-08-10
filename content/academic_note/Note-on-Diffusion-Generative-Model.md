@@ -2,10 +2,12 @@
 layout: post
 title: Note on Diffusion Generative Models
 author: Binxu Wang
-date: May 9th, 2022 
+date: 2022-05-09 
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Generative Model]
 ---

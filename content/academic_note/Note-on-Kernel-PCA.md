@@ -2,9 +2,10 @@
 layout: post
 title: Note on Kernel PCA
 author: Binxu Wang
-date: Mar 21st, 2022 
+date: 2022-03-21 
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Math, Linear Algebra, kernel method]
 

@@ -2,7 +2,8 @@
 layout: post
 title: Julia for Matlab and Python Users (Updating)
 author: Binxu Wang
-use_math: true
+# use_math: true
+math: true
 comments: true
 date: 2021-10-15
 categories: [coding]

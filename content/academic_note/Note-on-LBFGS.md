@@ -2,10 +2,12 @@
 layout: post
 title: LBFGS Algorithm
 author: Binxu Wang
-date: Nov 11th, 2019
+date: 2019-11-11
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Optimization]
 

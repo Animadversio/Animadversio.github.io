@@ -2,9 +2,10 @@
 layout: post
 title: Constrained CMA-ES Algorithm
 author: Binxu Wang
-date: June 20th, 2019
+date: 2019-06-20
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [algorithm]
 tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Optimization]
 ---

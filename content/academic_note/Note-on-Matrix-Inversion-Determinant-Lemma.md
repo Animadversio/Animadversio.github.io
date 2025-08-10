@@ -2,8 +2,9 @@
 layout: post
 title: Some Famous Matrix Determinant and Inversion Identities
 author: Binxu Wang
-date: Apr 16th, 2022
-use_math: true
+date: 2022-04-16
+# use_math: true
+math: true
 comments: true
 categories: [mathematics]
 tags: [Linear Algebra]

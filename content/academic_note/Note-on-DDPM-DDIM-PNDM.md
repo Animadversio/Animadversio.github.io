@@ -2,10 +2,12 @@
 layout: post
 title: Note on Variants of Diffusion Scheduler, DDPM DDIM PNDM
 author: Binxu Wang
-date: Jan. 16th, 2023
+date: 2023-01-16
 comments: true
-use_math: true
-published: true
+# use_math: true
+math: true
+# published: true
+draft: false
 categories: [algorithm, machine learning]
 tags: [tech note, Algorithm, ODE, SDE, Dynamic System, Generative Model, Diffusion model]
 ---

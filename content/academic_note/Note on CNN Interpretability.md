@@ -2,9 +2,10 @@
 layout: post
 title: Note on CNN Interpretability
 author: Binxu Wang
-date: Oct 4th, 2019
+date: 2019-10-04
 comments: true
-use_math: true
+# use_math: true
+math: true
 categories: [machine learning]
 tags: [academic note, computer vision, machine learning, interpretability]
 typora-copy-images-to: ../assets/img/notes/cv/
