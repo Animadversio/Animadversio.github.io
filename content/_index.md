@@ -32,7 +32,10 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '🧠 → 🖼️  Generative Models x Visual Neuroscience'
+      title: |-
+        My research: 
+        
+        🧠 → 🖼️  Generative Models x Visual Neuroscience
       subtitle: ''
       text: |-
         I'm a research fellow at Kempner Institute for the Study of Natural and Artificial Intelligence at Harvard University, 
