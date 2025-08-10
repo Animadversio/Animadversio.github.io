@@ -34,7 +34,7 @@ sections:
     content:
       title: |-
         My research: 
-        
+
         🧠 → 🖼️  Generative Models x Visual Neuroscience
       subtitle: ''
       text: |-
@@ -67,7 +67,8 @@ sections:
           - publication
         exclude_featured: false
     design:
-      view: citation
+      # view: citation
+      view: citation-w-tags
   - block: collection
     id: talks
     content:
