@@ -3,6 +3,7 @@
 
 <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+  <!-- Custom: add tags on top of the citation -->
   {{ if $item.Params.tags }}
   <div class="flex flex-wrap gap-1 mt-2">
     {{ range $item.Params.tags }}
@@ -12,6 +13,8 @@
     {{ end }}
   </div>
   {{ end }}
+  <!-- End of custom: add tags on top of the citation -->
+  
   {{/* APA Style */}}
   {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
 
