@@ -8,10 +8,12 @@ publication_types:
 - thesis
 
 url_pdf: "https://binxuw.scholars.harvard.edu/sites/g/files/omnuum11221/files/dissertationdraft_landscape_geometry_final_final.pdf"
-
+url_video: "https://www.youtube.com/watch?v=sryXzCDYwU0"
 
 tags:
 - Thesis
 - Visual Neuroscience
 - Generative Model
 ---
+**PhD Thesis Defense**
+{{< youtube sryXzCDYwU0 >}}
