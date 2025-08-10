@@ -69,7 +69,7 @@ sections:
         exclude_featured: false
     design:
       # view: citation
-      view: citation-w-tags
+      view: citation-w-tags-imgs
   - block: collection
     id: talks
     content:
