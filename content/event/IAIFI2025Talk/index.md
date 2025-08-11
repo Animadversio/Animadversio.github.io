@@ -13,7 +13,14 @@ address:
   country: United States
 
 summary: Analytical Theory of Spectral Effects in Sampling and Learning of Diffusion Model
-abstract: 'Diffusion models generate complex data by estimating the score—the gradient of the log-density—across varying noise scales, but the relationship between the learned neural score and the true data score has remained unclear. For moderate-to-high noise levels, the learned score is dominated by its linear (Gaussian) component, enabling a closed-form integration of the probability-flow ODE. This analytical solution predicts key sampling phenomena including the early specification of coarse structures (e.g., scene layouts), the low dimensionality of sampling trajectories, and their sensitivity to perturbations.'
+abstract: |-
+  Diffusion models generate complex data by estimating the score (gradient of log-density) across noise levels, but the connection between the learned neural score and the true data score has been unclear.
+  
+  Inspired by “far field” approximation in physics, we show that both analytically and empirically, for moderate-to-high noise, the learned score function is dominated by its linear component, reflecting a Gaussian approximation of data. This Gaussian score structure allows us to integrate the probability flow ODE in close-form, which yields analytical understanding of the diffusion sampling. Based on the power-law image statistics, this theory explains the fact that coarse aspects (e.g. layouts) were specified first in sampling dynamics; low dimensionality of diffusion sampling trajectory and their perturbation sensitivity. Practically, this solution allows us to skip the first 15–30% of sampling steps with analytical teleportation, accelerating solvers (e.g., DPM-Solver-v3, UniPC) without loss of image quality (FID 1.93 on CIFAR-10).
+  
+  Inspired by this we further studied the learning dynamics of diffusion models with linear denoisers. For linear, deep linear and linear convolutional networks, we solved the nested probability flow and gradient flow ODE, and derived the exact evolution of the learned distribution. This analysis reveals a universal inverse-variance spectral law (τ∝λ⁻¹): coarse (high-variance) modes converge much faster than fine (low-variance) detail. Weight sharing in deep linear networks uniformly rescales these rates, while local convolution fundamentally alters the spectrum of mode emergence—findings confirmed in MLP-based and convolutional U-Nets on Gaussian and natural-image data.
+  
+  Our results highlight how data spectrum and network architectures interact to determine the learning and sampling dynamics of diffusion generative model.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
