@@ -18,7 +18,7 @@ marketing:
     twitter: 'wangbinxu'
   analytics:
     google_analytics: 'G-D21CTEBVDR'
-    google_tag_manager: 'G-D21CTEBVDR'
+    # google_tag_manager: 'G-D21CTEBVDR'
     # google_tag_manager: 'G-7Y0KX9V5XF'
     # google_analytics: 'G-7Y0KX9V5XF'
     baidu_tongji: ''
