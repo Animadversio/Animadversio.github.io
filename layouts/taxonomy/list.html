@@ -1,0 +1,189 @@
+{{ define "main" }}
+
+<div class="max-w-6xl mx-auto">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
+    {{/* Taxonomy term header */}}
+    <div class="flex flex-col items-center text-center">
+      {{/* Generate consistent color for term */}}
+      {{ $h := md5 .Title }}
+      {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+      {{ $hue := mod $byte 360 }}
+      
+      <div class="flex items-center space-x-4 mb-4">
+        <div class="w-6 h-6 rounded-full" 
+             style="background-color: hsl({{ $hue }}, 70%, 60%);"></div>
+        <h1 class="lg:text-6xl !mb-0">{{ .Title }}</h1>
+      </div>
+      
+      {{/* Show count */}}
+      <p class="text-lg text-gray-600 dark:text-gray-400 !mt-2">
+        {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} in this {{ .Type | singularize }}
+      </p>
+      
+      {{/* Breadcrumb */}}
+      <nav class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 !mt-4">
+        <a href="/" class="hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+        <span>/</span>
+        <a href="/{{ .Type }}/" class="hover:text-primary-600 dark:hover:text-primary-400 capitalize">{{ .Type }}</a>
+        <span>/</span>
+        <span class="text-gray-900 dark:text-white">{{ .Title }}</span>
+      </nav>
+    </div>
+    
+    {{ .Content }}
+  </article>
+</div>
+
+{{/* Determine view based on content type and configuration */}}
+{{ $view := .Params.view | default "card" }}
+
+{{/* Smart view selection based on taxonomy type */}}
+{{ if eq .Type "categories" }}
+  <!-- {{ if in (slice "algorithm" "mathematics" "computer-science") (.Title | urlize) }}
+    {{ $view = "article-grid-w-tags" }}
+  {{ else }}
+    {{ $view = "citation-w-tags" }}
+  {{ end }} -->
+  {{ $view = "citation-w-tags" }}
+{{ else if eq .Type "tags" }}
+  {{ $view = "article-grid-w-tags" }}
+{{ end }}
+
+{{/* Override with front matter if specified */}}
+{{ with .Params.view }}
+  {{ $view = . }}
+{{ end }}
+
+{{ $block := . }}
+
+<div class="max-w-7xl mx-auto">
+  {{/* View selector - optional UI element */}}
+  {{ if gt (len .Pages) 5 }}
+  <div class="mb-6 flex justify-center">
+    <div class="flex space-x-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+      <button onclick="switchView('card')" 
+              class="view-toggle px-3 py-1 text-sm font-medium rounded-md transition-colors text-gray-700 dark:text-gray-300"
+              data-view="card">
+        Card
+      </button>
+      <button onclick="switchView('article-grid-w-tags')" 
+              class="view-toggle px-3 py-1 text-sm font-medium rounded-md transition-colors bg-primary-600 text-white"
+              data-view="article-grid-w-tags">
+        Grid
+      </button>
+      <button onclick="switchView('citation-w-tags')" 
+              class="view-toggle px-3 py-1 text-sm font-medium rounded-md transition-colors text-gray-700 dark:text-gray-300"
+              data-view="citation-w-tags">
+        List
+      </button>
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* Render all view types and hide/show with CSS */}}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+  
+  {{/* Card View */}}
+  <div class="view-container flex flex-col items-center" id="view-card" style="display: none;">
+    {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" "card") }}
+    {{ range $index, $item := $paginator.Pages }}
+    {{ partial "functions/render_view" (dict "page" $block "item" $item "view" "card" "index" $index) }}
+    {{end}}
+    {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" "card") }}
+  </div>
+
+  {{/* Article Grid with Tags View */}}
+  <div class="view-container flex flex-col items-center" id="view-article-grid-w-tags">
+    {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" "article-grid-w-tags") }}
+    {{ range $index, $item := $paginator.Pages }}
+    {{ partial "functions/render_view" (dict "page" $block "item" $item "view" "article-grid-w-tags" "index" $index) }}
+    {{end}}
+    {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" "article-grid-w-tags") }}
+  </div>
+
+  {{/* Citation with Tags View */}}
+  <div class="view-container flex flex-col items-center" id="view-citation-w-tags" style="display: none;">
+    {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" "citation-w-tags") }}
+    {{ range $index, $item := $paginator.Pages }}
+    {{ partial "functions/render_view" (dict "page" $block "item" $item "view" "citation-w-tags" "index" $index) }}
+    {{end}}
+    {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" "citation-w-tags") }}
+  </div>
+
+  {{/* Pagination - shown for all views */}}
+  <div class="mt-8">
+    {{ partial "components/paginator" . }}
+  </div>
+</div>
+
+{{/* Related terms section */}}
+{{ if gt (len (index site.Taxonomies .Type)) 1 }}
+<div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related {{ .Type | title }}</h2>
+  <div class="flex flex-wrap gap-3">
+    {{ range (index site.Taxonomies .Type).ByCount.Reverse | first 10 }}
+      {{ if ne .Page.Title $.Title }}
+        {{ $h := md5 .Page.Title }}
+        {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+        {{ $hue := mod $byte 360 }}
+        
+        <a href="{{ .Page.RelPermalink }}" 
+           class="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-full hover:shadow-md transition-all duration-200"
+           style="background-color: hsl({{ $hue }}, 80%, 95%);
+                  color: hsl({{ $hue }}, 60%, 30%);
+                  border: 1px solid hsl({{ $hue }}, 60%, 80%);">
+          {{ .Page.Title }}
+          <span class="ml-1 text-xs opacity-75">({{ .Count }})</span>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{ if gt (len .Pages) 5 }}
+<script>
+function switchView(viewType) {
+  // Hide all view containers
+  const containers = document.querySelectorAll('.view-container');
+  containers.forEach(container => {
+    container.style.display = 'none';
+  });
+  
+  // Show the selected view container
+  const selectedContainer = document.getElementById(`view-${viewType}`);
+  if (selectedContainer) {
+    selectedContainer.style.display = 'flex';
+  }
+  
+  // Update button styles
+  const buttons = document.querySelectorAll('.view-toggle');
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-primary-600', 'text-white');
+    btn.classList.add('text-gray-700', 'dark:text-gray-300');
+  });
+  
+  const activeButton = document.querySelector(`[data-view="${viewType}"]`);
+  if (activeButton) {
+    activeButton.classList.add('bg-primary-600', 'text-white');
+    activeButton.classList.remove('text-gray-700', 'dark:text-gray-300');
+  }
+  
+  // Save preference to localStorage
+  localStorage.setItem('preferredView', viewType);
+}
+
+// Initialize view on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Get saved preference or use default
+  const savedView = localStorage.getItem('preferredView');
+  const defaultView = 'article-grid-w-tags';
+  const initialView = savedView || defaultView;
+  
+  // Set initial view
+  switchView(initialView);
+});
+</script>
+{{ end }}
+
+{{ end }}
