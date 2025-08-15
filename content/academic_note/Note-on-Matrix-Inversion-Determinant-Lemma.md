@@ -6,6 +6,7 @@ date: 2022-04-16
 # use_math: true
 math: true
 comments: true
+featured: true
 categories: [mathematics]
 tags: [Linear Algebra]
 ---

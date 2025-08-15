@@ -5,6 +5,7 @@ author: Binxu Wang
 date: 2020-01-28
 comments: true
 # use_math: true
+featured: true
 math: true
 categories: [computer science]
 tags: [academic note, computer vision, computer science, machine learning]

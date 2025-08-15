@@ -6,6 +6,7 @@ date: 2019-07-02
 # use_math: true
 math: true
 comments: true
+featured: true
 # categories: [neuroscience]
 tags: [This Week's Learning, Visual Neuroscience, Consciousness, Cortex, Sensory System, Philosophy, Concept, Computation]
 typora-root-url: ..\assets\img\posts\Visual_consciousness
