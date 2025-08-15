@@ -1,10 +1,6 @@
 {{ define "main" }}
 
-<!-- {{/* Check if this is a taxonomy terms page (e.g., /categories/) or a specific term page (e.g., /categories/algorithm/) */}} -->
-<!-- {{ if .Data.Terms }}
-  {{/* This is a taxonomy terms page - show overview of all terms */}}
-  {{ partial "taxonomy-terms-layout" . }}
-{{ else }} -->
+
 {{/* This is a specific term page - show posts within this term */}}
 <div class="max-w-6xl mx-auto">
   <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
@@ -39,7 +35,6 @@
     {{ .Content }}
   </article>
 </div>
-<!-- {{ end }} -->
 
 {{/* Determine view based on content type and configuration */}}
 {{ $view := .Params.view | default "card" }}
