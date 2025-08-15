@@ -5,6 +5,7 @@ author: Binxu Wang
 date: 2022-05-13
 # use_math: true
 math: true
+featured: true
 comments: true
 categories: [algorithm, machine learning]
 tags: [tech note, Bayesian, Statistical Learning, MLE]
