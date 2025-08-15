@@ -65,7 +65,7 @@
 
 <div class="max-w-7xl mx-auto">
   {{/* View selector - optional UI element */}}
-  {{ if gt (len .Pages) 5 }}
+  {{ if ge (len .Pages) 2 }}
   <div class="mb-6 flex justify-center">
     <div class="flex space-x-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
       <button onclick="switchView('card')" 
@@ -148,7 +148,7 @@
 </div>
 {{ end }}
 
-{{ if gt (len .Pages) 5 }}
+{{ if ge (len .Pages) 2 }}
 <script>
 function switchView(viewType) {
   // Hide all view containers
