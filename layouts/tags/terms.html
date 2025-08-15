@@ -1,0 +1,91 @@
+{{ define "main" }}
+
+<div class="max-w-6xl mx-auto">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
+    <h1 class="lg:text-6xl !mb-4 text-center">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+<div class="max-w-6xl mx-auto my-8">
+  {{- $type := .Type }}
+  {{- $terms := .Data.Terms.ByCount.Reverse }}
+  
+  {{/* For tags, show a more compact tag cloud layout */}}
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">All {{ .Title }}</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      {{- range $key, $value := $terms }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+          {{ $h := md5 $name }}
+          {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+          {{ $hue := mod $byte 360 }}
+          
+          {{/* Size based on count */}}
+          {{ $size := "text-sm" }}
+          {{ $padding := "px-3 py-1.5" }}
+          {{ if gt $count 5 }}{{ $size = "text-base" }}{{ end }}
+          {{ if gt $count 10 }}{{ $size = "text-lg" }}{{ $padding = "px-4 py-2" }}{{ end }}
+          {{ if gt $count 20 }}{{ $size = "text-xl" }}{{ $padding = "px-5 py-2.5" }}{{ end }}
+          
+          <a href="{{ .RelPermalink }}" 
+             class="inline-flex items-center {{ $padding }} {{ $size }} font-medium rounded-full hover:shadow-md transition-all duration-200"
+             style="background-color: hsl({{ $hue }}, 80%, 95%);
+                    color: hsl({{ $hue }}, 60%, 30%);
+                    border: 1px solid hsl({{ $hue }}, 60%, 80%);">
+            {{ .LinkTitle }}
+            <span class="ml-1 text-xs opacity-75">({{ $count }})</span>
+          </a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  
+  {{/* Also show top categories as cards for easier browsing */}}
+  {{ if gt (len $terms) 15 }}
+  <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Popular Tags</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {{- range $key, $value := $terms | first 9 }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+        {{/* Generate proper URL for this term */}}
+        {{ $termURL := printf "/%s/%s/" $type ($name | urlize) }}
+        
+        <div class="group">
+          <a href="{{ $termURL }}" class="cursor-pointer block" aria-label="View {{ $name }}">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 border border-gray-200 dark:border-gray-700 hover:border-primary-300 dark:hover:border-primary-600">
+              
+              {{/* Term header with icon */}}
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center space-x-2">
+                  {{/* Generate consistent color for term */}}
+                  {{ $h := md5 $name }}
+                  {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+                  {{ $hue := mod $byte 360 }}
+                  
+                  <div class="w-2 h-2 rounded-full flex-shrink-0" 
+                       style="background-color: hsl({{ $hue }}, 70%, 60%);"></div>
+                  <h3 class="text-base font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                    {{ $name }}
+                  </h3>
+                </div>
+                
+                {{/* Count badge */}}
+                <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-white bg-primary-600 rounded-full">
+                  {{ $count }}
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      {{- end }}
+    </div>
+  </div>
+  {{ end }}
+  
+</div>
+
+{{- end -}}

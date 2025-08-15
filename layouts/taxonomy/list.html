@@ -1,38 +1,45 @@
 {{ define "main" }}
 
-<div class="max-w-6xl mx-auto">
-  <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
-    {{/* Taxonomy term header */}}
-    <div class="flex flex-col items-center text-center">
-      {{/* Generate consistent color for term */}}
-      {{ $h := md5 .Title }}
-      {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
-      {{ $hue := mod $byte 360 }}
-      
-      <div class="flex items-center space-x-4 mb-4">
-        <div class="w-6 h-6 rounded-full" 
-             style="background-color: hsl({{ $hue }}, 70%, 60%);"></div>
-        <h1 class="lg:text-6xl !mb-0">{{ .Title }}</h1>
+{{/* Check if this is a taxonomy terms page (e.g., /categories/) or a specific term page (e.g., /categories/algorithm/) */}}
+{{ if .Data.Terms }}
+  {{/* This is a taxonomy terms page - show overview of all terms */}}
+  {{ partial "taxonomy-terms-layout" . }}
+{{ else }}
+  {{/* This is a specific term page - show posts within this term */}}
+  <div class="max-w-6xl mx-auto">
+    <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
+      {{/* Taxonomy term header */}}
+      <div class="flex flex-col items-center text-center">
+        {{/* Generate consistent color for term */}}
+        {{ $h := md5 .Title }}
+        {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+        {{ $hue := mod $byte 360 }}
+        
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-6 h-6 rounded-full" 
+               style="background-color: hsl({{ $hue }}, 70%, 60%);"></div>
+          <h1 class="lg:text-6xl !mb-0">{{ .Title }}</h1>
+        </div>
+        
+        {{/* Show count */}}
+        <p class="text-lg text-gray-600 dark:text-gray-400 !mt-2">
+          {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} in this {{ .Type | singularize }}
+        </p>
+        
+        {{/* Breadcrumb */}}
+        <nav class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 !mt-4">
+          <a href="/" class="hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+          <span>/</span>
+          <a href="/{{ .Type }}/" class="hover:text-primary-600 dark:hover:text-primary-400 capitalize">{{ .Type }}</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white">{{ .Title }}</span>
+        </nav>
       </div>
       
-      {{/* Show count */}}
-      <p class="text-lg text-gray-600 dark:text-gray-400 !mt-2">
-        {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} in this {{ .Type | singularize }}
-      </p>
-      
-      {{/* Breadcrumb */}}
-      <nav class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 !mt-4">
-        <a href="/" class="hover:text-primary-600 dark:hover:text-primary-400">Home</a>
-        <span>/</span>
-        <a href="/{{ .Type }}/" class="hover:text-primary-600 dark:hover:text-primary-400 capitalize">{{ .Type }}</a>
-        <span>/</span>
-        <span class="text-gray-900 dark:text-white">{{ .Title }}</span>
-      </nav>
-    </div>
-    
-    {{ .Content }}
-  </article>
-</div>
+      {{ .Content }}
+    </article>
+  </div>
+{{ end }}
 
 {{/* Determine view based on content type and configuration */}}
 {{ $view := .Params.view | default "card" }}
