@@ -6,6 +6,7 @@ date: 2022-01-22
 # use_math: true
 math: true
 comments: true
+featured: true
 categories: [mathematics]
 tags: [Unsupervised Learning, PCA, Geometry, high dimensional, random process, Linear Algebra]
 typora-copy-images-to: ..\assets\img\notes\PCA_highdimen
