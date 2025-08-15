@@ -28,3 +28,9 @@ main:
   - name: Writings
     url: writings/
     weight: 50
+  - name: 🗂️
+    url: categories/
+    weight: 60
+  - name: 🏷️
+    url: tags/
+    weight: 70
