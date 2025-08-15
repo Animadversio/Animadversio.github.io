@@ -165,7 +165,7 @@ These spectral methods all require computation of eigen vector corresponding to 
 
 ## Reference
 
-[See Graph Cut Note for more info.](Note-on-Graph-Cut.md)
+[See Graph Cut Note for more info.]({{< relref "Note-on-Graph-Cut.md" >}})
 
 [Spectral Graph Theory Tutorial](https://csustan.csustan.edu/~tom/Clustering/GraphLaplacian-tutorial.pdf)
 

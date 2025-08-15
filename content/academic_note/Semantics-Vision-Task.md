@@ -40,7 +40,7 @@ To do matching and recognition, what is a good Keypoint Detector?
 
 ###  SIFT
 
-Link to [Local Feature Descriptor](Note-on-Local-Feature-Descriptors.md)
+Link to [Local Feature Descriptor]({{< relref "Note-on-Local-Feature-Descriptors.md" >}})
 
 Set a few heuristic rules to detect blobs. 
 
@@ -96,7 +96,7 @@ Compute Hessian of image local patch (Structural Tensor) at the scale of image (
 
 ### SIFT Descriptor
 
-Link to [Local Feature Descriptor](Note-on-Local-Feature-Descriptors.md) 
+Link to [Local Feature Descriptor]({{< relref "Note-on-Local-Feature-Descriptors.md" >}}) 
 
 This are done *post hoc*, describe the keypoints by a vector to match in this feature space . 
 

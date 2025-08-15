@@ -17,7 +17,7 @@ typora-copy-images-to: ..\assets\img\notes\PCA_highdimen
 
 ## Motivation
 
-As mentioned in our [high-dimensional PCA note](PCA-of-High-Dimensional-Trajectories.md), understanding the spectrum of Toeplitz matrix is important. 
+As mentioned in our [high-dimensional PCA note]({{< relref "PCA-of-High-Dimensional-Trajectories.md" >}}), understanding the spectrum of Toeplitz matrix is important. 
 
 The subject itself is a bit technical, but the analytical techniques involved in it are splendid and general. So here I took note from this paper and present way to calculate the spectrum on paper (or by mathematica). 
 

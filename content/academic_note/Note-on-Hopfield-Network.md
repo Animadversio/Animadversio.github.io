@@ -59,5 +59,5 @@ $$
 * [Note of hopfield network (nyu.edu)](http://www.cns.nyu.edu/~eorhan/notes/hopfield.pdf) 
 * [Hinton's lecture on Hopfield Network](https://youtu.be/DS6k0PhBjpI)
 
-Extension [Modern Hopfield Network](Note-on-Modern-Hopfield-Net-Transformer.md)
+Extension [Modern Hopfield Network]({{< relref "Note-on-Modern-Hopfield-Net-Transformer.md" >}})
 

@@ -21,19 +21,19 @@ These are links to notes for individual modules and specific domain notes.
 
 
 
-[Basic Computer Vision](Note-on-Computer-Vision.md)
+[Basic Computer Vision]({{< relref "Note-on-Computer-Vision.md" >}})
 
-[Image Prior and Generative Model](Note-on-Image-Prior.md) 
+[Image Prior and Generative Model]({{< relref "Note-on-Image-Prior.md" >}}) 
 
-[MRF based Image Prior](Note-on-MRF-Image-Prior.md) 
+[MRF based Image Prior]({{< relref "Note-on-MRF-Image-Prior.md" >}}) 
 
-[Stereo Problem](Stereo-Algorithms.md) 
+[Stereo Problem]({{< relref "Stereo-Algorithms.md" >}}) 
 
-* [Geometry of Epipolar Flow](Epipolar-Geometry-and-Optic-Flow.md) 
+* [Geometry of Epipolar Flow]({{< relref "Epipolar-Geometry-and-Optic-Flow.md" >}}) 
 
-[Semantic Vision Problem](Semantics-Vision-Task.md) 
+[Semantic Vision Problem]({{< relref "Semantics-Vision-Task.md" >}}) 
 
-[Note on Computational Photography](Note-on-Computational-Photography.md) 
+[Note on Computational Photography]({{< relref "Note-on-Computational-Photography.md" >}}) 
 
 [Note on Hardware Based Computational Photography](Note-on-Hardware-Computational-Photography)
 

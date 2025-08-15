@@ -17,7 +17,7 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Mat
 
 ## Motivation
 
-Understand the use of kernel in regression problems. For usage in unsupervised learning / dimension reduction, see [notes on Kernel PCA](Note-on-Kernel-PCA.md). 
+Understand the use of kernel in regression problems. For usage in unsupervised learning / dimension reduction, see [notes on Kernel PCA]({{< relref "Note-on-Kernel-PCA.md" >}}). 
 
 ## Kernel in Classification
 

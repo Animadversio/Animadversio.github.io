@@ -250,7 +250,7 @@ We note that $\lambda_k=\lambda_{T-k}\mbox{  for  } k\neq0$ , each eigenvalue ha
 
 Next, let us consider the eigenstructure of the tridiagonal matrix $P$, its eigenvalues are less straightforward to calculate. We need to solve the eigenpolynomial directly. 
 
-However, we are still saved, mathematicians have derived close form solution to the eigenvalues of a tri-diagonal Toeplitz matrix [^4]. For a derivation of this solution, see [my note](Spectrum-of-Tri-Toeplitz-matrix.md)!
+However, we are still saved, mathematicians have derived close form solution to the eigenvalues of a tri-diagonal Toeplitz matrix [^4]. For a derivation of this solution, see [my note]({{< relref "Spectrum-of-Tri-Toeplitz-matrix.md" >}})!
 
 $$
 \lambda_k(P) =2-2\cos \frac{k\pi}{T+1},k=1,...T

@@ -19,5 +19,5 @@ Reference
 
 
 
-For exporting figures from common scientific computing languages, please see [plotting in matlab and python](Plot-System-in-matlab-and-python.md)
+For exporting figures from common scientific computing languages, please see [plotting in matlab and python]({{< relref "Plot-System-in-matlab-and-python.md" >}})
 

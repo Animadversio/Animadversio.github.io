@@ -22,7 +22,7 @@ For Regression problem, sometimes, you are data dense, and the data is full of n
 
 ## Kernel Regression
 
-Kernel regression (see [notes](Note-on-Kernel-Ridge-Regression.md)) can be thought of as an extension of nearest neighbor interpolation. 
+Kernel regression (see [notes]({{< relref "Note-on-Kernel-Ridge-Regression.md" >}})) can be thought of as an extension of nearest neighbor interpolation. 
 
 > The value probed $f(\hat x)$ is the weighted average value of the data samples around it. $f(\hat x)={\sum_i w(x_i,\hat x)y_i /\sum_i w(x_i,\hat x)}$ 
 
@@ -35,5 +35,5 @@ Comparison:
 
 ## Gaussian Process Regression
 
-Gaussian process (see [notes](Note-on-Gaussian-Process.md)) is to model data by a gaussian distribution in the space of functions. For regression problem.
+Gaussian process (see [notes]({{< relref "Note-on-Gaussian-Process.md" >}})) is to model data by a gaussian distribution in the space of functions. For regression problem.
 

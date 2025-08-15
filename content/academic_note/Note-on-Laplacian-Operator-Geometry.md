@@ -15,7 +15,7 @@ typora-copy-images-to: ..\assets\img\notes\spectgraph
 
 ## Motivation
 
-[Laplacian on graph](Spectral-Graph-and-Segmentation.md) and on discrete geometry (mesh) are very useful tools. 
+[Laplacian on graph]({{< relref "Spectral-Graph-and-Segmentation.md" >}}) and on discrete geometry (mesh) are very useful tools. 
 
 
 
@@ -53,7 +53,7 @@ Thus there is a well known Laplacian smoothing algorithm
 $$
 f\gets f-\epsilon \Delta f
 $$
-In geometry processing, this continuous notion will go back to a Laplacian on discrete geometry, i.e. network embedding or mesh. Just as in [Spectral Graph Theory](Spectral-Graph-and-Segmentation.md) 
+In geometry processing, this continuous notion will go back to a Laplacian on discrete geometry, i.e. network embedding or mesh. Just as in [Spectral Graph Theory]({{< relref "Spectral-Graph-and-Segmentation.md" >}}) 
 
 ## Spherical Harmonics
 

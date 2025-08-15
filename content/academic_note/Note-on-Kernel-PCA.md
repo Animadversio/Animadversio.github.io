@@ -18,7 +18,7 @@ tags: [tech note, Algorithm, Machine Learning, Statistical Learning, Applied Mat
 
 ## Motivation 
 
-Simply put, "kernel trick" is the finding that sometimes only inner product appears in the formulation of some algorithms. because of this, we could substitute the inner product with some fancier kernel function, i.e. inner product in some other spaces.  This post is about another usage of kernel trick. Another usage is [Kernel (ridge) Regression](Note-on-Kernel-Ridge-Regression.md).  
+Simply put, "kernel trick" is the finding that sometimes only inner product appears in the formulation of some algorithms. because of this, we could substitute the inner product with some fancier kernel function, i.e. inner product in some other spaces.  This post is about another usage of kernel trick. Another usage is [Kernel (ridge) Regression]({{< relref "Note-on-Kernel-Ridge-Regression.md" >}}).  
 
 We want to analyze the principal component in a feature space instead of the original $x$ space, can we do so by specifying a kernel function $K(x,x')$ instead of the feature map $\phi(x)$ explicitly? 
 
@@ -78,7 +78,7 @@ Similar to regression, we can also use kernel function to obtain projection coef
 
 ## Relation to Spectral Embedding
 
-Note this view of kernel PCA  is also related to [spectral embedding](Spectral-Graph-and-Segmentation.md), i.e. the inverse of kernel matrix $K$ is a form of distance matrix. 
+Note this view of kernel PCA  is also related to [spectral embedding]({{< relref "Spectral-Graph-and-Segmentation.md" >}}), i.e. the inverse of kernel matrix $K$ is a form of distance matrix. 
 
 The top eigenvectors of kernel matrices == the bottom eigenvectors of the inverse. These eigenvectors could be used as coordinates to embed the samples, since these coordinates will minimize the stress energy of the embedding if we regard the $K$ as a form of elasticity strength. 
 $$

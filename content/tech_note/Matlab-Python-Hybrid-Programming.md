@@ -13,7 +13,7 @@ tags: [python, matlab, data, machine learning]
 
 ## Motivation
 
-This is one step forward from [Data transport between python and matlab](Data-Transport-Python-Matlab.md), since sometimes you not only want to transport data, but want to share some code in python or matlab. How can we do so?
+This is one step forward from [Data transport between python and matlab]({{< relref "Data-Transport-Python-Matlab.md" >}}), since sometimes you not only want to transport data, but want to share some code in python or matlab. How can we do so?
 
 ## Using Python in Matlab
 

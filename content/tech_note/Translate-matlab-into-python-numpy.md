@@ -151,4 +151,4 @@ end
     * But the objects will be formed in a reference array, and you feed the reference back to the file to get the object into python. See [Refs in h5py](http://docs.h5py.org/en/latest/refs.html). 
 * `.npy` format could be read in matlab 
 
-For more detailed exposition on this topic, see the other notes [Data Transport between Python Matlab](Data-Transport-Python-Matlab.md), [Matlab Python Hybrid Programming](Matlab-Python-Hybrid-Programming.md)
+For more detailed exposition on this topic, see the other notes [Data Transport between Python Matlab]({{< relref "Data-Transport-Python-Matlab.md" >}}), [Matlab Python Hybrid Programming]({{< relref "Matlab-Python-Hybrid-Programming.md" >}})

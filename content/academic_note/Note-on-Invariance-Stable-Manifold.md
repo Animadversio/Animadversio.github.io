@@ -6,7 +6,7 @@ date: 2021-04-09
 # use_math: true
 math: true
 comments: true
-draft: true
+draft: false
 categories: [mathematics]
 tags: [Math, Geometry, Dynamic System]
 typora-copy-images-to: ..\assets\img\notes\dynsys

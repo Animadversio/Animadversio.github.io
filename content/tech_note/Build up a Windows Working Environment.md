@@ -34,7 +34,7 @@ If we want `keras` as well, refer to [this post](https://github.com/antoniosehk/
 
 ## PyTorch Caffe Co-environment
 
-See [Working with Caffe](Working-with-Caffe.md) for more info! 
+See [Working with Caffe]({{< relref "Working-with-Caffe.md" >}}) for more info! 
 
 The easiest way is using the the conda export file to copy the same environment. See the attached [caffe-torch](..\assets\resource\caffe-torch.yml)  [tf-torch.yml](..\assets\resource\tf-torch.yml)  for more information. 
 

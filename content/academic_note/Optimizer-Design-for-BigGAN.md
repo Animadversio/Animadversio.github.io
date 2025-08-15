@@ -23,5 +23,5 @@ http://dobigeon.perso.enseeiht.fr/papers/Dobigeon_TechReport_2007b.pdf
 
 Thanks to Dr. Holy, he points out a line of research on [derivative free optimizations](https://en.wikipedia.org/wiki/Derivative-free_optimization), which is Powell's algorithms:  [COBYLA](https://en.wikipedia.org/wiki/COBYLA), [UOBYQA](https://en.wikipedia.org/wiki/UOBYQA), [NEWUOA](https://en.wikipedia.org/wiki/NEWUOA), [BOBYQA](https://en.wikipedia.org/wiki/BOBYQA) and [LINCOA](https://en.wikipedia.org/wiki/LINCOA) algorithms.
 
-The thought behind it is closely related to the LBFGS algorithm. (See [LBFGS notes](Note-on-LBFGS.md)) which is to update the Hessian little by little with minimal change each step. 
+The thought behind it is closely related to the LBFGS algorithm. (See [LBFGS notes]({{< relref "Note-on-LBFGS.md" >}})) which is to update the Hessian little by little with minimal change each step. 
 

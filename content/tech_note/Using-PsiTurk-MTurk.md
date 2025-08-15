@@ -48,7 +48,7 @@ http://babieslearninglanguage.blogspot.com/2013/10/randomization-on-mechanical-t
 
 ### Coding the HTML form
 
-See the note on [html GUI and JavaScript](HTML-JS-101.md)
+See the note on [html GUI and JavaScript]({{< relref "HTML-JS-101.md" >}})
 
 ### Local Deployment
 

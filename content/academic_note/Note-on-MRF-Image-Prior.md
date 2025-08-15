@@ -14,7 +14,7 @@ typora-copy-images-to: ../assets/img/notes/cv2
 
 * TOC
 {:toc}
-Continuing [Image Prior and Generative Model](Note-on-Image-Prior.md) .
+Continuing [Image Prior and Generative Model]({{< relref Note-on-Image-Prior.md >}}) .
 
 **Probabilistic Graphic Model** comes into scene, when we want to model and deal with some **complex distribution over many variables**. When we start to add structure into the model, not everything depend on everything, then the dependency relationship among variables emerges as a graph structure. 
 
@@ -63,7 +63,7 @@ $$
 Z(\mu,\Sigma)=\sqrt{(2\pi)^k\det\Sigma}\\
 \arg\min_\Sigma-\log\Psi(x)=(x-\mu)^T\Sigma^{-1}(x-\mu)\mapsto \inf
 $$
-This hardship for normalization seems universal and fundamental. See [notes on deep unsupervised learning](Note-on-Deep-Unsupervised-Learning.md). 
+This hardship for normalization seems universal and fundamental. See [notes on deep unsupervised learning]({{< relref "Note-on-Deep-Unsupervised-Learning.md" >}}). 
 
 ## Training Example: Fields of Experts Image
 
@@ -126,7 +126,7 @@ Normally 2 kinds of inference
 * MAP problem: $\arg\max_{x_i} P(V)$ 
 * Marginalize problem: $p(x_i)=\sum_{V/x_i}P(V)$, $\hat x_i=\arg\max_{x_i}p(x_i)$
 
-[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md)
+[Note on Belief Propagation]({{< relref "Note-on-Belief-Propagation-Algorithm.md" >}})
 
 
 
@@ -149,7 +149,7 @@ $$
 
 Marginalization is just summation over a bunch of variables, and you can commute the summation with product. 
 
-[Note on Belief Propagation](Note-on-Belief-Propagation-Algorithm.md) 
+[Note on Belief Propagation]({{< relref "Note-on-Belief-Propagation-Algorithm.md" >}}) 
 
 **Max-Product Equation** 
 $$
@@ -398,7 +398,7 @@ For [Min cut problem](https://en.wikipedia.org/wiki/Cut_(graph_theory)), we are 
 
 * Easy to see the correspondence to image segmentation. (Binary)
 
-Min-Cut can be solved in polynomial time, and exact global optimum is guanranteed in polynomial time. [Note on graph cut](Note-on-Graph-Cut.md) 
+Min-Cut can be solved in polynomial time, and exact global optimum is guanranteed in polynomial time. [Note on graph cut]({{< relref "Note-on-Graph-Cut.md" >}}) 
 
 ### Binary Label
 
@@ -414,7 +414,7 @@ $$
 
 * 
 
-[Note on graph cut](Note-on-Graph-Cut.md)
+[Note on graph cut]({{< relref "Note-on-Graph-Cut.md" >}})
 
 > GraphCut algorithms really yield promising result of image segmentation, and enables interactive segmentation. 
 

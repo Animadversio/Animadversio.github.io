@@ -40,7 +40,7 @@ The classical Newtonian step is
 $$
 x_{t+1}=x_t-\eta H(x)^{-1}g(x)
 $$
-As Hessian computation is expensive even in the differentiable case, and inverting a large matrix is expensive, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian, for the ease of computation and inversion. So comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS method](Note-on-LBFGS.md). 
+As Hessian computation is expensive even in the differentiable case, and inverting a large matrix is expensive, people use proxy / estimates for Hessian $\tilde H$ instead of real Hessian, for the ease of computation and inversion. So comes the quasi-newtonian methods. For an elegant example of quasi-newton method, please see [Note on LBFGS method]({{< relref "Note-on-LBFGS.md" >}}). 
 
 And the common optimizer ADAM, ADAGRAD, ADADELTA can be viewed as quasi-newtonian methods with a highly structured Hessian matrix (diagonal) assumption. 
 

@@ -11,7 +11,7 @@ tags: [Math, Geometry, Dynamic System, Control Theory]
 typora-copy-images-to: ..\assets\img\notes\dynsys
 ---
 
-[Stability Theory](Note-on-Nonlinear-System-Stability.md)
+[Stability Theory]({{< relref "Note-on-Nonlinear-System-Stability.md" >}})
 
 When a system has control, then comes the questions of whether we could make it stable under the control. 
 

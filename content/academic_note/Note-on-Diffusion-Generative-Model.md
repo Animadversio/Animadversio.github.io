@@ -147,7 +147,7 @@ $$
 $$
 This denoising score matching objective could be derived for any distribution with any noising kernel. Here with Gaussian Kernel, the formulation becomes more explicit. 
 
-See  [equivalence of score matching objective](Note-on-Equiv-Score-Matching-Objective.md) for the derivation. 
+See  [equivalence of score matching objective]({{< relref "Note-on-Equiv-Score-Matching-Objective.md" >}}) for the derivation. 
 
 # Related Models
 

@@ -16,7 +16,7 @@ typora-copy-images-to: ../assets/img/notes/cv2
 
 Basic Stereo algorithm can be formulated as Markov Random Field. 
 
-Thus Methods in MRF inference could all be used. [Prior](Note-on-MRF-Image-Prior.md) 
+Thus Methods in MRF inference could all be used. [Prior]({{< relref "Note-on-MRF-Image-Prior.md" >}}) 
 
 ## Planar Prior 
 

@@ -13,7 +13,7 @@ typora-copy-images-to: ..\assets\img\notes\gp
 
 # Note on Bayesian Optimization
 
-Related to [Gaussain Process model](Note-on-Gaussian-Process.md)
+Related to [Gaussain Process model]({{< relref "Note-on-Gaussian-Process.md" >}})
 
 ## Philosophy 
 

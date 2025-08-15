@@ -1,6 +1,6 @@
 ## Motivation
 
-This note is related to [the dynamic visualization note](Dynamic-Visualization-in-Python.md) . Sometimes we want to export a movie or animation from matlab or python. Here summarize some common code clips. 
+This note is related to [the dynamic visualization note]({{< relref "Dynamic-Visualization-in-Python.md" >}}) . Sometimes we want to export a movie or animation from matlab or python. Here summarize some common code clips. 
 
 ## Matlab
 

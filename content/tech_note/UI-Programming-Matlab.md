@@ -14,9 +14,9 @@ tags: [matlab, coding, Visualization, GUI]
 
 Sometimes, we want to manipulate and interact with our plot in a way that is not built into matlab figure. For example, we would like to visualize images when we are travelling in the hidden space. I requires matlab to visualize things when we click something or slide some bar. 
 
-This is related to the [Dynamics Visualization in Python](Dynamic-Visualization-in-Python.md). But this is also related to the general coding pattern of GUI in java and beyond (Game and APP programming). So I make a note of this. 
+This is related to the [Dynamics Visualization in Python]({{< relref "Dynamic-Visualization-in-Python.md" >}}). But this is also related to the general coding pattern of GUI in java and beyond (Game and APP programming). So I make a note of this. 
 
-Related to the more basic note [Matlab Plot system](Plot-System-in-matlab-and-python.md) as well. 
+Related to the more basic note [Matlab Plot system]({{< relref "Plot-System-in-matlab-and-python.md" >}}) as well. 
 
 ## General Concept
 

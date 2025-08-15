@@ -1068,7 +1068,7 @@ But these artificial prior are not perfect, we need to **learn** the prior, i.e.
 
 To calculate $P_{XY}$, you use a bunch of sample set $(x,y)$, and fit some parametric distribution (i.e. mixture of Gaussian) $f(x,y\mid \theta)$ to it with MLE. But it doesn't work!! 
 
-This hard problem will finally go to [deep unsupervised learning](Note on Deep Unsupervised Learning.md).  
+This hard problem will finally go to [deep unsupervised learning]({{< relref "Note on Deep Unsupervised Learning.md" >}}).  
 
 
 
