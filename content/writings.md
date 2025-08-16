@@ -34,7 +34,7 @@ sections:
           - academic_note
           - tech_note
         featured_only: true
-      count: 6
+      count: 10
     design:
       view: article-grid
       fill_image: false
