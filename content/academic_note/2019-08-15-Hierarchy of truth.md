@@ -2,6 +2,7 @@
 layout: post
 title: 真理的不同层级 (Updated)
 author: Binxu Wang
+date: '2019-08-15'
 # published: true
 draft: false
 use_math: false

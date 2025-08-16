@@ -1,15 +1,14 @@
 ---
-
 layout: post
 title: 2019 台湾纪行
 author: Binxu Wang
+date: '2019-08-14'
 # published: true
 draft: false
 use_math: false
 comments: true
 categories: [personal writing]
 tags: [essay, personal writing, travel, Politics]
-
 ---
 
 * TOC

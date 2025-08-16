@@ -2,10 +2,12 @@
 layout: post
 title: Understanding of Adversarial Attack
 author: Binxu Wang
+date: '2020-01-07'
 # published: true
 draft: false
 use_math: true
 comments: true
+categories: [machine learning]
 tags: [Computer Vision, Adversarial Example, Neural Networks]
 ---
 

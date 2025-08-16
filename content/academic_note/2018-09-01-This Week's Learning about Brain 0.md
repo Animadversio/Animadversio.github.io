@@ -2,8 +2,10 @@
 layout: post
 title: This Week's Learning about Brain 0
 author: Binxu Wang
+date: '2018-09-01'
 use_math: true
 comments: true
+categories: [科普, neuroscience, machine learning]
 tags: [This Week's Learning, Visual Neuroscience, Connectomics, Machine Learning, Geometry]
 ---
 

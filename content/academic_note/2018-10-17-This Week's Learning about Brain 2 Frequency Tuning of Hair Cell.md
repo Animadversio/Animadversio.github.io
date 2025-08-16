@@ -2,11 +2,13 @@
 layout: post
 title: This Week's Learning about Brain 2 Frequency Tuning of Hair Cell
 author: Binxu Wang
+date: '2018-10-17'
 use_math: true
 comments: true
 feature-img: "assets/img/posts/hair_cell/frogears.jpg"
 img: "assets/img/posts/hair_cell/frogears.jpg"
 # date: Oct. 29th, 2018
+categories: [科普, neuroscience]
 tags: [This Week's Learning, Auditory Neuroscience, Sensory System, Neural Circuit, Biophysics]
 ---
 

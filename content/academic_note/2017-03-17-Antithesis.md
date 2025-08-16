@@ -2,6 +2,7 @@
 layout: post
 title: Antithesis
 author: Binxu Wang
+date: '2017-03-17'
 comments: true
 featured: true
 categories: [personal writing]

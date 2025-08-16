@@ -2,8 +2,10 @@
 layout: post
 title: Derivative Free Optimization Method (Based Feature Visulization) Notes 1
 author: Binxu Wang
+date: '2018-09-09'
 use_math: true
 comments: true
+categories: [machine learning]
 tags: [Optimization, Algorithm, Machine Learning]
 ---
 

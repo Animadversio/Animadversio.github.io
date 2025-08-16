@@ -1,8 +1,8 @@
 ---
-
 layout: post
 title: 人间失格 读书札记
 author: Binxu Wang
+date: '2020-01-13'
 # published: true
 draft: false
 use_math: false

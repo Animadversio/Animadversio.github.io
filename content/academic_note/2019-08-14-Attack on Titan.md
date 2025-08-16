@@ -2,6 +2,7 @@
 layout: post
 title: 进击的巨人(Attack on Titan) 观剧手记
 author: Binxu Wang
+date: '2019-08-14'
 # published: true
 draft: false
 use_math: false

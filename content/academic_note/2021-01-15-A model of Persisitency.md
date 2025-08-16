@@ -2,6 +2,7 @@
 layout: post
 title: A Model of Persistency
 author: Binxu Wang
+date: '2021-01-15'
 comments: true
 use_math: true
 categories: [personal writing]

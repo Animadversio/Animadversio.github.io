@@ -2,8 +2,10 @@
 layout: post
 title: This Week's Learning about Brain 4 看得见还是看不见, 这是一个问题——视觉意识的神经相关物 (To see or not to see, that's a question)
 author: Binxu Wang
+date: '2019-07-02'
 use_math: true
 comments: true
+categories: [科普, neuroscience]
 tags: [This Week's Learning, Visual Neuroscience, Consciousness, Cortex, Sensory System, Philosophy, Concept, Computation]
 typora-root-url: ..\assets\img\posts\Visual_consciousness
 typora-copy-images-to: ../assets/img/posts/Visual_consciousness

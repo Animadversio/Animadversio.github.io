@@ -1,8 +1,8 @@
 ---
-
 layout: post
 title: 春宴 读书札记
 author: Binxu Wang
+date: '2020-01-01'
 # published: false
 draft: true
 use_math: false

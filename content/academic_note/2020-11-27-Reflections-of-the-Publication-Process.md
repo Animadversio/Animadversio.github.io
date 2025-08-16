@@ -2,6 +2,7 @@
 layout: post
 title: 日常 (第一次Solo文章)
 author: Binxu Wang
+date: '2020-11-27'
 # published: false
 draft: true
 use_math: false

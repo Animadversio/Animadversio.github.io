@@ -2,8 +2,10 @@
 layout: post
 title: This Week's Learning about Brain 3 Hard Wired Olfactory Responce
 author: Binxu Wang
+date: '2018-11-25'
 # use_math: true
 comments: true
+categories: [科普, neuroscience]
 tags: [This Week's Learning, Olfactory System, Sensory System, Neural Circuit, Fruit Fly, Connectomics, Philosophy]
 ---
 

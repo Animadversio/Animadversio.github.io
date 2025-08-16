@@ -2,16 +2,18 @@
 layout: post
 title: This Week's Learning about Brain 5 幻觉与笛卡尔的幽灵 Hallucination and Descartes' Demon (II)
 author: Binxu Wang
+date: '2019-07-24'
 # published: false
-draft: true
+draft: false
 use_math: true
+categories: [科普, neuroscience]
 comments: true
 tags: [This Week's Learning, Visual Neuroscience, Consciousness, Cortex, Sensory System, Philosophy, Concept, Computation, Sleep, Dream, Hallucination]
 typora-root-url: ..\assets\img\posts\Visual_consciousness
 typora-copy-images-to: ../assets/img/posts/Visual_consciousness
 ---
 
-[上一篇post]({{page.previous.url}})介绍到了与视觉意识相关的一些神经活动
+[上一篇post]({{< relref "2019-07-02-This Week's Learning about Brain 4 Neural Correlate of Visual Consciousness.md" >}})介绍到了与视觉意识相关的一些神经活动
 
 ## 做梦, 幻觉与意识(Dream, Hallucination and Consciousness)
 
