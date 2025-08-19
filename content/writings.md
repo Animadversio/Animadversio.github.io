@@ -64,15 +64,4 @@ sections:
       view: article-grid-w-tags
       fill_image: false
       columns: 3
-#   - block: taxterm
-#     content:
-#       title: All algorithm posts
-#       taxonomy: tags
-#       term: misc
-#     design:
-#       view: citation-w-tags
 ---
-
-<!-- 
-## All algorithm posts
-{{< taxterm taxonomy="categories" term="algorithm" view="citation-w-tags" >}} -->
