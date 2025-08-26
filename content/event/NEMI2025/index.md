@@ -1,5 +1,5 @@
 ---
-title: NEMI 2025 Workshop Poster
+title: Poster at NEMI 2025 Workshop on Circuit underlying relational object generation in DiT
 
 event: 2nd New England Mechanistic Interpretability (NEMI) Workshop
 event_url: https://nemiconf.github.io/summer25/
