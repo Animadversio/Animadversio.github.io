@@ -1,5 +1,5 @@
 ---
-title: 'Towards Generative and Predictive AI as Computational Interfaces to the Brain'
+title: 'University of Oregon, Knight Campus — Department of Bioengineering Special Symposium'
 
 event: Department of Bioengineering Special Symposium
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: OR
   country: United States
 
-summary: '"Towards Generative and Predictive AI as Computational Interfaces to the Brain"'
+summary: 'Towards Generative and Predictive AI as Computational Interfaces to the Brain'
 
 date: '2026-01-15'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** Towards Generative and Predictive AI as Computational Interfaces to the Brain

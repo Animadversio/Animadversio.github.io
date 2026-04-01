@@ -1,5 +1,5 @@
 ---
-title: 'Guest Lecture: Theoretical Foundations of Diffusion Models'
+title: 'University of Missouri-Columbia — Geometry & Topology Seminar'
 
 event: Geometry & Topology Seminar
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: MO
   country: United States
 
-summary: Guest lecture on the theoretical foundations of diffusion models at the Geometry & Topology Seminar.
+summary: 'Theoretical Foundations of Diffusion Models'
 
 date: '2026-04-15'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Guest Lecture:** Theoretical Foundations of Diffusion Models

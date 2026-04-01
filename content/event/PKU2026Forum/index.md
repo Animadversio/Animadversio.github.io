@@ -1,5 +1,5 @@
 ---
-title: 'Generative and Predictive AI for Closed-loop Visual Neuroscience'
+title: 'Peking University (Shenzhen) — 1st International Young Scholars Forum, School of AI for Science'
 
 event: Peking University (Shenzhen) — 1st International Young Scholars Forum, School of AI for Science
 event_url: ''
@@ -9,7 +9,7 @@ address:
   city: Shenzhen
   country: China
 
-summary: '"Generative and Predictive AI for Closed-loop Visual Neuroscience" — 1st International Young Scholars Forum, School of AI for Science, Peking University (Shenzhen).'
+summary: 'Generative and Predictive AI for Closed-loop Visual Neuroscience'
 
 date: '2026-01-29'
 all_day: true
@@ -25,3 +25,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** Generative and Predictive AI for Closed-loop Visual Neuroscience

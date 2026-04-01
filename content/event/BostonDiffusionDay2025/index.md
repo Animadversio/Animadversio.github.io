@@ -1,5 +1,5 @@
 ---
-title: 'What We Learn about Diffusion Models from the Linear Case: An Analytical Lens into Sampling, Learning, Receptive Field and Consistency'
+title: 'Boston Diffusion Day — Invited Talk'
 
 event: Boston Diffusion Day
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: MA
   country: United States
 
-summary: 'Invited talk: "What We Learn about Diffusion Models from the Linear Case: An analytical lens into sampling, learning, receptive field and consistency"'
+summary: 'What We Learn about Diffusion Models from the Linear Case: An Analytical Lens into Sampling, Learning, Receptive Field and Consistency'
 
 date: '2025-10-15'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** What We Learn about Diffusion Models from the Linear Case: An Analytical Lens into Sampling, Learning, Receptive Field and Consistency

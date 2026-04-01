@@ -1,5 +1,5 @@
 ---
-title: 'From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity'
+title: 'University of Wisconsin–Madison — Department of Psychology Special Seminar'
 
 event: Department of Psychology Special Seminar
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: WI
   country: United States
 
-summary: '"From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity"'
+summary: 'From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity'
 
 date: '2025-12-01'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity

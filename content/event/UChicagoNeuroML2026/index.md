@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Diffusion Models and Solvable Analytical Cases'
+title: 'University of Chicago — NeuroML Workshop'
 
 event: NeuroML Workshop
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: IL
   country: United States
 
-summary: Tutorial on diffusion models and solvable analytical cases at the University of Chicago NeuroML Workshop.
+summary: 'Diffusion Models and Solvable Analytical Cases'
 
 date: '2026-02-20'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Tutorial:** Diffusion Models and Solvable Analytical Cases

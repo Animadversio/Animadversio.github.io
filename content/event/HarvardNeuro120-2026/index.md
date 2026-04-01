@@ -1,5 +1,5 @@
 ---
-title: 'Guest Lecture: Mechanistic Interpretability and Visual Neuroscience'
+title: 'Harvard University — Neuro120 Introduction to Computational Neuroscience'
 
 event: Harvard University Neuro120 — Introduction to Computational Neuroscience
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: MA
   country: United States
 
-summary: Guest lecture on mechanistic interpretability and its application to visual neuroscience for Harvard's Neuro120 course.
+summary: 'Mechanistic Interpretability and Application to Visual Neuroscience'
 
 date: '2026-03-10'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Guest Lecture:** Mechanistic Interpretability and Application to Visual Neuroscience

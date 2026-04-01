@@ -1,12 +1,12 @@
 ---
-title: 'From Renormalization to Generative Universality: A Random Matrix Theory of Diffusion Consistency'
+title: 'Renormalization for AI Safety Workshop — Invited Talk'
 
 event: Renormalization for AI Safety Workshop
 event_url: ''
 
 location: ''
 
-summary: 'Invited talk: "From Renormalization to Generative Universality: A Random Matrix Theory of Diffusion Consistency"'
+summary: 'From Renormalization to Generative Universality: A Random Matrix Theory of Diffusion Consistency'
 
 date: '2025-10-20'
 all_day: true
@@ -22,3 +22,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** From Renormalization to Generative Universality: A Random Matrix Theory of Diffusion Consistency

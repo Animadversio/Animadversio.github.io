@@ -1,5 +1,5 @@
 ---
-title: 'From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity'
+title: 'University of Minnesota — Department of Neuroscience Special Seminar'
 
 event: Department of Neuroscience Special Seminar
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: MN
   country: United States
 
-summary: '"From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity"'
+summary: 'From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity'
 
 date: '2026-02-16'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity

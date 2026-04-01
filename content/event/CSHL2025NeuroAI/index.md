@@ -1,5 +1,5 @@
 ---
-title: 'Model-Optimized Stimuli for Comparing Brain-Alignment of Generative Models and Encoding Models'
+title: 'Cold Spring Harbor Laboratory — NeuroAI Seminar'
 
 event: Cold Spring Harbor Laboratory NeuroAI Seminar
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: NY
   country: United States
 
-summary: 'Talk: "Model-optimized stimuli for comparing brain-alignment of generative models and encoding models"'
+summary: 'Model-Optimized Stimuli for Comparing Brain-Alignment of Generative Models and Encoding Models'
 
 date: '2025-10-10'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** Model-Optimized Stimuli for Comparing Brain-Alignment of Generative Models and Encoding Models

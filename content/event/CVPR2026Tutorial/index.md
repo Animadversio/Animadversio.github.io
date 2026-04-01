@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Analytical Theory of Diffusion Models'
+title: 'Computer Vision and Pattern Recognition Conference (CVPR 2026) — Tutorial'
 
 event: Computer Vision and Pattern Recognition Conference (CVPR 2026)
 event_url: https://cvpr.thecvf.com/
@@ -10,7 +10,7 @@ address:
   region: TN
   country: United States
 
-summary: Tutorial on Analytical Theory of Diffusion Models at CVPR 2026.
+summary: 'Analytical Theory of Diffusion Models'
 
 date: '2026-06-15'
 all_day: true
@@ -26,3 +26,5 @@ featured: true
 
 slides: ""
 ---
+
+**Tutorial:** Analytical Theory of Diffusion Models

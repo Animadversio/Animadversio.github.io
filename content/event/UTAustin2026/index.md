@@ -1,5 +1,5 @@
 ---
-title: 'Neuronal Tuning Landscape on Generative Image Manifolds'
+title: 'University of Texas at Austin — Xuexin Wei Lab Meeting'
 
 event: Xuexin Wei Lab Meeting
 event_url: ''
@@ -10,7 +10,7 @@ address:
   region: TX
   country: United States
 
-summary: Talk on "Neuronal Tuning Landscape on Generative Image Manifolds" at Xuexin Wei Lab.
+summary: 'Neuronal Tuning Landscape on Generative Image Manifolds'
 
 date: '2026-04-10'
 all_day: true
@@ -26,3 +26,5 @@ featured: false
 
 slides: ""
 ---
+
+**Talk:** Neuronal Tuning Landscape on Generative Image Manifolds
