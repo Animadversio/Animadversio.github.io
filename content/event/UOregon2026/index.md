@@ -1,5 +1,5 @@
 ---
-title: Special Symposium at University of Oregon Knight Campus Bioengineering
+title: 'Towards Generative and Predictive AI as Computational Interfaces to the Brain'
 
 event: Department of Bioengineering Special Symposium
 event_url: ''
@@ -10,9 +10,9 @@ address:
   region: OR
   country: United States
 
-summary: Invited talk at the University of Oregon Knight Campus Department of Bioengineering Special Symposium.
+summary: '"Towards Generative and Predictive AI as Computational Interfaces to the Brain"'
 
-date: '2026-01-10'
+date: '2026-01-15'
 all_day: true
 
 publishDate: '2026-04-01T00:00:00Z'

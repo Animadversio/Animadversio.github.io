@@ -12,7 +12,7 @@ address:
 
 summary: '"From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity"'
 
-date: '2025-12-10'
+date: '2025-12-01'
 all_day: true
 
 publishDate: '2026-04-01T00:00:00Z'

@@ -1,5 +1,5 @@
 ---
-title: Computation and Theory Group Leader Special Symposium
+title: 'Model-free and Model-based Methods to Control and Interpret Neural Representation'
 
 event: Janelia Research Campus — Computation and Theory Group Leader Special Symposium
 event_url: https://www.janelia.org/
@@ -10,7 +10,7 @@ address:
   region: VA
   country: United States
 
-summary: Invited talk at the Computation and Theory Group Leader Special Symposium at Janelia Research Campus.
+summary: '"Model-free and Model-based Methods to Control and Interpret Neural Representation" — Invited talk at the Computation and Theory Group Leader Special Symposium at Janelia Research Campus.'
 
 date: '2026-02-05'
 all_day: true

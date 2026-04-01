@@ -1,5 +1,5 @@
 ---
-title: Special Seminar at University of Cincinnati Biological Sciences
+title: 'From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity'
 
 event: Department of Biological Sciences Special Seminar
 event_url: ''
@@ -10,9 +10,9 @@ address:
   region: OH
   country: United States
 
-summary: Special seminar at the University of Cincinnati Department of Biological Sciences.
+summary: '"From Closed-Loop Vision to Creative Machines: Generative Models as Tools and Theories of Neural Representation and Creativity"'
 
-date: '2026-02-10'
+date: '2026-02-09'
 all_day: true
 
 publishDate: '2026-04-01T00:00:00Z'
