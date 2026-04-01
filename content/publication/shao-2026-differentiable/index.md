@@ -1,9 +1,9 @@
 ---
 title: Differentiable Faithfulness Alignment for Cross-Model Circuit Transfer
 authors:
-- Shuai Shao
+- Shun Shao
 - Binxu Wang
-- Samuel B. Cohen
+- Shay B Cohen
 - Yonatan Belinkov
 date: '2026-01-01'
 publishDate: '2026-04-01T00:00:00Z'

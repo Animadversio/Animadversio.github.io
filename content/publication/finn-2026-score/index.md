@@ -1,10 +1,10 @@
 ---
 title: 'Where the Score Lives: A Wavelet View of Diffusion'
 authors:
-- Ethan Finn
+- Emma Lucia Byrnes Finn
 - Binxu Wang
-- Thomas Keller
-- Demba Ba
+- T. Anderson Keller
+- Demba E. Ba
 date: '2026-05-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:

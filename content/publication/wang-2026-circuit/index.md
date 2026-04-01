@@ -2,8 +2,8 @@
 title: Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 authors:
 - Binxu Wang
-- Jiachen Fan
-- Xingyu Pan
+- Jingxuan Fan
+- Xu Pan
 date: '2026-06-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:

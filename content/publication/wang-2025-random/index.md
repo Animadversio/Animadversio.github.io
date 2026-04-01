@@ -1,5 +1,5 @@
 ---
-title: A Random Matrix Theory Perspective on the Consistency of Diffusion Models
+title: A Random Matrix Perspective on the Consistency of Diffusion Models
 authors:
 - Binxu Wang
 - Jacob A. Zavatone-Veth

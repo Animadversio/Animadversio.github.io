@@ -1,9 +1,9 @@
 ---
 title: 'Matching Accuracy, Different Geometry: Evolution Strategies vs GRPO in LLM Post-training'
 authors:
-- Will Hoy
+- William Hoy
 - Binxu Wang
-- Xingyu Pan
+- Xu Pan
 date: '2026-01-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:
