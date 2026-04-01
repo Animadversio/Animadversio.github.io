@@ -28,3 +28,5 @@ slides: ""
 ---
 
 **Tutorial:** Analytical Theory of Diffusion Models
+
+**Website:** https://analytic-diffusion.github.io/

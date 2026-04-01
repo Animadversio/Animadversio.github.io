@@ -12,7 +12,7 @@ address:
 
 summary: 'Mechanistic Interpretability and Application to Visual Neuroscience'
 
-date: '2026-03-10'
+date: '2026-03-03'
 all_day: true
 
 publishDate: '2026-04-01T00:00:00Z'
