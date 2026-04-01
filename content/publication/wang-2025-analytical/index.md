@@ -7,7 +7,7 @@ date: '2025-03-01'
 publishDate: '2025-08-08T05:00:23.711084Z'
 publication_types:
 - article-journal
-publication: '*arXiv preprint arXiv:2503.03206*'
+publication: '*NeurIPS 2025 (spotlight, top 3%) — arXiv:2503.03206*'
 
 url_pdf: https://arxiv.org/abs/2503.03206
 
