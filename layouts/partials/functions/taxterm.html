@@ -1,0 +1,40 @@
+{{- $taxonomy := .taxonomy | default "categories" -}}
+{{- $term     := .term | default "" -}}
+{{- $view     := .view | default "article-grid-w-tags" -}}
+{{- $page     := .page -}}
+{{- $heading  := .heading | default "" -}}
+
+{{/* Use taxonomy index instead of Params filtering */}}
+{{- $termPage := site.GetPage (printf "%s/%s" $taxonomy (urlize $term)) -}}
+{{- $pages := cond $termPage $termPage.Pages (slice) -}}
+
+{{/* Color seed */}}
+{{- $h := md5 $term -}}
+{{- $byte := int (printf "0x%s" (substr $h 0 2)) -}}
+{{- $hue := mod $byte 360 -}}
+
+<section class="pb-8">
+  {{- if $heading }}
+    <h2 class="text-2xl font-bold mb-4">{{ $heading }}</h2>
+  {{- end }}
+
+  <div class="max-w-6xl mx-auto">
+    <article class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none mb-8">
+      <div class="flex flex-col items-center text-center">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-6 h-6 rounded-full" style="background-color: hsl({{ $hue }}, 70%, 60%);"></div>
+          <h1 class="lg:text-6xl !mb-0">{{ $term }}</h1>
+        </div>
+        <p class="text-lg text-gray-600 dark:text-gray-400 !mt-2">
+          {{ len $pages }} {{ if eq (len $pages) 1 }}post{{ else }}posts{{ end }} in this {{ $taxonomy | singularize }}
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div class="max-w-7xl mx-auto">
+    {{- range $index, $item := sort $pages "Date" "desc" -}}
+      {{ partial "functions/render_view" (dict "page" $page "item" $item "view" $view "index" $index) }}
+    {{- end -}}
+  </div>
+</section>

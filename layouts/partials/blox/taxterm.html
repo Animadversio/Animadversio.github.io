@@ -1,0 +1,24 @@
+{{/* Block: taxterm
+    Use inside `sections:` like:
+      - block: taxterm
+        content:
+          title: All algorithm posts
+          taxonomy: categories
+          term: algorithm
+        design:
+          view: citation-w-tags
+*/}}
+
+{{- $b := .block -}}
+{{- $title := $b.content.title | default "" -}}
+{{- $taxonomy := $b.content.taxonomy | default "categories" -}}
+{{- $term := $b.content.term | default "" -}}
+{{- $view := $b.design.view | default "article-grid-w-tags" -}}
+
+{{- partial "functions/taxterm.html" (dict
+ "taxonomy" $taxonomy
+ "term"     $term
+ "view"     $view
+ "heading"  $title
+ "page"     .page
+) -}}

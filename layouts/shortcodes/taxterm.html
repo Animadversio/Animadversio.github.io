@@ -1,0 +1,16 @@
+{{/* Shortcode: taxterm
+    Usage:
+      {{< taxterm taxonomy="categories" term="algorithm" view="citation-w-tags" heading="All algorithm posts" >}}
+*/}}
+{{- $taxonomy := .Get "taxonomy" | default "categories" -}}
+{{- $term     := .Get "term" | default "" -}}
+{{- $view     := .Get "view" | default "article-grid-w-tags" -}}
+{{- $heading  := .Get "heading" | default "" -}}
+
+{{- partial "functions/taxterm.html" (dict
+ "taxonomy" $taxonomy
+ "term"     $term
+ "view"     $view
+ "heading"  $heading
+ "page"     .Page
+) -}}
