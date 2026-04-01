@@ -2,8 +2,8 @@
 title: 'When Rule Learning Breaks: Diffusion Fails to Learn Parity of Many Bits'
 authors:
 - Binxu Wang
-- Ethan Finn
-- Brian Liu
+- Emma Lucia Byrnes Finn
+- Bingbin Liu
 date: '2025-12-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:
