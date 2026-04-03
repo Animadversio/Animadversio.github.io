@@ -14,7 +14,7 @@ publication_types:
 - article-journal
 
 tags:
-- Position
+- Perspective
 - Visual Neuroscience
 - Ventral Stream
 ---
