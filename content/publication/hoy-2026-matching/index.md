@@ -10,6 +10,8 @@ publication_types:
 - article-journal
 publication: '*under review at COLM 2026*'
 
+url_pdf: 'https://arxiv.org/abs/2604.01499'
+
 tags:
 - LLM
 - Reinforcement Learning
