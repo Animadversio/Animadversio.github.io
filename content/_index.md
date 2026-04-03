@@ -110,6 +110,15 @@ sections:
   #     # Reduce spacing
   #     spacing:
   #       padding: [0, 0, 0, 0]
+  - block: markdown
+    content:
+      title: Visitor Map
+      text: |
+        <div style="text-align:center; margin-top: 1rem;">
+          <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=500&t=m&d=wYiRKSasZy7eC5qz8i3ym6yQSlEbsUwlC6yH3rjpfvA&co=171f66'></script>
+        </div>
+    design:
+      columns: '1'
   # - block: cta-card
   #   demo: true # Only display this section in the Hugo Blox Builder demo site
   #   content:
