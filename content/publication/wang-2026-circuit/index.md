@@ -15,6 +15,7 @@ url_pdf: https://arxiv.org/abs/2601.06338
 tags:
 - Diffusion
 - Interpretability
+- Mechanistic Interpretability
 - Computer Vision
 - Science of AI
 
