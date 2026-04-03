@@ -46,15 +46,23 @@
     {{/* Content on the right */}}
     <div class="flex-1 px-4 py-2 flex flex-col justify-between min-h-20">
       <div>
-        {{/* Title */}}
-        <h2 class="text-base font-semibold leading-snug tracking-tight mb-1 dark:text-white">
-          <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
-            <span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">
-              {{- $item.Title -}}
-              {{if $target}}{{ partial "functions/get_icon" (dict "name" "arrow-top-right-on-square" "attributes" "style=\"height: 1em;\" class=\"inline-flex h-4 w-4 ml-1\"")  }}{{end}}
-            </span>
-          </a>
-        </h2>
+        {{/* Date + Title on same line */}}
+        <div class="flex items-baseline gap-2 mb-1">
+          {{ if $item.Date }}
+          <time datetime="{{ $item.Date.Format "2006-01-02" }}"
+                class="flex-shrink-0 text-base font-bold text-primary-600 dark:text-primary-400 whitespace-nowrap">
+            {{ $item.Date.Format "Jan 2006" }}
+          </time>
+          {{ end }}
+          <h2 class="text-base font-semibold leading-snug tracking-tight dark:text-white">
+            <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+              <span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">
+                {{- $item.Title -}}
+                {{if $target}}{{ partial "functions/get_icon" (dict "name" "arrow-top-right-on-square" "attributes" "style=\"height: 1em;\" class=\"inline-flex h-4 w-4 ml-1\"")  }}{{end}}
+              </span>
+            </a>
+          </h2>
+        </div>
 
         {{/* Summary — 1 line */}}
         <p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-1 mb-1">
@@ -64,24 +72,17 @@
         </p>
       </div>
 
-      {{/* Tags + Date on same line — no author */}}
-      <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-        <div class="flex gap-1.5 flex-wrap">
-          {{ range $tag := first 2 $item.Params.tags }}
-            {{ $h := md5 $tag }}
-            {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
-            {{ $hue := mod $byte 360 }}
-            <a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}"
-               class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium hover:opacity-80"
-               style="background-color: hsl({{ $hue }}, 80%, 90%); color: hsl({{ $hue }}, 40%, 25%); border: 1px solid hsl({{ $hue }}, 55%, 70%);">
-              {{ $tag }}
-            </a>
-          {{ end }}
-        </div>
-        {{ if $item.Date }}
-        <time datetime="{{ $item.Date.Format "2006-01-02" }}" class="whitespace-nowrap ml-2">
-          {{ $item.Date.Format "Jan 2006" }}
-        </time>
+      {{/* Tags only at bottom — no author, date moved to top */}}
+      <div class="flex gap-1.5 flex-wrap">
+        {{ range $tag := first 2 $item.Params.tags }}
+          {{ $h := md5 $tag }}
+          {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+          {{ $hue := mod $byte 360 }}
+          <a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}"
+             class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium hover:opacity-80"
+             style="background-color: hsl({{ $hue }}, 80%, 90%); color: hsl({{ $hue }}, 40%, 25%); border: 1px solid hsl({{ $hue }}, 55%, 70%);">
+            {{ $tag }}
+          </a>
         {{ end }}
       </div>
     </div>

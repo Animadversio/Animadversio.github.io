@@ -18,6 +18,7 @@ url_blog: 'https://kempnerinstitute.harvard.edu/research/deeper-learning/the-hid
 tags:
   - Diffusion
   - Science of AI
+  - Theory
 
 # Display this page in the Featured widget?
 featured: true

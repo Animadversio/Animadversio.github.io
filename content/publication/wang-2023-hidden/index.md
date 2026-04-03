@@ -16,5 +16,6 @@ tags:
   - Geometry
   - Generative Model
   - Science of AI
+  - Theory
   
 ---
