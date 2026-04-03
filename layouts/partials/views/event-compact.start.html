@@ -1,0 +1,5 @@
+{{ $columns := .config.columns | default 1 }}
+{{ $len := .config.len | default 2 }}
+{{/* NOTE: Modified for horizontal image layout */}}
+<div class="mt-16 sm:mt-20 container max-w-5xl w-full">
+  <div class="flex flex-col gap-3">

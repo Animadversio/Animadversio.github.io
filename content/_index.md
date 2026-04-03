@@ -75,11 +75,12 @@ sections:
     id: talks
     content:
       title: Recent & Upcoming Talks
+      count: 8
       filters:
         folders:
           - event
     design:
-      view: article-grid-imgs
+      view: event-compact
       columns: 1
   # - block: collection
   #   id: news

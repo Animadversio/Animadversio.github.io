@@ -1,0 +1,90 @@
+{{ $item := .item }}
+{{ $fill_image := .config.fill_image | default true }}
+
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+{{ $anchor := $item.Params.image.focal_point | default "Center" }}
+
+{{ $link := $item.Params.external_link | default $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
+
+<div class="group cursor-pointer bg-white dark:bg-gray-900 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+  <div class="flex">
+
+    {{/* Featured Image — compact */}}
+    {{ with $resource }}
+    {{ $image := "" }}
+    {{if $fill_image}}
+      {{ $image = .Fill (printf "192x120 %s" $anchor) }}
+    {{else}}
+      {{ $image = .Fit (printf "192x120 %s" $anchor) }}
+    {{end}}
+    {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+    <div class="flex-shrink-0 w-32 h-20">
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }}
+         class="block w-full h-full overflow-hidden bg-gray-100 dark:bg-gray-800 transition-all hover:opacity-90">
+        <img alt="{{ $item.Title | plainify }}"
+             class="{{if $fill_image}}object-cover{{else}}object-contain{{end}} w-full h-full transition-all"
+             decoding="async"
+             fetchpriority="high"
+             height="{{ $image.Height }}"
+             loading="lazy"
+             src="{{ $image.RelPermalink }}"
+             width="{{ $image.Width }}">
+      </a>
+    </div>
+    {{ else }}
+    {{/* Placeholder when no featured image */}}
+    <div class="flex-shrink-0 w-32 h-20 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+      <i class="fas fa-calendar-alt text-gray-400 text-2xl" aria-hidden="true"></i>
+    </div>
+    {{ end }}
+
+    {{/* Content on the right */}}
+    <div class="flex-1 px-4 py-2 flex flex-col justify-between min-h-20">
+      <div>
+        {{/* Title */}}
+        <h2 class="text-base font-semibold leading-snug tracking-tight mb-1 dark:text-white">
+          <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+            <span class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">
+              {{- $item.Title -}}
+              {{if $target}}{{ partial "functions/get_icon" (dict "name" "arrow-top-right-on-square" "attributes" "style=\"height: 1em;\" class=\"inline-flex h-4 w-4 ml-1\"")  }}{{end}}
+            </span>
+          </a>
+        </h2>
+
+        {{/* Summary — 1 line */}}
+        <p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-1 mb-1">
+          <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+            {{ ($item.Params.summary | default $item.Summary) | plainify | htmlUnescape | chomp -}}
+          </a>
+        </p>
+      </div>
+
+      {{/* Tags + Date on same line — no author */}}
+      <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+        <div class="flex gap-1.5 flex-wrap">
+          {{ range $tag := first 2 $item.Params.tags }}
+            {{ $h := md5 $tag }}
+            {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
+            {{ $hue := mod $byte 360 }}
+            <a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}"
+               class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium hover:opacity-80"
+               style="background-color: hsl({{ $hue }}, 80%, 90%); color: hsl({{ $hue }}, 40%, 25%); border: 1px solid hsl({{ $hue }}, 55%, 70%);">
+              {{ $tag }}
+            </a>
+          {{ end }}
+        </div>
+        {{ if $item.Date }}
+        <time datetime="{{ $item.Date.Format "2006-01-02" }}" class="whitespace-nowrap ml-2">
+          {{ $item.Date.Format "Jan 2006" }}
+        </time>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+</div>
