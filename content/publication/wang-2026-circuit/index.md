@@ -8,7 +8,7 @@ date: '2026-06-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:
 - paper-conference
-publication: '*Conference on Computer Vision and Pattern Recognition (CVPR) 2026*'
+publication: '*Conference on Computer Vision and Pattern Recognition (CVPR) 2026 (highlight, top 3%)*'
 
 url_pdf: https://arxiv.org/abs/2601.06338
 
