@@ -11,31 +11,29 @@
   {{ end }}
 
   {{ if $featured_image }}
-  <div class="flex-shrink-0" style="width:160px;height:106px;">
+  <div class="flex-shrink-0" style="width:192px;height:128px;">
     <a href="{{ $item.RelPermalink }}">
       <img src="{{ $featured_image.RelPermalink }}"
            alt="{{ $item.Title }}"
-           style="width:160px;height:106px;object-fit:cover;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
+           style="width:192px;height:128px;object-fit:cover;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
            loading="lazy">
     </a>
   </div>
   {{ else }}
-  <div class="flex-shrink-0" style="width:160px;height:106px;background:#e5e7eb;border-radius:0.5rem;display:flex;align-items:center;justify-content:center;">
-    <i class="far fa-file-alt text-gray-400 text-2xl" aria-hidden="true"></i>
-  </div>
+  <div class="flex-shrink-0" style="width:192px;height:128px;"></div>
   {{ end }}
 
   {{/* Text content on the RIGHT */}}
   <div class="flex-1 min-w-0">
 
     {{/* Title — large and bold */}}
-    <h2 class="text-base font-bold leading-snug mb-1">
+    <h2 class="text-lg font-bold leading-snug mb-1">
       <a href="{{ $item.RelPermalink }}" class="hover:underline dark:text-white">{{ $item.Title }}</a>
     </h2>
 
     {{/* Venue / Publication */}}
     {{ if or $item.Params.publication_short $item.Params.publication }}
-    <div class="text-sm text-gray-600 dark:text-gray-400 mb-1 italic">
+    <div class="text-base text-gray-600 dark:text-gray-400 mb-1 italic">
       {{ if $item.Params.publication_short }}
         {{- $item.Params.publication_short | markdownify -}}
       {{ else }}
@@ -45,7 +43,7 @@
     {{ end }}
 
     {{/* Authors */}}
-    <div class="text-sm text-gray-700 dark:text-gray-300 mb-2">
+    <div class="text-base text-gray-700 dark:text-gray-300 mb-2">
       {{ partial "page_metadata_authors" $item }}
     </div>
 
