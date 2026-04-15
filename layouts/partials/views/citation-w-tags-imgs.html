@@ -32,13 +32,44 @@
     </h2>
 
     {{/* Venue / Publication */}}
-    {{ if or $item.Params.publication_short $item.Params.publication }}
+    {{ $pub := $item.Params.publication | default "" }}
+    {{ $pub_short := $item.Params.publication_short | default "" }}
+    {{ $pub_display := cond (ne $pub_short "") $pub_short $pub }}
+    {{ if $pub_display }}
     <div class="text-base text-gray-600 dark:text-gray-400 mb-1 italic">
-      {{ if $item.Params.publication_short }}
-        {{- $item.Params.publication_short | markdownify -}}
-      {{ else }}
-        {{- $item.Params.publication | markdownify -}}
+      {{- $pub_display | markdownify -}}
+    </div>
+    {{ end }}
+
+    {{/* Award badge — detect highlight/spotlight/oral/best paper in publication field */}}
+    {{ $pub_lower := lower $pub }}
+    {{ $award_icon := "" }}
+    {{ $award_text := "" }}
+    {{ if findRE `highlight` $pub_lower }}
+      {{ $award_icon = "🌟" }}
+      {{ $award_text = "Highlight" }}
+      {{ if findRE `top\s*\d+%` $pub_lower }}
+        {{ $pct := replaceRE `.*top\s*(\d+%).*` "$1" $pub_lower }}
+        {{ $award_text = printf "Highlight — top %s" $pct }}
       {{ end }}
+    {{ else if findRE `spotlight` $pub_lower }}
+      {{ $award_icon = "🌟" }}
+      {{ $award_text = "Spotlight" }}
+      {{ if findRE `top\s*\d+%` $pub_lower }}
+        {{ $pct := replaceRE `.*top\s*(\d+%).*` "$1" $pub_lower }}
+        {{ $award_text = printf "Spotlight — top %s" $pct }}
+      {{ end }}
+    {{ else if findRE `\boral\b` $pub_lower }}
+      {{ $award_icon = "🎤" }}
+      {{ $award_text = "Oral presentation" }}
+    {{ else if findRE `best paper` $pub_lower }}
+      {{ $award_icon = "⭐️" }}
+      {{ $award_text = "Best Paper Nomination" }}
+    {{ end }}
+    {{ if $award_text }}
+    <div class="flex items-center gap-1 mb-1">
+      <span style="font-size:1rem;">{{ $award_icon }}</span>
+      <span class="text-sm font-semibold" style="color: #b45309;">{{ $award_text }}</span>
     </div>
     {{ end }}
 
