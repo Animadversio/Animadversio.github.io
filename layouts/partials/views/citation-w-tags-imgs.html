@@ -11,16 +11,16 @@
   {{ end }}
 
   {{ if $featured_image }}
-  <div class="flex-shrink-0" style="width:192px;height:128px;">
+  <div class="flex-shrink-0" style="width:240px;height:160px;">
     <a href="{{ $item.RelPermalink }}">
       <img src="{{ $featured_image.RelPermalink }}"
            alt="{{ $item.Title }}"
-           style="width:192px;height:128px;object-fit:cover;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
+           style="width:240px;height:160px;object-fit:cover;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
            loading="lazy">
     </a>
   </div>
   {{ else }}
-  <div class="flex-shrink-0" style="width:192px;height:128px;"></div>
+  <div class="flex-shrink-0" style="width:240px;height:160px;"></div>
   {{ end }}
 
   {{/* Text content on the RIGHT */}}
