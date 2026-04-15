@@ -1,14 +1,67 @@
 {{ $item := .item }}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
 
-<div class="pub-list-item view-citation-with-images flex gap-4" style="margin-bottom: 2rem">
-  
-  {{/* Citation content on the left */}}
+<div class="pub-list-item view-citation-with-images flex gap-5 items-start" style="margin-bottom: 2rem">
+
+  {{/* Featured Image on the LEFT — wider & taller */}}
+  {{ $featured_image := "" }}
+  {{ $resource := $item.Resources.GetMatch "featured.*" }}
+  {{ with $resource }}
+    {{ $featured_image = . }}
+  {{ end }}
+
+  {{ if $featured_image }}
+  <div class="flex-shrink-0" style="width:160px;height:106px;">
+    <a href="{{ $item.RelPermalink }}">
+      <img src="{{ $featured_image.RelPermalink }}"
+           alt="{{ $item.Title }}"
+           style="width:160px;height:106px;object-fit:cover;border-radius:0.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
+           loading="lazy">
+    </a>
+  </div>
+  {{ else }}
+  <div class="flex-shrink-0" style="width:160px;height:106px;background:#e5e7eb;border-radius:0.5rem;display:flex;align-items:center;justify-content:center;">
+    <i class="far fa-file-alt text-gray-400 text-2xl" aria-hidden="true"></i>
+  </div>
+  {{ end }}
+
+  {{/* Text content on the RIGHT */}}
   <div class="flex-1 min-w-0">
-    
-    {{/* Tags on top of the citation */}}
-    {{ if $item.Params.tags }}
-    <div class="flex flex-wrap gap-1 mb-2">
+
+    {{/* Title — large and bold */}}
+    <h2 class="text-base font-bold leading-snug mb-1">
+      <a href="{{ $item.RelPermalink }}" class="hover:underline dark:text-white">{{ $item.Title }}</a>
+    </h2>
+
+    {{/* Venue / Publication */}}
+    {{ if or $item.Params.publication_short $item.Params.publication }}
+    <div class="text-sm text-gray-600 dark:text-gray-400 mb-1 italic">
+      {{ if $item.Params.publication_short }}
+        {{- $item.Params.publication_short | markdownify -}}
+      {{ else }}
+        {{- $item.Params.publication | markdownify -}}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Authors */}}
+    <div class="text-sm text-gray-700 dark:text-gray-300 mb-2">
+      {{ partial "page_metadata_authors" $item }}
+    </div>
+
+    {{/* Link buttons + Tags */}}
+    <div class="flex flex-wrap gap-2 items-center">
+      {{ if or $has_attachments $item.Params.url_blog }}
+        {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+        {{ with $item.Params.url_blog }}
+          {{ $href := cond (hasPrefix . "http") . (. | relURL) }}
+          <a class="hb-attachment-link hb-attachment-small" href="{{ $href }}" target="_blank" rel="noopener">
+            📝 {{ i18n "btn_blog" | default "BLOG" }}
+          </a>
+        {{ end }}
+      {{ end }}
+
+      {{/* Multicolor tags */}}
       {{ range $tag := $item.Params.tags }}
         {{ $h := md5 $tag }}
         {{ $byte := int (printf "0x%s" (substr $h 0 2)) }}
@@ -22,89 +75,7 @@
         </a>
       {{ end }}
     </div>
-    {{ end }}
-    
-    {{/* APA Style Citation */}}
-    {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
 
-    <div class="citation-content">
-      <span class="article-metadata li-cite-author">
-        {{ partial "page_metadata_authors" $item }}
-      </span>
-      ({{- $item.Date.Format "2006" -}}).
-      <a href="{{ $item.RelPermalink }}" class="underline font-medium">{{ $item.Title }}</a>.
-      {{ if $item.Params.publication_short }}
-        {{- $item.Params.publication_short | markdownify -}}.
-      {{ else if $item.Params.publication }}
-        {{- $item.Params.publication | markdownify -}}.
-      {{ end }}
-    </div>
-
-    {{ if or $has_attachments $item.Params.url_blog }}
-    <div class="flex flex-wrap gap-2 mt-2">
-      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-      {{/* Blog URL button - APA Style */}}
-      {{ with $item.Params.url_blog }}
-        {{ $href := cond (hasPrefix . "http") . (. | relURL) }}
-        <a class="hb-attachment-link hb-attachment-small" href="{{ $href }}" target="_blank" rel="noopener">
-          📝 {{ i18n "btn_blog" | default "BLOG" }}
-        </a>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{/* MLA Style Citation */}}
-    {{ else }}
-
-    <div class="citation-content">
-      <span class="article-metadata li-cite-author">
-        {{ partial "page_metadata_authors" $item }}.
-      </span>
-      <a href="{{ $item.RelPermalink }}" class="font-medium">{{ $item.Title }}</a>.
-      {{ if $item.Params.publication_short }}
-        {{- $item.Params.publication_short | markdownify -}},
-      {{ else if $item.Params.publication }}
-        {{- $item.Params.publication | markdownify -}},
-      {{ end }}
-      {{- $item.Date.Format "2006" -}}.
-    </div>
-
-    {{ if or $has_attachments $item.Params.url_blog }}
-    <div class="flex flex-wrap gap-2 mt-2">
-      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-      {{/* Blog URL button - MLA Style */}}
-      {{ with $item.Params.url_blog }}
-        {{ $href := cond (hasPrefix . "http") . (. | relURL) }}
-        <a class="hb-attachment-link hb-attachment-small" href="{{ $href }}" target="_blank" rel="noopener">
-          📝 {{ i18n "btn_blog" | default "BLOG" }}
-        </a>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{ end }}
-    
   </div>
-  
-  {{/* Featured Image on the right */}}
-  {{ $featured_image := "" }}
-  {{ $resource := $item.Resources.GetMatch "featured.*" }}
-  {{ with $resource }}
-    {{ $featured_image = . }}
-  {{ end }}
-  
-  {{ if $featured_image }}
-  <div class="flex-shrink-0">
-    <img src="{{ $featured_image.RelPermalink }}" 
-         alt="{{ $item.Title }}" 
-         class="w-32 h-24 object-cover rounded-lg shadow-md"
-         loading="lazy">
-  </div>
-  {{ else }}
-  {{/* Placeholder or icon if no featured image */}}
-  <div class="flex-shrink-0 w-32 h-24 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-    <i class="far fa-file-alt text-gray-400 text-2xl" aria-hidden="true"></i>
-  </div>
-  {{ end }}
-  
+
 </div>
