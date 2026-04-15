@@ -16,7 +16,7 @@ date: '2025-01-01'
 publishDate: '2026-04-01T00:00:00Z'
 publication_types:
 - paper-conference
-publication: '*International Conference on Learning Representations (ICLR) 2025*'
+publication: '*International Conference on Learning Representations (ICLR) 2026*'
 
 url_pdf: https://arxiv.org/abs/2510.08638
 

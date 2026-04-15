@@ -4,8 +4,8 @@ authors:
 - Binxu Wang
 - Jacob A. Zavatone-Veth
 - Cengiz Pehlevan
-date: '2025-01-01'
-publishDate: '2026-04-01T00:00:00Z'
+date: '2026-01-01'
+publishDate: '2026-01-01T00:00:00Z'
 publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2602.02908 (under review at ICML)*'
