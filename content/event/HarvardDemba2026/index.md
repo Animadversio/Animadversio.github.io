@@ -24,7 +24,7 @@ tags: [Diffusion, Theory, Science of AI]
 
 featured: false
 
-slides: ""
+url_slides: '/uploads/DiffusionLecture_Harvard_AM_DembaCourse.pdf'
 ---
 
 **Guest Lecture:** Introduction to Diffusion Models: Theory and Practise
