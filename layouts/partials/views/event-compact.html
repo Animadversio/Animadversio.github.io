@@ -51,7 +51,7 @@
           {{ if $item.Date }}
           <time datetime="{{ $item.Date.Format "2006-01-02" }}"
                 class="flex-shrink-0 text-base font-bold text-primary-600 dark:text-primary-400 whitespace-nowrap">
-            {{ $item.Date.Format "Jan 2006" }}
+            {{ $item.Date.Format "Jan 2, 2006" }}
           </time>
           {{ end }}
           <h2 class="text-base font-semibold leading-snug tracking-tight dark:text-white">
