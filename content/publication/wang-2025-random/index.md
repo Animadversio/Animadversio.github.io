@@ -8,7 +8,7 @@ date: '2026-01-01'
 publishDate: '2026-01-01T00:00:00Z'
 publication_types:
 - article-journal
-publication: '*arXiv preprint arXiv:2602.02908 (under review at ICML)*'
+publication: '*International Conference on Machine Learning (ICML) 2026 (spotlight, top 2.2%)*'
 
 url_pdf: https://arxiv.org/abs/2602.02908
 

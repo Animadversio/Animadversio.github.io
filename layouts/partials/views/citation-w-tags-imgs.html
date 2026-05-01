@@ -48,15 +48,15 @@
     {{ if findRE `highlight` $pub_lower }}
       {{ $award_icon = "🌟" }}
       {{ $award_text = "Highlight" }}
-      {{ if findRE `top\s*\d+%` $pub_lower }}
-        {{ $pct := replaceRE `.*top\s*(\d+%).*` "$1" $pub_lower }}
+      {{ if findRE `top\s*[\d.]+%` $pub_lower }}
+        {{ $pct := replaceRE `.*top\s*([\d.]+%).*` "$1" $pub_lower }}
         {{ $award_text = printf "Highlight — top %s" $pct }}
       {{ end }}
     {{ else if findRE `spotlight` $pub_lower }}
       {{ $award_icon = "🌟" }}
       {{ $award_text = "Spotlight" }}
-      {{ if findRE `top\s*\d+%` $pub_lower }}
-        {{ $pct := replaceRE `.*top\s*(\d+%).*` "$1" $pub_lower }}
+      {{ if findRE `top\s*[\d.]+%` $pub_lower }}
+        {{ $pct := replaceRE `.*top\s*([\d.]+%).*` "$1" $pub_lower }}
         {{ $award_text = printf "Spotlight — top %s" $pct }}
       {{ end }}
     {{ else if findRE `\boral\b` $pub_lower }}
