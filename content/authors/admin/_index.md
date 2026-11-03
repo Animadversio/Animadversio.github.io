@@ -31,7 +31,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:binxu_wang@hms.harvard.edu'
+    url: 'mailto:binxu.wang@wustl.edu'
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/wangbinxu
@@ -185,5 +185,7 @@ awards:
 ---
 
 ## About Me
+
+I'm currently in transition. Please contact me at [binxu.wang@wustl.edu](mailto:binxu.wang@wustl.edu).
 
 [Binxu Wang](https://gsas.harvard.edu/news/frontier-intelligence) is a research fellow at Kempner Institute. Her research interests include visual neuroscience, generative models, and science of AI. She uses tools from AI to study neural system, and uses method of neuroscience to dissect AI system. 
